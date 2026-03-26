@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.StatisticalKeyFigure.09Postload::CV_P23_SKF_TKA03" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_P23_SKF_TKA03"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA03">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA03</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKT03">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TKT03</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_P23_TKA03" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA03"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_P23_TKT03" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="BEZEI"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKT03"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_SKF" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+      <viewAttribute hidden="true" id="JOIN$STAGR$STAGR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_P23_TKA03">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STAGR$STAGR" source="STAGR"/>
+    </input>
+    <input node="P_P23_TKT03">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STAGR$STAGR" source="STAGR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+    <joinAttribute name="JOIN$STAGR$STAGR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_SKF">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_SKF" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Controlling Area"/>
+      <keyMapping columnObjectName="J_SKF" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="STAGR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical key figure"/>
+      <keyMapping columnObjectName="J_SKF" columnName="STAGR"/>
+    </attribute>
+    <attribute id="SPRAS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="J_SKF" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="BEZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Long Text"/>
+      <keyMapping columnObjectName="J_SKF" columnName="BEZEI"/>
+    </attribute>
+    <attribute id="MSEHI" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit for Statistical Key Figure"/>
+      <keyMapping columnObjectName="J_SKF" columnName="MSEHI"/>
+    </attribute>
+    <attribute id="GRTYP" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical Key Figure Category"/>
+      <keyMapping columnObjectName="J_SKF" columnName="GRTYP"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221.11302679000914" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_P23_TKA03" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000001" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_P23_TKT03" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_SKF" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221.11302679000914" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_P23_TKA03" modelObjectNameSpace="J_SKF" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="144.712890625"/>
+    </shape>
+    <shape modelObjectName="P_P23_TKT03" modelObjectNameSpace="J_SKF" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="143.376953125"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

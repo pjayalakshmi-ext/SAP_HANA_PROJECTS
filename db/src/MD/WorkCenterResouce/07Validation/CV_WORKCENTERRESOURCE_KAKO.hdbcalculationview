@@ -1,0 +1,1970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.WorkCenterResouce.07Validation::CV_WORKCENTERRESOURCE_KAKO" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_WORKCENTERRESOURCE_KAKO.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.WorkCenterResouce.06Completeness::CV_WORKCENTERRESOURCE_KAKO">
+    <resourceUri>EHUB.MD.WorkCenterResouce.06Completeness::CV_WORKCENTERRESOURCE_KAKO</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TFACD">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TFACD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TC26">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TC26</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TC39A">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TC39A</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TC27">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TC27</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TC36">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TC36</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="AZMAX"/>
+      <viewAttribute id="AZNOR"/>
+      <viewAttribute id="BASNE"/>
+      <viewAttribute id="BASZL"/>
+      <viewAttribute id="BEGZT"/>
+      <viewAttribute id="BRGRU"/>
+      <viewAttribute id="ENDZT"/>
+      <viewAttribute id="KALID"/>
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MOSID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="NGRAD"/>
+      <viewAttribute id="PAUSE"/>
+      <viewAttribute id="PLANR"/>
+      <viewAttribute id="POOLK"/>
+      <viewAttribute id="REFAN"/>
+      <viewAttribute id="REFAZ"/>
+      <viewAttribute id="REFID"/>
+      <viewAttribute id="SUPPK"/>
+      <viewAttribute id="VERSA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KAPIE"/>
+      <viewAttribute id="KAPTER"/>
+      <viewAttribute id="KAPAVO"/>
+      <viewAttribute id="UEBERLAST"/>
+      <viewAttribute id="KAPLPL"/>
+      <viewAttribute id="KAPEH"/>
+      <viewAttribute id="MEHR"/>
+      <viewAttribute id="ANG_UNIT"/>
+      <viewAttribute id="ANG_MIN"/>
+      <viewAttribute id="ANG_MAX"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="RESTYPE"/>
+      <viewAttribute id="CAPACITY_A"/>
+      <viewAttribute id="CAPACITY_A_UNIT"/>
+      <viewAttribute id="NUM_OF_PERIODS"/>
+      <viewAttribute id="PERIOD"/>
+      <viewAttribute id="BUFFERTIME"/>
+      <viewAttribute id="BUFFERTIME_UNIT"/>
+      <viewAttribute id="IS_BOTTLENECK"/>
+      <viewAttribute id="UNDERLOAD"/>
+      <viewAttribute id="OVERLAP_BUCKETS"/>
+      <viewAttribute id="START_ON_GRID"/>
+      <viewAttribute id="MIN_OVERLAP"/>
+      <viewAttribute id="MIN_OVERLAP_UNIT"/>
+      <viewAttribute id="LOSS_FACTOR"/>
+      <viewAttribute id="SORT"/>
+      <viewAttribute id="SYNC_START"/>
+      <viewAttribute id="DEFINE_BUCKETS"/>
+      <viewAttribute id="LC_DAYS_MINUS"/>
+      <viewAttribute id="LC_DAYS_PLUS"/>
+      <viewAttribute id="STORAGE_CAPABLE"/>
+      <viewAttribute id="MIN_STORAGE"/>
+      <viewAttribute id="MAX_STORAGE"/>
+      <viewAttribute id="STORAGE_UNIT"/>
+      <viewAttribute id="DIM_STORAGE"/>
+      <viewAttribute id="STORAGE_TO_ZERO"/>
+      <viewAttribute id="SNPLC"/>
+      <viewAttribute id="UTIL_BUCKET"/>
+      <viewAttribute id="CAMPAIGN_PPDS"/>
+      <viewAttribute id="CAMPAIGN_SNP"/>
+      <viewAttribute id="TSTREAM_EXTERNAL"/>
+      <viewAttribute id="FINITY_LEVEL"/>
+      <viewAttribute id="BR_QUANT"/>
+      <viewAttribute id="BR_QUNIT"/>
+      <viewAttribute id="BR_TIME"/>
+      <viewAttribute id="BR_TUNIT"/>
+      <viewAttribute id="RITT_FLG"/>
+      <viewAttribute id="MDRMODEL"/>
+      <viewAttribute id="PP_DEF_BUCKETS"/>
+      <viewAttribute id="PP_BUCKET_SCHEMA"/>
+      <viewAttribute id="PP_BUCKET_FACT"/>
+      <viewAttribute id="MIX_PLAN_TYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="CANUM"/>
+      <viewAttribute id="FORK1"/>
+      <viewAttribute id="CAP_BACKFLUSH_SU"/>
+      <viewAttribute id="FORK2"/>
+      <viewAttribute id="CAP_BACKFLUSH_PR"/>
+      <viewAttribute id="FORK3"/>
+      <viewAttribute id="CAP_BACKFLUSH_TD"/>
+      <viewAttribute id="FORKN"/>
+      <viewAttribute id="VERT1"/>
+      <viewAttribute id="VERTN"/>
+      <viewAttribute id="KTEXT"/>
+    
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.WorkCenterResouce.06Completeness::CV_WORKCENTERRESOURCE_KAKO"/>
+  
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="IDENT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TFACD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KAPAR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TC26"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SCHGRUP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TC39A"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PLANR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TC27"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_6">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="VERSN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TC36"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_7">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="AZMAX"/>
+      <viewAttribute id="AZNOR"/>
+      <viewAttribute id="BASNE"/>
+      <viewAttribute id="BASZL"/>
+      <viewAttribute id="BEGZT"/>
+      <viewAttribute id="BRGRU"/>
+      <viewAttribute id="ENDZT"/>
+      <viewAttribute id="KALID"/>
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MOSID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="NGRAD"/>
+      <viewAttribute id="PAUSE"/>
+      <viewAttribute id="PLANR"/>
+      <viewAttribute id="POOLK"/>
+      <viewAttribute id="REFAN"/>
+      <viewAttribute id="REFAZ"/>
+      <viewAttribute id="REFID"/>
+      <viewAttribute id="SUPPK"/>
+      <viewAttribute id="VERSA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KAPIE"/>
+      <viewAttribute id="KAPTER"/>
+      <viewAttribute id="KAPAVO"/>
+      <viewAttribute id="UEBERLAST"/>
+      <viewAttribute id="KAPLPL"/>
+      <viewAttribute id="KAPEH"/>
+      <viewAttribute id="MEHR"/>
+      <viewAttribute id="ANG_UNIT"/>
+      <viewAttribute id="ANG_MIN"/>
+      <viewAttribute id="ANG_MAX"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="RESTYPE"/>
+      <viewAttribute id="CAPACITY_A"/>
+      <viewAttribute id="CAPACITY_A_UNIT"/>
+      <viewAttribute id="NUM_OF_PERIODS"/>
+      <viewAttribute id="PERIOD"/>
+      <viewAttribute id="BUFFERTIME"/>
+      <viewAttribute id="BUFFERTIME_UNIT"/>
+      <viewAttribute id="IS_BOTTLENECK"/>
+      <viewAttribute id="UNDERLOAD"/>
+      <viewAttribute id="OVERLAP_BUCKETS"/>
+      <viewAttribute id="START_ON_GRID"/>
+      <viewAttribute id="MIN_OVERLAP"/>
+      <viewAttribute id="MIN_OVERLAP_UNIT"/>
+      <viewAttribute id="LOSS_FACTOR"/>
+      <viewAttribute id="SORT"/>
+      <viewAttribute id="SYNC_START"/>
+      <viewAttribute id="DEFINE_BUCKETS"/>
+      <viewAttribute id="LC_DAYS_MINUS"/>
+      <viewAttribute id="LC_DAYS_PLUS"/>
+      <viewAttribute id="STORAGE_CAPABLE"/>
+      <viewAttribute id="MIN_STORAGE"/>
+      <viewAttribute id="MAX_STORAGE"/>
+      <viewAttribute id="STORAGE_UNIT"/>
+      <viewAttribute id="DIM_STORAGE"/>
+      <viewAttribute id="STORAGE_TO_ZERO"/>
+      <viewAttribute id="SNPLC"/>
+      <viewAttribute id="UTIL_BUCKET"/>
+      <viewAttribute id="CAMPAIGN_PPDS"/>
+      <viewAttribute id="CAMPAIGN_SNP"/>
+      <viewAttribute id="TSTREAM_EXTERNAL"/>
+      <viewAttribute id="FINITY_LEVEL"/>
+      <viewAttribute id="BR_QUANT"/>
+      <viewAttribute id="BR_QUNIT"/>
+      <viewAttribute id="BR_TIME"/>
+      <viewAttribute id="BR_TUNIT"/>
+      <viewAttribute id="RITT_FLG"/>
+      <viewAttribute id="MDRMODEL"/>
+      <viewAttribute id="PP_DEF_BUCKETS"/>
+      <viewAttribute id="PP_BUCKET_SCHEMA"/>
+      <viewAttribute id="PP_BUCKET_FACT"/>
+      <viewAttribute id="MIX_PLAN_TYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="IDENT"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="CANUM"/>
+      <viewAttribute id="FORK1"/>
+      <viewAttribute id="CAP_BACKFLUSH_SU"/>
+      <viewAttribute id="FORK2"/>
+      <viewAttribute id="CAP_BACKFLUSH_PR"/>
+      <viewAttribute id="FORK3"/>
+      <viewAttribute id="CAP_BACKFLUSH_TD"/>
+      <viewAttribute id="FORKN"/>
+      <viewAttribute id="VERT1"/>
+      <viewAttribute id="VERTN"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$KALID$IDENT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WCR_FACTORY_CALENDAR_ID_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KALID&quot;=&quot;IDENT&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZMAX" source="AZMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZNOR" source="AZNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASNE" source="BASNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASZL" source="BASZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGZT" source="BEGZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGRU" source="BRGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDZT" source="ENDZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALID" source="KALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MOSID" source="MOSID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NGRAD" source="NGRAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAUSE" source="PAUSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANR" source="PLANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POOLK" source="POOLK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAN" source="REFAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAZ" source="REFAZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFID" source="REFID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPK" source="SUPPK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSA" source="VERSA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPIE" source="KAPIE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPTER" source="KAPTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAVO" source="KAPAVO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBERLAST" source="UEBERLAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPLPL" source="KAPLPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPEH" source="KAPEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEHR" source="MEHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_UNIT" source="ANG_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MIN" source="ANG_MIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MAX" source="ANG_MAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESTYPE" source="RESTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A" source="CAPACITY_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A_UNIT" source="CAPACITY_A_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_OF_PERIODS" source="NUM_OF_PERIODS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIOD" source="PERIOD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME" source="BUFFERTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME_UNIT" source="BUFFERTIME_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IS_BOTTLENECK" source="IS_BOTTLENECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNDERLOAD" source="UNDERLOAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OVERLAP_BUCKETS" source="OVERLAP_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_ON_GRID" source="START_ON_GRID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP" source="MIN_OVERLAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP_UNIT" source="MIN_OVERLAP_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOSS_FACTOR" source="LOSS_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORT" source="SORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SYNC_START" source="SYNC_START"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFINE_BUCKETS" source="DEFINE_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_MINUS" source="LC_DAYS_MINUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_PLUS" source="LC_DAYS_PLUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_CAPABLE" source="STORAGE_CAPABLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_STORAGE" source="MIN_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAX_STORAGE" source="MAX_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_UNIT" source="STORAGE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIM_STORAGE" source="DIM_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_TO_ZERO" source="STORAGE_TO_ZERO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNPLC" source="SNPLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UTIL_BUCKET" source="UTIL_BUCKET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_PPDS" source="CAMPAIGN_PPDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_SNP" source="CAMPAIGN_SNP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSTREAM_EXTERNAL" source="TSTREAM_EXTERNAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINITY_LEVEL" source="FINITY_LEVEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUANT" source="BR_QUANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUNIT" source="BR_QUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TIME" source="BR_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TUNIT" source="BR_TUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RITT_FLG" source="RITT_FLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MDRMODEL" source="MDRMODEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_DEF_BUCKETS" source="PP_DEF_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_SCHEMA" source="PP_BUCKET_SCHEMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_FACT" source="PP_BUCKET_FACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIX_PLAN_TYPE" source="MIX_PLAN_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CANUM" source="CANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK1" source="FORK1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_SU" source="CAP_BACKFLUSH_SU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK2" source="FORK2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_PR" source="CAP_BACKFLUSH_PR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK3" source="FORK3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_TD" source="CAP_BACKFLUSH_TD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORKN" source="FORKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERT1" source="VERT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERTN" source="VERTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KALID$IDENT" source="KALID"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDENT" source="IDENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KALID$IDENT" source="IDENT"/>
+    </input>
+    <joinAttribute name="JOIN$KALID$IDENT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="AZMAX"/>
+      <viewAttribute id="AZNOR"/>
+      <viewAttribute id="BASNE"/>
+      <viewAttribute id="BASZL"/>
+      <viewAttribute id="BEGZT"/>
+      <viewAttribute id="BRGRU"/>
+      <viewAttribute id="ENDZT"/>
+      <viewAttribute id="KALID"/>
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MOSID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="NGRAD"/>
+      <viewAttribute id="PAUSE"/>
+      <viewAttribute id="PLANR"/>
+      <viewAttribute id="POOLK"/>
+      <viewAttribute id="REFAN"/>
+      <viewAttribute id="REFAZ"/>
+      <viewAttribute id="REFID"/>
+      <viewAttribute id="SUPPK"/>
+      <viewAttribute id="VERSA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KAPIE"/>
+      <viewAttribute id="KAPTER"/>
+      <viewAttribute id="KAPAVO"/>
+      <viewAttribute id="UEBERLAST"/>
+      <viewAttribute id="KAPLPL"/>
+      <viewAttribute id="KAPEH"/>
+      <viewAttribute id="MEHR"/>
+      <viewAttribute id="ANG_UNIT"/>
+      <viewAttribute id="ANG_MIN"/>
+      <viewAttribute id="ANG_MAX"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="RESTYPE"/>
+      <viewAttribute id="CAPACITY_A"/>
+      <viewAttribute id="CAPACITY_A_UNIT"/>
+      <viewAttribute id="NUM_OF_PERIODS"/>
+      <viewAttribute id="PERIOD"/>
+      <viewAttribute id="BUFFERTIME"/>
+      <viewAttribute id="BUFFERTIME_UNIT"/>
+      <viewAttribute id="IS_BOTTLENECK"/>
+      <viewAttribute id="UNDERLOAD"/>
+      <viewAttribute id="OVERLAP_BUCKETS"/>
+      <viewAttribute id="START_ON_GRID"/>
+      <viewAttribute id="MIN_OVERLAP"/>
+      <viewAttribute id="MIN_OVERLAP_UNIT"/>
+      <viewAttribute id="LOSS_FACTOR"/>
+      <viewAttribute id="SORT"/>
+      <viewAttribute id="SYNC_START"/>
+      <viewAttribute id="DEFINE_BUCKETS"/>
+      <viewAttribute id="LC_DAYS_MINUS"/>
+      <viewAttribute id="LC_DAYS_PLUS"/>
+      <viewAttribute id="STORAGE_CAPABLE"/>
+      <viewAttribute id="MIN_STORAGE"/>
+      <viewAttribute id="MAX_STORAGE"/>
+      <viewAttribute id="STORAGE_UNIT"/>
+      <viewAttribute id="DIM_STORAGE"/>
+      <viewAttribute id="STORAGE_TO_ZERO"/>
+      <viewAttribute id="SNPLC"/>
+      <viewAttribute id="UTIL_BUCKET"/>
+      <viewAttribute id="CAMPAIGN_PPDS"/>
+      <viewAttribute id="CAMPAIGN_SNP"/>
+      <viewAttribute id="TSTREAM_EXTERNAL"/>
+      <viewAttribute id="FINITY_LEVEL"/>
+      <viewAttribute id="BR_QUANT"/>
+      <viewAttribute id="BR_QUNIT"/>
+      <viewAttribute id="BR_TIME"/>
+      <viewAttribute id="BR_TUNIT"/>
+      <viewAttribute id="RITT_FLG"/>
+      <viewAttribute id="MDRMODEL"/>
+      <viewAttribute id="PP_DEF_BUCKETS"/>
+      <viewAttribute id="PP_BUCKET_SCHEMA"/>
+      <viewAttribute id="PP_BUCKET_FACT"/>
+      <viewAttribute id="MIX_PLAN_TYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="IDENT"/>
+      <viewAttribute id="KAPAR_1"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="CANUM"/>
+      <viewAttribute id="FORK1"/>
+      <viewAttribute id="CAP_BACKFLUSH_SU"/>
+      <viewAttribute id="FORK2"/>
+      <viewAttribute id="CAP_BACKFLUSH_PR"/>
+      <viewAttribute id="FORK3"/>
+      <viewAttribute id="CAP_BACKFLUSH_TD"/>
+      <viewAttribute id="FORKN"/>
+      <viewAttribute id="VERT1"/>
+      <viewAttribute id="VERTN"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$KAPAR$KAPAR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WCR_CAPACITY_CATEGORY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KAPAR&quot;=&quot;KAPAR_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_FACTORY_CALENDAR_ID_INVALID" source="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZMAX" source="AZMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZNOR" source="AZNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASNE" source="BASNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASZL" source="BASZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGZT" source="BEGZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGRU" source="BRGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDZT" source="ENDZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALID" source="KALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MOSID" source="MOSID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NGRAD" source="NGRAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAUSE" source="PAUSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANR" source="PLANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POOLK" source="POOLK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAN" source="REFAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAZ" source="REFAZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFID" source="REFID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPK" source="SUPPK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSA" source="VERSA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPIE" source="KAPIE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPTER" source="KAPTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAVO" source="KAPAVO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBERLAST" source="UEBERLAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPLPL" source="KAPLPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPEH" source="KAPEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEHR" source="MEHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_UNIT" source="ANG_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MIN" source="ANG_MIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MAX" source="ANG_MAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESTYPE" source="RESTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A" source="CAPACITY_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A_UNIT" source="CAPACITY_A_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_OF_PERIODS" source="NUM_OF_PERIODS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIOD" source="PERIOD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME" source="BUFFERTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME_UNIT" source="BUFFERTIME_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IS_BOTTLENECK" source="IS_BOTTLENECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNDERLOAD" source="UNDERLOAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OVERLAP_BUCKETS" source="OVERLAP_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_ON_GRID" source="START_ON_GRID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP" source="MIN_OVERLAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP_UNIT" source="MIN_OVERLAP_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOSS_FACTOR" source="LOSS_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORT" source="SORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SYNC_START" source="SYNC_START"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFINE_BUCKETS" source="DEFINE_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_MINUS" source="LC_DAYS_MINUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_PLUS" source="LC_DAYS_PLUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_CAPABLE" source="STORAGE_CAPABLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_STORAGE" source="MIN_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAX_STORAGE" source="MAX_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_UNIT" source="STORAGE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIM_STORAGE" source="DIM_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_TO_ZERO" source="STORAGE_TO_ZERO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNPLC" source="SNPLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UTIL_BUCKET" source="UTIL_BUCKET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_PPDS" source="CAMPAIGN_PPDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_SNP" source="CAMPAIGN_SNP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSTREAM_EXTERNAL" source="TSTREAM_EXTERNAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINITY_LEVEL" source="FINITY_LEVEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUANT" source="BR_QUANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUNIT" source="BR_QUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TIME" source="BR_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TUNIT" source="BR_TUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RITT_FLG" source="RITT_FLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MDRMODEL" source="MDRMODEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_DEF_BUCKETS" source="PP_DEF_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_SCHEMA" source="PP_BUCKET_SCHEMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_FACT" source="PP_BUCKET_FACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIX_PLAN_TYPE" source="MIX_PLAN_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDENT" source="IDENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CANUM" source="CANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK1" source="FORK1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_SU" source="CAP_BACKFLUSH_SU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK2" source="FORK2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_PR" source="CAP_BACKFLUSH_PR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK3" source="FORK3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_TD" source="CAP_BACKFLUSH_TD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORKN" source="FORKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERT1" source="VERT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERTN" source="VERTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KAPAR$KAPAR" source="KAPAR"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR_1" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KAPAR$KAPAR" source="KAPAR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$KAPAR$KAPAR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <viewAttribute id="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="AZMAX"/>
+      <viewAttribute id="AZNOR"/>
+      <viewAttribute id="BASNE"/>
+      <viewAttribute id="BASZL"/>
+      <viewAttribute id="BEGZT"/>
+      <viewAttribute id="BRGRU"/>
+      <viewAttribute id="ENDZT"/>
+      <viewAttribute id="KALID"/>
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MOSID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="NGRAD"/>
+      <viewAttribute id="PAUSE"/>
+      <viewAttribute id="PLANR"/>
+      <viewAttribute id="POOLK"/>
+      <viewAttribute id="REFAN"/>
+      <viewAttribute id="REFAZ"/>
+      <viewAttribute id="REFID"/>
+      <viewAttribute id="SUPPK"/>
+      <viewAttribute id="VERSA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KAPIE"/>
+      <viewAttribute id="KAPTER"/>
+      <viewAttribute id="KAPAVO"/>
+      <viewAttribute id="UEBERLAST"/>
+      <viewAttribute id="KAPLPL"/>
+      <viewAttribute id="KAPEH"/>
+      <viewAttribute id="MEHR"/>
+      <viewAttribute id="ANG_UNIT"/>
+      <viewAttribute id="ANG_MIN"/>
+      <viewAttribute id="ANG_MAX"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="RESTYPE"/>
+      <viewAttribute id="CAPACITY_A"/>
+      <viewAttribute id="CAPACITY_A_UNIT"/>
+      <viewAttribute id="NUM_OF_PERIODS"/>
+      <viewAttribute id="PERIOD"/>
+      <viewAttribute id="BUFFERTIME"/>
+      <viewAttribute id="BUFFERTIME_UNIT"/>
+      <viewAttribute id="IS_BOTTLENECK"/>
+      <viewAttribute id="UNDERLOAD"/>
+      <viewAttribute id="OVERLAP_BUCKETS"/>
+      <viewAttribute id="START_ON_GRID"/>
+      <viewAttribute id="MIN_OVERLAP"/>
+      <viewAttribute id="MIN_OVERLAP_UNIT"/>
+      <viewAttribute id="LOSS_FACTOR"/>
+      <viewAttribute id="SORT"/>
+      <viewAttribute id="SYNC_START"/>
+      <viewAttribute id="DEFINE_BUCKETS"/>
+      <viewAttribute id="LC_DAYS_MINUS"/>
+      <viewAttribute id="LC_DAYS_PLUS"/>
+      <viewAttribute id="STORAGE_CAPABLE"/>
+      <viewAttribute id="MIN_STORAGE"/>
+      <viewAttribute id="MAX_STORAGE"/>
+      <viewAttribute id="STORAGE_UNIT"/>
+      <viewAttribute id="DIM_STORAGE"/>
+      <viewAttribute id="STORAGE_TO_ZERO"/>
+      <viewAttribute id="SNPLC"/>
+      <viewAttribute id="UTIL_BUCKET"/>
+      <viewAttribute id="CAMPAIGN_PPDS"/>
+      <viewAttribute id="CAMPAIGN_SNP"/>
+      <viewAttribute id="TSTREAM_EXTERNAL"/>
+      <viewAttribute id="FINITY_LEVEL"/>
+      <viewAttribute id="BR_QUANT"/>
+      <viewAttribute id="BR_QUNIT"/>
+      <viewAttribute id="BR_TIME"/>
+      <viewAttribute id="BR_TUNIT"/>
+      <viewAttribute id="RITT_FLG"/>
+      <viewAttribute id="MDRMODEL"/>
+      <viewAttribute id="PP_DEF_BUCKETS"/>
+      <viewAttribute id="PP_BUCKET_SCHEMA"/>
+      <viewAttribute id="PP_BUCKET_FACT"/>
+      <viewAttribute id="MIX_PLAN_TYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="IDENT"/>
+      <viewAttribute id="KAPAR_1"/>
+      <viewAttribute id="SCHGRUP"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="CANUM"/>
+      <viewAttribute id="FORK1"/>
+      <viewAttribute id="CAP_BACKFLUSH_SU"/>
+      <viewAttribute id="FORK2"/>
+      <viewAttribute id="CAP_BACKFLUSH_PR"/>
+      <viewAttribute id="FORK3"/>
+      <viewAttribute id="CAP_BACKFLUSH_TD"/>
+      <viewAttribute id="FORKN"/>
+      <viewAttribute id="VERT1"/>
+      <viewAttribute id="VERTN"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$MOSID$SCHGRUP"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WCR_SHIFT_GROUP_SEQ_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MOSID&quot;=&quot;SCHGRUP&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_CAPACITY_CATEGORY_INVALID" source="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_FACTORY_CALENDAR_ID_INVALID" source="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZMAX" source="AZMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZNOR" source="AZNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASNE" source="BASNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASZL" source="BASZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGZT" source="BEGZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGRU" source="BRGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDZT" source="ENDZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALID" source="KALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MOSID" source="MOSID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NGRAD" source="NGRAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAUSE" source="PAUSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANR" source="PLANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POOLK" source="POOLK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAN" source="REFAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAZ" source="REFAZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFID" source="REFID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPK" source="SUPPK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSA" source="VERSA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPIE" source="KAPIE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPTER" source="KAPTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAVO" source="KAPAVO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBERLAST" source="UEBERLAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPLPL" source="KAPLPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPEH" source="KAPEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEHR" source="MEHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_UNIT" source="ANG_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MIN" source="ANG_MIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MAX" source="ANG_MAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESTYPE" source="RESTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A" source="CAPACITY_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A_UNIT" source="CAPACITY_A_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_OF_PERIODS" source="NUM_OF_PERIODS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIOD" source="PERIOD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME" source="BUFFERTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME_UNIT" source="BUFFERTIME_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IS_BOTTLENECK" source="IS_BOTTLENECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNDERLOAD" source="UNDERLOAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OVERLAP_BUCKETS" source="OVERLAP_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_ON_GRID" source="START_ON_GRID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP" source="MIN_OVERLAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP_UNIT" source="MIN_OVERLAP_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOSS_FACTOR" source="LOSS_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORT" source="SORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SYNC_START" source="SYNC_START"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFINE_BUCKETS" source="DEFINE_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_MINUS" source="LC_DAYS_MINUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_PLUS" source="LC_DAYS_PLUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_CAPABLE" source="STORAGE_CAPABLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_STORAGE" source="MIN_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAX_STORAGE" source="MAX_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_UNIT" source="STORAGE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIM_STORAGE" source="DIM_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_TO_ZERO" source="STORAGE_TO_ZERO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNPLC" source="SNPLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UTIL_BUCKET" source="UTIL_BUCKET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_PPDS" source="CAMPAIGN_PPDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_SNP" source="CAMPAIGN_SNP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSTREAM_EXTERNAL" source="TSTREAM_EXTERNAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINITY_LEVEL" source="FINITY_LEVEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUANT" source="BR_QUANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUNIT" source="BR_QUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TIME" source="BR_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TUNIT" source="BR_TUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RITT_FLG" source="RITT_FLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MDRMODEL" source="MDRMODEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_DEF_BUCKETS" source="PP_DEF_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_SCHEMA" source="PP_BUCKET_SCHEMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_FACT" source="PP_BUCKET_FACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIX_PLAN_TYPE" source="MIX_PLAN_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDENT" source="IDENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR_1" source="KAPAR_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CANUM" source="CANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK1" source="FORK1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_SU" source="CAP_BACKFLUSH_SU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK2" source="FORK2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_PR" source="CAP_BACKFLUSH_PR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK3" source="FORK3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_TD" source="CAP_BACKFLUSH_TD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORKN" source="FORKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERT1" source="VERT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERTN" source="VERTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MOSID$SCHGRUP" source="MOSID"/>
+    </input>
+    <input node="Projection_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGRUP" source="SCHGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MOSID$SCHGRUP" source="SCHGRUP"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$MOSID$SCHGRUP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_4" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="AZMAX"/>
+      <viewAttribute id="AZNOR"/>
+      <viewAttribute id="BASNE"/>
+      <viewAttribute id="BASZL"/>
+      <viewAttribute id="BEGZT"/>
+      <viewAttribute id="BRGRU"/>
+      <viewAttribute id="ENDZT"/>
+      <viewAttribute id="KALID"/>
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MOSID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="NGRAD"/>
+      <viewAttribute id="PAUSE"/>
+      <viewAttribute id="PLANR"/>
+      <viewAttribute id="POOLK"/>
+      <viewAttribute id="REFAN"/>
+      <viewAttribute id="REFAZ"/>
+      <viewAttribute id="REFID"/>
+      <viewAttribute id="SUPPK"/>
+      <viewAttribute id="VERSA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KAPIE"/>
+      <viewAttribute id="KAPTER"/>
+      <viewAttribute id="KAPAVO"/>
+      <viewAttribute id="UEBERLAST"/>
+      <viewAttribute id="KAPLPL"/>
+      <viewAttribute id="KAPEH"/>
+      <viewAttribute id="MEHR"/>
+      <viewAttribute id="ANG_UNIT"/>
+      <viewAttribute id="ANG_MIN"/>
+      <viewAttribute id="ANG_MAX"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="RESTYPE"/>
+      <viewAttribute id="CAPACITY_A"/>
+      <viewAttribute id="CAPACITY_A_UNIT"/>
+      <viewAttribute id="NUM_OF_PERIODS"/>
+      <viewAttribute id="PERIOD"/>
+      <viewAttribute id="BUFFERTIME"/>
+      <viewAttribute id="BUFFERTIME_UNIT"/>
+      <viewAttribute id="IS_BOTTLENECK"/>
+      <viewAttribute id="UNDERLOAD"/>
+      <viewAttribute id="OVERLAP_BUCKETS"/>
+      <viewAttribute id="START_ON_GRID"/>
+      <viewAttribute id="MIN_OVERLAP"/>
+      <viewAttribute id="MIN_OVERLAP_UNIT"/>
+      <viewAttribute id="LOSS_FACTOR"/>
+      <viewAttribute id="SORT"/>
+      <viewAttribute id="SYNC_START"/>
+      <viewAttribute id="DEFINE_BUCKETS"/>
+      <viewAttribute id="LC_DAYS_MINUS"/>
+      <viewAttribute id="LC_DAYS_PLUS"/>
+      <viewAttribute id="STORAGE_CAPABLE"/>
+      <viewAttribute id="MIN_STORAGE"/>
+      <viewAttribute id="MAX_STORAGE"/>
+      <viewAttribute id="STORAGE_UNIT"/>
+      <viewAttribute id="DIM_STORAGE"/>
+      <viewAttribute id="STORAGE_TO_ZERO"/>
+      <viewAttribute id="SNPLC"/>
+      <viewAttribute id="UTIL_BUCKET"/>
+      <viewAttribute id="CAMPAIGN_PPDS"/>
+      <viewAttribute id="CAMPAIGN_SNP"/>
+      <viewAttribute id="TSTREAM_EXTERNAL"/>
+      <viewAttribute id="FINITY_LEVEL"/>
+      <viewAttribute id="BR_QUANT"/>
+      <viewAttribute id="BR_QUNIT"/>
+      <viewAttribute id="BR_TIME"/>
+      <viewAttribute id="BR_TUNIT"/>
+      <viewAttribute id="RITT_FLG"/>
+      <viewAttribute id="MDRMODEL"/>
+      <viewAttribute id="PP_DEF_BUCKETS"/>
+      <viewAttribute id="PP_BUCKET_SCHEMA"/>
+      <viewAttribute id="PP_BUCKET_FACT"/>
+      <viewAttribute id="MIX_PLAN_TYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="IDENT"/>
+      <viewAttribute id="KAPAR_1"/>
+      <viewAttribute id="SCHGRUP"/>
+      <viewAttribute id="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <viewAttribute id="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <viewAttribute id="WCR_SHIFT_GROUP_SEQ_INVALID"/>
+      <viewAttribute id="PLANR_1"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="CANUM"/>
+      <viewAttribute id="FORK1"/>
+      <viewAttribute id="CAP_BACKFLUSH_SU"/>
+      <viewAttribute id="FORK2"/>
+      <viewAttribute id="CAP_BACKFLUSH_PR"/>
+      <viewAttribute id="FORK3"/>
+      <viewAttribute id="CAP_BACKFLUSH_TD"/>
+      <viewAttribute id="FORKN"/>
+      <viewAttribute id="VERT1"/>
+      <viewAttribute id="VERTN"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$PLANR$PLANR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WCR_CAPACITY_PLANNER_GROUP_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PLANR&quot;=&quot;PLANR_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_CAPACITY_CATEGORY_INVALID" source="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_FACTORY_CALENDAR_ID_INVALID" source="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZMAX" source="AZMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZNOR" source="AZNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASNE" source="BASNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASZL" source="BASZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGZT" source="BEGZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGRU" source="BRGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDZT" source="ENDZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALID" source="KALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MOSID" source="MOSID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NGRAD" source="NGRAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAUSE" source="PAUSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANR" source="PLANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POOLK" source="POOLK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAN" source="REFAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAZ" source="REFAZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFID" source="REFID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPK" source="SUPPK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSA" source="VERSA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPIE" source="KAPIE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPTER" source="KAPTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAVO" source="KAPAVO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBERLAST" source="UEBERLAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPLPL" source="KAPLPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPEH" source="KAPEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEHR" source="MEHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_UNIT" source="ANG_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MIN" source="ANG_MIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MAX" source="ANG_MAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESTYPE" source="RESTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A" source="CAPACITY_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A_UNIT" source="CAPACITY_A_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_OF_PERIODS" source="NUM_OF_PERIODS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIOD" source="PERIOD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME" source="BUFFERTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME_UNIT" source="BUFFERTIME_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IS_BOTTLENECK" source="IS_BOTTLENECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNDERLOAD" source="UNDERLOAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OVERLAP_BUCKETS" source="OVERLAP_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_ON_GRID" source="START_ON_GRID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP" source="MIN_OVERLAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP_UNIT" source="MIN_OVERLAP_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOSS_FACTOR" source="LOSS_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORT" source="SORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SYNC_START" source="SYNC_START"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFINE_BUCKETS" source="DEFINE_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_MINUS" source="LC_DAYS_MINUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_PLUS" source="LC_DAYS_PLUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_CAPABLE" source="STORAGE_CAPABLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_STORAGE" source="MIN_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAX_STORAGE" source="MAX_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_UNIT" source="STORAGE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIM_STORAGE" source="DIM_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_TO_ZERO" source="STORAGE_TO_ZERO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNPLC" source="SNPLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UTIL_BUCKET" source="UTIL_BUCKET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_PPDS" source="CAMPAIGN_PPDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_SNP" source="CAMPAIGN_SNP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSTREAM_EXTERNAL" source="TSTREAM_EXTERNAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINITY_LEVEL" source="FINITY_LEVEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUANT" source="BR_QUANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUNIT" source="BR_QUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TIME" source="BR_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TUNIT" source="BR_TUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RITT_FLG" source="RITT_FLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MDRMODEL" source="MDRMODEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_DEF_BUCKETS" source="PP_DEF_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_SCHEMA" source="PP_BUCKET_SCHEMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_FACT" source="PP_BUCKET_FACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIX_PLAN_TYPE" source="MIX_PLAN_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDENT" source="IDENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR_1" source="KAPAR_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGRUP" source="SCHGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_SHIFT_GROUP_SEQ_INVALID" source="WCR_SHIFT_GROUP_SEQ_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CANUM" source="CANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK1" source="FORK1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_SU" source="CAP_BACKFLUSH_SU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK2" source="FORK2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_PR" source="CAP_BACKFLUSH_PR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK3" source="FORK3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_TD" source="CAP_BACKFLUSH_TD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORKN" source="FORKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERT1" source="VERT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERTN" source="VERTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PLANR$PLANR" source="PLANR"/>
+    </input>
+    <input node="Projection_5">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANR_1" source="PLANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PLANR$PLANR" source="PLANR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$PLANR$PLANR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_5" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="AZMAX"/>
+      <viewAttribute id="AZNOR"/>
+      <viewAttribute id="BASNE"/>
+      <viewAttribute id="BASZL"/>
+      <viewAttribute id="BEGZT"/>
+      <viewAttribute id="BRGRU"/>
+      <viewAttribute id="ENDZT"/>
+      <viewAttribute id="KALID"/>
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MOSID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="NGRAD"/>
+      <viewAttribute id="PAUSE"/>
+      <viewAttribute id="PLANR"/>
+      <viewAttribute id="POOLK"/>
+      <viewAttribute id="REFAN"/>
+      <viewAttribute id="REFAZ"/>
+      <viewAttribute id="REFID"/>
+      <viewAttribute id="SUPPK"/>
+      <viewAttribute id="VERSA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KAPIE"/>
+      <viewAttribute id="KAPTER"/>
+      <viewAttribute id="KAPAVO"/>
+      <viewAttribute id="UEBERLAST"/>
+      <viewAttribute id="KAPLPL"/>
+      <viewAttribute id="KAPEH"/>
+      <viewAttribute id="MEHR"/>
+      <viewAttribute id="ANG_UNIT"/>
+      <viewAttribute id="ANG_MIN"/>
+      <viewAttribute id="ANG_MAX"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="RESTYPE"/>
+      <viewAttribute id="CAPACITY_A"/>
+      <viewAttribute id="CAPACITY_A_UNIT"/>
+      <viewAttribute id="NUM_OF_PERIODS"/>
+      <viewAttribute id="PERIOD"/>
+      <viewAttribute id="BUFFERTIME"/>
+      <viewAttribute id="BUFFERTIME_UNIT"/>
+      <viewAttribute id="IS_BOTTLENECK"/>
+      <viewAttribute id="UNDERLOAD"/>
+      <viewAttribute id="OVERLAP_BUCKETS"/>
+      <viewAttribute id="START_ON_GRID"/>
+      <viewAttribute id="MIN_OVERLAP"/>
+      <viewAttribute id="MIN_OVERLAP_UNIT"/>
+      <viewAttribute id="LOSS_FACTOR"/>
+      <viewAttribute id="SORT"/>
+      <viewAttribute id="SYNC_START"/>
+      <viewAttribute id="DEFINE_BUCKETS"/>
+      <viewAttribute id="LC_DAYS_MINUS"/>
+      <viewAttribute id="LC_DAYS_PLUS"/>
+      <viewAttribute id="STORAGE_CAPABLE"/>
+      <viewAttribute id="MIN_STORAGE"/>
+      <viewAttribute id="MAX_STORAGE"/>
+      <viewAttribute id="STORAGE_UNIT"/>
+      <viewAttribute id="DIM_STORAGE"/>
+      <viewAttribute id="STORAGE_TO_ZERO"/>
+      <viewAttribute id="SNPLC"/>
+      <viewAttribute id="UTIL_BUCKET"/>
+      <viewAttribute id="CAMPAIGN_PPDS"/>
+      <viewAttribute id="CAMPAIGN_SNP"/>
+      <viewAttribute id="TSTREAM_EXTERNAL"/>
+      <viewAttribute id="FINITY_LEVEL"/>
+      <viewAttribute id="BR_QUANT"/>
+      <viewAttribute id="BR_QUNIT"/>
+      <viewAttribute id="BR_TIME"/>
+      <viewAttribute id="BR_TUNIT"/>
+      <viewAttribute id="RITT_FLG"/>
+      <viewAttribute id="MDRMODEL"/>
+      <viewAttribute id="PP_DEF_BUCKETS"/>
+      <viewAttribute id="PP_BUCKET_SCHEMA"/>
+      <viewAttribute id="PP_BUCKET_FACT"/>
+      <viewAttribute id="MIX_PLAN_TYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="IDENT"/>
+      <viewAttribute id="KAPAR_1"/>
+      <viewAttribute id="SCHGRUP"/>
+      <viewAttribute id="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <viewAttribute id="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <viewAttribute id="WCR_SHIFT_GROUP_SEQ_INVALID"/>
+      <viewAttribute id="VERSN"/>
+      <viewAttribute id="WCR_CAPACITY_PLANNER_GROUP_INVALID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="CANUM"/>
+      <viewAttribute id="FORK1"/>
+      <viewAttribute id="CAP_BACKFLUSH_SU"/>
+      <viewAttribute id="FORK2"/>
+      <viewAttribute id="CAP_BACKFLUSH_PR"/>
+      <viewAttribute id="FORK3"/>
+      <viewAttribute id="CAP_BACKFLUSH_TD"/>
+      <viewAttribute id="FORKN"/>
+      <viewAttribute id="VERT1"/>
+      <viewAttribute id="VERTN"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$VERSA$VERSN"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WCR_ACTIVE_VER_CAPACITY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;VERSA&quot;=&quot;VERSN&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZMAX" source="AZMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZNOR" source="AZNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASNE" source="BASNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASZL" source="BASZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGZT" source="BEGZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGRU" source="BRGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDZT" source="ENDZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALID" source="KALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MOSID" source="MOSID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NGRAD" source="NGRAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAUSE" source="PAUSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANR" source="PLANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POOLK" source="POOLK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAN" source="REFAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAZ" source="REFAZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFID" source="REFID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPK" source="SUPPK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSA" source="VERSA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPIE" source="KAPIE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPTER" source="KAPTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAVO" source="KAPAVO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBERLAST" source="UEBERLAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPLPL" source="KAPLPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPEH" source="KAPEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEHR" source="MEHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_UNIT" source="ANG_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MIN" source="ANG_MIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MAX" source="ANG_MAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESTYPE" source="RESTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A" source="CAPACITY_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A_UNIT" source="CAPACITY_A_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_OF_PERIODS" source="NUM_OF_PERIODS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIOD" source="PERIOD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME" source="BUFFERTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME_UNIT" source="BUFFERTIME_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IS_BOTTLENECK" source="IS_BOTTLENECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNDERLOAD" source="UNDERLOAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OVERLAP_BUCKETS" source="OVERLAP_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_ON_GRID" source="START_ON_GRID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP" source="MIN_OVERLAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP_UNIT" source="MIN_OVERLAP_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOSS_FACTOR" source="LOSS_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORT" source="SORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SYNC_START" source="SYNC_START"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFINE_BUCKETS" source="DEFINE_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_MINUS" source="LC_DAYS_MINUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_PLUS" source="LC_DAYS_PLUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_CAPABLE" source="STORAGE_CAPABLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_STORAGE" source="MIN_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAX_STORAGE" source="MAX_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_UNIT" source="STORAGE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIM_STORAGE" source="DIM_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_TO_ZERO" source="STORAGE_TO_ZERO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNPLC" source="SNPLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UTIL_BUCKET" source="UTIL_BUCKET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_PPDS" source="CAMPAIGN_PPDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_SNP" source="CAMPAIGN_SNP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSTREAM_EXTERNAL" source="TSTREAM_EXTERNAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINITY_LEVEL" source="FINITY_LEVEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUANT" source="BR_QUANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUNIT" source="BR_QUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TIME" source="BR_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TUNIT" source="BR_TUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RITT_FLG" source="RITT_FLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MDRMODEL" source="MDRMODEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_DEF_BUCKETS" source="PP_DEF_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_SCHEMA" source="PP_BUCKET_SCHEMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_FACT" source="PP_BUCKET_FACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIX_PLAN_TYPE" source="MIX_PLAN_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDENT" source="IDENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR_1" source="KAPAR_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGRUP" source="SCHGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_CAPACITY_CATEGORY_INVALID" source="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_FACTORY_CALENDAR_ID_INVALID" source="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_SHIFT_GROUP_SEQ_INVALID" source="WCR_SHIFT_GROUP_SEQ_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_CAPACITY_PLANNER_GROUP_INVALID" source="WCR_CAPACITY_PLANNER_GROUP_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CANUM" source="CANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK1" source="FORK1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_SU" source="CAP_BACKFLUSH_SU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK2" source="FORK2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_PR" source="CAP_BACKFLUSH_PR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK3" source="FORK3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_TD" source="CAP_BACKFLUSH_TD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORKN" source="FORKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERT1" source="VERT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERTN" source="VERTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VERSA$VERSN" source="VERSA"/>
+    </input>
+    <input node="Projection_6">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSN" source="VERSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VERSA$VERSN" source="VERSN"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$VERSA$VERSN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_6" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="WCR_ACTIVE_VER_CAPACITY_INVALID"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="AZMAX"/>
+      <viewAttribute id="AZNOR"/>
+      <viewAttribute id="BASNE"/>
+      <viewAttribute id="BASZL"/>
+      <viewAttribute id="BEGZT"/>
+      <viewAttribute id="BRGRU"/>
+      <viewAttribute id="ENDZT"/>
+      <viewAttribute id="KALID"/>
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MOSID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="NGRAD"/>
+      <viewAttribute id="PAUSE"/>
+      <viewAttribute id="PLANR"/>
+      <viewAttribute id="POOLK"/>
+      <viewAttribute id="REFAN"/>
+      <viewAttribute id="REFAZ"/>
+      <viewAttribute id="REFID"/>
+      <viewAttribute id="SUPPK"/>
+      <viewAttribute id="VERSA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KAPIE"/>
+      <viewAttribute id="KAPTER"/>
+      <viewAttribute id="KAPAVO"/>
+      <viewAttribute id="UEBERLAST"/>
+      <viewAttribute id="KAPLPL"/>
+      <viewAttribute id="KAPEH"/>
+      <viewAttribute id="MEHR"/>
+      <viewAttribute id="ANG_UNIT"/>
+      <viewAttribute id="ANG_MIN"/>
+      <viewAttribute id="ANG_MAX"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="RESTYPE"/>
+      <viewAttribute id="CAPACITY_A"/>
+      <viewAttribute id="CAPACITY_A_UNIT"/>
+      <viewAttribute id="NUM_OF_PERIODS"/>
+      <viewAttribute id="PERIOD"/>
+      <viewAttribute id="BUFFERTIME"/>
+      <viewAttribute id="BUFFERTIME_UNIT"/>
+      <viewAttribute id="IS_BOTTLENECK"/>
+      <viewAttribute id="UNDERLOAD"/>
+      <viewAttribute id="OVERLAP_BUCKETS"/>
+      <viewAttribute id="START_ON_GRID"/>
+      <viewAttribute id="MIN_OVERLAP"/>
+      <viewAttribute id="MIN_OVERLAP_UNIT"/>
+      <viewAttribute id="LOSS_FACTOR"/>
+      <viewAttribute id="SORT"/>
+      <viewAttribute id="SYNC_START"/>
+      <viewAttribute id="DEFINE_BUCKETS"/>
+      <viewAttribute id="LC_DAYS_MINUS"/>
+      <viewAttribute id="LC_DAYS_PLUS"/>
+      <viewAttribute id="STORAGE_CAPABLE"/>
+      <viewAttribute id="MIN_STORAGE"/>
+      <viewAttribute id="MAX_STORAGE"/>
+      <viewAttribute id="STORAGE_UNIT"/>
+      <viewAttribute id="DIM_STORAGE"/>
+      <viewAttribute id="STORAGE_TO_ZERO"/>
+      <viewAttribute id="SNPLC"/>
+      <viewAttribute id="UTIL_BUCKET"/>
+      <viewAttribute id="CAMPAIGN_PPDS"/>
+      <viewAttribute id="CAMPAIGN_SNP"/>
+      <viewAttribute id="TSTREAM_EXTERNAL"/>
+      <viewAttribute id="FINITY_LEVEL"/>
+      <viewAttribute id="BR_QUANT"/>
+      <viewAttribute id="BR_QUNIT"/>
+      <viewAttribute id="BR_TIME"/>
+      <viewAttribute id="BR_TUNIT"/>
+      <viewAttribute id="RITT_FLG"/>
+      <viewAttribute id="MDRMODEL"/>
+      <viewAttribute id="PP_DEF_BUCKETS"/>
+      <viewAttribute id="PP_BUCKET_SCHEMA"/>
+      <viewAttribute id="PP_BUCKET_FACT"/>
+      <viewAttribute id="MIX_PLAN_TYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="IDENT"/>
+      <viewAttribute id="KAPAR_1"/>
+      <viewAttribute id="SCHGRUP"/>
+      <viewAttribute id="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <viewAttribute id="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <viewAttribute id="WCR_SHIFT_GROUP_SEQ_INVALID"/>
+      <viewAttribute id="VERSN"/>
+      <viewAttribute id="WERKS_1"/>
+      <viewAttribute id="WCR_CAPACITY_PLANNER_GROUP_INVALID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="CANUM"/>
+      <viewAttribute id="FORK1"/>
+      <viewAttribute id="CAP_BACKFLUSH_SU"/>
+      <viewAttribute id="FORK2"/>
+      <viewAttribute id="CAP_BACKFLUSH_PR"/>
+      <viewAttribute id="FORK3"/>
+      <viewAttribute id="CAP_BACKFLUSH_TD"/>
+      <viewAttribute id="FORKN"/>
+      <viewAttribute id="VERT1"/>
+      <viewAttribute id="VERTN"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WCR_PLANT_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=&quot;WERKS_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_5">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_ACTIVE_VER_CAPACITY_INVALID" source="WCR_ACTIVE_VER_CAPACITY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZMAX" source="AZMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AZNOR" source="AZNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASNE" source="BASNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BASZL" source="BASZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGZT" source="BEGZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGRU" source="BRGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDZT" source="ENDZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALID" source="KALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MOSID" source="MOSID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NGRAD" source="NGRAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAUSE" source="PAUSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANR" source="PLANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POOLK" source="POOLK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAN" source="REFAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFAZ" source="REFAZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REFID" source="REFID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPK" source="SUPPK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSA" source="VERSA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPIE" source="KAPIE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPTER" source="KAPTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAVO" source="KAPAVO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBERLAST" source="UEBERLAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPLPL" source="KAPLPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPEH" source="KAPEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEHR" source="MEHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_UNIT" source="ANG_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MIN" source="ANG_MIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANG_MAX" source="ANG_MAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESTYPE" source="RESTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A" source="CAPACITY_A"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAPACITY_A_UNIT" source="CAPACITY_A_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_OF_PERIODS" source="NUM_OF_PERIODS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERIOD" source="PERIOD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME" source="BUFFERTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUFFERTIME_UNIT" source="BUFFERTIME_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IS_BOTTLENECK" source="IS_BOTTLENECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNDERLOAD" source="UNDERLOAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OVERLAP_BUCKETS" source="OVERLAP_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_ON_GRID" source="START_ON_GRID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP" source="MIN_OVERLAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_OVERLAP_UNIT" source="MIN_OVERLAP_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOSS_FACTOR" source="LOSS_FACTOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORT" source="SORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SYNC_START" source="SYNC_START"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFINE_BUCKETS" source="DEFINE_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_MINUS" source="LC_DAYS_MINUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LC_DAYS_PLUS" source="LC_DAYS_PLUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_CAPABLE" source="STORAGE_CAPABLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_STORAGE" source="MIN_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAX_STORAGE" source="MAX_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_UNIT" source="STORAGE_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIM_STORAGE" source="DIM_STORAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_TO_ZERO" source="STORAGE_TO_ZERO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNPLC" source="SNPLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UTIL_BUCKET" source="UTIL_BUCKET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_PPDS" source="CAMPAIGN_PPDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAMPAIGN_SNP" source="CAMPAIGN_SNP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSTREAM_EXTERNAL" source="TSTREAM_EXTERNAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINITY_LEVEL" source="FINITY_LEVEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUANT" source="BR_QUANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_QUNIT" source="BR_QUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TIME" source="BR_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BR_TUNIT" source="BR_TUNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RITT_FLG" source="RITT_FLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MDRMODEL" source="MDRMODEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_DEF_BUCKETS" source="PP_DEF_BUCKETS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_SCHEMA" source="PP_BUCKET_SCHEMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PP_BUCKET_FACT" source="PP_BUCKET_FACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIX_PLAN_TYPE" source="MIX_PLAN_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDENT" source="IDENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR_1" source="KAPAR_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGRUP" source="SCHGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_CAPACITY_CATEGORY_INVALID" source="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_FACTORY_CALENDAR_ID_INVALID" source="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_SHIFT_GROUP_SEQ_INVALID" source="WCR_SHIFT_GROUP_SEQ_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSN" source="VERSN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WCR_CAPACITY_PLANNER_GROUP_INVALID" source="WCR_CAPACITY_PLANNER_GROUP_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CANUM" source="CANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK1" source="FORK1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_SU" source="CAP_BACKFLUSH_SU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK2" source="FORK2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_PR" source="CAP_BACKFLUSH_PR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORK3" source="FORK3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_BACKFLUSH_TD" source="CAP_BACKFLUSH_TD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORKN" source="FORKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERT1" source="VERT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERTN" source="VERTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+    </input>
+    <input node="Projection_7">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_1" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$WERKS$WERKS"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_6">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Join_6" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KAPID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAPID"/>
+      <keyMapping columnObjectName="Join_6" columnName="KAPID"/>
+    </attribute>
+    <attribute id="AZMAX" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AZMAX"/>
+      <keyMapping columnObjectName="Join_6" columnName="AZMAX"/>
+    </attribute>
+    <attribute id="AZNOR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AZNOR"/>
+      <keyMapping columnObjectName="Join_6" columnName="AZNOR"/>
+    </attribute>
+    <attribute id="BASNE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BASNE"/>
+      <keyMapping columnObjectName="Join_6" columnName="BASNE"/>
+    </attribute>
+    <attribute id="BASZL" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BASZL"/>
+      <keyMapping columnObjectName="Join_6" columnName="BASZL"/>
+    </attribute>
+    <attribute id="BEGZT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEGZT"/>
+      <keyMapping columnObjectName="Join_6" columnName="BEGZT"/>
+    </attribute>
+    <attribute id="BRGRU" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRGRU"/>
+      <keyMapping columnObjectName="Join_6" columnName="BRGRU"/>
+    </attribute>
+    <attribute id="ENDZT" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ENDZT"/>
+      <keyMapping columnObjectName="Join_6" columnName="ENDZT"/>
+    </attribute>
+    <attribute id="KALID" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KALID"/>
+      <keyMapping columnObjectName="Join_6" columnName="KALID"/>
+    </attribute>
+    <attribute id="KAPAR" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAPAR"/>
+      <keyMapping columnObjectName="Join_6" columnName="KAPAR"/>
+    </attribute>
+    <attribute id="MEINS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINS"/>
+      <keyMapping columnObjectName="Join_6" columnName="MEINS"/>
+    </attribute>
+    <attribute id="MOSID" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MOSID"/>
+      <keyMapping columnObjectName="Join_6" columnName="MOSID"/>
+    </attribute>
+    <attribute id="NAME" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME"/>
+      <keyMapping columnObjectName="Join_6" columnName="NAME"/>
+    </attribute>
+    <attribute id="NGRAD" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NGRAD"/>
+      <keyMapping columnObjectName="Join_6" columnName="NGRAD"/>
+    </attribute>
+    <attribute id="PAUSE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAUSE"/>
+      <keyMapping columnObjectName="Join_6" columnName="PAUSE"/>
+    </attribute>
+    <attribute id="PLANR" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANR"/>
+      <keyMapping columnObjectName="Join_6" columnName="PLANR"/>
+    </attribute>
+    <attribute id="POOLK" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POOLK"/>
+      <keyMapping columnObjectName="Join_6" columnName="POOLK"/>
+    </attribute>
+    <attribute id="REFAN" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REFAN"/>
+      <keyMapping columnObjectName="Join_6" columnName="REFAN"/>
+    </attribute>
+    <attribute id="REFAZ" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REFAZ"/>
+      <keyMapping columnObjectName="Join_6" columnName="REFAZ"/>
+    </attribute>
+    <attribute id="REFID" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REFID"/>
+      <keyMapping columnObjectName="Join_6" columnName="REFID"/>
+    </attribute>
+    <attribute id="SUPPK" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUPPK"/>
+      <keyMapping columnObjectName="Join_6" columnName="SUPPK"/>
+    </attribute>
+    <attribute id="VERSA" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERSA"/>
+      <keyMapping columnObjectName="Join_6" columnName="VERSA"/>
+    </attribute>
+    <attribute id="WERKS" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Join_6" columnName="WERKS"/>
+    </attribute>
+    <attribute id="KAPIE" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAPIE"/>
+      <keyMapping columnObjectName="Join_6" columnName="KAPIE"/>
+    </attribute>
+    <attribute id="KAPTER" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAPTER"/>
+      <keyMapping columnObjectName="Join_6" columnName="KAPTER"/>
+    </attribute>
+    <attribute id="KAPAVO" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAPAVO"/>
+      <keyMapping columnObjectName="Join_6" columnName="KAPAVO"/>
+    </attribute>
+    <attribute id="UEBERLAST" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UEBERLAST"/>
+      <keyMapping columnObjectName="Join_6" columnName="UEBERLAST"/>
+    </attribute>
+    <attribute id="KAPLPL" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAPLPL"/>
+      <keyMapping columnObjectName="Join_6" columnName="KAPLPL"/>
+    </attribute>
+    <attribute id="KAPEH" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAPEH"/>
+      <keyMapping columnObjectName="Join_6" columnName="KAPEH"/>
+    </attribute>
+    <attribute id="MEHR" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEHR"/>
+      <keyMapping columnObjectName="Join_6" columnName="MEHR"/>
+    </attribute>
+    <attribute id="ANG_UNIT" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANG_UNIT"/>
+      <keyMapping columnObjectName="Join_6" columnName="ANG_UNIT"/>
+    </attribute>
+    <attribute id="ANG_MIN" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANG_MIN"/>
+      <keyMapping columnObjectName="Join_6" columnName="ANG_MIN"/>
+    </attribute>
+    <attribute id="ANG_MAX" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANG_MAX"/>
+      <keyMapping columnObjectName="Join_6" columnName="ANG_MAX"/>
+    </attribute>
+    <attribute id="TYPE" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TYPE"/>
+      <keyMapping columnObjectName="Join_6" columnName="TYPE"/>
+    </attribute>
+    <attribute id="RESTYPE" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RESTYPE"/>
+      <keyMapping columnObjectName="Join_6" columnName="RESTYPE"/>
+    </attribute>
+    <attribute id="CAPACITY_A" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAPACITY_A"/>
+      <keyMapping columnObjectName="Join_6" columnName="CAPACITY_A"/>
+    </attribute>
+    <attribute id="CAPACITY_A_UNIT" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAPACITY_A_UNIT"/>
+      <keyMapping columnObjectName="Join_6" columnName="CAPACITY_A_UNIT"/>
+    </attribute>
+    <attribute id="NUM_OF_PERIODS" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NUM_OF_PERIODS"/>
+      <keyMapping columnObjectName="Join_6" columnName="NUM_OF_PERIODS"/>
+    </attribute>
+    <attribute id="PERIOD" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERIOD"/>
+      <keyMapping columnObjectName="Join_6" columnName="PERIOD"/>
+    </attribute>
+    <attribute id="BUFFERTIME" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUFFERTIME"/>
+      <keyMapping columnObjectName="Join_6" columnName="BUFFERTIME"/>
+    </attribute>
+    <attribute id="BUFFERTIME_UNIT" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUFFERTIME_UNIT"/>
+      <keyMapping columnObjectName="Join_6" columnName="BUFFERTIME_UNIT"/>
+    </attribute>
+    <attribute id="IS_BOTTLENECK" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IS_BOTTLENECK"/>
+      <keyMapping columnObjectName="Join_6" columnName="IS_BOTTLENECK"/>
+    </attribute>
+    <attribute id="UNDERLOAD" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UNDERLOAD"/>
+      <keyMapping columnObjectName="Join_6" columnName="UNDERLOAD"/>
+    </attribute>
+    <attribute id="OVERLAP_BUCKETS" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OVERLAP_BUCKETS"/>
+      <keyMapping columnObjectName="Join_6" columnName="OVERLAP_BUCKETS"/>
+    </attribute>
+    <attribute id="START_ON_GRID" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="START_ON_GRID"/>
+      <keyMapping columnObjectName="Join_6" columnName="START_ON_GRID"/>
+    </attribute>
+    <attribute id="MIN_OVERLAP" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MIN_OVERLAP"/>
+      <keyMapping columnObjectName="Join_6" columnName="MIN_OVERLAP"/>
+    </attribute>
+    <attribute id="MIN_OVERLAP_UNIT" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MIN_OVERLAP_UNIT"/>
+      <keyMapping columnObjectName="Join_6" columnName="MIN_OVERLAP_UNIT"/>
+    </attribute>
+    <attribute id="LOSS_FACTOR" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOSS_FACTOR"/>
+      <keyMapping columnObjectName="Join_6" columnName="LOSS_FACTOR"/>
+    </attribute>
+    <attribute id="SORT" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SORT"/>
+      <keyMapping columnObjectName="Join_6" columnName="SORT"/>
+    </attribute>
+    <attribute id="SYNC_START" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SYNC_START"/>
+      <keyMapping columnObjectName="Join_6" columnName="SYNC_START"/>
+    </attribute>
+    <attribute id="DEFINE_BUCKETS" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DEFINE_BUCKETS"/>
+      <keyMapping columnObjectName="Join_6" columnName="DEFINE_BUCKETS"/>
+    </attribute>
+    <attribute id="LC_DAYS_MINUS" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LC_DAYS_MINUS"/>
+      <keyMapping columnObjectName="Join_6" columnName="LC_DAYS_MINUS"/>
+    </attribute>
+    <attribute id="LC_DAYS_PLUS" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LC_DAYS_PLUS"/>
+      <keyMapping columnObjectName="Join_6" columnName="LC_DAYS_PLUS"/>
+    </attribute>
+    <attribute id="STORAGE_CAPABLE" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORAGE_CAPABLE"/>
+      <keyMapping columnObjectName="Join_6" columnName="STORAGE_CAPABLE"/>
+    </attribute>
+    <attribute id="MIN_STORAGE" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MIN_STORAGE"/>
+      <keyMapping columnObjectName="Join_6" columnName="MIN_STORAGE"/>
+    </attribute>
+    <attribute id="MAX_STORAGE" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAX_STORAGE"/>
+      <keyMapping columnObjectName="Join_6" columnName="MAX_STORAGE"/>
+    </attribute>
+    <attribute id="STORAGE_UNIT" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORAGE_UNIT"/>
+      <keyMapping columnObjectName="Join_6" columnName="STORAGE_UNIT"/>
+    </attribute>
+    <attribute id="DIM_STORAGE" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DIM_STORAGE"/>
+      <keyMapping columnObjectName="Join_6" columnName="DIM_STORAGE"/>
+    </attribute>
+    <attribute id="STORAGE_TO_ZERO" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORAGE_TO_ZERO"/>
+      <keyMapping columnObjectName="Join_6" columnName="STORAGE_TO_ZERO"/>
+    </attribute>
+    <attribute id="SNPLC" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SNPLC"/>
+      <keyMapping columnObjectName="Join_6" columnName="SNPLC"/>
+    </attribute>
+    <attribute id="UTIL_BUCKET" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UTIL_BUCKET"/>
+      <keyMapping columnObjectName="Join_6" columnName="UTIL_BUCKET"/>
+    </attribute>
+    <attribute id="CAMPAIGN_PPDS" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAMPAIGN_PPDS"/>
+      <keyMapping columnObjectName="Join_6" columnName="CAMPAIGN_PPDS"/>
+    </attribute>
+    <attribute id="CAMPAIGN_SNP" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAMPAIGN_SNP"/>
+      <keyMapping columnObjectName="Join_6" columnName="CAMPAIGN_SNP"/>
+    </attribute>
+    <attribute id="TSTREAM_EXTERNAL" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TSTREAM_EXTERNAL"/>
+      <keyMapping columnObjectName="Join_6" columnName="TSTREAM_EXTERNAL"/>
+    </attribute>
+    <attribute id="FINITY_LEVEL" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FINITY_LEVEL"/>
+      <keyMapping columnObjectName="Join_6" columnName="FINITY_LEVEL"/>
+    </attribute>
+    <attribute id="BR_QUANT" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BR_QUANT"/>
+      <keyMapping columnObjectName="Join_6" columnName="BR_QUANT"/>
+    </attribute>
+    <attribute id="BR_QUNIT" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BR_QUNIT"/>
+      <keyMapping columnObjectName="Join_6" columnName="BR_QUNIT"/>
+    </attribute>
+    <attribute id="BR_TIME" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BR_TIME"/>
+      <keyMapping columnObjectName="Join_6" columnName="BR_TIME"/>
+    </attribute>
+    <attribute id="BR_TUNIT" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BR_TUNIT"/>
+      <keyMapping columnObjectName="Join_6" columnName="BR_TUNIT"/>
+    </attribute>
+    <attribute id="RITT_FLG" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RITT_FLG"/>
+      <keyMapping columnObjectName="Join_6" columnName="RITT_FLG"/>
+    </attribute>
+    <attribute id="MDRMODEL" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MDRMODEL"/>
+      <keyMapping columnObjectName="Join_6" columnName="MDRMODEL"/>
+    </attribute>
+    <attribute id="PP_DEF_BUCKETS" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PP_DEF_BUCKETS"/>
+      <keyMapping columnObjectName="Join_6" columnName="PP_DEF_BUCKETS"/>
+    </attribute>
+    <attribute id="PP_BUCKET_SCHEMA" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PP_BUCKET_SCHEMA"/>
+      <keyMapping columnObjectName="Join_6" columnName="PP_BUCKET_SCHEMA"/>
+    </attribute>
+    <attribute id="PP_BUCKET_FACT" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PP_BUCKET_FACT"/>
+      <keyMapping columnObjectName="Join_6" columnName="PP_BUCKET_FACT"/>
+    </attribute>
+    <attribute id="MIX_PLAN_TYPE" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MIX_PLAN_TYPE"/>
+      <keyMapping columnObjectName="Join_6" columnName="MIX_PLAN_TYPE"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Join_6" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="WCR_ACTIVE_VER_CAPACITY_INVALID" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WCR_ACTIVE_VER_CAPACITY_INVALID"/>
+      <keyMapping columnObjectName="Join_6" columnName="WCR_ACTIVE_VER_CAPACITY_INVALID"/>
+    </attribute>
+    <attribute id="WCR_CAPACITY_CATEGORY_INVALID" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WCR_CAPACITY_CATEGORY_INVALID"/>
+      <keyMapping columnObjectName="Join_6" columnName="WCR_CAPACITY_CATEGORY_INVALID"/>
+    </attribute>
+    <attribute id="WCR_FACTORY_CALENDAR_ID_INVALID" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+      <keyMapping columnObjectName="Join_6" columnName="WCR_FACTORY_CALENDAR_ID_INVALID"/>
+    </attribute>
+    <attribute id="WCR_SHIFT_GROUP_SEQ_INVALID" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WCR_SHIFT_GROUP_SEQ_INVALID"/>
+      <keyMapping columnObjectName="Join_6" columnName="WCR_SHIFT_GROUP_SEQ_INVALID"/>
+    </attribute>
+    <attribute id="WCR_PLANT_INVALID" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WCR_PLANT_INVALID"/>
+      <keyMapping columnObjectName="Join_6" columnName="WCR_PLANT_INVALID"/>
+    </attribute>
+  
+    <attribute id="WCR_CAPACITY_PLANNER_GROUP_INVALID" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WCR_CAPACITY_PLANNER_GROUP_INVALID"/>
+  
+      <keyMapping columnObjectName="Join_6" columnName="WCR_CAPACITY_PLANNER_GROUP_INVALID"/>
+  
+    </attribute>
+  
+    <attribute id="ARBPL" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARBPL"/>
+  
+      <keyMapping columnObjectName="Join_6" columnName="ARBPL"/>
+  
+    </attribute>
+    <attribute id="CANUM" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CANUM"/>
+      <keyMapping columnObjectName="Join_6" columnName="CANUM"/>
+    </attribute>
+    <attribute id="FORK1" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FORK1"/>
+      <keyMapping columnObjectName="Join_6" columnName="FORK1"/>
+    </attribute>
+    <attribute id="CAP_BACKFLUSH_SU" order="88" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAP_BACKFLUSH_SU"/>
+      <keyMapping columnObjectName="Join_6" columnName="CAP_BACKFLUSH_SU"/>
+    </attribute>
+    <attribute id="FORK2" order="89" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FORK2"/>
+      <keyMapping columnObjectName="Join_6" columnName="FORK2"/>
+    </attribute>
+    <attribute id="CAP_BACKFLUSH_PR" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAP_BACKFLUSH_PR"/>
+      <keyMapping columnObjectName="Join_6" columnName="CAP_BACKFLUSH_PR"/>
+    </attribute>
+    <attribute id="FORK3" order="91" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FORK3"/>
+      <keyMapping columnObjectName="Join_6" columnName="FORK3"/>
+    </attribute>
+    <attribute id="CAP_BACKFLUSH_TD" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAP_BACKFLUSH_TD"/>
+      <keyMapping columnObjectName="Join_6" columnName="CAP_BACKFLUSH_TD"/>
+    </attribute>
+    <attribute id="FORKN" order="93" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FORKN"/>
+      <keyMapping columnObjectName="Join_6" columnName="FORKN"/>
+    </attribute>
+    <attribute id="VERT1" order="94" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERT1"/>
+      <keyMapping columnObjectName="Join_6" columnName="VERT1"/>
+    </attribute>
+    <attribute id="VERTN" order="95" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERTN"/>
+      <keyMapping columnObjectName="Join_6" columnName="VERTN"/>
+    </attribute>
+    <attribute id="KTEXT" order="96" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Capacity short text"/>
+      <keyMapping columnObjectName="Join_6" columnName="KTEXT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="84" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WCR_ACTIVE_VER_CAPACITY_INVALID&quot;+&quot;WCR_CAPACITY_CATEGORY_INVALID&quot;+&quot;WCR_FACTORY_CALENDAR_ID_INVALID&quot;+&quot;WCR_SHIFT_GROUP_SEQ_INVALID&quot;+&quot;WCR_PLANT_INVALID&quot;+&quot;WCR_CAPACITY_PLANNER_GROUP_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="794" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="1176"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="1176"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="379" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="471" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="false" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="576" y="696"/>
+      <rectangleSize height="30" width="182"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="706" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_7" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="835" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="826"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="301"/>
+    </shape>
+    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="141"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="196" y="536"/>
+      <rectangleSize height="30" width="168"/>
+    </shape>
+    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="301"/>
+    </shape>
+    <shape modelObjectName="Projection_5" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="226" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_4" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="782" y="30"/>
+      <rectangleSize width="301"/>
+    </shape>
+    <shape modelObjectName="Projection_6" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="1376" y="71"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="794" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_5" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="301"/>
+    </shape>
+    <shape modelObjectName="Projection_7" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="435" y="88"/>
+      <rectangleSize width="136"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.APOpenItem.06Completeness::CV_AP_WITH_ITEM" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_AR_WITH_ITEM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.APOpenItem.04Harmonization::CV_AP_WITH_ITEM">
+    <resourceUri>EHUB.TD.APOpenItem.04Harmonization::CV_AP_WITH_ITEM</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_WITH_ITEM">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="WITHT"/>
+      <viewAttribute id="WT_WITHCD"/>
+      <viewAttribute id="WT_QSSHB"/>
+      <viewAttribute id="WT_QBUIHB"/>
+      <viewAttribute id="WT_WWRBTR"/>
+      <viewAttribute id="WT_QSSHH"/>
+      <viewAttribute id="WT_QBUIHH"/>
+      <viewAttribute id="WT_WDMBTR"/>
+      <viewAttribute id="WT_QSSH2"/>
+      <viewAttribute id="WT_QBUIH2"/>
+      <viewAttribute id="WT_WDMBT2"/>
+    
+      <viewAttribute id="WT_QSSH3"/>
+      <viewAttribute id="WT_QBUIH3"/>
+      <viewAttribute id="WT_WDMBT3"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BUKRS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;='' or &quot;BUKRS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="XBLNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;XBLNR&quot;='' OR &quot;XBLNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LIFNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;LIFNR&quot;='' OR &quot;LIFNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="WITHT_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;WITHT&quot;='' OR &quot;WITHT&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.TD.APOpenItem.04Harmonization::CV_AP_WITH_ITEM"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_WITH_ITEM">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="BELNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Accounting Document Number"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="BELNR"/>
+    </attribute>
+    <attribute id="GJAHR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fiscal Year"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="BUZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Line Item Within Accounting Document"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="LIFNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account Number of Vendor or Creditor"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="XBLNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference Document Number"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="WITHT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator for withholding tax type"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="WITHT"/>
+    </attribute>
+    <attribute id="WT_WITHCD" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax code"/>
+      <keyMapping columnObjectName="P_WITH_ITEM" columnName="WT_WITHCD"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="WT_QSSHB" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Withholding tax base amount in document currency"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_QSSHB"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QBUIHB" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Enter withholding tax amount in document currency manually"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_QBUIHB"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_WWRBTR" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Withholding tax amount already withheld in document currency"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_WWRBTR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QSSHH" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Withholding tax base amount (local currency)"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_QSSHH"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QBUIHH" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Enter withholding tax amount in local currency manually"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_QBUIHH"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_WDMBTR" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Withholding tax amount (in local currency) already withheld"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_WDMBTR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QSSH2" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Withholding tax base amount in 2nd local currency"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_QSSH2"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QBUIH2" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Manually entered with/tax amount in 2nd local currency"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_QBUIH2"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_WDMBT2" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Withholding tax amount already withheld in 2nd local curr."/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_WDMBT2"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QSSH3" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QSSH3"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_QSSH3"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QBUIH3" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QBUIH3"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_QBUIH3"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_WDMBT3" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_WDMBT3"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WT_WDMBT3"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BUKRS_INCOMPLETE" order="22" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BUKRS_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="BUKRS_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="XBLNR_INCOMPLETE" order="23" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="XBLNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="XBLNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="LIFNR_INCOMPLETE" order="24" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KUNNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="LIFNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WITHT_INCOMPLETE" order="25" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WITHT_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_WITH_ITEM" columnName="WITHT_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INCOMPLETE" order="26" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>case when &quot;BUKRS_INCOMPLETE&quot;+&quot;XBLNR_INCOMPLETE&quot;+&quot;LIFNR_INCOMPLETE&quot;+&quot;WITHT_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_WITH_ITEM" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="280"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

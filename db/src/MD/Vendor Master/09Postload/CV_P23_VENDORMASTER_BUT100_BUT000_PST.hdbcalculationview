@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Vendor Master.09Postload::CV_P23_VENDORMASTER_BUT100_BUT000_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_P23_VENDORMASTER_BUT100_BUT000_PST.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT100">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT100</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_VM_SUPP_BP_ROLES_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_VM_SUPP_BP_ROLES_PLD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_BUT100" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="ROLE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT100">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ROLE" source="RLTYP"/>
+    </input>
+    <filter>&quot;MANDT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_BUT000" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CLIENT"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000"/>
+    <filter>&quot;CLIENT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SHE_BUT100">
+    <viewAttributes>
+      <viewAttribute id="PARTNER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_VM_SUPP_BP_ROLES_PLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="LIFNR"/>
+    </input></calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUT000_BUT100" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute hidden="true" id="JOIN$BPEXT$PARTNER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_BUT000">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BPEXT$PARTNER" source="BPEXT"/>
+    </input>
+    <input node="P_SHE_BUT100">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BPEXT$PARTNER" source="PARTNER"/>
+    </input>
+    <joinAttribute name="JOIN$BPEXT$PARTNER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="A_BUT000_BUT100">
+    <viewAttributes>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="J_BUT000_BUT100"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUT000_SHE_S4_BUT100" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="ROLE"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute hidden="true" id="JOIN$PARTNER$PARTNER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_BUT100">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ROLE" source="ROLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PARTNER$PARTNER" source="PARTNER"/>
+    </input>
+    <input node="A_BUT000_BUT100">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PARTNER$PARTNER" source="PARTNER"/>
+    </input>
+    <joinAttribute name="JOIN$PARTNER$PARTNER"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="J_BUT000_SHE_S4_BUT100">
+  <attributes>
+    <attribute id="PARTNER" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Partner Number"/>
+      <keyMapping columnObjectName="J_BUT000_SHE_S4_BUT100" columnName="PARTNER"/>
+    </attribute>
+    <attribute id="ROLE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Partner Role Type"/>
+      <keyMapping columnObjectName="J_BUT000_SHE_S4_BUT100" columnName="ROLE"/>
+    </attribute>
+    <attribute id="BPEXT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Partner Number in External System"/>
+      <keyMapping columnObjectName="J_BUT000_SHE_S4_BUT100" columnName="BPEXT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="230" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4_BUT100" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_BUT000" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="113" y="681"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_SHE_BUT100" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="322" y="705"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BUT000_BUT100" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="232" y="521"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_BUT000" modelObjectNameSpace="J_BUT000_BUT100" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="137"/>
+    </shape>
+    <shape modelObjectName="P_SHE_BUT100" modelObjectNameSpace="J_BUT000_BUT100" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="137"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="A_BUT000_BUT100" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="386"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_BUT000_SHE_S4_BUT100" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="230" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_BUT100" modelObjectNameSpace="J_BUT000_SHE_S4_BUT100" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="137"/>
+    </shape>
+    <shape modelObjectName="A_BUT000_BUT100" modelObjectNameSpace="J_BUT000_SHE_S4_BUT100" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

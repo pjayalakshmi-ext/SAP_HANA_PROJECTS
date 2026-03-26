@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNA1" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_CM_KNA1"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CustomerMaster.04Harmonization::CV_CM_KNA1">
+    <resourceUri>EHUB.MD.CustomerMaster.04Harmonization::CV_CM_KNA1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNA1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BU_GROUP"/>
+      <viewAttribute id="KTOKD"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MCOD2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="KATR1"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="KUNNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;KUNNR&quot;='' OR &quot;KUNNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BU_GROUP_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;BU_GROUP&quot;='' OR &quot;BU_GROUP&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LAND1_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;LAND1&quot;='' OR &quot;LAND1&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="SPRAS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;SPRAS&quot;='' OR &quot;SPRAS&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.CustomerMaster.04Harmonization::CV_CM_KNA1"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_KNA1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BU_GROUP" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BU_GROUP"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="BU_GROUP"/>
+    </attribute>
+    <attribute id="KTOKD" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_KTOKD"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="KTOKD"/>
+    </attribute>
+    <attribute id="NAME1" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 1"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="NAME1"/>
+    </attribute>
+    <attribute id="NAME2" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 2"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="NAME2"/>
+    </attribute>
+    <attribute id="NAME3" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 3"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="NAME3"/>
+    </attribute>
+    <attribute id="NAME4" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 4"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="NAME4"/>
+    </attribute>
+    <attribute id="KONZS" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Group key"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="KONZS"/>
+    </attribute>
+    <attribute id="ANRED" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Title"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="ANRED"/>
+    </attribute>
+    <attribute id="SORTL" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sort field"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="SORTL"/>
+    </attribute>
+    <attribute id="MCOD2" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Search Term for Matchcode Search"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="MCOD2"/>
+    </attribute>
+    <attribute id="STRAS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House number and street"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="STRAS"/>
+    </attribute>
+    <attribute id="ORT01" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="ORT01"/>
+    </attribute>
+    <attribute id="PSTLZ" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Postal Code"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="REGIO" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="REGIO"/>
+    </attribute>
+    <attribute id="LAND1" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country Key"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="LAND1"/>
+    </attribute>
+    <attribute id="PFACH" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PO Box"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="PFACH"/>
+    </attribute>
+    <attribute id="PSTL2" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="P.O. Box Postal Code"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="PSTL2"/>
+    </attribute>
+    <attribute id="SPRAS" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="TELF1" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="First telephone number"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="TELF1"/>
+    </attribute>
+    <attribute id="TELFX" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fax Number"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="TELFX"/>
+    </attribute>
+    <attribute id="KATR1" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Attribute 1"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="KATR1"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="KUNNR_INCOMPLETE" order="24" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KUNNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_KNA1" columnName="KUNNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BU_GROUP_INCOMPLETE" order="25" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BU_GROUP_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_KNA1" columnName="BU_GROUP_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="LAND1_INCOMPLETE" order="26" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAND1_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_KNA1" columnName="LAND1_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SPRAS_INCOMPLETE" order="27" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SPRAS_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_KNA1" columnName="SPRAS_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INCOMPLETE" order="28" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>case when &quot;KUNNR_INCOMPLETE&quot;+&quot;BU_GROUP_INCOMPLETE&quot;+&quot;LAND1_INCOMPLETE&quot;+&quot;SPRAS_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNA1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="95" y="205"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,2191 @@
+{
+ /************* Customer Master***************************/
+  "EHUB.Synonyms::SY_TA_CM_KNA1_REL_INPUT": {
+    "target": {
+      "object": "TA_CM_KNA1_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNB1_REL_INPUT": {
+    "target": {
+      "object": "TA_CM_KNB1_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNBK_REL_INPUT": {
+    "target": {
+      "object": "TA_CM_KNBK_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNVV_REL_INPUT": {
+    "target": {
+      "object": "TA_CM_KNVV_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNA1_INC": {
+    "target": {
+      "object": "TA_CM_KNA1_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNB1_INC": {
+    "target": {
+      "object": "TA_CM_KNB1_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNBK_INC": {
+    "target": {
+      "object": "TA_CM_KNBK_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNVV_INC": {
+    "target": {
+      "object": "TA_CM_KNVV_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_BP_ROLES_INC": {
+    "target": {
+      "object": "TA_CM_BP_ROLES_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNA1_CMT": {
+    "target": {
+      "object": "TA_CM_KNA1_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNB1_CMT": {
+    "target": {
+      "object": "TA_CM_KNB1_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNBK_CMT": {
+    "target": {
+      "object": "TA_CM_KNBK_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNVV_CMT": {
+    "target": {
+      "object": "TA_CM_KNVV_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_BP_ROLES_CMT": {
+    "target": {
+      "object": "TA_CM_BP_ROLES_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNA1_INV": {
+    "target": {
+      "object": "TA_CM_KNA1_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNB1_INV": {
+    "target": {
+      "object": "TA_CM_KNB1_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNBK_INV": {
+    "target": {
+      "object": "TA_CM_KNBK_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNVV_INV": {
+    "target": {
+      "object": "TA_CM_KNVV_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_BP_ROLES_INV": {
+    "target": {
+      "object": "TA_CM_BP_ROLES_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNA1_VLD": {
+    "target": {
+      "object": "TA_CM_KNA1_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNB1_VLD": {
+    "target": {
+      "object": "TA_CM_KNB1_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNBK_VLD": {
+    "target": {
+      "object": "TA_CM_KNBK_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_KNVV_VLD": {
+    "target": {
+      "object": "TA_CM_KNVV_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_BP_ROLES_VLD": {
+    "target": {
+      "object": "TA_CM_BP_ROLES_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+/************* AR Open Item *******************/
+  "EHUB.Synonyms::SY_TA_AR_BSEC_REL_INPUT": {
+    "target": {
+      "object": "TA_AR_BSEC_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSET_REL_INPUT": {
+    "target": {
+      "object": "TA_AR_BSET_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSID_REL_INPUT": {
+    "target": {
+      "object": "TA_AR_BSID_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_WITH_ITEM_REL_INPUT": {
+    "target": {
+      "object": "TA_AR_WITH_ITEM_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSEC_INC": {
+    "target": {
+      "object": "TA_AR_BSEC_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSET_INC": {
+    "target": {
+      "object": "TA_AR_BSET_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSID_INC": {
+    "target": {
+      "object": "TA_AR_BSID_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_WITH_ITEM_INC": {
+    "target": {
+      "object": "TA_AR_WITH_ITEM_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSEC_CMT": {
+    "target": {
+      "object": "TA_AR_BSEC_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSET_CMT": {
+    "target": {
+      "object": "TA_AR_BSET_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSID_CMT": {
+    "target": {
+      "object": "TA_AR_BSID_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_WITH_ITEM_CMT": {
+    "target": {
+      "object": "TA_AR_WITH_ITEM_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSEC_INV": {
+    "target": {
+      "object": "TA_AR_BSEC_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSET_INV": {
+    "target": {
+      "object": "TA_AR_BSET_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSID_INV": {
+    "target": {
+      "object": "TA_AR_BSID_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_WITH_ITEM_INV": {
+    "target": {
+      "object": "TA_AR_WITH_ITEM_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSEC_VLD": {
+    "target": {
+      "object": "TA_AR_BSEC_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSET_VLD": {
+    "target": {
+      "object": "TA_AR_BSET_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSID_VLD": {
+    "target": {
+      "object": "TA_AR_BSID_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_WITH_ITEM_VLD": {
+    "target": {
+      "object": "TA_AR_WITH_ITEM_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  /**************** AP Open Item ********************/
+  "EHUB.Synonyms::SY_TA_AP_BSEC_REL_INPUT": {
+    "target": {
+      "object": "TA_AP_BSEC_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSET_REL_INPUT": {
+    "target": {
+      "object": "TA_AP_BSET_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSIK_REL_INPUT": {
+    "target": {
+      "object": "TA_AP_BSIK_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_WITH_ITEM_REL_INPUT": {
+    "target": {
+      "object": "TA_AP_WITH_ITEM_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSEC_CMT": {
+    "target": {
+      "object": "TA_AP_BSEC_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSET_CMT": {
+    "target": {
+      "object": "TA_AP_BSET_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSIK_CMT": {
+    "target": {
+      "object": "TA_AP_BSIK_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_WITH_ITEM_CMT": {
+    "target": {
+      "object": "TA_AP_WITH_ITEM_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSEC_INC": {
+    "target": {
+      "object": "TA_AP_BSEC_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSET_INC": {
+    "target": {
+      "object": "TA_AP_BSET_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSIK_INC": {
+    "target": {
+      "object": "TA_AP_BSIK_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_WITH_ITEM_INC": {
+    "target": {
+      "object": "TA_AP_WITH_ITEM_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSEC_VLD": {
+    "target": {
+      "object": "TA_AP_BSEC_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSET_VLD": {
+    "target": {
+      "object": "TA_AP_BSET_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSIK_VLD": {
+    "target": {
+      "object": "TA_AP_BSIK_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_WITH_ITEM_VLD": {
+    "target": {
+      "object": "TA_AP_WITH_ITEM_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSEC_INV": {
+    "target": {
+      "object": "TA_AP_BSEC_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSET_INV": {
+    "target": {
+      "object": "TA_AP_BSET_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSIK_INV": {
+    "target": {
+      "object": "TA_AP_BSIK_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_WITH_ITEM_INV": {
+    "target": {
+      "object": "TA_AP_WITH_ITEM_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+/*******Bank Master************/
+  "EHUB.Synonyms::SY_TA_BM_BNKA_REL_INPUT": {
+    "target": {
+      "object": "TA_BM_BNKA_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BM_BNKA_INC": {
+    "target": {
+      "object": "TA_BM_BNKA_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BM_BNKA_CMT": {
+    "target": {
+      "object": "TA_BM_BNKA_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BM_BNKA_VLD": {
+    "target": {
+      "object": "TA_BM_BNKA_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+/********** Cost Center *****************/
+  "EHUB.Synonyms::SY_TA_CC_CSKS_REL_INPUT": {
+    "target": {
+      "object": "TA_CC_CSKS_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_CSKS_INC": {
+    "target": {
+      "object": "TA_CC_CSKS_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_CSKS_CMT": {
+    "target": {
+      "object": "TA_CC_CSKS_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_CSKS_INV": {
+    "target": {
+      "object": "TA_CC_CSKS_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_CSKS_VLD": {
+    "target": {
+      "object": "TA_CC_CSKS_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  /* "EHUB.Synonyms::SY_TA_AR_BSEC_VLD": {
+      "target": {
+        "object": "TA_AR_BSEC_VLD",
+        "schema": "EHUB_ALG"
+      }
+    },
+    "EHUB.Synonyms::SY_TA_AR_BSET_VLD": {
+      "target": {
+        "object": "TA_AR_BSET_VLD",
+        "schema": "EHUB_ALG"
+      }
+    },*/
+  /* "EHUB.Synonyms::SY_TA_AR_BSID_VLD": {
+      "target": {
+        "object": "TA_AR_BSID_VLD",
+        "schema": "EHUB_ALG"
+      }
+    },*/
+  /*  "EHUB.Synonyms::SY_TA_AR_WITH_ITEM_VLD": {
+      "target": {
+        "object": "TA_AR_WITH_ITEM_VLD",
+        "schema": "EHUB_ALG"
+      }
+    },*/
+  "EHUB.Synonyms::SY_TA_PC_MASTER_CEPC_INC": {
+    "target": {
+      "object": "TA_PC_MASTER_CEPC_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_CEPC_INC": {
+    "target": {
+      "object": "TA_PC_MASTER_CEPC_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_MASTER_CEPC_CMT": {
+    "target": {
+      "object": "TA_PC_MASTER_CEPC_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_MASTER_CEPC_REL_INPUT": {
+    "target": {
+      "object": "TA_PC_MASTER_CEPC_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_INC": {
+    "target": {
+      "object": "TA_PC_COMPANY_CEPC_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_CMT": {
+    "target": {
+      "object": "TA_PC_COMPANY_CEPC_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_REL_INPUT": {
+    "target": {
+      "object": "TA_PC_COMPANY_CEPC_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_MASTER_CEPC_INV": {
+    "target": {
+      "object": "TA_PC_MASTER_CEPC_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_MASTER_CEPC_VLD": {
+    "target": {
+      "object": "TA_PC_MASTER_CEPC_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_INV": {
+    "target": {
+      "object": "TA_PC_COMPANY_CEPC_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_VLD": {
+    "target": {
+      "object": "TA_PC_COMPANY_CEPC_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARA_REL_INPUT": {
+    "target": {
+      "object": "TA_MM_MARA_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARC_REL_INPUT": {
+    "target": {
+      "object": "TA_MM_MARC_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARD_REL_INPUT": {
+    "target": {
+      "object": "TA_MM_MARD_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MVKE_REL_INPUT": {
+    "target": {
+      "object": "TA_MM_MVKE_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARA_INC": {
+    "target": {
+      "object": "TA_MM_MARA_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARC_INC": {
+    "target": {
+      "object": "TA_MM_MARC_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARD_INC": {
+    "target": {
+      "object": "TA_MM_MARD_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MVKE_INC": {
+    "target": {
+      "object": "TA_MM_MVKE_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARA_MARC_MARD_MVKE_VLD": {
+    "target": {
+      "object": "TA_MM_MARA_MARC_MARD_MVKE_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BM_BNKA_INV": {
+    "target": {
+      "object": "TA_BM_BNKA_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  /*"EHUB.Synonyms::SY_TA_PC_CEPC_CEPCT_INV": {
+"target": {
+  "object": "TA_PC_CEPC_CEPCT_INV",
+  "schema": "EHUB_ALG"
+}
+},*/
+  "EHUB.Synonyms::SY_TA_MM_MARA_MARC_MARD_MVKE_INV": {
+    "target": {
+      "object": "TA_MM_MARA_MARC_MARD_MVKE_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARD_CMT": {
+    "target": {
+      "object": "TA_MM_MARD_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARD_INV": {
+    "target": {
+      "object": "TA_MM_MARD_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARD_VLD": {
+    "target": {
+      "object": "TA_MM_MARD_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARC_CMT": {
+    "target": {
+      "object": "TA_MM_MARC_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARC_INV": {
+    "target": {
+      "object": "TA_MM_MARC_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARC_VLD": {
+    "target": {
+      "object": "TA_MM_MARC_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MVKE_CMT": {
+    "target": {
+      "object": "TA_MM_MVKE_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MVKE_INV": {
+    "target": {
+      "object": "TA_MM_MVKE_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MVKE_VLD": {
+    "target": {
+      "object": "TA_MM_MVKE_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARA_CMT": {
+    "target": {
+      "object": "TA_MM_MARA_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARA_INV": {
+    "target": {
+      "object": "TA_MM_MARA_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARA_VLD": {
+    "target": {
+      "object": "TA_MM_MARA_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_HEADER_REL_INPUT": {
+    "target": {
+      "object": "TA_MMCLASS_HEADER_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_NUM_AUSP_REL_INPUT": {
+    "target": {
+      "object": "TA_MMCLASS_NUM_AUSP_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CURR_AUSP_REL_INPUT": {
+    "target": {
+      "object": "TA_MMCLASS_CURR_AUSP_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CHAR_AUSP_REL_INPUT": {
+    "target": {
+      "object": "TA_MMCLASS_CHAR_AUSP_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CHAR_AUSP_INC": {
+    "target": {
+      "object": "TA_MMCLASS_CHAR_AUSP_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CHAR_AUSP_CMT": {
+    "target": {
+      "object": "TA_MMCLASS_CHAR_AUSP_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CURR_AUSP_INC": {
+    "target": {
+      "object": "TA_MMCLASS_CURR_AUSP_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CURR_AUSP_CMT": {
+    "target": {
+      "object": "TA_MMCLASS_CURR_AUSP_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_NUM_AUSP_INC": {
+    "target": {
+      "object": "TA_MMCLASS_NUM_AUSP_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_NUM_AUSP_CMT": {
+    "target": {
+      "object": "TA_MMCLASS_NUM_AUSP_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_HEADER_INC": {
+    "target": {
+      "object": "TA_MMCLASS_HEADER_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_HEADER_CMT": {
+    "target": {
+      "object": "TA_MMCLASS_HEADER_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CHAR_AUSP_INV": {
+    "target": {
+      "object": "TA_MMCLASS_CHAR_AUSP_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CHAR_AUSP_VLD": {
+    "target": {
+      "object": "TA_MMCLASS_CHAR_AUSP_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CURR_AUSP_INV": {
+    "target": {
+      "object": "TA_MMCLASS_CURR_AUSP_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CURR_AUSP_VLD": {
+    "target": {
+      "object": "TA_MMCLASS_CURR_AUSP_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_NUM_AUSP_INV": {
+    "target": {
+      "object": "TA_MMCLASS_NUM_AUSP_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_NUM_AUSP_VLD": {
+    "target": {
+      "object": "TA_MMCLASS_NUM_AUSP_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_HEADER_INV": {
+    "target": {
+      "object": "TA_MMCLASS_HEADER_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_HEADER_VLD": {
+    "target": {
+      "object": "TA_MMCLASS_HEADER_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_REL_INPUT": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_BASICDATA_QPMK_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_REL_INPUT": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_REL_INPUT": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_INC": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_BASICDATA_QPMK_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_CMT": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_BASICDATA_QPMK_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_INV": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_BASICDATA_QPMK_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_VLD": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_BASICDATA_QPMK_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_INC": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_CMT": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_INV": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_VLD": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_INC": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_CMT": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_INV": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_VLD": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_VBAK_REL_INPUT": {
+    "target": {
+      "object": "TA_SO_VBAK_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_VBAP_REL_INPUT": {
+    "target": {
+      "object": "TA_SO_VBAP_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_VBPA_REL_INPUT": {
+    "target": {
+      "object": "TA_SO_VBPA_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_VBEP_REL_INPUT": {
+    "target": {
+      "object": "TA_SO_VBEP_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_HEADER_VBAK_INC": {
+    "target": {
+      "object": "TA_SO_HEADER_VBAK_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_HEADER_VBAK_CMT": {
+    "target": {
+      "object": "TA_SO_HEADER_VBAK_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_HEADER_VBAK_VLD": {
+    "target": {
+      "object": "TA_SO_HEADER_VBAK_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_HEADER_VBAK_INV": {
+    "target": {
+      "object": "TA_SO_HEADER_VBAK_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_ITEM_VBAP_INC": {
+    "target": {
+      "object": "TA_SO_ITEM_VBAP_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_ITEM_VBAP_CMT": {
+    "target": {
+      "object": "TA_SO_ITEM_VBAP_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_ITEM_VBAP_VLD": {
+    "target": {
+      "object": "TA_SO_ITEM_VBAP_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_ITEM_VBAP_INV": {
+    "target": {
+      "object": "TA_SO_ITEM_VBAP_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_PARTNER_VBPA_INC": {
+    "target": {
+      "object": "TA_SO_PARTNER_VBPA_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_PARTNER_VBPA_CMT": {
+    "target": {
+      "object": "TA_SO_PARTNER_VBPA_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_PARTNER_VBPA_INV": {
+    "target": {
+      "object": "TA_SO_PARTNER_VBPA_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_PARTNER_VBPA_VLD": {
+    "target": {
+      "object": "TA_SO_PARTNER_VBPA_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SCHEDULELINEDATA_VBEP_CMT": {
+    "target": {
+      "object": "TA_SO_SCHEDULELINEDATA_VBEP_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SCHEDULELINEDATA_VBEP_INC": {
+    "target": {
+      "object": "TA_SO_SCHEDULELINEDATA_VBEP_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SCHEDULELINEDATA_VBEP_INV": {
+    "target": {
+      "object": "TA_SO_SCHEDULELINEDATA_VBEP_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SCHEDULELINEDATA_VBEP_VLD": {
+    "target": {
+      "object": "TA_SO_SCHEDULELINEDATA_VBEP_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKA1_INV": {
+    "target": {
+      "object": "TA_GL_SKA1_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKA1_VLD": {
+    "target": {
+      "object": "TA_GL_SKA1_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKB1_INV": {
+    "target": {
+      "object": "TA_GL_SKB1_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKB1_VLD": {
+    "target": {
+      "object": "TA_GL_SKB1_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKA1_REL_INPUT": {
+    "target": {
+      "object": "TA_GL_SKA1_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKB1_REL_INPUT": {
+    "target": {
+      "object": "TA_GL_SKB1_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKA1_INC": {
+    "target": {
+      "object": "TA_GL_SKA1_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKA1_CMT": {
+    "target": {
+      "object": "TA_GL_SKA1_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKB1_INC": {
+    "target": {
+      "object": "TA_GL_SKB1_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKB1_CMT": {
+    "target": {
+      "object": "TA_GL_SKB1_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKAT_REL_INPUT": {
+    "target": {
+      "object": "TA_GL_SKAT_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKAT_INC": {
+    "target": {
+      "object": "TA_GL_SKAT_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKAT_CMT": {
+    "target": {
+      "object": "TA_GL_SKAT_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKAT_INV": {
+    "target": {
+      "object": "TA_GL_SKAT_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKAT_VLD": {
+    "target": {
+      "object": "TA_GL_SKAT_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFA1_REL_INPUT": {
+    "target": {
+      "object": "TA_VM_LFA1_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFM1_REL_INPUT": {
+    "target": {
+      "object": "TA_VM_LFM1_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_BP_ROLE_REL_INPUT": {
+    "target": {
+      "object": "TA_VM_BP_ROLE_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFA1_INC": {
+    "target": {
+      "object": "TA_VM_LFA1_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFA1_CMT": {
+    "target": {
+      "object": "TA_VM_LFA1_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFM1_INC": {
+    "target": {
+      "object": "TA_VM_LFM1_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFM1_CMT": {
+    "target": {
+      "object": "TA_VM_LFM1_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_BP_ROLE_INC": {
+    "target": {
+      "object": "TA_VM_BP_ROLE_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_BP_ROLE_CMT": {
+    "target": {
+      "object": "TA_VM_BP_ROLE_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFA1_INV": {
+    "target": {
+      "object": "TA_VM_LFA1_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFA1_VLD": {
+    "target": {
+      "object": "TA_VM_LFA1_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFM1_INV": {
+    "target": {
+      "object": "TA_VM_LFM1_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFM1_VLD": {
+    "target": {
+      "object": "TA_VM_LFM1_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_BP_ROLE_INV": {
+    "target": {
+      "object": "TA_VM_BP_ROLE_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_BP_ROLE_VLD": {
+    "target": {
+      "object": "TA_VM_BP_ROLE_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLA_REL_INPUT": {
+    "target": {
+      "object": "TA_FA_ANLA_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLA_INC": {
+    "target": {
+      "object": "TA_FA_ANLA_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLA_CMT": {
+    "target": {
+      "object": "TA_FA_ANLA_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLA_INV": {
+    "target": {
+      "object": "TA_FA_ANLA_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLA_VLD": {
+    "target": {
+      "object": "TA_FA_ANLA_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINA_REL_INPUT": {
+    "target": {
+      "object": "TA_PIR_EINA_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINE_REL_INPUT": {
+    "target": {
+      "object": "TA_PIR_EINE_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINA_INC": {
+    "target": {
+      "object": "TA_PIR_EINA_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINE_INC": {
+    "target": {
+      "object": "TA_PIR_EINE_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINA_CMT": {
+    "target": {
+      "object": "TA_PIR_EINA_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINE_CMT": {
+    "target": {
+      "object": "TA_PIR_EINE_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINA_INV": {
+    "target": {
+      "object": "TA_PIR_EINA_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINE_INV": {
+    "target": {
+      "object": "TA_PIR_EINE_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINA_VLD": {
+    "target": {
+      "object": "TA_PIR_EINA_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_EINE_VLD": {
+    "target": {
+      "object": "TA_PIR_EINE_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKKO_REL_INPUT": {
+    "target": {
+      "object": "TA_PO_EKKO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKPO_REL_INPUT": {
+    "target": {
+      "object": "TA_PO_EKPO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKKO_INC": {
+    "target": {
+      "object": "TA_PO_EKKO_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKKO_INV": {
+    "target": {
+      "object": "TA_PO_EKKO_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKPO_INC": {
+    "target": {
+      "object": "TA_PO_EKPO_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKPO_INV": {
+    "target": {
+      "object": "TA_PO_EKPO_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_KONP_REL_INPUT": {
+    "target": {
+      "object": "TA_PIR_KONP_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_KONP_INC": {
+    "target": {
+      "object": "TA_PIR_KONP_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_KONP_INV": {
+    "target": {
+      "object": "TA_PIR_KONP_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_KONP_CMT": {
+    "target": {
+      "object": "TA_PIR_KONP_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_KONP_VLD": {
+    "target": {
+      "object": "TA_PIR_KONP_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKKN_REL_INPUT": {
+    "target": {
+      "object": "TA_PO_EKKN_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKKN_INC": {
+    "target": {
+      "object": "TA_PO_EKKN_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_EKKN_INV": {
+    "target": {
+      "object": "TA_PO_EKKN_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKKN_REL_INPUT": {
+    "target": {
+      "object": "TA_PC_EKKN_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKKN_INC": {
+    "target": {
+      "object": "TA_PC_EKKN_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKKN_INV": {
+    "target": {
+      "object": "TA_PC_EKKN_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKKO_REL_INPUT": {
+    "target": {
+      "object": "TA_PC_EKKO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKKO_INC": {
+    "target": {
+      "object": "TA_PC_EKKO_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKKO_INV": {
+    "target": {
+      "object": "TA_PC_EKKO_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKPO_REL_INPUT": {
+    "target": {
+      "object": "TA_PC_EKPO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKPO_INC": {
+    "target": {
+      "object": "TA_PC_EKPO_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_EKPO_INV": {
+    "target": {
+      "object": "TA_PC_EKPO_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_ADRC_INC": {
+    "target": {
+      "object": "TA_PC_ADRC_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_ADRC_INV": {
+    "target": {
+      "object": "TA_PC_ADRC_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_ADRC_REL_INPUT": {
+    "target": {
+      "object": "TA_PC_ADRC_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLZ_REL_INPUT": {
+    "target": {
+      "object": "TA_FA_ANLZ_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKN_REL_INPUT": {
+    "target": {
+      "object": "TA_PSA_EKKN_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKN_INC": {
+    "target": {
+      "object": "TA_PSA_EKKN_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKN_INV": {
+    "target": {
+      "object": "TA_PSA_EKKN_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKN_CMT": {
+    "target": {
+      "object": "TA_PSA_EKKN_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKN_VLD": {
+    "target": {
+      "object": "TA_PSA_EKKN_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKO_REL_INPUT": {
+    "target": {
+      "object": "TA_PSA_EKKO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKO_INC": {
+    "target": {
+      "object": "TA_PSA_EKKO_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKO_INV": {
+    "target": {
+      "object": "TA_PSA_EKKO_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKO_CMT": {
+    "target": {
+      "object": "TA_PSA_EKKO_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKKO_VLD": {
+    "target": {
+      "object": "TA_PSA_EKKO_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKPO_REL_INPUT": {
+    "target": {
+      "object": "TA_PSA_EKPO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKPO_INC": {
+    "target": {
+      "object": "TA_PSA_EKPO_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKPO_INV": {
+    "target": {
+      "object": "TA_PSA_EKPO_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKPO_CMT": {
+    "target": {
+      "object": "TA_PSA_EKPO_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_EKPO_VLD": {
+    "target": {
+      "object": "TA_PSA_EKPO_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFB1_REL_INPUT": {
+    "target": {
+      "object": "TA_VM_LFB1_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFB1_INC": {
+    "target": {
+      "object": "TA_VM_LFB1_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFB1_CMT": {
+    "target": {
+      "object": "TA_VM_LFB1_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFB1_INV": {
+    "target": {
+      "object": "TA_VM_LFB1_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFB1_VLD": {
+    "target": {
+      "object": "TA_VM_LFB1_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFBK_INC": {
+    "target": {
+      "object": "TA_VM_LFBK_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFBK_CMT": {
+    "target": {
+      "object": "TA_VM_LFBK_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFBK_INV": {
+    "target": {
+      "object": "TA_VM_LFBK_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFBK_VLD": {
+    "target": {
+      "object": "TA_VM_LFBK_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFBK_REL_INPUT": {
+    "target": {
+      "object": "TA_VM_LFBK_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLZ_INC": {
+    "target": {
+      "object": "TA_FA_ANLZ_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLZ_CMT": {
+    "target": {
+      "object": "TA_FA_ANLZ_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLZ_INV": {
+    "target": {
+      "object": "TA_FA_ANLZ_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_ANLZ_VLD": {
+    "target": {
+      "object": "TA_FA_ANLZ_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_EQ_EQUI_REL_INPUT": {
+    "target": {
+      "object": "TA_EQ_EQUI_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_EQ_EQUI_INC": {
+    "target": {
+      "object": "TA_EQ_EQUI_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_EQ_EQUI_INV": {
+    "target": {
+      "object": "TA_EQ_EQUI_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_EQ_EQUI_CMT": {
+    "target": {
+      "object": "TA_EQ_EQUI_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_EQ_EQUI_VLD": {
+    "target": {
+      "object": "TA_EQ_EQUI_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GLABOI_BSIS_REL_INPUT": {
+    "target": {
+      "object": "TA_GLABOI_BSIS_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GLABOI_BSIS_INC": {
+    "target": {
+      "object": "TA_GLABOI_BSIS_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GLABOI_BSIS_INV": {
+    "target": {
+      "object": "TA_GLABOI_BSIS_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GLABOI_BSIS_CMT": {
+    "target": {
+      "object": "TA_GLABOI_BSIS_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GLABOI_BSIS_VLD": {
+    "target": {
+      "object": "TA_GLABOI_BSIS_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRHD_REL_INPUT": {
+    "target": {
+      "object": "TA_WCR_CRHD_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_KAKO_REL_INPUT": {
+    "target": {
+      "object": "TA_WCR_KAKO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRCO_REL_INPUT": {
+    "target": {
+      "object": "TA_WCR_CRCO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRCO_INC": {
+    "target": {
+      "object": "TA_WCR_CRCO_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRHD_INC": {
+    "target": {
+      "object": "TA_WCR_CRHD_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_KAKO_INC": {
+    "target": {
+      "object": "TA_WCR_KAKO_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRCO_CMT": {
+    "target": {
+      "object": "TA_WCR_CRCO_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRHD_CMT": {
+    "target": {
+      "object": "TA_WCR_CRHD_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_KAKO_CMT": {
+    "target": {
+      "object": "TA_WCR_KAKO_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRCO_INV": {
+    "target": {
+      "object": "TA_WCR_CRCO_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRHD_INV": {
+    "target": {
+      "object": "TA_WCR_CRHD_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_KAKO_INV": {
+    "target": {
+      "object": "TA_WCR_KAKO_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRCO_VLD": {
+    "target": {
+      "object": "TA_WCR_CRCO_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_CRHD_VLD": {
+    "target": {
+      "object": "TA_WCR_CRHD_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_KAKO_VLD": {
+    "target": {
+      "object": "TA_WCR_KAKO_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_AUFK_REL_INPUT": {
+    "target": {
+      "object": "TA_IO_AUFK_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_COBRB_REL_INPUT": {
+    "target": {
+      "object": "TA_IO_COBRB_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_AUFK_INC": {
+    "target": {
+      "object": "TA_IO_AUFK_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_AUFK_INV": {
+    "target": {
+      "object": "TA_IO_AUFK_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_COBRB_INC": {
+    "target": {
+      "object": "TA_IO_COBRB_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_COBRB_INV": {
+    "target": {
+      "object": "TA_IO_COBRB_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_AUFK_CMT": {
+    "target": {
+      "object": "TA_IO_AUFK_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_AUFK_VLD": {
+    "target": {
+      "object": "TA_IO_AUFK_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_COBRB_CMT": {
+    "target": {
+      "object": "TA_IO_COBRB_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_COBRB_VLD": {
+    "target": {
+      "object": "TA_IO_COBRB_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AT_CSLA_REL_INPUT": {
+    "target": {
+      "object": "TA_AT_CSLA_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AT_CSLA_INC": {
+    "target": {
+      "object": "TA_AT_CSLA_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AT_CSLA_INV": {
+    "target": {
+      "object": "TA_AT_CSLA_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AT_CSLA_CMT": {
+    "target": {
+      "object": "TA_AT_CSLA_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AT_CSLA_VLD": {
+    "target": {
+      "object": "TA_AT_CSLA_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PROJ_REL_INPUT": {
+    "target": {
+      "object": "TA_WB_PROJ_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PRPS_REL_INPUT": {
+    "target": {
+      "object": "TA_WB_PRPS_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PROJ_INC": {
+    "target": {
+      "object": "TA_WB_PROJ_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PROJ_CMT": {
+    "target": {
+      "object": "TA_WB_PROJ_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PROJ_INV": {
+    "target": {
+      "object": "TA_WB_PROJ_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PROJ_VLD": {
+    "target": {
+      "object": "TA_WB_PROJ_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PRPS_INC": {
+    "target": {
+      "object": "TA_WB_PRPS_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PRPS_CMT": {
+    "target": {
+      "object": "TA_WB_PRPS_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PRPS_INV": {
+    "target": {
+      "object": "TA_WB_PRPS_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PRPS_VLD": {
+    "target": {
+      "object": "TA_WB_PRPS_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_STXL_REL_INPUT": {
+    "target": {
+      "object": "TA_PC_STXL_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_STXL_INC": {
+    "target": {
+      "object": "TA_PC_STXL_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_STXL_INV": {
+    "target": {
+      "object": "TA_PC_STXL_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FL_SHE_IFLOT_RLI": {
+    "target": {
+      "object": "TA_FL_SHE_IFLOT_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FL_IFLOT_REL_INPUT": {
+    "target": {
+      "object": "TA_FL_IFLOT_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FL_IFLOT_INC": {
+    "target": {
+      "object": "TA_FL_IFLOT_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FL_IFLOT_CMT": {
+    "target": {
+      "object": "TA_FL_IFLOT_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FL_IFLOT_INV": {
+    "target": {
+      "object": "TA_FL_IFLOT_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FL_IFLOT_VLD": {
+    "target": {
+      "object": "TA_FL_IFLOT_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BOM_HEADER_STKO_REL_INPUT": {
+    "target": {
+      "object": "TA_BOM_HEADER_STKO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BOM_ITEM_STPO_REL_INPUT": {
+    "target": {
+      "object": "TA_BOM_ITEM_STPO_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_BOM_HEADER_STKO_CMT": {
+    "target": {
+      "object": "TA_BOM_HEADER_STKO_CMT",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_BOM_HEADER_STKO_INC": {
+    "target": {
+      "object": "TA_BOM_HEADER_STKO_INC",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_BOM_ITEM_STPO_CMT": {
+    "target": {
+      "object": "TA_BOM_ITEM_STPO_CMT",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_BOM_ITEM_STPO_INC": {
+    "target": {
+      "object": "TA_BOM_ITEM_STPO_INC",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_BOM_HEADER_STKO_VLD": {
+    "target": {
+      "object": "TA_BOM_HEADER_STKO_VLD",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_BOM_HEADER_STKO_INV": {
+    "target": {
+      "object": "TA_BOM_HEADER_STKO_INV",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_BOM_ITEM_STPO_VLD": {
+    "target": {
+      "object": "TA_BOM_ITEM_STPO_VLD",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_BOM_ITEM_STPO_INV": {
+    "target": {
+      "object": "TA_BOM_ITEM_STPO_INV",
+      "schema": "EHUB_ALG"
+    }
+  }  ,
+  "EHUB.Synonyms::SY_TA_ER_TCURR_REL_INPUT": {
+    "target": {
+      "object": "TA_ER_TCURR_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  }  ,
+  "EHUB.Synonyms::SY_TA_ER_TCURR_CMT": {
+    "target": {
+      "object": "TA_ER_TCURR_CMT",
+      "schema": "EHUB_ALG"
+    }
+  }  ,
+  "EHUB.Synonyms::SY_TA_ER_TCURR_INC": {
+    "target": {
+      "object": "TA_ER_TCURR_INC",
+      "schema": "EHUB_ALG"
+    }
+  }  ,
+  "EHUB.Synonyms::SY_TA_ER_TCURR_VLD": {
+    "target": {
+      "object": "TA_ER_TCURR_VLD",
+      "schema": "EHUB_ALG"
+    }
+  }  ,
+  "EHUB.Synonyms::SY_TA_ER_TCURR_INV": {
+    "target": {
+      "object": "TA_ER_TCURR_INV",
+      "schema": "EHUB_ALG"
+    }
+  }  ,
+  "EHUB.Synonyms::SY_TA_PV_MKAL_REL_INPUT": {
+    "target": {
+      "object": "TA_PV_MKAL_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  } ,
+  "EHUB.Synonyms::SY_TA_PV_MKAL_CMT": {
+    "target": {
+      "object": "TA_PV_MKAL_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PV_MKAL_INC": {
+    "target": {
+      "object": "TA_PV_MKAL_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PV_MKAL_VLD": {
+    "target": {
+      "object": "TA_PV_MKAL_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PV_MKAL_INV": {
+    "target": {
+      "object": "TA_PV_MKAL_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_SHE_MKPF_REL_INPUT": {
+    "target": {
+      "object": "TA_MIB_SHE_MKPF_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_SHE_MSEG_REL_INPUT": {
+    "target": {
+      "object": "TA_MIB_SHE_MSEG_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MKPF_INC": {
+    "target": {
+      "object": "TA_MIB_MKPF_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MKPF_CMT": {
+    "target": {
+      "object": "TA_MIB_MKPF_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MKPF_INV": {
+    "target": {
+      "object": "TA_MIB_MKPF_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MKPF_VLD": {
+    "target": {
+      "object": "TA_MIB_MKPF_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MSEG_INC": {
+    "target": {
+      "object": "TA_MIB_MSEG_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MSEG_CMT": {
+    "target": {
+      "object": "TA_MIB_MSEG_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MSEG_INV": {
+    "target": {
+      "object": "TA_MIB_MSEG_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MSEG_VLD": {
+    "target": {
+      "object": "TA_MIB_MSEG_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFA1_HARM_SID": {
+    "target": {
+      "object": "TA_VM_LFA1_HARM_SID",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_LFA1_HARM_SID_MATCH": {
+    "target": {
+      "object": "TA_VM_LFA1_HARM_SID_MATCH",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SKF_TKA03_REL_INPUT": {
+    "target": {
+      "object": "TA_SKF_TKA03_REL_INPUT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SKF_TKA03_CMT": {
+    "target": {
+      "object": "TA_SKF_TKA03_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SKF_TKA03_INC": {
+    "target": {
+      "object": "TA_SKF_TKA03_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SKF_TKA03_INV": {
+    "target": {
+      "object": "TA_SKF_TKA03_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SKF_TKA03_VLD": {
+    "target": {
+      "object": "TA_SKF_TKA03_VLD",
+      "schema": "EHUB_ALG"
+    }
+  }
+}

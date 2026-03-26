@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.FixedAsset.09Postload::CV_P23_FIXEDASSET_ANLA_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_SHE_FIXEDASSET_ANLA.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_ANLA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_ANLA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_FA_MASTER_DETAILS_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_FA_MASTER_DETAILS_PLD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="ANLKL"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="TXA50"/>
+      <viewAttribute id="SERNR"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MANDT"/>
+    
+      <viewAttribute id="AIBN1"/>
+      <viewAttribute id="ERNAM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_ANLA"/>
+    <filter>&quot;MANDT&quot;=900 AND &quot;ERNAM&quot; = 'IN278412'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="HISTORY"/>
+      <viewAttribute id="MAIN_DESCRIPT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_FA_MASTER_DETAILS_PLD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="ANLKL"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="TXA50"/>
+      <viewAttribute id="SERNR"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="HISTORY"/>
+      <viewAttribute id="MAIN_DESCRIPT"/>
+      <viewAttribute id="AIBN1"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$ANLN2$ANLN2"/>
+      <viewAttribute hidden="true" id="JOIN$ANLN1$AIBN1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="HISTORY" source="HISTORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAIN_DESCRIPT" source="MAIN_DESCRIPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ANLN2$ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ANLN1$AIBN1" source="ANLN1"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN1" source="ANLN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLKL" source="ANLKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT50" source="TXT50"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXA50" source="TXA50"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERNR" source="SERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AIBN1" source="AIBN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ANLN2$ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ANLN1$AIBN1" source="AIBN1"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+    <joinAttribute name="JOIN$ANLN2$ANLN2"/>
+    <joinAttribute name="JOIN$ANLN1$AIBN1"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="BUKRS" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="Join_1" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="ANLN1" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLN1"/>
+      <keyMapping columnObjectName="Join_1" columnName="ANLN1"/>
+    </attribute>
+    <attribute id="ANLN2" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLN2"/>
+      <keyMapping columnObjectName="Join_1" columnName="ANLN2"/>
+    </attribute>
+    <attribute id="ANLKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLKL"/>
+      <keyMapping columnObjectName="Join_1" columnName="ANLKL"/>
+    </attribute>
+    <attribute id="TXT50" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXT50"/>
+      <keyMapping columnObjectName="Join_1" columnName="TXT50"/>
+    </attribute>
+    <attribute id="TXA50" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXA50"/>
+      <keyMapping columnObjectName="Join_1" columnName="TXA50"/>
+    </attribute>
+    <attribute id="SERNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Serial number"/>
+      <keyMapping columnObjectName="Join_1" columnName="SERNR"/>
+    </attribute>
+    <attribute id="INVNR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Inventory Number"/>
+      <keyMapping columnObjectName="Join_1" columnName="INVNR"/>
+    </attribute>
+    <attribute id="MENGE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Quantity"/>
+      <keyMapping columnObjectName="Join_1" columnName="MENGE"/>
+    </attribute>
+    <attribute id="MEINS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Base Unit of Measure"/>
+      <keyMapping columnObjectName="Join_1" columnName="MEINS"/>
+    </attribute>
+    <attribute id="HISTORY" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Asset Is Managed Historically"/>
+      <keyMapping columnObjectName="Join_1" columnName="HISTORY"/>
+    </attribute>
+    <attribute id="MAIN_DESCRIPT" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Asset Main Number Text"/>
+      <keyMapping columnObjectName="Join_1" columnName="MAIN_DESCRIPT"/>
+    </attribute>
+  
+    <attribute id="AIBN1" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Original Asset That Was Transferred"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="AIBN1"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

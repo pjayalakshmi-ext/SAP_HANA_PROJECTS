@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.04Harmonization::CV_CM_KNBK" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_CM_KNBK"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CustomerMaster.03Transformation::CV_CM_KNBK">
+    <resourceUri>EHUB.MD.CustomerMaster.03Transformation::CV_CM_KNBK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_CM_KNBK_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_CM_KNBK_REL_INPUT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNBK">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.CustomerMaster.03Transformation::CV_CM_KNBK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="MANDT_INPUT"/>
+      <viewAttribute id="KUNNR_INPUT"/>
+      <viewAttribute id="BANKS_INPUT"/>
+      <viewAttribute id="BANKL_INPUT"/>
+      <viewAttribute id="BANKN_INPUT"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_CM_KNBK_REL_INPUT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT_INPUT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR_INPUT" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS_INPUT" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL_INPUT" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN_INPUT" source="BANKN"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_KNBK">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_KNBK" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_KNBK" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute id="KUNNR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$KUNNR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$BANKS_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$BANKL_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$BANKN$BANKN_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_KNBK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT_INPUT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR_INPUT" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS_INPUT" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL_INPUT" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN_INPUT" source="BANKN"/>
+    </input>
+    <input node="Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR_INPUT" source="KUNNR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT_INPUT" source="MANDT_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR_INPUT" source="KUNNR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS_INPUT" source="BANKS_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL_INPUT" source="BANKL_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN_INPUT" source="BANKN_INPUT"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT_INPUT"/>
+    <joinAttribute name="JOIN$KUNNR$KUNNR_INPUT"/>
+    <joinAttribute name="JOIN$BANKS$BANKS_INPUT"/>
+    <joinAttribute name="JOIN$BANKL$BANKL_INPUT"/>
+    <joinAttribute name="JOIN$BANKN$BANKN_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Without_Remediated" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute id="KUNNR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_KNBK"/>
+    <filter>(isnull(&quot;KUNNR_INPUT&quot;))</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Without_Remediated" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+    </input>
+    <input node="Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number*"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BANKS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank country key"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Keys"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKN" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank account number"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BANKN"/>
+    </attribute>
+    <attribute id="IBAN" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBAN (International Bank Account Number)"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="IBAN"/>
+    </attribute>
+    <attribute id="BKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Control Key"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BKONT"/>
+    </attribute>
+    <attribute id="KOINH" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account Holder Name"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KOINH"/>
+    </attribute>
+    <attribute id="EBPP_ACCNAME" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User-Defined Name of Bank Details"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="EBPP_ACCNAME"/>
+    </attribute>
+    <attribute id="BKREF" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference specifications for bank details"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BKREF"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="225" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="766"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="U_KNBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_KNBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_KNBK" modelObjectNameSpace="J_KNBK" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="176"/>
+    </shape>
+    <shape modelObjectName="Remediated_Data" modelObjectNameSpace="J_KNBK" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="176"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Without_Remediated" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="224" y="236"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

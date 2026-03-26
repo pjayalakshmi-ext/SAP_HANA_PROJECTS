@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.04Harmonization::CV_MM_SALESDATA_MVKE" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_MM_MVKE_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_MM_MVKE_REL_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMaster.03Transformation::CV_MM_SALESDATA_MVKE">
+    <resourceUri>EHUB.MD.MaterialMaster.03Transformation::CV_MM_SALESDATA_MVKE</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_MM_MVKE_REL_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SALESDATA">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="VKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.03Transformation::CV_MM_SALESDATA_MVKE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_SALESDATA">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="VKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SALESDATA" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHME" source="SCHME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTA" source="VMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTD" source="VMSTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DWERK" source="DWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUMNG" source="AUMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFMNG" source="LFMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCMNG" source="SCMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSG" source="VERSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS" source="MTPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="PRODUCT_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+      <viewAttribute hidden="true" id="JOIN$VKORG$VKORG"/>
+      <viewAttribute hidden="true" id="JOIN$VTWEG$VTWEG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_SALESDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHME" source="SCHME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTA" source="VMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTD" source="VMSTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DWERK" source="DWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUMNG" source="AUMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFMNG" source="LFMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCMNG" source="SCMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSG" source="VERSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS" source="MTPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VKORG$VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VTWEG$VTWEG" source="VTWEG"/>
+    </input>
+    <input node="P_Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_INPUT" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VKORG$VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VTWEG$VTWEG" source="VTWEG"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+    <joinAttribute name="JOIN$VKORG$VKORG"/>
+    <joinAttribute name="JOIN$VTWEG$VTWEG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="PRODUCT_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+    <filter>&quot;PRODUCT_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="VKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Without_Remediated_data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHME" source="SCHME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTA" source="VMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTD" source="VMSTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DWERK" source="DWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUMNG" source="AUMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFMNG" source="LFMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCMNG" source="SCMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSG" source="VERSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS" source="MTPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+    </input>
+    <input node="P_Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHME" source="SCHME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTA" source="VMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTD" source="VMSTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DWERK" source="DWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUMNG" source="AUMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFMNG" source="LFMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCMNG" source="SCMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSG" source="VERSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS" source="MTPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MATNR"/>
+    </attribute>
+    <attribute id="VRKME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRKME"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VRKME"/>
+    </attribute>
+    <attribute id="VTWEG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTWEG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SCHME" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SCHME"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SCHME"/>
+    </attribute>
+    <attribute id="VMSTA" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VMSTA"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VMSTA"/>
+    </attribute>
+    <attribute id="VMSTD" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VMSTD"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VMSTD"/>
+    </attribute>
+    <attribute id="DWERK" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DWERK"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="DWERK"/>
+    </attribute>
+    <attribute id="SKTOF" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SKTOF"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SKTOF"/>
+    </attribute>
+    <attribute id="AUMNG" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUMNG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="AUMNG"/>
+    </attribute>
+    <attribute id="LFMNG" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LFMNG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LFMNG"/>
+    </attribute>
+    <attribute id="SCMNG" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SCMNG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SCMNG"/>
+    </attribute>
+    <attribute id="RDPRF" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RDPRF"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="RDPRF"/>
+    </attribute>
+    <attribute id="VERSG" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERSG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VERSG"/>
+    </attribute>
+    <attribute id="MTPOS" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTPOS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MTPOS"/>
+    </attribute>
+    <attribute id="PRODH" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODH"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PRODH"/>
+    </attribute>
+    <attribute id="PMATN" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PMATN"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PMATN"/>
+    </attribute>
+    <attribute id="KONDM" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KONDM"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KONDM"/>
+    </attribute>
+    <attribute id="KTGRM" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTGRM"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KTGRM"/>
+    </attribute>
+    <attribute id="PROVG" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROVG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PROVG"/>
+    </attribute>
+    <attribute id="VKORG" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKORG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VKORG"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="332" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_SALESDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="U_SALESDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_SALESDATA" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="364"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="332" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

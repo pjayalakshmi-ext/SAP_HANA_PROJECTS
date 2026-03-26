@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialInspectionCharacteristic.01Extraction::CV_SHE_MATERIALINSPCHAR_QPMK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_QPMK">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_QPMK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+      <viewAttribute id="MANDT"/>
+    
+      <viewAttribute id="VERSION"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_QPMK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="ZAEHLER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MKMNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="GUELTIGAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SearchField" source="SORTFELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InternalCharacteristicDescription" source="CHARACT_ID1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status" source="LOEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassCharacteristicName" source="ATINN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DecimalPlaces" source="STELLEN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WeightingOfCharacteristic" source="MERKGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField1" source="DUMMY10"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField2" source="DUMMY20"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField3" source="DUMMY40"/>
+    </input>
+    <filter>&quot;MANDT&quot;='801' and &quot;VERSION&quot; ='000001' and &quot;DecimalPlaces&quot;=0</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="PlantInspectionCharacteristic" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant for the Master Inspection Characteristic"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PlantInspectionCharacteristic"/>
+    </attribute>
+    <attribute id="MasterInspectionCharacteristics" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master Inspection Characteristics"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MasterInspectionCharacteristics"/>
+    </attribute>
+    <attribute id="ValidFromDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valid-From Date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ValidFromDate"/>
+    </attribute>
+    <attribute id="ClassCharacteristicName" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Internal characteristic"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassCharacteristicName"/>
+    </attribute>
+    <attribute id="Status" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Status of Master Record"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Status"/>
+    </attribute>
+    <attribute id="SearchField" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Search Field"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SearchField"/>
+    </attribute>
+    <attribute id="InternalCharacteristicDescription" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Characteristic Description for Quality Data Exchange"/>
+      <keyMapping columnObjectName="Projection_1" columnName="InternalCharacteristicDescription"/>
+    </attribute>
+    <attribute id="DecimalPlaces" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Places to the Right of a Decimal Point (Accuracy)"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DecimalPlaces"/>
+    </attribute>
+    <attribute id="WeightingOfCharacteristic" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Weighting of the Characteristic"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WeightingOfCharacteristic"/>
+    </attribute>
+    <attribute id="InfoField1" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Text Line for Additional Information"/>
+      <keyMapping columnObjectName="Projection_1" columnName="InfoField1"/>
+    </attribute>
+    <attribute id="InfoField2" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Text Line for Additional Information"/>
+      <keyMapping columnObjectName="Projection_1" columnName="InfoField2"/>
+    </attribute>
+    <attribute id="InfoField3" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Text Line for Additional Information"/>
+      <keyMapping columnObjectName="Projection_1" columnName="InfoField3"/>
+    </attribute>
+  
+    <attribute id="VERSION" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Version Number of the Master Inspection Characteristic"/>
+  
+      <keyMapping columnObjectName="Projection_1" columnName="VERSION"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

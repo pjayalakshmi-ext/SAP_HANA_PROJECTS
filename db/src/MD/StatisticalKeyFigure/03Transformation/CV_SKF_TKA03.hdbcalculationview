@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.StatisticalKeyFigure.03Transformation::CV_SKF_TKA03" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_SKF_TKA03"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.StatisticalKeyFigure.01Extraction::CV_SHE_SKF_TKA03">
+    <resourceUri>EHUB.MD.StatisticalKeyFigure.01Extraction::CV_SHE_SKF_TKA03</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_CONTROLLING_AREA">
+    <resourceUri>EHUB.Synonyms::SY_LKP_CONTROLLING_AREA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_TKA03">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.StatisticalKeyFigure.01Extraction::CV_SHE_SKF_TKA03"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_CONTROLLING_AREA">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="CONTROLLING_AREA"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_CONTROLLING_AREA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CONTROLLING_AREA" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+      <viewAttribute id="CONTROLLING_AREA"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_KOKRS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;CONTROLLING_AREA&quot;, &quot;KOKRS&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_TKA03">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="KOKRS"/>
+    </input>
+    <input node="P_LKP_CONTROLLING_AREA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CONTROLLING_AREA" source="CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_CONTROLLING_AREA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_CONTROLLING_AREA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Controlling Area"/>
+      <keyMapping columnObjectName="J_CONTROLLING_AREA" columnName="CC_KOKRS"/>
+    </attribute>
+    <attribute id="STAGR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical key figure"/>
+      <keyMapping columnObjectName="J_CONTROLLING_AREA" columnName="STAGR"/>
+    </attribute>
+    <attribute id="SPRAS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="J_CONTROLLING_AREA" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="BEZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Long Text"/>
+      <keyMapping columnObjectName="J_CONTROLLING_AREA" columnName="BEZEI"/>
+    </attribute>
+    <attribute id="MSEHI" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit for statistical key figure"/>
+      <keyMapping columnObjectName="J_CONTROLLING_AREA" columnName="MSEHI"/>
+    </attribute>
+    <attribute id="GRTYP" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical Key Figure Category"/>
+      <keyMapping columnObjectName="J_CONTROLLING_AREA" columnName="GRTYP"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221.11302679000914" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_TKA03" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000001" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_CONTROLLING_AREA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CONTROLLING_AREA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221.11302679000914" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_TKA03" modelObjectNameSpace="J_CONTROLLING_AREA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_LKP_CONTROLLING_AREA" modelObjectNameSpace="J_CONTROLLING_AREA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="252.27294921875"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

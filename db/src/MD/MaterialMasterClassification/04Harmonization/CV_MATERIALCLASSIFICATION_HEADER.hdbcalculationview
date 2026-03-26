@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMasterClassification.04Harmonization::CV_MATERIALCLASSIFICATION_HEADER" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_MMCLASS_HEADER_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_MMCLASS_HEADER_REL_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMasterClassification.03Transformation::CV_MATERIALCLASSIFICATION_HEADER_KSSK">
+    <resourceUri>EHUB.MD.MaterialMasterClassification.03Transformation::CV_MATERIALCLASSIFICATION_HEADER_KSSK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassificationStatus"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="StandardClass"/>
+      <viewAttribute id="ValidFromDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_MMCLASS_HEADER_REL_INPUT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="CLASSNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="CLASSTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassificationStatus" source="CLASSIFICATIONSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="PRODUCTNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="StandardClass" source="STANDARDCLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="VALIDFROMDATE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="ClassificationStatus"/>
+      <viewAttribute id="StandardClass"/>
+      <viewAttribute id="ValidFromDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMasterClassification.03Transformation::CV_MATERIALCLASSIFICATION_HEADER_KSSK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="ClassificationStatus"/>
+      <viewAttribute id="StandardClass"/>
+      <viewAttribute id="ValidFromDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassificationStatus" source="ClassificationStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="StandardClass" source="StandardClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="ClassificationStatus"/>
+      <viewAttribute id="StandardClass"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassName_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$ClassType$ClassType"/>
+      <viewAttribute hidden="true" id="JOIN$ClassName$ClassName"/>
+      <viewAttribute hidden="true" id="JOIN$ClassificationStatus$ClassificationStatus"/>
+      <viewAttribute hidden="true" id="JOIN$ProductNum$ProductNum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassificationStatus" source="ClassificationStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="StandardClass" source="StandardClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassType$ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassName$ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassificationStatus$ClassificationStatus" source="ClassificationStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ProductNum$ProductNum" source="ProductNum"/>
+    </input>
+    <input node="P_Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName_INPUT" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassType$ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassName$ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassificationStatus$ClassificationStatus" source="ClassificationStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ProductNum$ProductNum" source="ProductNum"/>
+    </input>
+    <joinAttribute name="JOIN$ClassType$ClassType"/>
+    <joinAttribute name="JOIN$ClassName$ClassName"/>
+    <joinAttribute name="JOIN$ClassificationStatus$ClassificationStatus"/>
+    <joinAttribute name="JOIN$ProductNum$ProductNum"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="ClassificationStatus"/>
+      <viewAttribute id="StandardClass"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassName_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+    <filter>&quot;ClassName_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="ClassificationStatus"/>
+      <viewAttribute id="StandardClass"/>
+      <viewAttribute id="ValidFromDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Without_Remediated_data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassificationStatus" source="ClassificationStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="StandardClass" source="StandardClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+    </input>
+    <input node="P_Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassificationStatus" source="ClassificationStatus"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="StandardClass" source="StandardClass"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="ClassType" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassType"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ClassType"/>
+    </attribute>
+    <attribute id="ClassName" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassName"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ClassName"/>
+    </attribute>
+    <attribute id="ProductNum" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProductNum"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ProductNum"/>
+    </attribute>
+    <attribute id="ClassificationStatus" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassificationStatus"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ClassificationStatus"/>
+    </attribute>
+    <attribute id="StandardClass" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="StandardClass"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="StandardClass"/>
+    </attribute>
+    <attribute id="ValidFromDate" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ValidFromDate"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ValidFromDate"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="332" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="364"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="332" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

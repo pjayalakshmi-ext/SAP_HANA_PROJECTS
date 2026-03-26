@@ -1,0 +1,278 @@
+{
+  "EHUB.Synonyms::SY_LKP_CONTROLLING_AREA": {
+    "target": {
+      "object": "LKP_CONTROLLING_AREA",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_COMPANY_CODE": {
+    "target": {
+      "object": "LKP_COMPANY_CODE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_DISTRIBUTION_CHANNEL": {
+    "target": {
+      "object": "LKP_DISTRIBUTION_CHANNEL",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_CURRENCY": {
+    "target": {
+      "object": "LKP_CURRENCY",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_COST_CENTER": {
+    "target": {
+      "object": "LKP_COST_CENTER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_LANGUAGE": {
+    "target": {
+      "object": "LKP_LANGUAGE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_COUNTRY_REGION": {
+    "target": {
+      "object": "LKP_COUNTRY_REGION",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_VENDOR": {
+    "target": {
+      "object": "LKP_VENDOR_NUMBER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_CUSTOMER": {
+    "target": {
+      "object": "LKP_CUSTOMER_NUMBER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_TAX_CODE": {
+    "target": {
+      "object": "LKP_TAX_CODE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_COUNTRY": {
+    "target": {
+      "object": "LKP_COUNTRY",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_BANK_MASTER_RECORD": {
+    "target": {
+      "object": "LKP_BANK_MASTER_RECORD",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_PROFIT_CENTER_MASTER_DATA": {
+    "target": {
+      "object": "LKP_PROFIT_CENTER_MASTER_DATA",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_PROFIT_CENTER": {
+    "target": {
+      "object": "LKP_PROFIT_CENTER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_MATERIAL_TYPE": {
+    "target": {
+      "object": "LKP_MATERIAL_TYPE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_PLANT": {
+    "target": {
+      "object": "LKP_PLANT",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_UNIT_OF_MEASUREMENT": {
+    "target": {
+      "object": "LKP_UNIT_OF_MEASUREMENT",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER": {
+    "target": {
+      "object": "LKP_MATERIAL_NUMBER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::LKP_MASTER_INSPECT_CHARS": {
+    "target": {
+      "object": "LKP_MASTER_INSPECT_CHARS",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_MATERIAL_GROUP": {
+    "target": {
+      "object": "LKP_MATERIAL_GROUP",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_STORAGE_LOCATION": {
+    "target": {
+      "object": "LKP_STORAGE_LOCATION",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_DIVISION": {
+    "target": {
+      "object": "LKP_DIVISION",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_ISO_CODES_UNITS_OF_MSRMNT": {
+    "target": {
+      "object": "LKP_ISO_CODES_UNITS_OF_MSRMNT",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_INDUSTRY_SECTOR": {
+    "target": {
+      "object": "LKP_INDUSTRY_SECTOR",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_ITEM_CAT_GROUP_MATERIAL": {
+    "target": {
+      "object": "LKP_ITEM_CAT_GROUP_MATERIAL",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_MRP_CONTROLLER": {
+    "target": {
+      "object": "LKP_MRP_CONTROLLER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_MRP_TYPE": {
+    "target": {
+      "object": "LKP_MRP_TYPE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_D_PROCUREMENT_TYPE": {
+    "target": {
+      "object": "LKP_D_PROCUREMENT_TYPE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_PRODUCT_HIERARCHY": {
+    "target": {
+      "object": "LKP_PRODUCT_HIERARCHY",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_PURCHASING_GROUP": {
+    "target": {
+      "object": "LKP_PURCHASING_GROUP",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_SALES_ORGANISATION": {
+    "target": {
+      "object": "LKP_SALES_ORGANISATION",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_CHART_OF_ACCOUNTS": {
+    "target": {
+      "object": "LKP_CHART_OF_ACCOUNTS",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER": {
+    "target": {
+      "object": "LKP_GL_ACCOUNT_NUMBER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_SUPPLIER_ACCOUNT_GROUP": {
+    "target": {
+      "object": "LKP_SUPPLIER_ACCOUNT_GROUP",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_TRANSPORTATION_ZONE": {
+    "target": {
+      "object": "LKP_TRANSPORTATION_ZONE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_GL_ACCOUNT_NUMBER": {
+    "target": {
+      "object": "LKP_GL_ACCOUNT_NUMBER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_PURCHASE_ORGANIZATION": {
+    "target": {
+      "object": "LKP_PURCHASE_ORGANIZATION",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::LKP_PAYMENT_METHOD": {
+    "target": {
+      "object": "LKP_PAYMENT_METHOD",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_BOM_STATUS": {
+    "target": {
+      "object": "LKP_BOM_STATUS",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_BOM_USAGE": {
+    "target": {
+      "object": "LKP_BOM_USAGE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_LABOR_DESIGN_OFFICE": {
+    "target": {
+      "object": "LKP_LABOR_DESIGN_OFFICE",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_D_BOM_CATEGORY": {
+    "target": {
+      "object": "LKP_D_BOM_CATEGORY",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_LKP_PURCHASING_ORGANIZATION": {
+    "target": {
+      "object": "LKP_PURCHASING_ORGANIZATION",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::LKP_MATERIAL_STORAGE_LOCATION": {
+    "target": {
+      "object": "LKP_MATERIAL_STORAGE_LOCATION",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::LKP_VENDOR_NUMBER": {
+    "target": {
+      "object": "LKP_VENDOR_NUMBER",
+      "schema": "AUX"
+    }
+  },
+  "EHUB.Synonyms::SY_MATCH_CONFIG": {
+    "target": {
+      "object": "MATCH_CONFIG",
+      "schema": "AUX"
+    }
+  }
+}

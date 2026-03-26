@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.06Completeness::CV_MM_BASICDATA_MARA" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialMaster.04Harmonization::CV_MM_BASICDATA_MARA">
+    <resourceUri>EHUB.MD.MaterialMaster.04Harmonization::CV_MM_BASICDATA_MARA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BASICDATA">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="BKLAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MTART_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MTART&quot;=''  or &quot;MTART&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MAKTX_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MAKTX&quot;=''  or &quot;MAKTX&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="SPRAS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SPRAS&quot;=''  or &quot;SPRAS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MEINS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MEINS&quot;=''  or &quot;MEINS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MATNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MATNR&quot;=''  or &quot;MATNR&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.MaterialMaster.04Harmonization::CV_MM_BASICDATA_MARA"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_BASICDATA">
+  <attributes>
+    <attribute id="MTART_INCOMPLETE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTART_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MTART_INCOMPLETE"/>
+    </attribute>
+    <attribute id="MAKTX_INCOMPLETE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MAKTX_INCOMPLETE"/>
+    </attribute>
+    <attribute id="SPRAS_INCOMPLETE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="SPRAS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="MEINS_INCOMPLETE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINS_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MEINS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="MATNR_INCOMPLETE" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MATNR_INCOMPLETE"/>
+    </attribute>
+    <attribute id="ANP" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANP Code"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="ANP"/>
+    </attribute>
+    <attribute id="BISMT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Old material number"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="BISMT"/>
+    </attribute>
+    <attribute id="BREIT" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Width"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="BREIT"/>
+    </attribute>
+    <attribute id="BRGEW" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gross Weight"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="BRGEW"/>
+    </attribute>
+    <attribute id="BSTME" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchase Order Unit of Measure"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="BSTME"/>
+    </attribute>
+    <attribute id="EAN11" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="International Article Number (EAN/UPC)"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="EAN11"/>
+    </attribute>
+    <attribute id="EKWSL" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing Value Key"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="EKWSL"/>
+    </attribute>
+    <attribute id="ERGEI" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of weight (allowed packaging weight)"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="ERGEI"/>
+    </attribute>
+    <attribute id="ERGEW" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Allowed packaging weight"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="ERGEW"/>
+    </attribute>
+    <attribute id="ERVOE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Volume unit (allowed packaging volume)"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="ERVOE"/>
+    </attribute>
+    <attribute id="ERVOL" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Allowed packaging volume"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="ERVOL"/>
+    </attribute>
+    <attribute id="ETIAR" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Label type"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="ETIAR"/>
+    </attribute>
+    <attribute id="ETIFO" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Label form"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="ETIFO"/>
+    </attribute>
+    <attribute id="EXTWG" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="External Material Group"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="EXTWG"/>
+    </attribute>
+    <attribute id="GEWEI" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Weight Unit"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="GEWEI"/>
+    </attribute>
+    <attribute id="GEWTO" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Excess Weight Tolerance for Handling unit"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="GEWTO"/>
+    </attribute>
+    <attribute id="GROES" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Size/dimensions"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="GROES"/>
+    </attribute>
+    <attribute id="HOEHE" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Height"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="HOEHE"/>
+    </attribute>
+    <attribute id="HUTYP" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Handling Unit Type"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="HUTYP"/>
+    </attribute>
+    <attribute id="IPRKZ" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Period Indicator for Shelf Life Expiration Date"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="IPRKZ"/>
+    </attribute>
+    <attribute id="KZGVH" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Packaging Material is Closed Packaging"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="KZGVH"/>
+    </attribute>
+    <attribute id="KZKFG" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Configurable Material"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="KZKFG"/>
+    </attribute>
+    <attribute id="LAENG" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Length"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="LAENG"/>
+    </attribute>
+    <attribute id="MATKL" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Group"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MATKL"/>
+    </attribute>
+    <attribute id="MATNR" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MBRSH" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Industry sector"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MBRSH"/>
+    </attribute>
+    <attribute id="MEABM" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of Dimension for Length/Width/Height"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MEABM"/>
+    </attribute>
+    <attribute id="MEINS" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Base Unit of Measure"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MEINS"/>
+    </attribute>
+    <attribute id="MFRNR" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of a Manufacturer"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MFRNR"/>
+    </attribute>
+    <attribute id="MFRPN" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Manufacturer Part Number"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MFRPN"/>
+    </attribute>
+    <attribute id="MHDHB" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Total shelf life"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MHDHB"/>
+    </attribute>
+    <attribute id="MHDLP" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage percentage"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MHDLP"/>
+    </attribute>
+    <attribute id="MHDRZ" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum Remaining Shelf Life"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MHDRZ"/>
+    </attribute>
+    <attribute id="MPROF" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Manufacturer Part Profile"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MPROF"/>
+    </attribute>
+    <attribute id="MSTAE" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cross-Plant Material Status"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MSTAE"/>
+    </attribute>
+    <attribute id="MSTAV" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cross-distribution-chain material status"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MSTAV"/>
+    </attribute>
+    <attribute id="MSTDE" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date from which the cross-plant material status is valid"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MSTDE"/>
+    </attribute>
+    <attribute id="MSTDV" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date from which the X-distr.-chain material status is valid"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MSTDV"/>
+    </attribute>
+    <attribute id="MTART" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Type"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MTART"/>
+    </attribute>
+    <attribute id="MTPOS_MARA" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="General item category group"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MTPOS_MARA"/>
+    </attribute>
+    <attribute id="NTGEW" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Net Weight"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="NTGEW"/>
+    </attribute>
+    <attribute id="NUMTP" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Category of International Article Number (EAN)"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="NUMTP"/>
+    </attribute>
+    <attribute id="PRDHA" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Product hierarchy"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="PRDHA"/>
+    </attribute>
+    <attribute id="PSTAT" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Maintenance status"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="PSTAT"/>
+    </attribute>
+    <attribute id="QMPUR" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QM in Procurement is Active"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="QMPUR"/>
+    </attribute>
+    <attribute id="RAUBE" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage conditions"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="RAUBE"/>
+    </attribute>
+    <attribute id="RBNRM" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Catalog Profile"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="RBNRM"/>
+    </attribute>
+    <attribute id="RDMHD" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rounding rule for calculation of SLED"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="RDMHD"/>
+    </attribute>
+    <attribute id="SERLV" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Level of Explicitness for Serial Number"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="SERLV"/>
+    </attribute>
+    <attribute id="SLED_BBD" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Expiration Date"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="SLED_BBD"/>
+    </attribute>
+    <attribute id="SPART" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Division"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="SPART"/>
+    </attribute>
+    <attribute id="STOFF" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Hazardous material number"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="STOFF"/>
+    </attribute>
+    <attribute id="TEMPB" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Temperature conditions indicator"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="TEMPB"/>
+    </attribute>
+    <attribute id="TRAGR" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Transportation Group"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="TRAGR"/>
+    </attribute>
+    <attribute id="VABME" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Variable Purchase Order Unit Active"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="VABME"/>
+    </attribute>
+    <attribute id="VHART" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Packaging Material Type"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="VHART"/>
+    </attribute>
+    <attribute id="VOLEH" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Volume unit"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="VOLEH"/>
+    </attribute>
+    <attribute id="VOLTO" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Excess Volume Tolerance of the Handling Unit"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="VOLTO"/>
+    </attribute>
+    <attribute id="VOLUM" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Volume"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="VOLUM"/>
+    </attribute>
+    <attribute id="WESCH" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Quantity: Number of GR/GI slips to be printed"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="WESCH"/>
+    </attribute>
+    <attribute id="XCHPF" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Batch management requirement indicator"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="XCHPF"/>
+    </attribute>
+    <attribute id="XGCHP" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Approved batch record required"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="XGCHP"/>
+    </attribute>
+    <attribute id="SPRAS" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="MAKTX" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Description (Short Text)"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="MAKTX"/>
+    </attribute>
+    <attribute id="BKLAS" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKLAS"/>
+      <keyMapping columnObjectName="P_BASICDATA" columnName="BKLAS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MTART_INCOMPLETE&quot;+&quot;MAKTX_INCOMPLETE&quot;+&quot;SPRAS_INCOMPLETE&quot;+&quot;MEINS_INCOMPLETE&quot;+&quot;MATNR_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end 
+
+</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BASICDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

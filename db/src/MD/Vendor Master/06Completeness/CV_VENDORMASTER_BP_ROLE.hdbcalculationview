@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Vendor Master.06Completeness::CV_VENDORMASTER_BP_ROLE" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_VENDORMASTER_BP_ROLE.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.Vendor Master.04Harmonization::CV_VENDORMASTER_BP_ROLE">
+    <resourceUri>EHUB.MD.Vendor Master.04Harmonization::CV_VENDORMASTER_BP_ROLE</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="BP_ROLE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BP_ROLE_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BP_ROLE&quot; =''  or  &quot;BP_ROLE&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.Vendor Master.04Harmonization::CV_VENDORMASTER_BP_ROLE"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="LIFNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account Number of Vendor or Creditor"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="BP_ROLE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BP_ROLE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BP_ROLE"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="BP_ROLE_INCOMPLETE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BP_ROLE_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BP_ROLE_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="6" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BP_ROLE_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+END</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="94" y="197"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

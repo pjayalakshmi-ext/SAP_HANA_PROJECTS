@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.TD.SalesOrder.04Harmonization::CV_SO_HEADER_VBAK" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+<origin/>
+  <descriptions defaultDescription="CV_MD_FI_PC_TEXT_DMC_CEPCT_HAR"/>
+  <metadata changedAt="2023-01-26 15:09:20.889"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="35"/>
+  <dataSources>
+    <DataSource id="EHUB.TD.SalesOrder.03Transformation::CV_SO_HEADER_VBAK">
+      <resourceUri>EHUB.TD.SalesOrder.03Transformation::CV_SO_HEADER_VBAK</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_TA_SO_VBAK_REL_INPUT">
+      <resourceUri>EHUB.Synonyms::SY_TA_SO_VBAK_REL_INPUT</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VBAK_SHE">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.TD.SalesOrder.03Transformation::CV_SO_HEADER_VBAK"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_TA_SO_VBAK_REL_INPUT"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="VBAK_SHE">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentType" source="SalesDocumentType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPONumber" source="CustomerPONumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RequestedDeliveryDate" source="RequestedDeliveryDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPODate" source="CustomerPODate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingBlockInSDDocument" source="BillingBlockInSDDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderReason" source="OrderReason"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DocumentDate" source="DocumentDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup1" source="CustomerGroup1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup2" source="CustomerGroup2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup3" source="CustomerGroup3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup4" source="CustomerGroup4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup5" source="CustomerGroup5"/>
+      </input>
+    </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+      <viewAttribute id="LegacySalesDocument_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$LegacySalesDocument$SalesDocumentType"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Union_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentType" source="SalesDocumentType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPONumber" source="CustomerPONumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RequestedDeliveryDate" source="RequestedDeliveryDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPODate" source="CustomerPODate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingBlockInSDDocument" source="BillingBlockInSDDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderReason" source="OrderReason"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DocumentDate" source="DocumentDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup1" source="CustomerGroup1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup2" source="CustomerGroup2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup3" source="CustomerGroup3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup4" source="CustomerGroup4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup5" source="CustomerGroup5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LegacySalesDocument$SalesDocumentType" source="LegacySalesDocument"/>
+      </input>
+      <input node="P_Remediated_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument_INPUT" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LegacySalesDocument$SalesDocumentType" source="SalesDocumentType"/>
+      </input>
+    <joinAttribute name="JOIN$LegacySalesDocument$SalesDocumentType"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+      <viewAttribute id="LegacySalesDocument_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Join_2"/>
+    <filter>&quot;LegacySalesDocument_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_2">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="P_Without_Remediated_data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentType" source="SalesDocumentType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPONumber" source="CustomerPONumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RequestedDeliveryDate" source="RequestedDeliveryDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPODate" source="CustomerPODate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingBlockInSDDocument" source="BillingBlockInSDDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderReason" source="OrderReason"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DocumentDate" source="DocumentDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup1" source="CustomerGroup1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup2" source="CustomerGroup2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup3" source="CustomerGroup3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup4" source="CustomerGroup4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup5" source="CustomerGroup5"/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="P_Remediated_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentType" source="SalesDocumentType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPONumber" source="CustomerPONumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RequestedDeliveryDate" source="RequestedDeliveryDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPODate" source="CustomerPODate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingBlockInSDDocument" source="BillingBlockInSDDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderReason" source="OrderReason"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DocumentDate" source="DocumentDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup1" source="CustomerGroup1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup2" source="CustomerGroup2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup3" source="CustomerGroup3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup4" source="CustomerGroup4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup5" source="CustomerGroup5"/>
+      </input>
+    </calculationView>
+</calculationViews>
+  <logicalModel id="Union_2">
+    <descriptions/>
+    <attributes>
+      <attribute id="LegacySalesDocument" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="LegacySalesDocument"/>
+        <keyMapping columnObjectName="Union_2" columnName="LegacySalesDocument"/>
+      </attribute>
+      <attribute id="SalesDocumentType" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SalesDocumentType"/>
+        <keyMapping columnObjectName="Union_2" columnName="SalesDocumentType"/>
+      </attribute>
+      <attribute id="SalesOrganization" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SalesOrganization"/>
+        <keyMapping columnObjectName="Union_2" columnName="SalesOrganization"/>
+      </attribute>
+      <attribute id="DistributionChannel" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="DistributionChannel"/>
+        <keyMapping columnObjectName="Union_2" columnName="DistributionChannel"/>
+      </attribute>
+      <attribute id="Division" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Division"/>
+        <keyMapping columnObjectName="Union_2" columnName="Division"/>
+      </attribute>
+      <attribute id="CustomerPONumber" order="6" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CustomerPONumber"/>
+        <keyMapping columnObjectName="Union_2" columnName="CustomerPONumber"/>
+      </attribute>
+      <attribute id="RequestedDeliveryDate" order="7" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="RequestedDeliveryDate"/>
+        <keyMapping columnObjectName="Union_2" columnName="RequestedDeliveryDate"/>
+      </attribute>
+      <attribute id="CustomerPODate" order="8" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CustomerPODate"/>
+        <keyMapping columnObjectName="Union_2" columnName="CustomerPODate"/>
+      </attribute>
+      <attribute id="BillingBlockInSDDocument" order="9" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BillingBlockInSDDocument"/>
+        <keyMapping columnObjectName="Union_2" columnName="BillingBlockInSDDocument"/>
+      </attribute>
+      <attribute id="OrderReason" order="10" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="OrderReason"/>
+        <keyMapping columnObjectName="Union_2" columnName="OrderReason"/>
+      </attribute>
+      <attribute id="DocumentDate" order="11" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="DocumentDate"/>
+        <keyMapping columnObjectName="Union_2" columnName="DocumentDate"/>
+      </attribute>
+      <attribute id="CustomerGroup1" order="12" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CustomerGroup1"/>
+        <keyMapping columnObjectName="Union_2" columnName="CustomerGroup1"/>
+      </attribute>
+      <attribute id="CustomerGroup2" order="13" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CustomerGroup2"/>
+        <keyMapping columnObjectName="Union_2" columnName="CustomerGroup2"/>
+      </attribute>
+      <attribute id="CustomerGroup3" order="14" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CustomerGroup3"/>
+        <keyMapping columnObjectName="Union_2" columnName="CustomerGroup3"/>
+      </attribute>
+      <attribute id="CustomerGroup4" order="15" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CustomerGroup4"/>
+        <keyMapping columnObjectName="Union_2" columnName="CustomerGroup4"/>
+      </attribute>
+      <attribute id="CustomerGroup5" order="16" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CustomerGroup5"/>
+        <keyMapping columnObjectName="Union_2" columnName="CustomerGroup5"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="225" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="VBAK_SHE" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="766"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="301" y="661"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="661"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="183" y="501"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="65" y="393"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Union_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="236" y="236"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape></shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.PurchasingInfoRecord.01Extraction::CV_SHE_PIR_KONP" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_SHE_PIR_KONP.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_KONP">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_KONP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KNUMH"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KAPPL"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="KNUMT"/>
+      <viewAttribute id="STFKZ"/>
+      <viewAttribute id="KZBZG"/>
+      <viewAttribute id="KSTBM"/>
+      <viewAttribute id="KONMS"/>
+      <viewAttribute id="KSTBW"/>
+      <viewAttribute id="KONWS"/>
+      <viewAttribute id="KRECH"/>
+      <viewAttribute id="KBETR"/>
+      <viewAttribute id="KONWA"/>
+      <viewAttribute id="KPEIN"/>
+      <viewAttribute id="KMEIN"/>
+      <viewAttribute id="PRSCH"/>
+      <viewAttribute id="KUMZA"/>
+      <viewAttribute id="KUMNE"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MXWRT"/>
+      <viewAttribute id="GKWRT"/>
+      <viewAttribute id="PKWRT"/>
+      <viewAttribute id="FKWRT"/>
+      <viewAttribute id="RSWRT"/>
+      <viewAttribute id="KWAEH"/>
+      <viewAttribute id="UKBAS"/>
+      <viewAttribute id="KZNEP"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MWSK1"/>
+      <viewAttribute id="LOEVM_KO"/>
+      <viewAttribute id="ZAEHK_IND"/>
+      <viewAttribute id="BOMAT"/>
+      <viewAttribute id="KBRUE"/>
+      <viewAttribute id="KSPAE"/>
+      <viewAttribute id="BOSTA"/>
+      <viewAttribute id="KNUMA_PI"/>
+      <viewAttribute id="KNUMA_AG"/>
+      <viewAttribute id="KNUMA_SQ"/>
+      <viewAttribute id="VALTG"/>
+      <viewAttribute id="VALDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ANZAUF"/>
+      <viewAttribute id="MIKBAS"/>
+      <viewAttribute id="MXKBAS"/>
+      <viewAttribute id="KOMXWRT"/>
+      <viewAttribute id="KLF_STG"/>
+      <viewAttribute id="KLF_KAL"/>
+      <viewAttribute id="VKKAL"/>
+      <viewAttribute id="AKTNR"/>
+      <viewAttribute id="KNUMA_BO"/>
+      <viewAttribute id="MWSK2"/>
+      <viewAttribute id="VERTT"/>
+      <viewAttribute id="VERTN"/>
+      <viewAttribute id="VBEWA"/>
+      <viewAttribute id="MDFLG"/>
+      <viewAttribute id="KFRST"/>
+      <viewAttribute id="UASTA"/>
+      <viewAttribute id="_BEV1_ECRTT"/>
+      <viewAttribute id="_BEV1_ECRTN"/>
+      <viewAttribute id="_BEV1_ECEWA"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CURRENT_DATE" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>CURRENT_DATE</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_KONP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="_BEV1_ECRTT" source="/BEV1/ECRTT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_BEV1_ECRTN" source="/BEV1/ECRTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_BEV1_ECEWA" source="/BEV1/ECEWA"/>
+    </input>
+    <filter>&quot;MANDT&quot;=801</filter>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KNUMH" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KNUMH"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KNUMH"/>
+    </attribute>
+    <attribute id="KOPOS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOPOS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOPOS"/>
+    </attribute>
+    <attribute id="KAPPL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KAPPL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KAPPL"/>
+    </attribute>
+    <attribute id="KSCHL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSCHL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KSCHL"/>
+    </attribute>
+    <attribute id="KNUMT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KNUMT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KNUMT"/>
+    </attribute>
+    <attribute id="STFKZ" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STFKZ"/>
+      <keyMapping columnObjectName="Projection_1" columnName="STFKZ"/>
+    </attribute>
+    <attribute id="KZBZG" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KZBZG"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KZBZG"/>
+    </attribute>
+    <attribute id="KSTBM" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTBM"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KSTBM"/>
+    </attribute>
+    <attribute id="KONMS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KONMS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KONMS"/>
+    </attribute>
+    <attribute id="KSTBW" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSTBW"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KSTBW"/>
+    </attribute>
+    <attribute id="KONWS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KONWS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KONWS"/>
+    </attribute>
+    <attribute id="KRECH" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KRECH"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KRECH"/>
+    </attribute>
+    <attribute id="KBETR" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KBETR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KBETR"/>
+    </attribute>
+    <attribute id="KONWA" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KONWA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KONWA"/>
+    </attribute>
+    <attribute id="KPEIN" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KPEIN"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KPEIN"/>
+    </attribute>
+    <attribute id="KMEIN" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMEIN"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KMEIN"/>
+    </attribute>
+    <attribute id="PRSCH" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRSCH"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRSCH"/>
+    </attribute>
+    <attribute id="KUMZA" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUMZA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KUMZA"/>
+    </attribute>
+    <attribute id="KUMNE" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUMNE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KUMNE"/>
+    </attribute>
+    <attribute id="MEINS" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MEINS"/>
+    </attribute>
+    <attribute id="MXWRT" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MXWRT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MXWRT"/>
+    </attribute>
+    <attribute id="GKWRT" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GKWRT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GKWRT"/>
+    </attribute>
+    <attribute id="PKWRT" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PKWRT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PKWRT"/>
+    </attribute>
+    <attribute id="FKWRT" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKWRT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FKWRT"/>
+    </attribute>
+    <attribute id="RSWRT" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RSWRT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="RSWRT"/>
+    </attribute>
+    <attribute id="KWAEH" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KWAEH"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KWAEH"/>
+    </attribute>
+    <attribute id="UKBAS" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UKBAS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="UKBAS"/>
+    </attribute>
+    <attribute id="KZNEP" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KZNEP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KZNEP"/>
+    </attribute>
+    <attribute id="KUNNR" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="LIFNR" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="MWSK1" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSK1"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MWSK1"/>
+    </attribute>
+    <attribute id="LOEVM_KO" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOEVM_KO"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LOEVM_KO"/>
+    </attribute>
+    <attribute id="ZAEHK_IND" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZAEHK_IND"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ZAEHK_IND"/>
+    </attribute>
+    <attribute id="BOMAT" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BOMAT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BOMAT"/>
+    </attribute>
+    <attribute id="KBRUE" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KBRUE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KBRUE"/>
+    </attribute>
+    <attribute id="KSPAE" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSPAE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KSPAE"/>
+    </attribute>
+    <attribute id="BOSTA" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BOSTA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BOSTA"/>
+    </attribute>
+    <attribute id="KNUMA_PI" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KNUMA_PI"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KNUMA_PI"/>
+    </attribute>
+    <attribute id="KNUMA_AG" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KNUMA_AG"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KNUMA_AG"/>
+    </attribute>
+    <attribute id="KNUMA_SQ" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KNUMA_SQ"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KNUMA_SQ"/>
+    </attribute>
+    <attribute id="VALTG" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALTG"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VALTG"/>
+    </attribute>
+    <attribute id="VALDT" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALDT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VALDT"/>
+    </attribute>
+    <attribute id="ZTERM" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTERM"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="ANZAUF" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANZAUF"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ANZAUF"/>
+    </attribute>
+    <attribute id="MIKBAS" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MIKBAS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MIKBAS"/>
+    </attribute>
+    <attribute id="MXKBAS" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MXKBAS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MXKBAS"/>
+    </attribute>
+    <attribute id="KOMXWRT" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOMXWRT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOMXWRT"/>
+    </attribute>
+    <attribute id="KLF_STG" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KLF_STG"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KLF_STG"/>
+    </attribute>
+    <attribute id="KLF_KAL" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KLF_KAL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KLF_KAL"/>
+    </attribute>
+    <attribute id="VKKAL" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKKAL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VKKAL"/>
+    </attribute>
+    <attribute id="AKTNR" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AKTNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="AKTNR"/>
+    </attribute>
+    <attribute id="KNUMA_BO" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KNUMA_BO"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KNUMA_BO"/>
+    </attribute>
+    <attribute id="MWSK2" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSK2"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MWSK2"/>
+    </attribute>
+    <attribute id="VERTT" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERTT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VERTT"/>
+    </attribute>
+    <attribute id="VERTN" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERTN"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VERTN"/>
+    </attribute>
+    <attribute id="VBEWA" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VBEWA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VBEWA"/>
+    </attribute>
+    <attribute id="MDFLG" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MDFLG"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MDFLG"/>
+    </attribute>
+    <attribute id="KFRST" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KFRST"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KFRST"/>
+    </attribute>
+    <attribute id="UASTA" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UASTA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="UASTA"/>
+    </attribute>
+    <attribute id="_BEV1_ECRTT" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BEV1_ECRTT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="_BEV1_ECRTT"/>
+    </attribute>
+    <attribute id="_BEV1_ECRTN" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BEV1_ECRTN"/>
+      <keyMapping columnObjectName="Projection_1" columnName="_BEV1_ECRTN"/>
+    </attribute>
+    <attribute id="_BEV1_ECEWA" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_BEV1_ECEWA"/>
+      <keyMapping columnObjectName="Projection_1" columnName="_BEV1_ECEWA"/>
+    </attribute>
+  
+    <attribute id="CURRENT_DATE" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENT_DATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.StatisticalKeyFigure.07Validation::CV_SKF_TKA03" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_SKF_TKA03"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.StatisticalKeyFigure.06Completeness::CV_SKF_TKA03">
+    <resourceUri>EHUB.MD.StatisticalKeyFigure.06Completeness::CV_SKF_TKA03</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T006">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T006</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T002">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T002</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_COMPLETE" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.StatisticalKeyFigure.06Completeness::CV_SKF_TKA03"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_TKA01" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_KOKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_KOKRS" source="KOKRS"/>
+    </input>
+    <filter>&quot;S4H_MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T006" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_MSEHI"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T006">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MSEHI" source="MSEHI"/>
+    </input>
+    <filter>&quot;S4H_MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T002">
+    <viewAttributes>
+      <viewAttribute id="S4H_SPRAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T002">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_SPRAS" source="SPRAS"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_KOKRS" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+      <viewAttribute id="S4H_KOKRS"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$S4H_KOKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="KOKRS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KOKRS&quot;=&quot;S4H_KOKRS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_COMPLETE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$S4H_KOKRS" source="KOKRS"/>
+    </input>
+    <input node="P_S4H_TKA01">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_KOKRS" source="S4H_KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$S4H_KOKRS" source="S4H_KOKRS"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$S4H_KOKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MSEHI" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+      <viewAttribute id="KOKRS_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_MSEHI"/>
+      <viewAttribute hidden="true" id="JOIN$MSEHI$S4H_MSEHI"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MSEHI_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MSEHI&quot;=&quot;S4H_MSEHI&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_KOKRS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS_INVALID" source="KOKRS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MSEHI$S4H_MSEHI" source="MSEHI"/>
+    </input>
+    <input node="P_S4H_T006">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MSEHI" source="S4H_MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MSEHI$S4H_MSEHI" source="S4H_MSEHI"/>
+    </input>
+    <joinAttribute name="JOIN$MSEHI$S4H_MSEHI"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_SPRAS" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+      <viewAttribute id="KOKRS_INVALID" aggregationType="sum"/>
+      <viewAttribute id="MSEHI_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_SPRAS"/>
+      <viewAttribute hidden="true" id="JOIN$SPRAS$S4H_SPRAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="SPRAS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SPRAS&quot;=&quot;S4H_SPRAS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_MSEHI">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS_INVALID" source="KOKRS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI_INVALID" source="MSEHI_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SPRAS$S4H_SPRAS" source="SPRAS"/>
+    </input>
+    <input node="P_S4H_T002">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_SPRAS" source="S4H_SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SPRAS$S4H_SPRAS" source="S4H_SPRAS"/>
+    </input>
+    <joinAttribute name="JOIN$SPRAS$S4H_SPRAS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_SPRAS">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Controlling Area"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="STAGR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical key figure"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="STAGR"/>
+    </attribute>
+    <attribute id="SPRAS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="BEZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Long Text"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="BEZEI"/>
+    </attribute>
+    <attribute id="MSEHI" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit for statistical key figure"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="MSEHI"/>
+    </attribute>
+    <attribute id="GRTYP" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical Key Figure Category"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="GRTYP"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="KOKRS_INVALID" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KOKRS_INVALID"/>
+      <measureMapping columnObjectName="J_SPRAS" columnName="KOKRS_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MSEHI_INVALID" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MSEHI_INVALID"/>
+      <measureMapping columnObjectName="J_SPRAS" columnName="MSEHI_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SPRAS_INVALID" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SPRAS_INVALID"/>
+      <measureMapping columnObjectName="J_SPRAS" columnName="SPRAS_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INVALID" order="11" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>CASE WHEN
+&quot;KOKRS_INVALID&quot;+&quot;MSEHI_INVALID&quot;+&quot;SPRAS_INVALID&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422.15218199852" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_COMPLETE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_TKA01" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_KOKRS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666669" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_COMPLETE" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198.0625"/>
+    </shape>
+    <shape modelObjectName="P_S4H_TKA01" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="152.623046875"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T006" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384.11215526044043" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MSEHI" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145.33333333333337" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_KOKRS" modelObjectNameSpace="J_MSEHI" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="172.603515625"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T006" modelObjectNameSpace="J_MSEHI" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="152.623046875"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T002" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489.48394766311617" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_SPRAS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422.15218199852" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_MSEHI" modelObjectNameSpace="J_SPRAS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="172.603515625"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T002" modelObjectNameSpace="J_SPRAS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="150.8076171875"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.BankMaster.06Completeness::CV_BANKMASTER_BNKA" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.BankMaster.04Harmonization::CV_BANKMASTER_BNKA">
+    <resourceUri>EHUB.MD.BankMaster.04Harmonization::CV_BANKMASTER_BNKA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_HARMONIZE">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BANKA_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKA&quot;=''  or &quot;BANKA&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BANKS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKS&quot;=''  or &quot;BANKS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BANKL_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKL&quot;=''  or &quot;BANKL&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PROVZ_INCOMPLETE" datatype="INTEGER" length="" expressionLanguage="SQL">
+        <formula>case when &quot;PROVZ&quot;=''  or &quot;PROVZ&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.BankMaster.04Harmonization::CV_BANKMASTER_BNKA"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_HARMONIZE">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BANKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank country key"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Keys"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKA" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name of bank"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BANKA"/>
+    </attribute>
+    <attribute id="PROVZ" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="PROVZ"/>
+    </attribute>
+    <attribute id="STRAS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House number and street"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="STRAS"/>
+    </attribute>
+    <attribute id="ORT01" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="ORT01"/>
+    </attribute>
+    <attribute id="SWIFT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWIFT/BIC for International Payments"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="SWIFT"/>
+    </attribute>
+    <attribute id="BGRUP" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank group (bank network)"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BGRUP"/>
+    </attribute>
+    <attribute id="XPGRO" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Post Office Bank Current Account"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="XPGRO"/>
+    </attribute>
+    <attribute id="BNKLZ" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank number"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BNKLZ"/>
+    </attribute>
+    <attribute id="BRNCH" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Branch"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BRNCH"/>
+    </attribute>
+    <attribute id="BANKA_INCOMPLETE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKA_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BANKA_INCOMPLETE"/>
+    </attribute>
+    <attribute id="BANKS_INCOMPLETE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKS_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BANKS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="BANKL_INCOMPLETE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKL_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BANKL_INCOMPLETE"/>
+    </attribute>
+  
+    <attribute id="PROVZ_INCOMPLETE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROVZ_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="PROVZ_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="13" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKA_INCOMPLETE&quot;+&quot;BANKS_INCOMPLETE&quot;+&quot;BANKL_INCOMPLETE&quot;+&quot;PROVZ_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_HARMONIZE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

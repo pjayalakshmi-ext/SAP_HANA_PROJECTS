@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.BillOfMaterials.06Completeness::CV_BOM_HEADER_STKO" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.BillOfMaterials.04Harmonization::CV_BOM_HEADER_STKO">
+    <resourceUri>EHUB.MD.BillOfMaterials.04Harmonization::CV_BOM_HEADER_STKO</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BOM_HEADER">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WERKS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=''  or &quot;WERKS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MATNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MATNR&quot;=''  or &quot;MATNR&quot; is null
+then 1
+else 0
+end  </formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STLAN_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;STLAN&quot;=''  or &quot;STLAN&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STLAL_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;STLAL&quot;=''  or &quot;STLAL&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BMENG_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when  &quot;BMENG&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STLST_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;STLST&quot;='' or &quot;STLST&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.BillOfMaterials.04Harmonization::CV_BOM_HEADER_STKO"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_BOM_HEADER">
+  <attributes>
+    <attribute id="MATNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="MATNR"/>
+    </attribute>
+    <attribute id="WERKS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="WERKS"/>
+    </attribute>
+    <attribute id="STLAN" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BOM Usage"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="STLAN"/>
+    </attribute>
+    <attribute id="STLAL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Alternative BOM"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="STLAL"/>
+    </attribute>
+    <attribute id="AENNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Change Number"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="AENNR"/>
+    </attribute>
+    <attribute id="BMENG" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Base quantity"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="BMENG"/>
+    </attribute>
+    <attribute id="BMEIN" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Base unit of measure for BOM"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="BMEIN"/>
+    </attribute>
+    <attribute id="LABOR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Laboratory/design office"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="LABOR"/>
+    </attribute>
+    <attribute id="CADKZ" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAD Indicator"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="CADKZ"/>
+    </attribute>
+    <attribute id="STLST" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BOM status"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="STLST"/>
+    </attribute>
+    <attribute id="WERKS_INCOMPLETE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="WERKS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="STLAN_INCOMPLETE" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STLAN_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="STLAN_INCOMPLETE"/>
+    </attribute>
+    <attribute id="STLAL_INCOMPLETE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STLAL_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="STLAL_INCOMPLETE"/>
+    </attribute>
+    <attribute id="BMENG_INCOMPLETE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BMENG_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="BMENG_INCOMPLETE"/>
+    </attribute>
+    <attribute id="STLST_INCOMPLETE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STLST_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="STLST_INCOMPLETE"/>
+    </attribute>
+  
+    <attribute id="MATNR_INCOMPLETE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR_INCOMPLETE"/>
+  
+      <keyMapping columnObjectName="P_BOM_HEADER" columnName="MATNR_INCOMPLETE"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS_INCOMPLETE&quot;+&quot;STLAN_INCOMPLETE&quot;+&quot;STLAL_INCOMPLETE&quot;+&quot;BMENG_INCOMPLETE&quot;+&quot;STLST_INCOMPLETE&quot;+&quot;MATNR_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BOM_HEADER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

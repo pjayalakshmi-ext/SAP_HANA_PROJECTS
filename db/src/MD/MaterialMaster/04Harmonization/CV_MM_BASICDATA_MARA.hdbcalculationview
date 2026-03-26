@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.04Harmonization::CV_MM_BASICDATA_MARA" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_MM_MARA_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_MM_MARA_REL_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMaster.03Transformation::CV_MM_BASICDATA_MARA">
+    <resourceUri>EHUB.MD.MaterialMaster.03Transformation::CV_MM_BASICDATA_MARA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_MM_MARA_REL_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BASICDATA">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+    
+      <viewAttribute id="BKLAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.03Transformation::CV_MM_BASICDATA_MARA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_BASICDATA">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+    
+      <viewAttribute id="BKLAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_BASICDATA" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANP" source="ANP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BREIT" source="BREIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTME" source="BSTME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EAN11" source="EAN11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKWSL" source="EKWSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEI" source="ERGEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEW" source="ERGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOE" source="ERVOE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOL" source="ERVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIAR" source="ETIAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIFO" source="ETIFO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXTWG" source="EXTWG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWTO" source="GEWTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOEHE" source="HOEHE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUTYP" source="HUTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRKZ" source="IPRKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZGVH" source="KZGVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZKFG" source="KZKFG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAENG" source="LAENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBRSH" source="MBRSH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEABM" source="MEABM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRPN" source="MFRPN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDHB" source="MHDHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDLP" source="MHDLP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDRZ" source="MHDRZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MPROF" source="MPROF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAE" source="MSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAV" source="MSTAV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDE" source="MSTDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDV" source="MSTDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS_MARA" source="MTPOS_MARA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUMTP" source="NUMTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT" source="PSTAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QMPUR" source="QMPUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUBE" source="RAUBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNRM" source="RBNRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDMHD" source="RDMHD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERLV" source="SERLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLED_BBD" source="SLED_BBD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOFF" source="STOFF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEMPB" source="TEMPB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRAGR" source="TRAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VHART" source="VHART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLTO" source="VOLTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WESCH" source="WESCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF" source="XCHPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGCHP" source="XGCHP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="PRODUCT_INPUT"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_BASICDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANP" source="ANP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BREIT" source="BREIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTME" source="BSTME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EAN11" source="EAN11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKWSL" source="EKWSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEI" source="ERGEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEW" source="ERGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOE" source="ERVOE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOL" source="ERVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIAR" source="ETIAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIFO" source="ETIFO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXTWG" source="EXTWG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWTO" source="GEWTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOEHE" source="HOEHE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUTYP" source="HUTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRKZ" source="IPRKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZGVH" source="KZGVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZKFG" source="KZKFG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAENG" source="LAENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBRSH" source="MBRSH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEABM" source="MEABM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRPN" source="MFRPN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDHB" source="MHDHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDLP" source="MHDLP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDRZ" source="MHDRZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MPROF" source="MPROF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAE" source="MSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAV" source="MSTAV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDE" source="MSTDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDV" source="MSTDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS_MARA" source="MTPOS_MARA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUMTP" source="NUMTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT" source="PSTAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QMPUR" source="QMPUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUBE" source="RAUBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNRM" source="RBNRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDMHD" source="RDMHD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERLV" source="SERLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLED_BBD" source="SLED_BBD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOFF" source="STOFF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEMPB" source="TEMPB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRAGR" source="TRAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VHART" source="VHART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLTO" source="VOLTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WESCH" source="WESCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF" source="XCHPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGCHP" source="XGCHP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="P_Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_INPUT" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="PRODUCT_INPUT"/>
+    
+      <viewAttribute id="BKLAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+    <filter>&quot;PRODUCT_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+    
+      <viewAttribute id="BKLAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Without_Remediated_data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANP" source="ANP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BREIT" source="BREIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTME" source="BSTME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EAN11" source="EAN11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKWSL" source="EKWSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEI" source="ERGEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEW" source="ERGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOE" source="ERVOE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOL" source="ERVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIAR" source="ETIAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIFO" source="ETIFO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXTWG" source="EXTWG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWTO" source="GEWTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOEHE" source="HOEHE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUTYP" source="HUTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRKZ" source="IPRKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZGVH" source="KZGVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZKFG" source="KZKFG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAENG" source="LAENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBRSH" source="MBRSH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEABM" source="MEABM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRPN" source="MFRPN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDHB" source="MHDHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDLP" source="MHDLP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDRZ" source="MHDRZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MPROF" source="MPROF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAE" source="MSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAV" source="MSTAV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDE" source="MSTDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDV" source="MSTDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS_MARA" source="MTPOS_MARA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUMTP" source="NUMTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT" source="PSTAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QMPUR" source="QMPUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUBE" source="RAUBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNRM" source="RBNRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDMHD" source="RDMHD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERLV" source="SERLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLED_BBD" source="SLED_BBD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOFF" source="STOFF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEMPB" source="TEMPB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRAGR" source="TRAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VHART" source="VHART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLTO" source="VOLTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WESCH" source="WESCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF" source="XCHPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGCHP" source="XGCHP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+    </input>
+    <input node="P_Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANP" source="ANP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BREIT" source="BREIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTME" source="BSTME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EAN11" source="EAN11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKWSL" source="EKWSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEI" source="ERGEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEW" source="ERGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOE" source="ERVOE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOL" source="ERVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIAR" source="ETIAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIFO" source="ETIFO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXTWG" source="EXTWG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWTO" source="GEWTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOEHE" source="HOEHE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUTYP" source="HUTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRKZ" source="IPRKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZGVH" source="KZGVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZKFG" source="KZKFG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAENG" source="LAENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBRSH" source="MBRSH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEABM" source="MEABM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRPN" source="MFRPN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDHB" source="MHDHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDLP" source="MHDLP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDRZ" source="MHDRZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MPROF" source="MPROF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAE" source="MSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAV" source="MSTAV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDE" source="MSTDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDV" source="MSTDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS_MARA" source="MTPOS_MARA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUMTP" source="NUMTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT" source="PSTAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QMPUR" source="QMPUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUBE" source="RAUBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNRM" source="RBNRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDMHD" source="RDMHD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERLV" source="SERLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLED_BBD" source="SLED_BBD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOFF" source="STOFF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEMPB" source="TEMPB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRAGR" source="TRAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VHART" source="VHART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLTO" source="VOLTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WESCH" source="WESCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF" source="XCHPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGCHP" source="XGCHP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="BKLAS" null="true"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="ANP" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANP"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ANP"/>
+    </attribute>
+    <attribute id="BISMT" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BISMT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BISMT"/>
+    </attribute>
+    <attribute id="BREIT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BREIT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BREIT"/>
+    </attribute>
+    <attribute id="BRGEW" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRGEW"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BRGEW"/>
+    </attribute>
+    <attribute id="BSTME" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BSTME"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BSTME"/>
+    </attribute>
+    <attribute id="EAN11" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EAN11"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="EAN11"/>
+    </attribute>
+    <attribute id="EKWSL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKWSL"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="EKWSL"/>
+    </attribute>
+    <attribute id="ERGEI" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERGEI"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ERGEI"/>
+    </attribute>
+    <attribute id="ERGEW" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERGEW"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ERGEW"/>
+    </attribute>
+    <attribute id="ERVOE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERVOE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ERVOE"/>
+    </attribute>
+    <attribute id="ERVOL" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERVOL"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ERVOL"/>
+    </attribute>
+    <attribute id="ETIAR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ETIAR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ETIAR"/>
+    </attribute>
+    <attribute id="ETIFO" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ETIFO"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ETIFO"/>
+    </attribute>
+    <attribute id="EXTWG" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EXTWG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="EXTWG"/>
+    </attribute>
+    <attribute id="GEWEI" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWEI"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="GEWEI"/>
+    </attribute>
+    <attribute id="GEWTO" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWTO"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="GEWTO"/>
+    </attribute>
+    <attribute id="GROES" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GROES"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="GROES"/>
+    </attribute>
+    <attribute id="HOEHE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HOEHE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HOEHE"/>
+    </attribute>
+    <attribute id="HUTYP" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HUTYP"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HUTYP"/>
+    </attribute>
+    <attribute id="IPRKZ" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IPRKZ"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="IPRKZ"/>
+    </attribute>
+    <attribute id="KZGVH" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KZGVH"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KZGVH"/>
+    </attribute>
+    <attribute id="KZKFG" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KZKFG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KZKFG"/>
+    </attribute>
+    <attribute id="LAENG" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAENG"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LAENG"/>
+    </attribute>
+    <attribute id="MATKL" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MATKL"/>
+    </attribute>
+    <attribute id="MATNR" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MBRSH" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MBRSH"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MBRSH"/>
+    </attribute>
+    <attribute id="MEABM" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEABM"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MEABM"/>
+    </attribute>
+    <attribute id="MEINS" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MEINS"/>
+    </attribute>
+    <attribute id="MFRNR" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MFRNR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MFRNR"/>
+    </attribute>
+    <attribute id="MFRPN" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MFRPN"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MFRPN"/>
+    </attribute>
+    <attribute id="MHDHB" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MHDHB"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MHDHB"/>
+    </attribute>
+    <attribute id="MHDLP" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MHDLP"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MHDLP"/>
+    </attribute>
+    <attribute id="MHDRZ" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MHDRZ"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MHDRZ"/>
+    </attribute>
+    <attribute id="MPROF" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MPROF"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MPROF"/>
+    </attribute>
+    <attribute id="MSTAE" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MSTAE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MSTAE"/>
+    </attribute>
+    <attribute id="MSTAV" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MSTAV"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MSTAV"/>
+    </attribute>
+    <attribute id="MSTDE" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MSTDE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MSTDE"/>
+    </attribute>
+    <attribute id="MSTDV" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MSTDV"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MSTDV"/>
+    </attribute>
+    <attribute id="MTART" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTART"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MTART"/>
+    </attribute>
+    <attribute id="MTPOS_MARA" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTPOS_MARA"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MTPOS_MARA"/>
+    </attribute>
+    <attribute id="NTGEW" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NTGEW"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="NTGEW"/>
+    </attribute>
+    <attribute id="NUMTP" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NUMTP"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="NUMTP"/>
+    </attribute>
+    <attribute id="PRDHA" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRDHA"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PRDHA"/>
+    </attribute>
+    <attribute id="PSTAT" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSTAT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PSTAT"/>
+    </attribute>
+    <attribute id="QMPUR" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QMPUR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="QMPUR"/>
+    </attribute>
+    <attribute id="RAUBE" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RAUBE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="RAUBE"/>
+    </attribute>
+    <attribute id="RBNRM" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RBNRM"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="RBNRM"/>
+    </attribute>
+    <attribute id="RDMHD" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RDMHD"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="RDMHD"/>
+    </attribute>
+    <attribute id="SERLV" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SERLV"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SERLV"/>
+    </attribute>
+    <attribute id="SLED_BBD" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SLED_BBD"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SLED_BBD"/>
+    </attribute>
+    <attribute id="SPART" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPART"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SPART"/>
+    </attribute>
+    <attribute id="STOFF" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STOFF"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="STOFF"/>
+    </attribute>
+    <attribute id="TEMPB" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TEMPB"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="TEMPB"/>
+    </attribute>
+    <attribute id="TRAGR" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TRAGR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="TRAGR"/>
+    </attribute>
+    <attribute id="VABME" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VABME"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VABME"/>
+    </attribute>
+    <attribute id="VHART" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VHART"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VHART"/>
+    </attribute>
+    <attribute id="VOLEH" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VOLEH"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VOLEH"/>
+    </attribute>
+    <attribute id="VOLTO" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VOLTO"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VOLTO"/>
+    </attribute>
+    <attribute id="VOLUM" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VOLUM"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VOLUM"/>
+    </attribute>
+    <attribute id="WESCH" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WESCH"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="WESCH"/>
+    </attribute>
+    <attribute id="XCHPF" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XCHPF"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="XCHPF"/>
+    </attribute>
+    <attribute id="XGCHP" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XGCHP"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="XGCHP"/>
+    </attribute>
+    <attribute id="SPRAS" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="MAKTX" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MAKTX"/>
+    </attribute>
+  
+    <attribute id="BKLAS" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKLAS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BKLAS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="332" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_BASICDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="U_BASICDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_BASICDATA" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="364"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="332" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

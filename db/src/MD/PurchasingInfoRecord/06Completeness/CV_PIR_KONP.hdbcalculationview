@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.PurchasingInfoRecord.06Completeness::CV_PIR_KONP" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_PIR_KONP.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.PurchasingInfoRecord.04Harmonization::CV_PIR_KONP">
+    <resourceUri>EHUB.MD.PurchasingInfoRecord.04Harmonization::CV_PIR_KONP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="EKORG_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;EKORG&quot;=''  or &quot;EKORG&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="ESOKZ_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ESOKZ&quot;=''  or &quot;ESOKZ&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="WERKS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=''  or &quot;WERKS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="KOPOS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KOPOS&quot;=''  or &quot;KOPOS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="KSCHL_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KSCHL&quot;=''  or &quot;KSCHL&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.PurchasingInfoRecord.04Harmonization::CV_PIR_KONP"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="INFNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INFNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="INFNR"/>
+    </attribute>
+    <attribute id="EKORG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKORG"/>
+      <keyMapping columnObjectName="Projection_1" columnName="EKORG"/>
+    </attribute>
+    <attribute id="ESOKZ" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ESOKZ"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ESOKZ"/>
+    </attribute>
+    <attribute id="WERKS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WERKS"/>
+    </attribute>
+    <attribute id="KOPOS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOPOS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOPOS"/>
+    </attribute>
+    <attribute id="KSCHL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSCHL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KSCHL"/>
+    </attribute>
+    <attribute id="DATBI" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Validity end date of the condition record"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATBI"/>
+    </attribute>
+    <attribute id="DATAB" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Validity start date of the condition record"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATAB"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="EKORG_INCOMPLETE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKORG_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="EKORG_INCOMPLETE"/>
+    </attribute>
+    <attribute id="ESOKZ_INCOMPLETE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ESOKZ_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ESOKZ_INCOMPLETE"/>
+    </attribute>
+    <attribute id="WERKS_INCOMPLETE" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WERKS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="KOPOS_INCOMPLETE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOPOS_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOPOS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="KSCHL_INCOMPLETE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSCHL_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KSCHL_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="16" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when (&quot;KOPOS_INCOMPLETE&quot;+&quot;KSCHL_INCOMPLETE&quot;+&quot;EKORG_INCOMPLETE&quot;+&quot;ESOKZ_INCOMPLETE&quot;+&quot;WERKS_INCOMPLETE&quot;)&gt;=1
+then 1
+else 0
+END
+</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

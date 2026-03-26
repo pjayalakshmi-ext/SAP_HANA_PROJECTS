@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.GLAccountBalanceOpenItem.03Transformation::CV_GLABOI_BSIS" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_GLABOI_BSIS.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.GLAccountBalanceOpenItem.01Extraction::CV_SHE_GLABOI_BSIS">
+    <resourceUri>EHUB.TD.GLAccountBalanceOpenItem.01Extraction::CV_SHE_GLABOI_BSIS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Extraction">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="AUGDT"/>
+      <viewAttribute id="AUGBL"/>
+      <viewAttribute id="ZUONR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="BLDAT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="BLART"/>
+      <viewAttribute id="MONAT"/>
+      <viewAttribute id="BSCHL"/>
+      <viewAttribute id="SHKZG"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="FKONT"/>
+      <viewAttribute id="DMBTR"/>
+      <viewAttribute id="WRBTR"/>
+      <viewAttribute id="MWSTS"/>
+      <viewAttribute id="WMWST"/>
+      <viewAttribute id="SGTXT"/>
+      <viewAttribute id="PROJN"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="ZFBDT"/>
+      <viewAttribute id="XOPVW"/>
+      <viewAttribute id="VALUT"/>
+      <viewAttribute id="BSTAT"/>
+      <viewAttribute id="BDIFF"/>
+      <viewAttribute id="BDIF2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="PSWSL"/>
+      <viewAttribute id="WVERW"/>
+      <viewAttribute id="DMBE2"/>
+      <viewAttribute id="DMBE3"/>
+      <viewAttribute id="MWST2"/>
+      <viewAttribute id="MWST3"/>
+      <viewAttribute id="BDIF3"/>
+      <viewAttribute id="RDIF3"/>
+      <viewAttribute id="XRAGL"/>
+      <viewAttribute id="PROJK"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="XSTOV"/>
+      <viewAttribute id="XARCH"/>
+      <viewAttribute id="PSWBT"/>
+      <viewAttribute id="XNEGP"/>
+      <viewAttribute id="RFZEI"/>
+      <viewAttribute id="CCBTC"/>
+      <viewAttribute id="XREF3"/>
+      <viewAttribute id="BUPLA"/>
+      <viewAttribute id="PPDIFF"/>
+      <viewAttribute id="PPDIF2"/>
+      <viewAttribute id="PPDIF3"/>
+      <viewAttribute id="BEWAR"/>
+      <viewAttribute id="IMKEY"/>
+      <viewAttribute id="DABRZ"/>
+      <viewAttribute id="INTRENO"/>
+      <viewAttribute id="GRANT_NBR"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="FIPOS"/>
+      <viewAttribute id="FISTL"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="PPRCT"/>
+      <viewAttribute id="BUZID"/>
+      <viewAttribute id="AUGGJ"/>
+      <viewAttribute id="UZAWE"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PSEGMENT"/>
+      <viewAttribute id="PGEBER"/>
+      <viewAttribute id="PGRANT_NBR"/>
+      <viewAttribute id="MEASURE"/>
+      <viewAttribute id="BUDGET_PD"/>
+      <viewAttribute id="PBUDGET_PD"/>
+      <viewAttribute id="FIPEX"/>
+      <viewAttribute id="PRODPER"/>
+      <viewAttribute id="QSSKZ"/>
+      <viewAttribute id="PROPMANO"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="GKONT" datatype="NVARCHAR" length="80" expressionLanguage="SQL">
+        <formula>'39914000'</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_XBLNR" datatype="NVARCHAR" length="16" expressionLanguage="SQL">
+    
+        <formula>CASE 
+	 WHEN &quot;XBLNR&quot; &lt;&gt; '' then &quot;XBLNR&quot;
+	 ELSE  RIGHT(concat(concat(concat(concat(concat(concat(concat(&quot;BUKRS&quot;,&quot;HKONT&quot;),&quot;AUGDT&quot;),&quot;AUGBL&quot;),&quot;ZUONR&quot;),&quot;GJAHR&quot;),&quot;BELNR&quot;),&quot;BUZEI&quot;),16)
+ END
+ 
+</formula>
+    
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_GJAHR" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+    
+        <formula>'2024'</formula>
+    
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_BUDAT" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>'20240909'</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_BLDAT" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>'20240909'</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_MONAT" datatype="NVARCHAR" length="2" expressionLanguage="SQL">
+        <formula>'09'</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_ZUONR" datatype="NVARCHAR" length="18" expressionLanguage="SQL">
+        <formula>'20240909'</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_BUKRS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+    
+        <formula>CASE WHEN &quot;BUKRS&quot;='1000' and &quot;PRCTR&quot;='YB800' then '1720'
+     WHEN &quot;BUKRS&quot;='1000' and &quot;PRCTR&quot;='YB900' then '4000'
+WHEN &quot;BUKRS&quot;='1000' and &quot;PRCTR&quot;='YB700' then '1720'
+     WHEN &quot;BUKRS&quot;='1010' then '1710'
+ END</formula>
+    
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_HKONT" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>CASE WHEN &quot;HKONT&quot;='0000690000' then '0039916000' 
+	 WHEN &quot;HKONT&quot;='0000169180' then '0039917000' 
+ END
+</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_DMBTR" datatype="DECIMAL" length="13" scale="2" expressionLanguage="SQL">
+    
+        <formula>CASE WHEN &quot;SHKZG&quot;='H' then -1*&quot;DMBTR&quot;
+	 WHEN &quot;SHKZG&quot;='S' then  &quot;DMBTR&quot;
+END</formula>
+    
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_WRBTR" datatype="DECIMAL" length="13" scale="2" expressionLanguage="SQL">
+        <formula>CASE WHEN &quot;SHKZG&quot;='H' then -1*&quot;WRBTR&quot;
+	 WHEN &quot;SHKZG&quot;='S' then  &quot;WRBTR&quot;
+END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.TD.GLAccountBalanceOpenItem.01Extraction::CV_SHE_GLABOI_BSIS"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="P_Extraction">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="CC_BUKRS"/>
+    </attribute>
+    <attribute id="HKONT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="General Ledger Account"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="CC_HKONT"/>
+    </attribute>
+    <attribute id="AUGDT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Clearing Date"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="AUGDT"/>
+    </attribute>
+    <attribute id="AUGBL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Number of the Clearing Document"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="AUGBL"/>
+    </attribute>
+    <attribute id="ZUONR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Assignment Number"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ZUONR"/>
+    </attribute>
+    <attribute id="GJAHR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fiscal Year"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="BELNR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Accounting Document Number"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BELNR"/>
+    </attribute>
+    <attribute id="BUZEI" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Line Item Within Accounting Document"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="BUDAT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Posting Date in the Document"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BUDAT"/>
+    </attribute>
+    <attribute id="BLDAT" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Date in Document"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BLDAT"/>
+    </attribute>
+    <attribute id="WAERS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Currency Key"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="WAERS"/>
+    </attribute>
+    <attribute id="XBLNR" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference Document Number"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="CC_XBLNR"/>
+    </attribute>
+    <attribute id="BLART" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Type"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BLART"/>
+    </attribute>
+    <attribute id="MONAT" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fiscal Period"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MONAT"/>
+    </attribute>
+    <attribute id="BSCHL" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Posting Key"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BSCHL"/>
+    </attribute>
+    <attribute id="SHKZG" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Debit/Credit Indicator"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="SHKZG"/>
+    </attribute>
+    <attribute id="GSBER" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Area"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GSBER"/>
+    </attribute>
+    <attribute id="MWSKZ" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax on sales/purchases code"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="FKONT" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Financial Budget Item"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="FKONT"/>
+    </attribute>
+    <attribute id="DMBTR" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount in Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="CC_DMBTR"/>
+    </attribute>
+    <attribute id="WRBTR" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount in Document Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="CC_WRBTR"/>
+    </attribute>
+    <attribute id="MWSTS" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Amount in Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MWSTS"/>
+    </attribute>
+    <attribute id="WMWST" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Amount in Document Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="WMWST"/>
+    </attribute>
+    <attribute id="SGTXT" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Item Text"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="SGTXT"/>
+    </attribute>
+    <attribute id="PROJN" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Old: Project number : No longer used --&gt; PS_POSNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PROJN"/>
+    </attribute>
+    <attribute id="AUFNR" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Order Number"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="AUFNR"/>
+    </attribute>
+    <attribute id="WERKS" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="WERKS"/>
+    </attribute>
+    <attribute id="KOSTL" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cost Center"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="ZFBDT" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Baseline Date for Due Date Calculation"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ZFBDT"/>
+    </attribute>
+    <attribute id="XOPVW" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Open Item Management?"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="XOPVW"/>
+    </attribute>
+    <attribute id="VALUT" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Value Date"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="VALUT"/>
+    </attribute>
+    <attribute id="BSTAT" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Status"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BSTAT"/>
+    </attribute>
+    <attribute id="BDIFF" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valuation Difference"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BDIFF"/>
+    </attribute>
+    <attribute id="BDIF2" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valuation Difference for the Second Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BDIF2"/>
+    </attribute>
+    <attribute id="VBUND" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company ID of Trading Partner"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="VBUND"/>
+    </attribute>
+    <attribute id="PSWSL" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Update Currency for General Ledger Transaction Figures"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PSWSL"/>
+    </attribute>
+    <attribute id="WVERW" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bill of Exchange Usage Type"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="WVERW"/>
+    </attribute>
+    <attribute id="DMBE2" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount in Second Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="DMBE2"/>
+    </attribute>
+    <attribute id="DMBE3" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount in Third Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="DMBE3"/>
+    </attribute>
+    <attribute id="MWST2" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Amount in Second Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MWST2"/>
+    </attribute>
+    <attribute id="MWST3" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Amount in Third Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MWST3"/>
+    </attribute>
+    <attribute id="BDIF3" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valuation Difference for the Third Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BDIF3"/>
+    </attribute>
+    <attribute id="RDIF3" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Exchange Rate Difference Realized for Third Local Currency"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="RDIF3"/>
+    </attribute>
+    <attribute id="XRAGL" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Clearing was Reversed"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="XRAGL"/>
+    </attribute>
+    <attribute id="PROJK" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Work Breakdown Structure Element (WBS Element)"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PROJK"/>
+    </attribute>
+    <attribute id="PRCTR" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Profit Center"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="XSTOV" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Document is flagged for reversal"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="XSTOV"/>
+    </attribute>
+    <attribute id="XARCH" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Document already archived ?"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="XARCH"/>
+    </attribute>
+    <attribute id="PSWBT" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount for Updating in General Ledger"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PSWBT"/>
+    </attribute>
+    <attribute id="XNEGP" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Negative posting"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="XNEGP"/>
+    </attribute>
+    <attribute id="RFZEI" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Payment Card Item"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="RFZEI"/>
+    </attribute>
+    <attribute id="CCBTC" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Payment cards: Settlement run"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="CCBTC"/>
+    </attribute>
+    <attribute id="XREF3" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference Key for Line Item"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="XREF3"/>
+    </attribute>
+    <attribute id="BUPLA" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Place"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BUPLA"/>
+    </attribute>
+    <attribute id="PPDIFF" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Realized Exchange Rate Gain/Loss 1.Loc.Curr.(Part Payments)"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PPDIFF"/>
+    </attribute>
+    <attribute id="PPDIF2" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Realized Exchange Rate Gain/Loss 2.Loc. Curr.(Part Payments)"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PPDIF2"/>
+    </attribute>
+    <attribute id="PPDIF3" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Realized Exchange Rate Gain/Loss 3.Loc.Curr.(Part Payments)"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PPDIF3"/>
+    </attribute>
+    <attribute id="BEWAR" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Transaction Type"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BEWAR"/>
+    </attribute>
+    <attribute id="IMKEY" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Internal Key for Real Estate Object"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="IMKEY"/>
+    </attribute>
+    <attribute id="DABRZ" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference Date for Settlement"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="DABRZ"/>
+    </attribute>
+    <attribute id="INTRENO" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Internal Real Estate Master Data Code"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="INTRENO"/>
+    </attribute>
+    <attribute id="GRANT_NBR" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Grant"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GRANT_NBR"/>
+    </attribute>
+    <attribute id="FKBER" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Functional Area"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="FKBER"/>
+    </attribute>
+    <attribute id="FIPOS" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Commitment Item"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="FIPOS"/>
+    </attribute>
+    <attribute id="FISTL" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Funds Center"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="FISTL"/>
+    </attribute>
+    <attribute id="GEBER" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fund"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GEBER"/>
+    </attribute>
+    <attribute id="PPRCT" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Partner Profit Center"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PPRCT"/>
+    </attribute>
+    <attribute id="BUZID" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Identification of the Line Item"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BUZID"/>
+    </attribute>
+    <attribute id="AUGGJ" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fiscal Year of Clearing Document"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="AUGGJ"/>
+    </attribute>
+    <attribute id="UZAWE" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Payment Method Supplement"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="UZAWE"/>
+    </attribute>
+    <attribute id="SEGMENT" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Segment for Segmental Reporting"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="SEGMENT"/>
+    </attribute>
+    <attribute id="PSEGMENT" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Partner Segment for Segmental Reporting"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PSEGMENT"/>
+    </attribute>
+    <attribute id="PGEBER" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Partner Fund"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PGEBER"/>
+    </attribute>
+    <attribute id="PGRANT_NBR" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Partner Grant"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PGRANT_NBR"/>
+    </attribute>
+    <attribute id="MEASURE" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Funded Program"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MEASURE"/>
+    </attribute>
+    <attribute id="BUDGET_PD" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FM: Budget Period"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BUDGET_PD"/>
+    </attribute>
+    <attribute id="PBUDGET_PD" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FM: Partner Budget Period"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PBUDGET_PD"/>
+    </attribute>
+    <attribute id="FIPEX" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Commitment item - Do not use field - see note 447805"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="FIPEX"/>
+    </attribute>
+    <attribute id="PRODPER" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODPER"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PRODPER"/>
+    </attribute>
+    <attribute id="QSSKZ" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding Tax Code"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="QSSKZ"/>
+    </attribute>
+    <attribute id="PROPMANO" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Mandate, Mandate-Opening Contract"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PROPMANO"/>
+    </attribute>
+  
+    <attribute id="CURRENT_DATE" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+  
+      <keyMapping columnObjectName="P_Extraction" columnName="CURRENT_DATE"/>
+  
+    </attribute>
+  
+    <attribute id="GKONT" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GKONT"/>
+  
+      <keyMapping columnObjectName="P_Extraction" columnName="GKONT"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Extraction" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

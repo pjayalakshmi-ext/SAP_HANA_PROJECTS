@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.PurchasingInfoRecord.04Harmonization::CV_PIR_KONP" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_PIR_KONP.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.PurchasingInfoRecord.03Transformation::CV_PIR_KONP">
+    <resourceUri>EHUB.MD.PurchasingInfoRecord.03Transformation::CV_PIR_KONP</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_PIR_KONP_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_PIR_KONP_REL_INPUT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.PurchasingInfoRecord.03Transformation::CV_PIR_KONP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_PIR_KONP_REL_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ" source="ESOKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS" source="KOPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL" source="KSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="INFNR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$INFNR$INFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ" source="ESOKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS" source="KOPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL" source="KSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INFNR$INFNR" source="INFNR"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR_INPUT" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INFNR$INFNR" source="INFNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$INFNR$INFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="INFNR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1"/>
+    <filter>&quot;INFNR_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_3" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ" source="ESOKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS" source="KOPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL" source="KSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    </input>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ" source="ESOKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS" source="KOPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL" source="KSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Union_2">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Union_2" columnName="MANDT"/>
+    </attribute>
+    <attribute id="INFNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INFNR"/>
+      <keyMapping columnObjectName="Union_2" columnName="INFNR"/>
+    </attribute>
+    <attribute id="EKORG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKORG"/>
+      <keyMapping columnObjectName="Union_2" columnName="EKORG"/>
+    </attribute>
+    <attribute id="ESOKZ" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ESOKZ"/>
+      <keyMapping columnObjectName="Union_2" columnName="ESOKZ"/>
+    </attribute>
+    <attribute id="WERKS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Union_2" columnName="WERKS"/>
+    </attribute>
+    <attribute id="KOPOS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOPOS"/>
+      <keyMapping columnObjectName="Union_2" columnName="KOPOS"/>
+    </attribute>
+    <attribute id="KSCHL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSCHL"/>
+      <keyMapping columnObjectName="Union_2" columnName="KSCHL"/>
+    </attribute>
+    <attribute id="DATBI" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Validity end date of the condition record"/>
+      <keyMapping columnObjectName="Union_2" columnName="DATBI"/>
+    </attribute>
+    <attribute id="DATAB" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Validity start date of the condition record"/>
+      <keyMapping columnObjectName="Union_2" columnName="DATAB"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Union_2" columnName="CURRENT_DATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="225" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="766"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="236" y="236"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

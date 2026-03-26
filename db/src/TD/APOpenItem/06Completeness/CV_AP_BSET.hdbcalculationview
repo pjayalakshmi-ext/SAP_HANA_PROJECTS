@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.APOpenItem.06Completeness::CV_AP_BSET" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_AR_BSET"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.APOpenItem.04Harmonization::CV_AP_BSET">
+    <resourceUri>EHUB.TD.APOpenItem.04Harmonization::CV_AP_BSET</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSET">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BUKRS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;='' or &quot;BUKRS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="XBLNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;XBLNR&quot;='' OR &quot;XBLNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LIFNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;LIFNR&quot;='' OR &quot;LIFNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BUZEI_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;BUZEI&quot;='' OR &quot;BUZEI&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="HKONT_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;HKONT&quot;='' OR &quot;HKONT&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MWSKZ_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;MWSKZ&quot;='' OR &quot;MWSKZ&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute></calculatedViewAttributes>
+    <input node="EHUB.TD.APOpenItem.04Harmonization::CV_AP_BSET"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_BSET">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="P_BSET" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="P_BSET" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="BELNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="P_BSET" columnName="BELNR"/>
+    </attribute>
+    <attribute id="BUZEI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="P_BSET" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="LIFNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="P_BSET" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="XBLNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="P_BSET" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="HKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HKONT"/>
+      <keyMapping columnObjectName="P_BSET" columnName="HKONT"/>
+    </attribute>
+    <attribute id="GKONT2" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_GKONT"/>
+      <keyMapping columnObjectName="P_BSET" columnName="GKONT2"/>
+    </attribute>
+    <attribute id="MWSKZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSKZ"/>
+      <keyMapping columnObjectName="P_BSET" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="TXJCD" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXJCD"/>
+      <keyMapping columnObjectName="P_BSET" columnName="TXJCD"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="FWBAS" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FWBAS"/>
+      <measureMapping columnObjectName="P_BSET" columnName="FWBAS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="FWSTE" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FWSTE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="FWSTE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="HWBAS" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="HWBAS"/>
+      <measureMapping columnObjectName="P_BSET" columnName="HWBAS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="HWSTE" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="HWSTE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="HWSTE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="H2BAS" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="H2BAS"/>
+      <measureMapping columnObjectName="P_BSET" columnName="H2BAS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="H2STE" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="H2STE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="H2STE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="H3BAS" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="H3BAS"/>
+      <measureMapping columnObjectName="P_BSET" columnName="H3BAS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="H3STE" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="H3STE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="H3STE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BUKRS_INCOMPLETE" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BUKRS_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="BUKRS_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="XBLNR_INCOMPLETE" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="XBLNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="XBLNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="LIFNR_INCOMPLETE" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KUNNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="LIFNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BUZEI_INCOMPLETE" order="22" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BUZEI_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="BUZEI_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="HKONT_INCOMPLETE" order="23" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="HKONT_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="HKONT_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MWSKZ_INCOMPLETE" order="24" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MWSKZ_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSET" columnName="MWSKZ_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INCOMPLETE" order="25" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>case when &quot;BUKRS_INCOMPLETE&quot;+&quot;XBLNR_INCOMPLETE&quot;+&quot;LIFNR_INCOMPLETE&quot;+&quot;BUZEI_INCOMPLETE&quot;+&quot;HKONT_INCOMPLETE&quot;+&quot;MWSKZ_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_BSET" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

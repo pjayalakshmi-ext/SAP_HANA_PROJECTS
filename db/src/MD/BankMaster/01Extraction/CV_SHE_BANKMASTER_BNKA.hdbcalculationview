@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.BankMaster.01Extraction::CV_SHE_BANKMASTER_BNKA" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_BNKA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_BNKA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BNKA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CURRENT_DATE" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>CURRENT_DATE</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_BNKA"/>
+    <filter>&quot;MANDT&quot;='801'</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_BNKA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BANKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank country key"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Keys"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKA" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name of bank"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="BANKA"/>
+    </attribute>
+    <attribute id="PROVZ" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="PROVZ"/>
+    </attribute>
+    <attribute id="STRAS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House number and street"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="STRAS"/>
+    </attribute>
+    <attribute id="ORT01" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="ORT01"/>
+    </attribute>
+    <attribute id="SWIFT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWIFT/BIC for International Payments"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="SWIFT"/>
+    </attribute>
+    <attribute id="BGRUP" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank group (bank network)"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="BGRUP"/>
+    </attribute>
+    <attribute id="XPGRO" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Post Office Bank Current Account"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="XPGRO"/>
+    </attribute>
+    <attribute id="BNKLZ" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank number"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="BNKLZ"/>
+    </attribute>
+    <attribute id="BRNCH" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Branch"/>
+      <keyMapping columnObjectName="P_BNKA" columnName="BRNCH"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_BNKA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.GL Master.07Validation::CV_GLMASTER_SKAT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_GLMASTER_SKAT.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.GL Master.06Completeness::CV_GLMASTER_SKAT">
+    <resourceUri>EHUB.MD.GL Master.06Completeness::CV_GLMASTER_SKAT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T004">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T004</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="TXT20"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="SPRAS_INCOMPLETE"/>
+      <viewAttribute id="KTOPL_INCOMPLETE"/>
+      <viewAttribute id="SAKNR_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.GL Master.06Completeness::CV_GLMASTER_SKAT"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KTOPL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T004"/>
+    <filter>&quot;MANDT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="TXT20"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="KTOPL_LKP"/>
+      <viewAttribute hidden="true" id="JOIN$KTOPL$KTOPL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="GL_CHART_OF_ACCOUNTS_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;KTOPL&quot; = &quot;KTOPL_LKP&quot;
+then 0
+else 1
+end
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOPL" source="KTOPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT20" source="TXT20"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT50" source="TXT50"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KTOPL$KTOPL" source="KTOPL"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOPL_LKP" source="KTOPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KTOPL$KTOPL" source="KTOPL"/>
+    </input>
+    <joinAttribute name="JOIN$KTOPL$KTOPL"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="SPRAS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+      <keyMapping columnObjectName="Join_1" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="KTOPL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTOPL"/>
+      <keyMapping columnObjectName="Join_1" columnName="KTOPL"/>
+    </attribute>
+    <attribute id="SAKNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAKNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="SAKNR"/>
+    </attribute>
+    <attribute id="TXT20" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXT20"/>
+      <keyMapping columnObjectName="Join_1" columnName="TXT20"/>
+    </attribute>
+    <attribute id="TXT50" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXT50"/>
+      <keyMapping columnObjectName="Join_1" columnName="TXT50"/>
+    </attribute>
+    <attribute id="MCOD1" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MCOD1"/>
+      <keyMapping columnObjectName="Join_1" columnName="MCOD1"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="GL_CHART_OF_ACCOUNT_KEY_INVALID" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GL_CHART_OF_ACCOUNT_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_1" columnName="GL_CHART_OF_ACCOUNTS_KEY_INVALID"/>
+    </attribute>
+    <attribute id="KTOPL_LKP" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTOPL_1"/>
+      <keyMapping columnObjectName="Join_1" columnName="KTOPL_LKP"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="11" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;GL_CHART_OF_ACCOUNT_KEY_INVALID&quot; &gt;=1
+then 1
+else 0
+end</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

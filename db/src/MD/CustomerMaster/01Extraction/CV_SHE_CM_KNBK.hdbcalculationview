@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNBK" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_SHE_CM_KNBK"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_CUST_GEN_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_CUST_GEN_PLD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_KNBK">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_KNBK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_TIBAN">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_TIBAN</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_CUST_GEN_PLD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_KNBK"/>
+    <filter>(&quot;MANDT&quot;='801')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="IBAN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_TIBAN"/>
+    <filter>(&quot;MANDT&quot;='801')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$BANKS"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$BANKL"/>
+      <viewAttribute hidden="true" id="JOIN$BANKN$BANKN"/>
+      <viewAttribute hidden="true" id="JOIN$BKONT$BKONT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BKONT$BKONT" source="BKONT"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BKONT$BKONT" source="BKONT"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BANKS$BANKS"/>
+    <joinAttribute name="JOIN$BANKL$BANKL"/>
+    <joinAttribute name="JOIN$BANKN$BANKN"/>
+    <joinAttribute name="JOIN$BKONT$BKONT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR" source="KUNNR"/>
+    </input>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR" source="KUNNR"/>
+    </input>
+    <joinAttribute name="JOIN$KUNNR$KUNNR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_2">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Join_2" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number*"/>
+      <keyMapping columnObjectName="Join_2" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BANKS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank country key"/>
+      <keyMapping columnObjectName="Join_2" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Keys"/>
+      <keyMapping columnObjectName="Join_2" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKN" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank account number"/>
+      <keyMapping columnObjectName="Join_2" columnName="BANKN"/>
+    </attribute>
+    <attribute id="IBAN" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBAN (International Bank Account Number)"/>
+      <keyMapping columnObjectName="Join_2" columnName="IBAN"/>
+    </attribute>
+    <attribute id="BKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Control Key"/>
+      <keyMapping columnObjectName="Join_2" columnName="BKONT"/>
+    </attribute>
+    <attribute id="KOINH" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account Holder Name"/>
+      <keyMapping columnObjectName="Join_2" columnName="KOINH"/>
+    </attribute>
+    <attribute id="EBPP_ACCNAME" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User-Defined Name of Bank Details"/>
+      <keyMapping columnObjectName="Join_2" columnName="EBPP_ACCNAME"/>
+    </attribute>
+    <attribute id="BKREF" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference specifications for bank details"/>
+      <keyMapping columnObjectName="Join_2" columnName="BKREF"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="176"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="176"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

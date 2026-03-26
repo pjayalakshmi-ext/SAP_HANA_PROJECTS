@@ -1,0 +1,2292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Equipment.07Validation::CV_EQUIPMENT_EQUI" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_EQUIPMENT_EQUI.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.Equipment.06Completeness::CV_EQUIPMENT_EQUI">
+    <resourceUri>EHUB.MD.Equipment.06Completeness::CV_EQUIPMENT_EQUI</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T002">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T002</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T370B">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T370B</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T370T">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T370T</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T370K">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T370K</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EQUNR"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="EQASP"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="EQTYP"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ELIEF"/>
+      <viewAttribute id="GWLEN"/>
+      <viewAttribute id="GWLDT"/>
+      <viewAttribute id="WDBWT"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="HZEIN"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="APLKZ"/>
+      <viewAttribute id="AULDT"/>
+      <viewAttribute id="INBDT"/>
+      <viewAttribute id="GERNR"/>
+      <viewAttribute id="EQLFN"/>
+      <viewAttribute id="GWLDV"/>
+      <viewAttribute id="EQDAT"/>
+      <viewAttribute id="EQBER"/>
+      <viewAttribute id="EQNUM"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="EQSNR"/>
+      <viewAttribute id="CUOBJ"/>
+      <viewAttribute id="KRFKZ"/>
+      <viewAttribute id="KMATN"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SERNR"/>
+      <viewAttribute id="WERK"/>
+      <viewAttribute id="LAGER"/>
+      <viewAttribute id="CHARGE"/>
+      <viewAttribute id="KUNDE"/>
+      <viewAttribute id="WARPL"/>
+      <viewAttribute id="IMRC_POINT"/>
+      <viewAttribute id="REVLV"/>
+      <viewAttribute id="MGANR"/>
+      <viewAttribute id="BEGRUI"/>
+      <viewAttribute id="S_EQUI"/>
+      <viewAttribute id="S_SERIAL"/>
+      <viewAttribute id="S_KONFI"/>
+      <viewAttribute id="S_SALE"/>
+      <viewAttribute id="S_FHM"/>
+      <viewAttribute id="S_ELSE"/>
+      <viewAttribute id="S_ISU"/>
+      <viewAttribute id="S_EQBS"/>
+      <viewAttribute id="S_FLEET"/>
+      <viewAttribute id="BSTVP"/>
+      <viewAttribute id="SPARTE"/>
+      <viewAttribute id="HANDLE"/>
+      <viewAttribute id="TSEGTP"/>
+      <viewAttribute id="EMATN"/>
+      <viewAttribute id="ACT_CHANGE_AA"/>
+      <viewAttribute id="S_CC"/>
+      <viewAttribute id="DATLWB"/>
+      <viewAttribute id="UII"/>
+      <viewAttribute id="IUID_TYPE"/>
+      <viewAttribute id="UII_PLANT"/>
+      <viewAttribute id="EQEXT_ACTIVE"/>
+      <viewAttribute id="EQUI_SRTYPE"/>
+      <viewAttribute id="EQUI_SNTYPE"/>
+      <viewAttribute id="EQLB_DUTY"/>
+      <viewAttribute id="EQLB_HIDE"/>
+      <viewAttribute id="J_3GDISPO"/>
+      <viewAttribute id="J_3GZDEQUI"/>
+      <viewAttribute id="J_3GEQART"/>
+      <viewAttribute id="J_3GKZMENG"/>
+      <viewAttribute id="J_3GKONDE"/>
+      <viewAttribute id="J_3GFIKTIV"/>
+      <viewAttribute id="J_3GBELTYP"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="J_3GKZLADG"/>
+      <viewAttribute id="J_3GKZBERG"/>
+      <viewAttribute id="J_3GEIFR"/>
+      <viewAttribute id="J_3GVERMEIN"/>
+      <viewAttribute id="J_3GZULNR"/>
+      <viewAttribute id="_SAPCEM_ABRECHVH"/>
+      <viewAttribute id="_SAPCEM_ABRECHLG"/>
+      <viewAttribute id="_SAPCEM_DISPOGR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EQKTX"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="GEWRK"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="HEQUI"/>
+      <viewAttribute id="HEQNR"/>
+      <viewAttribute id="TIDNR"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="EQUNR_INCOMPLETE"/>
+      <viewAttribute id="EQTYP_INCOMPLETE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.Equipment.06Completeness::CV_EQUIPMENT_EQUI"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="SPRAS"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T002"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BEGRU"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T370B"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EQTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T370T"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EQART"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T370K"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_6">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EQUNR"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="EQASP"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="EQTYP"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ELIEF"/>
+      <viewAttribute id="GWLEN"/>
+      <viewAttribute id="GWLDT"/>
+      <viewAttribute id="WDBWT"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="HZEIN"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="APLKZ"/>
+      <viewAttribute id="AULDT"/>
+      <viewAttribute id="INBDT"/>
+      <viewAttribute id="GERNR"/>
+      <viewAttribute id="EQLFN"/>
+      <viewAttribute id="GWLDV"/>
+      <viewAttribute id="EQDAT"/>
+      <viewAttribute id="EQBER"/>
+      <viewAttribute id="EQNUM"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="EQSNR"/>
+      <viewAttribute id="CUOBJ"/>
+      <viewAttribute id="KRFKZ"/>
+      <viewAttribute id="KMATN"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SERNR"/>
+      <viewAttribute id="WERK"/>
+      <viewAttribute id="LAGER"/>
+      <viewAttribute id="CHARGE"/>
+      <viewAttribute id="KUNDE"/>
+      <viewAttribute id="WARPL"/>
+      <viewAttribute id="IMRC_POINT"/>
+      <viewAttribute id="REVLV"/>
+      <viewAttribute id="MGANR"/>
+      <viewAttribute id="BEGRUI"/>
+      <viewAttribute id="S_EQUI"/>
+      <viewAttribute id="S_SERIAL"/>
+      <viewAttribute id="S_KONFI"/>
+      <viewAttribute id="S_SALE"/>
+      <viewAttribute id="S_FHM"/>
+      <viewAttribute id="S_ELSE"/>
+      <viewAttribute id="S_ISU"/>
+      <viewAttribute id="S_EQBS"/>
+      <viewAttribute id="S_FLEET"/>
+      <viewAttribute id="BSTVP"/>
+      <viewAttribute id="SPARTE"/>
+      <viewAttribute id="HANDLE"/>
+      <viewAttribute id="TSEGTP"/>
+      <viewAttribute id="EMATN"/>
+      <viewAttribute id="ACT_CHANGE_AA"/>
+      <viewAttribute id="S_CC"/>
+      <viewAttribute id="DATLWB"/>
+      <viewAttribute id="UII"/>
+      <viewAttribute id="IUID_TYPE"/>
+      <viewAttribute id="UII_PLANT"/>
+      <viewAttribute id="EQEXT_ACTIVE"/>
+      <viewAttribute id="EQUI_SRTYPE"/>
+      <viewAttribute id="EQUI_SNTYPE"/>
+      <viewAttribute id="EQLB_DUTY"/>
+      <viewAttribute id="EQLB_HIDE"/>
+      <viewAttribute id="J_3GDISPO"/>
+      <viewAttribute id="J_3GZDEQUI"/>
+      <viewAttribute id="J_3GEQART"/>
+      <viewAttribute id="J_3GKZMENG"/>
+      <viewAttribute id="J_3GKONDE"/>
+      <viewAttribute id="J_3GFIKTIV"/>
+      <viewAttribute id="J_3GBELTYP"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="J_3GKZLADG"/>
+      <viewAttribute id="J_3GKZBERG"/>
+      <viewAttribute id="J_3GEIFR"/>
+      <viewAttribute id="J_3GVERMEIN"/>
+      <viewAttribute id="J_3GZULNR"/>
+      <viewAttribute id="_SAPCEM_ABRECHVH"/>
+      <viewAttribute id="_SAPCEM_ABRECHLG"/>
+      <viewAttribute id="_SAPCEM_DISPOGR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EQKTX"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="GEWRK"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="HEQUI"/>
+      <viewAttribute id="HEQNR"/>
+      <viewAttribute id="TIDNR"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="EQUNR_INCOMPLETE"/>
+      <viewAttribute id="EQTYP_INCOMPLETE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute hidden="true" id="JOIN$EQASP$SPRAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="LANGUAGE_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;EQASP&quot;=&quot;SPRAS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUNR" source="EQUNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQASP" source="EQASP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP" source="EQTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ELIEF" source="ELIEF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN" source="GWLEN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT" source="GWLDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDBWT" source="WDBWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZEIN" source="HZEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APLKZ" source="APLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AULDT" source="AULDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INBDT" source="INBDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GERNR" source="GERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLFN" source="EQLFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDV" source="GWLDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQDAT" source="EQDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQBER" source="EQBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQNUM" source="EQNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQSNR" source="EQSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRFKZ" source="KRFKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMATN" source="KMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERNR" source="SERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERK" source="WERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAGER" source="LAGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARGE" source="CHARGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNDE" source="KUNDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WARPL" source="WARPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMRC_POINT" source="IMRC_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REVLV" source="REVLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR" source="MGANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRUI" source="BEGRUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQUI" source="S_EQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SERIAL" source="S_SERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_KONFI" source="S_KONFI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SALE" source="S_SALE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FHM" source="S_FHM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ELSE" source="S_ELSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ISU" source="S_ISU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQBS" source="S_EQBS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FLEET" source="S_FLEET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTVP" source="BSTVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPARTE" source="SPARTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HANDLE" source="HANDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSEGTP" source="TSEGTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMATN" source="EMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACT_CHANGE_AA" source="ACT_CHANGE_AA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_CC" source="S_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATLWB" source="DATLWB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII" source="UII"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IUID_TYPE" source="IUID_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII_PLANT" source="UII_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQEXT_ACTIVE" source="EQEXT_ACTIVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SRTYPE" source="EQUI_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SNTYPE" source="EQUI_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_DUTY" source="EQLB_DUTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_HIDE" source="EQLB_HIDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GDISPO" source="J_3GDISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZDEQUI" source="J_3GZDEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEQART" source="J_3GEQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZMENG" source="J_3GKZMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKONDE" source="J_3GKONDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GFIKTIV" source="J_3GFIKTIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GBELTYP" source="J_3GBELTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZLADG" source="J_3GKZLADG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZBERG" source="J_3GKZBERG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEIFR" source="J_3GEIFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GVERMEIN" source="J_3GVERMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZULNR" source="J_3GZULNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHVH" source="_SAPCEM_ABRECHVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHLG" source="_SAPCEM_ABRECHLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_DISPOGR" source="_SAPCEM_DISPOGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQKTX" source="EQKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWRK" source="GEWRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQUI" source="HEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQNR" source="HEQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIDNR" source="TIDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUNR_INCOMPLETE" source="EQUNR_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP_INCOMPLETE" source="EQTYP_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_INCOMPLETE" source="TOTAL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EQASP$SPRAS" source="EQASP"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EQASP$SPRAS" source="SPRAS"/>
+    </input>
+    <joinAttribute name="JOIN$EQASP$SPRAS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EQUNR"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="EQASP"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="EQTYP"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ELIEF"/>
+      <viewAttribute id="GWLEN"/>
+      <viewAttribute id="GWLDT"/>
+      <viewAttribute id="WDBWT"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="HZEIN"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="APLKZ"/>
+      <viewAttribute id="AULDT"/>
+      <viewAttribute id="INBDT"/>
+      <viewAttribute id="GERNR"/>
+      <viewAttribute id="EQLFN"/>
+      <viewAttribute id="GWLDV"/>
+      <viewAttribute id="EQDAT"/>
+      <viewAttribute id="EQBER"/>
+      <viewAttribute id="EQNUM"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="EQSNR"/>
+      <viewAttribute id="CUOBJ"/>
+      <viewAttribute id="KRFKZ"/>
+      <viewAttribute id="KMATN"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SERNR"/>
+      <viewAttribute id="WERK"/>
+      <viewAttribute id="LAGER"/>
+      <viewAttribute id="CHARGE"/>
+      <viewAttribute id="KUNDE"/>
+      <viewAttribute id="WARPL"/>
+      <viewAttribute id="IMRC_POINT"/>
+      <viewAttribute id="REVLV"/>
+      <viewAttribute id="MGANR"/>
+      <viewAttribute id="BEGRUI"/>
+      <viewAttribute id="S_EQUI"/>
+      <viewAttribute id="S_SERIAL"/>
+      <viewAttribute id="S_KONFI"/>
+      <viewAttribute id="S_SALE"/>
+      <viewAttribute id="S_FHM"/>
+      <viewAttribute id="S_ELSE"/>
+      <viewAttribute id="S_ISU"/>
+      <viewAttribute id="S_EQBS"/>
+      <viewAttribute id="S_FLEET"/>
+      <viewAttribute id="BSTVP"/>
+      <viewAttribute id="SPARTE"/>
+      <viewAttribute id="HANDLE"/>
+      <viewAttribute id="TSEGTP"/>
+      <viewAttribute id="EMATN"/>
+      <viewAttribute id="ACT_CHANGE_AA"/>
+      <viewAttribute id="S_CC"/>
+      <viewAttribute id="DATLWB"/>
+      <viewAttribute id="UII"/>
+      <viewAttribute id="IUID_TYPE"/>
+      <viewAttribute id="UII_PLANT"/>
+      <viewAttribute id="EQEXT_ACTIVE"/>
+      <viewAttribute id="EQUI_SRTYPE"/>
+      <viewAttribute id="EQUI_SNTYPE"/>
+      <viewAttribute id="EQLB_DUTY"/>
+      <viewAttribute id="EQLB_HIDE"/>
+      <viewAttribute id="J_3GDISPO"/>
+      <viewAttribute id="J_3GZDEQUI"/>
+      <viewAttribute id="J_3GEQART"/>
+      <viewAttribute id="J_3GKZMENG"/>
+      <viewAttribute id="J_3GKONDE"/>
+      <viewAttribute id="J_3GFIKTIV"/>
+      <viewAttribute id="J_3GBELTYP"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="J_3GKZLADG"/>
+      <viewAttribute id="J_3GKZBERG"/>
+      <viewAttribute id="J_3GEIFR"/>
+      <viewAttribute id="J_3GVERMEIN"/>
+      <viewAttribute id="J_3GZULNR"/>
+      <viewAttribute id="_SAPCEM_ABRECHVH"/>
+      <viewAttribute id="_SAPCEM_ABRECHLG"/>
+      <viewAttribute id="_SAPCEM_DISPOGR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EQKTX"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="GEWRK"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="HEQUI"/>
+      <viewAttribute id="HEQNR"/>
+      <viewAttribute id="TIDNR"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="LANGUAGE_KEY_INVALID"/>
+      <viewAttribute id="BEGRU_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BEGRU$BEGRU"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="TECH_OBJ_AUTH_GRP_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BEGRU&quot;=&quot;BEGRU_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUNR" source="EQUNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQASP" source="EQASP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP" source="EQTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ELIEF" source="ELIEF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN" source="GWLEN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT" source="GWLDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDBWT" source="WDBWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZEIN" source="HZEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APLKZ" source="APLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AULDT" source="AULDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INBDT" source="INBDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GERNR" source="GERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLFN" source="EQLFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDV" source="GWLDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQDAT" source="EQDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQBER" source="EQBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQNUM" source="EQNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQSNR" source="EQSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRFKZ" source="KRFKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMATN" source="KMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERNR" source="SERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERK" source="WERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAGER" source="LAGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARGE" source="CHARGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNDE" source="KUNDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WARPL" source="WARPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMRC_POINT" source="IMRC_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REVLV" source="REVLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR" source="MGANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRUI" source="BEGRUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQUI" source="S_EQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SERIAL" source="S_SERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_KONFI" source="S_KONFI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SALE" source="S_SALE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FHM" source="S_FHM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ELSE" source="S_ELSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ISU" source="S_ISU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQBS" source="S_EQBS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FLEET" source="S_FLEET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTVP" source="BSTVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPARTE" source="SPARTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HANDLE" source="HANDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSEGTP" source="TSEGTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMATN" source="EMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACT_CHANGE_AA" source="ACT_CHANGE_AA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_CC" source="S_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATLWB" source="DATLWB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII" source="UII"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IUID_TYPE" source="IUID_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII_PLANT" source="UII_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQEXT_ACTIVE" source="EQEXT_ACTIVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SRTYPE" source="EQUI_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SNTYPE" source="EQUI_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_DUTY" source="EQLB_DUTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_HIDE" source="EQLB_HIDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GDISPO" source="J_3GDISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZDEQUI" source="J_3GZDEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEQART" source="J_3GEQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZMENG" source="J_3GKZMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKONDE" source="J_3GKONDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GFIKTIV" source="J_3GFIKTIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GBELTYP" source="J_3GBELTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZLADG" source="J_3GKZLADG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZBERG" source="J_3GKZBERG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEIFR" source="J_3GEIFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GVERMEIN" source="J_3GVERMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZULNR" source="J_3GZULNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHVH" source="_SAPCEM_ABRECHVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHLG" source="_SAPCEM_ABRECHLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_DISPOGR" source="_SAPCEM_DISPOGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQKTX" source="EQKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWRK" source="GEWRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQUI" source="HEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQNR" source="HEQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIDNR" source="TIDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANGUAGE_KEY_INVALID" source="LANGUAGE_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BEGRU$BEGRU" source="BEGRU"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU_1" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BEGRU$BEGRU" source="BEGRU"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BEGRU$BEGRU"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="TECH_OBJ_AUTH_GRP_KEY_INVALID"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EQUNR"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="EQASP"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="EQTYP"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ELIEF"/>
+      <viewAttribute id="GWLEN"/>
+      <viewAttribute id="GWLDT"/>
+      <viewAttribute id="WDBWT"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="HZEIN"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="APLKZ"/>
+      <viewAttribute id="AULDT"/>
+      <viewAttribute id="INBDT"/>
+      <viewAttribute id="GERNR"/>
+      <viewAttribute id="EQLFN"/>
+      <viewAttribute id="GWLDV"/>
+      <viewAttribute id="EQDAT"/>
+      <viewAttribute id="EQBER"/>
+      <viewAttribute id="EQNUM"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="EQSNR"/>
+      <viewAttribute id="CUOBJ"/>
+      <viewAttribute id="KRFKZ"/>
+      <viewAttribute id="KMATN"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SERNR"/>
+      <viewAttribute id="WERK"/>
+      <viewAttribute id="LAGER"/>
+      <viewAttribute id="CHARGE"/>
+      <viewAttribute id="KUNDE"/>
+      <viewAttribute id="WARPL"/>
+      <viewAttribute id="IMRC_POINT"/>
+      <viewAttribute id="REVLV"/>
+      <viewAttribute id="MGANR"/>
+      <viewAttribute id="BEGRUI"/>
+      <viewAttribute id="S_EQUI"/>
+      <viewAttribute id="S_SERIAL"/>
+      <viewAttribute id="S_KONFI"/>
+      <viewAttribute id="S_SALE"/>
+      <viewAttribute id="S_FHM"/>
+      <viewAttribute id="S_ELSE"/>
+      <viewAttribute id="S_ISU"/>
+      <viewAttribute id="S_EQBS"/>
+      <viewAttribute id="S_FLEET"/>
+      <viewAttribute id="BSTVP"/>
+      <viewAttribute id="SPARTE"/>
+      <viewAttribute id="HANDLE"/>
+      <viewAttribute id="TSEGTP"/>
+      <viewAttribute id="EMATN"/>
+      <viewAttribute id="ACT_CHANGE_AA"/>
+      <viewAttribute id="S_CC"/>
+      <viewAttribute id="DATLWB"/>
+      <viewAttribute id="UII"/>
+      <viewAttribute id="IUID_TYPE"/>
+      <viewAttribute id="UII_PLANT"/>
+      <viewAttribute id="EQEXT_ACTIVE"/>
+      <viewAttribute id="EQUI_SRTYPE"/>
+      <viewAttribute id="EQUI_SNTYPE"/>
+      <viewAttribute id="EQLB_DUTY"/>
+      <viewAttribute id="EQLB_HIDE"/>
+      <viewAttribute id="J_3GDISPO"/>
+      <viewAttribute id="J_3GZDEQUI"/>
+      <viewAttribute id="J_3GEQART"/>
+      <viewAttribute id="J_3GKZMENG"/>
+      <viewAttribute id="J_3GKONDE"/>
+      <viewAttribute id="J_3GFIKTIV"/>
+      <viewAttribute id="J_3GBELTYP"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="J_3GKZLADG"/>
+      <viewAttribute id="J_3GKZBERG"/>
+      <viewAttribute id="J_3GEIFR"/>
+      <viewAttribute id="J_3GVERMEIN"/>
+      <viewAttribute id="J_3GZULNR"/>
+      <viewAttribute id="_SAPCEM_ABRECHVH"/>
+      <viewAttribute id="_SAPCEM_ABRECHLG"/>
+      <viewAttribute id="_SAPCEM_DISPOGR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EQKTX"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="GEWRK"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="HEQUI"/>
+      <viewAttribute id="HEQNR"/>
+      <viewAttribute id="TIDNR"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="LANGUAGE_KEY_INVALID"/>
+      <viewAttribute id="BEGRU_1"/>
+      <viewAttribute id="EQTYP_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$EQTYP$EQTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="EQUIP_CATG_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;EQTYP&quot;=&quot;EQTYP_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TECH_OBJ_AUTH_GRP_KEY_INVALID" source="TECH_OBJ_AUTH_GRP_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUNR" source="EQUNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQASP" source="EQASP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP" source="EQTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ELIEF" source="ELIEF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN" source="GWLEN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT" source="GWLDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDBWT" source="WDBWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZEIN" source="HZEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APLKZ" source="APLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AULDT" source="AULDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INBDT" source="INBDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GERNR" source="GERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLFN" source="EQLFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDV" source="GWLDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQDAT" source="EQDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQBER" source="EQBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQNUM" source="EQNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQSNR" source="EQSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRFKZ" source="KRFKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMATN" source="KMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERNR" source="SERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERK" source="WERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAGER" source="LAGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARGE" source="CHARGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNDE" source="KUNDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WARPL" source="WARPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMRC_POINT" source="IMRC_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REVLV" source="REVLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR" source="MGANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRUI" source="BEGRUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQUI" source="S_EQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SERIAL" source="S_SERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_KONFI" source="S_KONFI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SALE" source="S_SALE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FHM" source="S_FHM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ELSE" source="S_ELSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ISU" source="S_ISU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQBS" source="S_EQBS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FLEET" source="S_FLEET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTVP" source="BSTVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPARTE" source="SPARTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HANDLE" source="HANDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSEGTP" source="TSEGTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMATN" source="EMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACT_CHANGE_AA" source="ACT_CHANGE_AA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_CC" source="S_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATLWB" source="DATLWB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII" source="UII"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IUID_TYPE" source="IUID_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII_PLANT" source="UII_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQEXT_ACTIVE" source="EQEXT_ACTIVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SRTYPE" source="EQUI_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SNTYPE" source="EQUI_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_DUTY" source="EQLB_DUTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_HIDE" source="EQLB_HIDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GDISPO" source="J_3GDISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZDEQUI" source="J_3GZDEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEQART" source="J_3GEQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZMENG" source="J_3GKZMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKONDE" source="J_3GKONDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GFIKTIV" source="J_3GFIKTIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GBELTYP" source="J_3GBELTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZLADG" source="J_3GKZLADG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZBERG" source="J_3GKZBERG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEIFR" source="J_3GEIFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GVERMEIN" source="J_3GVERMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZULNR" source="J_3GZULNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHVH" source="_SAPCEM_ABRECHVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHLG" source="_SAPCEM_ABRECHLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_DISPOGR" source="_SAPCEM_DISPOGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQKTX" source="EQKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWRK" source="GEWRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQUI" source="HEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQNR" source="HEQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIDNR" source="TIDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANGUAGE_KEY_INVALID" source="LANGUAGE_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU_1" source="BEGRU_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EQTYP$EQTYP" source="EQTYP"/>
+    </input>
+  
+    <input node="Projection_4">
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP_1" source="EQTYP"/>
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+  
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EQTYP$EQTYP" source="EQTYP"/>
+  
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$EQTYP$EQTYP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_4" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="EQUIP_CATG_KEY_INVALID"/>
+      <viewAttribute id="TECH_OBJ_AUTH_GRP_KEY_INVALID"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EQUNR"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="EQASP"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="EQTYP"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ELIEF"/>
+      <viewAttribute id="GWLEN"/>
+      <viewAttribute id="GWLDT"/>
+      <viewAttribute id="WDBWT"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="HZEIN"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="APLKZ"/>
+      <viewAttribute id="AULDT"/>
+      <viewAttribute id="INBDT"/>
+      <viewAttribute id="GERNR"/>
+      <viewAttribute id="EQLFN"/>
+      <viewAttribute id="GWLDV"/>
+      <viewAttribute id="EQDAT"/>
+      <viewAttribute id="EQBER"/>
+      <viewAttribute id="EQNUM"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="EQSNR"/>
+      <viewAttribute id="CUOBJ"/>
+      <viewAttribute id="KRFKZ"/>
+      <viewAttribute id="KMATN"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SERNR"/>
+      <viewAttribute id="WERK"/>
+      <viewAttribute id="LAGER"/>
+      <viewAttribute id="CHARGE"/>
+      <viewAttribute id="KUNDE"/>
+      <viewAttribute id="WARPL"/>
+      <viewAttribute id="IMRC_POINT"/>
+      <viewAttribute id="REVLV"/>
+      <viewAttribute id="MGANR"/>
+      <viewAttribute id="BEGRUI"/>
+      <viewAttribute id="S_EQUI"/>
+      <viewAttribute id="S_SERIAL"/>
+      <viewAttribute id="S_KONFI"/>
+      <viewAttribute id="S_SALE"/>
+      <viewAttribute id="S_FHM"/>
+      <viewAttribute id="S_ELSE"/>
+      <viewAttribute id="S_ISU"/>
+      <viewAttribute id="S_EQBS"/>
+      <viewAttribute id="S_FLEET"/>
+      <viewAttribute id="BSTVP"/>
+      <viewAttribute id="SPARTE"/>
+      <viewAttribute id="HANDLE"/>
+      <viewAttribute id="TSEGTP"/>
+      <viewAttribute id="EMATN"/>
+      <viewAttribute id="ACT_CHANGE_AA"/>
+      <viewAttribute id="S_CC"/>
+      <viewAttribute id="DATLWB"/>
+      <viewAttribute id="UII"/>
+      <viewAttribute id="IUID_TYPE"/>
+      <viewAttribute id="UII_PLANT"/>
+      <viewAttribute id="EQEXT_ACTIVE"/>
+      <viewAttribute id="EQUI_SRTYPE"/>
+      <viewAttribute id="EQUI_SNTYPE"/>
+      <viewAttribute id="EQLB_DUTY"/>
+      <viewAttribute id="EQLB_HIDE"/>
+      <viewAttribute id="J_3GDISPO"/>
+      <viewAttribute id="J_3GZDEQUI"/>
+      <viewAttribute id="J_3GEQART"/>
+      <viewAttribute id="J_3GKZMENG"/>
+      <viewAttribute id="J_3GKONDE"/>
+      <viewAttribute id="J_3GFIKTIV"/>
+      <viewAttribute id="J_3GBELTYP"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="J_3GKZLADG"/>
+      <viewAttribute id="J_3GKZBERG"/>
+      <viewAttribute id="J_3GEIFR"/>
+      <viewAttribute id="J_3GVERMEIN"/>
+      <viewAttribute id="J_3GZULNR"/>
+      <viewAttribute id="_SAPCEM_ABRECHVH"/>
+      <viewAttribute id="_SAPCEM_ABRECHLG"/>
+      <viewAttribute id="_SAPCEM_DISPOGR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EQKTX"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="GEWRK"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="HEQUI"/>
+      <viewAttribute id="HEQNR"/>
+      <viewAttribute id="TIDNR"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="LANGUAGE_KEY_INVALID"/>
+      <viewAttribute id="BEGRU_1"/>
+      <viewAttribute id="EQTYP_1"/>
+      <viewAttribute id="EQART_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$EQART$EQART"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="TYPE_TECHINCAL_OBJ_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;EQART&quot;=&quot;EQART_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUIP_CATG_KEY_INVALID" source="EQUIP_CATG_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TECH_OBJ_AUTH_GRP_KEY_INVALID" source="TECH_OBJ_AUTH_GRP_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUNR" source="EQUNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQASP" source="EQASP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP" source="EQTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ELIEF" source="ELIEF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN" source="GWLEN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT" source="GWLDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDBWT" source="WDBWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZEIN" source="HZEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APLKZ" source="APLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AULDT" source="AULDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INBDT" source="INBDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GERNR" source="GERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLFN" source="EQLFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDV" source="GWLDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQDAT" source="EQDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQBER" source="EQBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQNUM" source="EQNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQSNR" source="EQSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRFKZ" source="KRFKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMATN" source="KMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERNR" source="SERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERK" source="WERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAGER" source="LAGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARGE" source="CHARGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNDE" source="KUNDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WARPL" source="WARPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMRC_POINT" source="IMRC_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REVLV" source="REVLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR" source="MGANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRUI" source="BEGRUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQUI" source="S_EQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SERIAL" source="S_SERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_KONFI" source="S_KONFI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SALE" source="S_SALE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FHM" source="S_FHM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ELSE" source="S_ELSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ISU" source="S_ISU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQBS" source="S_EQBS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FLEET" source="S_FLEET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTVP" source="BSTVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPARTE" source="SPARTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HANDLE" source="HANDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSEGTP" source="TSEGTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMATN" source="EMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACT_CHANGE_AA" source="ACT_CHANGE_AA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_CC" source="S_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATLWB" source="DATLWB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII" source="UII"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IUID_TYPE" source="IUID_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII_PLANT" source="UII_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQEXT_ACTIVE" source="EQEXT_ACTIVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SRTYPE" source="EQUI_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SNTYPE" source="EQUI_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_DUTY" source="EQLB_DUTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_HIDE" source="EQLB_HIDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GDISPO" source="J_3GDISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZDEQUI" source="J_3GZDEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEQART" source="J_3GEQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZMENG" source="J_3GKZMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKONDE" source="J_3GKONDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GFIKTIV" source="J_3GFIKTIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GBELTYP" source="J_3GBELTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZLADG" source="J_3GKZLADG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZBERG" source="J_3GKZBERG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEIFR" source="J_3GEIFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GVERMEIN" source="J_3GVERMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZULNR" source="J_3GZULNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHVH" source="_SAPCEM_ABRECHVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHLG" source="_SAPCEM_ABRECHLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_DISPOGR" source="_SAPCEM_DISPOGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQKTX" source="EQKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWRK" source="GEWRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQUI" source="HEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQNR" source="HEQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIDNR" source="TIDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANGUAGE_KEY_INVALID" source="LANGUAGE_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU_1" source="BEGRU_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP_1" source="EQTYP_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EQART$EQART" source="EQART"/>
+    </input>
+    <input node="Projection_5">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART_1" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EQART$EQART" source="EQART"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$EQART$EQART"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_5" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="TYPE_TECHINCAL_OBJ_KEY_INVALID"/>
+      <viewAttribute id="EQUIP_CATG_KEY_INVALID"/>
+      <viewAttribute id="TECH_OBJ_AUTH_GRP_KEY_INVALID"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EQUNR"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="EQASP"/>
+      <viewAttribute id="AEDAT"/>
+      <viewAttribute id="AENAM"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="EQTYP"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ELIEF"/>
+      <viewAttribute id="GWLEN"/>
+      <viewAttribute id="GWLDT"/>
+      <viewAttribute id="WDBWT"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="HZEIN"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="APLKZ"/>
+      <viewAttribute id="AULDT"/>
+      <viewAttribute id="INBDT"/>
+      <viewAttribute id="GERNR"/>
+      <viewAttribute id="EQLFN"/>
+      <viewAttribute id="GWLDV"/>
+      <viewAttribute id="EQDAT"/>
+      <viewAttribute id="EQBER"/>
+      <viewAttribute id="EQNUM"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="EQSNR"/>
+      <viewAttribute id="CUOBJ"/>
+      <viewAttribute id="KRFKZ"/>
+      <viewAttribute id="KMATN"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SERNR"/>
+      <viewAttribute id="WERK"/>
+      <viewAttribute id="LAGER"/>
+      <viewAttribute id="CHARGE"/>
+      <viewAttribute id="KUNDE"/>
+      <viewAttribute id="WARPL"/>
+      <viewAttribute id="IMRC_POINT"/>
+      <viewAttribute id="REVLV"/>
+      <viewAttribute id="MGANR"/>
+      <viewAttribute id="BEGRUI"/>
+      <viewAttribute id="S_EQUI"/>
+      <viewAttribute id="S_SERIAL"/>
+      <viewAttribute id="S_KONFI"/>
+      <viewAttribute id="S_SALE"/>
+      <viewAttribute id="S_FHM"/>
+      <viewAttribute id="S_ELSE"/>
+      <viewAttribute id="S_ISU"/>
+      <viewAttribute id="S_EQBS"/>
+      <viewAttribute id="S_FLEET"/>
+      <viewAttribute id="BSTVP"/>
+      <viewAttribute id="SPARTE"/>
+      <viewAttribute id="HANDLE"/>
+      <viewAttribute id="TSEGTP"/>
+      <viewAttribute id="EMATN"/>
+      <viewAttribute id="ACT_CHANGE_AA"/>
+      <viewAttribute id="S_CC"/>
+      <viewAttribute id="DATLWB"/>
+      <viewAttribute id="UII"/>
+      <viewAttribute id="IUID_TYPE"/>
+      <viewAttribute id="UII_PLANT"/>
+      <viewAttribute id="EQEXT_ACTIVE"/>
+      <viewAttribute id="EQUI_SRTYPE"/>
+      <viewAttribute id="EQUI_SNTYPE"/>
+      <viewAttribute id="EQLB_DUTY"/>
+      <viewAttribute id="EQLB_HIDE"/>
+      <viewAttribute id="J_3GDISPO"/>
+      <viewAttribute id="J_3GZDEQUI"/>
+      <viewAttribute id="J_3GEQART"/>
+      <viewAttribute id="J_3GKZMENG"/>
+      <viewAttribute id="J_3GKONDE"/>
+      <viewAttribute id="J_3GFIKTIV"/>
+      <viewAttribute id="J_3GBELTYP"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="J_3GKZLADG"/>
+      <viewAttribute id="J_3GKZBERG"/>
+      <viewAttribute id="J_3GEIFR"/>
+      <viewAttribute id="J_3GVERMEIN"/>
+      <viewAttribute id="J_3GZULNR"/>
+      <viewAttribute id="_SAPCEM_ABRECHVH"/>
+      <viewAttribute id="_SAPCEM_ABRECHLG"/>
+      <viewAttribute id="_SAPCEM_DISPOGR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EQKTX"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="GEWRK"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="HEQUI"/>
+      <viewAttribute id="HEQNR"/>
+      <viewAttribute id="TIDNR"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="LANGUAGE_KEY_INVALID"/>
+      <viewAttribute id="BEGRU_1"/>
+      <viewAttribute id="EQTYP_1"/>
+      <viewAttribute id="EQART_1"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute hidden="true" id="JOIN$WERK$WERKS"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PLANT_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERK&quot;=&quot;WERKS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE_TECHINCAL_OBJ_KEY_INVALID" source="TYPE_TECHINCAL_OBJ_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUIP_CATG_KEY_INVALID" source="EQUIP_CATG_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TECH_OBJ_AUTH_GRP_KEY_INVALID" source="TECH_OBJ_AUTH_GRP_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUNR" source="EQUNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQASP" source="EQASP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM" source="AENAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP" source="EQTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ELIEF" source="ELIEF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN" source="GWLEN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT" source="GWLDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDBWT" source="WDBWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HZEIN" source="HZEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APLKZ" source="APLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AULDT" source="AULDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INBDT" source="INBDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GERNR" source="GERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLFN" source="EQLFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDV" source="GWLDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQDAT" source="EQDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQBER" source="EQBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQNUM" source="EQNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQSNR" source="EQSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRFKZ" source="KRFKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMATN" source="KMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERNR" source="SERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERK" source="WERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAGER" source="LAGER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARGE" source="CHARGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNDE" source="KUNDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WARPL" source="WARPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMRC_POINT" source="IMRC_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REVLV" source="REVLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR" source="MGANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRUI" source="BEGRUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQUI" source="S_EQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SERIAL" source="S_SERIAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_KONFI" source="S_KONFI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_SALE" source="S_SALE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FHM" source="S_FHM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ELSE" source="S_ELSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_ISU" source="S_ISU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_EQBS" source="S_EQBS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_FLEET" source="S_FLEET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTVP" source="BSTVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPARTE" source="SPARTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HANDLE" source="HANDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TSEGTP" source="TSEGTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMATN" source="EMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACT_CHANGE_AA" source="ACT_CHANGE_AA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S_CC" source="S_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATLWB" source="DATLWB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII" source="UII"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IUID_TYPE" source="IUID_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UII_PLANT" source="UII_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQEXT_ACTIVE" source="EQEXT_ACTIVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SRTYPE" source="EQUI_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQUI_SNTYPE" source="EQUI_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_DUTY" source="EQLB_DUTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQLB_HIDE" source="EQLB_HIDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GDISPO" source="J_3GDISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZDEQUI" source="J_3GZDEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEQART" source="J_3GEQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZMENG" source="J_3GKZMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKONDE" source="J_3GKONDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GFIKTIV" source="J_3GFIKTIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GBELTYP" source="J_3GBELTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZLADG" source="J_3GKZLADG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GKZBERG" source="J_3GKZBERG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GEIFR" source="J_3GEIFR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GVERMEIN" source="J_3GVERMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_3GZULNR" source="J_3GZULNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHVH" source="_SAPCEM_ABRECHVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_ABRECHLG" source="_SAPCEM_ABRECHLG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="_SAPCEM_DISPOGR" source="_SAPCEM_DISPOGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQKTX" source="EQKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWRK" source="GEWRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQUI" source="HEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEQNR" source="HEQNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIDNR" source="TIDNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANGUAGE_KEY_INVALID" source="LANGUAGE_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU_1" source="BEGRU_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQTYP_1" source="EQTYP_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART_1" source="EQART_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERK$WERKS" source="WERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+    </input>
+    <input node="Projection_6">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERK$WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+    </input>
+    <joinAttribute name="JOIN$WERK$WERKS"/>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_5">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Join_5" columnName="MANDT"/>
+    </attribute>
+    <attribute id="EQUNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQUNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQUNR"/>
+    </attribute>
+    <attribute id="ERDAT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERDAT"/>
+      <keyMapping columnObjectName="Join_5" columnName="ERDAT"/>
+    </attribute>
+    <attribute id="ERNAM" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERNAM"/>
+      <keyMapping columnObjectName="Join_5" columnName="ERNAM"/>
+    </attribute>
+    <attribute id="EQASP" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQASP"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQASP"/>
+    </attribute>
+    <attribute id="AEDAT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AEDAT"/>
+      <keyMapping columnObjectName="Join_5" columnName="AEDAT"/>
+    </attribute>
+    <attribute id="AENAM" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AENAM"/>
+      <keyMapping columnObjectName="Join_5" columnName="AENAM"/>
+    </attribute>
+    <attribute id="BEGRU" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEGRU"/>
+      <keyMapping columnObjectName="Join_5" columnName="BEGRU"/>
+    </attribute>
+    <attribute id="EQTYP" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQTYP"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQTYP"/>
+    </attribute>
+    <attribute id="EQART" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQART"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQART"/>
+    </attribute>
+    <attribute id="LVORM" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LVORM"/>
+      <keyMapping columnObjectName="Join_5" columnName="LVORM"/>
+    </attribute>
+    <attribute id="INVNR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INVNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="INVNR"/>
+    </attribute>
+    <attribute id="GROES" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GROES"/>
+      <keyMapping columnObjectName="Join_5" columnName="GROES"/>
+    </attribute>
+    <attribute id="BRGEW" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRGEW"/>
+      <keyMapping columnObjectName="Join_5" columnName="BRGEW"/>
+    </attribute>
+    <attribute id="GEWEI" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWEI"/>
+      <keyMapping columnObjectName="Join_5" columnName="GEWEI"/>
+    </attribute>
+    <attribute id="ANSDT" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANSDT"/>
+      <keyMapping columnObjectName="Join_5" columnName="ANSDT"/>
+    </attribute>
+    <attribute id="ANSWT" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANSWT"/>
+      <keyMapping columnObjectName="Join_5" columnName="ANSWT"/>
+    </attribute>
+    <attribute id="WAERS" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="Join_5" columnName="WAERS"/>
+    </attribute>
+    <attribute id="ELIEF" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ELIEF"/>
+      <keyMapping columnObjectName="Join_5" columnName="ELIEF"/>
+    </attribute>
+    <attribute id="GWLEN" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GWLEN"/>
+      <keyMapping columnObjectName="Join_5" columnName="GWLEN"/>
+    </attribute>
+    <attribute id="GWLDT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GWLDT"/>
+      <keyMapping columnObjectName="Join_5" columnName="GWLDT"/>
+    </attribute>
+    <attribute id="WDBWT" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WDBWT"/>
+      <keyMapping columnObjectName="Join_5" columnName="WDBWT"/>
+    </attribute>
+    <attribute id="HERST" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HERST"/>
+      <keyMapping columnObjectName="Join_5" columnName="HERST"/>
+    </attribute>
+    <attribute id="HERLD" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HERLD"/>
+      <keyMapping columnObjectName="Join_5" columnName="HERLD"/>
+    </attribute>
+    <attribute id="HZEIN" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HZEIN"/>
+      <keyMapping columnObjectName="Join_5" columnName="HZEIN"/>
+    </attribute>
+    <attribute id="SERGE" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SERGE"/>
+      <keyMapping columnObjectName="Join_5" columnName="SERGE"/>
+    </attribute>
+    <attribute id="TYPBZ" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TYPBZ"/>
+      <keyMapping columnObjectName="Join_5" columnName="TYPBZ"/>
+    </attribute>
+    <attribute id="BAUJJ" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BAUJJ"/>
+      <keyMapping columnObjectName="Join_5" columnName="BAUJJ"/>
+    </attribute>
+    <attribute id="BAUMM" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BAUMM"/>
+      <keyMapping columnObjectName="Join_5" columnName="BAUMM"/>
+    </attribute>
+    <attribute id="APLKZ" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="APLKZ"/>
+      <keyMapping columnObjectName="Join_5" columnName="APLKZ"/>
+    </attribute>
+    <attribute id="AULDT" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AULDT"/>
+      <keyMapping columnObjectName="Join_5" columnName="AULDT"/>
+    </attribute>
+    <attribute id="INBDT" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INBDT"/>
+      <keyMapping columnObjectName="Join_5" columnName="INBDT"/>
+    </attribute>
+    <attribute id="GERNR" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GERNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="GERNR"/>
+    </attribute>
+    <attribute id="EQLFN" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQLFN"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQLFN"/>
+    </attribute>
+    <attribute id="GWLDV" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GWLDV"/>
+      <keyMapping columnObjectName="Join_5" columnName="GWLDV"/>
+    </attribute>
+    <attribute id="EQDAT" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQDAT"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQDAT"/>
+    </attribute>
+    <attribute id="EQBER" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQBER"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQBER"/>
+    </attribute>
+    <attribute id="EQNUM" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQNUM"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQNUM"/>
+    </attribute>
+    <attribute id="OBJNR" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OBJNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="OBJNR"/>
+    </attribute>
+    <attribute id="EQSNR" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQSNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQSNR"/>
+    </attribute>
+    <attribute id="CUOBJ" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUOBJ"/>
+      <keyMapping columnObjectName="Join_5" columnName="CUOBJ"/>
+    </attribute>
+    <attribute id="KRFKZ" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KRFKZ"/>
+      <keyMapping columnObjectName="Join_5" columnName="KRFKZ"/>
+    </attribute>
+    <attribute id="KMATN" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KMATN"/>
+      <keyMapping columnObjectName="Join_5" columnName="KMATN"/>
+    </attribute>
+    <attribute id="MATNR" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="MATNR"/>
+    </attribute>
+    <attribute id="SERNR" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SERNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="SERNR"/>
+    </attribute>
+    <attribute id="WERK" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERK"/>
+      <keyMapping columnObjectName="Join_5" columnName="WERK"/>
+    </attribute>
+    <attribute id="LAGER" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAGER"/>
+      <keyMapping columnObjectName="Join_5" columnName="LAGER"/>
+    </attribute>
+    <attribute id="CHARGE" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHARGE"/>
+      <keyMapping columnObjectName="Join_5" columnName="CHARGE"/>
+    </attribute>
+    <attribute id="KUNDE" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNDE"/>
+      <keyMapping columnObjectName="Join_5" columnName="KUNDE"/>
+    </attribute>
+    <attribute id="WARPL" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WARPL"/>
+      <keyMapping columnObjectName="Join_5" columnName="WARPL"/>
+    </attribute>
+    <attribute id="IMRC_POINT" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IMRC_POINT"/>
+      <keyMapping columnObjectName="Join_5" columnName="IMRC_POINT"/>
+    </attribute>
+    <attribute id="REVLV" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REVLV"/>
+      <keyMapping columnObjectName="Join_5" columnName="REVLV"/>
+    </attribute>
+    <attribute id="MGANR" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MGANR"/>
+      <keyMapping columnObjectName="Join_5" columnName="MGANR"/>
+    </attribute>
+    <attribute id="BEGRUI" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEGRUI"/>
+      <keyMapping columnObjectName="Join_5" columnName="BEGRUI"/>
+    </attribute>
+    <attribute id="S_EQUI" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_EQUI"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_EQUI"/>
+    </attribute>
+    <attribute id="S_SERIAL" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_SERIAL"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_SERIAL"/>
+    </attribute>
+    <attribute id="S_KONFI" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_KONFI"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_KONFI"/>
+    </attribute>
+    <attribute id="S_SALE" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_SALE"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_SALE"/>
+    </attribute>
+    <attribute id="S_FHM" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_FHM"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_FHM"/>
+    </attribute>
+    <attribute id="S_ELSE" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_ELSE"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_ELSE"/>
+    </attribute>
+    <attribute id="S_ISU" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_ISU"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_ISU"/>
+    </attribute>
+    <attribute id="S_EQBS" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_EQBS"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_EQBS"/>
+    </attribute>
+    <attribute id="S_FLEET" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_FLEET"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_FLEET"/>
+    </attribute>
+    <attribute id="BSTVP" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BSTVP"/>
+      <keyMapping columnObjectName="Join_5" columnName="BSTVP"/>
+    </attribute>
+    <attribute id="SPARTE" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPARTE"/>
+      <keyMapping columnObjectName="Join_5" columnName="SPARTE"/>
+    </attribute>
+    <attribute id="HANDLE" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HANDLE"/>
+      <keyMapping columnObjectName="Join_5" columnName="HANDLE"/>
+    </attribute>
+    <attribute id="TSEGTP" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TSEGTP"/>
+      <keyMapping columnObjectName="Join_5" columnName="TSEGTP"/>
+    </attribute>
+    <attribute id="EMATN" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMATN"/>
+      <keyMapping columnObjectName="Join_5" columnName="EMATN"/>
+    </attribute>
+    <attribute id="ACT_CHANGE_AA" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACT_CHANGE_AA"/>
+      <keyMapping columnObjectName="Join_5" columnName="ACT_CHANGE_AA"/>
+    </attribute>
+    <attribute id="S_CC" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="S_CC"/>
+      <keyMapping columnObjectName="Join_5" columnName="S_CC"/>
+    </attribute>
+    <attribute id="DATLWB" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATLWB"/>
+      <keyMapping columnObjectName="Join_5" columnName="DATLWB"/>
+    </attribute>
+    <attribute id="UII" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UII"/>
+      <keyMapping columnObjectName="Join_5" columnName="UII"/>
+    </attribute>
+    <attribute id="IUID_TYPE" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IUID_TYPE"/>
+      <keyMapping columnObjectName="Join_5" columnName="IUID_TYPE"/>
+    </attribute>
+    <attribute id="UII_PLANT" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UII_PLANT"/>
+      <keyMapping columnObjectName="Join_5" columnName="UII_PLANT"/>
+    </attribute>
+    <attribute id="EQEXT_ACTIVE" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQEXT_ACTIVE"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQEXT_ACTIVE"/>
+    </attribute>
+    <attribute id="EQUI_SRTYPE" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQUI_SRTYPE"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQUI_SRTYPE"/>
+    </attribute>
+    <attribute id="EQUI_SNTYPE" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQUI_SNTYPE"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQUI_SNTYPE"/>
+    </attribute>
+    <attribute id="EQLB_DUTY" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQLB_DUTY"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQLB_DUTY"/>
+    </attribute>
+    <attribute id="EQLB_HIDE" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQLB_HIDE"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQLB_HIDE"/>
+    </attribute>
+    <attribute id="J_3GDISPO" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GDISPO"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GDISPO"/>
+    </attribute>
+    <attribute id="J_3GZDEQUI" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GZDEQUI"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GZDEQUI"/>
+    </attribute>
+    <attribute id="J_3GEQART" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GEQART"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GEQART"/>
+    </attribute>
+    <attribute id="J_3GKZMENG" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GKZMENG"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GKZMENG"/>
+    </attribute>
+    <attribute id="J_3GKONDE" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GKONDE"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GKONDE"/>
+    </attribute>
+    <attribute id="J_3GFIKTIV" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GFIKTIV"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GFIKTIV"/>
+    </attribute>
+    <attribute id="J_3GBELTYP" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GBELTYP"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GBELTYP"/>
+    </attribute>
+    <attribute id="MEINS" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINS"/>
+      <keyMapping columnObjectName="Join_5" columnName="MEINS"/>
+    </attribute>
+    <attribute id="J_3GKZLADG" order="88" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GKZLADG"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GKZLADG"/>
+    </attribute>
+    <attribute id="J_3GKZBERG" order="89" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GKZBERG"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GKZBERG"/>
+    </attribute>
+    <attribute id="J_3GEIFR" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GEIFR"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GEIFR"/>
+    </attribute>
+    <attribute id="J_3GVERMEIN" order="91" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GVERMEIN"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GVERMEIN"/>
+    </attribute>
+    <attribute id="J_3GZULNR" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_3GZULNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="J_3GZULNR"/>
+    </attribute>
+    <attribute id="_SAPCEM_ABRECHVH" order="93" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_SAPCEM_ABRECHVH"/>
+      <keyMapping columnObjectName="Join_5" columnName="_SAPCEM_ABRECHVH"/>
+    </attribute>
+    <attribute id="_SAPCEM_ABRECHLG" order="94" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_SAPCEM_ABRECHLG"/>
+      <keyMapping columnObjectName="Join_5" columnName="_SAPCEM_ABRECHLG"/>
+    </attribute>
+    <attribute id="_SAPCEM_DISPOGR" order="95" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="_SAPCEM_DISPOGR"/>
+      <keyMapping columnObjectName="Join_5" columnName="_SAPCEM_DISPOGR"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="96" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Join_5" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="EQKTX" order="97" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQKTX"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQKTX"/>
+    </attribute>
+    <attribute id="DATAB" order="98" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB"/>
+      <keyMapping columnObjectName="Join_5" columnName="DATAB"/>
+    </attribute>
+    <attribute id="MAPAR" order="99" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPAR"/>
+      <keyMapping columnObjectName="Join_5" columnName="MAPAR"/>
+    </attribute>
+    <attribute id="INGRP" order="100" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INGRP"/>
+      <keyMapping columnObjectName="Join_5" columnName="INGRP"/>
+    </attribute>
+    <attribute id="IWERK" order="101" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IWERK"/>
+      <keyMapping columnObjectName="Join_5" columnName="IWERK"/>
+    </attribute>
+    <attribute id="GEWRK" order="102" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWRK"/>
+      <keyMapping columnObjectName="Join_5" columnName="GEWRK"/>
+    </attribute>
+    <attribute id="RBNR" order="103" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RBNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="RBNR"/>
+    </attribute>
+    <attribute id="HEQUI" order="104" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HEQUI"/>
+      <keyMapping columnObjectName="Join_5" columnName="HEQUI"/>
+    </attribute>
+    <attribute id="HEQNR" order="105" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HEQNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="HEQNR"/>
+    </attribute>
+    <attribute id="TIDNR" order="106" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TIDNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="TIDNR"/>
+    </attribute>
+    <attribute id="SUBMT" order="107" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBMT"/>
+      <keyMapping columnObjectName="Join_5" columnName="SUBMT"/>
+    </attribute>
+    <attribute id="SWERK" order="108" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWERK"/>
+      <keyMapping columnObjectName="Join_5" columnName="SWERK"/>
+    </attribute>
+    <attribute id="STORT" order="109" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORT"/>
+      <keyMapping columnObjectName="Join_5" columnName="STORT"/>
+    </attribute>
+    <attribute id="MSGRP" order="110" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MSGRP"/>
+      <keyMapping columnObjectName="Join_5" columnName="MSGRP"/>
+    </attribute>
+    <attribute id="BEBER" order="111" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEBER"/>
+      <keyMapping columnObjectName="Join_5" columnName="BEBER"/>
+    </attribute>
+    <attribute id="ABCKZ" order="112" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABCKZ"/>
+      <keyMapping columnObjectName="Join_5" columnName="ABCKZ"/>
+    </attribute>
+    <attribute id="EQFNR" order="113" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQFNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQFNR"/>
+    </attribute>
+    <attribute id="BUKRS" order="114" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="Join_5" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="GSBER" order="115" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GSBER"/>
+      <keyMapping columnObjectName="Join_5" columnName="GSBER"/>
+    </attribute>
+    <attribute id="ANLNR" order="116" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="ANLNR"/>
+    </attribute>
+    <attribute id="ANLUN" order="117" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLUN"/>
+      <keyMapping columnObjectName="Join_5" columnName="ANLUN"/>
+    </attribute>
+    <attribute id="KOSTL" order="118" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTL"/>
+      <keyMapping columnObjectName="Join_5" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="PROID" order="119" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROID"/>
+      <keyMapping columnObjectName="Join_5" columnName="PROID"/>
+    </attribute>
+    <attribute id="AUFNR" order="120" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUFNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="AUFNR"/>
+    </attribute>
+    <attribute id="DAUFN" order="121" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAUFN"/>
+      <keyMapping columnObjectName="Join_5" columnName="DAUFN"/>
+    </attribute>
+    <attribute id="TPLNR" order="122" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="TPLNR"/>
+    </attribute>
+    <attribute id="VKORG" order="123" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKORG"/>
+      <keyMapping columnObjectName="Join_5" columnName="VKORG"/>
+    </attribute>
+    <attribute id="VTWEG" order="124" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTWEG"/>
+      <keyMapping columnObjectName="Join_5" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SPART" order="125" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPART"/>
+      <keyMapping columnObjectName="Join_5" columnName="SPART"/>
+    </attribute>
+    <attribute id="VKBUR" order="126" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKBUR"/>
+      <keyMapping columnObjectName="Join_5" columnName="VKBUR"/>
+    </attribute>
+    <attribute id="VKGRP" order="127" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKGRP"/>
+      <keyMapping columnObjectName="Join_5" columnName="VKGRP"/>
+    </attribute>
+    <attribute id="PLANT_KEY_INVALID" order="128" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANT_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="PLANT_KEY_INVALID"/>
+    </attribute>
+    <attribute id="TYPE_TECHINCAL_OBJ_KEY_INVALID" order="129" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TYPE_TECHINCAL_OBJ_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="TYPE_TECHINCAL_OBJ_KEY_INVALID"/>
+    </attribute>
+    <attribute id="EQUIP_CATG_KEY_INVALID" order="130" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQUIP_CATG_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="EQUIP_CATG_KEY_INVALID"/>
+    </attribute>
+    <attribute id="TECH_OBJ_AUTH_GRP_KEY_INVALID" order="131" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TECH_OBJ_AUTH_GRP_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="TECH_OBJ_AUTH_GRP_KEY_INVALID"/>
+    </attribute>
+    <attribute id="LANGUAGE_KEY_INVALID" order="132" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LANGUAGE_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="LANGUAGE_KEY_INVALID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="133" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;LANGUAGE_KEY_INVALID&quot;+&quot;TECH_OBJ_AUTH_GRP_KEY_INVALID&quot;+&quot;EQUIP_CATG_KEY_INVALID&quot;+&quot;PLANT_KEY_INVALID&quot;+&quot;TYPE_TECHINCAL_OBJ_KEY_INVALID&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="660" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="474" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="584" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="708" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="205"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="223"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="-12" y="30"/>
+      <rectangleSize width="285"/>
+    </shape>
+  
+    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="198" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="285"/>
+    </shape>
+    <shape modelObjectName="Projection_5" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="454" y="33"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="660" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_4" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="285"/>
+    </shape>
+    <shape modelObjectName="Projection_6" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="399" y="630"/>
+      <rectangleSize width="136"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

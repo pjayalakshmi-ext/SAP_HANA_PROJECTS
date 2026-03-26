@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.APOpenItem.06Completeness::CV_AP_BSEC" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_AR_BSEC"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.APOpenItem.04Harmonization::CV_AP_BSEC">
+    <resourceUri>EHUB.TD.APOpenItem.04Harmonization::CV_AP_BSEC</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSEC">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="STKZA"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="STCD3"/>
+      <viewAttribute id="STCD4"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BUKRS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;BUKRS&quot;='' OR &quot;BUKRS&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="XBLNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;XBLNR&quot;='' OR &quot;XBLNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LIFNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;LIFNR&quot;='' OR &quot;LIFNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="NAME1_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;NAME1&quot;='' OR &quot;NAME1&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="ORT01_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;ORT01&quot;='' OR &quot;ORT01&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.TD.APOpenItem.04Harmonization::CV_AP_BSEC"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_BSEC">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="BELNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="BELNR"/>
+    </attribute>
+    <attribute id="GJAHR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GJAHR"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="BUZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="LIFNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="XBLNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="NAME1" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="NAME1"/>
+    </attribute>
+    <attribute id="NAME2" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME2"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="NAME2"/>
+    </attribute>
+    <attribute id="STRAS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STRAS"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="STRAS"/>
+    </attribute>
+    <attribute id="PSTLZ" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSTLZ"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="ORT01" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORT01"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="ORT01"/>
+    </attribute>
+    <attribute id="REGIO" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REGIO"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="REGIO"/>
+    </attribute>
+    <attribute id="LAND1" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAND1"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="LAND1"/>
+    </attribute>
+    <attribute id="PFACH" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PFACH"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="PFACH"/>
+    </attribute>
+    <attribute id="PSTL2" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSTL2"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="PSTL2"/>
+    </attribute>
+    <attribute id="SWIFT" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWIFT"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="SWIFT"/>
+    </attribute>
+    <attribute id="IBAN" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBAN"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="IBAN"/>
+    </attribute>
+    <attribute id="BANKN" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKN"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="BANKN"/>
+    </attribute>
+    <attribute id="BANKL" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKL"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKS" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKS"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BKONT" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKONT"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="BKONT"/>
+    </attribute>
+    <attribute id="STKZA" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STKZA"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="STKZA"/>
+    </attribute>
+    <attribute id="STCD1" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCD1"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="STCD1"/>
+    </attribute>
+    <attribute id="STCD2" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCD2"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="STCD2"/>
+    </attribute>
+    <attribute id="STCD3" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCD3"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="STCD3"/>
+    </attribute>
+    <attribute id="STCD4" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCD4"/>
+      <keyMapping columnObjectName="P_BSEC" columnName="STCD4"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="BUKRS_INCOMPLETE" order="28" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BUKRS_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSEC" columnName="BUKRS_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="XBLNR_INCOMPLETE" order="29" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="XBLNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSEC" columnName="XBLNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="LIFNR_INCOMPLETE" order="30" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KUNNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSEC" columnName="LIFNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="NAME1_INCOMPLETE" order="31" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="NAME1_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSEC" columnName="NAME1_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="ORT01_INCOMPLETE" order="32" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ORT01_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSEC" columnName="ORT01_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INCOMPLETE" order="33" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>case when &quot;BUKRS_INCOMPLETE&quot;+&quot;XBLNR_INCOMPLETE&quot;+&quot;LIFNR_INCOMPLETE&quot;+&quot;NAME1_INCOMPLETE&quot;+&quot;ORT01_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_BSEC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="246"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.GL Master.09Postload::CV_P23_GLMASTER_SKA1_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_P23_GLMASTER_SKA1_PST.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER">
+    <resourceUri>EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_SKA1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_SKA1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CHART_OF_ACCOUNTS"/>
+      <viewAttribute id="LEGACY_GL_ACCOUNT_NUMBER"/>
+      <viewAttribute id="CHART_OF_ACCOUNTS"/>
+      <viewAttribute id="GL_ACCOUNT_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="GLACCOUNT_TYPE"/>
+      <viewAttribute id="GLACCOUNT_SUBTYPE"/>
+      <viewAttribute id="MAIN_SAKNR"/>
+      <viewAttribute id="GVTYP"/>
+      <viewAttribute id="KTOKS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="BILKT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_SKA1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="GLACCOUNT_TYPE"/>
+      <viewAttribute id="GLACCOUNT_SUBTYPE"/>
+      <viewAttribute id="MAIN_SAKNR"/>
+      <viewAttribute id="GVTYP"/>
+      <viewAttribute id="KTOKS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="BILKT"/>
+      <viewAttribute id="LEGACY_CHART_OF_ACCOUNTS"/>
+      <viewAttribute id="LEGACY_GL_ACCOUNT_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$KTOPL$CHART_OF_ACCOUNTS"/>
+      <viewAttribute hidden="true" id="JOIN$SAKNR$GL_ACCOUNT_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOPL" source="KTOPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GLACCOUNT_TYPE" source="GLACCOUNT_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GLACCOUNT_SUBTYPE" source="GLACCOUNT_SUBTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAIN_SAKNR" source="MAIN_SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GVTYP" source="GVTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKS" source="KTOKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FUNC_AREA" source="FUNC_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BILKT" source="BILKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KTOPL$CHART_OF_ACCOUNTS" source="KTOPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SAKNR$GL_ACCOUNT_NUMBER" source="SAKNR"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_CHART_OF_ACCOUNTS" source="LEGACY_CHART_OF_ACCOUNTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_GL_ACCOUNT_NUMBER" source="LEGACY_GL_ACCOUNT_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KTOPL$CHART_OF_ACCOUNTS" source="CHART_OF_ACCOUNTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SAKNR$GL_ACCOUNT_NUMBER" source="GL_ACCOUNT_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$KTOPL$CHART_OF_ACCOUNTS"/>
+    <joinAttribute name="JOIN$SAKNR$GL_ACCOUNT_NUMBER"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="KTOPL" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Chart of Accounts"/>
+      <keyMapping columnObjectName="Join_1" columnName="KTOPL"/>
+    </attribute>
+    <attribute id="SAKNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="G/L Account Number"/>
+      <keyMapping columnObjectName="Join_1" columnName="SAKNR"/>
+    </attribute>
+    <attribute id="GLACCOUNT_TYPE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Type of a General Ledger Account"/>
+      <keyMapping columnObjectName="Join_1" columnName="GLACCOUNT_TYPE"/>
+    </attribute>
+    <attribute id="GLACCOUNT_SUBTYPE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Subtype of a GL Account"/>
+      <keyMapping columnObjectName="Join_1" columnName="GLACCOUNT_SUBTYPE"/>
+    </attribute>
+    <attribute id="MAIN_SAKNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Reconciliation Account"/>
+      <keyMapping columnObjectName="Join_1" columnName="MAIN_SAKNR"/>
+    </attribute>
+    <attribute id="GVTYP" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="P&amp;L statement account type"/>
+      <keyMapping columnObjectName="Join_1" columnName="GVTYP"/>
+    </attribute>
+    <attribute id="KTOKS" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="G/L Account Group"/>
+      <keyMapping columnObjectName="Join_1" columnName="KTOKS"/>
+    </attribute>
+    <attribute id="FUNC_AREA" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Functional Area"/>
+      <keyMapping columnObjectName="Join_1" columnName="FUNC_AREA"/>
+    </attribute>
+    <attribute id="VBUND" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company ID of Trading Partner"/>
+      <keyMapping columnObjectName="Join_1" columnName="VBUND"/>
+    </attribute>
+    <attribute id="BILKT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Group Account Number"/>
+      <keyMapping columnObjectName="Join_1" columnName="BILKT"/>
+    </attribute>
+    <attribute id="LEGACY_CHART_OF_ACCOUNTS" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LEGACY_CHART_OF_ACCOUNTS"/>
+      <keyMapping columnObjectName="Join_1" columnName="LEGACY_CHART_OF_ACCOUNTS"/>
+    </attribute>
+    <attribute id="LEGACY_GL_ACCOUNT_NUMBER" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LEGACY_GL_ACCOUNT_NUMBER"/>
+      <keyMapping columnObjectName="Join_1" columnName="LEGACY_GL_ACCOUNT_NUMBER"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.GLAccountBalanceOpenItem.09Postload::CV_P23_GLABOI_BKPF_BSEG_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_GLABOI_GL_BALANCE_PST.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BKPF">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BKPF</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BSEG">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BSEG</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_BKPF" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BLART"/>
+      <viewAttribute id="BLDAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="LDGRP"/>
+      <viewAttribute id="CPUDT"/>
+      <viewAttribute id="XBLNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BKPF"/>
+    <filter>&quot;XBLNR&quot; in ('0240100000012003','0240100000012004','0240100000013003','0240100000013004',
+'0240100000820003','0240100000820004','0240100000822003','0240100000822004',
+'0240100000821003','0240100000821004','0240100000823003','0240100000823004')
+and &quot;CPUDT&quot; = '20240913'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_BSEG" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="SHKZG"/>
+      <viewAttribute id="DMBTR"/>
+      <viewAttribute id="WRBTR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BSEG"/>
+    <filter>&quot;HKONT&quot; in ('0039917000','0039916000') </filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_S4_BKPF_BSEG" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="LDGRP"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BLART"/>
+      <viewAttribute id="BLDAT"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="SHKZG"/>
+      <viewAttribute id="DMBTR"/>
+      <viewAttribute id="WRBTR"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$GJAHR$GJAHR"/>
+      <viewAttribute hidden="true" id="JOIN$BELNR$BELNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_DMBTR" datatype="DECIMAL" length="13" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;SHKZG&quot;
+	 WHEN 'H' then -1*&quot;DMBTR&quot;
+	 ELSE &quot;DMBTR&quot; 
+ END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_WRBTR" datatype="DECIMAL" length="13" scale="2" expressionLanguage="SQL">
+        <formula>CASE &quot;SHKZG&quot;
+	 WHEN 'H' then -1*&quot;WRBTR&quot;
+	 ELSE &quot;WRBTR&quot; 
+ END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_S4_BKPF">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LDGRP" source="LDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLART" source="BLART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLDAT" source="BLDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GJAHR$GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR" source="BELNR"/>
+    </input>
+    <input node="P_S4_BSEG">
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHKZG" source="SHKZG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DMBTR" source="DMBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WRBTR" source="WRBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GJAHR$GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR" source="BELNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+    <joinAttribute name="JOIN$GJAHR$GJAHR"/>
+    <joinAttribute name="JOIN$BELNR$BELNR"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="J_S4_BKPF_BSEG">
+  <attributes>
+    <attribute id="BELNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Number of an Accounting Document"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="BELNR"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="GJAHR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fiscal Year"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="LDGRP" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Ledger Group"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="LDGRP"/>
+    </attribute>
+    <attribute id="XBLNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference Document Number"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="HKONT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="General Ledger Account"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="HKONT"/>
+    </attribute>
+    <attribute id="PRCTR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Profit Center"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="BLART" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Type"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="BLART"/>
+    </attribute>
+    <attribute id="BLDAT" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Document Date in Document"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="BLDAT"/>
+    </attribute>
+    <attribute id="BUDAT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Posting Date in the Document"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="BUDAT"/>
+    </attribute>
+    <attribute id="SHKZG" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Debit/Credit Indicator"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="SHKZG"/>
+    </attribute>
+    <attribute id="DMBTR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount in local currency"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="CC_DMBTR"/>
+    </attribute>
+    <attribute id="WRBTR" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount in document currency"/>
+      <keyMapping columnObjectName="J_S4_BKPF_BSEG" columnName="CC_WRBTR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4_BKPF" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_BSEG" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_S4_BKPF_BSEG" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_BKPF" modelObjectNameSpace="J_S4_BKPF_BSEG" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_S4_BSEG" modelObjectNameSpace="J_S4_BKPF_BSEG" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Vendor Master.06Completeness::CV_VENDORMASTER_LFBK" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_VENDORMASTER_LFBK.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.Vendor Master.04Harmonization::CV_VENDORMASTER_LFBK">
+    <resourceUri>EHUB.MD.Vendor Master.04Harmonization::CV_VENDORMASTER_LFBK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="BVTYP"/>
+      <viewAttribute id="XEZER"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="EBPP_BVSTATUS"/>
+      <viewAttribute id="KOVON"/>
+      <viewAttribute id="KOBIS"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="LIFNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;LIFNR&quot;=''  or &quot;LIFNR&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BANKS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKS&quot;=''  or &quot;BANKS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BANKL_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKL&quot;=''  or &quot;BANKL&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BANKN_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKN&quot;=''  or &quot;BANKN&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.Vendor Master.04Harmonization::CV_VENDORMASTER_LFBK"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="LIFNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="BANKS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKN" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKN"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BANKN"/>
+    </attribute>
+    <attribute id="IBAN" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBAN"/>
+      <keyMapping columnObjectName="Projection_1" columnName="IBAN"/>
+    </attribute>
+    <attribute id="BKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKONT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BKONT"/>
+    </attribute>
+    <attribute id="BVTYP" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BVTYP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BVTYP"/>
+    </attribute>
+    <attribute id="XEZER" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XEZER"/>
+      <keyMapping columnObjectName="Projection_1" columnName="XEZER"/>
+    </attribute>
+    <attribute id="BKREF" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKREF"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BKREF"/>
+    </attribute>
+    <attribute id="KOINH" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOINH"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOINH"/>
+    </attribute>
+    <attribute id="EBPP_ACCNAME" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EBPP_ACCNAME"/>
+      <keyMapping columnObjectName="Projection_1" columnName="EBPP_ACCNAME"/>
+    </attribute>
+    <attribute id="EBPP_BVSTATUS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EBPP_BVSTATUS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="EBPP_BVSTATUS"/>
+    </attribute>
+    <attribute id="KOVON" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOVON"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOVON"/>
+    </attribute>
+    <attribute id="KOBIS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOBIS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOBIS"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="LIFNR_INCOMPLETE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LIFNR_INCOMPLETE"/>
+    </attribute>
+    <attribute id="BANKS_INCOMPLETE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKS_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BANKS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="BANKL_INCOMPLETE" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKL_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BANKL_INCOMPLETE"/>
+    </attribute>
+    <attribute id="BANKN_INCOMPLETE" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKN_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BANKN_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="21" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when (&quot;LIFNR_INCOMPLETE&quot;+&quot;BANKS_INCOMPLETE&quot;+&quot;BANKL_INCOMPLETE&quot;+&quot;BANKN_INCOMPLETE&quot;)&gt;=1
+then 1
+else 0
+END</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="89" y="207"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

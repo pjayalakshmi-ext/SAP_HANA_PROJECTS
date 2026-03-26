@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.AROpenItem.09Postload::CV_P23_AR_BSEC" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_P23_AR_BSEC"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.AROpenItem.09Postload::CV_P23_AR_BKPF_BSEG">
+    <resourceUri>EHUB.TD.AROpenItem.09Postload::CV_P23_AR_BKPF_BSEG</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BSEC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BSEC</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BNKA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BNKA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_KNBK">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_KNBK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TIBAN">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TIBAN</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BKPF_BSEG">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.AROpenItem.09Postload::CV_P23_AR_BKPF_BSEG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSEC">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="STKZA"/>
+      <viewAttribute id="STCD3"/>
+      <viewAttribute id="STCD4"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BSEC"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BNKA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="SWIFT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BNKA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNBK">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BKONT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_KNBK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_TIBAN">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="IBAN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TIBAN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_ACC_DATA" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="STKZA"/>
+      <viewAttribute id="STCD3"/>
+      <viewAttribute id="STCD4"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$BELNR$BELNR"/>
+      <viewAttribute hidden="true" id="JOIN$GJAHR$GJAHR"/>
+      <viewAttribute hidden="true" id="JOIN$BUZEI$BUZEI"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_BKPF_BSEG">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GJAHR$GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUZEI$BUZEI" source="BUZEI"/>
+    </input>
+    <input node="P_BSEC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKZA" source="STKZA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD3" source="STCD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD4" source="STCD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GJAHR$GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUZEI$BUZEI" source="BUZEI"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+    <joinAttribute name="JOIN$BELNR$BELNR"/>
+    <joinAttribute name="JOIN$GJAHR$GJAHR"/>
+    <joinAttribute name="JOIN$BUZEI$BUZEI"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BANK" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="STKZA"/>
+      <viewAttribute id="STCD3"/>
+      <viewAttribute id="STCD4"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$BANKS"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$BANKL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_ACC_DATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKZA" source="STKZA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD3" source="STCD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD4" source="STCD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+    </input>
+    <input node="P_BNKA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BANKS$BANKS"/>
+    <joinAttribute name="JOIN$BANKL$BANKL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CUSTOMER" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="STKZA"/>
+      <viewAttribute id="STCD3"/>
+      <viewAttribute id="STCD4"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$KUNNR"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$BANKS"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$BANKL"/>
+      <viewAttribute hidden="true" id="JOIN$BANKN$BANKN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_BANK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKZA" source="STKZA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD3" source="STCD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD4" source="STCD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN" source="BANKN"/>
+    </input>
+    <input node="P_KNBK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN" source="BANKN"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$KUNNR$KUNNR"/>
+    <joinAttribute name="JOIN$BANKS$BANKS"/>
+    <joinAttribute name="JOIN$BANKL$BANKL"/>
+    <joinAttribute name="JOIN$BANKN$BANKN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_IBAN" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="STKZA"/>
+      <viewAttribute id="STCD3"/>
+      <viewAttribute id="STCD4"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$BANKS"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$BANKL"/>
+      <viewAttribute hidden="true" id="JOIN$BANKN$BANKN"/>
+      <viewAttribute hidden="true" id="JOIN$BKONT$BKONT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_CUSTOMER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKZA" source="STKZA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD3" source="STCD3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD4" source="STCD4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BKONT$BKONT" source="BKONT"/>
+    </input>
+    <input node="P_TIBAN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BKONT$BKONT" source="BKONT"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BANKS$BANKS"/>
+    <joinAttribute name="JOIN$BANKL$BANKL"/>
+    <joinAttribute name="JOIN$BANKN$BANKN"/>
+    <joinAttribute name="JOIN$BKONT$BKONT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="A_ACC_DATA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="STKZA"/>
+      <viewAttribute id="STCD3"/>
+      <viewAttribute id="STCD4"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="IBAN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="J_IBAN"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="A_ACC_DATA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="BELNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="BELNR"/>
+    </attribute>
+    <attribute id="GJAHR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GJAHR"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="BUZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="XBLNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference Document Number"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="KUNNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="NAME1" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 1"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="NAME1"/>
+    </attribute>
+    <attribute id="NAME2" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 2"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="NAME2"/>
+    </attribute>
+    <attribute id="STRAS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Street and House Number"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="STRAS"/>
+    </attribute>
+    <attribute id="PSTLZ" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Postal Code"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="ORT01" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="ORT01"/>
+    </attribute>
+    <attribute id="REGIO" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="REGIO"/>
+    </attribute>
+    <attribute id="LAND1" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country/Region Key"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="LAND1"/>
+    </attribute>
+    <attribute id="PFACH" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PO Box"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="PFACH"/>
+    </attribute>
+    <attribute id="PSTL2" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="P.O. Box Postal Code"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="PSTL2"/>
+    </attribute>
+    <attribute id="BANKN" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Account Number"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="BANKN"/>
+    </attribute>
+    <attribute id="BANKL" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Keys"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKS" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Country/Region Key"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="BANKS"/>
+    </attribute>
+    <attribute id="STCD1" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Number 1"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="STCD1"/>
+    </attribute>
+    <attribute id="STCD2" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Number 2"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="STCD2"/>
+    </attribute>
+    <attribute id="STKZA" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Business Partner Subject to Equalization Tax?"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="STKZA"/>
+    </attribute>
+    <attribute id="STCD3" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Number 3"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="STCD3"/>
+    </attribute>
+    <attribute id="STCD4" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Number 4"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="STCD4"/>
+    </attribute>
+    <attribute id="SWIFT" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWIFT/BIC for International Payments"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="SWIFT"/>
+    </attribute>
+    <attribute id="BKONT" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Control Key"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="BKONT"/>
+    </attribute>
+    <attribute id="IBAN" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBAN (International Bank Account Number)"/>
+      <keyMapping columnObjectName="A_ACC_DATA" columnName="IBAN"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="562" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_BKPF_BSEG" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="981"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BSEC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="981"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BNKA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="381" y="821"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_KNBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="481" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_TIBAN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="624" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_ACC_DATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="821"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BKPF_BSEG" modelObjectNameSpace="J_ACC_DATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_BSEC" modelObjectNameSpace="J_ACC_DATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BANK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_ACC_DATA" modelObjectNameSpace="J_BANK" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="141"/>
+    </shape>
+    <shape modelObjectName="P_BNKA" modelObjectNameSpace="J_BANK" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CUSTOMER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="171" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_BANK" modelObjectNameSpace="J_CUSTOMER" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_KNBK" modelObjectNameSpace="J_CUSTOMER" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_IBAN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="561" y="340"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_CUSTOMER" modelObjectNameSpace="J_IBAN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="145"/>
+    </shape>
+    <shape modelObjectName="P_TIBAN" modelObjectNameSpace="J_IBAN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="337" y="193"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape expanded="true" modelObjectName="A_ACC_DATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="561" y="235"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

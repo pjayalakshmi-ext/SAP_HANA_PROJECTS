@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.06Completeness::CV_CM_BP_ROLE" applyPrivilegeType="NONE" dataCategory="CUBE" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_CM_BP_ROLE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CustomerMaster.03Transformation::CV_CM_BP_ROLE">
+    <resourceUri>EHUB.MD.CustomerMaster.03Transformation::CV_CM_BP_ROLE</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BP_ROLE">
+    <viewAttributes>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="CC_BP_ROLE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="KUNNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;KUNNR&quot;='' OR &quot;KUNNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BP_ROLE_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;CC_BP_ROLE&quot;='' OR &quot;CC_BP_ROLE&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.CustomerMaster.03Transformation::CV_CM_BP_ROLE"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_BP_ROLE">
+  <attributes>
+    <attribute id="KUNNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number*"/>
+      <keyMapping columnObjectName="P_BP_ROLE" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="CC_BP_ROLE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_BP_ROLE"/>
+      <keyMapping columnObjectName="P_BP_ROLE" columnName="CC_BP_ROLE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="KUNNR_INCOMPLETE" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KUNNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BP_ROLE" columnName="KUNNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BP_ROLE_INCOMPLETE" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BP_ROLE_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BP_ROLE" columnName="BP_ROLE_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INCOMPLETE" order="5" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>case when &quot;KUNNR_INCOMPLETE&quot;+&quot;BP_ROLE_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+
+
+  <localDimensions/>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_BP_ROLE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="240"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

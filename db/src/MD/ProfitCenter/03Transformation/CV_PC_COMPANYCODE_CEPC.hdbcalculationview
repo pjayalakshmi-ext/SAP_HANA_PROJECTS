@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.ProfitCenter.03Transformation::CV_PC_COMPANYCODE_CEPC" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <descriptions defaultDescription="CA_REL_CSTEXT_VALID"/>
+  <metadata changedAt="2023-01-26 11:01:20.537"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="28"/>
+  <dataSources>
+    <DataSource id="EHUB.MD.ProfitCenter.01Extraction::CV_SHE_PC_COMPANYCODE_CEPC">
+      <resourceUri>EHUB.MD.ProfitCenter.01Extraction::CV_SHE_PC_COMPANYCODE_CEPC</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_COMPANY_CODE">
+      <resourceUri>EHUB.Synonyms::SY_LKP_COMPANY_CODE</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_PROFIT_CENTER">
+      <resourceUri>EHUB.Synonyms::SY_LKP_PROFIT_CENTER</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_CONTROLLING_AREA">
+      <resourceUri>EHUB.Synonyms::SY_LKP_CONTROLLING_AREA</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_COMPANY_CEPC">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.MD.ProfitCenter.01Extraction::CV_SHE_PC_COMPANYCODE_CEPC"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_COMPANY_CODE">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_COMPANY_CODE"/>
+      <viewAttribute id="COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_PROFIT_CENTER">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="LEGACY_PROFIT_CENTER"/>
+      <viewAttribute id="PROFIT_CENTER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_PROFIT_CENTER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="CONTROLLING_AREA"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_CONTROLLING_AREA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_PRCTR" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="LEGACY_PROFIT_CENTER"/>
+      <viewAttribute id="PROFIT_CENTER"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute hidden="true" id="JOIN$PRCTR$LEGACY_PROFIT_CENTER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_PRCTR" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>case when &quot;PRCTR&quot;=&quot;LEGACY_PROFIT_CENTER&quot;
+then &quot;PROFIT_CENTER&quot;
+else &quot;PRCTR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_COMPANY_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$LEGACY_PROFIT_CENTER" source="PRCTR"/>
+    </input>
+    <input node="P_LKP_PROFIT_CENTER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_PROFIT_CENTER" source="LEGACY_PROFIT_CENTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFIT_CENTER" source="PROFIT_CENTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$LEGACY_PROFIT_CENTER" source="LEGACY_PROFIT_CENTER"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+    <joinAttribute name="JOIN$PRCTR$LEGACY_PROFIT_CENTER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COMPANY" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="LEGACY_COMPANY_CODE"/>
+      <viewAttribute id="COMPANY_CODE"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BUKRS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;=&quot;LEGACY_COMPANY_CODE&quot; 
+then &quot;COMPANY_CODE&quot;
+else BUKRS
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_PRCTR">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="CC_PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="BUKRS"/>
+    </input>
+    <input node="P_LKP_COMPANY_CODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_COMPANY_CODE" source="LEGACY_COMPANY_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_CODE" source="COMPANY_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="LEGACY_COMPANY_CODE"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_KOKRS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="CONTROLLING_AREA"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_KOKRS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>case when &quot;KOKRS&quot;=&quot;LEGACY_CONTROLLING_AREA&quot;
+then &quot;CONTROLLING_AREA&quot;
+else &quot;KOKRS&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_COMPANY">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="CC_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="KOKRS"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CONTROLLING_AREA" source="CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="J_KOKRS">
+    <descriptions/>
+    <attributes>
+      <attribute id="KOKRS" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Controlling Area"/>
+        <keyMapping columnObjectName="J_KOKRS" columnName="CC_KOKRS"/>
+      </attribute>
+      <attribute id="PRCTR" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRCTR"/>
+        <keyMapping columnObjectName="J_KOKRS" columnName="PRCTR"/>
+      </attribute>
+      <attribute id="DATBI" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valid To Date"/>
+        <keyMapping columnObjectName="J_KOKRS" columnName="DATBI"/>
+      </attribute>
+      <attribute id="DATAB" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="DATAB"/>
+        <keyMapping columnObjectName="J_KOKRS" columnName="DATAB"/>
+      </attribute>
+      <attribute id="BUKRS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BUKRS"/>
+        <keyMapping columnObjectName="J_KOKRS" columnName="BUKRS"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="422" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_COMPANY_CEPC" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="696"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+    
+    <shape expanded="true" modelObjectName="P_LKP_COMPANY_CODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_PROFIT_CENTER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_PRCTR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_COMPANY_CEPC" modelObjectNameSpace="J_PRCTR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="179"/>
+    </shape>
+    <shape modelObjectName="P_LKP_PROFIT_CENTER" modelObjectNameSpace="J_PRCTR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="209"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_COMPANY" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_PRCTR" modelObjectNameSpace="J_COMPANY" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="179"/>
+    </shape>
+    <shape modelObjectName="P_LKP_COMPANY_CODE" modelObjectNameSpace="J_COMPANY" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="229"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_KOKRS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_COMPANY" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="229"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

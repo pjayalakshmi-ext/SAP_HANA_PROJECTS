@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.BankMaster.04Harmonization::CV_BANKMASTER_BNKA" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_BM_BNKA_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_BM_BNKA_REL_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.BankMaster.03Transformation::CV_BANKMASTER_BNKA">
+    <resourceUri>EHUB.MD.BankMaster.03Transformation::CV_BANKMASTER_BNKA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BGRUP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_BM_BNKA_REL_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BNKA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.BankMaster.03Transformation::CV_BANKMASTER_BNKA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_BNKA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_BNKA" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="BANKL_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$BANKL"/>
+      <viewAttribute hidden="true" id="JOIN$BANKA$BANKA"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_BNKA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKA$BANKA" source="BANKA"/>
+    </input>
+    <input node="P_Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL_INPUT" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKA$BANKA" source="BANKA"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BANKL$BANKL"/>
+    <joinAttribute name="JOIN$BANKA$BANKA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="BANKL_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+    <filter>&quot;BANKL_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Without_Remediated_data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/></input>
+    <input node="P_Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/></input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BANKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKL"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKA" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKA"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BANKA"/>
+    </attribute>
+    <attribute id="PROVZ" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROVZ"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PROVZ"/>
+    </attribute>
+    <attribute id="STRAS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STRAS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="STRAS"/>
+    </attribute>
+    <attribute id="ORT01" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORT01"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ORT01"/>
+    </attribute>
+    <attribute id="SWIFT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWIFT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SWIFT"/>
+    </attribute>
+    <attribute id="BGRUP" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BGRUP"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BGRUP"/>
+    </attribute>
+    <attribute id="XPGRO" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XPGRO"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="XPGRO"/>
+    </attribute>
+    <attribute id="BNKLZ" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BNKLZ"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BNKLZ"/>
+    </attribute>
+    <attribute id="BRNCH" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRNCH"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BRNCH"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="332" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_BNKA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="U_BNKA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_BNKA" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="364"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="332" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

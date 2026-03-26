@@ -1,0 +1,343 @@
+{
+  /* Customer Master DMC Structure*/
+  "EHUB.Synonyms::SY_/1LT/DSP23003857": {
+    "target": {
+      "object": "/1LT/DSP23003857",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003859": {
+    "target": {
+      "object": "/1LT/DSP23003859",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003864": {
+    "target": {
+      "object": "/1LT/DSP23003864",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003867": {
+    "target": {
+      "object": "/1LT/DSP23003867",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003870": {
+    "target": {
+      "object": "/1LT/DSP23003870",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Cost Center DMC Structure*/
+  "EHUB.Synonyms::SY_/1LT/DSP23003922": {
+    "target": {
+      "object": "/1LT/DSP23003922",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* AR Open Item DMC structure */
+  "EHUB.Synonyms::SY_/1LT/DSP23003933": {
+    "target": {
+      "object": "/1LT/DSP23003933",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003934": {
+    "target": {
+      "object": "/1LT/DSP23003934",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003935": {
+    "target": {
+      "object": "/1LT/DSP23003935",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003936": {
+    "target": {
+      "object": "/1LT/DSP23003936",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* AP Open Item DMC structure */
+  "EHUB.Synonyms::SY_/1LT/DSP23003923": {
+    "target": {
+      "object": "/1LT/DSP23003923",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003924": {
+    "target": {
+      "object": "/1LT/DSP23003924",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003925": {
+    "target": {
+      "object": "/1LT/DSP23003925",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003926": {
+    "target": {
+      "object": "/1LT/DSP23003926",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Material Master */
+  "EHUB.Synonyms::SY_1LT/DSP23003780": {
+    "target": {
+      "object": "/1LT/DSP23003780",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003797": {
+    "target": {
+      "object": "/1LT/DSP23003797",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003794": {
+    "target": {
+      "object": "/1LT/DSP23003794",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003799": {
+    "target": {
+      "object": "/1LT/DSP23003799",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003806": {
+    "target": {
+      "object": "/1LT/DSP23003806",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Material Classification */
+  "EHUB.Synonyms::SY_1LT/DSP23004046": {
+    "target": {
+      "object": "/1LT/DSP23004046",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004047": {
+    "target": {
+      "object": "/1LT/DSP23004047",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004048": {
+    "target": {
+      "object": "/1LT/DSP23004048",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004049": {
+    "target": {
+      "object": "/1LT/DSP23004049",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Material Inspection Characteristic */
+  "EHUB.Synonyms::SY_1LT/DSP23004743": {
+    "target": {
+      "object": "/1LT/DSP23004743",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004745": {
+    "target": {
+      "object": "/1LT/DSP23004745",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004746": {
+    "target": {
+      "object": "/1LT/DSP23004746",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Sales Order Open SO */
+  "EHUB.Synonyms::SY_1LT/DSP23004801": {
+    "target": {
+      "object": "/1LT/DSP23004801",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004804": {
+    "target": {
+      "object": "/1LT/DSP23004804",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004809": {
+    "target": {
+      "object": "/1LT/DSP23004809",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004810": {
+    "target": {
+      "object": "/1LT/DSP23004810",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Bank Master*/
+  "EHUB.Synonyms::SY_1LT/DSP23003849": {
+    "target": {
+      "object": "/1LT/DSP23003849",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Profit Center*/
+  "EHUB.Synonyms::SY_1LT/DSP23003943": {
+    "target": {
+      "object": "/1LT/DSP23003943",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003944": {
+    "target": {
+      "object": "/1LT/DSP23003944",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* GL Open Items*/
+  "EHUB.Synonyms::SY_1LT/DSP23003913": {
+    "target": {
+      "object": "/1LT/DSP23003913",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /*GL Master*/
+  "EHUB.Synonyms::SY_1LT/DSP23003908": {
+    "target": {
+      "object": "/1LT/DSP23003908",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003910": {
+    "target": {
+      "object": "/1LT/DSP23003910",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003911": {
+    "target": {
+      "object": "/1LT/DSP23003911",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Vendor Master*/
+  "EHUB.Synonyms::SY_1LT/DSP23003815": {
+    "target": {
+      "object": "/1LT/DSP23003815",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003817": {
+    "target": {
+      "object": "/1LT/DSP23003817",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003822": {
+    "target": {
+      "object": "/1LT/DSP23003822",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003825": {
+    "target": {
+      "object": "/1LT/DSP23003825",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23003828": {
+    "target": {
+      "object": "/1LT/DSP23003828",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Functional Location*/
+  "EHUB.Synonyms::SY_1LT/DSP23004859": {
+    "target": {
+      "object": "/1LT/DSP23004859",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+
+  /* Material BOM*/
+  "EHUB.Synonyms::SY_1LT/DSP23004822": {
+    "target": {
+      "object": "/1LT/DSP23004822",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004823": {
+    "target": {
+      "object": "/1LT/DSP23004823",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSP23004847": {
+      "target": {
+        "object": "/1LT/DSP23004847",
+        "schema": "BTP_H00_STAGING"
+      }
+    },
+      /*Production Version */
+    
+      "EHUB.Synonyms::SY_1LT/DSP23004889": {
+        "target": {
+          "object": "/1LT/DSP23004889",
+          "schema": "BTP_H00_STAGING"
+        }
+      },
+
+  /* Material Inventory Balance*/
+  "EHUB.Synonyms::SY_/1LT/DSP23004873": {
+    "target": {
+      "object": "/1LT/DSP23004873",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  
+  "EHUB.Synonyms::SY_/1LT/DSP23004874": {
+    "target": {
+      "object": "/1LT/DSP23004874",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Fixed Asset*/
+  "EHUB.Synonyms::SY_/1LT/DSP23003890": {
+    "target": {
+      "object": "/1LT/DSP23003890",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003892": {
+    "target": {
+      "object": "/1LT/DSP23003892",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  "EHUB.Synonyms::SY_/1LT/DSP23003893": {
+    "target": {
+      "object": "/1LT/DSP23003893",
+      "schema": "BTP_H00_STAGING"
+    }
+  },
+  /* Statistical Key Figure*/
+  "EHUB.Synonyms::SY_/1LT/DSP23004832": {
+    "target": {
+      "object": "/1LT/DSP23004832",
+      "schema": "BTP_H00_STAGING"
+    }
+  }
+}

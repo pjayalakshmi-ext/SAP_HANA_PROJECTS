@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.ProfitCenter.07Validation::CV_PC_MASTER_CEPC" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.ProfitCenter.06Completeness::CV_PC_MASTER_CEPC">
+    <resourceUri>EHUB.MD.ProfitCenter.06Completeness::CV_PC_MASTER_CEPC</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T005</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005S">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T005S</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T002">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T002</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:AggregationView" id="A_CEPC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+    
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="EHUB.MD.ProfitCenter.06Completeness::CV_PC_MASTER_CEPC"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_CEPC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="KOKRS"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T005" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="LAND1"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T005S" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="BLAND"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005S"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_TKA01" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T002">
+    <viewAttributes>
+      <viewAttribute id="SPRAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T002"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CEPC" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="PRCTR_LOADED"/>
+      <viewAttribute hidden="true" id="JOIN$PRCTR$PRCTR"/>
+      <viewAttribute hidden="true" id="JOIN$DATBI$DATBI"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="A_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <input node="P_S4H_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_LOADED" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <joinAttribute name="JOIN$PRCTR$PRCTR"/>
+    <joinAttribute name="JOIN$DATBI$DATBI"/>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CEPC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="PRCTR_LOADED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_CEPC"/>
+    <filter>&quot;PRCTR_LOADED&quot; IS NULL</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COUNTRY" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="LAND1_T005"/>
+      <viewAttribute hidden="true" id="JOIN$LAND1$LAND1"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PC_COUNTRY_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;LAND1&quot;=&quot;LAND1_T005&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LAND1$LAND1" source="LAND1"/>
+    </input>
+    <input node="P_S4H_T005">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1_T005" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LAND1$LAND1" source="LAND1"/>
+    </input>
+    <joinAttribute name="JOIN$LAND1$LAND1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_REGION" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="BLAND"/>
+      <viewAttribute id="PC_COUNTRY_KEY_INVALID"/>
+      <viewAttribute hidden="true" id="JOIN$REGIO$BLAND"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PC_REGION_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;REGIO&quot;=&quot;BLAND&quot;
+then 0
+else 1
+end
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_COUNTRY">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PC_COUNTRY_KEY_INVALID" source="PC_COUNTRY_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$REGIO$BLAND" source="REGIO"/>
+    </input>
+    <input node="P_S4H_T005S">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLAND" source="BLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$REGIO$BLAND" source="BLAND"/>
+    </input>
+    <joinAttribute name="JOIN$REGIO$BLAND"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_KOKRS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="PC_COUNTRY_KEY_INVALID"/>
+      <viewAttribute id="PC_REGION_INVALID"/>
+      <viewAttribute id="KOKRS_TKA01"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PC_CONTROLLING_AREA_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KOKRS&quot;=&quot;KOKRS_TKA01&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_REGION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PC_COUNTRY_KEY_INVALID" source="PC_COUNTRY_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PC_REGION_INVALID" source="PC_REGION_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <input node="P_S4H_TKA01">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS_TKA01" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_SPRAS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="PC_COUNTRY_KEY_INVALID"/>
+      <viewAttribute id="PC_REGION_INVALID"/>
+      <viewAttribute id="PC_CONTROLLING_AREA_INVALID"/>
+      <viewAttribute id="SPRAS_S4H"/>
+      <viewAttribute hidden="true" id="JOIN$SPRAS$SPRAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="SPRAS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SPRAS&quot;=&quot;SPRAS_S4H&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_KOKRS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PC_COUNTRY_KEY_INVALID" source="PC_COUNTRY_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PC_REGION_INVALID" source="PC_REGION_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PC_CONTROLLING_AREA_INVALID" source="PC_CONTROLLING_AREA_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SPRAS$SPRAS" source="SPRAS"/>
+    </input>
+    <input node="P_S4H_T002">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS_S4H" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SPRAS$SPRAS" source="SPRAS"/>
+    </input>
+    <joinAttribute name="JOIN$SPRAS$SPRAS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_SPRAS">
+  <attributes>
+    <attribute id="MANDT" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KOKRS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="PRCTR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="DATBI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATBI"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="DATBI"/>
+    </attribute>
+    <attribute id="DATAB" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="DATAB"/>
+    </attribute>
+    <attribute id="VERAK_USER" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERAK_USER"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="VERAK_USER"/>
+    </attribute>
+    <attribute id="VERAK" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERAK"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="VERAK"/>
+    </attribute>
+    <attribute id="ABTEI" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABTEI"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="ABTEI"/>
+    </attribute>
+    <attribute id="KHINR" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KHINR"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="KHINR"/>
+    </attribute>
+    <attribute id="ANRED" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANRED"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="ANRED"/>
+    </attribute>
+    <attribute id="NAME1" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="NAME1"/>
+    </attribute>
+    <attribute id="NAME2" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME2"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="NAME2"/>
+    </attribute>
+    <attribute id="NAME3" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME3"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="NAME3"/>
+    </attribute>
+    <attribute id="NAME4" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME4"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="NAME4"/>
+    </attribute>
+    <attribute id="STRAS" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STRAS"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="STRAS"/>
+    </attribute>
+    <attribute id="PSTLZ" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSTLZ"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="PSTL2" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSTL2"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="PSTL2"/>
+    </attribute>
+    <attribute id="PFACH" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PFACH"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="PFACH"/>
+    </attribute>
+    <attribute id="ORT01" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORT01"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="ORT01"/>
+    </attribute>
+    <attribute id="ORT02" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORT02"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="ORT02"/>
+    </attribute>
+    <attribute id="LAND1" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAND1"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="LAND1"/>
+    </attribute>
+    <attribute id="REGIO" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REGIO"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="REGIO"/>
+    </attribute>
+    <attribute id="TXJCD" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXJCD"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="TELBX" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELBX"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="TELBX"/>
+    </attribute>
+    <attribute id="TELF1" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELF1"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="TELF1"/>
+    </attribute>
+    <attribute id="TELF2" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELF2"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="TELF2"/>
+    </attribute>
+    <attribute id="TELFX" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELFX"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="TELFX"/>
+    </attribute>
+    <attribute id="TELTX" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELTX"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="TELTX"/>
+    </attribute>
+    <attribute id="TELX1" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELX1"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="TELX1"/>
+    </attribute>
+    <attribute id="DRNAM" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DRNAM"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="DRNAM"/>
+    </attribute>
+    <attribute id="SEGMENT" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEGMENT"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="SEGMENT"/>
+    </attribute>
+    <attribute id="PCA_TEMPLATE" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PCA_TEMPLATE"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="PCA_TEMPLATE"/>
+    </attribute>
+    <attribute id="LOCK_IND" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOCK_IND"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="LOCK_IND"/>
+    </attribute>
+    <attribute id="SPRAS" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="KTEXT" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTEXT"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="KTEXT"/>
+    </attribute>
+    <attribute id="LTEXT" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LTEXT"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="LTEXT"/>
+    </attribute>
+    <attribute id="PC_CONTROLLING_AREA_INVALID" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONTROLLING_AREA_INVALID"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="PC_CONTROLLING_AREA_INVALID"/>
+    </attribute>
+    <attribute id="PC_COUNTRY_KEY_INVALID" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PC_COUNTRY_KEY_INVALID"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="PC_COUNTRY_KEY_INVALID"/>
+    </attribute>
+    <attribute id="PC_REGION_INVALID" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PC_REGION_INVALID"/>
+      <keyMapping columnObjectName="J_SPRAS" columnName="PC_REGION_INVALID"/>
+    </attribute>
+  
+    <attribute id="SPRAS_INVALID" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS_INVALID"/>
+  
+      <keyMapping columnObjectName="J_SPRAS" columnName="SPRAS_INVALID"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PC_CONTROLLING_AREA_INVALID&quot;+&quot;PC_COUNTRY_KEY_INVALID&quot;+&quot;PC_REGION_INVALID&quot;+&quot;SPRAS_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="256" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="A_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="151" y="1141"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4H_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="1141"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T005" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T005S" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="420" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_TKA01" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="189" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T002" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="124" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="981"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="A_CEPC" modelObjectNameSpace="J_CEPC" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_CEPC" modelObjectNameSpace="J_CEPC" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_COUNTRY" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_CEPC" modelObjectNameSpace="J_COUNTRY" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="175"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T005" modelObjectNameSpace="J_COUNTRY" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="142"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_REGION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="399" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape modelObjectName="J_COUNTRY" modelObjectNameSpace="J_REGION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T005S" modelObjectNameSpace="J_REGION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_KOKRS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="334" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_REGION" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_TKA01" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_SPRAS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="256" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_KOKRS" modelObjectNameSpace="J_SPRAS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T002" modelObjectNameSpace="J_SPRAS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

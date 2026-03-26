@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.FunctionalLocation.04Harmonization::CV_FUNCLOC_IFLOT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_SHE_FUNCLOC_IFLOT.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.FunctionalLocation.03Transformation::CV_FUNCLOC_IFLOT">
+    <resourceUri>EHUB.MD.FunctionalLocation.03Transformation::CV_FUNCLOC_IFLOT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_FL_IFLOT_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_FL_IFLOT_REL_INPUT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Transformation">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="FLTYP"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="IFLOT_SNTYPE"/>
+      <viewAttribute id="IFLOT_SRTYPE"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="TPLMA"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="IEQUI"/>
+      <viewAttribute id="EINZL"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="ALKEY"/>
+      <viewAttribute id="PLTXT"/>
+      <viewAttribute id="LGWID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="GWLDT_K"/>
+      <viewAttribute id="GWLEN_K"/>
+      <viewAttribute id="MGANR_K"/>
+      <viewAttribute id="WAGET_K"/>
+      <viewAttribute id="GAERB_K"/>
+      <viewAttribute id="GWLDT_O"/>
+      <viewAttribute id="GWLEN_O"/>
+      <viewAttribute id="MGANR_O"/>
+      <viewAttribute id="WAGET_O"/>
+      <viewAttribute id="GAERB_O"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.FunctionalLocation.03Transformation::CV_FUNCLOC_IFLOT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="FLTYP"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="IFLOT_SNTYPE"/>
+      <viewAttribute id="IFLOT_SRTYPE"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="TPLMA"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="IEQUI"/>
+      <viewAttribute id="EINZL"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="ALKEY"/>
+      <viewAttribute id="PLTXT"/>
+      <viewAttribute id="LGWID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="GWLDT_K"/>
+      <viewAttribute id="GWLEN_K"/>
+      <viewAttribute id="MGANR_K"/>
+      <viewAttribute id="WAGET_K"/>
+      <viewAttribute id="GAERB_K"/>
+      <viewAttribute id="GWLDT_O"/>
+      <viewAttribute id="GWLEN_O"/>
+      <viewAttribute id="MGANR_O"/>
+      <viewAttribute id="WAGET_O"/>
+      <viewAttribute id="GAERB_O"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_FL_IFLOT_REL_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_Not_Posted">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="FLTYP"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="IFLOT_SNTYPE"/>
+      <viewAttribute id="IFLOT_SRTYPE"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="TPLMA"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="IEQUI"/>
+      <viewAttribute id="EINZL"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="ALKEY"/>
+      <viewAttribute id="PLTXT"/>
+      <viewAttribute id="LGWID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="GWLDT_K"/>
+      <viewAttribute id="GWLEN_K"/>
+      <viewAttribute id="MGANR_K"/>
+      <viewAttribute id="WAGET_K"/>
+      <viewAttribute id="GAERB_K"/>
+      <viewAttribute id="GWLDT_O"/>
+      <viewAttribute id="GWLEN_O"/>
+      <viewAttribute id="MGANR_O"/>
+      <viewAttribute id="WAGET_O"/>
+      <viewAttribute id="GAERB_O"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="TPLKZ"/>
+    
+      <viewAttribute id="ABCKZ"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Transformation" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLTYP" source="FLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IFLOT_SNTYPE" source="IFLOT_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IFLOT_SRTYPE" source="IFLOT_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLMA" source="TPLMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IEQUI" source="IEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EINZL" source="EINZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALKEY" source="ALKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTXT" source="PLTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGWID" source="LGWID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT_K" source="GWLDT_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN_K" source="GWLEN_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR_K" source="MGANR_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAGET_K" source="WAGET_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAERB_K" source="GAERB_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT_O" source="GWLDT_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN_O" source="GWLEN_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR_O" source="MGANR_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAGET_O" source="WAGET_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAERB_O" source="GAERB_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_Posted_Not_Posted" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="FLTYP"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="IFLOT_SNTYPE"/>
+      <viewAttribute id="IFLOT_SRTYPE"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="TPLMA"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="IEQUI"/>
+      <viewAttribute id="EINZL"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="ALKEY"/>
+      <viewAttribute id="PLTXT"/>
+      <viewAttribute id="LGWID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="GWLDT_K"/>
+      <viewAttribute id="GWLEN_K"/>
+      <viewAttribute id="MGANR_K"/>
+      <viewAttribute id="WAGET_K"/>
+      <viewAttribute id="GAERB_K"/>
+      <viewAttribute id="GWLDT_O"/>
+      <viewAttribute id="GWLEN_O"/>
+      <viewAttribute id="MGANR_O"/>
+      <viewAttribute id="WAGET_O"/>
+      <viewAttribute id="GAERB_O"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="TPLNR_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$TPLNR$TPLNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_Not_Posted">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLTYP" source="FLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IFLOT_SNTYPE" source="IFLOT_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IFLOT_SRTYPE" source="IFLOT_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLMA" source="TPLMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IEQUI" source="IEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EINZL" source="EINZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALKEY" source="ALKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTXT" source="PLTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGWID" source="LGWID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT_K" source="GWLDT_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN_K" source="GWLEN_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR_K" source="MGANR_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAGET_K" source="WAGET_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAERB_K" source="GAERB_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT_O" source="GWLDT_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN_O" source="GWLEN_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR_O" source="MGANR_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAGET_O" source="WAGET_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAERB_O" source="GAERB_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TPLNR$TPLNR" source="TPLNR"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR_1" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TPLNR$TPLNR" source="TPLNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$TPLNR$TPLNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Not_Posted" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="FLTYP"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="IFLOT_SNTYPE"/>
+      <viewAttribute id="IFLOT_SRTYPE"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="TPLMA"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="IEQUI"/>
+      <viewAttribute id="EINZL"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="ALKEY"/>
+      <viewAttribute id="PLTXT"/>
+      <viewAttribute id="LGWID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="GWLDT_K"/>
+      <viewAttribute id="GWLEN_K"/>
+      <viewAttribute id="MGANR_K"/>
+      <viewAttribute id="WAGET_K"/>
+      <viewAttribute id="GAERB_K"/>
+      <viewAttribute id="GWLDT_O"/>
+      <viewAttribute id="GWLEN_O"/>
+      <viewAttribute id="MGANR_O"/>
+      <viewAttribute id="WAGET_O"/>
+      <viewAttribute id="GAERB_O"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="TPLNR_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_Posted_Not_Posted"/>
+    <filter>&quot;TPLNR_1&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_Filter_Not_Posted">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="FLTYP"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="IFLOT_SNTYPE"/>
+      <viewAttribute id="IFLOT_SRTYPE"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="TPLMA"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="IEQUI"/>
+      <viewAttribute id="EINZL"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="ALKEY"/>
+      <viewAttribute id="PLTXT"/>
+      <viewAttribute id="LGWID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="GWLDT_K"/>
+      <viewAttribute id="GWLEN_K"/>
+      <viewAttribute id="MGANR_K"/>
+      <viewAttribute id="WAGET_K"/>
+      <viewAttribute id="GAERB_K"/>
+      <viewAttribute id="GWLDT_O"/>
+      <viewAttribute id="GWLEN_O"/>
+      <viewAttribute id="MGANR_O"/>
+      <viewAttribute id="WAGET_O"/>
+      <viewAttribute id="GAERB_O"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="ABCKZ"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Not_Posted" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLTYP" source="FLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IFLOT_SNTYPE" source="IFLOT_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IFLOT_SRTYPE" source="IFLOT_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLMA" source="TPLMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IEQUI" source="IEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EINZL" source="EINZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALKEY" source="ALKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTXT" source="PLTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGWID" source="LGWID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT_K" source="GWLDT_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN_K" source="GWLEN_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR_K" source="MGANR_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAGET_K" source="WAGET_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAERB_K" source="GAERB_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT_O" source="GWLDT_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN_O" source="GWLEN_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR_O" source="MGANR_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAGET_O" source="WAGET_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAERB_O" source="GAERB_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+    </input>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLTYP" source="FLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVNR" source="INVNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQART" source="EQART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IFLOT_SNTYPE" source="IFLOT_SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IFLOT_SRTYPE" source="IFLOT_SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERST" source="HERST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPBZ" source="TYPBZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPAR" source="MAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HERLD" source="HERLD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUJJ" source="BAUJJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BAUMM" source="BAUMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERGE" source="SERGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSWT" source="ANSWT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANSDT" source="ANSDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IWERK" source="IWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INGRP" source="INGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNR" source="RBNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLMA" source="TPLMA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IEQUI" source="IEQUI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EINZL" source="EINZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMT" source="SUBMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWERK" source="SWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSGRP" source="MSGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EQFNR" source="EQFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEBER" source="BEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLNR" source="ANLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLUN" source="ANLUN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROID" source="PROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DAUFN" source="DAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALKEY" source="ALKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTXT" source="PLTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGWID" source="LGWID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJNR" source="OBJNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT_K" source="GWLDT_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN_K" source="GWLEN_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR_K" source="MGANR_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAGET_K" source="WAGET_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAERB_K" source="GAERB_K"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLDT_O" source="GWLDT_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GWLEN_O" source="GWLEN_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MGANR_O" source="MGANR_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAGET_O" source="WAGET_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GAERB_O" source="GAERB_O"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABCKZ" source="ABCKZ"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="U_Filter_Not_Posted">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="MANDT"/>
+    </attribute>
+    <attribute id="TPLNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLNR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="TPLNR"/>
+    </attribute>
+    <attribute id="TPLKZ" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLKZ"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="TPLKZ"/>
+    </attribute>
+    <attribute id="FLTYP" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FLTYP"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="FLTYP"/>
+    </attribute>
+    <attribute id="INVNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INVNR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="INVNR"/>
+    </attribute>
+    <attribute id="DATAB" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="DATAB"/>
+    </attribute>
+    <attribute id="BEGRU" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEGRU"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="BEGRU"/>
+    </attribute>
+    <attribute id="BRGEW" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRGEW"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="BRGEW"/>
+    </attribute>
+    <attribute id="GEWEI" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWEI"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GEWEI"/>
+    </attribute>
+    <attribute id="EQART" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQART"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="EQART"/>
+    </attribute>
+    <attribute id="IFLOT_SNTYPE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IFLOT_SNTYPE"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="IFLOT_SNTYPE"/>
+    </attribute>
+    <attribute id="IFLOT_SRTYPE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IFLOT_SRTYPE"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="IFLOT_SRTYPE"/>
+    </attribute>
+    <attribute id="GROES" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GROES"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GROES"/>
+    </attribute>
+    <attribute id="HERST" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HERST"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="HERST"/>
+    </attribute>
+    <attribute id="TYPBZ" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TYPBZ"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="TYPBZ"/>
+    </attribute>
+    <attribute id="MAPAR" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPAR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="MAPAR"/>
+    </attribute>
+    <attribute id="HERLD" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HERLD"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="HERLD"/>
+    </attribute>
+    <attribute id="BAUJJ" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BAUJJ"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="BAUJJ"/>
+    </attribute>
+    <attribute id="BAUMM" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BAUMM"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="BAUMM"/>
+    </attribute>
+    <attribute id="SERGE" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SERGE"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="SERGE"/>
+    </attribute>
+    <attribute id="ANSWT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANSWT"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="ANSWT"/>
+    </attribute>
+    <attribute id="WAERS" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="WAERS"/>
+    </attribute>
+    <attribute id="ANSDT" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANSDT"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="ANSDT"/>
+    </attribute>
+    <attribute id="IWERK" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IWERK"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="IWERK"/>
+    </attribute>
+    <attribute id="INGRP" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INGRP"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="INGRP"/>
+    </attribute>
+    <attribute id="RBNR" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RBNR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="RBNR"/>
+    </attribute>
+    <attribute id="TPLMA" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLMA"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="TPLMA"/>
+    </attribute>
+    <attribute id="POSNR" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSNR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="POSNR"/>
+    </attribute>
+    <attribute id="IEQUI" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IEQUI"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="IEQUI"/>
+    </attribute>
+    <attribute id="EINZL" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EINZL"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="EINZL"/>
+    </attribute>
+    <attribute id="SUBMT" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBMT"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="SUBMT"/>
+    </attribute>
+    <attribute id="SWERK" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWERK"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="SWERK"/>
+    </attribute>
+    <attribute id="MSGRP" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MSGRP"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="MSGRP"/>
+    </attribute>
+    <attribute id="EQFNR" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQFNR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="EQFNR"/>
+    </attribute>
+    <attribute id="STORT" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORT"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="STORT"/>
+    </attribute>
+    <attribute id="ABCKZ" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABCKZ"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="ABCKZ"/>
+    </attribute>
+    <attribute id="BEBER" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEBER"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="BEBER"/>
+    </attribute>
+    <attribute id="BUKRS" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="GSBER" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GSBER"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GSBER"/>
+    </attribute>
+    <attribute id="ANLNR" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLNR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="ANLNR"/>
+    </attribute>
+    <attribute id="ANLUN" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLUN"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="ANLUN"/>
+    </attribute>
+    <attribute id="KOSTL" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTL"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="PROID" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROID"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="PROID"/>
+    </attribute>
+    <attribute id="AUFNR" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUFNR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="AUFNR"/>
+    </attribute>
+    <attribute id="DAUFN" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAUFN"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="DAUFN"/>
+    </attribute>
+    <attribute id="VKORG" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKORG"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="VKORG"/>
+    </attribute>
+    <attribute id="VTWEG" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTWEG"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SPART" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPART"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="SPART"/>
+    </attribute>
+    <attribute id="VKBUR" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKBUR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="VKBUR"/>
+    </attribute>
+    <attribute id="VKGRP" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKGRP"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="VKGRP"/>
+    </attribute>
+    <attribute id="ALKEY" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ALKEY"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="ALKEY"/>
+    </attribute>
+    <attribute id="PLTXT" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLTXT"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="PLTXT"/>
+    </attribute>
+    <attribute id="LGWID" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGWID"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="LGWID"/>
+    </attribute>
+    <attribute id="ARBPL" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARBPL"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="ARBPL"/>
+    </attribute>
+    <attribute id="WERKS" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="WERKS"/>
+    </attribute>
+    <attribute id="OBJNR" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OBJNR"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="OBJNR"/>
+    </attribute>
+    <attribute id="GWLDT_K" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GWLDT_K"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GWLDT_K"/>
+    </attribute>
+    <attribute id="GWLEN_K" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GWLEN_K"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GWLEN_K"/>
+    </attribute>
+    <attribute id="MGANR_K" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MGANR_K"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="MGANR_K"/>
+    </attribute>
+    <attribute id="WAGET_K" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAGET_K"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="WAGET_K"/>
+    </attribute>
+    <attribute id="GAERB_K" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GAERB_K"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GAERB_K"/>
+    </attribute>
+    <attribute id="GWLDT_O" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GWLDT_O"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GWLDT_O"/>
+    </attribute>
+    <attribute id="GWLEN_O" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GWLEN_O"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GWLEN_O"/>
+    </attribute>
+    <attribute id="MGANR_O" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MGANR_O"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="MGANR_O"/>
+    </attribute>
+    <attribute id="WAGET_O" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAGET_O"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="WAGET_O"/>
+    </attribute>
+    <attribute id="GAERB_O" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GAERB_O"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="GAERB_O"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="U_Filter_Not_Posted" columnName="CURRENT_DATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="225" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_Transformation" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="766"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="U_Not_Posted" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_Posted_Not_Posted" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_Not_Posted" modelObjectNameSpace="J_Posted_Not_Posted" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="J_Posted_Not_Posted" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Not_Posted" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_Filter_Not_Posted" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="236" y="236"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.StatisticalKeyFigure.06Completeness::CV_SKF_TKA03" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_SKF_TKA03"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.StatisticalKeyFigure.04Harmonization::CV_SKF_TKA03">
+    <resourceUri>EHUB.MD.StatisticalKeyFigure.04Harmonization::CV_SKF_TKA03</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_HARMONIZE">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="KOKRS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;KOKRS&quot;='' OR &quot;KOKRS&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STAGR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;STAGR&quot;='' OR &quot;STAGR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="SPRAS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;SPRAS&quot;='' OR &quot;SPRAS&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BEZEI_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;BEZEI&quot;='' OR &quot;BEZEI&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MSEHI_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;MSEHI&quot;='' OR &quot;MSEHI&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="GRTYP_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;GRTYP&quot;='' OR &quot;GRTYP&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.StatisticalKeyFigure.04Harmonization::CV_SKF_TKA03"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_HARMONIZE">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Controlling Area"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="STAGR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical key figure"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="STAGR"/>
+    </attribute>
+    <attribute id="SPRAS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="BEZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Long Text"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="BEZEI"/>
+    </attribute>
+    <attribute id="MSEHI" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit for statistical key figure"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="MSEHI"/>
+    </attribute>
+    <attribute id="GRTYP" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical Key Figure Category"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="GRTYP"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="KOKRS_INCOMPLETE" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KOKRS_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_HARMONIZE" columnName="KOKRS_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="STAGR_INCOMPLETE" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STAGR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_HARMONIZE" columnName="STAGR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SPRAS_INCOMPLETE" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SPRAS_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_HARMONIZE" columnName="SPRAS_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BEZEI_INCOMPLETE" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BEZEI_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_HARMONIZE" columnName="BEZEI_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MSEHI_INCOMPLETE" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MSEHI_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_HARMONIZE" columnName="MSEHI_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="GRTYP_INCOMPLETE" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GRTYP_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_HARMONIZE" columnName="GRTYP_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INCOMPLETE" order="14" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <descriptions defaultDescription="TOTAL_INCOMPLETE"/>
+      <formula>case when &quot;KOKRS_INCOMPLETE&quot;+&quot;STAGR_INCOMPLETE&quot;+&quot;SPRAS_INCOMPLETE&quot;+
+&quot;BEZEI_INCOMPLETE&quot;+&quot;MSEHI_INCOMPLETE&quot;+&quot;GRTYP_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_HARMONIZE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

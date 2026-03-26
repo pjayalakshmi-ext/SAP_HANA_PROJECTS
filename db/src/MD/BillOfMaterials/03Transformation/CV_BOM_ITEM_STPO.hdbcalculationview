@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.BillOfMaterials.03Transformation::CV_BOM_ITEM_STPO" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+<origin/>
+  <descriptions defaultDescription="CA_REL_CS_VALID"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="EHUB.MD.BillOfMaterials.01Extraction::CV_SHE_BOM_ITEM_STPO">
+      <resourceUri>EHUB.MD.BillOfMaterials.01Extraction::CV_SHE_BOM_ITEM_STPO</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_BOM_USAGE">
+      <resourceUri>EHUB.Synonyms::SY_LKP_BOM_USAGE</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_PLANT">
+      <resourceUri>EHUB.Synonyms::SY_LKP_PLANT</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER">
+      <resourceUri>EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_D_BOM_CATEGORY">
+      <resourceUri>EHUB.Synonyms::SY_LKP_D_BOM_CATEGORY</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_PURCHASING_ORGANIZATION">
+      <resourceUri>EHUB.Synonyms::SY_LKP_PURCHASING_ORGANIZATION</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_PURCHASING_GROUP">
+      <resourceUri>EHUB.Synonyms::SY_LKP_PURCHASING_GROUP</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BOM_ITEM">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="AVOAU"/>
+      <viewAttribute id="DSPST"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERSKZ"/>
+      <viewAttribute id="FMENG"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="ITMID"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="NETAU"/>
+      <viewAttribute id="NLFMV"/>
+      <viewAttribute id="NLFZT"/>
+      <viewAttribute id="NLFZV"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="POSTP"/>
+      <viewAttribute id="POTX1"/>
+      <viewAttribute id="POTX2"/>
+      <viewAttribute id="PREIS"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SAKTO"/>
+      <viewAttribute id="SANIN"/>
+      <viewAttribute id="SANKA"/>
+      <viewAttribute id="SCHGT"/>
+      <viewAttribute id="SORTF"/>
+      <viewAttribute id="STKKZ"/>
+      <viewAttribute id="WAERS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.MD.BillOfMaterials.01Extraction::CV_SHE_BOM_ITEM_STPO"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_BOM_USAGE">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_BOM_USAGE"/>
+      <viewAttribute id="BOM_USAGE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_BOM_USAGE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_PLANT">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_PLANT"/>
+      <viewAttribute id="PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_MATERIAL_NUMBER">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_D_BOM_CATEGORY">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_BOM_CATEGORY"/>
+      <viewAttribute id="BOM_CATEGORY"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_D_BOM_CATEGORY"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_PURCHASING_ORGANIZATION">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_PURCHASING_ORG"/>
+      <viewAttribute id="PURCHASING_ORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_PURCHASING_ORGANIZATION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_PURCHASING_GROUP">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_PURCHASING_GROUP"/>
+      <viewAttribute id="PURCHASING_GROUP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_PURCHASING_GROUP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_WERKS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="AVOAU"/>
+      <viewAttribute id="DSPST"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERSKZ"/>
+      <viewAttribute id="FMENG"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="ITMID"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="NETAU"/>
+      <viewAttribute id="NLFMV"/>
+      <viewAttribute id="NLFZT"/>
+      <viewAttribute id="NLFZV"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="POSTP"/>
+      <viewAttribute id="POTX1"/>
+      <viewAttribute id="POTX2"/>
+      <viewAttribute id="PREIS"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SAKTO"/>
+      <viewAttribute id="SANIN"/>
+      <viewAttribute id="SANKA"/>
+      <viewAttribute id="SCHGT"/>
+      <viewAttribute id="SORTF"/>
+      <viewAttribute id="STKKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="LEGACY_PLANT"/>
+      <viewAttribute id="PLANT"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$LEGACY_PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_WERKS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=&quot;LEGACY_PLANT&quot;
+then &quot;PLANT&quot;
+else &quot;WERKS&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_BOM_ITEM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AVOAU" source="AVOAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DSPST" source="DSPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSKZ" source="ERSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FMENG" source="FMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITMID" source="ITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETAU" source="NETAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFMV" source="NLFMV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZT" source="NLFZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZV" source="NLFZV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTP" source="POSTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX1" source="POTX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX2" source="POTX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PREIS" source="PREIS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKTO" source="SAKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANIN" source="SANIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANKA" source="SANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGT" source="SCHGT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTF" source="SORTF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKKZ" source="STKKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$LEGACY_PLANT" source="WERKS"/>
+    </input>
+    <input node="P_LKP_PLANT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_PLANT" source="LEGACY_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT" source="PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$LEGACY_PLANT" source="LEGACY_PLANT"/>
+    </input>
+    <joinAttribute name="JOIN$WERKS$LEGACY_PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_STLAN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="AVOAU"/>
+      <viewAttribute id="DSPST"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERSKZ"/>
+      <viewAttribute id="FMENG"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="ITMID"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="NETAU"/>
+      <viewAttribute id="NLFMV"/>
+      <viewAttribute id="NLFZT"/>
+      <viewAttribute id="NLFZV"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="POSTP"/>
+      <viewAttribute id="POTX1"/>
+      <viewAttribute id="POTX2"/>
+      <viewAttribute id="PREIS"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SAKTO"/>
+      <viewAttribute id="SANIN"/>
+      <viewAttribute id="SANKA"/>
+      <viewAttribute id="SCHGT"/>
+      <viewAttribute id="SORTF"/>
+      <viewAttribute id="STKKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="LEGACY_BOM_USAGE"/>
+      <viewAttribute id="BOM_USAGE"/>
+      <viewAttribute hidden="true" id="JOIN$STLAN$LEGACY_BOM_USAGE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_STLAN" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>case when &quot;STLAN&quot;=&quot;LEGACY_BOM_USAGE&quot;
+then &quot;BOM_USAGE&quot;
+else &quot;STLAN&quot;
+end </formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_WERKS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="CC_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AVOAU" source="AVOAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DSPST" source="DSPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSKZ" source="ERSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FMENG" source="FMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITMID" source="ITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETAU" source="NETAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFMV" source="NLFMV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZT" source="NLFZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZV" source="NLFZV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTP" source="POSTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX1" source="POTX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX2" source="POTX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PREIS" source="PREIS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKTO" source="SAKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANIN" source="SANIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANKA" source="SANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGT" source="SCHGT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTF" source="SORTF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKKZ" source="STKKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$LEGACY_BOM_USAGE" source="STLAN"/>
+    </input>
+    <input node="P_LKP_BOM_USAGE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_BOM_USAGE" source="LEGACY_BOM_USAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_USAGE" source="BOM_USAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$LEGACY_BOM_USAGE" source="LEGACY_BOM_USAGE"/>
+    </input>
+    <joinAttribute name="JOIN$STLAN$LEGACY_BOM_USAGE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MATNR" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="AVOAU"/>
+      <viewAttribute id="DSPST"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERSKZ"/>
+      <viewAttribute id="FMENG"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="ITMID"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="NETAU"/>
+      <viewAttribute id="NLFMV"/>
+      <viewAttribute id="NLFZT"/>
+      <viewAttribute id="NLFZV"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="POSTP"/>
+      <viewAttribute id="POTX1"/>
+      <viewAttribute id="POTX2"/>
+      <viewAttribute id="PREIS"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SAKTO"/>
+      <viewAttribute id="SANIN"/>
+      <viewAttribute id="SANKA"/>
+      <viewAttribute id="SCHGT"/>
+      <viewAttribute id="SORTF"/>
+      <viewAttribute id="STKKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$LEGACY_MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MATNR" datatype="NVARCHAR" length="18" expressionLanguage="SQL">
+        <formula>case when &quot;MATNR&quot;=&quot;LEGACY_MATERIAL_NUMBER&quot;
+then &quot;MATERIAL_NUMBER&quot;
+else &quot;MATNR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_STLAN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="CC_STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AVOAU" source="AVOAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DSPST" source="DSPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSKZ" source="ERSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FMENG" source="FMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITMID" source="ITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETAU" source="NETAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFMV" source="NLFMV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZT" source="NLFZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZV" source="NLFZV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTP" source="POSTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX1" source="POTX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX2" source="POTX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PREIS" source="PREIS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKTO" source="SAKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANIN" source="SANIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANKA" source="SANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGT" source="SCHGT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTF" source="SORTF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKKZ" source="STKKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$LEGACY_MATERIAL_NUMBER" source="MATNR"/>
+    </input>
+    <input node="P_LKP_MATERIAL_NUMBER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_NUMBER" source="MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$LEGACY_MATERIAL_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_POSTP" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="AVOAU"/>
+      <viewAttribute id="DSPST"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERSKZ"/>
+      <viewAttribute id="FMENG"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="ITMID"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="NETAU"/>
+      <viewAttribute id="NLFMV"/>
+      <viewAttribute id="NLFZT"/>
+      <viewAttribute id="NLFZV"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="POSTP"/>
+      <viewAttribute id="POTX1"/>
+      <viewAttribute id="POTX2"/>
+      <viewAttribute id="PREIS"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SAKTO"/>
+      <viewAttribute id="SANIN"/>
+      <viewAttribute id="SANKA"/>
+      <viewAttribute id="SCHGT"/>
+      <viewAttribute id="SORTF"/>
+      <viewAttribute id="STKKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="LEGACY_BOM_CATEGORY"/>
+      <viewAttribute id="BOM_CATEGORY"/>
+      <viewAttribute hidden="true" id="JOIN$POSTP$LEGACY_BOM_CATEGORY"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_POSTP" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>case when &quot;POSTP&quot;=&quot;LEGACY_BOM_CATEGORY&quot;
+then &quot;BOM_CATEGORY&quot;
+else &quot;POSTP&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_MATNR">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="CC_MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AVOAU" source="AVOAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DSPST" source="DSPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSKZ" source="ERSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FMENG" source="FMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITMID" source="ITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETAU" source="NETAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFMV" source="NLFMV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZT" source="NLFZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZV" source="NLFZV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTP" source="POSTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX1" source="POTX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX2" source="POTX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PREIS" source="PREIS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKTO" source="SAKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANIN" source="SANIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANKA" source="SANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGT" source="SCHGT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTF" source="SORTF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKKZ" source="STKKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$POSTP$LEGACY_BOM_CATEGORY" source="POSTP"/>
+    </input>
+    <input node="P_LKP_D_BOM_CATEGORY">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_BOM_CATEGORY" source="LEGACY_BOM_CATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_CATEGORY" source="BOM_CATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$POSTP$LEGACY_BOM_CATEGORY" source="LEGACY_BOM_CATEGORY"/>
+    </input>
+    <joinAttribute name="JOIN$POSTP$LEGACY_BOM_CATEGORY"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_EKORG" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="AVOAU"/>
+      <viewAttribute id="DSPST"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERSKZ"/>
+      <viewAttribute id="FMENG"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="ITMID"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="NETAU"/>
+      <viewAttribute id="NLFMV"/>
+      <viewAttribute id="NLFZT"/>
+      <viewAttribute id="NLFZV"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="POSTP"/>
+      <viewAttribute id="POTX1"/>
+      <viewAttribute id="POTX2"/>
+      <viewAttribute id="PREIS"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SAKTO"/>
+      <viewAttribute id="SANIN"/>
+      <viewAttribute id="SANKA"/>
+      <viewAttribute id="SCHGT"/>
+      <viewAttribute id="SORTF"/>
+      <viewAttribute id="STKKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="LEGACY_PURCHASING_ORG"/>
+      <viewAttribute id="PURCHASING_ORG"/>
+      <viewAttribute hidden="true" id="JOIN$EKORG$LEGACY_PURCHASING_ORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_EKORG" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>case when &quot;EKORG&quot;=&quot;LEGACY_PURCHASING_ORG&quot;
+then &quot;PURCHASING_ORG&quot;
+else &quot;EKORG&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_POSTP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AVOAU" source="AVOAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DSPST" source="DSPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSKZ" source="ERSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FMENG" source="FMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITMID" source="ITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETAU" source="NETAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFMV" source="NLFMV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZT" source="NLFZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZV" source="NLFZV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTP" source="CC_POSTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX1" source="POTX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX2" source="POTX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PREIS" source="PREIS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKTO" source="SAKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANIN" source="SANIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANKA" source="SANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGT" source="SCHGT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTF" source="SORTF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKKZ" source="STKKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKORG$LEGACY_PURCHASING_ORG" source="EKORG"/>
+    </input>
+    <input node="P_LKP_PURCHASING_ORGANIZATION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_PURCHASING_ORG" source="LEGACY_PURCHASING_ORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PURCHASING_ORG" source="PURCHASING_ORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKORG$LEGACY_PURCHASING_ORG" source="LEGACY_PURCHASING_ORG"/>
+    </input>
+    <joinAttribute name="JOIN$EKORG$LEGACY_PURCHASING_ORG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_EKGRP" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="AVOAU"/>
+      <viewAttribute id="DSPST"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERSKZ"/>
+      <viewAttribute id="FMENG"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="ITMID"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="NETAU"/>
+      <viewAttribute id="NLFMV"/>
+      <viewAttribute id="NLFZT"/>
+      <viewAttribute id="NLFZV"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="POSTP"/>
+      <viewAttribute id="POTX1"/>
+      <viewAttribute id="POTX2"/>
+      <viewAttribute id="PREIS"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SAKTO"/>
+      <viewAttribute id="SANIN"/>
+      <viewAttribute id="SANKA"/>
+      <viewAttribute id="SCHGT"/>
+      <viewAttribute id="SORTF"/>
+      <viewAttribute id="STKKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="LEGACY_PURCHASING_GROUP"/>
+      <viewAttribute id="PURCHASING_GROUP"/>
+      <viewAttribute hidden="true" id="JOIN$EKGRP$LEGACY_PURCHASING_GROUP"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_EKGRP" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+        <formula>case when &quot;EKGRP&quot;=&quot;LEGACY_PURCHASING_GROUP&quot;
+then &quot;PURCHASING_GROUP&quot;
+else &quot;EKGRP&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_EKORG">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUSCH" source="AUSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AVOAU" source="AVOAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DSPST" source="DSPST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="CC_EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSKZ" source="ERSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FMENG" source="FMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNRK" source="IDNRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITMID" source="ITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MENGE" source="MENGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETAU" source="NETAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFMV" source="NLFMV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZT" source="NLFZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NLFZV" source="NLFZV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTP" source="POSTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX1" source="POTX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTX2" source="POTX2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PREIS" source="PREIS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKTO" source="SAKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANIN" source="SANIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SANKA" source="SANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHGT" source="SCHGT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTF" source="SORTF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STKKZ" source="STKKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKGRP$LEGACY_PURCHASING_GROUP" source="EKGRP"/>
+    </input>
+    <input node="P_PURCHASING_GROUP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_PURCHASING_GROUP" source="LEGACY_PURCHASING_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PURCHASING_GROUP" source="PURCHASING_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKGRP$LEGACY_PURCHASING_GROUP" source="LEGACY_PURCHASING_GROUP"/>
+    </input>
+    <joinAttribute name="JOIN$EKGRP$LEGACY_PURCHASING_GROUP"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="J_EKGRP">
+    <descriptions/>
+    <attributes>
+      <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="MATNR"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="MATNR"/>
+      </attribute>
+      <attribute id="WERKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="WERKS"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="WERKS"/>
+      </attribute>
+      <attribute id="STLAN" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="STLAN"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="STLAN"/>
+      </attribute>
+      <attribute id="STLAL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="STLAL"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="STLAL"/>
+      </attribute>
+      <attribute id="AUSCH" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="AUSCH"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="AUSCH"/>
+      </attribute>
+      <attribute id="AVOAU" order="6" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="AVOAU"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="AVOAU"/>
+      </attribute>
+      <attribute id="DSPST" order="7" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="DSPST"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="DSPST"/>
+      </attribute>
+      <attribute id="EKGRP" order="8" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="EKGRP"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="CC_EKGRP"/>
+      </attribute>
+      <attribute id="EKORG" order="9" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="EKORG"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="EKORG"/>
+      </attribute>
+      <attribute id="ERSKZ" order="10" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="ERSKZ"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="ERSKZ"/>
+      </attribute>
+      <attribute id="FMENG" order="11" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="FMENG"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="FMENG"/>
+      </attribute>
+      <attribute id="IDNRK" order="12" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="IDNRK"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="IDNRK"/>
+      </attribute>
+      <attribute id="ITMID" order="13" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="ITMID"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="ITMID"/>
+      </attribute>
+      <attribute id="LGORT" order="14" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="LGORT"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="LGORT"/>
+      </attribute>
+      <attribute id="LIFNR" order="15" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="LIFNR"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="LIFNR"/>
+      </attribute>
+      <attribute id="MATKL" order="16" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="MATKL"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="MATKL"/>
+      </attribute>
+      <attribute id="MEINS" order="17" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="MEINS"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="MEINS"/>
+      </attribute>
+      <attribute id="MENGE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="MENGE"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="MENGE"/>
+      </attribute>
+      <attribute id="NETAU" order="19" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="NETAU"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="NETAU"/>
+      </attribute>
+      <attribute id="NLFMV" order="20" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="NLFMV"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="NLFMV"/>
+      </attribute>
+      <attribute id="NLFZT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="NLFZT"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="NLFZT"/>
+      </attribute>
+      <attribute id="NLFZV" order="22" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="NLFZV"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="NLFZV"/>
+      </attribute>
+      <attribute id="PEINH" order="23" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="PEINH"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="PEINH"/>
+      </attribute>
+      <attribute id="POSNR" order="24" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="POSNR"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="POSNR"/>
+      </attribute>
+      <attribute id="POSTP" order="25" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="POSTP"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="POSTP"/>
+      </attribute>
+      <attribute id="POTX1" order="26" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="POTX1"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="POTX1"/>
+      </attribute>
+      <attribute id="POTX2" order="27" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="POTX2"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="POTX2"/>
+      </attribute>
+      <attribute id="PREIS" order="28" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="PREIS"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="PREIS"/>
+      </attribute>
+      <attribute id="PRVBE" order="29" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="PRVBE"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="PRVBE"/>
+      </attribute>
+      <attribute id="SAKTO" order="30" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SAKTO"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="SAKTO"/>
+      </attribute>
+      <attribute id="SANIN" order="31" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SANIN"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="SANIN"/>
+      </attribute>
+      <attribute id="SANKA" order="32" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SANKA"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="SANKA"/>
+      </attribute>
+      <attribute id="SCHGT" order="33" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SCHGT"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="SCHGT"/>
+      </attribute>
+      <attribute id="SORTF" order="34" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SORTF"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="SORTF"/>
+      </attribute>
+      <attribute id="STKKZ" order="35" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="STKKZ"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="STKKZ"/>
+      </attribute>
+      <attribute id="WAERS" order="36" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="WAERS"/>
+        <keyMapping columnObjectName="J_EKGRP" columnName="WAERS"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="785" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_BOM_ITEM" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="1156"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+    <shape expanded="true" modelObjectName="P_LKP_BOM_USAGE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="379" y="996"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_PLANT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="1156"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_MATERIAL_NUMBER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="472" y="836"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_D_BOM_CATEGORY" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="578" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_PURCHASING_ORGANIZATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="697" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_PURCHASING_GROUP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="826" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_WERKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="996"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BOM_ITEM" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="171"/>
+    </shape>
+    <shape modelObjectName="P_LKP_PLANT" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="209"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_STLAN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="836"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_WERKS" modelObjectNameSpace="J_STLAN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+    <shape modelObjectName="P_LKP_BOM_USAGE" modelObjectNameSpace="J_STLAN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="180"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MATNR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_STLAN" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="268"/>
+    </shape>
+    <shape modelObjectName="P_LKP_MATERIAL_NUMBER" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="244"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_POSTP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="198" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_MATNR" modelObjectNameSpace="J_POSTP" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="244"/>
+    </shape>
+    <shape modelObjectName="P_LKP_D_BOM_CATEGORY" modelObjectNameSpace="J_POSTP" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="228"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_EKORG" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="225" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_POSTP" modelObjectNameSpace="J_EKORG" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="228"/>
+    </shape>
+    <shape modelObjectName="P_LKP_PURCHASING_ORGANIZATION" modelObjectNameSpace="J_EKORG" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="288"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_EKGRP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="785" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_EKORG" modelObjectNameSpace="J_EKGRP" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="241"/>
+    </shape>
+    <shape modelObjectName="P_PURCHASING_GROUP" modelObjectNameSpace="J_EKGRP" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="256"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

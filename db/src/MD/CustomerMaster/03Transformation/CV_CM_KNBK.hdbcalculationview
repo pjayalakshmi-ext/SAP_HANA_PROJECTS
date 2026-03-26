@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.03Transformation::CV_CM_KNBK" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_CM_KNBK"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNBK">
+    <resourceUri>EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNBK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNBK">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNBK"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_KNBK">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number*"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BANKS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank country key"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Keys"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKN" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank account number"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="BANKN"/>
+    </attribute>
+    <attribute id="IBAN" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBAN (International Bank Account Number)"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="IBAN"/>
+    </attribute>
+    <attribute id="BKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Control Key"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="BKONT"/>
+    </attribute>
+    <attribute id="KOINH" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account Holder Name"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="KOINH"/>
+    </attribute>
+    <attribute id="EBPP_ACCNAME" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User-Defined Name of Bank Details"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="EBPP_ACCNAME"/>
+    </attribute>
+    <attribute id="BKREF" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference specifications for bank details"/>
+      <keyMapping columnObjectName="P_KNBK" columnName="BKREF"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="219"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

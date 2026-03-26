@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.MaterialInventoryBalance.07Validation::CV_FIXEDASSET_ANLZ" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_FIXEDASSET_ANLZ.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.FixedAsset.06Completeness::CV_FIXEDASSET_ANLZ">
+    <resourceUri>EHUB.MD.FixedAsset.06Completeness::CV_FIXEDASSET_ANLZ</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TTXJ">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TTXJ</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TGSB">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TGSB</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T499S">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T499S</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="ADATU"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="MSFAK"/>
+      <viewAttribute id="XSTIL"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="CAUFN"/>
+      <viewAttribute id="PLAN1"/>
+      <viewAttribute id="PLAN2"/>
+      <viewAttribute id="RAUMN"/>
+      <viewAttribute id="IAUFN"/>
+      <viewAttribute id="IPROJ"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="ANUPD"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="IPSNR"/>
+      <viewAttribute id="KFZKZ"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="KOSTLV"/>
+      <viewAttribute id="FISTL"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="GRANT_NBR"/>
+      <viewAttribute id="GEBER2"/>
+      <viewAttribute id="FKBER2"/>
+      <viewAttribute id="GRANT_NBR2"/>
+      <viewAttribute id="FISTL2"/>
+      <viewAttribute id="IMKEY"/>
+      <viewAttribute id="PS_PSP_PNR2"/>
+      <viewAttribute id="BUDGET_PD"/>
+      <viewAttribute id="BUDGET_PD2"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.FixedAsset.06Completeness::CV_FIXEDASSET_ANLZ"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TXJCD"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TTXJ"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="GSBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TGSB"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_6">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T499S"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="ADATU"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="MSFAK"/>
+      <viewAttribute id="XSTIL"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="CAUFN"/>
+      <viewAttribute id="PLAN1"/>
+      <viewAttribute id="PLAN2"/>
+      <viewAttribute id="RAUMN"/>
+      <viewAttribute id="IAUFN"/>
+      <viewAttribute id="IPROJ"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="ANUPD"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="IPSNR"/>
+      <viewAttribute id="KFZKZ"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="KOSTLV"/>
+      <viewAttribute id="FISTL"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="GRANT_NBR"/>
+      <viewAttribute id="GEBER2"/>
+      <viewAttribute id="FKBER2"/>
+      <viewAttribute id="GRANT_NBR2"/>
+      <viewAttribute id="FISTL2"/>
+      <viewAttribute id="IMKEY"/>
+      <viewAttribute id="PS_PSP_PNR2"/>
+      <viewAttribute id="BUDGET_PD"/>
+      <viewAttribute id="BUDGET_PD2"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="BUKRS_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="FA_COMPANY_CODE_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;BUKRS&quot; = &quot;BUKRS_1&quot;
+then 0
+else 1
+end
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN1" source="ANLN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATU" source="BDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADATU" source="ADATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LSTAR" source="LSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSFAK" source="MSFAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSTIL" source="XSTIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAUFN" source="CAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN1" source="PLAN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN2" source="PLAN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUMN" source="RAUMN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IAUFN" source="IAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPROJ" source="IPROJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANUPD" source="ANUPD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPSNR" source="IPSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KFZKZ" source="KFZKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERNR" source="PERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTLV" source="KOSTLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL" source="FISTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER" source="GEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR" source="GRANT_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER2" source="GEBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER2" source="FKBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR2" source="GRANT_NBR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL2" source="FISTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMKEY" source="IMKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PS_PSP_PNR2" source="PS_PSP_PNR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD" source="BUDGET_PD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD2" source="BUDGET_PD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_1" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="ADATU"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="MSFAK"/>
+      <viewAttribute id="XSTIL"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="CAUFN"/>
+      <viewAttribute id="PLAN1"/>
+      <viewAttribute id="PLAN2"/>
+      <viewAttribute id="RAUMN"/>
+      <viewAttribute id="IAUFN"/>
+      <viewAttribute id="IPROJ"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="ANUPD"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="IPSNR"/>
+      <viewAttribute id="KFZKZ"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="KOSTLV"/>
+      <viewAttribute id="FISTL"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="GRANT_NBR"/>
+      <viewAttribute id="GEBER2"/>
+      <viewAttribute id="FKBER2"/>
+      <viewAttribute id="GRANT_NBR2"/>
+      <viewAttribute id="FISTL2"/>
+      <viewAttribute id="IMKEY"/>
+      <viewAttribute id="PS_PSP_PNR2"/>
+      <viewAttribute id="BUDGET_PD"/>
+      <viewAttribute id="BUDGET_PD2"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="TXJCD_1"/>
+      <viewAttribute id="FA_COMPANY_CODE_KEY_INVALID"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$TXJCD$TXJCD"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="FA_TAX_JURISDICTION_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;TXJCD&quot; = &quot;TXJCD_1&quot;
+then 0
+else 1
+end
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN1" source="ANLN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATU" source="BDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADATU" source="ADATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LSTAR" source="LSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSFAK" source="MSFAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSTIL" source="XSTIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAUFN" source="CAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN1" source="PLAN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN2" source="PLAN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUMN" source="RAUMN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IAUFN" source="IAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPROJ" source="IPROJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANUPD" source="ANUPD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPSNR" source="IPSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KFZKZ" source="KFZKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERNR" source="PERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTLV" source="KOSTLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL" source="FISTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER" source="GEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR" source="GRANT_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER2" source="GEBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER2" source="FKBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR2" source="GRANT_NBR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL2" source="FISTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMKEY" source="IMKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PS_PSP_PNR2" source="PS_PSP_PNR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD" source="BUDGET_PD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD2" source="BUDGET_PD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_COMPANY_CODE_KEY_INVALID" source="FA_COMPANY_CODE_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TXJCD$TXJCD" source="TXJCD"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD_1" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TXJCD$TXJCD" source="TXJCD"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$TXJCD$TXJCD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="ADATU"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="MSFAK"/>
+      <viewAttribute id="XSTIL"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="CAUFN"/>
+      <viewAttribute id="PLAN1"/>
+      <viewAttribute id="PLAN2"/>
+      <viewAttribute id="RAUMN"/>
+      <viewAttribute id="IAUFN"/>
+      <viewAttribute id="IPROJ"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="ANUPD"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="IPSNR"/>
+      <viewAttribute id="KFZKZ"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="KOSTLV"/>
+      <viewAttribute id="FISTL"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="GRANT_NBR"/>
+      <viewAttribute id="GEBER2"/>
+      <viewAttribute id="FKBER2"/>
+      <viewAttribute id="GRANT_NBR2"/>
+      <viewAttribute id="FISTL2"/>
+      <viewAttribute id="IMKEY"/>
+      <viewAttribute id="PS_PSP_PNR2"/>
+      <viewAttribute id="BUDGET_PD"/>
+      <viewAttribute id="BUDGET_PD2"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="TXJCD_1"/>
+      <viewAttribute id="FA_COMPANY_CODE_KEY_INVALID"/>
+      <viewAttribute id="FA_TAX_JURISDICTION_KEY_INVALID"/>
+      <viewAttribute id="WERKS_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="FA_PLANT_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;WERKS&quot; = &quot;WERKS_1&quot;
+then 0
+else 1
+end
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN1" source="ANLN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATU" source="BDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADATU" source="ADATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LSTAR" source="LSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSFAK" source="MSFAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSTIL" source="XSTIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAUFN" source="CAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN1" source="PLAN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN2" source="PLAN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUMN" source="RAUMN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IAUFN" source="IAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPROJ" source="IPROJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANUPD" source="ANUPD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPSNR" source="IPSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KFZKZ" source="KFZKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERNR" source="PERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTLV" source="KOSTLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL" source="FISTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER" source="GEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR" source="GRANT_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER2" source="GEBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER2" source="FKBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR2" source="GRANT_NBR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL2" source="FISTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMKEY" source="IMKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PS_PSP_PNR2" source="PS_PSP_PNR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD" source="BUDGET_PD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD2" source="BUDGET_PD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD_1" source="TXJCD_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_COMPANY_CODE_KEY_INVALID" source="FA_COMPANY_CODE_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_TAX_JURISDICTION_KEY_INVALID" source="FA_TAX_JURISDICTION_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+    </input>
+    <input node="Projection_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_1" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$WERKS$WERKS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_4" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="ADATU"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="MSFAK"/>
+      <viewAttribute id="XSTIL"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="CAUFN"/>
+      <viewAttribute id="PLAN1"/>
+      <viewAttribute id="PLAN2"/>
+      <viewAttribute id="RAUMN"/>
+      <viewAttribute id="IAUFN"/>
+      <viewAttribute id="IPROJ"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="ANUPD"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="IPSNR"/>
+      <viewAttribute id="KFZKZ"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="KOSTLV"/>
+      <viewAttribute id="FISTL"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="GRANT_NBR"/>
+      <viewAttribute id="GEBER2"/>
+      <viewAttribute id="FKBER2"/>
+      <viewAttribute id="GRANT_NBR2"/>
+      <viewAttribute id="FISTL2"/>
+      <viewAttribute id="IMKEY"/>
+      <viewAttribute id="PS_PSP_PNR2"/>
+      <viewAttribute id="BUDGET_PD"/>
+      <viewAttribute id="BUDGET_PD2"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="FA_COMPANY_CODE_KEY_INVALID"/>
+      <viewAttribute id="FA_TAX_JURISDICTION_KEY_INVALID"/>
+      <viewAttribute id="FA_PLANT_KEY_INVALID"/>
+      <viewAttribute id="GSBER_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$GSBER$GSBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="FA_BUSINESS_AREA_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;GSBER&quot; = &quot;GSBER_1&quot;
+then 0
+else 1
+end
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN1" source="ANLN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATU" source="BDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADATU" source="ADATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LSTAR" source="LSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSFAK" source="MSFAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSTIL" source="XSTIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAUFN" source="CAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN1" source="PLAN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN2" source="PLAN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUMN" source="RAUMN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IAUFN" source="IAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPROJ" source="IPROJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANUPD" source="ANUPD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPSNR" source="IPSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KFZKZ" source="KFZKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERNR" source="PERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTLV" source="KOSTLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL" source="FISTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER" source="GEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR" source="GRANT_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER2" source="GEBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER2" source="FKBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR2" source="GRANT_NBR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL2" source="FISTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMKEY" source="IMKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PS_PSP_PNR2" source="PS_PSP_PNR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD" source="BUDGET_PD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD2" source="BUDGET_PD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_COMPANY_CODE_KEY_INVALID" source="FA_COMPANY_CODE_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_TAX_JURISDICTION_KEY_INVALID" source="FA_TAX_JURISDICTION_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_PLANT_KEY_INVALID" source="FA_PLANT_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GSBER$GSBER" source="GSBER"/>
+    </input>
+    <input node="Projection_5">
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER_1" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GSBER$GSBER" source="GSBER"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$GSBER$GSBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_5" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="ADATU"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="MSFAK"/>
+      <viewAttribute id="XSTIL"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="CAUFN"/>
+      <viewAttribute id="PLAN1"/>
+      <viewAttribute id="PLAN2"/>
+      <viewAttribute id="RAUMN"/>
+      <viewAttribute id="IAUFN"/>
+      <viewAttribute id="IPROJ"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="ANUPD"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="IPSNR"/>
+      <viewAttribute id="KFZKZ"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="KOSTLV"/>
+      <viewAttribute id="FISTL"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="GRANT_NBR"/>
+      <viewAttribute id="GEBER2"/>
+      <viewAttribute id="FKBER2"/>
+      <viewAttribute id="GRANT_NBR2"/>
+      <viewAttribute id="FISTL2"/>
+      <viewAttribute id="IMKEY"/>
+      <viewAttribute id="PS_PSP_PNR2"/>
+      <viewAttribute id="BUDGET_PD"/>
+      <viewAttribute id="BUDGET_PD2"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="FA_COMPANY_CODE_KEY_INVALID"/>
+      <viewAttribute id="FA_TAX_JURISDICTION_KEY_INVALID"/>
+      <viewAttribute id="FA_PLANT_KEY_INVALID"/>
+      <viewAttribute id="FA_BUSINESS_AREA_KEY_INVALID"/>
+      <viewAttribute id="WERKS_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$STORT$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="FA_ASSET_LOCATION_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;STORT&quot; = &quot;WERKS_1&quot;
+then 0
+else 1
+end
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN1" source="ANLN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDATU" source="BDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADATU" source="ADATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LSTAR" source="LSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSFAK" source="MSFAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSTIL" source="XSTIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORT" source="STORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAUFN" source="CAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN1" source="PLAN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLAN2" source="PLAN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUMN" source="RAUMN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IAUFN" source="IAUFN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPROJ" source="IPROJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLKZ" source="TPLKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TPLNR" source="TPLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANUPD" source="ANUPD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPSNR" source="IPSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KFZKZ" source="KFZKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PERNR" source="PERNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTLV" source="KOSTLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL" source="FISTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER" source="GEBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR" source="GRANT_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEBER2" source="GEBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER2" source="FKBER2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRANT_NBR2" source="GRANT_NBR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FISTL2" source="FISTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IMKEY" source="IMKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PS_PSP_PNR2" source="PS_PSP_PNR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD" source="BUDGET_PD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDGET_PD2" source="BUDGET_PD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_COMPANY_CODE_KEY_INVALID" source="FA_COMPANY_CODE_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_TAX_JURISDICTION_KEY_INVALID" source="FA_TAX_JURISDICTION_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_PLANT_KEY_INVALID" source="FA_PLANT_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FA_BUSINESS_AREA_KEY_INVALID" source="FA_BUSINESS_AREA_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STORT$WERKS" source="STORT"/>
+    </input>
+    <input node="Projection_6">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_1" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STORT$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$STORT$WERKS"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_5">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Join_5" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="Join_5" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="ANLN1" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLN1"/>
+      <keyMapping columnObjectName="Join_5" columnName="ANLN1"/>
+    </attribute>
+    <attribute id="ANLN2" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLN2"/>
+      <keyMapping columnObjectName="Join_5" columnName="ANLN2"/>
+    </attribute>
+    <attribute id="BDATU" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BDATU"/>
+      <keyMapping columnObjectName="Join_5" columnName="BDATU"/>
+    </attribute>
+    <attribute id="ADATU" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADATU"/>
+      <keyMapping columnObjectName="Join_5" columnName="ADATU"/>
+    </attribute>
+    <attribute id="KOSTL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTL"/>
+      <keyMapping columnObjectName="Join_5" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="WERKS" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Join_5" columnName="WERKS"/>
+    </attribute>
+    <attribute id="GSBER" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GSBER"/>
+      <keyMapping columnObjectName="Join_5" columnName="GSBER"/>
+    </attribute>
+    <attribute id="LSTAR" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LSTAR"/>
+      <keyMapping columnObjectName="Join_5" columnName="LSTAR"/>
+    </attribute>
+    <attribute id="MSFAK" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MSFAK"/>
+      <keyMapping columnObjectName="Join_5" columnName="MSFAK"/>
+    </attribute>
+    <attribute id="XSTIL" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XSTIL"/>
+      <keyMapping columnObjectName="Join_5" columnName="XSTIL"/>
+    </attribute>
+    <attribute id="STORT" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORT"/>
+      <keyMapping columnObjectName="Join_5" columnName="STORT"/>
+    </attribute>
+    <attribute id="CAUFN" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAUFN"/>
+      <keyMapping columnObjectName="Join_5" columnName="CAUFN"/>
+    </attribute>
+    <attribute id="PLAN1" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLAN1"/>
+      <keyMapping columnObjectName="Join_5" columnName="PLAN1"/>
+    </attribute>
+    <attribute id="PLAN2" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLAN2"/>
+      <keyMapping columnObjectName="Join_5" columnName="PLAN2"/>
+    </attribute>
+    <attribute id="RAUMN" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RAUMN"/>
+      <keyMapping columnObjectName="Join_5" columnName="RAUMN"/>
+    </attribute>
+    <attribute id="IAUFN" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IAUFN"/>
+      <keyMapping columnObjectName="Join_5" columnName="IAUFN"/>
+    </attribute>
+    <attribute id="IPROJ" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IPROJ"/>
+      <keyMapping columnObjectName="Join_5" columnName="IPROJ"/>
+    </attribute>
+    <attribute id="TPLKZ" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLKZ"/>
+      <keyMapping columnObjectName="Join_5" columnName="TPLKZ"/>
+    </attribute>
+    <attribute id="TPLNR" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="TPLNR"/>
+    </attribute>
+    <attribute id="ANUPD" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANUPD"/>
+      <keyMapping columnObjectName="Join_5" columnName="ANUPD"/>
+    </attribute>
+    <attribute id="TXJCD" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXJCD"/>
+      <keyMapping columnObjectName="Join_5" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="IPSNR" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IPSNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="IPSNR"/>
+    </attribute>
+    <attribute id="KFZKZ" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KFZKZ"/>
+      <keyMapping columnObjectName="Join_5" columnName="KFZKZ"/>
+    </attribute>
+    <attribute id="PERNR" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERNR"/>
+      <keyMapping columnObjectName="Join_5" columnName="PERNR"/>
+    </attribute>
+    <attribute id="KOSTLV" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTLV"/>
+      <keyMapping columnObjectName="Join_5" columnName="KOSTLV"/>
+    </attribute>
+    <attribute id="FISTL" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FISTL"/>
+      <keyMapping columnObjectName="Join_5" columnName="FISTL"/>
+    </attribute>
+    <attribute id="GEBER" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEBER"/>
+      <keyMapping columnObjectName="Join_5" columnName="GEBER"/>
+    </attribute>
+    <attribute id="FKBER" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKBER"/>
+      <keyMapping columnObjectName="Join_5" columnName="FKBER"/>
+    </attribute>
+    <attribute id="GRANT_NBR" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GRANT_NBR"/>
+      <keyMapping columnObjectName="Join_5" columnName="GRANT_NBR"/>
+    </attribute>
+    <attribute id="GEBER2" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEBER2"/>
+      <keyMapping columnObjectName="Join_5" columnName="GEBER2"/>
+    </attribute>
+    <attribute id="FKBER2" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKBER2"/>
+      <keyMapping columnObjectName="Join_5" columnName="FKBER2"/>
+    </attribute>
+    <attribute id="GRANT_NBR2" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GRANT_NBR2"/>
+      <keyMapping columnObjectName="Join_5" columnName="GRANT_NBR2"/>
+    </attribute>
+    <attribute id="FISTL2" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FISTL2"/>
+      <keyMapping columnObjectName="Join_5" columnName="FISTL2"/>
+    </attribute>
+    <attribute id="IMKEY" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IMKEY"/>
+      <keyMapping columnObjectName="Join_5" columnName="IMKEY"/>
+    </attribute>
+    <attribute id="PS_PSP_PNR2" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PS_PSP_PNR2"/>
+      <keyMapping columnObjectName="Join_5" columnName="PS_PSP_PNR2"/>
+    </attribute>
+    <attribute id="BUDGET_PD" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUDGET_PD"/>
+      <keyMapping columnObjectName="Join_5" columnName="BUDGET_PD"/>
+    </attribute>
+    <attribute id="BUDGET_PD2" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUDGET_PD2"/>
+      <keyMapping columnObjectName="Join_5" columnName="BUDGET_PD2"/>
+    </attribute>
+    <attribute id="SEGMENT" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEGMENT"/>
+      <keyMapping columnObjectName="Join_5" columnName="SEGMENT"/>
+    </attribute>
+    <attribute id="PRCTR" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="Join_5" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Join_5" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="FA_COMPANY_CODE_KEY_INVALID" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FA_COMPANY_CODE_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="FA_COMPANY_CODE_KEY_INVALID"/>
+    </attribute>
+    <attribute id="FA_TAX_JURISDICTION_KEY_INVALID" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FA_TAX_JURISDICTION_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="FA_TAX_JURISDICTION_KEY_INVALID"/>
+    </attribute>
+    <attribute id="FA_PLANT_KEY_INVALID" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FA_PLANT_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="FA_PLANT_KEY_INVALID"/>
+    </attribute>
+    <attribute id="FA_BUSINESS_AREA_KEY_INVALID" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FA_BUSINESS_AREA_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="FA_BUSINESS_AREA_KEY_INVALID"/>
+    </attribute>
+    <attribute id="FA_ASSET_LOCATION_KEY_INVALID" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FA_ASSET_LOCATION_KEY_INVALID"/>
+      <keyMapping columnObjectName="Join_5" columnName="FA_ASSET_LOCATION_KEY_INVALID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="48" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+(&quot;FA_COMPANY_CODE_KEY_INVALID&quot;+&quot;FA_TAX_JURISDICTION_KEY_INVALID&quot;+&quot;FA_PLANT_KEY_INVALID&quot;+&quot;FA_BUSINESS_AREA_KEY_INVALID&quot;+&quot;FA_ASSET_LOCATION_KEY_INVALID&quot;)  &gt;=1
+then 1
+else 0
+end</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="660" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="474" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="584" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="708" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="203"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="325" y="316"/>
+      <rectangleSize width="136"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="285"/>
+    </shape>
+    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="198" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="285"/>
+    </shape>
+    <shape modelObjectName="Projection_5" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="660" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_4" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="285"/>
+    </shape>
+    <shape modelObjectName="Projection_6" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.03Transformation::CV_CM_KNB1" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_CM_KNB1"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNB1">
+    <resourceUri>EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNB1</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_COMPANY_CODE">
+    <resourceUri>EHUB.Synonyms::SY_LKP_COMPANY_CODE</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNB1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="VRBKZ"/>
+      <viewAttribute id="VLIBB"/>
+      <viewAttribute id="VRSZL"/>
+      <viewAttribute id="VRSPR"/>
+      <viewAttribute id="VRSNR"/>
+      <viewAttribute id="VERDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ZSABE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNB1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_CCODE">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_COMPANY_CODE"/>
+      <viewAttribute id="COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CCODE" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="VRBKZ"/>
+      <viewAttribute id="VLIBB"/>
+      <viewAttribute id="VRSZL"/>
+      <viewAttribute id="VRSPR"/>
+      <viewAttribute id="VRSNR"/>
+      <viewAttribute id="VERDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ZSABE"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_KNB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRBKZ" source="VRBKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLIBB" source="VLIBB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSZL" source="VRSZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSPR" source="VRSPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSNR" source="VRSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERDT" source="VERDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSAB" source="BUSAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZAHLS" source="ZAHLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSABE" source="ZSABE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="BUKRS"/>
+    </input>
+    <input node="P_LKP_CCODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="COMPANY_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="LEGACY_COMPANY_CODE"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_CCODE">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BUKRS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANY_CODE"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="SPERR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPERR"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="SPERR"/>
+    </attribute>
+    <attribute id="AKONT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AKONT"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="AKONT"/>
+    </attribute>
+    <attribute id="VRBKZ" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRBKZ"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="VRBKZ"/>
+    </attribute>
+    <attribute id="VLIBB" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VLIBB"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="VLIBB"/>
+    </attribute>
+    <attribute id="VRSZL" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRSZL"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="VRSZL"/>
+    </attribute>
+    <attribute id="VRSPR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRSPR"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="VRSPR"/>
+    </attribute>
+    <attribute id="VRSNR" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRSNR"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="VRSNR"/>
+    </attribute>
+    <attribute id="VERDT" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERDT"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="VERDT"/>
+    </attribute>
+    <attribute id="ZTERM" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTERM"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="ZWELS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZWELS"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="ZWELS"/>
+    </attribute>
+    <attribute id="BUSAB" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUSAB"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="BUSAB"/>
+    </attribute>
+    <attribute id="ZAHLS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZAHLS"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="ZAHLS"/>
+    </attribute>
+    <attribute id="EIKTO" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EIKTO"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="EIKTO"/>
+    </attribute>
+    <attribute id="ZSABE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZSABE"/>
+      <keyMapping columnObjectName="J_CCODE" columnName="ZSABE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_CCODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CCODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_KNB1" modelObjectNameSpace="J_CCODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_LKP_CCODE" modelObjectNameSpace="J_CCODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="229"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

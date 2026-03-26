@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CostCenter.04Harmonization::CV_CC_CSKS" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_CC_CSKS_INIT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CostCenter.03Transformation::CV_CC_CSKS">
+    <resourceUri>EHUB.MD.CostCenter.03Transformation::CV_CC_CSKS</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_CC_CSKS_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_CC_CSKS_REL_INPUT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SHE_CSKS">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KOSAR"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BKZKP"/>
+      <viewAttribute id="PKZKP"/>
+      <viewAttribute id="BKZER"/>
+      <viewAttribute id="PKZER"/>
+      <viewAttribute id="BKZKS"/>
+      <viewAttribute id="PKZKS"/>
+      <viewAttribute id="KALSM"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.CostCenter.03Transformation::CV_CC_CSKS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="MANDT_INPUT"/>
+      <viewAttribute id="KOKRS_INPUT"/>
+      <viewAttribute id="KOSTL_INPUT"/>
+      <viewAttribute id="DATBI_INPUT"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KOSAR"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BKZKP"/>
+      <viewAttribute id="PKZKP"/>
+      <viewAttribute id="BKZKS"/>
+      <viewAttribute id="PKZKS"/>
+      <viewAttribute id="BKZER"/>
+      <viewAttribute id="PKZER"/>
+      <viewAttribute id="KALSM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_CC_CSKS_REL_INPUT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT_INPUT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS_INPUT" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL_INPUT" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_INPUT" source="DATBI"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_CSKS">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KOSAR"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BKZKP"/>
+      <viewAttribute id="PKZKP"/>
+      <viewAttribute id="BKZER"/>
+      <viewAttribute id="PKZER"/>
+      <viewAttribute id="BKZKS"/>
+      <viewAttribute id="PKZKS"/>
+      <viewAttribute id="KALSM"/>
+    
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SHE_CSKS" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSAR" source="KOSAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FUNC_AREA" source="FUNC_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKP" source="BKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKP" source="PKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZER" source="BKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZER" source="PKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKS" source="BKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKS" source="PKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSM" source="KALSM"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CSKS_DELTA" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KOSAR"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BKZKP"/>
+      <viewAttribute id="PKZKP"/>
+      <viewAttribute id="BKZER"/>
+      <viewAttribute id="PKZER"/>
+      <viewAttribute id="BKZKS"/>
+      <viewAttribute id="PKZKS"/>
+      <viewAttribute id="KALSM"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="KOSTL_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$KOSTL$KOSTL_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$DATBI$DATBI_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_CSKS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSAR" source="KOSAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FUNC_AREA" source="FUNC_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKP" source="BKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKP" source="PKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZER" source="BKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZER" source="PKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKS" source="BKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKS" source="PKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSM" source="KALSM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT_INPUT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS_INPUT" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOSTL$KOSTL_INPUT" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI_INPUT" source="DATBI"/>
+    </input>
+    <input node="Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL_INPUT" source="KOSTL_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT_INPUT" source="MANDT_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS_INPUT" source="KOKRS_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOSTL$KOSTL_INPUT" source="KOSTL_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI_INPUT" source="DATBI_INPUT"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT_INPUT"/>
+    <joinAttribute name="JOIN$KOKRS$KOKRS_INPUT"/>
+    <joinAttribute name="JOIN$KOSTL$KOSTL_INPUT"/>
+    <joinAttribute name="JOIN$DATBI$DATBI_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Without_Remediated" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KOSAR"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BKZKP"/>
+      <viewAttribute id="PKZKP"/>
+      <viewAttribute id="BKZER"/>
+      <viewAttribute id="PKZER"/>
+      <viewAttribute id="BKZKS"/>
+      <viewAttribute id="PKZKS"/>
+      <viewAttribute id="KALSM"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="KOSTL_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_CSKS_DELTA"/>
+    <filter>(isnull(&quot;KOSTL_INPUT&quot;))</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KOSAR"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BKZKP"/>
+      <viewAttribute id="PKZKP"/>
+      <viewAttribute id="BKZKS"/>
+      <viewAttribute id="PKZKS"/>
+      <viewAttribute id="BKZER"/>
+      <viewAttribute id="PKZER"/>
+      <viewAttribute id="KALSM"/>
+    
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Without_Remediated" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSAR" source="KOSAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FUNC_AREA" source="FUNC_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKP" source="BKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKP" source="PKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZER" source="BKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZER" source="PKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKS" source="BKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKS" source="PKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSM" source="KALSM"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+    </input>
+    <input node="Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSAR" source="KOSAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FUNC_AREA" source="FUNC_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKP" source="BKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKP" source="PKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZER" source="BKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZER" source="PKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKS" source="BKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKS" source="PKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSM" source="KALSM"/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ANRED" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME1" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME2" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME3" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="NAME4" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="STRAS" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="PSTLZ" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="PSTL2" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="PFACH" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ORT01" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ORT02" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LAND1" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="REGIO" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="TXJCD" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="TELBX" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="TELF1" null="true"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="KOSTL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTL"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="DATBI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATBI"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="DATBI"/>
+    </attribute>
+    <attribute id="DATAB" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="DATAB"/>
+    </attribute>
+    <attribute id="SPRAS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="KTEXT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTEXT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KTEXT"/>
+    </attribute>
+    <attribute id="LTEXT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LTEXT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LTEXT"/>
+    </attribute>
+    <attribute id="VERAK_USER" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERAK_USER"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VERAK_USER"/>
+    </attribute>
+    <attribute id="VERAK" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERAK"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VERAK"/>
+    </attribute>
+    <attribute id="ABTEI" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABTEI"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ABTEI"/>
+    </attribute>
+    <attribute id="KOSAR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSAR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KOSAR"/>
+    </attribute>
+    <attribute id="KHINR" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KHINR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KHINR"/>
+    </attribute>
+    <attribute id="BUKRS" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="FUNC_AREA" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FUNC_AREA"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="FUNC_AREA"/>
+    </attribute>
+    <attribute id="GSBER" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GSBER"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="GSBER"/>
+    </attribute>
+    <attribute id="WAERS" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="WAERS"/>
+    </attribute>
+    <attribute id="PRCTR" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="BKZKP" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKZKP"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BKZKP"/>
+    </attribute>
+    <attribute id="PKZKP" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PKZKP"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PKZKP"/>
+    </attribute>
+    <attribute id="BKZKS" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKZKS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BKZKS"/>
+    </attribute>
+    <attribute id="PKZKS" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PKZKS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PKZKS"/>
+    </attribute>
+    <attribute id="BKZER" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKZER"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BKZER"/>
+    </attribute>
+    <attribute id="PKZER" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PKZER"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PKZER"/>
+    </attribute>
+    <attribute id="KALSM" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KALSM"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KALSM"/>
+    </attribute>
+  
+    <attribute id="ANRED" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Title"/>
+  
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ANRED"/>
+  
+    </attribute>
+    <attribute id="NAME1" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 1"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="NAME1"/>
+    </attribute>
+    <attribute id="NAME2" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 2"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="NAME2"/>
+    </attribute>
+    <attribute id="NAME3" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 3"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="NAME3"/>
+    </attribute>
+    <attribute id="NAME4" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 4"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="NAME4"/>
+    </attribute>
+    <attribute id="STRAS" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House number and street"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="STRAS"/>
+    </attribute>
+    <attribute id="PSTLZ" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Postal Code"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="PSTL2" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="P.O. Box Postal Code"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PSTL2"/>
+    </attribute>
+    <attribute id="PFACH" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PO Box"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PFACH"/>
+    </attribute>
+    <attribute id="ORT01" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ORT01"/>
+    </attribute>
+    <attribute id="ORT02" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="District"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ORT02"/>
+    </attribute>
+    <attribute id="LAND1" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country Key"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LAND1"/>
+    </attribute>
+    <attribute id="REGIO" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="REGIO"/>
+    </attribute>
+    <attribute id="TXJCD" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Jurisdiction"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="TELBX" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Telebox number"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="TELBX"/>
+    </attribute>
+    <attribute id="TELF1" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="First telephone number"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="TELF1"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="225" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_SHE_CSKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="766"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_CSKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CSKS_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_CSKS" modelObjectNameSpace="J_CSKS_DELTA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="Remediated_Data" modelObjectNameSpace="J_CSKS_DELTA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Without_Remediated" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="236" y="237"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

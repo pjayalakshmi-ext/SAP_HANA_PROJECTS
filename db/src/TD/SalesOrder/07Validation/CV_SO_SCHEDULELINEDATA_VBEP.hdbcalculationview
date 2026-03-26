@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.SalesOrder.07Validation::CV_SO_SCHEDULELINEDATA_VBEP" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.SalesOrder.06Completeness::CV_SO_SCHEDULELINEDATA_VBEP">
+    <resourceUri>EHUB.TD.SalesOrder.06Completeness::CV_SO_SCHEDULELINEDATA_VBEP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="DeliveryScheduleLineNumber"/>
+      <viewAttribute id="OrderQuantityInSalesUnits"/>
+      <viewAttribute id="ScheduleLineDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.SalesOrder.06Completeness::CV_SO_SCHEDULELINEDATA_VBEP"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="LegacySalesDocument" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LegacySalesDocument"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LegacySalesDocument"/>
+    </attribute>
+    <attribute id="SalesDocumentItem" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesDocumentItem"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentItem"/>
+    </attribute>
+    <attribute id="DeliveryScheduleLineNumber" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delivery Schedule Line Number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DeliveryScheduleLineNumber"/>
+    </attribute>
+    <attribute id="OrderQuantityInSalesUnits" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Order quantity in sales units"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OrderQuantityInSalesUnits"/>
+    </attribute>
+    <attribute id="ScheduleLineDate" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Schedule line date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ScheduleLineDate"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>0</formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMasterClassification.06Completeness::CV_MATERIALCLASSIFICATION_CURR_AUSP" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialMasterClassification.04Harmonization::CV_MATERIALCLASSIFICATION_CURR_AUSP">
+    <resourceUri>EHUB.MD.MaterialMasterClassification.04Harmonization::CV_MATERIALCLASSIFICATION_CURR_AUSP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="CharacteristicName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="FromFloatingPoint"/>
+      <viewAttribute id="ToFloatingPoint"/>
+      <viewAttribute id="DependencyCode"/></viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="ClassName_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ClassName&quot;=''  or &quot;ClassName&quot; is null
+then 1
+else 0
+end
+
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="ClassType_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ClassType&quot;=''  or &quot;ClassType&quot; is null
+then 1
+else 0
+end
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="ProductNum_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ProductNum&quot;=''  or &quot;ProductNum&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CharacteristicName_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+    
+        <formula>case when &quot;CharacteristicName&quot;=''  or &quot;CharacteristicName&quot; is null
+then 1
+else 0
+end
+</formula>
+    
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="ItemNumber_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+    
+        <formula>case when  &quot;ItemNumber&quot; is null
+then 1
+else 0
+end
+
+
+</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.MaterialMasterClassification.04Harmonization::CV_MATERIALCLASSIFICATION_CURR_AUSP"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="ClassType" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassType"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassType"/>
+    </attribute>
+    <attribute id="ClassName" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassName"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassName"/>
+    </attribute>
+    <attribute id="ProductNum" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProductNum"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ProductNum"/>
+    </attribute>
+    <attribute id="ClassName_INCOMPLETE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassName_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassName_INCOMPLETE"/>
+    </attribute>
+    <attribute id="ClassType_INCOMPLETE" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassType_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassType_INCOMPLETE"/>
+    </attribute>
+    <attribute id="ProductNum_INCOMPLETE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProductNum_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ProductNum_INCOMPLETE"/>
+    </attribute>
+    <attribute id="CharacteristicName_INCOMPLETE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CharacteristicName_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CharacteristicName_INCOMPLETE"/>
+    </attribute>
+    <attribute id="ItemNumber_INCOMPLETE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ItemNumber_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ItemNumber_INCOMPLETE"/>
+    </attribute>
+    <attribute id="CharacteristicName" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Characteristic Name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CharacteristicName"/>
+    </attribute>
+    <attribute id="ItemNumber" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ItemNumber"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ItemNumber"/>
+    </attribute>
+    <attribute id="FromFloatingPoint" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FromFloatingPoint"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FromFloatingPoint"/>
+    </attribute>
+    <attribute id="ToFloatingPoint" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ToFloatingPoint"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ToFloatingPoint"/>
+    </attribute>
+    <attribute id="DependencyCode" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DependencyCode"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DependencyCode"/>
+    </attribute></attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ClassName_INCOMPLETE&quot;+&quot;ClassType_INCOMPLETE&quot;+&quot;ProductNum_INCOMPLETE&quot;+&quot;CharacteristicName_INCOMPLETE&quot;+&quot;ItemNumber_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end 
+
+</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

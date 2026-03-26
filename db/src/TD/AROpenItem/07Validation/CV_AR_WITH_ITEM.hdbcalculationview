@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.AROpenItem.07Validation::CV_AR_WITH_ITEM" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_AR_WITH_ITEM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.AROpenItem.06Completeness::CV_AR_WITH_ITEM">
+    <resourceUri>EHUB.TD.AROpenItem.06Completeness::CV_AR_WITH_ITEM</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_KNA1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_KNA1</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T059P">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T059P</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_WITH_ITEM" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="WITHT"/>
+      <viewAttribute id="WT_WITHCD"/>
+      <viewAttribute id="WT_QSSHB"/>
+      <viewAttribute id="WT_QBUIHB"/>
+      <viewAttribute id="WT_WWRBTR"/>
+      <viewAttribute id="WT_QSSHH"/>
+      <viewAttribute id="WT_QBUIHH"/>
+      <viewAttribute id="WT_WDMBTR"/>
+      <viewAttribute id="WT_QSSH2"/>
+      <viewAttribute id="WT_QBUIH2"/>
+      <viewAttribute id="WT_WDMBT2"/>
+      <viewAttribute id="WT_QSSH3"/>
+      <viewAttribute id="WT_QBUIH3"/>
+      <viewAttribute id="WT_WDMBT3"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_DOCLN" datatype="NVARCHAR" length="6" expressionLanguage="SQL">
+        <formula>'000000'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.TD.AROpenItem.06Completeness::CV_AR_WITH_ITEM"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_T001">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_BUKRS" source="BUKRS"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNA1">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_KNA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_KUNNR" source="KUNNR"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_T059P">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_WITHT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T059P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_WITHT" source="WITHT"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUKRS_VLD" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="WITHT"/>
+      <viewAttribute id="WT_WITHCD"/>
+      <viewAttribute id="WT_QSSHB" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIHB" aggregationType="sum"/>
+      <viewAttribute id="WT_WWRBTR" aggregationType="sum"/>
+      <viewAttribute id="WT_QSSHH" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIHH" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBTR" aggregationType="sum"/>
+      <viewAttribute id="WT_QSSH2" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIH2" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBT2" aggregationType="sum"/>
+      <viewAttribute id="S4H_BUKRS"/>
+      <viewAttribute id="CC_DOCLN"/>
+      <viewAttribute id="WT_QSSH3" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIH3" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBT3" aggregationType="sum"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$S4H_MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$S4H_BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BUKRS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;=&quot;S4H_BUKRS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_WITH_ITEM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WITHT" source="WITHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WITHCD" source="WT_WITHCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSHB" source="WT_QSSHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIHB" source="WT_QBUIHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WWRBTR" source="WT_WWRBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSHH" source="WT_QSSHH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIHH" source="WT_QBUIHH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBTR" source="WT_WDMBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSH2" source="WT_QSSH2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIH2" source="WT_QBUIH2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBT2" source="WT_WDMBT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_DOCLN" source="CC_DOCLN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSH3" source="WT_QSSH3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIH3" source="WT_QBUIH3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBT3" source="WT_WDMBT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$S4H_BUKRS" source="BUKRS"/>
+    </input>
+    <input node="P_T001">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_BUKRS" source="S4H_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="S4H_MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$S4H_BUKRS" source="S4H_BUKRS"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$S4H_MANDT"/>
+    <joinAttribute name="JOIN$BUKRS$S4H_BUKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_KUNNR_VLD" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="WITHT"/>
+      <viewAttribute id="WT_WITHCD"/>
+      <viewAttribute id="WT_QSSHB" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIHB" aggregationType="sum"/>
+      <viewAttribute id="WT_WWRBTR" aggregationType="sum"/>
+      <viewAttribute id="WT_QSSHH" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIHH" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBTR" aggregationType="sum"/>
+      <viewAttribute id="WT_QSSH2" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIH2" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBT2" aggregationType="sum"/>
+      <viewAttribute id="BUKRS_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_KUNNR"/>
+      <viewAttribute id="CC_DOCLN"/>
+      <viewAttribute id="WT_QSSH3" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIH3" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBT3" aggregationType="sum"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$S4H_MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$S4H_KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="KUNNR_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KUNNR&quot;=&quot;S4H_KUNNR&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_BUKRS_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WITHT" source="WITHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WITHCD" source="WT_WITHCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSHB" source="WT_QSSHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIHB" source="WT_QBUIHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WWRBTR" source="WT_WWRBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSHH" source="WT_QSSHH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIHH" source="WT_QBUIHH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBTR" source="WT_WDMBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSH2" source="WT_QSSH2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIH2" source="WT_QBUIH2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBT2" source="WT_WDMBT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_INVALID" source="BUKRS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_DOCLN" source="CC_DOCLN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSH3" source="WT_QSSH3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIH3" source="WT_QBUIH3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBT3" source="WT_WDMBT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$S4H_KUNNR" source="KUNNR"/>
+    </input>
+    <input node="P_KNA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_KUNNR" source="S4H_KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="S4H_MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$S4H_KUNNR" source="S4H_KUNNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$S4H_MANDT"/>
+    <joinAttribute name="JOIN$KUNNR$S4H_KUNNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_WITHT_VLD" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="WITHT"/>
+      <viewAttribute id="WT_WITHCD"/>
+      <viewAttribute id="WT_QSSHB" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIHB" aggregationType="sum"/>
+      <viewAttribute id="WT_WWRBTR" aggregationType="sum"/>
+      <viewAttribute id="WT_QSSHH" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIHH" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBTR" aggregationType="sum"/>
+      <viewAttribute id="WT_QSSH2" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIH2" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBT2" aggregationType="sum"/>
+      <viewAttribute id="BUKRS_INVALID" aggregationType="sum"/>
+      <viewAttribute id="KUNNR_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_WITHT"/>
+      <viewAttribute id="CC_DOCLN"/>
+      <viewAttribute id="WT_QSSH3" aggregationType="sum"/>
+      <viewAttribute id="WT_QBUIH3" aggregationType="sum"/>
+      <viewAttribute id="WT_WDMBT3" aggregationType="sum"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$S4H_MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$WITHT$S4H_WITHT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WITHT_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WITHT&quot;=&quot;S4H_WITHT&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_KUNNR_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WITHT" source="WITHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WITHCD" source="WT_WITHCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSHB" source="WT_QSSHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIHB" source="WT_QBUIHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WWRBTR" source="WT_WWRBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSHH" source="WT_QSSHH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIHH" source="WT_QBUIHH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBTR" source="WT_WDMBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSH2" source="WT_QSSH2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIH2" source="WT_QBUIH2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBT2" source="WT_WDMBT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_INVALID" source="BUKRS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR_INVALID" source="KUNNR_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_DOCLN" source="CC_DOCLN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSH3" source="WT_QSSH3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIH3" source="WT_QBUIH3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBT3" source="WT_WDMBT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WITHT$S4H_WITHT" source="WITHT"/>
+    </input>
+    <input node="P_T059P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_WITHT" source="S4H_WITHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="S4H_MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WITHT$S4H_WITHT" source="S4H_WITHT"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$S4H_MANDT"/>
+    <joinAttribute name="JOIN$WITHT$S4H_WITHT"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_WITHT_VLD">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_WITHT_VLD" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="J_WITHT_VLD" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="XBLNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="J_WITHT_VLD" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="CC_DOCLN" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_DOCLN"/>
+      <keyMapping columnObjectName="J_WITHT_VLD" columnName="CC_DOCLN"/>
+    </attribute>
+    <attribute id="KUNNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="J_WITHT_VLD" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="WITHT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WITHT"/>
+      <keyMapping columnObjectName="J_WITHT_VLD" columnName="WITHT"/>
+    </attribute>
+    <attribute id="WT_WITHCD" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WT_WITHCD"/>
+      <keyMapping columnObjectName="J_WITHT_VLD" columnName="WT_WITHCD"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="WT_QSSHB" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QSSHB"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_QSSHB"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QBUIHB" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QBUIHB"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_QBUIHB"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_WWRBTR" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_WWRBTR"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_WWRBTR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QSSHH" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QSSHH"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_QSSHH"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QBUIHH" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QBUIHH"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_QBUIHH"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_WDMBTR" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_WDMBTR"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_WDMBTR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QSSH2" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QSSH2"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_QSSH2"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QBUIH2" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QBUIH2"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_QBUIH2"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_WDMBT2" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_WDMBT2"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_WDMBT2"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QSSH3" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QSSH3"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_QSSH3"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_QBUIH3" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_QBUIH3"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_QBUIH3"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WT_WDMBT3" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WT_WDMBT3"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WT_WDMBT3"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BUKRS_INVALID" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BUKRS_INVALID"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="BUKRS_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="KUNNR_INVALID" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KUNNR_INVALID"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="KUNNR_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WITHT_INVALID" order="22" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WITHT_INVALID"/>
+      <measureMapping columnObjectName="J_WITHT_VLD" columnName="WITHT_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INVALID" order="23" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>CASE WHEN
+&quot;BUKRS_INVALID&quot;+&quot;KUNNR_INVALID&quot;+&quot;WITHT_INVALID&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_WITH_ITEM" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_T001" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_KNA1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_T059P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_BUKRS_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_WITH_ITEM" modelObjectNameSpace="J_BUKRS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198"/>
+    </shape>
+    <shape modelObjectName="P_T001" modelObjectNameSpace="J_BUKRS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="152"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_KUNNR_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_BUKRS_VLD" modelObjectNameSpace="J_KUNNR_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198"/>
+    </shape>
+    <shape modelObjectName="P_KNA1" modelObjectNameSpace="J_KUNNR_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="152"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_WITHT_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_KUNNR_VLD" modelObjectNameSpace="J_WITHT_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198"/>
+    </shape>
+    <shape modelObjectName="P_T059P" modelObjectNameSpace="J_WITHT_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="152"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

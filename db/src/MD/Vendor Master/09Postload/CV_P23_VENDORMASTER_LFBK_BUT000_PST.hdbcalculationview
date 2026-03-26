@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Vendor Master.09Postload::CV_P23_VENDORMASTER_LFBK_BUT000_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_P23_VENDORMASTER_LFBK_BUT000_PST.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_VM_BANK_DETAILS_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_VM_BANK_DETAILS_PLD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_LFBK">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_LFBK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TIBAN">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TIBAN</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_BUT000" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CLIENT"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000"/>
+    <filter>&quot;CLIENT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SHE_LFBK">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_VM_BANK_DETAILS_PLD"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_LFBK" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="XEZER"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_LFBK"/>
+    <filter>&quot;MANDT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_TIBAN" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="IBAN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TIBAN"/>
+    <filter>&quot;MANDT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LFBK_BUT000" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="CLIENT"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute hidden="true" id="JOIN$BPEXT$LIFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_BUT000">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLIENT" source="CLIENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BPEXT$LIFNR" source="BPEXT"/>
+    </input>
+    <input node="P_SHE_LFBK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BPEXT$LIFNR" source="LIFNR"/>
+    </input>
+    <joinAttribute name="JOIN$BPEXT$LIFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_TIBAN_LFBK" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="XEZER"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$BANKS"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$BANKL"/>
+      <viewAttribute hidden="true" id="JOIN$BANKN$BANKN"/>
+      <viewAttribute hidden="true" id="JOIN$BKONT$BKONT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_LFBK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XEZER" source="XEZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BKONT$BKONT" source="BKONT"/>
+    </input>
+    <input node="P_S4_TIBAN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKN$BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BKONT$BKONT" source="BKONT"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BANKS$BANKS"/>
+    <joinAttribute name="JOIN$BANKL$BANKL"/>
+    <joinAttribute name="JOIN$BANKN$BANKN"/>
+    <joinAttribute name="JOIN$BKONT$BKONT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LFBK_TIBAN_BUT000" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="XEZER"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR$PARTNER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_TIBAN_LFBK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XEZER" source="XEZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$PARTNER" source="LIFNR"/>
+    </input>
+    <input node="J_LFBK_BUT000">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$PARTNER" source="PARTNER"/>
+    </input>
+    <joinAttribute name="JOIN$LIFNR$PARTNER"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="J_LFBK_TIBAN_BUT000">
+  <attributes>
+    <attribute id="PARTNER" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARTNER"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="PARTNER"/>
+    </attribute>
+    <attribute id="BANKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKS"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKL"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKN" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKN"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="BANKN"/>
+    </attribute>
+    <attribute id="BKONT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKONT"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="BKONT"/>
+    </attribute>
+    <attribute id="LIFNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="XEZER" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XEZER"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="XEZER"/>
+    </attribute>
+    <attribute id="BKREF" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BKREF"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="BKREF"/>
+    </attribute>
+    <attribute id="KOINH" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOINH"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="KOINH"/>
+    </attribute>
+    <attribute id="EBPP_ACCNAME" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EBPP_ACCNAME"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="EBPP_ACCNAME"/>
+    </attribute>
+    <attribute id="IBAN" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBAN"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="IBAN"/>
+    </attribute>
+    <attribute id="BPEXT" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BPEXT"/>
+      <keyMapping columnObjectName="J_LFBK_TIBAN_BUT000" columnName="BPEXT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="501" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4_BUT000" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="512" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_SHE_LFBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="722" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_LFBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_TIBAN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LFBK_BUT000" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="538" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_BUT000" modelObjectNameSpace="J_LFBK_BUT000" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="144"/>
+    </shape>
+    <shape modelObjectName="P_SHE_LFBK" modelObjectNameSpace="J_LFBK_BUT000" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="142"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_TIBAN_LFBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="275" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape><shape><upperLeftCorner/><rectangleSize/></shape>
+    <shape modelObjectName="P_S4_LFBK" modelObjectNameSpace="J_TIBAN_LFBK" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="16" y="16"/>
+      <rectangleSize width="176"/>
+    </shape>
+    <shape modelObjectName="P_S4_TIBAN" modelObjectNameSpace="J_TIBAN_LFBK" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="256" y="48"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LFBK_TIBAN_BUT000" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="501" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape modelObjectName="J_TIBAN_LFBK" modelObjectNameSpace="J_LFBK_TIBAN_BUT000" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="16" y="16"/>
+      <rectangleSize width="176"/>
+    </shape>
+    <shape modelObjectName="J_LFBK_BUT000" modelObjectNameSpace="J_LFBK_TIBAN_BUT000" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="256" y="80"/>
+      <rectangleSize width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

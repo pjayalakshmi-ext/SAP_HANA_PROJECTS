@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.PurchasingInfoRecord.07Validation::CV_PIR_KONP" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_PIR_KONP.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.PurchasingInfoRecord.06Completeness::CV_PIR_KONP">
+    <resourceUri>EHUB.MD.PurchasingInfoRecord.06Completeness::CV_PIR_KONP</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T024E">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T024E</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T685">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T685</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EKORG_INCOMPLETE"/>
+      <viewAttribute id="ESOKZ_INCOMPLETE"/>
+      <viewAttribute id="WERKS_INCOMPLETE"/>
+      <viewAttribute id="KOPOS_INCOMPLETE"/>
+      <viewAttribute id="KSCHL_INCOMPLETE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.PurchasingInfoRecord.06Completeness::CV_PIR_KONP"/>
+  
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="EKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T024E"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="Projection_4">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KSCHL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T685"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EKORG_INCOMPLETE"/>
+      <viewAttribute id="ESOKZ_INCOMPLETE"/>
+      <viewAttribute id="WERKS_INCOMPLETE"/>
+      <viewAttribute id="KOPOS_INCOMPLETE"/>
+      <viewAttribute id="KSCHL_INCOMPLETE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="EKORG_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$EKORG$EKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PIR_PURCH_ORG_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;EKORG&quot;=&quot;EKORG_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ" source="ESOKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS" source="KOPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL" source="KSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_INCOMPLETE" source="EKORG_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ_INCOMPLETE" source="ESOKZ_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_INCOMPLETE" source="WERKS_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS_INCOMPLETE" source="KOPOS_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL_INCOMPLETE" source="KSCHL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_INCOMPLETE" source="TOTAL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKORG$EKORG" source="EKORG"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_1" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EKORG$EKORG" source="EKORG"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$EKORG$EKORG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EKORG_INCOMPLETE"/>
+      <viewAttribute id="ESOKZ_INCOMPLETE"/>
+      <viewAttribute id="WERKS_INCOMPLETE"/>
+      <viewAttribute id="KOPOS_INCOMPLETE"/>
+      <viewAttribute id="KSCHL_INCOMPLETE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="EKORG_1"/>
+      <viewAttribute id="PIR_PURCH_ORG_INVALID"/>
+      <viewAttribute id="KSCHL_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$KSCHL$KSCHL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PIR_CONDITION_TYPE_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KSCHL&quot;=&quot;KSCHL_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ" source="ESOKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS" source="KOPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL" source="KSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_INCOMPLETE" source="EKORG_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ_INCOMPLETE" source="ESOKZ_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_INCOMPLETE" source="WERKS_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS_INCOMPLETE" source="KOPOS_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL_INCOMPLETE" source="KSCHL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_INCOMPLETE" source="TOTAL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_1" source="EKORG_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_PURCH_ORG_INVALID" source="PIR_PURCH_ORG_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KSCHL$KSCHL" source="KSCHL"/>
+    </input>
+    <input node="Projection_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL_1" source="KSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KSCHL$KSCHL" source="KSCHL"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$KSCHL$KSCHL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PIR_CONDITION_TYPE_INVALID"/>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="KOPOS"/>
+      <viewAttribute id="KSCHL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="EKORG_INCOMPLETE"/>
+      <viewAttribute id="ESOKZ_INCOMPLETE"/>
+      <viewAttribute id="WERKS_INCOMPLETE"/>
+      <viewAttribute id="KOPOS_INCOMPLETE"/>
+      <viewAttribute id="KSCHL_INCOMPLETE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="EKORG_1"/>
+      <viewAttribute id="PIR_PURCH_ORG_INVALID"/>
+      <viewAttribute id="KSCHL_1"/>
+      <viewAttribute id="WERKS_1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PIR_PLANT_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=&quot;WERKS_1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_CONDITION_TYPE_INVALID" source="PIR_CONDITION_TYPE_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ" source="ESOKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS" source="KOPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL" source="KSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_INCOMPLETE" source="EKORG_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ_INCOMPLETE" source="ESOKZ_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_INCOMPLETE" source="WERKS_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOPOS_INCOMPLETE" source="KOPOS_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL_INCOMPLETE" source="KSCHL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_INCOMPLETE" source="TOTAL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_1" source="EKORG_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_PURCH_ORG_INVALID" source="PIR_PURCH_ORG_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KSCHL_1" source="KSCHL_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_1" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$WERKS$WERKS"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_3">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Join_3" columnName="MANDT"/>
+    </attribute>
+    <attribute id="INFNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INFNR"/>
+      <keyMapping columnObjectName="Join_3" columnName="INFNR"/>
+    </attribute>
+    <attribute id="EKORG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKORG"/>
+      <keyMapping columnObjectName="Join_3" columnName="EKORG"/>
+    </attribute>
+    <attribute id="ESOKZ" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ESOKZ"/>
+      <keyMapping columnObjectName="Join_3" columnName="ESOKZ"/>
+    </attribute>
+    <attribute id="WERKS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Join_3" columnName="WERKS"/>
+    </attribute>
+    <attribute id="KOPOS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOPOS"/>
+      <keyMapping columnObjectName="Join_3" columnName="KOPOS"/>
+    </attribute>
+    <attribute id="KSCHL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KSCHL"/>
+      <keyMapping columnObjectName="Join_3" columnName="KSCHL"/>
+    </attribute>
+    <attribute id="DATBI" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATBI"/>
+      <keyMapping columnObjectName="Join_3" columnName="DATBI"/>
+    </attribute>
+    <attribute id="DATAB" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB"/>
+      <keyMapping columnObjectName="Join_3" columnName="DATAB"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Join_3" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="PIR_CONDITION_TYPE_INVALID" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIR_CONDITION_TYPE_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="PIR_CONDITION_TYPE_INVALID"/>
+    </attribute>
+    <attribute id="PIR_PURCH_ORG_INVALID" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIR_PURCH_ORG_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="PIR_PURCH_ORG_INVALID"/>
+    </attribute>
+    <attribute id="PIR_PLANT_INVALID" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIR_PLANT_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="PIR_PLANT_INVALID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="14" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PIR_CONDITION_TYPE_INVALID&quot;+&quot;PIR_PURCH_ORG_INVALID&quot;+&quot;PIR_PURCH_ORG_INVALID&quot;+&quot;PIR_PLANT_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="203"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.ProfitCenter.06Completeness::CV_PC_COMPANYCODE_CEPC" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.ProfitCenter.04Harmonization::CV_PC_COMPANYCODE_CEPC">
+    <resourceUri>EHUB.MD.ProfitCenter.04Harmonization::CV_PC_COMPANYCODE_CEPC</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PRCTR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PRCTR&quot;=''  or &quot;PRCTR&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="KOKRS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KOKRS&quot;=''  or &quot;KOKRS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BUKRS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;=''  or &quot;BUKRS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="DATBI_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+    
+        <formula>case when &quot;DATBI&quot;=''  or &quot;DATBI&quot; is null
+then 1
+else 0
+end</formula>
+    
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="DATAB_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;DATAB&quot;=''  or &quot;DATAB&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.ProfitCenter.04Harmonization::CV_PC_COMPANYCODE_CEPC"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="PRCTR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="DATBI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATBI"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATBI"/>
+    </attribute>
+    <attribute id="DATAB" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATAB"/>
+    </attribute>
+    <attribute id="BUKRS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUKRS"/>
+    </attribute>
+  
+    <attribute id="KOKRS_INCOMPLETE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS_INCOMPLETE"/>
+  
+      <keyMapping columnObjectName="Projection_1" columnName="KOKRS_INCOMPLETE"/>
+  
+    </attribute>
+    <attribute id="PRCTR_INCOMPLETE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_STRAS_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRCTR_INCOMPLETE"/>
+    </attribute>
+    <attribute id="BUKRS_INCOMPLETE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUKRS_INCOMPLETE"/>
+    </attribute>
+  
+    <attribute id="DATBI_INCOMPLETE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATBI_INCOMPLETE"/>
+  
+      <keyMapping columnObjectName="Projection_1" columnName="DATBI_INCOMPLETE"/>
+  
+    </attribute>
+    <attribute id="DATAB_INCOMPLETE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATAB_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PRCTR_INCOMPLETE&quot;+&quot;KOKRS_INCOMPLETE&quot;+&quot;BUKRS_INCOMPLETE&quot;+&quot;DATBI_INCOMPLETE&quot;+&quot;DATAB_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

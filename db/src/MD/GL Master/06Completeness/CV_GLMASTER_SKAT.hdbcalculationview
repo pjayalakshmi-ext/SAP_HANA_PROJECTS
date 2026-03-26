@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.GL Master.06Completeness::CV_GLMASTER_SKAT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_GLMASTER_SKAT.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.GL Master.04Harmonization::CV_GLMASTER_SKAT">
+    <resourceUri>EHUB.MD.GL Master.04Harmonization::CV_GLMASTER_SKAT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="TXT20"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="SPRAS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SPRAS&quot;=''  or &quot;SPRAS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="KTOPL_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KTOPL&quot;=''  or &quot;KTOPL&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="SAKNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SAKNR&quot;=''  or &quot;SAKNR&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.GL Master.04Harmonization::CV_GLMASTER_SKAT"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1" filterExpressionLanguage="SQL">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="SPRAS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="KTOPL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTOPL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KTOPL"/>
+    </attribute>
+    <attribute id="SAKNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAKNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SAKNR"/>
+    </attribute>
+    <attribute id="TXT20" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXT20"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TXT20"/>
+    </attribute>
+    <attribute id="TXT50" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXT50"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TXT50"/>
+    </attribute>
+    <attribute id="MCOD1" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MCOD1"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MCOD1"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENT_DATE"/>
+    </attribute>
+  
+    <attribute id="SPRAS_INCOMPLETE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS_INCOMPLETE"/>
+  
+      <keyMapping columnObjectName="Projection_1" columnName="SPRAS_INCOMPLETE"/>
+  
+    </attribute>
+    <attribute id="KTOPL_INCOMPLETE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTOPL_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KTOPL_INCOMPLETE"/>
+    </attribute>
+    <attribute id="SAKNR_INCOMPLETE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAKNR_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SAKNR_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="9" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SPRAS_INCOMPLETE&quot;+&quot;KTOPL_INCOMPLETE&quot;+&quot;SAKNR_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="209"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

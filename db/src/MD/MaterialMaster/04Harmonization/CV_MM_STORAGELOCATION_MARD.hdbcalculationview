@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.04Harmonization::CV_MM_STORAGELOCATION_MARD" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_MM_MARD_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_MM_MARD_REL_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMaster.03Transformation::CV_MM_STORAGELOCATION_MARD">
+    <resourceUri>EHUB.MD.MaterialMaster.03Transformation::CV_MM_STORAGELOCATION_MARD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_MM_MARD_REL_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_STORAGELOCATION">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.03Transformation::CV_MM_STORAGELOCATION_MARD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_STORAGELOCATION">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_STORAGELOCATION" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+      <viewAttribute id="PRODUCT_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$WERKS"/>
+      <viewAttribute hidden="true" id="JOIN$LGORT$LGORT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_STORAGELOCATION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGORT$LGORT" source="LGORT"/>
+    </input>
+    <input node="P_Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_INPUT" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGORT$LGORT" source="LGORT"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+    <joinAttribute name="JOIN$WERKS$WERKS"/>
+    <joinAttribute name="JOIN$LGORT$LGORT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+      <viewAttribute id="PRODUCT_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+    <filter>&quot;PRODUCT_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Without_Remediated_data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
+    </input>
+    <input node="P_Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MATNR"/>
+    </attribute>
+    <attribute id="WERKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="WERKS"/>
+    </attribute>
+    <attribute id="LGORT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGORT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LGORT"/>
+    </attribute>
+    <attribute id="LGPBE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGPBE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LGPBE"/>
+    </attribute>
+    <attribute id="LWMKB" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LWMKB"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LWMKB"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="332" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_STORAGELOCATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="U_STORAGELOCATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_STORAGELOCATION" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="364"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="332" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

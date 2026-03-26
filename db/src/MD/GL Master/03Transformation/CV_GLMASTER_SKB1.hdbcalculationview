@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.GL Master.03Transformation::CV_GLMASTER_SKB1" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_TRANSFORMATION"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.GL Master.01Extraction::CV_SHE_GLMASTER_SKB1">
+    <resourceUri>EHUB.MD.GL Master.01Extraction::CV_SHE_GLMASTER_SKB1</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER">
+    <resourceUri>EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_COMPANY_CODE">
+    <resourceUri>EHUB.Synonyms::SY_LKP_COMPANY_CODE</resourceUri>
+  </DataSource>
+  <DataSource id="Projection_4$$$$EHUB.Synonyms::SY_LKP_COMPANY_CODE$$">
+    <resourceUri>EHUB.Synonyms::SY_LKP_COMPANY_CODE</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="DATLZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="FDLEV"/>
+      <viewAttribute id="FIPLS"/>
+      <viewAttribute id="FSTAG"/>
+      <viewAttribute id="HBKID"/>
+      <viewAttribute id="HKTID"/>
+      <viewAttribute id="KDFSL"/>
+      <viewAttribute id="MITKZ"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="STEXT"/>
+      <viewAttribute id="VZSKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="WMETH"/>
+      <viewAttribute id="XGKON"/>
+      <viewAttribute id="XINTB"/>
+      <viewAttribute id="XKRES"/>
+      <viewAttribute id="XLOEB"/>
+      <viewAttribute id="XNKON"/>
+      <viewAttribute id="XOPVW"/>
+      <viewAttribute id="XSPEB"/>
+      <viewAttribute id="ZINDT"/>
+      <viewAttribute id="ZINRT"/>
+      <viewAttribute id="ZUAWA"/>
+      <viewAttribute id="ALTKT"/>
+      <viewAttribute id="XMITK"/>
+      <viewAttribute id="RECID"/>
+      <viewAttribute id="FIPOS"/>
+      <viewAttribute id="XMWNO"/>
+      <viewAttribute id="XSALH"/>
+      <viewAttribute id="BEWGP"/>
+      <viewAttribute id="INFKY"/>
+      <viewAttribute id="TOGRU"/>
+      <viewAttribute id="XLGCLR"/>
+      <viewAttribute id="MCAKEY"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.GL Master.01Extraction::CV_SHE_GLMASTER_SKB1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_GL_ACCOUNT_NUMBER"/>
+      <viewAttribute id="GL_ACCOUNT_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_COMPANY_CODE"/>
+      <viewAttribute id="COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_COMPANY_CODE"/>
+      <viewAttribute id="COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_4$$$$EHUB.Synonyms::SY_LKP_COMPANY_CODE$$"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="DATLZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="FDLEV"/>
+      <viewAttribute id="FIPLS"/>
+      <viewAttribute id="FSTAG"/>
+      <viewAttribute id="HBKID"/>
+      <viewAttribute id="HKTID"/>
+      <viewAttribute id="KDFSL"/>
+      <viewAttribute id="MITKZ"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="STEXT"/>
+      <viewAttribute id="VZSKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="WMETH"/>
+      <viewAttribute id="XGKON"/>
+      <viewAttribute id="XINTB"/>
+      <viewAttribute id="XKRES"/>
+      <viewAttribute id="XLOEB"/>
+      <viewAttribute id="XNKON"/>
+      <viewAttribute id="XOPVW"/>
+      <viewAttribute id="XSPEB"/>
+      <viewAttribute id="ZINDT"/>
+      <viewAttribute id="ZINRT"/>
+      <viewAttribute id="ZUAWA"/>
+      <viewAttribute id="ALTKT"/>
+      <viewAttribute id="XMITK"/>
+      <viewAttribute id="RECID"/>
+      <viewAttribute id="FIPOS"/>
+      <viewAttribute id="XMWNO"/>
+      <viewAttribute id="XSALH"/>
+      <viewAttribute id="BEWGP"/>
+      <viewAttribute id="INFKY"/>
+      <viewAttribute id="TOGRU"/>
+      <viewAttribute id="XLGCLR"/>
+      <viewAttribute id="MCAKEY"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="GL_ACCOUNT_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$SAKNR$LEGACY_GL_ACCOUNT_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_S4_GL_ACCOUNT_NUMBER" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>case when &quot;SAKNR&quot; != &quot;GL_ACCOUNT_NUMBER&quot; and &quot;GL_ACCOUNT_NUMBER&quot; is not null
+then &quot;GL_ACCOUNT_NUMBER&quot;
+else &quot;SAKNR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSAB" source="BUSAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATLZ" source="DATLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDLEV" source="FDLEV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIPLS" source="FIPLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FSTAG" source="FSTAG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HBKID" source="HBKID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKTID" source="HKTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDFSL" source="KDFSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MITKZ" source="MITKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEXT" source="STEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VZSKZ" source="VZSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WMETH" source="WMETH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGKON" source="XGKON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XINTB" source="XINTB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XKRES" source="XKRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XLOEB" source="XLOEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XNKON" source="XNKON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XOPVW" source="XOPVW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSPEB" source="XSPEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZINDT" source="ZINDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZINRT" source="ZINRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZUAWA" source="ZUAWA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTKT" source="ALTKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XMITK" source="XMITK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RECID" source="RECID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIPOS" source="FIPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XMWNO" source="XMWNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSALH" source="XSALH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEWGP" source="BEWGP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFKY" source="INFKY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOGRU" source="TOGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XLGCLR" source="XLGCLR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCAKEY" source="MCAKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SAKNR$LEGACY_GL_ACCOUNT_NUMBER" source="SAKNR"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="GL_ACCOUNT_NUMBER" source="GL_ACCOUNT_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SAKNR$LEGACY_GL_ACCOUNT_NUMBER" source="LEGACY_GL_ACCOUNT_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$SAKNR$LEGACY_GL_ACCOUNT_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="DATLZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="FDLEV"/>
+      <viewAttribute id="FIPLS"/>
+      <viewAttribute id="FSTAG"/>
+      <viewAttribute id="HBKID"/>
+      <viewAttribute id="HKTID"/>
+      <viewAttribute id="KDFSL"/>
+      <viewAttribute id="MITKZ"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="STEXT"/>
+      <viewAttribute id="VZSKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="WMETH"/>
+      <viewAttribute id="XGKON"/>
+      <viewAttribute id="XINTB"/>
+      <viewAttribute id="XKRES"/>
+      <viewAttribute id="XLOEB"/>
+      <viewAttribute id="XNKON"/>
+      <viewAttribute id="XOPVW"/>
+      <viewAttribute id="XSPEB"/>
+      <viewAttribute id="ZINDT"/>
+      <viewAttribute id="ZINRT"/>
+      <viewAttribute id="ZUAWA"/>
+      <viewAttribute id="ALTKT"/>
+      <viewAttribute id="XMITK"/>
+      <viewAttribute id="RECID"/>
+      <viewAttribute id="FIPOS"/>
+      <viewAttribute id="XMWNO"/>
+      <viewAttribute id="XSALH"/>
+      <viewAttribute id="BEWGP"/>
+      <viewAttribute id="INFKY"/>
+      <viewAttribute id="TOGRU"/>
+      <viewAttribute id="XLGCLR"/>
+      <viewAttribute id="MCAKEY"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="GL_ACCOUNT_NUMBER"/>
+      <viewAttribute id="CC_S4_GL_ACCOUNT_NUMBER"/>
+      <viewAttribute id="COMPANY_CODE"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSAB" source="BUSAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATLZ" source="DATLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDLEV" source="FDLEV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIPLS" source="FIPLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FSTAG" source="FSTAG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HBKID" source="HBKID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKTID" source="HKTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDFSL" source="KDFSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MITKZ" source="MITKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEXT" source="STEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VZSKZ" source="VZSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WMETH" source="WMETH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGKON" source="XGKON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XINTB" source="XINTB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XKRES" source="XKRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XLOEB" source="XLOEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XNKON" source="XNKON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XOPVW" source="XOPVW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSPEB" source="XSPEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZINDT" source="ZINDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZINRT" source="ZINRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZUAWA" source="ZUAWA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTKT" source="ALTKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XMITK" source="XMITK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RECID" source="RECID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIPOS" source="FIPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XMWNO" source="XMWNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSALH" source="XSALH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEWGP" source="BEWGP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFKY" source="INFKY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOGRU" source="TOGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XLGCLR" source="XLGCLR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCAKEY" source="MCAKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GL_ACCOUNT_NUMBER" source="GL_ACCOUNT_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_S4_GL_ACCOUNT_NUMBER" source="CC_S4_GL_ACCOUNT_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="BUKRS"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_CODE" source="COMPANY_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="LEGACY_COMPANY_CODE"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="DATLZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="FDLEV"/>
+      <viewAttribute id="FIPLS"/>
+      <viewAttribute id="FSTAG"/>
+      <viewAttribute id="HBKID"/>
+      <viewAttribute id="HKTID"/>
+      <viewAttribute id="KDFSL"/>
+      <viewAttribute id="MITKZ"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="STEXT"/>
+      <viewAttribute id="VZSKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="WMETH"/>
+      <viewAttribute id="XGKON"/>
+      <viewAttribute id="XINTB"/>
+      <viewAttribute id="XKRES"/>
+      <viewAttribute id="XLOEB"/>
+      <viewAttribute id="XNKON"/>
+      <viewAttribute id="XOPVW"/>
+      <viewAttribute id="XSPEB"/>
+      <viewAttribute id="ZINDT"/>
+      <viewAttribute id="ZINRT"/>
+      <viewAttribute id="ZUAWA"/>
+      <viewAttribute id="ALTKT"/>
+      <viewAttribute id="XMITK"/>
+      <viewAttribute id="RECID"/>
+      <viewAttribute id="FIPOS"/>
+      <viewAttribute id="XMWNO"/>
+      <viewAttribute id="XSALH"/>
+      <viewAttribute id="BEWGP"/>
+      <viewAttribute id="INFKY"/>
+      <viewAttribute id="TOGRU"/>
+      <viewAttribute id="XLGCLR"/>
+      <viewAttribute id="MCAKEY"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="GL_ACCOUNT_NUMBER"/>
+      <viewAttribute id="CC_S4_GL_ACCOUNT_NUMBER"/>
+      <viewAttribute id="COMPANY_CODE"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_S4_FINANCIAL_BUDGET_ITEM" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+        <formula>''</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_S4_INTEREST_CALCULATION_FREQUENCY_MONTH" datatype="NVARCHAR" length="2" expressionLanguage="SQL">
+        <formula>''</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_S4_CASH_RECIEPT_ACCOUNT" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>''</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_S4_LINE_ITEM_DISPLAY" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>''</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_S4_OPEN_ITEM_MANAGEMENT" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>''</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSAB" source="BUSAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATLZ" source="DATLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDLEV" source="FDLEV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIPLS" source="FIPLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FSTAG" source="FSTAG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HBKID" source="HBKID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKTID" source="HKTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDFSL" source="KDFSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MITKZ" source="MITKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEXT" source="STEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VZSKZ" source="VZSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WMETH" source="WMETH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGKON" source="XGKON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XINTB" source="XINTB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XKRES" source="XKRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XLOEB" source="XLOEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XNKON" source="XNKON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XOPVW" source="XOPVW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSPEB" source="XSPEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZINDT" source="ZINDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZINRT" source="ZINRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZUAWA" source="ZUAWA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTKT" source="ALTKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XMITK" source="XMITK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RECID" source="RECID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIPOS" source="FIPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XMWNO" source="XMWNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSALH" source="XSALH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEWGP" source="BEWGP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFKY" source="INFKY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOGRU" source="TOGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XLGCLR" source="XLGCLR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCAKEY" source="MCAKEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GL_ACCOUNT_NUMBER" source="GL_ACCOUNT_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_S4_GL_ACCOUNT_NUMBER" source="CC_S4_GL_ACCOUNT_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_CODE" source="COMPANY_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="BUKRS"/>
+    </input>
+    <input node="Projection_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="COMPANY_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="LEGACY_COMPANY_CODE"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_3" filterExpressionLanguage="SQL">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Join_3" columnName="MANDT"/>
+    </attribute>
+    <attribute id="SAKNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="G/L Account Number"/>
+      <keyMapping columnObjectName="Join_3" columnName="GL_ACCOUNT_NUMBER"/>
+    </attribute>
+    <attribute id="BEGRU" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Authorization Group"/>
+      <keyMapping columnObjectName="Join_3" columnName="BEGRU"/>
+    </attribute>
+    <attribute id="BUSAB" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Accounting clerk"/>
+      <keyMapping columnObjectName="Join_3" columnName="BUSAB"/>
+    </attribute>
+    <attribute id="DATLZ" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date of the last interest calculation run"/>
+      <keyMapping columnObjectName="Join_3" columnName="DATLZ"/>
+    </attribute>
+    <attribute id="ERDAT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date on which the Record Was Created"/>
+      <keyMapping columnObjectName="Join_3" columnName="ERDAT"/>
+    </attribute>
+    <attribute id="ERNAM" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name of Person who Created the Object"/>
+      <keyMapping columnObjectName="Join_3" columnName="ERNAM"/>
+    </attribute>
+    <attribute id="FDGRV" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planning group"/>
+      <keyMapping columnObjectName="Join_3" columnName="FDGRV"/>
+    </attribute>
+    <attribute id="FDLEV" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planning Level"/>
+      <keyMapping columnObjectName="Join_3" columnName="FDLEV"/>
+    </attribute>
+    <attribute id="FIPLS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Financial Budget Item"/>
+      <keyMapping columnObjectName="Join_3" columnName="CC_S4_FINANCIAL_BUDGET_ITEM"/>
+    </attribute>
+    <attribute id="FSTAG" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field status group"/>
+      <keyMapping columnObjectName="Join_3" columnName="FSTAG"/>
+    </attribute>
+    <attribute id="HBKID" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Short Key for a House Bank"/>
+      <keyMapping columnObjectName="Join_3" columnName="HBKID"/>
+    </attribute>
+    <attribute id="HKTID" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ID for Account Details"/>
+      <keyMapping columnObjectName="Join_3" columnName="HKTID"/>
+    </attribute>
+    <attribute id="KDFSL" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for Exchange Rate Differences in Foreign Currency Accts"/>
+      <keyMapping columnObjectName="Join_3" columnName="KDFSL"/>
+    </attribute>
+    <attribute id="MITKZ" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account is reconciliation account"/>
+      <keyMapping columnObjectName="Join_3" columnName="MITKZ"/>
+    </attribute>
+    <attribute id="MWSKZ" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Category in Account Master Record"/>
+      <keyMapping columnObjectName="Join_3" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="STEXT" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="G/L account additional text"/>
+      <keyMapping columnObjectName="Join_3" columnName="STEXT"/>
+    </attribute>
+    <attribute id="VZSKZ" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Interest calculation indicator"/>
+      <keyMapping columnObjectName="Join_3" columnName="VZSKZ"/>
+    </attribute>
+    <attribute id="WAERS" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account currency"/>
+      <keyMapping columnObjectName="Join_3" columnName="WAERS"/>
+    </attribute>
+    <attribute id="WMETH" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: account managed in external system"/>
+      <keyMapping columnObjectName="Join_3" columnName="WMETH"/>
+    </attribute>
+    <attribute id="XGKON" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cash receipt account / cash disbursement account"/>
+      <keyMapping columnObjectName="Join_3" columnName="CC_S4_CASH_RECIEPT_ACCOUNT"/>
+    </attribute>
+    <attribute id="XINTB" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Is account only posted to automatically?"/>
+      <keyMapping columnObjectName="Join_3" columnName="XINTB"/>
+    </attribute>
+    <attribute id="XKRES" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Can Line Items Be Displayed by Account?"/>
+      <keyMapping columnObjectName="Join_3" columnName="CC_S4_LINE_ITEM_DISPLAY"/>
+    </attribute>
+    <attribute id="XLOEB" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Account marked for deletion?"/>
+      <keyMapping columnObjectName="Join_3" columnName="XLOEB"/>
+    </attribute>
+    <attribute id="XNKON" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Supplement for automatic postings ?"/>
+      <keyMapping columnObjectName="Join_3" columnName="XNKON"/>
+    </attribute>
+    <attribute id="XOPVW" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Open Item Management?"/>
+      <keyMapping columnObjectName="Join_3" columnName="CC_S4_OPEN_ITEM_MANAGEMENT"/>
+    </attribute>
+    <attribute id="XSPEB" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Is Account Blocked for Posting?"/>
+      <keyMapping columnObjectName="Join_3" columnName="XSPEB"/>
+    </attribute>
+    <attribute id="ZINDT" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key date of the last interest calculation"/>
+      <keyMapping columnObjectName="Join_3" columnName="ZINDT"/>
+    </attribute>
+    <attribute id="ZINRT" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Interest calculation frequency in months"/>
+      <keyMapping columnObjectName="Join_3" columnName="CC_S4_INTEREST_CALCULATION_FREQUENCY_MONTH"/>
+    </attribute>
+    <attribute id="ZUAWA" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for sorting according to assignment numbers"/>
+      <keyMapping columnObjectName="Join_3" columnName="ZUAWA"/>
+    </attribute>
+    <attribute id="ALTKT" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Alternative Account Number in Company Code"/>
+      <keyMapping columnObjectName="Join_3" columnName="ALTKT"/>
+    </attribute>
+    <attribute id="XMITK" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Reconcil.acct ready for input at time of posting?"/>
+      <keyMapping columnObjectName="Join_3" columnName="XMITK"/>
+    </attribute>
+    <attribute id="RECID" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Recovery Indicator"/>
+      <keyMapping columnObjectName="Join_3" columnName="RECID"/>
+    </attribute>
+    <attribute id="FIPOS" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Commitment Item"/>
+      <keyMapping columnObjectName="Join_3" columnName="FIPOS"/>
+    </attribute>
+    <attribute id="XMWNO" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Tax code is not a required field"/>
+      <keyMapping columnObjectName="Join_3" columnName="XMWNO"/>
+    </attribute>
+    <attribute id="XSALH" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Only Manage Balances in Local Currency"/>
+      <keyMapping columnObjectName="Join_3" columnName="XSALH"/>
+    </attribute>
+    <attribute id="BEWGP" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valuation Group"/>
+      <keyMapping columnObjectName="Join_3" columnName="BEWGP"/>
+    </attribute>
+    <attribute id="INFKY" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Inflation Key"/>
+      <keyMapping columnObjectName="Join_3" columnName="INFKY"/>
+    </attribute>
+    <attribute id="TOGRU" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tolerance Group for G/L Accounts"/>
+      <keyMapping columnObjectName="Join_3" columnName="TOGRU"/>
+    </attribute>
+    <attribute id="XLGCLR" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Clearing Specific to Ledger Groups"/>
+      <keyMapping columnObjectName="Join_3" columnName="XLGCLR"/>
+    </attribute>
+    <attribute id="MCAKEY" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MCA Key"/>
+      <keyMapping columnObjectName="Join_3" columnName="MCAKEY"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Join_3" columnName="CURRENT_DATE"/>
+    </attribute>
+  
+    <attribute id="BUKRS" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+  
+      <keyMapping columnObjectName="Join_3" columnName="BUKRS"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+
+  <filter>&quot;BUKRS&quot;='1710'</filter>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="716"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="716"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384" y="556"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489" y="396"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="556"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="265"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="396"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="256"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="229"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422" y="237"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="256"/>
+    </shape>
+    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="1040" y="107"/>
+      <rectangleSize width="229.44580078125"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

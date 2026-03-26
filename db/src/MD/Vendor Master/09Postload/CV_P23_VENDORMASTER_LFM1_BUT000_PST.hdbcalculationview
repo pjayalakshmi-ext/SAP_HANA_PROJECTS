@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Vendor Master.09Postload::CV_P23_VENDORMASTER_LFM1_BUT000_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_P23_VENDORMASTER_LFM1_BUT000_PST.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_VM_SUPPL_PURCH_ORG_DATA_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_VM_SUPPL_PURCH_ORG_DATA_PLD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_LFM1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_LFM1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_BUT000" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CLIENT"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000"/>
+    <filter>&quot;CLIENT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SHE_LFM1">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_VM_SUPPL_PURCH_ORG_DATA_PLD"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_LFM1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MINBW"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="INCOV"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="INCO3_L"/>
+      <viewAttribute id="KALSK"/>
+      <viewAttribute id="PLIFZ"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VSBED"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="KZAUT"/>
+      <viewAttribute id="MEPRF"/>
+      <viewAttribute id="BSTAE"/>
+      <viewAttribute id="KZRET"/>
+      <viewAttribute id="AUBEL"/>
+      <viewAttribute id="VALID_PRO"/>
+      <viewAttribute id="HSCABS"/>
+      <viewAttribute id="HSCPE"/>
+      <viewAttribute id="HSCMIN"/>
+      <viewAttribute id="HSCMAX"/>
+      <viewAttribute id="XERSY"/>
+      <viewAttribute id="XERSR"/>
+      <viewAttribute id="KZABS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_LFM1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUT000_LFM1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="CLIENT"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute hidden="true" id="JOIN$BPEXT$LIFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_BUT000">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLIENT" source="CLIENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BPEXT$LIFNR" source="BPEXT"/>
+    </input>
+    <input node="P_SHE_LFM1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BPEXT$LIFNR" source="LIFNR"/>
+    </input>
+    <joinAttribute name="JOIN$BPEXT$LIFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUT000_S4_LFM1" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MINBW"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="INCOV"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="INCO3_L"/>
+      <viewAttribute id="KALSK"/>
+      <viewAttribute id="PLIFZ"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VSBED"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="KZAUT"/>
+      <viewAttribute id="MEPRF"/>
+      <viewAttribute id="BSTAE"/>
+      <viewAttribute id="KZRET"/>
+      <viewAttribute id="AUBEL"/>
+      <viewAttribute id="VALID_PRO"/>
+      <viewAttribute id="HSCABS"/>
+      <viewAttribute id="HSCPE"/>
+      <viewAttribute id="HSCMIN"/>
+      <viewAttribute id="HSCMAX"/>
+      <viewAttribute id="XERSY"/>
+      <viewAttribute id="XERSR"/>
+      <viewAttribute id="KZABS"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR$PARTNER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_LFM1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MINBW" source="MINBW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCOV" source="INCOV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO3_L" source="INCO3_L"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSK" source="KALSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIFZ" source="PLIFZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSBED" source="VSBED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZAUT" source="KZAUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEPRF" source="MEPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTAE" source="BSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZRET" source="KZRET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUBEL" source="AUBEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALID_PRO" source="VALID_PRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCABS" source="HSCABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCPE" source="HSCPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMIN" source="HSCMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMAX" source="HSCMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSY" source="XERSY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSR" source="XERSR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZABS" source="KZABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$PARTNER" source="LIFNR"/>
+    </input>
+    <input node="J_BUT000_LFM1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$PARTNER" source="PARTNER"/>
+    </input>
+    <joinAttribute name="JOIN$LIFNR$PARTNER"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="J_BUT000_S4_LFM1">
+  <attributes>
+    <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Supplier&apos;s Account Number"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="EKORG" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing Organization"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="EKORG"/>
+    </attribute>
+    <attribute id="EKGRP" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing Group"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="EKGRP"/>
+    </attribute>
+    <attribute id="WAERS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchase order currency"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="WAERS"/>
+    </attribute>
+    <attribute id="VERKF" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Responsible Salesperson at Supplier&apos;s Office"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="VERKF"/>
+    </attribute>
+    <attribute id="TELF1" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Supplier&apos;s Telephone Number"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="TELF1"/>
+    </attribute>
+    <attribute id="MINBW" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum order value"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="MINBW"/>
+    </attribute>
+    <attribute id="ZTERM" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment Key"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="INCOV" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms Version"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="INCOV"/>
+    </attribute>
+    <attribute id="INCO1" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms (Part 1)"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="INCO1"/>
+    </attribute>
+    <attribute id="INCO2" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms (Part 2)"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="INCO2"/>
+    </attribute>
+    <attribute id="INCO3_L" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms Location 2"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="INCO3_L"/>
+    </attribute>
+    <attribute id="KALSK" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Group for Calculation Schema (Supplier)"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="KALSK"/>
+    </attribute>
+    <attribute id="PLIFZ" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planned Delivery Time in Days"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="PLIFZ"/>
+    </attribute>
+    <attribute id="LFABC" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABC indicator"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="LFABC"/>
+    </attribute>
+    <attribute id="VSBED" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Shipping Conditions"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="VSBED"/>
+    </attribute>
+    <attribute id="WEBRE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: GR-Based Invoice Verification"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="WEBRE"/>
+    </attribute>
+    <attribute id="KZAUT" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Automatic Generation of Purchase Order Allowed"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="KZAUT"/>
+    </attribute>
+    <attribute id="MEPRF" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Price Determination (Pricing) Date Control"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="MEPRF"/>
+    </attribute>
+    <attribute id="BSTAE" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Confirmation Control Key"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="BSTAE"/>
+    </attribute>
+    <attribute id="KZRET" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicates whether supplier is returns supplier"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="KZRET"/>
+    </attribute>
+    <attribute id="AUBEL" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Automatic debit creation on goods issue"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="AUBEL"/>
+    </attribute>
+    <attribute id="VALID_PRO" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Settlement profile for automatic evaluated receipt settlemnt"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="VALID_PRO"/>
+    </attribute>
+    <attribute id="HSCABS" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Absolute handling surcharge"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="HSCABS"/>
+    </attribute>
+    <attribute id="HSCPE" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Percentage handling surcharge"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="HSCPE"/>
+    </attribute>
+    <attribute id="HSCMIN" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum handling surcharge"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="HSCMIN"/>
+    </attribute>
+    <attribute id="HSCMAX" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Maximum handling surcharge"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="HSCMAX"/>
+    </attribute>
+    <attribute id="XERSY" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Evaluated Receipt Settlement (ERS)"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="XERSY"/>
+    </attribute>
+    <attribute id="XERSR" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Automatic evaluated receipt settlement for return items"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="XERSR"/>
+    </attribute>
+    <attribute id="KZABS" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Order Acknowledgment Requirement"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="KZABS"/>
+    </attribute>
+    <attribute id="BPEXT" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Partner Number in External System"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFM1" columnName="BPEXT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4_BUT000" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_SHE_LFM1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_LFM1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BUT000_LFM1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_BUT000" modelObjectNameSpace="J_BUT000_LFM1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="144"/>
+    </shape>
+    <shape modelObjectName="P_SHE_LFM1" modelObjectNameSpace="J_BUT000_LFM1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="141"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BUT000_S4_LFM1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_LFM1" modelObjectNameSpace="J_BUT000_S4_LFM1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="146"/>
+    </shape>
+    <shape modelObjectName="J_BUT000_LFM1" modelObjectNameSpace="J_BUT000_S4_LFM1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

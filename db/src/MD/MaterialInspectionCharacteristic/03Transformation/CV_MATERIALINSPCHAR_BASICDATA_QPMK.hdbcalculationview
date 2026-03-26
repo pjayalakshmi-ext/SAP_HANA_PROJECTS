@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialInspectionCharacteristic.03Transformation::CV_MATERIALINSPCHAR_BASICDATA_QPMK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialInspectionCharacteristic.01Extraction::CV_SHE_MATERIALINSPCHAR_QPMK">
+    <resourceUri>EHUB.MD.MaterialInspectionCharacteristic.01Extraction::CV_SHE_MATERIALINSPCHAR_QPMK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_PLANT">
+    <resourceUri>EHUB.Synonyms::SY_LKP_PLANT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::LKP_MASTER_INSPECT_CHARS">
+    <resourceUri>EHUB.Synonyms::LKP_MASTER_INSPECT_CHARS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_QPMK">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+      <viewAttribute id="VERSION"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialInspectionCharacteristic.01Extraction::CV_SHE_MATERIALINSPCHAR_QPMK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_PLANT"/>
+      <viewAttribute id="PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_MASTER_INSPECT_CHARS"/>
+      <viewAttribute id="MASTER_INSPECT_CHARS"/>
+      <viewAttribute id="VERSION"/>
+      <viewAttribute id="PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::LKP_MASTER_INSPECT_CHARS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+      <viewAttribute id="VERSION"/>
+      <viewAttribute id="MASTER_INSPECT_CHARS"/>
+      <viewAttribute id="LEGACY_MASTER_INSPECT_CHARS"/>
+      <viewAttribute hidden="true" id="JOIN$MasterInspectionCharacteristics$LEGACY_MASTER_INSPECT_CHARS"/>
+      <viewAttribute hidden="true" id="JOIN$PlantInspectionCharacteristic$PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MasterInspectionCharacteristics" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>case when &quot;MasterInspectionCharacteristics&quot;=&quot;LEGACY_MASTER_INSPECT_CHARS&quot;
+then &quot;MASTER_INSPECT_CHARS&quot;
+else &quot;MasterInspectionCharacteristics&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_QPMK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassCharacteristicName" source="ClassCharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status" source="Status"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SearchField" source="SearchField"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InternalCharacteristicDescription" source="InternalCharacteristicDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DecimalPlaces" source="DecimalPlaces"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WeightingOfCharacteristic" source="WeightingOfCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField1" source="InfoField1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField2" source="InfoField2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField3" source="InfoField3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSION" source="VERSION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MasterInspectionCharacteristics$LEGACY_MASTER_INSPECT_CHARS" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PlantInspectionCharacteristic$PLANT" source="PlantInspectionCharacteristic"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MASTER_INSPECT_CHARS" source="MASTER_INSPECT_CHARS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_MASTER_INSPECT_CHARS" source="LEGACY_MASTER_INSPECT_CHARS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MasterInspectionCharacteristics$LEGACY_MASTER_INSPECT_CHARS" source="LEGACY_MASTER_INSPECT_CHARS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PlantInspectionCharacteristic$PLANT" source="PLANT"/>
+    </input>
+    <joinAttribute name="JOIN$MasterInspectionCharacteristics$LEGACY_MASTER_INSPECT_CHARS"/>
+    <joinAttribute name="JOIN$PlantInspectionCharacteristic$PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+      <viewAttribute id="VERSION"/>
+      <viewAttribute id="LEGACY_PLANT"/>
+      <viewAttribute id="PLANT"/>
+      <viewAttribute hidden="true" id="JOIN$PlantInspectionCharacteristic$LEGACY_PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_PlantInspectionCharacteristic" datatype="NVARCHAR" length="24" expressionLanguage="SQL">
+        <formula>case when &quot;PlantInspectionCharacteristic&quot;=&quot;LEGACY_PLANT&quot;
+then  &quot;PLANT&quot;
+else &quot;PlantInspectionCharacteristic&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="CC_MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassCharacteristicName" source="ClassCharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status" source="Status"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SearchField" source="SearchField"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InternalCharacteristicDescription" source="InternalCharacteristicDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DecimalPlaces" source="DecimalPlaces"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WeightingOfCharacteristic" source="WeightingOfCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField1" source="InfoField1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField2" source="InfoField2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField3" source="InfoField3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSION" source="VERSION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PlantInspectionCharacteristic$LEGACY_PLANT" source="PlantInspectionCharacteristic"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_PLANT" source="LEGACY_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT" source="PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PlantInspectionCharacteristic$LEGACY_PLANT" source="LEGACY_PLANT"/>
+    </input>
+    <joinAttribute name="JOIN$PlantInspectionCharacteristic$LEGACY_PLANT"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="PlantInspectionCharacteristic" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant for the Master Inspection Characteristic"/>
+      <keyMapping columnObjectName="Join_1" columnName="CC_PlantInspectionCharacteristic"/>
+    </attribute>
+    <attribute id="MasterInspectionCharacteristics" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master Inspection Characteristics"/>
+      <keyMapping columnObjectName="Join_1" columnName="MasterInspectionCharacteristics"/>
+    </attribute>
+    <attribute id="ValidFromDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ValidFromDate"/>
+      <keyMapping columnObjectName="Join_1" columnName="ValidFromDate"/>
+    </attribute>
+    <attribute id="ClassCharacteristicName" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassCharacteristicName"/>
+      <keyMapping columnObjectName="Join_1" columnName="ClassCharacteristicName"/>
+    </attribute>
+    <attribute id="Status" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Status"/>
+      <keyMapping columnObjectName="Join_1" columnName="Status"/>
+    </attribute>
+    <attribute id="SearchField" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SearchField"/>
+      <keyMapping columnObjectName="Join_1" columnName="SearchField"/>
+    </attribute>
+    <attribute id="InternalCharacteristicDescription" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InternalCharacteristicDescription"/>
+      <keyMapping columnObjectName="Join_1" columnName="InternalCharacteristicDescription"/>
+    </attribute>
+    <attribute id="DecimalPlaces" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DecimalPlaces"/>
+      <keyMapping columnObjectName="Join_1" columnName="DecimalPlaces"/>
+    </attribute>
+    <attribute id="WeightingOfCharacteristic" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WeightingOfCharacteristic"/>
+      <keyMapping columnObjectName="Join_1" columnName="WeightingOfCharacteristic"/>
+    </attribute>
+    <attribute id="InfoField1" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField1"/>
+      <keyMapping columnObjectName="Join_1" columnName="InfoField1"/>
+    </attribute>
+    <attribute id="InfoField2" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField2"/>
+      <keyMapping columnObjectName="Join_1" columnName="InfoField2"/>
+    </attribute>
+    <attribute id="InfoField3" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField3"/>
+      <keyMapping columnObjectName="Join_1" columnName="InfoField3"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_QPMK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_QPMK" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="244"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="280"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="244"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="172"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

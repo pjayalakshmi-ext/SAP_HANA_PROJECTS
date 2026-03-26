@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.SalesOrder.06Completeness::CV_SO_HEADER_VBAK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.SalesOrder.04Harmonization::CV_SO_HEADER_VBAK">
+    <resourceUri>EHUB.TD.SalesOrder.04Harmonization::CV_SO_HEADER_VBAK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="LegacySalesDocument_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;LegacySalesDocument&quot; =''  or &quot;LegacySalesDocument&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="SalesDocumentType_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SalesDocumentType&quot;=''  or &quot;SalesDocumentType&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="SalesOrganization_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SalesOrganization&quot;=''  or &quot;SalesOrganization&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="DistributionChannel_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;DistributionChannel&quot;='' or &quot;DistributionChannel&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="Division_INCOMPLETE" datatype="INTEGER" length="" expressionLanguage="SQL">
+        <formula>case when &quot;Division&quot;='' or &quot;Division&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="RequestedDeliveryDate_INCOMPLETE" datatype="INTEGER" length="" expressionLanguage="SQL">
+        <formula>case when &quot;RequestedDeliveryDate&quot;='' or &quot;RequestedDeliveryDate&quot; is null
+then 1
+else 0
+end </formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.TD.SalesOrder.04Harmonization::CV_SO_HEADER_VBAK"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="LegacySalesDocument_INCOMPLETE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LegacySalesDocument_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LegacySalesDocument_INCOMPLETE"/>
+    </attribute>
+    <attribute id="SalesDocumentType_INCOMPLETE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesDocumentType_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentType_INCOMPLETE"/>
+    </attribute>
+    <attribute id="SalesOrganization_INCOMPLETE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesOrganization_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SalesOrganization_INCOMPLETE"/>
+    </attribute>
+    <attribute id="DistributionChannel_INCOMPLETE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DistributionChannel_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DistributionChannel_INCOMPLETE"/>
+    </attribute>
+    <attribute id="Division_INCOMPLETE" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Division_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Division_INCOMPLETE"/>
+    </attribute>
+    <attribute id="RequestedDeliveryDate_INCOMPLETE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RequestedDeliveryDate_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="RequestedDeliveryDate_INCOMPLETE"/>
+    </attribute>
+    <attribute id="LegacySalesDocument" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LegacySalesDocument"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LegacySalesDocument"/>
+    </attribute>
+    <attribute id="SalesDocumentType" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesDocumentType"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentType"/>
+    </attribute>
+    <attribute id="SalesOrganization" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesOrganization"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SalesOrganization"/>
+    </attribute>
+    <attribute id="DistributionChannel" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DistributionChannel"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DistributionChannel"/>
+    </attribute>
+    <attribute id="Division" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Division"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Division"/>
+    </attribute>
+    <attribute id="CustomerPONumber" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerPONumber"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CustomerPONumber"/>
+    </attribute>
+    <attribute id="RequestedDeliveryDate" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RequestedDeliveryDate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="RequestedDeliveryDate"/>
+    </attribute>
+    <attribute id="CustomerPODate" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerPODate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CustomerPODate"/>
+    </attribute>
+    <attribute id="BillingBlockInSDDocument" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BillingBlockInSDDocument"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BillingBlockInSDDocument"/>
+    </attribute>
+    <attribute id="OrderReason" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OrderReason"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OrderReason"/>
+    </attribute>
+    <attribute id="DocumentDate" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DocumentDate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DocumentDate"/>
+    </attribute>
+    <attribute id="CustomerGroup1" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup1"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CustomerGroup1"/>
+    </attribute>
+    <attribute id="CustomerGroup2" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup2"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CustomerGroup2"/>
+    </attribute>
+    <attribute id="CustomerGroup3" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup3"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CustomerGroup3"/>
+    </attribute>
+    <attribute id="CustomerGroup4" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup4"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CustomerGroup4"/>
+    </attribute>
+    <attribute id="CustomerGroup5" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup5"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CustomerGroup5"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;LegacySalesDocument_INCOMPLETE&quot;+&quot;SalesDocumentType_INCOMPLETE&quot;+&quot;SalesOrganization_INCOMPLETE&quot;+&quot;DistributionChannel_INCOMPLETE&quot;+&quot;Division_INCOMPLETE&quot;+&quot;RequestedDeliveryDate_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

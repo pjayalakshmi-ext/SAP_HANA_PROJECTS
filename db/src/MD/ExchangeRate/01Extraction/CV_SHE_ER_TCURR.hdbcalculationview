@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.ExchangeRate.01Extraction::CV_SHE_ER_TCURR" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_TCURR">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_TCURR</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_TCURF">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_TCURF</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_TCURR" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="FCURR"/>
+      <viewAttribute id="TCURR"/>
+      <viewAttribute id="GDATU"/>
+      <viewAttribute id="UKURS"/>
+      <viewAttribute id="FFACT"/>
+      <viewAttribute id="TFACT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_GDATU" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>to_nvarchar (99999999 - TO_INTEGER(&quot;GDATU&quot;))</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_TCURR"/>
+    <filter>&quot;MANDT&quot;='801'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_TCURF" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="FCURR"/>
+      <viewAttribute id="TCURR"/>
+      <viewAttribute id="GDATU"/>
+      <viewAttribute id="FFACT"/>
+      <viewAttribute id="TFACT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_TCURF"/>
+    <filter>&quot;MANDT&quot;='801'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_TCURR" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="FCURR"/>
+      <viewAttribute id="TCURR"/>
+      <viewAttribute id="UKURS"/>
+      <viewAttribute id="FFACT"/>
+      <viewAttribute id="TFACT"/>
+      <viewAttribute id="CC_GDATU"/>
+      <viewAttribute hidden="true" id="JOIN$KURST$KURST"/>
+      <viewAttribute hidden="true" id="JOIN$FCURR$FCURR"/>
+      <viewAttribute hidden="true" id="JOIN$TCURR$TCURR"/>
+      <viewAttribute hidden="true" id="JOIN$GDATU$GDATU"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_TCURR">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURST" source="KURST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FCURR" source="FCURR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TCURR" source="TCURR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UKURS" source="UKURS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_GDATU" source="CC_GDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KURST$KURST" source="KURST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$FCURR$FCURR" source="FCURR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TCURR$TCURR" source="TCURR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GDATU$GDATU" source="GDATU"/>
+    </input>
+    <input node="P_TCURF">
+      <mapping xsi:type="Calculation:AttributeMapping" target="FFACT" source="FFACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TFACT" source="TFACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KURST$KURST" source="KURST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$FCURR$FCURR" source="FCURR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$TCURR$TCURR" source="TCURR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GDATU$GDATU" source="GDATU"/>
+    </input>
+    <joinAttribute name="JOIN$KURST$KURST"/>
+    <joinAttribute name="JOIN$FCURR$FCURR"/>
+    <joinAttribute name="JOIN$TCURR$TCURR"/>
+    <joinAttribute name="JOIN$GDATU$GDATU"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_TCURR">
+  <attributes>
+    <attribute id="KURST" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Exchange Rate Type"/>
+      <keyMapping columnObjectName="J_TCURR" columnName="KURST"/>
+    </attribute>
+    <attribute id="FCURR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="From currency"/>
+      <keyMapping columnObjectName="J_TCURR" columnName="FCURR"/>
+    </attribute>
+    <attribute id="TCURR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="To-currency"/>
+      <keyMapping columnObjectName="J_TCURR" columnName="TCURR"/>
+    </attribute>
+    <attribute id="GDATU" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date As of Which the Exchange Rate Is Effective"/>
+      <keyMapping columnObjectName="J_TCURR" columnName="CC_GDATU"/>
+    </attribute>
+    <attribute id="UKURS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Exchange Rate"/>
+      <keyMapping columnObjectName="J_TCURR" columnName="UKURS"/>
+    </attribute>
+    <attribute id="FFACT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Ratio for the &quot;From&quot; Currency Units"/>
+      <keyMapping columnObjectName="J_TCURR" columnName="FFACT"/>
+    </attribute>
+    <attribute id="TFACT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Ratio for the &quot;To&quot; Currency Units"/>
+      <keyMapping columnObjectName="J_TCURR" columnName="TFACT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_TCURR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_TCURF" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_TCURR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_TCURR" modelObjectNameSpace="J_TCURR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="145"/>
+    </shape>
+    <shape modelObjectName="P_TCURF" modelObjectNameSpace="J_TCURR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

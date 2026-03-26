@@ -1,0 +1,2008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.WorkCenterResouce.04Harmonization::CV_WORKCENTERRESOURCE_CRHD" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_WORKCENTERRESOURCE_CRHD.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.WorkCenterResouce.03Transformation::CV_WORKCENTERRESOURCE_CRHD">
+    <resourceUri>EHUB.MD.WorkCenterResouce.03Transformation::CV_WORKCENTERRESOURCE_CRHD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_WCR_SHE_CRHD_RLI">
+    <resourceUri>EHUB.Synonyms::SY_TA_WCR_SHE_CRHD_RLI</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="AEDAT_GRND"/>
+      <viewAttribute id="AENAM_GRND"/>
+      <viewAttribute id="AEDAT_VORA"/>
+      <viewAttribute id="AENAM_VORA"/>
+      <viewAttribute id="AEDAT_TERM"/>
+      <viewAttribute id="AENAM_TERM"/>
+      <viewAttribute id="AEDAT_TECH"/>
+      <viewAttribute id="AENAM_TECH"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="VERWE"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="PAR01"/>
+      <viewAttribute id="PAR02"/>
+      <viewAttribute id="PAR03"/>
+      <viewAttribute id="PAR04"/>
+      <viewAttribute id="PAR05"/>
+      <viewAttribute id="PAR06"/>
+      <viewAttribute id="PARU1"/>
+      <viewAttribute id="PARU2"/>
+      <viewAttribute id="PARU3"/>
+      <viewAttribute id="PARU4"/>
+      <viewAttribute id="PARU5"/>
+      <viewAttribute id="PARU6"/>
+      <viewAttribute id="PARV1"/>
+      <viewAttribute id="PARV2"/>
+      <viewAttribute id="PARV3"/>
+      <viewAttribute id="PARV4"/>
+      <viewAttribute id="PARV5"/>
+      <viewAttribute id="PARV6"/>
+      <viewAttribute id="PLANV"/>
+      <viewAttribute id="STAND"/>
+      <viewAttribute id="VERAN"/>
+      <viewAttribute id="VGWTS"/>
+      <viewAttribute id="VGM01"/>
+      <viewAttribute id="VGM02"/>
+      <viewAttribute id="VGM03"/>
+      <viewAttribute id="VGM04"/>
+      <viewAttribute id="VGM05"/>
+      <viewAttribute id="VGM06"/>
+      <viewAttribute id="XDEFA"/>
+      <viewAttribute id="XKOST"/>
+      <viewAttribute id="XSPRR"/>
+      <viewAttribute id="XTERM"/>
+      <viewAttribute id="ZGR01"/>
+      <viewAttribute id="ZGR02"/>
+      <viewAttribute id="ZGR03"/>
+      <viewAttribute id="ZGR04"/>
+      <viewAttribute id="ZGR05"/>
+      <viewAttribute id="ZGR06"/>
+      <viewAttribute id="KTSCH"/>
+      <viewAttribute id="LOANZ"/>
+      <viewAttribute id="LOART"/>
+      <viewAttribute id="LOGRP"/>
+      <viewAttribute id="QUALF"/>
+      <viewAttribute id="RASCH"/>
+      <viewAttribute id="STEUS"/>
+      <viewAttribute id="VGE01"/>
+      <viewAttribute id="VGE02"/>
+      <viewAttribute id="VGE03"/>
+      <viewAttribute id="VGE04"/>
+      <viewAttribute id="VGE05"/>
+      <viewAttribute id="VGE06"/>
+      <viewAttribute id="KTSCH_REF"/>
+      <viewAttribute id="LOART_REF"/>
+      <viewAttribute id="LOANZ_REF"/>
+      <viewAttribute id="LOGRP_REF"/>
+      <viewAttribute id="QUALF_REF"/>
+      <viewAttribute id="RASCH_REF"/>
+      <viewAttribute id="STEUS_REF"/>
+      <viewAttribute id="FORT1"/>
+      <viewAttribute id="FORT2"/>
+      <viewAttribute id="FORT3"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="ORTGR"/>
+      <viewAttribute id="ZEIWN"/>
+      <viewAttribute id="ZWNOR"/>
+      <viewAttribute id="ZEIWM"/>
+      <viewAttribute id="ZWMIN"/>
+      <viewAttribute id="FORMR"/>
+      <viewAttribute id="MATYP"/>
+      <viewAttribute id="CPLGR"/>
+      <viewAttribute id="SORTB"/>
+      <viewAttribute id="MTRVP"/>
+      <viewAttribute id="MTMVP"/>
+      <viewAttribute id="MTPVP"/>
+      <viewAttribute id="RSANZ"/>
+      <viewAttribute id="PDEST"/>
+      <viewAttribute id="HROID"/>
+      <viewAttribute id="FORTN"/>
+      <viewAttribute id="ZGR01_REF"/>
+      <viewAttribute id="ZGR02_REF"/>
+      <viewAttribute id="ZGR03_REF"/>
+      <viewAttribute id="ZGR04_REF"/>
+      <viewAttribute id="ZGR05_REF"/>
+      <viewAttribute id="ZGR06_REF"/>
+      <viewAttribute id="STEUS_C"/>
+      <viewAttribute id="STEUS_I"/>
+      <viewAttribute id="STEUS_N"/>
+      <viewAttribute id="STEUS_Q"/>
+      <viewAttribute id="RUZUS"/>
+      <viewAttribute id="RSANZ_REF"/>
+      <viewAttribute id="HR"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SUBSYS"/>
+      <viewAttribute id="BDEGR"/>
+      <viewAttribute id="RGEKZ"/>
+      <viewAttribute id="HRTYP"/>
+      <viewAttribute id="SLWID"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SLWID_REF"/>
+      <viewAttribute id="LIFNR_REF"/>
+      <viewAttribute id="VGARB"/>
+      <viewAttribute id="VGDIM"/>
+      <viewAttribute id="HRPLVAR"/>
+      <viewAttribute id="VGDAU"/>
+      <viewAttribute id="STOBJ"/>
+      <viewAttribute id="RESGR"/>
+      <viewAttribute id="LGORT_RES"/>
+      <viewAttribute id="MIXMAT"/>
+      <viewAttribute id="ISTBED_KZ"/>
+      <viewAttribute id="SRTYPE"/>
+      <viewAttribute id="SNTYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+    
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="NAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.WorkCenterResouce.03Transformation::CV_WORKCENTERRESOURCE_CRHD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="AEDAT_GRND"/>
+      <viewAttribute id="AENAM_GRND"/>
+      <viewAttribute id="AEDAT_VORA"/>
+      <viewAttribute id="AENAM_VORA"/>
+      <viewAttribute id="AEDAT_TERM"/>
+      <viewAttribute id="AENAM_TERM"/>
+      <viewAttribute id="AEDAT_TECH"/>
+      <viewAttribute id="AENAM_TECH"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="VERWE"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="PAR01"/>
+      <viewAttribute id="PAR02"/>
+      <viewAttribute id="PAR03"/>
+      <viewAttribute id="PAR04"/>
+      <viewAttribute id="PAR05"/>
+      <viewAttribute id="PAR06"/>
+      <viewAttribute id="PARU1"/>
+      <viewAttribute id="PARU2"/>
+      <viewAttribute id="PARU3"/>
+      <viewAttribute id="PARU4"/>
+      <viewAttribute id="PARU5"/>
+      <viewAttribute id="PARU6"/>
+      <viewAttribute id="PARV1"/>
+      <viewAttribute id="PARV2"/>
+      <viewAttribute id="PARV3"/>
+      <viewAttribute id="PARV4"/>
+      <viewAttribute id="PARV5"/>
+      <viewAttribute id="PARV6"/>
+      <viewAttribute id="PLANV"/>
+      <viewAttribute id="STAND"/>
+      <viewAttribute id="VERAN"/>
+      <viewAttribute id="VGWTS"/>
+      <viewAttribute id="VGM01"/>
+      <viewAttribute id="VGM02"/>
+      <viewAttribute id="VGM03"/>
+      <viewAttribute id="VGM04"/>
+      <viewAttribute id="VGM05"/>
+      <viewAttribute id="VGM06"/>
+      <viewAttribute id="XDEFA"/>
+      <viewAttribute id="XKOST"/>
+      <viewAttribute id="XSPRR"/>
+      <viewAttribute id="XTERM"/>
+      <viewAttribute id="ZGR01"/>
+      <viewAttribute id="ZGR02"/>
+      <viewAttribute id="ZGR03"/>
+      <viewAttribute id="ZGR04"/>
+      <viewAttribute id="ZGR05"/>
+      <viewAttribute id="ZGR06"/>
+      <viewAttribute id="KTSCH"/>
+      <viewAttribute id="LOANZ"/>
+      <viewAttribute id="LOART"/>
+      <viewAttribute id="LOGRP"/>
+      <viewAttribute id="QUALF"/>
+      <viewAttribute id="RASCH"/>
+      <viewAttribute id="STEUS"/>
+      <viewAttribute id="VGE01"/>
+      <viewAttribute id="VGE02"/>
+      <viewAttribute id="VGE03"/>
+      <viewAttribute id="VGE04"/>
+      <viewAttribute id="VGE05"/>
+      <viewAttribute id="VGE06"/>
+      <viewAttribute id="KTSCH_REF"/>
+      <viewAttribute id="LOART_REF"/>
+      <viewAttribute id="LOANZ_REF"/>
+      <viewAttribute id="LOGRP_REF"/>
+      <viewAttribute id="QUALF_REF"/>
+      <viewAttribute id="RASCH_REF"/>
+      <viewAttribute id="STEUS_REF"/>
+      <viewAttribute id="FORT1"/>
+      <viewAttribute id="FORT2"/>
+      <viewAttribute id="FORT3"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="ORTGR"/>
+      <viewAttribute id="ZEIWN"/>
+      <viewAttribute id="ZWNOR"/>
+      <viewAttribute id="ZEIWM"/>
+      <viewAttribute id="ZWMIN"/>
+      <viewAttribute id="FORMR"/>
+      <viewAttribute id="MATYP"/>
+      <viewAttribute id="CPLGR"/>
+      <viewAttribute id="SORTB"/>
+      <viewAttribute id="MTRVP"/>
+      <viewAttribute id="MTMVP"/>
+      <viewAttribute id="MTPVP"/>
+      <viewAttribute id="RSANZ"/>
+      <viewAttribute id="PDEST"/>
+      <viewAttribute id="HROID"/>
+      <viewAttribute id="FORTN"/>
+      <viewAttribute id="ZGR01_REF"/>
+      <viewAttribute id="ZGR02_REF"/>
+      <viewAttribute id="ZGR03_REF"/>
+      <viewAttribute id="ZGR04_REF"/>
+      <viewAttribute id="ZGR05_REF"/>
+      <viewAttribute id="ZGR06_REF"/>
+      <viewAttribute id="STEUS_C"/>
+      <viewAttribute id="STEUS_I"/>
+      <viewAttribute id="STEUS_N"/>
+      <viewAttribute id="STEUS_Q"/>
+      <viewAttribute id="RUZUS"/>
+      <viewAttribute id="RSANZ_REF"/>
+      <viewAttribute id="HR"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SUBSYS"/>
+      <viewAttribute id="BDEGR"/>
+      <viewAttribute id="RGEKZ"/>
+      <viewAttribute id="HRTYP"/>
+      <viewAttribute id="SLWID"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SLWID_REF"/>
+      <viewAttribute id="LIFNR_REF"/>
+      <viewAttribute id="VGARB"/>
+      <viewAttribute id="VGDIM"/>
+      <viewAttribute id="HRPLVAR"/>
+      <viewAttribute id="VGDAU"/>
+      <viewAttribute id="STOBJ"/>
+      <viewAttribute id="RESGR"/>
+      <viewAttribute id="LGORT_RES"/>
+      <viewAttribute id="MIXMAT"/>
+      <viewAttribute id="ISTBED_KZ"/>
+      <viewAttribute id="SRTYPE"/>
+      <viewAttribute id="SNTYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+    
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="NAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_WCR_SHE_CRHD_RLI"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="AEDAT_GRND"/>
+      <viewAttribute id="AENAM_GRND"/>
+      <viewAttribute id="AEDAT_VORA"/>
+      <viewAttribute id="AENAM_VORA"/>
+      <viewAttribute id="AEDAT_TERM"/>
+      <viewAttribute id="AENAM_TERM"/>
+      <viewAttribute id="AEDAT_TECH"/>
+      <viewAttribute id="AENAM_TECH"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="VERWE"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="PAR01"/>
+      <viewAttribute id="PAR02"/>
+      <viewAttribute id="PAR03"/>
+      <viewAttribute id="PAR04"/>
+      <viewAttribute id="PAR05"/>
+      <viewAttribute id="PAR06"/>
+      <viewAttribute id="PARU1"/>
+      <viewAttribute id="PARU2"/>
+      <viewAttribute id="PARU3"/>
+      <viewAttribute id="PARU4"/>
+      <viewAttribute id="PARU5"/>
+      <viewAttribute id="PARU6"/>
+      <viewAttribute id="PARV1"/>
+      <viewAttribute id="PARV2"/>
+      <viewAttribute id="PARV3"/>
+      <viewAttribute id="PARV4"/>
+      <viewAttribute id="PARV5"/>
+      <viewAttribute id="PARV6"/>
+      <viewAttribute id="PLANV"/>
+      <viewAttribute id="STAND"/>
+      <viewAttribute id="VERAN"/>
+      <viewAttribute id="VGWTS"/>
+      <viewAttribute id="VGM01"/>
+      <viewAttribute id="VGM02"/>
+      <viewAttribute id="VGM03"/>
+      <viewAttribute id="VGM04"/>
+      <viewAttribute id="VGM05"/>
+      <viewAttribute id="VGM06"/>
+      <viewAttribute id="XDEFA"/>
+      <viewAttribute id="XKOST"/>
+      <viewAttribute id="XSPRR"/>
+      <viewAttribute id="XTERM"/>
+      <viewAttribute id="ZGR01"/>
+      <viewAttribute id="ZGR02"/>
+      <viewAttribute id="ZGR03"/>
+      <viewAttribute id="ZGR04"/>
+      <viewAttribute id="ZGR05"/>
+      <viewAttribute id="ZGR06"/>
+      <viewAttribute id="KTSCH"/>
+      <viewAttribute id="LOANZ"/>
+      <viewAttribute id="LOART"/>
+      <viewAttribute id="LOGRP"/>
+      <viewAttribute id="QUALF"/>
+      <viewAttribute id="RASCH"/>
+      <viewAttribute id="STEUS"/>
+      <viewAttribute id="VGE01"/>
+      <viewAttribute id="VGE02"/>
+      <viewAttribute id="VGE03"/>
+      <viewAttribute id="VGE04"/>
+      <viewAttribute id="VGE05"/>
+      <viewAttribute id="VGE06"/>
+      <viewAttribute id="KTSCH_REF"/>
+      <viewAttribute id="LOART_REF"/>
+      <viewAttribute id="LOANZ_REF"/>
+      <viewAttribute id="LOGRP_REF"/>
+      <viewAttribute id="QUALF_REF"/>
+      <viewAttribute id="RASCH_REF"/>
+      <viewAttribute id="STEUS_REF"/>
+      <viewAttribute id="FORT1"/>
+      <viewAttribute id="FORT2"/>
+      <viewAttribute id="FORT3"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="ORTGR"/>
+      <viewAttribute id="ZEIWN"/>
+      <viewAttribute id="ZWNOR"/>
+      <viewAttribute id="ZEIWM"/>
+      <viewAttribute id="ZWMIN"/>
+      <viewAttribute id="FORMR"/>
+      <viewAttribute id="MATYP"/>
+      <viewAttribute id="CPLGR"/>
+      <viewAttribute id="SORTB"/>
+      <viewAttribute id="MTRVP"/>
+      <viewAttribute id="MTMVP"/>
+      <viewAttribute id="MTPVP"/>
+      <viewAttribute id="RSANZ"/>
+      <viewAttribute id="PDEST"/>
+      <viewAttribute id="HROID"/>
+      <viewAttribute id="FORTN"/>
+      <viewAttribute id="ZGR01_REF"/>
+      <viewAttribute id="ZGR02_REF"/>
+      <viewAttribute id="ZGR03_REF"/>
+      <viewAttribute id="ZGR04_REF"/>
+      <viewAttribute id="ZGR05_REF"/>
+      <viewAttribute id="ZGR06_REF"/>
+      <viewAttribute id="STEUS_C"/>
+      <viewAttribute id="STEUS_I"/>
+      <viewAttribute id="STEUS_N"/>
+      <viewAttribute id="STEUS_Q"/>
+      <viewAttribute id="RUZUS"/>
+      <viewAttribute id="RSANZ_REF"/>
+      <viewAttribute id="HR"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SUBSYS"/>
+      <viewAttribute id="BDEGR"/>
+      <viewAttribute id="RGEKZ"/>
+      <viewAttribute id="HRTYP"/>
+      <viewAttribute id="SLWID"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SLWID_REF"/>
+      <viewAttribute id="LIFNR_REF"/>
+      <viewAttribute id="VGARB"/>
+      <viewAttribute id="VGDIM"/>
+      <viewAttribute id="HRPLVAR"/>
+      <viewAttribute id="VGDAU"/>
+      <viewAttribute id="STOBJ"/>
+      <viewAttribute id="RESGR"/>
+      <viewAttribute id="LGORT_RES"/>
+      <viewAttribute id="MIXMAT"/>
+      <viewAttribute id="ISTBED_KZ"/>
+      <viewAttribute id="SRTYPE"/>
+      <viewAttribute id="SNTYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+    
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="NAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJID" source="OBJID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGDA" source="BEGDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDDA" source="ENDDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_GRND" source="AEDAT_GRND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_GRND" source="AENAM_GRND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_VORA" source="AEDAT_VORA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_VORA" source="AENAM_VORA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_TERM" source="AEDAT_TERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_TERM" source="AENAM_TERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_TECH" source="AEDAT_TECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_TECH" source="AENAM_TECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERWE" source="VERWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR01" source="PAR01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR02" source="PAR02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR03" source="PAR03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR04" source="PAR04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR05" source="PAR05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR06" source="PAR06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU1" source="PARU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU2" source="PARU2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU3" source="PARU3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU4" source="PARU4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU5" source="PARU5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU6" source="PARU6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV1" source="PARV1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV2" source="PARV2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV3" source="PARV3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV4" source="PARV4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV5" source="PARV5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV6" source="PARV6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANV" source="PLANV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAND" source="STAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAN" source="VERAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGWTS" source="VGWTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM01" source="VGM01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM02" source="VGM02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM03" source="VGM03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM04" source="VGM04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM05" source="VGM05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM06" source="VGM06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XDEFA" source="XDEFA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XKOST" source="XKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSPRR" source="XSPRR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XTERM" source="XTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR01" source="ZGR01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR02" source="ZGR02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR03" source="ZGR03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR04" source="ZGR04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR05" source="ZGR05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR06" source="ZGR06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTSCH" source="KTSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOANZ" source="LOANZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOART" source="LOART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOGRP" source="LOGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUALF" source="QUALF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASCH" source="RASCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS" source="STEUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE01" source="VGE01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE02" source="VGE02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE03" source="VGE03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE04" source="VGE04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE05" source="VGE05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE06" source="VGE06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTSCH_REF" source="KTSCH_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOART_REF" source="LOART_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOANZ_REF" source="LOANZ_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOGRP_REF" source="LOGRP_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUALF_REF" source="QUALF_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASCH_REF" source="RASCH_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_REF" source="STEUS_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT1" source="FORT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT2" source="FORT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT3" source="FORT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORTGR" source="ORTGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIWN" source="ZEIWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWNOR" source="ZWNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIWM" source="ZEIWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWMIN" source="ZWMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORMR" source="FORMR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATYP" source="MATYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CPLGR" source="CPLGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTB" source="SORTB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTRVP" source="MTRVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTMVP" source="MTMVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPVP" source="MTPVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSANZ" source="RSANZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDEST" source="PDEST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HROID" source="HROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORTN" source="FORTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR01_REF" source="ZGR01_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR02_REF" source="ZGR02_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR03_REF" source="ZGR03_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR04_REF" source="ZGR04_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR05_REF" source="ZGR05_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR06_REF" source="ZGR06_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_C" source="STEUS_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_I" source="STEUS_I"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_N" source="STEUS_N"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_Q" source="STEUS_Q"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUZUS" source="RUZUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSANZ_REF" source="RSANZ_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HR" source="HR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSYS" source="SUBSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDEGR" source="BDEGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RGEKZ" source="RGEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRTYP" source="HRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLWID" source="SLWID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLWID_REF" source="SLWID_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_REF" source="LIFNR_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGARB" source="VGARB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGDIM" source="VGDIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRPLVAR" source="HRPLVAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGDAU" source="VGDAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOBJ" source="STOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESGR" source="RESGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT_RES" source="LGORT_RES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIXMAT" source="MIXMAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISTBED_KZ" source="ISTBED_KZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SRTYPE" source="SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNTYPE" source="SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="AEDAT_GRND"/>
+      <viewAttribute id="AENAM_GRND"/>
+      <viewAttribute id="AEDAT_VORA"/>
+      <viewAttribute id="AENAM_VORA"/>
+      <viewAttribute id="AEDAT_TERM"/>
+      <viewAttribute id="AENAM_TERM"/>
+      <viewAttribute id="AEDAT_TECH"/>
+      <viewAttribute id="AENAM_TECH"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="VERWE"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="PAR01"/>
+      <viewAttribute id="PAR02"/>
+      <viewAttribute id="PAR03"/>
+      <viewAttribute id="PAR04"/>
+      <viewAttribute id="PAR05"/>
+      <viewAttribute id="PAR06"/>
+      <viewAttribute id="PARU1"/>
+      <viewAttribute id="PARU2"/>
+      <viewAttribute id="PARU3"/>
+      <viewAttribute id="PARU4"/>
+      <viewAttribute id="PARU5"/>
+      <viewAttribute id="PARU6"/>
+      <viewAttribute id="PARV1"/>
+      <viewAttribute id="PARV2"/>
+      <viewAttribute id="PARV3"/>
+      <viewAttribute id="PARV4"/>
+      <viewAttribute id="PARV5"/>
+      <viewAttribute id="PARV6"/>
+      <viewAttribute id="PLANV"/>
+      <viewAttribute id="STAND"/>
+      <viewAttribute id="VERAN"/>
+      <viewAttribute id="VGWTS"/>
+      <viewAttribute id="VGM01"/>
+      <viewAttribute id="VGM02"/>
+      <viewAttribute id="VGM03"/>
+      <viewAttribute id="VGM04"/>
+      <viewAttribute id="VGM05"/>
+      <viewAttribute id="VGM06"/>
+      <viewAttribute id="XDEFA"/>
+      <viewAttribute id="XKOST"/>
+      <viewAttribute id="XSPRR"/>
+      <viewAttribute id="XTERM"/>
+      <viewAttribute id="ZGR01"/>
+      <viewAttribute id="ZGR02"/>
+      <viewAttribute id="ZGR03"/>
+      <viewAttribute id="ZGR04"/>
+      <viewAttribute id="ZGR05"/>
+      <viewAttribute id="ZGR06"/>
+      <viewAttribute id="KTSCH"/>
+      <viewAttribute id="LOANZ"/>
+      <viewAttribute id="LOART"/>
+      <viewAttribute id="LOGRP"/>
+      <viewAttribute id="QUALF"/>
+      <viewAttribute id="RASCH"/>
+      <viewAttribute id="STEUS"/>
+      <viewAttribute id="VGE01"/>
+      <viewAttribute id="VGE02"/>
+      <viewAttribute id="VGE03"/>
+      <viewAttribute id="VGE04"/>
+      <viewAttribute id="VGE05"/>
+      <viewAttribute id="VGE06"/>
+      <viewAttribute id="KTSCH_REF"/>
+      <viewAttribute id="LOART_REF"/>
+      <viewAttribute id="LOANZ_REF"/>
+      <viewAttribute id="LOGRP_REF"/>
+      <viewAttribute id="QUALF_REF"/>
+      <viewAttribute id="RASCH_REF"/>
+      <viewAttribute id="STEUS_REF"/>
+      <viewAttribute id="FORT1"/>
+      <viewAttribute id="FORT2"/>
+      <viewAttribute id="FORT3"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="ORTGR"/>
+      <viewAttribute id="ZEIWN"/>
+      <viewAttribute id="ZWNOR"/>
+      <viewAttribute id="ZEIWM"/>
+      <viewAttribute id="ZWMIN"/>
+      <viewAttribute id="FORMR"/>
+      <viewAttribute id="MATYP"/>
+      <viewAttribute id="CPLGR"/>
+      <viewAttribute id="SORTB"/>
+      <viewAttribute id="MTRVP"/>
+      <viewAttribute id="MTMVP"/>
+      <viewAttribute id="MTPVP"/>
+      <viewAttribute id="RSANZ"/>
+      <viewAttribute id="PDEST"/>
+      <viewAttribute id="HROID"/>
+      <viewAttribute id="FORTN"/>
+      <viewAttribute id="ZGR01_REF"/>
+      <viewAttribute id="ZGR02_REF"/>
+      <viewAttribute id="ZGR03_REF"/>
+      <viewAttribute id="ZGR04_REF"/>
+      <viewAttribute id="ZGR05_REF"/>
+      <viewAttribute id="ZGR06_REF"/>
+      <viewAttribute id="STEUS_C"/>
+      <viewAttribute id="STEUS_I"/>
+      <viewAttribute id="STEUS_N"/>
+      <viewAttribute id="STEUS_Q"/>
+      <viewAttribute id="RUZUS"/>
+      <viewAttribute id="RSANZ_REF"/>
+      <viewAttribute id="HR"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SUBSYS"/>
+      <viewAttribute id="BDEGR"/>
+      <viewAttribute id="RGEKZ"/>
+      <viewAttribute id="HRTYP"/>
+      <viewAttribute id="SLWID"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SLWID_REF"/>
+      <viewAttribute id="LIFNR_REF"/>
+      <viewAttribute id="VGARB"/>
+      <viewAttribute id="VGDIM"/>
+      <viewAttribute id="HRPLVAR"/>
+      <viewAttribute id="VGDAU"/>
+      <viewAttribute id="STOBJ"/>
+      <viewAttribute id="RESGR"/>
+      <viewAttribute id="LGORT_RES"/>
+      <viewAttribute id="MIXMAT"/>
+      <viewAttribute id="ISTBED_KZ"/>
+      <viewAttribute id="SRTYPE"/>
+      <viewAttribute id="SNTYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="OBJTY_1"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$OBJTY$OBJTY"/>
+      <viewAttribute hidden="true" id="JOIN$OBJID$OBJID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJID" source="OBJID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGDA" source="BEGDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDDA" source="ENDDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_GRND" source="AEDAT_GRND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_GRND" source="AENAM_GRND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_VORA" source="AEDAT_VORA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_VORA" source="AENAM_VORA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_TERM" source="AEDAT_TERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_TERM" source="AENAM_TERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_TECH" source="AEDAT_TECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_TECH" source="AENAM_TECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERWE" source="VERWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR01" source="PAR01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR02" source="PAR02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR03" source="PAR03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR04" source="PAR04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR05" source="PAR05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR06" source="PAR06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU1" source="PARU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU2" source="PARU2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU3" source="PARU3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU4" source="PARU4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU5" source="PARU5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU6" source="PARU6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV1" source="PARV1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV2" source="PARV2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV3" source="PARV3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV4" source="PARV4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV5" source="PARV5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV6" source="PARV6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANV" source="PLANV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAND" source="STAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAN" source="VERAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGWTS" source="VGWTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM01" source="VGM01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM02" source="VGM02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM03" source="VGM03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM04" source="VGM04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM05" source="VGM05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM06" source="VGM06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XDEFA" source="XDEFA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XKOST" source="XKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSPRR" source="XSPRR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XTERM" source="XTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR01" source="ZGR01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR02" source="ZGR02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR03" source="ZGR03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR04" source="ZGR04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR05" source="ZGR05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR06" source="ZGR06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTSCH" source="KTSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOANZ" source="LOANZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOART" source="LOART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOGRP" source="LOGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUALF" source="QUALF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASCH" source="RASCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS" source="STEUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE01" source="VGE01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE02" source="VGE02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE03" source="VGE03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE04" source="VGE04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE05" source="VGE05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE06" source="VGE06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTSCH_REF" source="KTSCH_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOART_REF" source="LOART_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOANZ_REF" source="LOANZ_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOGRP_REF" source="LOGRP_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUALF_REF" source="QUALF_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASCH_REF" source="RASCH_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_REF" source="STEUS_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT1" source="FORT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT2" source="FORT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT3" source="FORT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORTGR" source="ORTGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIWN" source="ZEIWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWNOR" source="ZWNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIWM" source="ZEIWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWMIN" source="ZWMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORMR" source="FORMR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATYP" source="MATYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CPLGR" source="CPLGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTB" source="SORTB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTRVP" source="MTRVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTMVP" source="MTMVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPVP" source="MTPVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSANZ" source="RSANZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDEST" source="PDEST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HROID" source="HROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORTN" source="FORTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR01_REF" source="ZGR01_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR02_REF" source="ZGR02_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR03_REF" source="ZGR03_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR04_REF" source="ZGR04_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR05_REF" source="ZGR05_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR06_REF" source="ZGR06_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_C" source="STEUS_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_I" source="STEUS_I"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_N" source="STEUS_N"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_Q" source="STEUS_Q"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUZUS" source="RUZUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSANZ_REF" source="RSANZ_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HR" source="HR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSYS" source="SUBSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDEGR" source="BDEGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RGEKZ" source="RGEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRTYP" source="HRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLWID" source="SLWID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLWID_REF" source="SLWID_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_REF" source="LIFNR_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGARB" source="VGARB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGDIM" source="VGDIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRPLVAR" source="HRPLVAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGDAU" source="VGDAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOBJ" source="STOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESGR" source="RESGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT_RES" source="LGORT_RES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIXMAT" source="MIXMAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISTBED_KZ" source="ISTBED_KZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SRTYPE" source="SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNTYPE" source="SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJTY$OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJID$OBJID" source="OBJID"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJTY_1" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJTY$OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJID$OBJID" source="OBJID"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$OBJTY$OBJTY"/>
+    <joinAttribute name="JOIN$OBJID$OBJID"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="AEDAT_GRND"/>
+      <viewAttribute id="AENAM_GRND"/>
+      <viewAttribute id="AEDAT_VORA"/>
+      <viewAttribute id="AENAM_VORA"/>
+      <viewAttribute id="AEDAT_TERM"/>
+      <viewAttribute id="AENAM_TERM"/>
+      <viewAttribute id="AEDAT_TECH"/>
+      <viewAttribute id="AENAM_TECH"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="VERWE"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="PAR01"/>
+      <viewAttribute id="PAR02"/>
+      <viewAttribute id="PAR03"/>
+      <viewAttribute id="PAR04"/>
+      <viewAttribute id="PAR05"/>
+      <viewAttribute id="PAR06"/>
+      <viewAttribute id="PARU1"/>
+      <viewAttribute id="PARU2"/>
+      <viewAttribute id="PARU3"/>
+      <viewAttribute id="PARU4"/>
+      <viewAttribute id="PARU5"/>
+      <viewAttribute id="PARU6"/>
+      <viewAttribute id="PARV1"/>
+      <viewAttribute id="PARV2"/>
+      <viewAttribute id="PARV3"/>
+      <viewAttribute id="PARV4"/>
+      <viewAttribute id="PARV5"/>
+      <viewAttribute id="PARV6"/>
+      <viewAttribute id="PLANV"/>
+      <viewAttribute id="STAND"/>
+      <viewAttribute id="VERAN"/>
+      <viewAttribute id="VGWTS"/>
+      <viewAttribute id="VGM01"/>
+      <viewAttribute id="VGM02"/>
+      <viewAttribute id="VGM03"/>
+      <viewAttribute id="VGM04"/>
+      <viewAttribute id="VGM05"/>
+      <viewAttribute id="VGM06"/>
+      <viewAttribute id="XDEFA"/>
+      <viewAttribute id="XKOST"/>
+      <viewAttribute id="XSPRR"/>
+      <viewAttribute id="XTERM"/>
+      <viewAttribute id="ZGR01"/>
+      <viewAttribute id="ZGR02"/>
+      <viewAttribute id="ZGR03"/>
+      <viewAttribute id="ZGR04"/>
+      <viewAttribute id="ZGR05"/>
+      <viewAttribute id="ZGR06"/>
+      <viewAttribute id="KTSCH"/>
+      <viewAttribute id="LOANZ"/>
+      <viewAttribute id="LOART"/>
+      <viewAttribute id="LOGRP"/>
+      <viewAttribute id="QUALF"/>
+      <viewAttribute id="RASCH"/>
+      <viewAttribute id="STEUS"/>
+      <viewAttribute id="VGE01"/>
+      <viewAttribute id="VGE02"/>
+      <viewAttribute id="VGE03"/>
+      <viewAttribute id="VGE04"/>
+      <viewAttribute id="VGE05"/>
+      <viewAttribute id="VGE06"/>
+      <viewAttribute id="KTSCH_REF"/>
+      <viewAttribute id="LOART_REF"/>
+      <viewAttribute id="LOANZ_REF"/>
+      <viewAttribute id="LOGRP_REF"/>
+      <viewAttribute id="QUALF_REF"/>
+      <viewAttribute id="RASCH_REF"/>
+      <viewAttribute id="STEUS_REF"/>
+      <viewAttribute id="FORT1"/>
+      <viewAttribute id="FORT2"/>
+      <viewAttribute id="FORT3"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="ORTGR"/>
+      <viewAttribute id="ZEIWN"/>
+      <viewAttribute id="ZWNOR"/>
+      <viewAttribute id="ZEIWM"/>
+      <viewAttribute id="ZWMIN"/>
+      <viewAttribute id="FORMR"/>
+      <viewAttribute id="MATYP"/>
+      <viewAttribute id="CPLGR"/>
+      <viewAttribute id="SORTB"/>
+      <viewAttribute id="MTRVP"/>
+      <viewAttribute id="MTMVP"/>
+      <viewAttribute id="MTPVP"/>
+      <viewAttribute id="RSANZ"/>
+      <viewAttribute id="PDEST"/>
+      <viewAttribute id="HROID"/>
+      <viewAttribute id="FORTN"/>
+      <viewAttribute id="ZGR01_REF"/>
+      <viewAttribute id="ZGR02_REF"/>
+      <viewAttribute id="ZGR03_REF"/>
+      <viewAttribute id="ZGR04_REF"/>
+      <viewAttribute id="ZGR05_REF"/>
+      <viewAttribute id="ZGR06_REF"/>
+      <viewAttribute id="STEUS_C"/>
+      <viewAttribute id="STEUS_I"/>
+      <viewAttribute id="STEUS_N"/>
+      <viewAttribute id="STEUS_Q"/>
+      <viewAttribute id="RUZUS"/>
+      <viewAttribute id="RSANZ_REF"/>
+      <viewAttribute id="HR"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SUBSYS"/>
+      <viewAttribute id="BDEGR"/>
+      <viewAttribute id="RGEKZ"/>
+      <viewAttribute id="HRTYP"/>
+      <viewAttribute id="SLWID"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SLWID_REF"/>
+      <viewAttribute id="LIFNR_REF"/>
+      <viewAttribute id="VGARB"/>
+      <viewAttribute id="VGDIM"/>
+      <viewAttribute id="HRPLVAR"/>
+      <viewAttribute id="VGDAU"/>
+      <viewAttribute id="STOBJ"/>
+      <viewAttribute id="RESGR"/>
+      <viewAttribute id="LGORT_RES"/>
+      <viewAttribute id="MIXMAT"/>
+      <viewAttribute id="ISTBED_KZ"/>
+      <viewAttribute id="SRTYPE"/>
+      <viewAttribute id="SNTYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="OBJTY_1"/>
+    
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+    
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="NAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1"/>
+    <filter>&quot;OBJTY_1&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="AEDAT_GRND"/>
+      <viewAttribute id="AENAM_GRND"/>
+      <viewAttribute id="AEDAT_VORA"/>
+      <viewAttribute id="AENAM_VORA"/>
+      <viewAttribute id="AEDAT_TERM"/>
+      <viewAttribute id="AENAM_TERM"/>
+      <viewAttribute id="AEDAT_TECH"/>
+      <viewAttribute id="AENAM_TECH"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="VERWE"/>
+      <viewAttribute id="LVORM"/>
+      <viewAttribute id="PAR01"/>
+      <viewAttribute id="PAR02"/>
+      <viewAttribute id="PAR03"/>
+      <viewAttribute id="PAR04"/>
+      <viewAttribute id="PAR05"/>
+      <viewAttribute id="PAR06"/>
+      <viewAttribute id="PARU1"/>
+      <viewAttribute id="PARU2"/>
+      <viewAttribute id="PARU3"/>
+      <viewAttribute id="PARU4"/>
+      <viewAttribute id="PARU5"/>
+      <viewAttribute id="PARU6"/>
+      <viewAttribute id="PARV1"/>
+      <viewAttribute id="PARV2"/>
+      <viewAttribute id="PARV3"/>
+      <viewAttribute id="PARV4"/>
+      <viewAttribute id="PARV5"/>
+      <viewAttribute id="PARV6"/>
+      <viewAttribute id="PLANV"/>
+      <viewAttribute id="STAND"/>
+      <viewAttribute id="VERAN"/>
+      <viewAttribute id="VGWTS"/>
+      <viewAttribute id="VGM01"/>
+      <viewAttribute id="VGM02"/>
+      <viewAttribute id="VGM03"/>
+      <viewAttribute id="VGM04"/>
+      <viewAttribute id="VGM05"/>
+      <viewAttribute id="VGM06"/>
+      <viewAttribute id="XDEFA"/>
+      <viewAttribute id="XKOST"/>
+      <viewAttribute id="XSPRR"/>
+      <viewAttribute id="XTERM"/>
+      <viewAttribute id="ZGR01"/>
+      <viewAttribute id="ZGR02"/>
+      <viewAttribute id="ZGR03"/>
+      <viewAttribute id="ZGR04"/>
+      <viewAttribute id="ZGR05"/>
+      <viewAttribute id="ZGR06"/>
+      <viewAttribute id="KTSCH"/>
+      <viewAttribute id="LOANZ"/>
+      <viewAttribute id="LOART"/>
+      <viewAttribute id="LOGRP"/>
+      <viewAttribute id="QUALF"/>
+      <viewAttribute id="RASCH"/>
+      <viewAttribute id="STEUS"/>
+      <viewAttribute id="VGE01"/>
+      <viewAttribute id="VGE02"/>
+      <viewAttribute id="VGE03"/>
+      <viewAttribute id="VGE04"/>
+      <viewAttribute id="VGE05"/>
+      <viewAttribute id="VGE06"/>
+      <viewAttribute id="KTSCH_REF"/>
+      <viewAttribute id="LOART_REF"/>
+      <viewAttribute id="LOANZ_REF"/>
+      <viewAttribute id="LOGRP_REF"/>
+      <viewAttribute id="QUALF_REF"/>
+      <viewAttribute id="RASCH_REF"/>
+      <viewAttribute id="STEUS_REF"/>
+      <viewAttribute id="FORT1"/>
+      <viewAttribute id="FORT2"/>
+      <viewAttribute id="FORT3"/>
+      <viewAttribute id="KAPID"/>
+      <viewAttribute id="ORTGR"/>
+      <viewAttribute id="ZEIWN"/>
+      <viewAttribute id="ZWNOR"/>
+      <viewAttribute id="ZEIWM"/>
+      <viewAttribute id="ZWMIN"/>
+      <viewAttribute id="FORMR"/>
+      <viewAttribute id="MATYP"/>
+      <viewAttribute id="CPLGR"/>
+      <viewAttribute id="SORTB"/>
+      <viewAttribute id="MTRVP"/>
+      <viewAttribute id="MTMVP"/>
+      <viewAttribute id="MTPVP"/>
+      <viewAttribute id="RSANZ"/>
+      <viewAttribute id="PDEST"/>
+      <viewAttribute id="HROID"/>
+      <viewAttribute id="FORTN"/>
+      <viewAttribute id="ZGR01_REF"/>
+      <viewAttribute id="ZGR02_REF"/>
+      <viewAttribute id="ZGR03_REF"/>
+      <viewAttribute id="ZGR04_REF"/>
+      <viewAttribute id="ZGR05_REF"/>
+      <viewAttribute id="ZGR06_REF"/>
+      <viewAttribute id="STEUS_C"/>
+      <viewAttribute id="STEUS_I"/>
+      <viewAttribute id="STEUS_N"/>
+      <viewAttribute id="STEUS_Q"/>
+      <viewAttribute id="RUZUS"/>
+      <viewAttribute id="RSANZ_REF"/>
+      <viewAttribute id="HR"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SUBSYS"/>
+      <viewAttribute id="BDEGR"/>
+      <viewAttribute id="RGEKZ"/>
+      <viewAttribute id="HRTYP"/>
+      <viewAttribute id="SLWID"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SLWID_REF"/>
+      <viewAttribute id="LIFNR_REF"/>
+      <viewAttribute id="VGARB"/>
+      <viewAttribute id="VGDIM"/>
+      <viewAttribute id="HRPLVAR"/>
+      <viewAttribute id="VGDAU"/>
+      <viewAttribute id="STOBJ"/>
+      <viewAttribute id="RESGR"/>
+      <viewAttribute id="LGORT_RES"/>
+      <viewAttribute id="MIXMAT"/>
+      <viewAttribute id="ISTBED_KZ"/>
+      <viewAttribute id="SRTYPE"/>
+      <viewAttribute id="SNTYPE"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+    
+      <viewAttribute id="KAPAR"/>
+      <viewAttribute id="NAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_3" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJID" source="OBJID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGDA" source="BEGDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDDA" source="ENDDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_GRND" source="AEDAT_GRND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_GRND" source="AENAM_GRND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_VORA" source="AEDAT_VORA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_VORA" source="AENAM_VORA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_TERM" source="AEDAT_TERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_TERM" source="AENAM_TERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_TECH" source="AEDAT_TECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_TECH" source="AENAM_TECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERWE" source="VERWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR01" source="PAR01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR02" source="PAR02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR03" source="PAR03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR04" source="PAR04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR05" source="PAR05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR06" source="PAR06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU1" source="PARU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU2" source="PARU2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU3" source="PARU3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU4" source="PARU4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU5" source="PARU5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU6" source="PARU6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV1" source="PARV1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV2" source="PARV2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV3" source="PARV3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV4" source="PARV4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV5" source="PARV5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV6" source="PARV6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANV" source="PLANV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAND" source="STAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAN" source="VERAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGWTS" source="VGWTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM01" source="VGM01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM02" source="VGM02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM03" source="VGM03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM04" source="VGM04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM05" source="VGM05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM06" source="VGM06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XDEFA" source="XDEFA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XKOST" source="XKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSPRR" source="XSPRR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XTERM" source="XTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR01" source="ZGR01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR02" source="ZGR02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR03" source="ZGR03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR04" source="ZGR04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR05" source="ZGR05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR06" source="ZGR06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTSCH" source="KTSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOANZ" source="LOANZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOART" source="LOART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOGRP" source="LOGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUALF" source="QUALF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASCH" source="RASCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS" source="STEUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE01" source="VGE01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE02" source="VGE02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE03" source="VGE03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE04" source="VGE04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE05" source="VGE05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE06" source="VGE06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTSCH_REF" source="KTSCH_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOART_REF" source="LOART_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOANZ_REF" source="LOANZ_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOGRP_REF" source="LOGRP_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUALF_REF" source="QUALF_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASCH_REF" source="RASCH_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_REF" source="STEUS_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT1" source="FORT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT2" source="FORT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT3" source="FORT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORTGR" source="ORTGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIWN" source="ZEIWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWNOR" source="ZWNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIWM" source="ZEIWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWMIN" source="ZWMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORMR" source="FORMR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATYP" source="MATYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CPLGR" source="CPLGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTB" source="SORTB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTRVP" source="MTRVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTMVP" source="MTMVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPVP" source="MTPVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSANZ" source="RSANZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDEST" source="PDEST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HROID" source="HROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORTN" source="FORTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR01_REF" source="ZGR01_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR02_REF" source="ZGR02_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR03_REF" source="ZGR03_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR04_REF" source="ZGR04_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR05_REF" source="ZGR05_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR06_REF" source="ZGR06_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_C" source="STEUS_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_I" source="STEUS_I"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_N" source="STEUS_N"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_Q" source="STEUS_Q"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUZUS" source="RUZUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSANZ_REF" source="RSANZ_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HR" source="HR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSYS" source="SUBSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDEGR" source="BDEGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RGEKZ" source="RGEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRTYP" source="HRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLWID" source="SLWID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLWID_REF" source="SLWID_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_REF" source="LIFNR_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGARB" source="VGARB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGDIM" source="VGDIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRPLVAR" source="HRPLVAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGDAU" source="VGDAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOBJ" source="STOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESGR" source="RESGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT_RES" source="LGORT_RES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIXMAT" source="MIXMAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISTBED_KZ" source="ISTBED_KZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SRTYPE" source="SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNTYPE" source="SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+    </input>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJID" source="OBJID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGDA" source="BEGDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDDA" source="ENDDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_GRND" source="AEDAT_GRND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_GRND" source="AENAM_GRND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_VORA" source="AEDAT_VORA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_VORA" source="AENAM_VORA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_TERM" source="AEDAT_TERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_TERM" source="AENAM_TERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_TECH" source="AEDAT_TECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_TECH" source="AENAM_TECH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERWE" source="VERWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM" source="LVORM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR01" source="PAR01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR02" source="PAR02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR03" source="PAR03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR04" source="PAR04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR05" source="PAR05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR06" source="PAR06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU1" source="PARU1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU2" source="PARU2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU3" source="PARU3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU4" source="PARU4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU5" source="PARU5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARU6" source="PARU6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV1" source="PARV1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV2" source="PARV2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV3" source="PARV3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV4" source="PARV4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV5" source="PARV5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARV6" source="PARV6"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANV" source="PLANV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAND" source="STAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAN" source="VERAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGWTS" source="VGWTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM01" source="VGM01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM02" source="VGM02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM03" source="VGM03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM04" source="VGM04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM05" source="VGM05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGM06" source="VGM06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XDEFA" source="XDEFA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XKOST" source="XKOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XSPRR" source="XSPRR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XTERM" source="XTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR01" source="ZGR01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR02" source="ZGR02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR03" source="ZGR03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR04" source="ZGR04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR05" source="ZGR05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR06" source="ZGR06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTSCH" source="KTSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOANZ" source="LOANZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOART" source="LOART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOGRP" source="LOGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUALF" source="QUALF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASCH" source="RASCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS" source="STEUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE01" source="VGE01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE02" source="VGE02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE03" source="VGE03"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE04" source="VGE04"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE05" source="VGE05"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGE06" source="VGE06"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTSCH_REF" source="KTSCH_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOART_REF" source="LOART_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOANZ_REF" source="LOANZ_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOGRP_REF" source="LOGRP_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUALF_REF" source="QUALF_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RASCH_REF" source="RASCH_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_REF" source="STEUS_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT1" source="FORT1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT2" source="FORT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORT3" source="FORT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPID" source="KAPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORTGR" source="ORTGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIWN" source="ZEIWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWNOR" source="ZWNOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZEIWM" source="ZEIWM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWMIN" source="ZWMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORMR" source="FORMR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATYP" source="MATYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CPLGR" source="CPLGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTB" source="SORTB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTRVP" source="MTRVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTMVP" source="MTMVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPVP" source="MTPVP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSANZ" source="RSANZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDEST" source="PDEST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HROID" source="HROID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORTN" source="FORTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR01_REF" source="ZGR01_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR02_REF" source="ZGR02_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR03_REF" source="ZGR03_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR04_REF" source="ZGR04_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR05_REF" source="ZGR05_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZGR06_REF" source="ZGR06_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_C" source="STEUS_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_I" source="STEUS_I"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_N" source="STEUS_N"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STEUS_Q" source="STEUS_Q"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUZUS" source="RUZUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RSANZ_REF" source="RSANZ_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HR" source="HR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRVBE" source="PRVBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBSYS" source="SUBSYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDEGR" source="BDEGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RGEKZ" source="RGEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRTYP" source="HRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLWID" source="SLWID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLWID_REF" source="SLWID_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_REF" source="LIFNR_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGARB" source="VGARB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGDIM" source="VGDIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HRPLVAR" source="HRPLVAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VGDAU" source="VGDAU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOBJ" source="STOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RESGR" source="RESGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT_RES" source="LGORT_RES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIXMAT" source="MIXMAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISTBED_KZ" source="ISTBED_KZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SRTYPE" source="SRTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SNTYPE" source="SNTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="KAPAR" source="KAPAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Union_2">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Union_2" columnName="MANDT"/>
+    </attribute>
+    <attribute id="OBJTY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object types of the CIM resource"/>
+      <keyMapping columnObjectName="Union_2" columnName="OBJTY"/>
+    </attribute>
+    <attribute id="OBJID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object ID of the resource"/>
+      <keyMapping columnObjectName="Union_2" columnName="OBJID"/>
+    </attribute>
+    <attribute id="BEGDA" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Start Date"/>
+      <keyMapping columnObjectName="Union_2" columnName="BEGDA"/>
+    </attribute>
+    <attribute id="ENDDA" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="End Date"/>
+      <keyMapping columnObjectName="Union_2" columnName="ENDDA"/>
+    </attribute>
+    <attribute id="AEDAT_GRND" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Changed on"/>
+      <keyMapping columnObjectName="Union_2" columnName="AEDAT_GRND"/>
+    </attribute>
+    <attribute id="AENAM_GRND" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User Name"/>
+      <keyMapping columnObjectName="Union_2" columnName="AENAM_GRND"/>
+    </attribute>
+    <attribute id="AEDAT_VORA" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Changed on"/>
+      <keyMapping columnObjectName="Union_2" columnName="AEDAT_VORA"/>
+    </attribute>
+    <attribute id="AENAM_VORA" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User Name"/>
+      <keyMapping columnObjectName="Union_2" columnName="AENAM_VORA"/>
+    </attribute>
+    <attribute id="AEDAT_TERM" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Changed on"/>
+      <keyMapping columnObjectName="Union_2" columnName="AEDAT_TERM"/>
+    </attribute>
+    <attribute id="AENAM_TERM" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User Name"/>
+      <keyMapping columnObjectName="Union_2" columnName="AENAM_TERM"/>
+    </attribute>
+    <attribute id="AEDAT_TECH" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Changed on"/>
+      <keyMapping columnObjectName="Union_2" columnName="AEDAT_TECH"/>
+    </attribute>
+    <attribute id="AENAM_TECH" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User Name"/>
+      <keyMapping columnObjectName="Union_2" columnName="AENAM_TECH"/>
+    </attribute>
+    <attribute id="ARBPL" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Work center"/>
+      <keyMapping columnObjectName="Union_2" columnName="ARBPL"/>
+    </attribute>
+    <attribute id="WERKS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant"/>
+      <keyMapping columnObjectName="Union_2" columnName="WERKS"/>
+    </attribute>
+    <attribute id="VERWE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Work Center Category"/>
+      <keyMapping columnObjectName="Union_2" columnName="VERWE"/>
+    </attribute>
+    <attribute id="LVORM" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Deletion flag for work center"/>
+      <keyMapping columnObjectName="Union_2" columnName="LVORM"/>
+    </attribute>
+    <attribute id="PAR01" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="First work center parameter (for formulas)"/>
+      <keyMapping columnObjectName="Union_2" columnName="PAR01"/>
+    </attribute>
+    <attribute id="PAR02" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Second work center parameter (for formulas)"/>
+      <keyMapping columnObjectName="Union_2" columnName="PAR02"/>
+    </attribute>
+    <attribute id="PAR03" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Third work center parameter (for formulas)"/>
+      <keyMapping columnObjectName="Union_2" columnName="PAR03"/>
+    </attribute>
+    <attribute id="PAR04" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fourth work center parameter (for formulas)"/>
+      <keyMapping columnObjectName="Union_2" columnName="PAR04"/>
+    </attribute>
+    <attribute id="PAR05" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fifth work center parameter (for formulas)"/>
+      <keyMapping columnObjectName="Union_2" columnName="PAR05"/>
+    </attribute>
+    <attribute id="PAR06" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sixth work center parameter (for formulas)"/>
+      <keyMapping columnObjectName="Union_2" columnName="PAR06"/>
+    </attribute>
+    <attribute id="PARU1" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARU1"/>
+    </attribute>
+    <attribute id="PARU2" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARU2"/>
+    </attribute>
+    <attribute id="PARU3" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARU3"/>
+    </attribute>
+    <attribute id="PARU4" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARU4"/>
+    </attribute>
+    <attribute id="PARU5" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARU5"/>
+    </attribute>
+    <attribute id="PARU6" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARU6"/>
+    </attribute>
+    <attribute id="PARV1" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter value"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARV1"/>
+    </attribute>
+    <attribute id="PARV2" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter value"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARV2"/>
+    </attribute>
+    <attribute id="PARV3" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter value"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARV3"/>
+    </attribute>
+    <attribute id="PARV4" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter value"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARV4"/>
+    </attribute>
+    <attribute id="PARV5" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter value"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARV5"/>
+    </attribute>
+    <attribute id="PARV6" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Parameter value"/>
+      <keyMapping columnObjectName="Union_2" columnName="PARV6"/>
+    </attribute>
+    <attribute id="PLANV" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for task list usage"/>
+      <keyMapping columnObjectName="Union_2" columnName="PLANV"/>
+    </attribute>
+    <attribute id="STAND" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Work center location"/>
+      <keyMapping columnObjectName="Union_2" columnName="STAND"/>
+    </attribute>
+    <attribute id="VERAN" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Person responsible for the work center"/>
+      <keyMapping columnObjectName="Union_2" columnName="VERAN"/>
+    </attribute>
+    <attribute id="VGWTS" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Standard value key"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGWTS"/>
+    </attribute>
+    <attribute id="VGM01" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rule for standard value maintenance"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGM01"/>
+    </attribute>
+    <attribute id="VGM02" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rule for standard value maintenance"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGM02"/>
+    </attribute>
+    <attribute id="VGM03" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rule for standard value maintenance"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGM03"/>
+    </attribute>
+    <attribute id="VGM04" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rule for standard value maintenance"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGM04"/>
+    </attribute>
+    <attribute id="VGM05" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rule for standard value maintenance"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGM05"/>
+    </attribute>
+    <attribute id="VGM06" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rule for standard value maintenance"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGM06"/>
+    </attribute>
+    <attribute id="XDEFA" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Work center for default values"/>
+      <keyMapping columnObjectName="Union_2" columnName="XDEFA"/>
+    </attribute>
+    <attribute id="XKOST" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Work center is maintained for costing"/>
+      <keyMapping columnObjectName="Union_2" columnName="XKOST"/>
+    </attribute>
+    <attribute id="XSPRR" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Work center is locked"/>
+      <keyMapping columnObjectName="Union_2" columnName="XSPRR"/>
+    </attribute>
+    <attribute id="XTERM" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Work center is maintained for scheduling"/>
+      <keyMapping columnObjectName="Union_2" columnName="XTERM"/>
+    </attribute>
+    <attribute id="ZGR01" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for performance efficiency rate"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR01"/>
+    </attribute>
+    <attribute id="ZGR02" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for performance efficiency rate"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR02"/>
+    </attribute>
+    <attribute id="ZGR03" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for performance efficiency rate"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR03"/>
+    </attribute>
+    <attribute id="ZGR04" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for performance efficiency rate"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR04"/>
+    </attribute>
+    <attribute id="ZGR05" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for performance efficiency rate"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR05"/>
+    </attribute>
+    <attribute id="ZGR06" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for performance efficiency rate"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR06"/>
+    </attribute>
+    <attribute id="KTSCH" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Standard text key"/>
+      <keyMapping columnObjectName="Union_2" columnName="KTSCH"/>
+    </attribute>
+    <attribute id="LOANZ" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Time Tickets"/>
+      <keyMapping columnObjectName="Union_2" columnName="LOANZ"/>
+    </attribute>
+    <attribute id="LOART" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Wage Type"/>
+      <keyMapping columnObjectName="Union_2" columnName="LOART"/>
+    </attribute>
+    <attribute id="LOGRP" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Wage group"/>
+      <keyMapping columnObjectName="Union_2" columnName="LOGRP"/>
+    </attribute>
+    <attribute id="QUALF" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Suitability"/>
+      <keyMapping columnObjectName="Union_2" columnName="QUALF"/>
+    </attribute>
+    <attribute id="RASCH" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Setup Type Key"/>
+      <keyMapping columnObjectName="Union_2" columnName="RASCH"/>
+    </attribute>
+    <attribute id="STEUS" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Control key"/>
+      <keyMapping columnObjectName="Union_2" columnName="STEUS"/>
+    </attribute>
+    <attribute id="VGE01" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure for the standard value"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGE01"/>
+    </attribute>
+    <attribute id="VGE02" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure for the standard value"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGE02"/>
+    </attribute>
+    <attribute id="VGE03" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure for the standard value"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGE03"/>
+    </attribute>
+    <attribute id="VGE04" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure for the standard value"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGE04"/>
+    </attribute>
+    <attribute id="VGE05" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure for the standard value"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGE05"/>
+    </attribute>
+    <attribute id="VGE06" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure for the standard value"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGE06"/>
+    </attribute>
+    <attribute id="KTSCH_REF" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Standard text key is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="KTSCH_REF"/>
+    </attribute>
+    <attribute id="LOART_REF" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Wage type is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="LOART_REF"/>
+    </attribute>
+    <attribute id="LOANZ_REF" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Number of time tickets is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="LOANZ_REF"/>
+    </attribute>
+    <attribute id="LOGRP_REF" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Wage group is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="LOGRP_REF"/>
+    </attribute>
+    <attribute id="QUALF_REF" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Suitability is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="QUALF_REF"/>
+    </attribute>
+    <attribute id="RASCH_REF" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Setup type key is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="RASCH_REF"/>
+    </attribute>
+    <attribute id="STEUS_REF" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Control key is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="STEUS_REF"/>
+    </attribute>
+    <attribute id="FORT1" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Formula for setup time"/>
+      <keyMapping columnObjectName="Union_2" columnName="FORT1"/>
+    </attribute>
+    <attribute id="FORT2" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Formula for the duration of processing time"/>
+      <keyMapping columnObjectName="Union_2" columnName="FORT2"/>
+    </attribute>
+    <attribute id="FORT3" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Formula for teardown time"/>
+      <keyMapping columnObjectName="Union_2" columnName="FORT3"/>
+    </attribute>
+    <attribute id="KAPID" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Capacity ID"/>
+      <keyMapping columnObjectName="Union_2" columnName="KAPID"/>
+    </attribute>
+    <attribute id="ORTGR" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Location group"/>
+      <keyMapping columnObjectName="Union_2" columnName="ORTGR"/>
+    </attribute>
+    <attribute id="ZEIWN" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit for the standard queue time"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZEIWN"/>
+    </attribute>
+    <attribute id="ZWNOR" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Standard queue time"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZWNOR"/>
+    </attribute>
+    <attribute id="ZEIWM" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit for the minumum queue time"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZEIWM"/>
+    </attribute>
+    <attribute id="ZWMIN" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum queue time"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZWMIN"/>
+    </attribute>
+    <attribute id="FORMR" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: same formulas as in capacity"/>
+      <keyMapping columnObjectName="Union_2" columnName="FORMR"/>
+    </attribute>
+    <attribute id="MATYP" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Machine type"/>
+      <keyMapping columnObjectName="Union_2" columnName="MATYP"/>
+    </attribute>
+    <attribute id="CPLGR" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAPP planner group"/>
+      <keyMapping columnObjectName="Union_2" columnName="CPLGR"/>
+    </attribute>
+    <attribute id="SORTB" order="88" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sort string"/>
+      <keyMapping columnObjectName="Union_2" columnName="SORTB"/>
+    </attribute>
+    <attribute id="MTRVP" order="89" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Additional time percentage for setup"/>
+      <keyMapping columnObjectName="Union_2" columnName="MTRVP"/>
+    </attribute>
+    <attribute id="MTMVP" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Additional time percentage for machines"/>
+      <keyMapping columnObjectName="Union_2" columnName="MTMVP"/>
+    </attribute>
+    <attribute id="MTPVP" order="91" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Aditional time percentage for labor"/>
+      <keyMapping columnObjectName="Union_2" columnName="MTPVP"/>
+    </attribute>
+    <attribute id="RSANZ" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of confirmation slips"/>
+      <keyMapping columnObjectName="Union_2" columnName="RSANZ"/>
+    </attribute>
+    <attribute id="PDEST" order="93" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Printer for shop papers"/>
+      <keyMapping columnObjectName="Union_2" columnName="PDEST"/>
+    </attribute>
+    <attribute id="HROID" order="94" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object ID"/>
+      <keyMapping columnObjectName="Union_2" columnName="HROID"/>
+    </attribute>
+    <attribute id="FORTN" order="95" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Formula for the duration of other types of int. processing"/>
+      <keyMapping columnObjectName="Union_2" columnName="FORTN"/>
+    </attribute>
+    <attribute id="ZGR01_REF" order="96" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR01_REF"/>
+    </attribute>
+    <attribute id="ZGR02_REF" order="97" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR02_REF"/>
+    </attribute>
+    <attribute id="ZGR03_REF" order="98" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR03_REF"/>
+    </attribute>
+    <attribute id="ZGR04_REF" order="99" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR04_REF"/>
+    </attribute>
+    <attribute id="ZGR05_REF" order="100" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR05_REF"/>
+    </attribute>
+    <attribute id="ZGR06_REF" order="101" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="ZGR06_REF"/>
+    </attribute>
+    <attribute id="STEUS_C" order="102" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Control key"/>
+      <keyMapping columnObjectName="Union_2" columnName="STEUS_C"/>
+    </attribute>
+    <attribute id="STEUS_I" order="103" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Control key"/>
+      <keyMapping columnObjectName="Union_2" columnName="STEUS_I"/>
+    </attribute>
+    <attribute id="STEUS_N" order="104" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Control key"/>
+      <keyMapping columnObjectName="Union_2" columnName="STEUS_N"/>
+    </attribute>
+    <attribute id="STEUS_Q" order="105" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Control key"/>
+      <keyMapping columnObjectName="Union_2" columnName="STEUS_Q"/>
+    </attribute>
+    <attribute id="RUZUS" order="106" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key: rounding and additional values"/>
+      <keyMapping columnObjectName="Union_2" columnName="RUZUS"/>
+    </attribute>
+    <attribute id="RSANZ_REF" order="107" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Number of confirmation slips is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="RSANZ_REF"/>
+    </attribute>
+    <attribute id="HR" order="108" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Work center only resides in HR"/>
+      <keyMapping columnObjectName="Union_2" columnName="HR"/>
+    </attribute>
+    <attribute id="PRVBE" order="109" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Production Supply Area"/>
+      <keyMapping columnObjectName="Union_2" columnName="PRVBE"/>
+    </attribute>
+    <attribute id="SUBSYS" order="110" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Subsystem Identifier for QM Subsystem Interface"/>
+      <keyMapping columnObjectName="Union_2" columnName="SUBSYS"/>
+    </attribute>
+    <attribute id="BDEGR" order="111" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Grouping for Connection to Subsystem"/>
+      <keyMapping columnObjectName="Union_2" columnName="BDEGR"/>
+    </attribute>
+    <attribute id="RGEKZ" order="112" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Backflushing"/>
+      <keyMapping columnObjectName="Union_2" columnName="RGEKZ"/>
+    </attribute>
+    <attribute id="HRTYP" order="113" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object Type"/>
+      <keyMapping columnObjectName="Union_2" columnName="HRTYP"/>
+    </attribute>
+    <attribute id="SLWID" order="114" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key word ID for user-defined fields"/>
+      <keyMapping columnObjectName="Union_2" columnName="SLWID"/>
+    </attribute>
+    <attribute id="LIFNR" order="115" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account Number of Vendor or Creditor"/>
+      <keyMapping columnObjectName="Union_2" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="SLWID_REF" order="116" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="SLWID_REF"/>
+    </attribute>
+    <attribute id="LIFNR_REF" order="117" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Union_2" columnName="LIFNR_REF"/>
+    </attribute>
+    <attribute id="VGARB" order="118" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure of work"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGARB"/>
+    </attribute>
+    <attribute id="VGDIM" order="119" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Dimension of work"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGDIM"/>
+    </attribute>
+    <attribute id="HRPLVAR" order="120" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plan Version"/>
+      <keyMapping columnObjectName="Union_2" columnName="HRPLVAR"/>
+    </attribute>
+    <attribute id="VGDAU" order="121" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Normal duration/unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="VGDAU"/>
+    </attribute>
+    <attribute id="STOBJ" order="122" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object number"/>
+      <keyMapping columnObjectName="Union_2" columnName="STOBJ"/>
+    </attribute>
+    <attribute id="RESGR" order="123" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Matrix identification"/>
+      <keyMapping columnObjectName="Union_2" columnName="RESGR"/>
+    </attribute>
+    <attribute id="LGORT_RES" order="124" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage location storage resource"/>
+      <keyMapping columnObjectName="Union_2" columnName="LGORT_RES"/>
+    </attribute>
+    <attribute id="MIXMAT" order="125" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: mixing of material allowed"/>
+      <keyMapping columnObjectName="Union_2" columnName="MIXMAT"/>
+    </attribute>
+    <attribute id="ISTBED_KZ" order="126" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Calculation of actual capacity requirements"/>
+      <keyMapping columnObjectName="Union_2" columnName="ISTBED_KZ"/>
+    </attribute>
+    <attribute id="SRTYPE" order="127" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Shift Report Type"/>
+      <keyMapping columnObjectName="Union_2" columnName="SRTYPE"/>
+    </attribute>
+    <attribute id="SNTYPE" order="128" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Shift Note Type"/>
+      <keyMapping columnObjectName="Union_2" columnName="SNTYPE"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="129" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Union_2" columnName="CURRENT_DATE"/>
+    </attribute>
+  
+    <attribute id="SPRAS" order="130" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+  
+      <keyMapping columnObjectName="Union_2" columnName="SPRAS"/>
+  
+    </attribute>
+    <attribute id="KTEXT" order="131" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTEXT"/>
+      <keyMapping columnObjectName="Union_2" columnName="KTEXT"/>
+    </attribute>
+  
+    <attribute id="KAPAR" order="132" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Capacity category"/>
+      <keyMapping columnObjectName="Union_2" columnName="KAPAR"/>
+    </attribute>
+    <attribute id="NAME" order="133" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Capacity name"/>
+      <keyMapping columnObjectName="Union_2" columnName="NAME"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="225" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="766"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="236" y="236"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.ProfitCenter.03Transformation::CV_PC_MASTER_CEPC" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+<origin/>
+  <descriptions defaultDescription="CA_REL_CS_VALID"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="EHUB.MD.ProfitCenter.01Extraction::CV_SHE_PC_MASTER_CEPC">
+      <resourceUri>EHUB.MD.ProfitCenter.01Extraction::CV_SHE_PC_MASTER_CEPC</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_CONTROLLING_AREA">
+      <resourceUri>EHUB.Synonyms::SY_LKP_CONTROLLING_AREA</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_COUNTRY_REGION">
+      <resourceUri>EHUB.Synonyms::SY_LKP_COUNTRY_REGION</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_COUNTRY">
+      <resourceUri>EHUB.Synonyms::SY_LKP_COUNTRY</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_PROFIT_CENTER">
+      <resourceUri>EHUB.Synonyms::SY_LKP_PROFIT_CENTER</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MASTER_CEPC">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="DATBI"/>
+        <viewAttribute id="DATAB"/>
+        <viewAttribute id="VERAK_USER"/>
+        <viewAttribute id="VERAK"/>
+        <viewAttribute id="ABTEI"/>
+        <viewAttribute id="KHINR"/>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="ANRED"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="NAME2"/>
+        <viewAttribute id="NAME3"/>
+        <viewAttribute id="NAME4"/>
+        <viewAttribute id="STRAS"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="PSTL2"/>
+        <viewAttribute id="PFACH"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="TXJCD"/>
+        <viewAttribute id="TELBX"/>
+        <viewAttribute id="TELF1"/>
+        <viewAttribute id="TELF2"/>
+        <viewAttribute id="TELFX"/>
+        <viewAttribute id="TELTX"/>
+        <viewAttribute id="TELX1"/>
+        <viewAttribute id="DRNAM"/>
+        <viewAttribute id="SEGMENT"/>
+        <viewAttribute id="PCA_TEMPLATE"/>
+        <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.MD.ProfitCenter.01Extraction::CV_SHE_PC_MASTER_CEPC"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_CONTROLLING_AREA">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="CONTROLLING_AREA"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_CONTROLLING_AREA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_COUNTRY_REGION">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_REGION"/>
+      <viewAttribute id="REGION"/>
+      <viewAttribute id="COUNTRY"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COUNTRY_REGION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_COUNTRY">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_COUNTRY"/>
+      <viewAttribute id="COUNTRY"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COUNTRY"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_PROFIT_CENTER">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="LEGACY_PROFIT_CENTER"/>
+      <viewAttribute id="PROFIT_CENTER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_PROFIT_CENTER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_PROFIT_CENTER" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="LEGACY_PROFIT_CENTER"/>
+      <viewAttribute id="PROFIT_CENTER"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute hidden="true" id="JOIN$PRCTR$LEGACY_PROFIT_CENTER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_PRCTR" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>case when &quot;PRCTR&quot;=&quot;LEGACY_PROFIT_CENTER&quot;
+then &quot;PROFIT_CENTER&quot;
+else &quot;PRCTR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_MASTER_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$LEGACY_PROFIT_CENTER" source="PRCTR"/>
+    </input>
+    <input node="P_LKP_PROFIT_CENTER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_PROFIT_CENTER" source="LEGACY_PROFIT_CENTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFIT_CENTER" source="PROFIT_CENTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$LEGACY_PROFIT_CENTER" source="LEGACY_PROFIT_CENTER"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+    <joinAttribute name="JOIN$PRCTR$LEGACY_PROFIT_CENTER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_KOKRS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="LEGACY_CONTROLLING_AREA"/>
+      <viewAttribute id="CONTROLLING_AREA"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_KOKRS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>case when &quot;KOKRS&quot;=&quot;LEGACY_CONTROLLING_AREA&quot;
+then &quot;CONTROLLING_AREA&quot;
+else &quot;KOKRS&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_PROFIT_CENTER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="CC_PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="KOKRS"/>
+    </input>
+    <input node="P_LKP_CONTROLLING_AREA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CONTROLLING_AREA" source="CONTROLLING_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$LEGACY_CONTROLLING_AREA" source="LEGACY_CONTROLLING_AREA"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$LEGACY_CONTROLLING_AREA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_REGION" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="LEGACY_REGION"/>
+      <viewAttribute id="REGION"/>
+      <viewAttribute id="COUNTRY"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$LAND1$COUNTRY"/>
+      <viewAttribute hidden="true" id="JOIN$REGIO$LEGACY_REGION"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_REGIO" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+        <formula>case when &quot;LAND1&quot;=&quot;COUNTRY&quot; and &quot;REGIO&quot;=&quot;LEGACY_REGION&quot;
+then &quot;REGION&quot;
+else &quot;REGIO&quot;
+end </formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_KOKRS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="CC_KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LAND1$COUNTRY" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$REGIO$LEGACY_REGION" source="REGIO"/>
+    </input>
+    <input node="P_LKP_COUNTRY_REGION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_REGION" source="LEGACY_REGION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LAND1$COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$REGIO$LEGACY_REGION" source="LEGACY_REGION"/>
+    </input>
+    <joinAttribute name="JOIN$LAND1$COUNTRY"/>
+    <joinAttribute name="JOIN$REGIO$LEGACY_REGION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LAND1" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="LEGACY_COUNTRY"/>
+      <viewAttribute id="COUNTRY"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$LAND1$LEGACY_COUNTRY"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_LAND1" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+        <formula>case when &quot;LAND1&quot;=&quot;LEGACY_COUNTRY&quot;
+then &quot;COUNTRY&quot;
+else &quot;LAND1&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_REGION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="CC_REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LAND1$LEGACY_COUNTRY" source="LAND1"/>
+    </input>
+    <input node="P_LKP_COUNTRY">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_COUNTRY" source="LEGACY_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LAND1$LEGACY_COUNTRY" source="LEGACY_COUNTRY"/>
+    </input>
+    <joinAttribute name="JOIN$LAND1$LEGACY_COUNTRY"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="J_LAND1">
+    <descriptions/>
+    <attributes>
+      <attribute id="MANDT" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Client"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="MANDT"/>
+      </attribute>
+      <attribute id="KOKRS" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Controlling Area"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="KOKRS"/>
+      </attribute>
+      <attribute id="DATBI" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valid To Date"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="DATBI"/>
+      </attribute>
+      <attribute id="DATAB" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valid-From Date"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="DATAB"/>
+      </attribute>
+      <attribute id="VERAK_USER" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Responsible"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="VERAK_USER"/>
+      </attribute>
+      <attribute id="VERAK" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Person Responsible"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="VERAK"/>
+      </attribute>
+      <attribute id="ABTEI" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Department"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="ABTEI"/>
+      </attribute>
+      <attribute id="KHINR" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Standard Hierarchy Area"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="KHINR"/>
+      </attribute>
+      <attribute id="PRCTR" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Profit Center"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="PRCTR"/>
+      </attribute>
+      <attribute id="ANRED" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Title"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="ANRED"/>
+      </attribute>
+      <attribute id="NAME1" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 1"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="NAME1"/>
+      </attribute>
+      <attribute id="NAME2" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 2"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="NAME2"/>
+      </attribute>
+      <attribute id="NAME3" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 3"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="NAME3"/>
+      </attribute>
+      <attribute id="NAME4" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 4"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="NAME4"/>
+      </attribute>
+      <attribute id="STRAS" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="House number and street"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="STRAS"/>
+      </attribute>
+      <attribute id="PSTLZ" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Postal Code"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="PSTLZ"/>
+      </attribute>
+      <attribute id="PSTL2" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="P.O. Box Postal Code"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="PSTL2"/>
+      </attribute>
+      <attribute id="PFACH" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PO Box"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="PFACH"/>
+      </attribute>
+      <attribute id="ORT01" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="ORT01"/>
+      </attribute>
+      <attribute id="ORT02" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="District"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="ORT02"/>
+      </attribute>
+      <attribute id="LAND1" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Country Key"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="CC_LAND1"/>
+      </attribute>
+      <attribute id="REGIO" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Region (State, Province, County)"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="REGIO"/>
+      </attribute>
+      <attribute id="TXJCD" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Jurisdiction"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="TXJCD"/>
+      </attribute>
+      <attribute id="TELBX" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Telebox number"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="TELBX"/>
+      </attribute>
+      <attribute id="TELF1" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First telephone number"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="TELF1"/>
+      </attribute>
+      <attribute id="TELF2" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Second telephone number"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="TELF2"/>
+      </attribute>
+      <attribute id="TELFX" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fax Number"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="TELFX"/>
+      </attribute>
+      <attribute id="TELTX" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Teletex number"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="TELTX"/>
+      </attribute>
+      <attribute id="TELX1" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Telex number"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="TELX1"/>
+      </attribute>
+      <attribute id="DRNAM" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Printer destination for CCtr report"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="DRNAM"/>
+      </attribute>
+      <attribute id="SEGMENT" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Segment for Segmental Reporting"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="SEGMENT"/>
+      </attribute>
+      <attribute id="PCA_TEMPLATE" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Template for Formula Planning in Profit Centers"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="PCA_TEMPLATE"/>
+      </attribute>
+      <attribute id="LOCK_IND" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Lock indicator"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="LOCK_IND"/>
+      </attribute>
+      <attribute id="SPRAS" order="34" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SPRAS"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="SPRAS"/>
+      </attribute>
+      <attribute id="KTEXT" order="35" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="KTEXT"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="KTEXT"/>
+      </attribute>
+      <attribute id="LTEXT" order="36" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="LTEXT"/>
+        <keyMapping columnObjectName="J_LAND1" columnName="LTEXT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="534" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_MASTER_CEPC" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="91" y="856"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+    <shape expanded="true" modelObjectName="P_LKP_CONTROLLING_AREA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_COUNTRY_REGION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="477" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_COUNTRY" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="592" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_PROFIT_CENTER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_PROFIT_CENTER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_MASTER_CEPC" modelObjectNameSpace="J_PROFIT_CENTER" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="171"/>
+    </shape>
+    <shape modelObjectName="P_LKP_PROFIT_CENTER" modelObjectNameSpace="J_PROFIT_CENTER" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="209"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_KOKRS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_PROFIT_CENTER" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+    <shape modelObjectName="P_LKP_CONTROLLING_AREA" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_REGION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_KOKRS" modelObjectNameSpace="J_REGION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+    <shape modelObjectName="P_LKP_COUNTRY_REGION" modelObjectNameSpace="J_REGION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="180"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LAND1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="534" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_REGION" modelObjectNameSpace="J_LAND1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="180"/>
+    </shape>
+    <shape modelObjectName="P_LKP_COUNTRY" modelObjectNameSpace="J_LAND1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="190"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

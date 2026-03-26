@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.TD.SalesOrder.04Harmonization::CV_SO_SCHEDULELINEDATA_VBEP" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+<origin/>
+  <descriptions defaultDescription="CV_MD_FI_PC_TEXT_DMC_CEPCT_HAR"/>
+  <metadata changedAt="2023-01-26 15:09:20.889"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="35"/>
+  <dataSources>
+    <DataSource id="EHUB.TD.SalesOrder.03Transformation::CV_SO_SCHEDULELINEDATA_VBEP">
+      <resourceUri>EHUB.TD.SalesOrder.03Transformation::CV_SO_SCHEDULELINEDATA_VBEP</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_TA_SO_VBEP_REL_INPUT">
+      <resourceUri>EHUB.Synonyms::SY_TA_SO_VBEP_REL_INPUT</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VBEP_SHE">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="DeliveryScheduleLineNumber"/>
+      <viewAttribute id="OrderQuantityInSalesUnits"/>
+      <viewAttribute id="ScheduleLineDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.TD.SalesOrder.03Transformation::CV_SO_SCHEDULELINEDATA_VBEP"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="DeliveryScheduleLineNumber"/>
+      <viewAttribute id="OrderQuantityInSalesUnits"/>
+      <viewAttribute id="ScheduleLineDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_TA_SO_VBEP_REL_INPUT"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="DeliveryScheduleLineNumber"/>
+      <viewAttribute id="OrderQuantityInSalesUnits"/>
+      <viewAttribute id="ScheduleLineDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="VBEP_SHE">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DeliveryScheduleLineNumber" source="DeliveryScheduleLineNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderQuantityInSalesUnits" source="OrderQuantityInSalesUnits"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ScheduleLineDate" source="ScheduleLineDate"/>
+      </input>
+    </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="DeliveryScheduleLineNumber"/>
+      <viewAttribute id="OrderQuantityInSalesUnits"/>
+      <viewAttribute id="ScheduleLineDate"/>
+      <viewAttribute id="LegacySalesDocument_INPUT"/>
+      <viewAttribute id="SalesDocumentItem_INPUT"/>
+      <viewAttribute id="DeliveryScheduleLineNumber_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$LegacySalesDocument$LegacySalesDocument"/>
+      <viewAttribute hidden="true" id="JOIN$SalesDocumentItem$SalesDocumentItem"/>
+      <viewAttribute hidden="true" id="JOIN$DeliveryScheduleLineNumber$DeliveryScheduleLineNumber"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Union_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DeliveryScheduleLineNumber" source="DeliveryScheduleLineNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderQuantityInSalesUnits" source="OrderQuantityInSalesUnits"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ScheduleLineDate" source="ScheduleLineDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LegacySalesDocument$LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SalesDocumentItem$SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DeliveryScheduleLineNumber$DeliveryScheduleLineNumber" source="DeliveryScheduleLineNumber"/>
+      </input>
+      <input node="P_Remediated_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument_INPUT" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem_INPUT" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DeliveryScheduleLineNumber_INPUT" source="DeliveryScheduleLineNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LegacySalesDocument$LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SalesDocumentItem$SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DeliveryScheduleLineNumber$DeliveryScheduleLineNumber" source="DeliveryScheduleLineNumber"/>
+      </input>
+    <joinAttribute name="JOIN$LegacySalesDocument$LegacySalesDocument"/>
+    <joinAttribute name="JOIN$SalesDocumentItem$SalesDocumentItem"/>
+    <joinAttribute name="JOIN$DeliveryScheduleLineNumber$DeliveryScheduleLineNumber"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="DeliveryScheduleLineNumber"/>
+      <viewAttribute id="OrderQuantityInSalesUnits"/>
+      <viewAttribute id="ScheduleLineDate"/>
+      <viewAttribute id="LegacySalesDocument_INPUT"/>
+    
+      <viewAttribute id="SalesDocumentItem_INPUT"/>
+      <viewAttribute id="DeliveryScheduleLineNumber_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Join_2"/>
+    <filter>&quot;LegacySalesDocument_INPUT&quot; is null
+and &quot;SalesDocumentItem_INPUT&quot; is null
+and &quot;DeliveryScheduleLineNumber_INPUT&quot; is null
+</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_2">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="DeliveryScheduleLineNumber"/>
+      <viewAttribute id="OrderQuantityInSalesUnits"/>
+      <viewAttribute id="ScheduleLineDate"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="P_Without_Remediated_data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DeliveryScheduleLineNumber" source="DeliveryScheduleLineNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderQuantityInSalesUnits" source="OrderQuantityInSalesUnits"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ScheduleLineDate" source="ScheduleLineDate"/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="P_Remediated_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DeliveryScheduleLineNumber" source="DeliveryScheduleLineNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderQuantityInSalesUnits" source="OrderQuantityInSalesUnits"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ScheduleLineDate" source="ScheduleLineDate"/>
+      </input>
+    </calculationView>
+</calculationViews>
+  <logicalModel id="Union_2">
+    <descriptions/>
+    <attributes>
+      <attribute id="LegacySalesDocument" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="LegacySalesDocument"/>
+        <keyMapping columnObjectName="Union_2" columnName="LegacySalesDocument"/>
+      </attribute>
+      <attribute id="SalesDocumentItem" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="SalesDocumentItem"/>
+        <keyMapping columnObjectName="Union_2" columnName="SalesDocumentItem"/>
+      </attribute>
+      <attribute id="DeliveryScheduleLineNumber" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Delivery Schedule Line Number"/>
+        <keyMapping columnObjectName="Union_2" columnName="DeliveryScheduleLineNumber"/>
+      </attribute>
+      <attribute id="OrderQuantityInSalesUnits" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Order quantity in sales units"/>
+        <keyMapping columnObjectName="Union_2" columnName="OrderQuantityInSalesUnits"/>
+      </attribute>
+      <attribute id="ScheduleLineDate" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Schedule line date"/>
+        <keyMapping columnObjectName="Union_2" columnName="ScheduleLineDate"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="225" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="VBEP_SHE" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="766"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="301" y="661"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="661"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="183" y="501"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="65" y="393"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Union_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="236" y="236"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape></shapes>
+</layout>
+</Calculation:scenario>

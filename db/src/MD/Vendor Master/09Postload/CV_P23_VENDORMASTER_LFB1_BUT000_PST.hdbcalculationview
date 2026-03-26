@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Vendor Master.09Postload::CV_P23_VENDORMASTER_LFB1_BUT000_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_P23_VENDORMASTER_LFB1_BUT000_PST.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_VM_COMPANY_DATA_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_VM_COMPANY_DATA_PLD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_LFB1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_LFB1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SHE_LFB1">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_VM_COMPANY_DATA_PLD"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_BUT00" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CLIENT"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000"/>
+    <filter>&quot;CLIENT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_LFB1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ZUAWA"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="FRGRP"/>
+      <viewAttribute id="HBKID"/>
+      <viewAttribute id="LNRZB"/>
+      <viewAttribute id="XVERR"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="GUZTE"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="ALTKN"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TOGRR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZSABE"/>
+      <viewAttribute id="TLFNS"/>
+      <viewAttribute id="TLFXS"/>
+      <viewAttribute id="INTAD"/>
+      <viewAttribute id="KVERM"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="WRBTR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="US_REC_COUNTRY"/>
+      <viewAttribute id="US_GIIN"/>
+      <viewAttribute id="US_FTID"/>
+      <viewAttribute id="US_LOB_CODE"/>
+      <viewAttribute id="US_W8_RECVDATE"/>
+      <viewAttribute id="US_W9_RECVDATE"/>
+      <viewAttribute id="US_PARTNERSHIP_IND"/>
+      <viewAttribute id="US_TIN_NOTICE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_LFB1"/>
+    <filter>&quot;MANDT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUT000_LFB1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute hidden="true" id="JOIN$BPEXT$LIFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_BUT00">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BPEXT$LIFNR" source="BPEXT"/>
+    </input>
+    <input node="P_SHE_LFB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BPEXT$LIFNR" source="LIFNR"/>
+    </input>
+    <joinAttribute name="JOIN$BPEXT$LIFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUT000_S4_LFB1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ZUAWA"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="FRGRP"/>
+      <viewAttribute id="HBKID"/>
+      <viewAttribute id="LNRZB"/>
+      <viewAttribute id="XVERR"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="GUZTE"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="ALTKN"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TOGRR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZSABE"/>
+      <viewAttribute id="TLFNS"/>
+      <viewAttribute id="TLFXS"/>
+      <viewAttribute id="INTAD"/>
+      <viewAttribute id="KVERM"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="WRBTR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="US_REC_COUNTRY"/>
+      <viewAttribute id="US_GIIN"/>
+      <viewAttribute id="US_FTID"/>
+      <viewAttribute id="US_LOB_CODE"/>
+      <viewAttribute id="US_W8_RECVDATE"/>
+      <viewAttribute id="US_W9_RECVDATE"/>
+      <viewAttribute id="US_PARTNERSHIP_IND"/>
+      <viewAttribute id="US_TIN_NOTICE"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR$PARTNER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_LFB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZUAWA" source="ZUAWA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FRGRP" source="FRGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HBKID" source="HBKID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LNRZB" source="LNRZB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XVERR" source="XVERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZAHLS" source="ZAHLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUZTE" source="GUZTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALTKN" source="ALTKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOGRR" source="TOGRR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSAB" source="BUSAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSABE" source="ZSABE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TLFNS" source="TLFNS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TLFXS" source="TLFXS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INTAD" source="INTAD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVERM" source="KVERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WRBTR" source="WRBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="US_REC_COUNTRY" source="US_REC_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="US_GIIN" source="US_GIIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="US_FTID" source="US_FTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="US_LOB_CODE" source="US_LOB_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="US_W8_RECVDATE" source="US_W8_RECVDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="US_W9_RECVDATE" source="US_W9_RECVDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="US_PARTNERSHIP_IND" source="US_PARTNERSHIP_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="US_TIN_NOTICE" source="US_TIN_NOTICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$PARTNER" source="LIFNR"/>
+    </input>
+    <input node="J_BUT000_LFB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$PARTNER" source="PARTNER"/>
+    </input>
+    <joinAttribute name="JOIN$LIFNR$PARTNER"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="J_BUT000_S4_LFB1">
+  <attributes>
+    <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account Number of Supplier"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="ZUAWA" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for sorting according to assignment numbers"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="ZUAWA"/>
+    </attribute>
+    <attribute id="AKONT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reconciliation Account in General Ledger"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="AKONT"/>
+    </attribute>
+    <attribute id="FDGRV" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planning Group"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="FDGRV"/>
+    </attribute>
+    <attribute id="FRGRP" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Release Approval Group"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="FRGRP"/>
+    </attribute>
+    <attribute id="HBKID" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Short Key for a House Bank"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="HBKID"/>
+    </attribute>
+    <attribute id="LNRZB" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account number of the alternative payee"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="LNRZB"/>
+    </attribute>
+    <attribute id="XVERR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Clearing between customer and vendor?"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="XVERR"/>
+    </attribute>
+    <attribute id="ZAHLS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Block Key for Payment"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="ZAHLS"/>
+    </attribute>
+    <attribute id="ZTERM" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment Key"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="GUZTE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Payment Terms Key for Credit Memos"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="GUZTE"/>
+    </attribute>
+    <attribute id="REPRF" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Check Flag for Double Invoices or Credit Memos"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="REPRF"/>
+    </attribute>
+    <attribute id="ALTKN" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Previous Master Record Number"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="ALTKN"/>
+    </attribute>
+    <attribute id="ZWELS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="List of Respected Payment Methods"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="ZWELS"/>
+    </attribute>
+    <attribute id="TOGRR" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tolerance Group in Invoice Verification"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="TOGRR"/>
+    </attribute>
+    <attribute id="EIKTO" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Our account number with the vendor"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="EIKTO"/>
+    </attribute>
+    <attribute id="BUSAB" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Accounting Clerk Abbreviation"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="BUSAB"/>
+    </attribute>
+    <attribute id="ZSABE" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Clerk at vendor"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="ZSABE"/>
+    </attribute>
+    <attribute id="TLFNS" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Accounting clerk&apos;s telephone number at business partner"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="TLFNS"/>
+    </attribute>
+    <attribute id="TLFXS" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Accounting clerk&apos;s fax number at the customer/vendor"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="TLFXS"/>
+    </attribute>
+    <attribute id="INTAD" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Internet address of partner company clerk"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="INTAD"/>
+    </attribute>
+    <attribute id="KVERM" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Memo"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="KVERM"/>
+    </attribute>
+    <attribute id="BRSCH" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Industry Key"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="BRSCH"/>
+    </attribute>
+    <attribute id="WRBTR" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount for Payment Program"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="WRBTR"/>
+    </attribute>
+    <attribute id="WAERS" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Currency Key"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="WAERS"/>
+    </attribute>
+    <attribute id="US_REC_COUNTRY" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country/Region Key"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="US_REC_COUNTRY"/>
+    </attribute>
+    <attribute id="US_GIIN" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="US Recipient GIIN"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="US_GIIN"/>
+    </attribute>
+    <attribute id="US_FTID" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="US Recipient Foreign Tax ID"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="US_FTID"/>
+    </attribute>
+    <attribute id="US_LOB_CODE" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOB Treaty Code"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="US_LOB_CODE"/>
+    </attribute>
+    <attribute id="US_W8_RECVDATE" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="US W8 Form Received Date"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="US_W8_RECVDATE"/>
+    </attribute>
+    <attribute id="US_W9_RECVDATE" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="US W8 Form Received Date"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="US_W9_RECVDATE"/>
+    </attribute>
+    <attribute id="US_PARTNERSHIP_IND" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Partnership Interest Indicator"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="US_PARTNERSHIP_IND"/>
+    </attribute>
+    <attribute id="US_TIN_NOTICE" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Second TIN Notice from IRS"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="US_TIN_NOTICE"/>
+    </attribute>
+    <attribute id="BPEXT" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Partner Number in External System"/>
+      <keyMapping columnObjectName="J_BUT000_S4_LFB1" columnName="BPEXT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_SHE_LFB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="338" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_BUT00" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_LFB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BUT000_LFB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_BUT00" modelObjectNameSpace="J_BUT000_LFB1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="138"/>
+    </shape>
+    <shape modelObjectName="P_SHE_LFB1" modelObjectNameSpace="J_BUT000_LFB1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="140"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BUT000_S4_LFB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_LFB1" modelObjectNameSpace="J_BUT000_S4_LFB1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="J_BUT000_LFB1" modelObjectNameSpace="J_BUT000_S4_LFB1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="137"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

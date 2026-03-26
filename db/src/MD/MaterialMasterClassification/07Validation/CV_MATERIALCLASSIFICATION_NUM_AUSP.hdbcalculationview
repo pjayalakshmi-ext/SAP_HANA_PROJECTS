@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMasterClassification.07Validation::CV_MATERIALCLASSIFICATION_NUM_AUSP" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialMasterClassification.06Completeness::CV_MATERIALCLASSIFICATION_NUM_AUSP">
+    <resourceUri>EHUB.MD.MaterialMasterClassification.06Completeness::CV_MATERIALCLASSIFICATION_NUM_AUSP</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_KLAH">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_KLAH</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_CABN">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_CABN</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="CharacteristicName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="FromFloatingPoint"/>
+      <viewAttribute id="ToFloatingPoint"/>
+      <viewAttribute id="DependencyCode"/>
+      <viewAttribute id="FromUom"/>
+      <viewAttribute id="ToUom"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMasterClassification.06Completeness::CV_MATERIALCLASSIFICATION_NUM_AUSP"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_P23_KLAH" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KLART"/>
+      <viewAttribute id="CLASS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_KLAH"/>
+    <filter>&quot;MANDT&quot;='900' and &quot;KLART&quot;='001'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_P23_CABN" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="ATNAM"/>
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CABN"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_P23_MARA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_9" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="CharacteristicName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="FromFloatingPoint"/>
+      <viewAttribute id="ToFloatingPoint"/>
+      <viewAttribute id="DependencyCode"/>
+      <viewAttribute id="FromUom"/>
+      <viewAttribute id="ToUom"/>
+      <viewAttribute id="CLASS"/>
+      <viewAttribute hidden="true" id="JOIN$ClassName$CLASS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CLASSNAME_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ClassName&quot;=&quot;CLASS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicName" source="CharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemNumber" source="ItemNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FromFloatingPoint" source="FromFloatingPoint"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ToFloatingPoint" source="ToFloatingPoint"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DependencyCode" source="DependencyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FromUom" source="FromUom"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ToUom" source="ToUom"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassName$CLASS" source="ClassName"/>
+    </input>
+    <input node="Projection_P23_KLAH">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLASS" source="CLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassName$CLASS" source="CLASS"/>
+    </input>
+    <joinAttribute name="JOIN$ClassName$CLASS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_10" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="CharacteristicName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="FromFloatingPoint"/>
+      <viewAttribute id="ToFloatingPoint"/>
+      <viewAttribute id="DependencyCode"/>
+      <viewAttribute id="FromUom"/>
+      <viewAttribute id="ToUom"/>
+      <viewAttribute id="CLASSNAME_INVALID"/>
+      <viewAttribute id="ATNAM"/>
+      <viewAttribute hidden="true" id="JOIN$CharacteristicName$ATNAM"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CHARACTERISTICNAME_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;CharacteristicName&quot;=&quot;ATNAM&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_9">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicName" source="CharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemNumber" source="ItemNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FromFloatingPoint" source="FromFloatingPoint"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ToFloatingPoint" source="ToFloatingPoint"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DependencyCode" source="DependencyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FromUom" source="FromUom"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ToUom" source="ToUom"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLASSNAME_INVALID" source="CLASSNAME_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CharacteristicName$ATNAM" source="CharacteristicName"/>
+    </input>
+    <input node="Projection_P23_CABN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATNAM" source="ATNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CharacteristicName$ATNAM" source="ATNAM"/>
+    </input>
+    <joinAttribute name="JOIN$CharacteristicName$ATNAM"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_11" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="CharacteristicName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="FromFloatingPoint"/>
+      <viewAttribute id="ToFloatingPoint"/>
+      <viewAttribute id="DependencyCode"/>
+      <viewAttribute id="FromUom"/>
+      <viewAttribute id="ToUom"/>
+      <viewAttribute id="CLASSNAME_INVALID"/>
+      <viewAttribute id="CHARACTERISTICNAME_INVALID"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute hidden="true" id="JOIN$ProductNum$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PRODUCT_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ProductNum&quot;=&quot;MATNR&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_10">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicName" source="CharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemNumber" source="ItemNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FromFloatingPoint" source="FromFloatingPoint"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ToFloatingPoint" source="ToFloatingPoint"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DependencyCode" source="DependencyCode"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FromUom" source="FromUom"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ToUom" source="ToUom"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLASSNAME_INVALID" source="CLASSNAME_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARACTERISTICNAME_INVALID" source="CHARACTERISTICNAME_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ProductNum$MATNR" source="ProductNum"/>
+    </input>
+    <input node="Projection_P23_MARA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ProductNum$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$ProductNum$MATNR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_11">
+  <attributes>
+    <attribute id="ClassType" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassType"/>
+      <keyMapping columnObjectName="Join_11" columnName="ClassType"/>
+    </attribute>
+    <attribute id="ClassName" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassName"/>
+      <keyMapping columnObjectName="Join_11" columnName="ClassName"/>
+    </attribute>
+    <attribute id="ProductNum" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProductNum"/>
+      <keyMapping columnObjectName="Join_11" columnName="ProductNum"/>
+    </attribute>
+    <attribute id="CharacteristicName" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CharacteristicName"/>
+      <keyMapping columnObjectName="Join_11" columnName="CharacteristicName"/>
+    </attribute>
+    <attribute id="ItemNumber" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ItemNumber"/>
+      <keyMapping columnObjectName="Join_11" columnName="ItemNumber"/>
+    </attribute>
+    <attribute id="FromFloatingPoint" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FromFloatingPoint"/>
+      <keyMapping columnObjectName="Join_11" columnName="FromFloatingPoint"/>
+    </attribute>
+    <attribute id="ToFloatingPoint" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ToFloatingPoint"/>
+      <keyMapping columnObjectName="Join_11" columnName="ToFloatingPoint"/>
+    </attribute>
+    <attribute id="DependencyCode" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DependencyCode"/>
+      <keyMapping columnObjectName="Join_11" columnName="DependencyCode"/>
+    </attribute>
+    <attribute id="FromUom" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FromUom"/>
+      <keyMapping columnObjectName="Join_11" columnName="FromUom"/>
+    </attribute>
+    <attribute id="ToUom" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ToUom"/>
+      <keyMapping columnObjectName="Join_11" columnName="ToUom"/>
+    </attribute>
+  
+    <attribute id="CLASSNAME_INVALID" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLASSNAME_INVALID"/>
+      <keyMapping columnObjectName="Join_11" columnName="CLASSNAME_INVALID"/>
+    </attribute>
+    <attribute id="CHARACTERISTICNAME_INVALID" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHARACTERISTICNAME_INVALID"/>
+      <keyMapping columnObjectName="Join_11" columnName="CHARACTERISTICNAME_INVALID"/>
+    </attribute>
+    <attribute id="PRODUCT_INVALID" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_INVALID"/>
+      <keyMapping columnObjectName="Join_11" columnName="PRODUCT_INVALID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;CLASSNAME_INVALID&quot;+&quot;CHARACTERISTICNAME_INVALID&quot;+&quot;PRODUCT_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422.15218199852" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_P23_KLAH" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_9" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666669" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_9" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198.0625"/>
+    </shape>
+    <shape modelObjectName="Projection_P23_KLAH" modelObjectNameSpace="Join_9" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_P23_CABN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384.11215526044043" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_10" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145.33333333333337" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_9" modelObjectNameSpace="Join_10" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="201.94580078125"/>
+    </shape>
+    <shape modelObjectName="Projection_P23_CABN" modelObjectNameSpace="Join_10" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_P23_MARA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489.48394766311617" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_11" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422.15218199852" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_10" modelObjectNameSpace="Join_11" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="262.43505859375"/>
+    </shape>
+    <shape modelObjectName="Projection_P23_MARA" modelObjectNameSpace="Join_11" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.BankMaster.03Transformation::CV_BANKMASTER_BNKA" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_TRANSFORMATION"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.BankMaster.01Extraction::CV_SHE_BANKMASTER_BNKA">
+    <resourceUri>EHUB.MD.BankMaster.01Extraction::CV_SHE_BANKMASTER_BNKA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_BANK_MASTER_RECORD">
+    <resourceUri>EHUB.Synonyms::SY_LKP_BANK_MASTER_RECORD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_COUNTRY_REGION">
+    <resourceUri>EHUB.Synonyms::SY_LKP_COUNTRY_REGION</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_COUNTRY">
+    <resourceUri>EHUB.Synonyms::SY_LKP_COUNTRY</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BNKA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.BankMaster.01Extraction::CV_SHE_BANKMASTER_BNKA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_BANK_MASTER_RECORD">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_BANK_KEYS"/>
+      <viewAttribute id="BANK_COUNTRY_KEY"/>
+      <viewAttribute id="BANK_KEYS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_BANK_MASTER_RECORD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_COUNTRY_REGION">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_REGION"/>
+      <viewAttribute id="REGION"/>
+      <viewAttribute id="COUNTRY"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COUNTRY_REGION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_COUNTRY">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_COUNTRY"/>
+      <viewAttribute id="COUNTRY"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COUNTRY"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BANK_MASTER_RECORD" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="LEGACY_BANK_KEYS"/>
+      <viewAttribute id="BANK_COUNTRY_KEY"/>
+      <viewAttribute id="BANK_KEYS"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$LEGACY_BANK_KEYS"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$BANK_COUNTRY_KEY"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BANKL" datatype="NVARCHAR" length="15" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;BANK_KEYS&quot;, &quot;BANKL&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_BNKA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$LEGACY_BANK_KEYS" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANK_COUNTRY_KEY" source="BANKS"/>
+    </input>
+    <input node="P_LKP_BANK_MASTER_RECORD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_BANK_KEYS" source="LEGACY_BANK_KEYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANK_COUNTRY_KEY" source="BANK_COUNTRY_KEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANK_KEYS" source="BANK_KEYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$LEGACY_BANK_KEYS" source="LEGACY_BANK_KEYS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANK_COUNTRY_KEY" source="BANK_COUNTRY_KEY"/>
+    </input>
+    <joinAttribute name="JOIN$BANKL$LEGACY_BANK_KEYS"/>
+    <joinAttribute name="JOIN$BANKS$BANK_COUNTRY_KEY"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COUNTRY_REGION" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="LEGACY_REGION"/>
+      <viewAttribute id="REGION"/>
+      <viewAttribute id="COUNTRY"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$COUNTRY"/>
+      <viewAttribute hidden="true" id="JOIN$PROVZ$LEGACY_REGION"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_REGION" datatype="NVARCHAR" length="18" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;REGION&quot;, &quot;PROVZ&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_BANK_MASTER_RECORD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="CC_BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$COUNTRY" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PROVZ$LEGACY_REGION" source="PROVZ"/>
+    </input>
+    <input node="P_LKP_COUNTRY_REGION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_REGION" source="LEGACY_REGION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PROVZ$LEGACY_REGION" source="LEGACY_REGION"/>
+    </input>
+    <joinAttribute name="JOIN$BANKS$COUNTRY"/>
+    <joinAttribute name="JOIN$PROVZ$LEGACY_REGION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COUNTRY" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="LEGACY_COUNTRY"/>
+      <viewAttribute id="COUNTRY"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$LEGACY_COUNTRY"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BANKS" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;COUNTRY&quot;, &quot;BANKS&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_COUNTRY_REGION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="CC_REGION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$LEGACY_COUNTRY" source="BANKS"/>
+    </input>
+    <input node="P_LKP_COUNTRY">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_COUNTRY" source="LEGACY_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$LEGACY_COUNTRY" source="LEGACY_COUNTRY"/>
+    </input>
+    <joinAttribute name="JOIN$BANKS$LEGACY_COUNTRY"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_COUNTRY">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BANKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank country key"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="CC_BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Keys"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKA" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name of bank"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="BANKA"/>
+    </attribute>
+    <attribute id="PROVZ" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="PROVZ"/>
+    </attribute>
+    <attribute id="STRAS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House number and street"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="STRAS"/>
+    </attribute>
+    <attribute id="ORT01" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="ORT01"/>
+    </attribute>
+    <attribute id="SWIFT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWIFT/BIC for International Payments"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="SWIFT"/>
+    </attribute>
+    <attribute id="BGRUP" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank group (bank network)"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="BGRUP"/>
+    </attribute>
+    <attribute id="XPGRO" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Post Office Bank Current Account"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="XPGRO"/>
+    </attribute>
+    <attribute id="BNKLZ" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank number"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="BNKLZ"/>
+    </attribute>
+    <attribute id="BRNCH" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Branch"/>
+      <keyMapping columnObjectName="J_COUNTRY" columnName="BRNCH"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BNKA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_BANK_MASTER_RECORD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_COUNTRY_REGION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_COUNTRY" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BANK_MASTER_RECORD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BNKA" modelObjectNameSpace="J_BANK_MASTER_RECORD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_LKP_BANK_MASTER_RECORD" modelObjectNameSpace="J_BANK_MASTER_RECORD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="204"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_COUNTRY_REGION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_BANK_MASTER_RECORD" modelObjectNameSpace="J_COUNTRY_REGION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="204"/>
+    </shape>
+    <shape modelObjectName="P_LKP_COUNTRY_REGION" modelObjectNameSpace="J_COUNTRY_REGION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="180"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_COUNTRY" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_COUNTRY_REGION" modelObjectNameSpace="J_COUNTRY" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="180"/>
+    </shape>
+    <shape modelObjectName="P_LKP_COUNTRY" modelObjectNameSpace="J_COUNTRY" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="190"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

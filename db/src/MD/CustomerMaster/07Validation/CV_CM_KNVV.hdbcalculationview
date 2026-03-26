@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.07Validation::CV_CM_KNVV" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS" mdsCubeConversionExecution="AT_LOADING_TIME">
+<descriptions defaultDescription="CV_CM_KNVV"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNVV">
+    <resourceUri>EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNVV</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKO">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKO</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TVTW">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TVTW</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TSPA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TSPA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TCURC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TCURC</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNVV" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="AWAHR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="KONDA"/>
+      <viewAttribute id="PLTYP"/>
+      <viewAttribute id="PODKZ"/>
+      <viewAttribute id="PODTG"/>
+      <viewAttribute id="AUTLF"/>
+      <viewAttribute id="ANTLF"/>
+      <viewAttribute id="UEBTO"/>
+      <viewAttribute id="UNTTO"/>
+      <viewAttribute id="UEBTK"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KVGR1"/>
+      <viewAttribute id="KVGR2"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNVV"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_TVKO">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_VKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKO">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_VKORG" source="VKORG"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_TVTW">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_VTWEG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TVTW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_VTWEG" source="VTWEG"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_TSPA">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_SPART"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TSPA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_SPART" source="SPART"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_TCURC">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_WAERS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TCURC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_WAERS" source="WAERS"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_VKORG_VLD" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="AWAHR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="KONDA"/>
+      <viewAttribute id="PLTYP"/>
+      <viewAttribute id="PODKZ"/>
+      <viewAttribute id="PODTG" aggregationType="sum"/>
+      <viewAttribute id="AUTLF"/>
+      <viewAttribute id="ANTLF" aggregationType="sum"/>
+      <viewAttribute id="UEBTO" aggregationType="sum"/>
+      <viewAttribute id="UNTTO" aggregationType="sum"/>
+      <viewAttribute id="UEBTK"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KVGR1"/>
+      <viewAttribute id="KVGR2"/>
+      <viewAttribute id="S4H_VKORG"/>
+      <viewAttribute hidden="true" id="JOIN$VKORG$S4H_VKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="VKORG_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;VKORG&quot;=&quot;S4H_VKORG&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_KNVV">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AWAHR" source="AWAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURST" source="KURST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDA" source="KONDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTYP" source="PLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODKZ" source="PODKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODTG" source="PODTG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUTLF" source="AUTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANTLF" source="ANTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTO" source="UEBTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNTTO" source="UNTTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTK" source="UEBTK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR1" source="KVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR2" source="KVGR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VKORG$S4H_VKORG" source="VKORG"/>
+    </input>
+    <input node="P_S4H_TVKO">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_VKORG" source="S4H_VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VKORG$S4H_VKORG" source="S4H_VKORG"/>
+    </input>
+    <joinAttribute name="JOIN$VKORG$S4H_VKORG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_VTWEG_VLD" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="AWAHR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="KONDA"/>
+      <viewAttribute id="PLTYP"/>
+      <viewAttribute id="PODKZ"/>
+      <viewAttribute id="PODTG" aggregationType="sum"/>
+      <viewAttribute id="AUTLF"/>
+      <viewAttribute id="ANTLF" aggregationType="sum"/>
+      <viewAttribute id="UEBTO" aggregationType="sum"/>
+      <viewAttribute id="UNTTO" aggregationType="sum"/>
+      <viewAttribute id="UEBTK"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KVGR1"/>
+      <viewAttribute id="KVGR2"/>
+      <viewAttribute id="VKORG_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_VTWEG"/>
+      <viewAttribute hidden="true" id="JOIN$VTWEG$S4H_VTWEG"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="VTWEG_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;VTWEG&quot;=&quot;S4H_VTWEG&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_VKORG_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AWAHR" source="AWAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURST" source="KURST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDA" source="KONDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTYP" source="PLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODKZ" source="PODKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODTG" source="PODTG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUTLF" source="AUTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANTLF" source="ANTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTO" source="UEBTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNTTO" source="UNTTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTK" source="UEBTK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR1" source="KVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR2" source="KVGR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG_INVALID" source="VKORG_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VTWEG$S4H_VTWEG" source="VTWEG"/>
+    </input>
+    <input node="P_S4H_TVTW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_VTWEG" source="S4H_VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VTWEG$S4H_VTWEG" source="S4H_VTWEG"/>
+    </input>
+    <joinAttribute name="JOIN$VTWEG$S4H_VTWEG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_SPART_VLD" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="AWAHR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="KONDA"/>
+      <viewAttribute id="PLTYP"/>
+      <viewAttribute id="PODKZ"/>
+      <viewAttribute id="PODTG" aggregationType="sum"/>
+      <viewAttribute id="AUTLF"/>
+      <viewAttribute id="ANTLF" aggregationType="sum"/>
+      <viewAttribute id="UEBTO" aggregationType="sum"/>
+      <viewAttribute id="UNTTO" aggregationType="sum"/>
+      <viewAttribute id="UEBTK"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KVGR1"/>
+      <viewAttribute id="KVGR2"/>
+      <viewAttribute id="VKORG_INVALID" aggregationType="sum"/>
+      <viewAttribute id="VTWEG_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_SPART"/>
+      <viewAttribute hidden="true" id="JOIN$SPART$S4H_SPART"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="SPART_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SPART&quot;=&quot;S4H_SPART&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_VTWEG_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AWAHR" source="AWAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURST" source="KURST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDA" source="KONDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTYP" source="PLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODKZ" source="PODKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODTG" source="PODTG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUTLF" source="AUTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANTLF" source="ANTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTO" source="UEBTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNTTO" source="UNTTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTK" source="UEBTK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR1" source="KVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR2" source="KVGR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG_INVALID" source="VKORG_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG_INVALID" source="VTWEG_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SPART$S4H_SPART" source="SPART"/>
+    </input>
+    <input node="P_S4H_TSPA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_SPART" source="S4H_SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SPART$S4H_SPART" source="S4H_SPART"/>
+    </input>
+    <joinAttribute name="JOIN$SPART$S4H_SPART"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_WAERS_VLD" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="AWAHR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="KONDA"/>
+      <viewAttribute id="PLTYP"/>
+      <viewAttribute id="PODKZ"/>
+      <viewAttribute id="PODTG" aggregationType="sum"/>
+      <viewAttribute id="AUTLF"/>
+      <viewAttribute id="ANTLF" aggregationType="sum"/>
+      <viewAttribute id="UEBTO" aggregationType="sum"/>
+      <viewAttribute id="UNTTO" aggregationType="sum"/>
+      <viewAttribute id="UEBTK"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KVGR1"/>
+      <viewAttribute id="KVGR2"/>
+      <viewAttribute id="VKORG_INVALID" aggregationType="sum"/>
+      <viewAttribute id="VTWEG_INVALID" aggregationType="sum"/>
+      <viewAttribute id="SPART_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_WAERS"/>
+      <viewAttribute hidden="true" id="JOIN$WAERS$S4H_WAERS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WAERS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WAERS&quot;=&quot;S4H_WAERS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_SPART_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AWAHR" source="AWAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURST" source="KURST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDA" source="KONDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTYP" source="PLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODKZ" source="PODKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODTG" source="PODTG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUTLF" source="AUTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANTLF" source="ANTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTO" source="UEBTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNTTO" source="UNTTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTK" source="UEBTK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR1" source="KVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR2" source="KVGR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG_INVALID" source="VKORG_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG_INVALID" source="VTWEG_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART_INVALID" source="SPART_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WAERS$S4H_WAERS" source="WAERS"/>
+    </input>
+    <input node="P_S4H_TCURC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_WAERS" source="S4H_WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WAERS$S4H_WAERS" source="S4H_WAERS"/>
+    </input>
+    <joinAttribute name="JOIN$WAERS$S4H_WAERS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_WAERS_VLD">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="VKORG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKORG"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="VKORG"/>
+    </attribute>
+    <attribute id="VTWEG" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTWEG"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SPART" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPART"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="SPART"/>
+    </attribute>
+    <attribute id="KDGRP" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KDGRP"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="KDGRP"/>
+    </attribute>
+    <attribute id="BZIRK" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BZIRK"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="BZIRK"/>
+    </attribute>
+    <attribute id="VKGRP" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKGRP"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="VKGRP"/>
+    </attribute>
+    <attribute id="VKBUR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKBUR"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="VKBUR"/>
+    </attribute>
+    <attribute id="EIKTO" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EIKTO"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="EIKTO"/>
+    </attribute>
+    <attribute id="AWAHR" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AWAHR"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="AWAHR"/>
+    </attribute>
+    <attribute id="WAERS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="WAERS"/>
+    </attribute>
+    <attribute id="KURST" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KURST"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="KURST"/>
+    </attribute>
+    <attribute id="KONDA" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KONDA"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="KONDA"/>
+    </attribute>
+    <attribute id="PLTYP" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLTYP"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="PLTYP"/>
+    </attribute>
+    <attribute id="PODKZ" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PODKZ"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="PODKZ"/>
+    </attribute>
+    <attribute id="AUTLF" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUTLF"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="AUTLF"/>
+    </attribute>
+    <attribute id="UEBTK" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UEBTK"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="UEBTK"/>
+    </attribute>
+    <attribute id="INCO1" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCO1"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="INCO1"/>
+    </attribute>
+    <attribute id="INCO2" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCO2"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="INCO2"/>
+    </attribute>
+    <attribute id="ZTERM" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTERM"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="KTGRD" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTGRD"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="KTGRD"/>
+    </attribute>
+    <attribute id="KVGR1" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KVGR1"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="KVGR1"/>
+    </attribute>
+    <attribute id="KVGR2" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KVGR2"/>
+      <keyMapping columnObjectName="J_WAERS_VLD" columnName="KVGR2"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="PODTG" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PODTG"/>
+      <measureMapping columnObjectName="J_WAERS_VLD" columnName="PODTG"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="ANTLF" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ANTLF"/>
+      <measureMapping columnObjectName="J_WAERS_VLD" columnName="ANTLF"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="UEBTO" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="UEBTO"/>
+      <measureMapping columnObjectName="J_WAERS_VLD" columnName="UEBTO"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="UNTTO" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="UNTTO"/>
+      <measureMapping columnObjectName="J_WAERS_VLD" columnName="UNTTO"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="VKORG_INVALID" order="29" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VKORG_INVALID"/>
+      <measureMapping columnObjectName="J_WAERS_VLD" columnName="VKORG_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="VTWEG_INVALID" order="30" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VTWEG_INVALID"/>
+      <measureMapping columnObjectName="J_WAERS_VLD" columnName="VTWEG_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SPART_INVALID" order="31" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SPART_INVALID"/>
+      <measureMapping columnObjectName="J_WAERS_VLD" columnName="SPART_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WAERS_INVALID" order="32" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WAERS_INVALID"/>
+      <measureMapping columnObjectName="J_WAERS_VLD" columnName="WAERS_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INVALID" order="33" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>CASE WHEN
+&quot;VKORG_INVALID&quot;+&quot;VTWEG_INVALID&quot;+&quot;SPART_INVALID&quot;+&quot;WAERS_INVALID&quot;=1
+then 1
+else 0
+end</formula>
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="534" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNVV" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_TVKO" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_TVTW" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_TSPA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="477" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_TCURC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="592" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_VKORG_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_KNVV" modelObjectNameSpace="J_VKORG_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198"/>
+    </shape>
+    <shape modelObjectName="P_S4H_TVKO" modelObjectNameSpace="J_VKORG_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="153"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_VTWEG_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_VKORG_VLD" modelObjectNameSpace="J_VTWEG_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="173"/>
+    </shape>
+    <shape modelObjectName="P_S4H_TVTW" modelObjectNameSpace="J_VTWEG_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="153"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_SPART_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_VTWEG_VLD" modelObjectNameSpace="J_SPART_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="P_S4H_TSPA" modelObjectNameSpace="J_SPART_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="152"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_WAERS_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="534" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_SPART_VLD" modelObjectNameSpace="J_WAERS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="P_S4H_TCURC" modelObjectNameSpace="J_WAERS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="153"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

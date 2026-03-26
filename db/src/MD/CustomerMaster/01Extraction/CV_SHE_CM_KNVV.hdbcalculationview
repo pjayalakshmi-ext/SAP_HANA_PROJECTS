@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNVV" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_SHE_CV_KNVV"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_KNVV">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_KNVV</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_CUST_GEN_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_CUST_GEN_PLD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNVV" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="AWAHR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="KONDA"/>
+      <viewAttribute id="PLTYP"/>
+      <viewAttribute id="PODKZ"/>
+      <viewAttribute id="PODTG"/>
+      <viewAttribute id="AUTLF"/>
+      <viewAttribute id="ANTLF"/>
+      <viewAttribute id="UEBTO"/>
+      <viewAttribute id="UNTTO"/>
+      <viewAttribute id="UEBTK"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KVGR1"/>
+      <viewAttribute id="KVGR2"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_KNVV"/>
+    <filter>(&quot;LOEVM&quot;!='X' AND &quot;MANDT&quot;='801' AND &quot;VKORG&quot;='1000' and &quot;VTWEG&quot;='10')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CUST_GEN_PLD">
+    <viewAttributes>
+      <viewAttribute id="KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_CUST_GEN_PLD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_SALES_DATA" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="KDGRP"/>
+      <viewAttribute id="BZIRK"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="AWAHR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="KONDA"/>
+      <viewAttribute id="PLTYP"/>
+      <viewAttribute id="PODKZ"/>
+      <viewAttribute id="PODTG"/>
+      <viewAttribute id="AUTLF"/>
+      <viewAttribute id="ANTLF"/>
+      <viewAttribute id="UEBTO"/>
+      <viewAttribute id="UNTTO"/>
+      <viewAttribute id="UEBTK"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="KTGRD"/>
+      <viewAttribute id="KVGR1"/>
+      <viewAttribute id="KVGR2"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_CUST_GEN_PLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR" source="KUNNR"/>
+    </input>
+    <input node="P_KNVV">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AWAHR" source="AWAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KURST" source="KURST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDA" source="KONDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLTYP" source="PLTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODKZ" source="PODKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PODTG" source="PODTG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUTLF" source="AUTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANTLF" source="ANTLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTO" source="UEBTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNTTO" source="UNTTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UEBTK" source="UEBTK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR1" source="KVGR1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KVGR2" source="KVGR2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR" source="KUNNR"/>
+    </input>
+    <joinAttribute name="JOIN$KUNNR$KUNNR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_SALES_DATA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number*"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="VKORG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Organization"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="VKORG"/>
+    </attribute>
+    <attribute id="VTWEG" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Distribution Channel"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SPART" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Division"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="SPART"/>
+    </attribute>
+    <attribute id="KDGRP" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer group"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="KDGRP"/>
+    </attribute>
+    <attribute id="BZIRK" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales district"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="BZIRK"/>
+    </attribute>
+    <attribute id="VKGRP" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Group"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="VKGRP"/>
+    </attribute>
+    <attribute id="VKBUR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Office"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="VKBUR"/>
+    </attribute>
+    <attribute id="EIKTO" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Shipper&apos;s (Our) Account Number at the Customer or Vendor"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="EIKTO"/>
+    </attribute>
+    <attribute id="AWAHR" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Order probability of the item"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="AWAHR"/>
+    </attribute>
+    <attribute id="WAERS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Currency"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="WAERS"/>
+    </attribute>
+    <attribute id="KURST" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Exchange Rate Type"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="KURST"/>
+    </attribute>
+    <attribute id="KONDA" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Price group (customer)"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="KONDA"/>
+    </attribute>
+    <attribute id="PLTYP" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Price list type"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="PLTYP"/>
+    </attribute>
+    <attribute id="PODKZ" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Relevant for POD processing"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="PODKZ"/>
+    </attribute>
+    <attribute id="PODTG" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Timeframe for Confirmation of POD"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="PODTG"/>
+    </attribute>
+    <attribute id="AUTLF" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Complete delivery defined for each sales order?"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="AUTLF"/>
+    </attribute>
+    <attribute id="ANTLF" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Maximum Number of Partial Deliveries Allowed Per Item"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="ANTLF"/>
+    </attribute>
+    <attribute id="UEBTO" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Overdelivery Tolerance Limit"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="UEBTO"/>
+    </attribute>
+    <attribute id="UNTTO" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Underdelivery Tolerance Limit"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="UNTTO"/>
+    </attribute>
+    <attribute id="UEBTK" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unlimited overdelivery allowed"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="UEBTK"/>
+    </attribute>
+    <attribute id="INCO1" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms (Part 1)"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="INCO1"/>
+    </attribute>
+    <attribute id="INCO2" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms (Part 2)"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="INCO2"/>
+    </attribute>
+    <attribute id="ZTERM" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment Key"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="KTGRD" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account assignment group for this customer"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="KTGRD"/>
+    </attribute>
+    <attribute id="KVGR1" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer group 1"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="KVGR1"/>
+    </attribute>
+    <attribute id="KVGR2" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer group 2"/>
+      <keyMapping columnObjectName="J_SALES_DATA" columnName="KVGR2"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNVV" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_CUST_GEN_PLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_SALES_DATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_CUST_GEN_PLD" modelObjectNameSpace="J_SALES_DATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_KNVV" modelObjectNameSpace="J_SALES_DATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

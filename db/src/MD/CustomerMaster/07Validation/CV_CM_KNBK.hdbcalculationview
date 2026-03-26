@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.07Validation::CV_CM_KNBK" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS" mdsCubeConversionExecution="AT_LOADING_TIME">
+<descriptions defaultDescription="CV_CM_KNBK"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNBK">
+    <resourceUri>EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNBK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T005</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNBK" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNBK"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T005">
+    <viewAttributes>
+      <viewAttribute id="S4H_LAND1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_LAND1" source="LAND1"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BANKS_VLD" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKN"/>
+      <viewAttribute id="IBAN"/>
+      <viewAttribute id="BKONT"/>
+      <viewAttribute id="KOINH"/>
+      <viewAttribute id="EBPP_ACCNAME"/>
+      <viewAttribute id="BKREF"/>
+      <viewAttribute id="S4H_LAND1"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$S4H_LAND1"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BANKS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKS&quot;=&quot;S4H_LAND1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_KNBK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKN" source="BANKN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IBAN" source="IBAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKONT" source="BKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOINH" source="KOINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EBPP_ACCNAME" source="EBPP_ACCNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKREF" source="BKREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$S4H_LAND1" source="BANKS"/>
+    </input>
+    <input node="P_S4H_T005">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_LAND1" source="S4H_LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$S4H_LAND1" source="S4H_LAND1"/>
+    </input>
+    <joinAttribute name="JOIN$BANKS$S4H_LAND1"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_BANKS_VLD">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number*"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BANKS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank country key"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Keys"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKN" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank account number"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="BANKN"/>
+    </attribute>
+    <attribute id="IBAN" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBAN (International Bank Account Number)"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="IBAN"/>
+    </attribute>
+    <attribute id="BKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Bank Control Key"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="BKONT"/>
+    </attribute>
+    <attribute id="KOINH" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account Holder Name"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="KOINH"/>
+    </attribute>
+    <attribute id="EBPP_ACCNAME" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User-Defined Name of Bank Details"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="EBPP_ACCNAME"/>
+    </attribute>
+    <attribute id="BKREF" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference specifications for bank details"/>
+      <keyMapping columnObjectName="J_BANKS_VLD" columnName="BKREF"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="BANKS_INVALID" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BANKS_INVALID"/>
+      <measureMapping columnObjectName="J_BANKS_VLD" columnName="BANKS_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INVALID" order="12" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>CASE WHEN
+&quot;BANKS_INVALID&quot;=1
+then 1
+else 0
+end</formula>
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNBK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="152" y="383"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T005" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="408" y="383"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BANKS_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_KNBK" modelObjectNameSpace="J_BANKS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="176"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T005" modelObjectNameSpace="J_BANKS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="152"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.SalesOrder.07Validation::CV_SO_ITEM_VBAP" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.SalesOrder.06Completeness::CV_SO_ITEM_VBAP">
+    <resourceUri>EHUB.TD.SalesOrder.06Completeness::CV_SO_ITEM_VBAP</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="MaterialNumber"/>
+      <viewAttribute id="BatchNumber"/>
+      <viewAttribute id="Plant"/>
+      <viewAttribute id="SalesDocumentItemCategory"/>
+      <viewAttribute id="ItemDescription"/>
+      <viewAttribute id="ProfitCenter"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.SalesOrder.06Completeness::CV_SO_ITEM_VBAP"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA"/>
+    <filter>&quot;MANDT&quot;='900' </filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="KOKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC"/>
+    <filter>&quot;MANDT&quot;='900' and &quot;KOKRS&quot;='A000'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="MaterialNumber"/>
+      <viewAttribute id="BatchNumber"/>
+      <viewAttribute id="Plant"/>
+      <viewAttribute id="SalesDocumentItemCategory"/>
+      <viewAttribute id="ItemDescription"/>
+      <viewAttribute id="ProfitCenter"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute hidden="true" id="JOIN$MaterialNumber$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MaterialNumber_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MaterialNumber&quot;=&quot;MATNR&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MaterialNumber" source="MaterialNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BatchNumber" source="BatchNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Plant" source="Plant"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItemCategory" source="SalesDocumentItemCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemDescription" source="ItemDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProfitCenter" source="ProfitCenter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MaterialNumber$MATNR" source="MaterialNumber"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MaterialNumber$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MaterialNumber$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="MaterialNumber"/>
+      <viewAttribute id="BatchNumber"/>
+      <viewAttribute id="Plant"/>
+      <viewAttribute id="SalesDocumentItemCategory"/>
+      <viewAttribute id="ItemDescription"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="ProfitCenter"/>
+      <viewAttribute id="MaterialNumber_INVALID"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute hidden="true" id="JOIN$Plant$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="Plant_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;Plant&quot;=&quot;WERKS&quot;
+then 0
+else 1
+end  </formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MaterialNumber_INVALID" source="MaterialNumber_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MaterialNumber" source="MaterialNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BatchNumber" source="BatchNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Plant" source="Plant"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItemCategory" source="SalesDocumentItemCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemDescription" source="ItemDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProfitCenter" source="ProfitCenter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Plant$WERKS" source="Plant"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Plant$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$Plant$WERKS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="MaterialNumber"/>
+      <viewAttribute id="BatchNumber"/>
+      <viewAttribute id="Plant"/>
+      <viewAttribute id="SalesDocumentItemCategory"/>
+      <viewAttribute id="ItemDescription"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="ProfitCenter"/>
+      <viewAttribute id="MaterialNumber_INVALID"/>
+      <viewAttribute id="Plant_INVALID"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute hidden="true" id="JOIN$ProfitCenter$PRCTR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="ProfitCenter_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ProfitCenter&quot;=&quot;PRCTR&quot;
+then 0
+else 1 
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MaterialNumber" source="MaterialNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BatchNumber" source="BatchNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Plant" source="Plant"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItemCategory" source="SalesDocumentItemCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemDescription" source="ItemDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProfitCenter" source="ProfitCenter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MaterialNumber_INVALID" source="MaterialNumber_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Plant_INVALID" source="Plant_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ProfitCenter$PRCTR" source="ProfitCenter"/>
+    </input>
+    <input node="Projection_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ProfitCenter$PRCTR" source="PRCTR"/>
+    </input>
+    <joinAttribute name="JOIN$ProfitCenter$PRCTR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_3">
+  <attributes>
+    <attribute id="LegacySalesDocument" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LegacySalesDocument"/>
+      <keyMapping columnObjectName="Join_3" columnName="LegacySalesDocument"/>
+    </attribute>
+    <attribute id="MaterialNumber" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number"/>
+      <keyMapping columnObjectName="Join_3" columnName="MaterialNumber"/>
+    </attribute>
+    <attribute id="BatchNumber" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Batch Number"/>
+      <keyMapping columnObjectName="Join_3" columnName="BatchNumber"/>
+    </attribute>
+    <attribute id="Plant" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant (Own or External)"/>
+      <keyMapping columnObjectName="Join_3" columnName="Plant"/>
+    </attribute>
+    <attribute id="SalesDocumentItemCategory" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales document item category"/>
+      <keyMapping columnObjectName="Join_3" columnName="SalesDocumentItemCategory"/>
+    </attribute>
+    <attribute id="ItemDescription" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Short text for sales order item"/>
+      <keyMapping columnObjectName="Join_3" columnName="ItemDescription"/>
+    </attribute>
+    <attribute id="SalesDocumentItem" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesDocumentItem"/>
+      <keyMapping columnObjectName="Join_3" columnName="SalesDocumentItem"/>
+    </attribute>
+    <attribute id="MaterialNumber_INVALID" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesOrganization_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="MaterialNumber_INVALID"/>
+    </attribute>
+    <attribute id="Plant_INVALID" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="Plant_INVALID"/>
+    </attribute>
+    <attribute id="ProfitCenter" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Profit Center"/>
+      <keyMapping columnObjectName="Join_3" columnName="ProfitCenter"/>
+    </attribute>
+  
+    <attribute id="ProfitCenter_INVALID" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProfitCenter_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="ProfitCenter_INVALID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MaterialNumber_INVALID&quot; + &quot;Plant_INVALID&quot;+&quot;ProfitCenter_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422.15218199852" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384.11215526044043" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666669" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="279"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145.33333333333337" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="216"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489.48394766311617" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422.15218199852" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="229.6767578125"/>
+    </shape>
+    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

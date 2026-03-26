@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.07Validation::CV_MM_STORAGELOCATION_MARD" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialMaster.06Completeness::CV_MM_PLANTDATA_MARC">
+    <resourceUri>EHUB.MD.MaterialMaster.06Completeness::CV_MM_PLANTDATA_MARC</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMaster.06Completeness::CV_MM_STORAGELOCATION_MARD">
+    <resourceUri>EHUB.MD.MaterialMaster.06Completeness::CV_MM_STORAGELOCATION_MARD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMaster.06Completeness::CV_MM_BASICDATA_MARA">
+    <resourceUri>EHUB.MD.MaterialMaster.06Completeness::CV_MM_BASICDATA_MARA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMaster.06Completeness::CV_MM_SALESDATA_MVKE">
+    <resourceUri>EHUB.MD.MaterialMaster.06Completeness::CV_MM_SALESDATA_MVKE</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001L">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001L</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_PLANTDATA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.06Completeness::CV_MM_PLANTDATA_MARC"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_STORAGELOCATION" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    
+      <viewAttribute id="LGPBE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.06Completeness::CV_MM_STORAGELOCATION_MARD"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_MARA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BASICDATA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="MATNR"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.06Completeness::CV_MM_BASICDATA_MARA"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SALESDATA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.06Completeness::CV_MM_SALESDATA_MVKE"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T001W" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T001L" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="LGORT"/>
+    
+      <viewAttribute id="MANDT"/>
+    
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001L"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BASICDATA" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATNR_LOADED"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_BASICDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_INCOMPLETE" source="TOTAL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="P_S4H_MARA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_LOADED" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_LOAD_CHECK" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATNR_LOADED"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_BASICDATA"/>
+    <filter>&quot;MATNR_LOADED&quot; IS NULL</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_PLANTDATA" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS_MARC"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4H_LOAD_CHECK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="P_PLANTDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_MARC" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_STORAGELOCATION" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS_MARC"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS_MARC$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_PLANTDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_MARC" source="WERKS_MARC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS_MARC$WERKS" source="WERKS_MARC"/>
+    </input>
+    <input node="P_STORAGELOCATION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS_MARC$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+    <joinAttribute name="JOIN$WERKS_MARC$WERKS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_SALESDATA" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS_MARC"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_STORAGELOCATION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_MARC" source="WERKS_MARC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="P_SALESDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_WERKS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS_MARC"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="WERKS_T001W"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS_MARC$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WERKS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS_MARC&quot;=&quot;WERKS_T001W&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_SALESDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_MARC" source="WERKS_MARC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS_MARC$WERKS" source="WERKS_MARC"/>
+    </input>
+    <input node="P_S4H_T001W">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_T001W" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS_MARC$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$WERKS_MARC$WERKS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LGORT" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS_MARC"/>
+      <viewAttribute id="WERKS_INVALID"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LGORT_T001L"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute hidden="true" id="JOIN$LGORT$LGORT"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS_MARC$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="LGORT_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;LGORT&quot;=&quot;LGORT_T001L&quot;
+   then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_WERKS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_MARC" source="WERKS_MARC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_INVALID" source="WERKS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGORT$LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS_MARC$WERKS" source="WERKS_MARC"/>
+    </input>
+    <input node="P_S4H_T001L">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT_T001L" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGORT$LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS_MARC$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$LGORT$LGORT"/>
+    <joinAttribute name="JOIN$WERKS_MARC$WERKS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_LGORT">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="J_LGORT" columnName="MATNR"/>
+    </attribute>
+    <attribute id="WERKS_MARC" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS_MARC"/>
+      <keyMapping columnObjectName="J_LGORT" columnName="WERKS_MARC"/>
+    </attribute>
+    <attribute id="WERKS_INVALID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS_INVALID"/>
+      <keyMapping columnObjectName="J_LGORT" columnName="WERKS_INVALID"/>
+    </attribute>
+    <attribute id="LGORT_INVALID" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGORT_INVALID"/>
+      <keyMapping columnObjectName="J_LGORT" columnName="LGORT_INVALID"/>
+    </attribute>
+  
+    <attribute id="LGPBE" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGPBE"/>
+  
+      <keyMapping columnObjectName="J_LGORT" columnName="LGPBE"/>
+  
+    </attribute>
+    <attribute id="LGORT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGORT"/>
+      <keyMapping columnObjectName="J_LGORT" columnName="LGORT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="5" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS_INVALID&quot;+&quot;LGORT_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="261" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_PLANTDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_STORAGELOCATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_MARA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="363" y="1301"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BASICDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="153" y="1301"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_SALESDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="206" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T001W" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="174" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T001L" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="116" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BASICDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="1141"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BASICDATA" modelObjectNameSpace="J_BASICDATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198"/>
+    </shape>
+    <shape modelObjectName="P_S4H_MARA" modelObjectNameSpace="J_BASICDATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="128"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_LOAD_CHECK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_PLANTDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4H_LOAD_CHECK" modelObjectNameSpace="J_PLANTDATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="201"/>
+    </shape>
+    <shape modelObjectName="P_PLANTDATA" modelObjectNameSpace="J_PLANTDATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="203"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_STORAGELOCATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="416" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_PLANTDATA" modelObjectNameSpace="J_STORAGELOCATION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_STORAGELOCATION" modelObjectNameSpace="J_STORAGELOCATION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_SALESDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_STORAGELOCATION" modelObjectNameSpace="J_SALESDATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="166"/>
+    </shape>
+    <shape modelObjectName="P_SALESDATA" modelObjectNameSpace="J_SALESDATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_WERKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="326" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_SALESDATA" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="170"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T001W" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LGORT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="261" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_WERKS" modelObjectNameSpace="J_LGORT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T001L" modelObjectNameSpace="J_LGORT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

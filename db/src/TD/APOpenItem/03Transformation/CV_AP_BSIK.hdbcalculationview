@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.APOpenItem.03Transformation::CV_AP_BSIK" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_AR_BSID"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.APOpenItem.01Extraction::CV_SHE_AP_BSIK">
+    <resourceUri>EHUB.TD.APOpenItem.01Extraction::CV_SHE_AP_BSIK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_COMPANY_CODE">
+    <resourceUri>EHUB.Synonyms::SY_LKP_COMPANY_CODE</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_VENDOR">
+    <resourceUri>EHUB.Synonyms::SY_LKP_VENDOR</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSIK">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="UMSKZ"/>
+      <viewAttribute id="ZUONR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="BLDAT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="BLART"/>
+      <viewAttribute id="BSCHL"/>
+      <viewAttribute id="DMBTR"/>
+      <viewAttribute id="WRBTR"/>
+      <viewAttribute id="DMBE2"/>
+      <viewAttribute id="MWSTS"/>
+      <viewAttribute id="WMWST"/>
+      <viewAttribute id="SGTXT"/>
+      <viewAttribute id="ZFBDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZLSCH"/>
+      <viewAttribute id="ZLSPR"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="BUPLA"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="CC_GKONT"/>
+    
+      <viewAttribute id="WWERT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.APOpenItem.01Extraction::CV_SHE_AP_BSIK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_COMPANY_CODE">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_COMPANY_CODE"/>
+      <viewAttribute id="COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_VENDOR">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_VENDOR_NUMBER"/>
+      <viewAttribute id="VENDOR_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_VENDOR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COMPANY_CODE" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="UMSKZ"/>
+      <viewAttribute id="ZUONR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="BLDAT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="BLART"/>
+      <viewAttribute id="BSCHL"/>
+      <viewAttribute id="DMBTR"/>
+      <viewAttribute id="WRBTR"/>
+      <viewAttribute id="DMBE2"/>
+      <viewAttribute id="MWSTS"/>
+      <viewAttribute id="WMWST"/>
+      <viewAttribute id="SGTXT"/>
+      <viewAttribute id="ZFBDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZLSCH"/>
+      <viewAttribute id="ZLSPR"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="BUPLA"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="CC_GKONT"/>
+      <viewAttribute id="WWERT"/>
+      <viewAttribute id="COMPANY_CODE"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BUKRS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;COMPANY_CODE&quot;, &quot;BUKRS&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_BSIK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMSKZ" source="UMSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZUONR" source="ZUONR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLDAT" source="BLDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLART" source="BLART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSCHL" source="BSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DMBTR" source="DMBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WRBTR" source="WRBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DMBE2" source="DMBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSTS" source="MWSTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WMWST" source="WMWST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SGTXT" source="SGTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFBDT" source="ZFBDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZLSCH" source="ZLSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZLSPR" source="ZLSPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUPLA" source="BUPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_GKONT" source="CC_GKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWERT" source="WWERT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="BUKRS"/>
+    </input>
+    <input node="P_LKP_COMPANY_CODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_CODE" source="COMPANY_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="LEGACY_COMPANY_CODE"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_VENDOR" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="UMSKZ"/>
+      <viewAttribute id="ZUONR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="BLDAT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="BLART"/>
+      <viewAttribute id="BSCHL"/>
+      <viewAttribute id="DMBTR"/>
+      <viewAttribute id="WRBTR"/>
+      <viewAttribute id="DMBE2"/>
+      <viewAttribute id="MWSTS"/>
+      <viewAttribute id="WMWST"/>
+      <viewAttribute id="SGTXT"/>
+      <viewAttribute id="ZFBDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZLSCH"/>
+      <viewAttribute id="ZLSPR"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="BUPLA"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="CC_GKONT"/>
+      <viewAttribute id="WWERT"/>
+      <viewAttribute id="CC_BUKRS"/>
+      <viewAttribute id="VENDOR_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR$LEGACY_VENDOR_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_LIFNR" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;VENDOR_NUMBER&quot;, &quot;LIFNR&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_COMPANY_CODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMSKZ" source="UMSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZUONR" source="ZUONR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUDAT" source="BUDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLDAT" source="BLDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLART" source="BLART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSCHL" source="BSCHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DMBTR" source="DMBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WRBTR" source="WRBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DMBE2" source="DMBE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSTS" source="MWSTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WMWST" source="WMWST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SGTXT" source="SGTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFBDT" source="ZFBDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZLSCH" source="ZLSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZLSPR" source="ZLSPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUPLA" source="BUPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKBER" source="FKBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_GKONT" source="CC_GKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WWERT" source="WWERT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_BUKRS" source="CC_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$LEGACY_VENDOR_NUMBER" source="LIFNR"/>
+    </input>
+    <input node="P_LKP_VENDOR">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDOR_NUMBER" source="VENDOR_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$LEGACY_VENDOR_NUMBER" source="LEGACY_VENDOR_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$LIFNR$LEGACY_VENDOR_NUMBER"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_VENDOR">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_BUKRS"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="CC_BUKRS"/>
+    </attribute>
+    <attribute id="LIFNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_LIFNR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="CC_LIFNR"/>
+    </attribute>
+    <attribute id="UMSKZ" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UMSKZ"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="UMSKZ"/>
+    </attribute>
+    <attribute id="ZUONR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZUONR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="ZUONR"/>
+    </attribute>
+    <attribute id="GJAHR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GJAHR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="BELNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="BELNR"/>
+    </attribute>
+    <attribute id="BUZEI" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="BUDAT" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUDAT"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="BUDAT"/>
+    </attribute>
+    <attribute id="BLDAT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BLDAT"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="BLDAT"/>
+    </attribute>
+    <attribute id="WWERT" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Translation Date"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="WWERT"/>
+    </attribute>
+    <attribute id="WAERS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="WAERS"/>
+    </attribute>
+    <attribute id="XBLNR" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="BLART" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BLART"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="BLART"/>
+    </attribute>
+    <attribute id="BSCHL" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BSCHL"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="BSCHL"/>
+    </attribute>
+    <attribute id="DMBTR" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DMBTR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="DMBTR"/>
+    </attribute>
+    <attribute id="WRBTR" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WRBTR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="WRBTR"/>
+    </attribute>
+    <attribute id="DMBE2" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DMBE2"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="DMBE2"/>
+    </attribute>
+    <attribute id="MWSTS" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSTS"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="MWSTS"/>
+    </attribute>
+    <attribute id="WMWST" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WMWST"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="WMWST"/>
+    </attribute>
+    <attribute id="SGTXT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SGTXT"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="SGTXT"/>
+    </attribute>
+    <attribute id="ZFBDT" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZFBDT"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="ZFBDT"/>
+    </attribute>
+    <attribute id="ZTERM" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTERM"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="ZLSCH" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZLSCH"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="ZLSCH"/>
+    </attribute>
+    <attribute id="ZLSPR" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZLSPR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="ZLSPR"/>
+    </attribute>
+    <attribute id="MWSKZ" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSKZ"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="BUPLA" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUPLA"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="BUPLA"/>
+    </attribute>
+    <attribute id="PRCTR" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="FKBER" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKBER"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="FKBER"/>
+    </attribute>
+    <attribute id="KOSTL" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTL"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="CC_GKONT" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_GKONT"/>
+      <keyMapping columnObjectName="J_VENDOR" columnName="CC_GKONT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BSIK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_COMPANY_CODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_VENDOR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_COMPANY_CODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="162" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BSIK" modelObjectNameSpace="J_COMPANY_CODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_LKP_COMPANY_CODE" modelObjectNameSpace="J_COMPANY_CODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="229"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_VENDOR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_COMPANY_CODE" modelObjectNameSpace="J_VENDOR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_LKP_VENDOR" modelObjectNameSpace="J_VENDOR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="237"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

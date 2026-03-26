@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CostCenter.01Extraction::CV_SHE_CC_CSKS" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_ZT1_CC_CSKS_REL"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_CSKS">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_CSKS</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_CSKT">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_CSKT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CSKS" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BKZKP"/>
+      <viewAttribute id="PKZKP"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="KOSAR"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="KALSM"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BKZKS"/>
+      <viewAttribute id="BKZER"/>
+      <viewAttribute id="PKZKS"/>
+      <viewAttribute id="PKZER"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="FUNC_AREA"/>
+    
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CURRENT_DATE" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>CURRENT_DATE</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_CSKS"/>
+    <filter>(&quot;DATBI&quot;&gt;=&quot;CURRENT_DATE&quot;) AND (&quot;DATAB&quot;&lt;=&quot;CURRENT_DATE&quot;) AND &quot;MANDT&quot;='801' AND &quot;KOKRS&quot;='1000'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CSKT">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_CSKT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CSKS" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KOSAR"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="FUNC_AREA"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BKZKP"/>
+      <viewAttribute id="PKZKP"/>
+      <viewAttribute id="BKZKS"/>
+      <viewAttribute id="PKZKS"/>
+      <viewAttribute id="BKZER"/>
+      <viewAttribute id="PKZER"/>
+      <viewAttribute id="KALSM"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+      <viewAttribute hidden="true" id="JOIN$KOSTL$KOSTL"/>
+      <viewAttribute hidden="true" id="JOIN$DATBI$DATBI"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_CSKS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKP" source="BKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKP" source="PKZKP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSAR" source="KOSAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSM" source="KALSM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZKS" source="BKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKZER" source="BKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZKS" source="PKZKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PKZER" source="PKZER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FUNC_AREA" source="FUNC_AREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOSTL$KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+    </input>
+    <input node="P_CSKT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOSTL$KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+    <joinAttribute name="JOIN$KOSTL$KOSTL"/>
+    <joinAttribute name="JOIN$DATBI$DATBI"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_CSKS">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Controlling Area"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="KOSTL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cost Center"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="DATBI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valid To Date"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="DATBI"/>
+    </attribute>
+    <attribute id="DATAB" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valid-From Date"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="DATAB"/>
+    </attribute>
+    <attribute id="SPRAS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="KTEXT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTEXT"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="KTEXT"/>
+    </attribute>
+    <attribute id="LTEXT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LTEXT"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="LTEXT"/>
+    </attribute>
+    <attribute id="VERAK_USER" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User Responsible"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="VERAK_USER"/>
+    </attribute>
+    <attribute id="VERAK" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Person Responsible"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="VERAK"/>
+    </attribute>
+    <attribute id="ABTEI" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Department"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="ABTEI"/>
+    </attribute>
+    <attribute id="KOSAR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cost Center Category"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="KOSAR"/>
+    </attribute>
+    <attribute id="KHINR" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Standard Hierarchy Area"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="KHINR"/>
+    </attribute>
+    <attribute id="BUKRS" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="FUNC_AREA" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FUNC_AREA"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="FUNC_AREA"/>
+    </attribute>
+    <attribute id="GSBER" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Area"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="GSBER"/>
+    </attribute>
+    <attribute id="WAERS" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Currency Key"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="WAERS"/>
+    </attribute>
+    <attribute id="PRCTR" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Profit Center"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="BKZKP" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Lock Indicator for Actual Primary Postings"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="BKZKP"/>
+    </attribute>
+    <attribute id="PKZKP" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Lock Indicator for Plan Primary Costs"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="PKZKP"/>
+    </attribute>
+    <attribute id="BKZKS" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Lock Indicator for Actual Secondary Costs"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="BKZKS"/>
+    </attribute>
+    <attribute id="PKZKS" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Lock Indicator for Plan Secondary Costs"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="PKZKS"/>
+    </attribute>
+    <attribute id="BKZER" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Lock Indicator for Actual Revenue Postings"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="BKZER"/>
+    </attribute>
+    <attribute id="PKZER" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Lock Indicator for Planning Revenues"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="PKZER"/>
+    </attribute>
+    <attribute id="KALSM" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Costing Sheet"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="KALSM"/>
+    </attribute>
+    <attribute id="ANRED" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Title"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="ANRED"/>
+    </attribute>
+    <attribute id="NAME1" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 1"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="NAME1"/>
+    </attribute>
+    <attribute id="NAME2" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 2"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="NAME2"/>
+    </attribute>
+    <attribute id="NAME3" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 3"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="NAME3"/>
+    </attribute>
+    <attribute id="NAME4" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 4"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="NAME4"/>
+    </attribute>
+    <attribute id="STRAS" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House number and street"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="STRAS"/>
+    </attribute>
+    <attribute id="PSTLZ" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Postal Code"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="PSTL2" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="P.O. Box Postal Code"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="PSTL2"/>
+    </attribute>
+    <attribute id="PFACH" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PO Box"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="PFACH"/>
+    </attribute>
+    <attribute id="ORT01" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="ORT01"/>
+    </attribute>
+    <attribute id="ORT02" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="District"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="ORT02"/>
+    </attribute>
+    <attribute id="LAND1" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country Key"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="LAND1"/>
+    </attribute>
+    <attribute id="REGIO" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="REGIO"/>
+    </attribute>
+    <attribute id="TXJCD" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Jurisdiction"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="TELBX" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Telebox number"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="TELBX"/>
+    </attribute>
+    <attribute id="TELF1" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="First telephone number"/>
+      <keyMapping columnObjectName="J_CSKS" columnName="TELF1"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_CSKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="128" y="353"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_CSKT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="344" y="353"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CSKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_CSKS" modelObjectNameSpace="J_CSKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="P_CSKT" modelObjectNameSpace="J_CSKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.03Transformation::CV_MM_SALESDATA_MVKE" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_SALESDATA_MVKE">
+    <resourceUri>EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_SALESDATA_MVKE</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_BASICDATA_MARA">
+    <resourceUri>EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_BASICDATA_MARA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_DISTRIBUTION_CHANNEL">
+    <resourceUri>EHUB.Synonyms::SY_LKP_DISTRIBUTION_CHANNEL</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_SALES_ORGANISATION">
+    <resourceUri>EHUB.Synonyms::SY_LKP_SALES_ORGANISATION</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER">
+    <resourceUri>EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SALESDATA">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VKORG"/>
+    
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_SALESDATA_MVKE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BASICDATA">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_BASICDATA_MARA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_DISTRIBUTION_CHANNEL">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_DISTRIBUTION_CHANNEL"/>
+      <viewAttribute id="LEGACY_SALES_ORGANISATION"/>
+      <viewAttribute id="DISTRIBUTION_CHANNEL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_DISTRIBUTION_CHANNEL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_SALES_ORGANISATION">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_SALES_ORGANISATION"/>
+      <viewAttribute id="SALES_ORGANISATION"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_SALES_ORGANISATION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="LKP_MATERIAL_NUMBER">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_SALESDATA" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SALESDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DWERK" source="DWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHME" source="SCHME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTA" source="VMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTD" source="VMSTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUMNG" source="AUMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFMNG" source="LFMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCMNG" source="SCMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSG" source="VERSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS" source="MTPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="P_BASICDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_VTWEG" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="DISTRIBUTION_CHANNEL"/>
+      <viewAttribute id="LEGACY_DISTRIBUTION_CHANNEL"/>
+      <viewAttribute hidden="true" id="JOIN$VKORG$LEGACY_SALES_ORGANISATION"/>
+      <viewAttribute hidden="true" id="JOIN$VTWEG$LEGACY_DISTRIBUTION_CHANNEL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_VTWEG" datatype="NVARCHAR" length="2" expressionLanguage="SQL">
+        <formula>case when &quot;VTWEG&quot;=&quot;LEGACY_DISTRIBUTION_CHANNEL&quot;
+then &quot;DISTRIBUTION_CHANNEL&quot;
+else &quot;VTWEG&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_SALESDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DWERK" source="DWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHME" source="SCHME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTA" source="VMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTD" source="VMSTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUMNG" source="AUMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFMNG" source="LFMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCMNG" source="SCMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSG" source="VERSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS" source="MTPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VKORG$LEGACY_SALES_ORGANISATION" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VTWEG$LEGACY_DISTRIBUTION_CHANNEL" source="VTWEG"/>
+    </input>
+    <input node="P_LKP_DISTRIBUTION_CHANNEL">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_DISTRIBUTION_CHANNEL" source="LEGACY_DISTRIBUTION_CHANNEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISTRIBUTION_CHANNEL" source="DISTRIBUTION_CHANNEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VKORG$LEGACY_SALES_ORGANISATION" source="LEGACY_SALES_ORGANISATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VTWEG$LEGACY_DISTRIBUTION_CHANNEL" source="LEGACY_DISTRIBUTION_CHANNEL"/>
+    </input>
+    <joinAttribute name="JOIN$VKORG$LEGACY_SALES_ORGANISATION"/>
+    <joinAttribute name="JOIN$VTWEG$LEGACY_DISTRIBUTION_CHANNEL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_VKORG" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="LEGACY_SALES_ORGANISATION"/>
+      <viewAttribute id="SALES_ORGANISATION"/>
+      <viewAttribute hidden="true" id="JOIN$VKORG$LEGACY_SALES_ORGANISATION"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_VKORG" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>case when &quot;VKORG&quot;=&quot;LEGACY_SALES_ORGANISATION&quot;
+then &quot;SALES_ORGANISATION&quot;
+else &quot;VKORG&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_VTWEG">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DWERK" source="DWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="CC_VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHME" source="SCHME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTA" source="VMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTD" source="VMSTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUMNG" source="AUMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFMNG" source="LFMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCMNG" source="SCMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSG" source="VERSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS" source="MTPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VKORG$LEGACY_SALES_ORGANISATION" source="VKORG"/>
+    </input>
+    <input node="P_LKP_SALES_ORGANISATION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_SALES_ORGANISATION" source="LEGACY_SALES_ORGANISATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_ORGANISATION" source="SALES_ORGANISATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VKORG$LEGACY_SALES_ORGANISATION" source="LEGACY_SALES_ORGANISATION"/>
+    </input>
+    <joinAttribute name="JOIN$VKORG$LEGACY_SALES_ORGANISATION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MATNR" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$LEGACY_MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MATNR" datatype="NVARCHAR" length="18" expressionLanguage="SQL">
+        <formula>case when &quot;MATNR&quot;=&quot;LEGACY_MATERIAL_NUMBER&quot;
+then &quot;MATERIAL_NUMBER&quot;
+else &quot;MATNR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_VKORG">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="CC_VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DWERK" source="DWERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHME" source="SCHME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTA" source="VMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VMSTD" source="VMSTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUMNG" source="AUMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFMNG" source="LFMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCMNG" source="SCMNG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSG" source="VERSG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS" source="MTPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$LEGACY_MATERIAL_NUMBER" source="MATNR"/>
+    </input>
+    <input node="LKP_MATERIAL_NUMBER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_NUMBER" source="MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$LEGACY_MATERIAL_NUMBER"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_MATNR">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="CC_MATNR"/>
+    </attribute>
+    <attribute id="VRKME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales unit"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="VRKME"/>
+    </attribute>
+    <attribute id="VTWEG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Distribution Channel"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SCHME" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure of delivery unit"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="SCHME"/>
+    </attribute>
+    <attribute id="VMSTA" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Distribution-chain-specific material status"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="VMSTA"/>
+    </attribute>
+    <attribute id="VMSTD" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date from which distr.-chain-spec. material status is valid"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="VMSTD"/>
+    </attribute>
+    <attribute id="DWERK" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delivering Plant (Own or External)"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="DWERK"/>
+    </attribute>
+    <attribute id="SKTOF" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cash discount indicator"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="SKTOF"/>
+    </attribute>
+    <attribute id="AUMNG" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum order quantity in base unit of measure"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="AUMNG"/>
+    </attribute>
+    <attribute id="LFMNG" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum delivery quantity in delivery note processing"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="LFMNG"/>
+    </attribute>
+    <attribute id="SCMNG" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delivery unit"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="SCMNG"/>
+    </attribute>
+    <attribute id="RDPRF" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rounding Profile"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="RDPRF"/>
+    </attribute>
+    <attribute id="VERSG" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material statistics group"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="VERSG"/>
+    </attribute>
+    <attribute id="MTPOS" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Item category group from material master"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="MTPOS"/>
+    </attribute>
+    <attribute id="PRODH" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Product hierarchy"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="PRODH"/>
+    </attribute>
+    <attribute id="PMATN" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Pricing Reference Material"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="PMATN"/>
+    </attribute>
+    <attribute id="KONDM" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Pricing Group"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="KONDM"/>
+    </attribute>
+    <attribute id="KTGRM" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account assignment group for this material"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="KTGRM"/>
+    </attribute>
+    <attribute id="PROVG" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Commission group"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="PROVG"/>
+    </attribute>
+    <attribute id="VKORG" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Organization"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="VKORG"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="534" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_SALESDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BASICDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_DISTRIBUTION_CHANNEL" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_SALES_ORGANISATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="477" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="LKP_MATERIAL_NUMBER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="592" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_SALESDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_SALESDATA" modelObjectNameSpace="J_SALESDATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_BASICDATA" modelObjectNameSpace="J_SALESDATA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_VTWEG" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_SALESDATA" modelObjectNameSpace="J_VTWEG" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="148"/>
+    </shape>
+    <shape modelObjectName="P_LKP_DISTRIBUTION_CHANNEL" modelObjectNameSpace="J_VTWEG" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="273"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_VKORG" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_VTWEG" modelObjectNameSpace="J_VKORG" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="273"/>
+    </shape>
+    <shape modelObjectName="P_LKP_SALES_ORGANISATION" modelObjectNameSpace="J_VKORG" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="261"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MATNR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="534" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_VKORG" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="261"/>
+    </shape>
+    <shape modelObjectName="LKP_MATERIAL_NUMBER" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="244"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.03Transformation::CV_CM_BP_ROLE" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_CM_BP_ROLE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_CUST_GEN_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_CUST_GEN_PLD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CUST_GEN_PLD">
+    <viewAttributes>
+      <viewAttribute id="KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BP_ROLE" datatype="NVARCHAR" length="80" expressionLanguage="SQL">
+        <formula>'FLCU01'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_TA_CUST_GEN_PLD"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_CUST_GEN_PLD">
+  <attributes>
+    <attribute id="KUNNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number*"/>
+      <keyMapping columnObjectName="P_CUST_GEN_PLD" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="CC_BP_ROLE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_BP_ROLE"/>
+      <keyMapping columnObjectName="P_CUST_GEN_PLD" columnName="CC_BP_ROLE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_CUST_GEN_PLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="211"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

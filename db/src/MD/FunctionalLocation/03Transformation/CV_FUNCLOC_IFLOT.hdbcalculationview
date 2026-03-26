@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.FunctionalLocation.03Transformation::CV_FUNCLOC_IFLOT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_SHE_FUNCLOC_IFLOT.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.FunctionalLocation.01Extraction::CV_SHE_FUNCLOC_IFLOT">
+    <resourceUri>EHUB.MD.FunctionalLocation.01Extraction::CV_SHE_FUNCLOC_IFLOT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Extraction">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="FLTYP"/>
+      <viewAttribute id="INVNR"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BEGRU"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="EQART"/>
+      <viewAttribute id="IFLOT_SNTYPE"/>
+      <viewAttribute id="IFLOT_SRTYPE"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HERST"/>
+      <viewAttribute id="TYPBZ"/>
+      <viewAttribute id="MAPAR"/>
+      <viewAttribute id="HERLD"/>
+      <viewAttribute id="BAUJJ"/>
+      <viewAttribute id="BAUMM"/>
+      <viewAttribute id="SERGE"/>
+      <viewAttribute id="ANSWT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ANSDT"/>
+      <viewAttribute id="IWERK"/>
+      <viewAttribute id="INGRP"/>
+      <viewAttribute id="RBNR"/>
+      <viewAttribute id="TPLMA"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="IEQUI"/>
+      <viewAttribute id="EINZL"/>
+      <viewAttribute id="SUBMT"/>
+      <viewAttribute id="SWERK"/>
+      <viewAttribute id="MSGRP"/>
+      <viewAttribute id="EQFNR"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="ABCKZ"/>
+      <viewAttribute id="BEBER"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="ANLNR"/>
+      <viewAttribute id="ANLUN"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="PROID"/>
+      <viewAttribute id="AUFNR"/>
+      <viewAttribute id="DAUFN"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="VKBUR"/>
+      <viewAttribute id="VKGRP"/>
+      <viewAttribute id="ALKEY"/>
+      <viewAttribute id="PLTXT"/>
+      <viewAttribute id="LGWID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="OBJNR"/>
+      <viewAttribute id="GWLDT_K"/>
+      <viewAttribute id="GWLEN_K"/>
+      <viewAttribute id="MGANR_K"/>
+      <viewAttribute id="WAGET_K"/>
+      <viewAttribute id="GAERB_K"/>
+      <viewAttribute id="GWLDT_O"/>
+      <viewAttribute id="GWLEN_O"/>
+      <viewAttribute id="MGANR_O"/>
+      <viewAttribute id="WAGET_O"/>
+      <viewAttribute id="GAERB_O"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="TPLKZ"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.FunctionalLocation.01Extraction::CV_SHE_FUNCLOC_IFLOT"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="P_Extraction">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MANDT"/>
+    </attribute>
+    <attribute id="TPLNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="TPLNR"/>
+    </attribute>
+    <attribute id="TPLKZ" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLKZ"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="TPLKZ"/>
+    </attribute>
+    <attribute id="FLTYP" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FLTYP"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="FLTYP"/>
+    </attribute>
+    <attribute id="INVNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INVNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="INVNR"/>
+    </attribute>
+    <attribute id="DATAB" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="DATAB"/>
+    </attribute>
+    <attribute id="BEGRU" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEGRU"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BEGRU"/>
+    </attribute>
+    <attribute id="BRGEW" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRGEW"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BRGEW"/>
+    </attribute>
+    <attribute id="GEWEI" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWEI"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GEWEI"/>
+    </attribute>
+    <attribute id="EQART" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQART"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="EQART"/>
+    </attribute>
+    <attribute id="IFLOT_SNTYPE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IFLOT_SNTYPE"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="IFLOT_SNTYPE"/>
+    </attribute>
+    <attribute id="IFLOT_SRTYPE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IFLOT_SRTYPE"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="IFLOT_SRTYPE"/>
+    </attribute>
+    <attribute id="GROES" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GROES"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GROES"/>
+    </attribute>
+    <attribute id="HERST" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HERST"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="HERST"/>
+    </attribute>
+    <attribute id="TYPBZ" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TYPBZ"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="TYPBZ"/>
+    </attribute>
+    <attribute id="MAPAR" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPAR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MAPAR"/>
+    </attribute>
+    <attribute id="HERLD" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HERLD"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="HERLD"/>
+    </attribute>
+    <attribute id="BAUJJ" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BAUJJ"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BAUJJ"/>
+    </attribute>
+    <attribute id="BAUMM" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BAUMM"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BAUMM"/>
+    </attribute>
+    <attribute id="SERGE" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SERGE"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="SERGE"/>
+    </attribute>
+    <attribute id="ANSWT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANSWT"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ANSWT"/>
+    </attribute>
+    <attribute id="WAERS" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="WAERS"/>
+    </attribute>
+    <attribute id="ANSDT" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANSDT"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ANSDT"/>
+    </attribute>
+    <attribute id="IWERK" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IWERK"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="IWERK"/>
+    </attribute>
+    <attribute id="INGRP" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INGRP"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="INGRP"/>
+    </attribute>
+    <attribute id="RBNR" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RBNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="RBNR"/>
+    </attribute>
+    <attribute id="TPLMA" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TPLMA"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="TPLMA"/>
+    </attribute>
+    <attribute id="POSNR" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="POSNR"/>
+    </attribute>
+    <attribute id="IEQUI" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IEQUI"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="IEQUI"/>
+    </attribute>
+    <attribute id="EINZL" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EINZL"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="EINZL"/>
+    </attribute>
+    <attribute id="SUBMT" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBMT"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="SUBMT"/>
+    </attribute>
+    <attribute id="SWERK" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWERK"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="SWERK"/>
+    </attribute>
+    <attribute id="MSGRP" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MSGRP"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MSGRP"/>
+    </attribute>
+    <attribute id="EQFNR" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EQFNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="EQFNR"/>
+    </attribute>
+    <attribute id="STORT" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STORT"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="STORT"/>
+    </attribute>
+    <attribute id="ABCKZ" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABCKZ"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ABCKZ"/>
+    </attribute>
+    <attribute id="BEBER" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BEBER"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BEBER"/>
+    </attribute>
+    <attribute id="BUKRS" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="GSBER" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GSBER"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GSBER"/>
+    </attribute>
+    <attribute id="ANLNR" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ANLNR"/>
+    </attribute>
+    <attribute id="ANLUN" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANLUN"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ANLUN"/>
+    </attribute>
+    <attribute id="KOSTL" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTL"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="PROID" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROID"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PROID"/>
+    </attribute>
+    <attribute id="AUFNR" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUFNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="AUFNR"/>
+    </attribute>
+    <attribute id="DAUFN" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAUFN"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="DAUFN"/>
+    </attribute>
+    <attribute id="VKORG" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKORG"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="VKORG"/>
+    </attribute>
+    <attribute id="VTWEG" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTWEG"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SPART" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPART"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="SPART"/>
+    </attribute>
+    <attribute id="VKBUR" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKBUR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="VKBUR"/>
+    </attribute>
+    <attribute id="VKGRP" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKGRP"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="VKGRP"/>
+    </attribute>
+    <attribute id="ALKEY" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ALKEY"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ALKEY"/>
+    </attribute>
+    <attribute id="PLTXT" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLTXT"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="PLTXT"/>
+    </attribute>
+    <attribute id="LGWID" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGWID"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="LGWID"/>
+    </attribute>
+    <attribute id="ARBPL" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Work center"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="ARBPL"/>
+    </attribute>
+    <attribute id="WERKS" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="WERKS"/>
+    </attribute>
+    <attribute id="OBJNR" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OBJNR"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="OBJNR"/>
+    </attribute>
+    <attribute id="GWLDT_K" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Warranty Date"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GWLDT_K"/>
+    </attribute>
+    <attribute id="GWLEN_K" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GWLEN_K"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GWLEN_K"/>
+    </attribute>
+    <attribute id="MGANR_K" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master warranty number"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MGANR_K"/>
+    </attribute>
+    <attribute id="WAGET_K" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator, Whether Technical Object Should Inherit Warranty"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="WAGET_K"/>
+    </attribute>
+    <attribute id="GAERB_K" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Pass on Warranty"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GAERB_K"/>
+    </attribute>
+    <attribute id="GWLDT_O" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Warranty Date"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GWLDT_O"/>
+    </attribute>
+    <attribute id="GWLEN_O" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date on which the warranty ends"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GWLEN_O"/>
+    </attribute>
+    <attribute id="MGANR_O" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master warranty number"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="MGANR_O"/>
+    </attribute>
+    <attribute id="WAGET_O" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator, Whether Technical Object Should Inherit Warranty"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="WAGET_O"/>
+    </attribute>
+    <attribute id="GAERB_O" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Pass on Warranty"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="GAERB_O"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="P_Extraction" columnName="CURRENT_DATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_Extraction" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

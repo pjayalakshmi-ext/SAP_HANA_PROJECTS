@@ -1,0 +1,578 @@
+{
+  "EHUB.Synonyms::SY_ZSLT_SHE_BSEC": {
+    "target": {
+      "object": "BSEC",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BSID": {
+    "target": {
+      "object": "BSID",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BSAD": {
+    "target": {
+      "object": "BSAD",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BFOD_A": {
+    "target": {
+      "object": "BFOD_A",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BKPF": {
+    "target": {
+      "object": "BKPF",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_TIBAN": {
+    "target": {
+      "object": "TIBAN",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BSET": {
+    "target": {
+      "object": "BSET",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BNKA": {
+    "target": {
+      "object": "BNKA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CSKS": {
+    "target": {
+      "object": "CSKS",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CSKT": {
+    "target": {
+      "object": "CSKT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_WITH_ITEM": {
+    "target": {
+      "object": "WITH_ITEM",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BSIK": {
+    "target": {
+      "object": "BSIK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BSAK": {
+    "target": {
+      "object": "BSAK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_LFBK": {
+    "target": {
+      "object": "LFBK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KNBK": {
+    "target": {
+      "object": "KNBK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KNA1": {
+    "target": {
+      "object": "KNA1",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KNB1": {
+    "target": {
+      "object": "KNB1",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KNVV": {
+    "target": {
+      "object": "KNVV",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CEPC": {
+    "target": {
+      "object": "CEPC",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CEPC_BUKRS": {
+    "target": {
+      "object": "CEPC_BUKRS",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CEPCT": {
+    "target": {
+      "object": "CEPCT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MARA": {
+    "target": {
+      "object": "MARA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MAKT": {
+    "target": {
+      "object": "MAKT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MVKE": {
+    "target": {
+      "object": "MVKE",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MARC": {
+    "target": {
+      "object": "MARC",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MARD": {
+    "target": {
+      "object": "MARD",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KSSK": {
+    "target": {
+      "object": "KSSK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_AUSP": {
+    "target": {
+      "object": "AUSP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KLAH": {
+    "target": {
+      "object": "KLAH",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_INOB": {
+    "target": {
+      "object": "INOB",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CABN": {
+    "target": {
+      "object": "CABN",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KSML": {
+    "target": {
+      "object": "KSML",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_QPMK": {
+    "target": {
+      "object": "QPMK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_QPMT": {
+    "target": {
+      "object": "QPMT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_VBAK": {
+    "target": {
+      "object": "VBAK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_VBAP": {
+    "target": {
+      "object": "VBAP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_VBPA": {
+    "target": {
+      "object": "VBPA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_VBEP": {
+    "target": {
+      "object": "VBEP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_VBUK": {
+    "target": {
+      "object": "VBUK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_VBUP": {
+    "target": {
+      "object": "VBUP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_STKO": {
+    "target": {
+      "object": "STKO",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_STPO": {
+    "target": {
+      "object": "STPO",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MAST": {
+    "target": {
+      "object": "MAST",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BUT100": {
+    "target": {
+      "object": "BUT100",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_LFA1": {
+    "target": {
+      "object": "LFA1",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_LFM1": {
+    "target": {
+      "object": "LFM1",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_SKA1": {
+    "target": {
+      "object": "SKA1",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_SKB1": {
+    "target": {
+      "object": "SKB1",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_SKAT": {
+    "target": {
+      "object": "SKAT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_ANLA": {
+    "target": {
+      "object": "ANLA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_ANLZ": {
+    "target": {
+      "object": "ANLZ",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_EINA": {
+    "target": {
+      "object": "EINA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_EINE": {
+    "target": {
+      "object": "EINE",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_EKKO": {
+    "target": {
+      "object": "EKKO",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_EKPO": {
+    "target": {
+      "object": "EKPO",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KONP": {
+    "target": {
+      "object": "KONP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_A017": {
+    "target": {
+      "object": "A017",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_EKKN": {
+    "target": {
+      "object": "EKKN",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_LFB1": {
+    "target": {
+      "object": "LFB1",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_EQUI": {
+    "target": {
+      "object": "EQUI",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_IHPA": {
+    "target": {
+      "object": "IHPA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_EQKT": {
+    "target": {
+      "object": "EQKT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_EQUZ": {
+    "target": {
+      "object": "EQUZ",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_ILOA": {
+    "target": {
+      "object": "ILOA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BSIS": {
+    "target": {
+      "object": "BSIS",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CRHD": {
+    "target": {
+      "object": "CRHD",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KAKO": {
+    "target": {
+      "object": "KAKO",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CRCO": {
+    "target": {
+      "object": "CRCO",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_AUFK": {
+    "target": {
+      "object": "AUFK",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_COBRB": {
+    "target": {
+      "object": "COBRB",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CRTX": {
+    "target": {
+      "object": "CRTX",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CRCA": {
+    "target": {
+      "object": "CRCA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_KAKT": {
+    "target": {
+      "object": "KAKT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_AFKO": {
+    "target": {
+      "object": "AFKO",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_AFVC": {
+    "target": {
+      "object": "AFVC",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CSLA": {
+    "target": {
+      "object": "CSLA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_CSLT": {
+    "target": {
+      "object": "CSLT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_PROJ": {
+    "target": {
+      "object": "PROJ",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_PRPS": {
+    "target": {
+      "object": "PRPS",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_PRTE": {
+    "target": {
+      "object": "PRTE",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_STXL": {
+    "target": {
+      "object": "STXL",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_IFLOT": {
+    "target": {
+      "object": "IFLOT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_IFLOTX": {
+    "target": {
+      "object": "IFLOTX",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_IFLOS": {
+    "target": {
+      "object": "IFLOS",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_BGMKOBJ": {
+    "target": {
+      "object": "BGMKOBJ",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_IRLOT": {
+    "target": {
+      "object": "IRLOT",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MKPF": {
+    "target": {
+      "object": "MKPF",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MSEG": {
+    "target": {
+      "object": "MSEG",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_TCURR": {
+    "target": {
+      "object": "TCURR",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_TCURF": {
+    "target": {
+      "object": "TCURF",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MKAL": {
+    "target": {
+      "object": "MKAL",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MBEW": {
+    "target": {
+      "object": "MBEW",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_TKA03": {
+    "target": {
+      "object": "TKA03",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_TKT03": {
+    "target": {
+      "object": "TKT03",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_ADR6": {
+    "target": {
+      "object": "ADR6",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_ADRC": {
+    "target": {
+      "object": "ADRC",
+      "schema": "ZSLT_SHE"
+    }
+  }
+}

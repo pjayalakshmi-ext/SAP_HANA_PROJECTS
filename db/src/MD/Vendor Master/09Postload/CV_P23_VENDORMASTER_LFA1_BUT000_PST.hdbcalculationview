@@ -1,0 +1,1528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Vendor Master.09Postload::CV_P23_VENDORMASTER_LFA1_BUT000_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_P23_VENDORMASTER_LFA1_BUT100_PST.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_LFA1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_LFA1</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_VM_SUPPL_GEN_DATA_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_VM_SUPPL_GEN_DATA_PLD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_ADRC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_ADRC</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_ADR6">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_ADR6</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_LFA1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MCOD2"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="DTAMS"/>
+      <viewAttribute id="DTAWS"/>
+      <viewAttribute id="LNRZA"/>
+      <viewAttribute id="ESRNR"/>
+      <viewAttribute id="TERM_LI"/>
+      <viewAttribute id="MIN_COMP"/>
+      <viewAttribute id="COMSIZE"/>
+      <viewAttribute id="DECREGPC"/>
+      <viewAttribute id="CRC_NUM"/>
+      <viewAttribute id="RG"/>
+      <viewAttribute id="EXP"/>
+      <viewAttribute id="UF"/>
+      <viewAttribute id="RGDATE"/>
+      <viewAttribute id="RIC"/>
+      <viewAttribute id="RNE"/>
+      <viewAttribute id="RNEDATE"/>
+      <viewAttribute id="CNAE"/>
+      <viewAttribute id="LEGALNAT"/>
+      <viewAttribute id="CRTN"/>
+      <viewAttribute id="ICMSTAXPAY"/>
+      <viewAttribute id="INDTYP"/>
+      <viewAttribute id="TDT"/>
+      <viewAttribute id="J_1IEXCD"/>
+      <viewAttribute id="J_1IEXRN"/>
+      <viewAttribute id="J_1IEXRG"/>
+      <viewAttribute id="J_1IEXDI"/>
+      <viewAttribute id="J_1IEXCO"/>
+      <viewAttribute id="J_1ICSTNO"/>
+      <viewAttribute id="J_1ILSTNO"/>
+      <viewAttribute id="J_1IPANNO"/>
+      <viewAttribute id="J_1IEXCIVE"/>
+      <viewAttribute id="J_1ISSIST"/>
+      <viewAttribute id="J_1IVTYP"/>
+      <viewAttribute id="J_1IVENCRE"/>
+      <viewAttribute id="J_1ISERN"/>
+      <viewAttribute id="J_1IPANREF"/>
+      <viewAttribute id="J_1IPANVALDT"/>
+      <viewAttribute id="J_1I_CUSTOMS"/>
+      <viewAttribute id="J_1IDEDREF"/>
+      <viewAttribute id="VEN_CLASS"/>
+      <viewAttribute id="CATEG"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="VFNUM"/>
+      <viewAttribute id="VFNID"/>
+      <viewAttribute id="PARTNER_NAME"/>
+      <viewAttribute id="PARTNER_UTR"/>
+      <viewAttribute id="CRN"/>
+      <viewAttribute id="ALLOWANCE_TYPE"/>
+      <viewAttribute id="AU_CARRYING_ENT"/>
+      <viewAttribute id="AU_IND_UNDER_18"/>
+      <viewAttribute id="AU_PAYMENT_NOT_EXCEED_75"/>
+      <viewAttribute id="AU_WHOLLY_INP_TAXED"/>
+      <viewAttribute id="AU_PARTNER_WITHOUT_GAIN"/>
+      <viewAttribute id="AU_NOT_ENTITLED_ABN"/>
+      <viewAttribute id="AU_PAYMENT_EXEMPT"/>
+      <viewAttribute id="AU_PRIVATE_HOBBY"/>
+      <viewAttribute id="AU_DOMESTIC_NATURE"/>
+      <viewAttribute id="SC_CAPITAL"/>
+      <viewAttribute id="SC_CURRENCY"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM"/>
+    
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TXJCD"/>
+    
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="J_1KFREPRE"/>
+      <viewAttribute id="J_1KFTIND"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_LFA1"/>
+    <filter>&quot;MANDT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_BUT000" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CLIENT"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BU_GROUP"/>
+      <viewAttribute id="BPKIND"/>
+      <viewAttribute id="AUGRP"/>
+      <viewAttribute id="NATPERS"/>
+      <viewAttribute id="LEGAL_ENTY"/>
+      <viewAttribute id="LEGAL_ORG"/>
+      <viewAttribute id="FOUND_DAT"/>
+      <viewAttribute id="LIQUID_DAT"/>
+      <viewAttribute id="LOCATION_1"/>
+      <viewAttribute id="LOCATION_2"/>
+      <viewAttribute id="LOCATION_3"/>
+      <viewAttribute id="BPEXT"/>
+    
+      <viewAttribute id="TITLE_ACA1"/>
+      <viewAttribute id="NAME_FIRST"/>
+      <viewAttribute id="NAME_LAST"/>
+      <viewAttribute id="NAMEMIDDLE"/>
+      <viewAttribute id="BIRTHDT"/>
+      <viewAttribute id="BIRTHPL"/>
+      <viewAttribute id="LANGU_CORR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000"/>
+    <filter>&quot;CLIENT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SHE_LFA1">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_VM_SUPPL_GEN_DATA_PLD"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_ADRC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CLIENT"/>
+      <viewAttribute id="ADDRNUMBER"/>
+      <viewAttribute id="STREET"/>
+      <viewAttribute id="HOUSE_NUM1"/>
+      <viewAttribute id="CITY2"/>
+      <viewAttribute id="HOME_CITY"/>
+      <viewAttribute id="POST_CODE1"/>
+      <viewAttribute id="COUNTRY"/>
+      <viewAttribute id="REGION"/>
+      <viewAttribute id="TIME_ZONE"/>
+      <viewAttribute id="BUILDING"/>
+      <viewAttribute id="ROOMNUMBER"/>
+      <viewAttribute id="FLOOR"/>
+      <viewAttribute id="STR_SUPPL1"/>
+      <viewAttribute id="STR_SUPPL2"/>
+      <viewAttribute id="HOUSE_NUM2"/>
+      <viewAttribute id="STR_SUPPL3"/>
+      <viewAttribute id="LOCATION"/>
+      <viewAttribute id="PO_BOX"/>
+      <viewAttribute id="POST_CODE2"/>
+      <viewAttribute id="PO_BOX_CTY"/>
+      <viewAttribute id="PO_BOX_REG"/>
+      <viewAttribute id="POST_CODE3"/>
+      <viewAttribute id="DEFLT_COMM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_ADRC"/>
+    <filter>&quot;CLIENT&quot;=900</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4_ADR6">
+    <viewAttributes>
+      <viewAttribute id="ADDRNUMBER"/>
+      <viewAttribute id="SMTP_ADDR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_ADR6"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LFA1_BUT000" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BU_GROUP"/>
+      <viewAttribute id="BPKIND"/>
+      <viewAttribute id="AUGRP"/>
+      <viewAttribute id="NATPERS"/>
+      <viewAttribute id="LEGAL_ENTY"/>
+      <viewAttribute id="LEGAL_ORG"/>
+      <viewAttribute id="FOUND_DAT"/>
+      <viewAttribute id="LIQUID_DAT"/>
+      <viewAttribute id="LOCATION_1"/>
+      <viewAttribute id="LOCATION_2"/>
+      <viewAttribute id="LOCATION_3"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute id="TITLE_ACA1"/>
+      <viewAttribute id="NAME_FIRST"/>
+      <viewAttribute id="NAME_LAST"/>
+      <viewAttribute id="NAMEMIDDLE"/>
+      <viewAttribute id="BIRTHDT"/>
+      <viewAttribute id="BIRTHPL"/>
+      <viewAttribute id="LANGU_CORR"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR$BPEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SHE_LFA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$BPEXT" source="LIFNR"/>
+    </input>
+    <input node="P_S4_BUT000">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BU_GROUP" source="BU_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPKIND" source="BPKIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRP" source="AUGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NATPERS" source="NATPERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGAL_ENTY" source="LEGAL_ENTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGAL_ORG" source="LEGAL_ORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FOUND_DAT" source="FOUND_DAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIQUID_DAT" source="LIQUID_DAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_1" source="LOCATION_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_2" source="LOCATION_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_3" source="LOCATION_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE_ACA1" source="TITLE_ACA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_FIRST" source="NAME_FIRST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_LAST" source="NAME_LAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEMIDDLE" source="NAMEMIDDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BIRTHDT" source="BIRTHDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BIRTHPL" source="BIRTHPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANGU_CORR" source="LANGU_CORR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$BPEXT" source="BPEXT"/>
+    </input>
+    <joinAttribute name="JOIN$LIFNR$BPEXT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LFA1_S4_BUT000" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MCOD2"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="DTAMS"/>
+      <viewAttribute id="DTAWS"/>
+      <viewAttribute id="LNRZA"/>
+      <viewAttribute id="ESRNR"/>
+      <viewAttribute id="TERM_LI"/>
+      <viewAttribute id="MIN_COMP"/>
+      <viewAttribute id="COMSIZE"/>
+      <viewAttribute id="DECREGPC"/>
+      <viewAttribute id="CRC_NUM"/>
+      <viewAttribute id="RG"/>
+      <viewAttribute id="EXP"/>
+      <viewAttribute id="UF"/>
+      <viewAttribute id="RGDATE"/>
+      <viewAttribute id="RIC"/>
+      <viewAttribute id="RNE"/>
+      <viewAttribute id="RNEDATE"/>
+      <viewAttribute id="CNAE"/>
+      <viewAttribute id="LEGALNAT"/>
+      <viewAttribute id="CRTN"/>
+      <viewAttribute id="ICMSTAXPAY"/>
+      <viewAttribute id="INDTYP"/>
+      <viewAttribute id="TDT"/>
+      <viewAttribute id="J_1IEXCD"/>
+      <viewAttribute id="J_1IEXRN"/>
+      <viewAttribute id="J_1IEXRG"/>
+      <viewAttribute id="J_1IEXDI"/>
+      <viewAttribute id="J_1IEXCO"/>
+      <viewAttribute id="J_1ICSTNO"/>
+      <viewAttribute id="J_1ILSTNO"/>
+      <viewAttribute id="J_1IPANNO"/>
+      <viewAttribute id="J_1IEXCIVE"/>
+      <viewAttribute id="J_1ISSIST"/>
+      <viewAttribute id="J_1IVTYP"/>
+      <viewAttribute id="J_1IVENCRE"/>
+      <viewAttribute id="J_1ISERN"/>
+      <viewAttribute id="J_1IPANREF"/>
+      <viewAttribute id="J_1IPANVALDT"/>
+      <viewAttribute id="J_1I_CUSTOMS"/>
+      <viewAttribute id="J_1IDEDREF"/>
+      <viewAttribute id="VEN_CLASS"/>
+      <viewAttribute id="CATEG"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="VFNUM"/>
+      <viewAttribute id="VFNID"/>
+      <viewAttribute id="PARTNER_NAME"/>
+      <viewAttribute id="PARTNER_UTR"/>
+      <viewAttribute id="CRN"/>
+      <viewAttribute id="ALLOWANCE_TYPE"/>
+      <viewAttribute id="AU_CARRYING_ENT"/>
+      <viewAttribute id="AU_IND_UNDER_18"/>
+      <viewAttribute id="AU_PAYMENT_NOT_EXCEED_75"/>
+      <viewAttribute id="AU_WHOLLY_INP_TAXED"/>
+      <viewAttribute id="AU_PARTNER_WITHOUT_GAIN"/>
+      <viewAttribute id="AU_NOT_ENTITLED_ABN"/>
+      <viewAttribute id="AU_PAYMENT_EXEMPT"/>
+      <viewAttribute id="AU_PRIVATE_HOBBY"/>
+      <viewAttribute id="AU_DOMESTIC_NATURE"/>
+      <viewAttribute id="SC_CAPITAL"/>
+      <viewAttribute id="SC_CURRENCY"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BU_GROUP"/>
+      <viewAttribute id="BPKIND"/>
+      <viewAttribute id="AUGRP"/>
+      <viewAttribute id="NATPERS"/>
+      <viewAttribute id="LEGAL_ENTY"/>
+      <viewAttribute id="LEGAL_ORG"/>
+      <viewAttribute id="FOUND_DAT"/>
+      <viewAttribute id="LIQUID_DAT"/>
+      <viewAttribute id="LOCATION_1"/>
+      <viewAttribute id="LOCATION_2"/>
+      <viewAttribute id="LOCATION_3"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="TITLE_ACA1"/>
+      <viewAttribute id="NAME_FIRST"/>
+      <viewAttribute id="NAME_LAST"/>
+      <viewAttribute id="NAMEMIDDLE"/>
+      <viewAttribute id="BIRTHDT"/>
+      <viewAttribute id="BIRTHPL"/>
+      <viewAttribute id="LANGU_CORR"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="J_1KFREPRE"/>
+      <viewAttribute id="J_1KFTIND"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR$PARTNER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_S4_LFA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTL" source="SORTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD2" source="MCOD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DTAMS" source="DTAMS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LNRZA" source="LNRZA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESRNR" source="ESRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TERM_LI" source="TERM_LI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_COMP" source="MIN_COMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMSIZE" source="COMSIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DECREGPC" source="DECREGPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRC_NUM" source="CRC_NUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RG" source="RG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXP" source="EXP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UF" source="UF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RGDATE" source="RGDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RIC" source="RIC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RNE" source="RNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RNEDATE" source="RNEDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CNAE" source="CNAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGALNAT" source="LEGALNAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRTN" source="CRTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ICMSTAXPAY" source="ICMSTAXPAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDTYP" source="INDTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TDT" source="TDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCD" source="J_1IEXCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXRN" source="J_1IEXRN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXRG" source="J_1IEXRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXDI" source="J_1IEXDI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCO" source="J_1IEXCO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ICSTNO" source="J_1ICSTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ILSTNO" source="J_1ILSTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANNO" source="J_1IPANNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCIVE" source="J_1IEXCIVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ISSIST" source="J_1ISSIST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IVTYP" source="J_1IVTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IVENCRE" source="J_1IVENCRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ISERN" source="J_1ISERN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANREF" source="J_1IPANREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANVALDT" source="J_1IPANVALDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1I_CUSTOMS" source="J_1I_CUSTOMS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IDEDREF" source="J_1IDEDREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VEN_CLASS" source="VEN_CLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEG" source="CATEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFNUM" source="VFNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFNID" source="VFNID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER_NAME" source="PARTNER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER_UTR" source="PARTNER_UTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRN" source="CRN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALLOWANCE_TYPE" source="ALLOWANCE_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_CARRYING_ENT" source="AU_CARRYING_ENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_IND_UNDER_18" source="AU_IND_UNDER_18"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PAYMENT_NOT_EXCEED_75" source="AU_PAYMENT_NOT_EXCEED_75"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_WHOLLY_INP_TAXED" source="AU_WHOLLY_INP_TAXED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PARTNER_WITHOUT_GAIN" source="AU_PARTNER_WITHOUT_GAIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_NOT_ENTITLED_ABN" source="AU_NOT_ENTITLED_ABN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PAYMENT_EXEMPT" source="AU_PAYMENT_EXEMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PRIVATE_HOBBY" source="AU_PRIVATE_HOBBY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_DOMESTIC_NATURE" source="AU_DOMESTIC_NATURE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SC_CAPITAL" source="SC_CAPITAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SC_CURRENCY" source="SC_CURRENCY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM" source="SPERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFREPRE" source="J_1KFREPRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTIND" source="J_1KFTIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$PARTNER" source="LIFNR"/>
+    </input>
+    <input node="J_LFA1_BUT000">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BU_GROUP" source="BU_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPKIND" source="BPKIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRP" source="AUGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NATPERS" source="NATPERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGAL_ENTY" source="LEGAL_ENTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGAL_ORG" source="LEGAL_ORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FOUND_DAT" source="FOUND_DAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIQUID_DAT" source="LIQUID_DAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_1" source="LOCATION_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_2" source="LOCATION_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_3" source="LOCATION_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE_ACA1" source="TITLE_ACA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_FIRST" source="NAME_FIRST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_LAST" source="NAME_LAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEMIDDLE" source="NAMEMIDDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BIRTHDT" source="BIRTHDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BIRTHPL" source="BIRTHPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANGU_CORR" source="LANGU_CORR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$PARTNER" source="PARTNER"/>
+    </input>
+    <joinAttribute name="JOIN$LIFNR$PARTNER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LFA1_BUT000_S4_ADRC" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MCOD2"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="DTAMS"/>
+      <viewAttribute id="DTAWS"/>
+      <viewAttribute id="LNRZA"/>
+      <viewAttribute id="ESRNR"/>
+      <viewAttribute id="TERM_LI"/>
+      <viewAttribute id="MIN_COMP"/>
+      <viewAttribute id="COMSIZE"/>
+      <viewAttribute id="DECREGPC"/>
+      <viewAttribute id="CRC_NUM"/>
+      <viewAttribute id="RG"/>
+      <viewAttribute id="EXP"/>
+      <viewAttribute id="UF"/>
+      <viewAttribute id="RGDATE"/>
+      <viewAttribute id="RIC"/>
+      <viewAttribute id="RNE"/>
+      <viewAttribute id="RNEDATE"/>
+      <viewAttribute id="CNAE"/>
+      <viewAttribute id="LEGALNAT"/>
+      <viewAttribute id="CRTN"/>
+      <viewAttribute id="ICMSTAXPAY"/>
+      <viewAttribute id="INDTYP"/>
+      <viewAttribute id="TDT"/>
+      <viewAttribute id="J_1IEXCD"/>
+      <viewAttribute id="J_1IEXRN"/>
+      <viewAttribute id="J_1IEXRG"/>
+      <viewAttribute id="J_1IEXDI"/>
+      <viewAttribute id="J_1IEXCO"/>
+      <viewAttribute id="J_1ICSTNO"/>
+      <viewAttribute id="J_1ILSTNO"/>
+      <viewAttribute id="J_1IPANNO"/>
+      <viewAttribute id="J_1IEXCIVE"/>
+      <viewAttribute id="J_1ISSIST"/>
+      <viewAttribute id="J_1IVTYP"/>
+      <viewAttribute id="J_1IVENCRE"/>
+      <viewAttribute id="J_1ISERN"/>
+      <viewAttribute id="J_1IPANREF"/>
+      <viewAttribute id="J_1IPANVALDT"/>
+      <viewAttribute id="J_1I_CUSTOMS"/>
+      <viewAttribute id="J_1IDEDREF"/>
+      <viewAttribute id="VEN_CLASS"/>
+      <viewAttribute id="CATEG"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="VFNUM"/>
+      <viewAttribute id="VFNID"/>
+      <viewAttribute id="PARTNER_NAME"/>
+      <viewAttribute id="PARTNER_UTR"/>
+      <viewAttribute id="CRN"/>
+      <viewAttribute id="ALLOWANCE_TYPE"/>
+      <viewAttribute id="AU_CARRYING_ENT"/>
+      <viewAttribute id="AU_IND_UNDER_18"/>
+      <viewAttribute id="AU_PAYMENT_NOT_EXCEED_75"/>
+      <viewAttribute id="AU_WHOLLY_INP_TAXED"/>
+      <viewAttribute id="AU_PARTNER_WITHOUT_GAIN"/>
+      <viewAttribute id="AU_NOT_ENTITLED_ABN"/>
+      <viewAttribute id="AU_PAYMENT_EXEMPT"/>
+      <viewAttribute id="AU_PRIVATE_HOBBY"/>
+      <viewAttribute id="AU_DOMESTIC_NATURE"/>
+      <viewAttribute id="SC_CAPITAL"/>
+      <viewAttribute id="SC_CURRENCY"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BU_GROUP"/>
+      <viewAttribute id="BPKIND"/>
+      <viewAttribute id="AUGRP"/>
+      <viewAttribute id="NATPERS"/>
+      <viewAttribute id="LEGAL_ENTY"/>
+      <viewAttribute id="LEGAL_ORG"/>
+      <viewAttribute id="FOUND_DAT"/>
+      <viewAttribute id="LIQUID_DAT"/>
+      <viewAttribute id="LOCATION_1"/>
+      <viewAttribute id="LOCATION_2"/>
+      <viewAttribute id="LOCATION_3"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="STREET"/>
+      <viewAttribute id="HOUSE_NUM1"/>
+      <viewAttribute id="CITY2"/>
+      <viewAttribute id="HOME_CITY"/>
+      <viewAttribute id="POST_CODE1"/>
+      <viewAttribute id="COUNTRY"/>
+      <viewAttribute id="REGION"/>
+      <viewAttribute id="TIME_ZONE"/>
+      <viewAttribute id="BUILDING"/>
+      <viewAttribute id="ROOMNUMBER"/>
+      <viewAttribute id="FLOOR"/>
+      <viewAttribute id="STR_SUPPL1"/>
+      <viewAttribute id="STR_SUPPL2"/>
+      <viewAttribute id="HOUSE_NUM2"/>
+      <viewAttribute id="STR_SUPPL3"/>
+      <viewAttribute id="LOCATION"/>
+      <viewAttribute id="PO_BOX"/>
+      <viewAttribute id="POST_CODE2"/>
+      <viewAttribute id="PO_BOX_CTY"/>
+      <viewAttribute id="PO_BOX_REG"/>
+      <viewAttribute id="POST_CODE3"/>
+      <viewAttribute id="DEFLT_COMM"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="TITLE_ACA1"/>
+      <viewAttribute id="NAME_FIRST"/>
+      <viewAttribute id="NAME_LAST"/>
+      <viewAttribute id="NAMEMIDDLE"/>
+      <viewAttribute id="BIRTHDT"/>
+      <viewAttribute id="BIRTHPL"/>
+      <viewAttribute id="LANGU_CORR"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="J_1KFREPRE"/>
+      <viewAttribute id="J_1KFTIND"/>
+      <viewAttribute hidden="true" id="JOIN$ADRNR$ADDRNUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_LFA1_S4_BUT000">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTL" source="SORTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD2" source="MCOD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DTAMS" source="DTAMS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LNRZA" source="LNRZA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESRNR" source="ESRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TERM_LI" source="TERM_LI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_COMP" source="MIN_COMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMSIZE" source="COMSIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DECREGPC" source="DECREGPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRC_NUM" source="CRC_NUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RG" source="RG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXP" source="EXP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UF" source="UF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RGDATE" source="RGDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RIC" source="RIC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RNE" source="RNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RNEDATE" source="RNEDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CNAE" source="CNAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGALNAT" source="LEGALNAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRTN" source="CRTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ICMSTAXPAY" source="ICMSTAXPAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDTYP" source="INDTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TDT" source="TDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCD" source="J_1IEXCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXRN" source="J_1IEXRN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXRG" source="J_1IEXRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXDI" source="J_1IEXDI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCO" source="J_1IEXCO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ICSTNO" source="J_1ICSTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ILSTNO" source="J_1ILSTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANNO" source="J_1IPANNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCIVE" source="J_1IEXCIVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ISSIST" source="J_1ISSIST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IVTYP" source="J_1IVTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IVENCRE" source="J_1IVENCRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ISERN" source="J_1ISERN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANREF" source="J_1IPANREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANVALDT" source="J_1IPANVALDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1I_CUSTOMS" source="J_1I_CUSTOMS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IDEDREF" source="J_1IDEDREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VEN_CLASS" source="VEN_CLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEG" source="CATEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFNUM" source="VFNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFNID" source="VFNID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER_NAME" source="PARTNER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER_UTR" source="PARTNER_UTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRN" source="CRN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALLOWANCE_TYPE" source="ALLOWANCE_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_CARRYING_ENT" source="AU_CARRYING_ENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_IND_UNDER_18" source="AU_IND_UNDER_18"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PAYMENT_NOT_EXCEED_75" source="AU_PAYMENT_NOT_EXCEED_75"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_WHOLLY_INP_TAXED" source="AU_WHOLLY_INP_TAXED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PARTNER_WITHOUT_GAIN" source="AU_PARTNER_WITHOUT_GAIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_NOT_ENTITLED_ABN" source="AU_NOT_ENTITLED_ABN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PAYMENT_EXEMPT" source="AU_PAYMENT_EXEMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PRIVATE_HOBBY" source="AU_PRIVATE_HOBBY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_DOMESTIC_NATURE" source="AU_DOMESTIC_NATURE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SC_CAPITAL" source="SC_CAPITAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SC_CURRENCY" source="SC_CURRENCY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM" source="SPERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BU_GROUP" source="BU_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPKIND" source="BPKIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRP" source="AUGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NATPERS" source="NATPERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGAL_ENTY" source="LEGAL_ENTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGAL_ORG" source="LEGAL_ORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FOUND_DAT" source="FOUND_DAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIQUID_DAT" source="LIQUID_DAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_1" source="LOCATION_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_2" source="LOCATION_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_3" source="LOCATION_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE_ACA1" source="TITLE_ACA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_FIRST" source="NAME_FIRST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_LAST" source="NAME_LAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEMIDDLE" source="NAMEMIDDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BIRTHDT" source="BIRTHDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BIRTHPL" source="BIRTHPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANGU_CORR" source="LANGU_CORR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFREPRE" source="J_1KFREPRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTIND" source="J_1KFTIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ADRNR$ADDRNUMBER" source="ADRNR"/>
+    </input>
+    <input node="P_S4_ADRC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="STREET" source="STREET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM1" source="HOUSE_NUM1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITY2" source="CITY2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOME_CITY" source="HOME_CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIME_ZONE" source="TIME_ZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUILDING" source="BUILDING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ROOMNUMBER" source="ROOMNUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLOOR" source="FLOOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL1" source="STR_SUPPL1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL2" source="STR_SUPPL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM2" source="HOUSE_NUM2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL3" source="STR_SUPPL3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION" source="LOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PO_BOX" source="PO_BOX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE2" source="POST_CODE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PO_BOX_CTY" source="PO_BOX_CTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PO_BOX_REG" source="PO_BOX_REG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE3" source="POST_CODE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFLT_COMM" source="DEFLT_COMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ADRNR$ADDRNUMBER" source="ADDRNUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$ADRNR$ADDRNUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LFA1_BUT000_ADRC_S4_ADR6" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MCOD2"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="DTAMS"/>
+      <viewAttribute id="DTAWS"/>
+      <viewAttribute id="LNRZA"/>
+      <viewAttribute id="ESRNR"/>
+      <viewAttribute id="TERM_LI"/>
+      <viewAttribute id="MIN_COMP"/>
+      <viewAttribute id="COMSIZE"/>
+      <viewAttribute id="DECREGPC"/>
+      <viewAttribute id="CRC_NUM"/>
+      <viewAttribute id="RG"/>
+      <viewAttribute id="EXP"/>
+      <viewAttribute id="UF"/>
+      <viewAttribute id="RGDATE"/>
+      <viewAttribute id="RIC"/>
+      <viewAttribute id="RNE"/>
+      <viewAttribute id="RNEDATE"/>
+      <viewAttribute id="CNAE"/>
+      <viewAttribute id="LEGALNAT"/>
+      <viewAttribute id="CRTN"/>
+      <viewAttribute id="ICMSTAXPAY"/>
+      <viewAttribute id="INDTYP"/>
+      <viewAttribute id="TDT"/>
+      <viewAttribute id="J_1IEXCD"/>
+      <viewAttribute id="J_1IEXRN"/>
+      <viewAttribute id="J_1IEXRG"/>
+      <viewAttribute id="J_1IEXDI"/>
+      <viewAttribute id="J_1IEXCO"/>
+      <viewAttribute id="J_1ICSTNO"/>
+      <viewAttribute id="J_1ILSTNO"/>
+      <viewAttribute id="J_1IPANNO"/>
+      <viewAttribute id="J_1IEXCIVE"/>
+      <viewAttribute id="J_1ISSIST"/>
+      <viewAttribute id="J_1IVTYP"/>
+      <viewAttribute id="J_1IVENCRE"/>
+      <viewAttribute id="J_1ISERN"/>
+      <viewAttribute id="J_1IPANREF"/>
+      <viewAttribute id="J_1IPANVALDT"/>
+      <viewAttribute id="J_1I_CUSTOMS"/>
+      <viewAttribute id="J_1IDEDREF"/>
+      <viewAttribute id="VEN_CLASS"/>
+      <viewAttribute id="CATEG"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="VFNUM"/>
+      <viewAttribute id="VFNID"/>
+      <viewAttribute id="PARTNER_NAME"/>
+      <viewAttribute id="PARTNER_UTR"/>
+      <viewAttribute id="CRN"/>
+      <viewAttribute id="ALLOWANCE_TYPE"/>
+      <viewAttribute id="AU_CARRYING_ENT"/>
+      <viewAttribute id="AU_IND_UNDER_18"/>
+      <viewAttribute id="AU_PAYMENT_NOT_EXCEED_75"/>
+      <viewAttribute id="AU_WHOLLY_INP_TAXED"/>
+      <viewAttribute id="AU_PARTNER_WITHOUT_GAIN"/>
+      <viewAttribute id="AU_NOT_ENTITLED_ABN"/>
+      <viewAttribute id="AU_PAYMENT_EXEMPT"/>
+      <viewAttribute id="AU_PRIVATE_HOBBY"/>
+      <viewAttribute id="AU_DOMESTIC_NATURE"/>
+      <viewAttribute id="SC_CAPITAL"/>
+      <viewAttribute id="SC_CURRENCY"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="PARTNER"/>
+      <viewAttribute id="BU_GROUP"/>
+      <viewAttribute id="BPKIND"/>
+      <viewAttribute id="AUGRP"/>
+      <viewAttribute id="NATPERS"/>
+      <viewAttribute id="LEGAL_ENTY"/>
+      <viewAttribute id="LEGAL_ORG"/>
+      <viewAttribute id="FOUND_DAT"/>
+      <viewAttribute id="LIQUID_DAT"/>
+      <viewAttribute id="LOCATION_1"/>
+      <viewAttribute id="LOCATION_2"/>
+      <viewAttribute id="LOCATION_3"/>
+      <viewAttribute id="BPEXT"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="STREET"/>
+      <viewAttribute id="HOUSE_NUM1"/>
+      <viewAttribute id="CITY2"/>
+      <viewAttribute id="HOME_CITY"/>
+      <viewAttribute id="POST_CODE1"/>
+      <viewAttribute id="COUNTRY"/>
+      <viewAttribute id="REGION"/>
+      <viewAttribute id="TIME_ZONE"/>
+      <viewAttribute id="BUILDING"/>
+      <viewAttribute id="ROOMNUMBER"/>
+      <viewAttribute id="FLOOR"/>
+      <viewAttribute id="STR_SUPPL1"/>
+      <viewAttribute id="STR_SUPPL2"/>
+      <viewAttribute id="HOUSE_NUM2"/>
+      <viewAttribute id="STR_SUPPL3"/>
+      <viewAttribute id="LOCATION"/>
+      <viewAttribute id="PO_BOX"/>
+      <viewAttribute id="POST_CODE2"/>
+      <viewAttribute id="PO_BOX_CTY"/>
+      <viewAttribute id="PO_BOX_REG"/>
+      <viewAttribute id="POST_CODE3"/>
+      <viewAttribute id="DEFLT_COMM"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="TITLE_ACA1"/>
+      <viewAttribute id="NAME_FIRST"/>
+      <viewAttribute id="NAME_LAST"/>
+      <viewAttribute id="NAMEMIDDLE"/>
+      <viewAttribute id="BIRTHDT"/>
+      <viewAttribute id="BIRTHPL"/>
+      <viewAttribute id="LANGU_CORR"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="J_1KFREPRE"/>
+      <viewAttribute id="J_1KFTIND"/>
+      <viewAttribute hidden="true" id="JOIN$ADRNR$ADDRNUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_LFA1_BUT000_S4_ADRC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTL" source="SORTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD2" source="MCOD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DTAMS" source="DTAMS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DTAWS" source="DTAWS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LNRZA" source="LNRZA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESRNR" source="ESRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TERM_LI" source="TERM_LI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MIN_COMP" source="MIN_COMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMSIZE" source="COMSIZE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DECREGPC" source="DECREGPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRC_NUM" source="CRC_NUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RG" source="RG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXP" source="EXP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UF" source="UF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RGDATE" source="RGDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RIC" source="RIC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RNE" source="RNE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RNEDATE" source="RNEDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CNAE" source="CNAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGALNAT" source="LEGALNAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRTN" source="CRTN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ICMSTAXPAY" source="ICMSTAXPAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDTYP" source="INDTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TDT" source="TDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCD" source="J_1IEXCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXRN" source="J_1IEXRN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXRG" source="J_1IEXRG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXDI" source="J_1IEXDI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCO" source="J_1IEXCO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ICSTNO" source="J_1ICSTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ILSTNO" source="J_1ILSTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANNO" source="J_1IPANNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IEXCIVE" source="J_1IEXCIVE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ISSIST" source="J_1ISSIST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IVTYP" source="J_1IVTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IVENCRE" source="J_1IVENCRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1ISERN" source="J_1ISERN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANREF" source="J_1IPANREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IPANVALDT" source="J_1IPANVALDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1I_CUSTOMS" source="J_1I_CUSTOMS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1IDEDREF" source="J_1IDEDREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VEN_CLASS" source="VEN_CLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEG" source="CATEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFNUM" source="VFNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFNID" source="VFNID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER_NAME" source="PARTNER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER_UTR" source="PARTNER_UTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CRN" source="CRN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ALLOWANCE_TYPE" source="ALLOWANCE_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_CARRYING_ENT" source="AU_CARRYING_ENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_IND_UNDER_18" source="AU_IND_UNDER_18"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PAYMENT_NOT_EXCEED_75" source="AU_PAYMENT_NOT_EXCEED_75"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_WHOLLY_INP_TAXED" source="AU_WHOLLY_INP_TAXED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PARTNER_WITHOUT_GAIN" source="AU_PARTNER_WITHOUT_GAIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_NOT_ENTITLED_ABN" source="AU_NOT_ENTITLED_ABN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PAYMENT_EXEMPT" source="AU_PAYMENT_EXEMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_PRIVATE_HOBBY" source="AU_PRIVATE_HOBBY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AU_DOMESTIC_NATURE" source="AU_DOMESTIC_NATURE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SC_CAPITAL" source="SC_CAPITAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SC_CURRENCY" source="SC_CURRENCY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM" source="SPERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARTNER" source="PARTNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BU_GROUP" source="BU_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPKIND" source="BPKIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUGRP" source="AUGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NATPERS" source="NATPERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGAL_ENTY" source="LEGAL_ENTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGAL_ORG" source="LEGAL_ORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FOUND_DAT" source="FOUND_DAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIQUID_DAT" source="LIQUID_DAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_1" source="LOCATION_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_2" source="LOCATION_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION_3" source="LOCATION_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPEXT" source="BPEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STREET" source="STREET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM1" source="HOUSE_NUM1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITY2" source="CITY2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOME_CITY" source="HOME_CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIME_ZONE" source="TIME_ZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUILDING" source="BUILDING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ROOMNUMBER" source="ROOMNUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLOOR" source="FLOOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL1" source="STR_SUPPL1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL2" source="STR_SUPPL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM2" source="HOUSE_NUM2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STR_SUPPL3" source="STR_SUPPL3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCATION" source="LOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PO_BOX" source="PO_BOX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE2" source="POST_CODE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PO_BOX_CTY" source="PO_BOX_CTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PO_BOX_REG" source="PO_BOX_REG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE3" source="POST_CODE3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFLT_COMM" source="DEFLT_COMM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE_ACA1" source="TITLE_ACA1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_FIRST" source="NAME_FIRST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_LAST" source="NAME_LAST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEMIDDLE" source="NAMEMIDDLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BIRTHDT" source="BIRTHDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BIRTHPL" source="BIRTHPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANGU_CORR" source="LANGU_CORR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFREPRE" source="J_1KFREPRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTIND" source="J_1KFTIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ADRNR$ADDRNUMBER" source="ADRNR"/>
+    </input>
+    <input node="P_S4_ADR6">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ADRNR$ADDRNUMBER" source="ADDRNUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$ADRNR$ADDRNUMBER"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="J_LFA1_BUT000_ADRC_S4_ADR6">
+  <attributes>
+    <attribute id="KTOKK" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTOKK"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="KTOKK"/>
+    </attribute>
+    <attribute id="NAME1" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="NAME1"/>
+    </attribute>
+    <attribute id="NAME2" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME2"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="NAME2"/>
+    </attribute>
+    <attribute id="NAME3" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME3"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="NAME3"/>
+    </attribute>
+    <attribute id="NAME4" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME4"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="NAME4"/>
+    </attribute>
+    <attribute id="ANRED" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANRED"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="ANRED"/>
+    </attribute>
+    <attribute id="SORTL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SORTL"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="SORTL"/>
+    </attribute>
+    <attribute id="MCOD2" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MCOD2"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="MCOD2"/>
+    </attribute>
+    <attribute id="KUNNR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="KONZS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KONZS"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="KONZS"/>
+    </attribute>
+    <attribute id="VBUND" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VBUND"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="VBUND"/>
+    </attribute>
+    <attribute id="DTAMS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DTAMS"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="DTAMS"/>
+    </attribute>
+    <attribute id="DTAWS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DTAWS"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="DTAWS"/>
+    </attribute>
+    <attribute id="LNRZA" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LNRZA"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LNRZA"/>
+    </attribute>
+    <attribute id="ESRNR" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ESRNR"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="ESRNR"/>
+    </attribute>
+    <attribute id="TERM_LI" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TERM_LI"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="TERM_LI"/>
+    </attribute>
+    <attribute id="MIN_COMP" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MIN_COMP"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="MIN_COMP"/>
+    </attribute>
+    <attribute id="COMSIZE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMSIZE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="COMSIZE"/>
+    </attribute>
+    <attribute id="DECREGPC" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DECREGPC"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="DECREGPC"/>
+    </attribute>
+    <attribute id="CRC_NUM" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRC_NUM"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="CRC_NUM"/>
+    </attribute>
+    <attribute id="RG" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RG"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="RG"/>
+    </attribute>
+    <attribute id="EXP" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EXP"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="EXP"/>
+    </attribute>
+    <attribute id="UF" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UF"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="UF"/>
+    </attribute>
+    <attribute id="RGDATE" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RGDATE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="RGDATE"/>
+    </attribute>
+    <attribute id="RIC" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RIC"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="RIC"/>
+    </attribute>
+    <attribute id="RNE" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RNE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="RNE"/>
+    </attribute>
+    <attribute id="RNEDATE" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RNEDATE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="RNEDATE"/>
+    </attribute>
+    <attribute id="CNAE" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CNAE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="CNAE"/>
+    </attribute>
+    <attribute id="LEGALNAT" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LEGALNAT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LEGALNAT"/>
+    </attribute>
+    <attribute id="CRTN" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRTN"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="CRTN"/>
+    </attribute>
+    <attribute id="ICMSTAXPAY" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ICMSTAXPAY"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="ICMSTAXPAY"/>
+    </attribute>
+    <attribute id="INDTYP" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDTYP"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="INDTYP"/>
+    </attribute>
+    <attribute id="TDT" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TDT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="TDT"/>
+    </attribute>
+    <attribute id="J_1IEXCD" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IEXCD"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IEXCD"/>
+    </attribute>
+    <attribute id="J_1IEXRN" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IEXRN"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IEXRN"/>
+    </attribute>
+    <attribute id="J_1IEXRG" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IEXRG"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IEXRG"/>
+    </attribute>
+    <attribute id="J_1IEXDI" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IEXDI"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IEXDI"/>
+    </attribute>
+    <attribute id="J_1IEXCO" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IEXCO"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IEXCO"/>
+    </attribute>
+    <attribute id="J_1ICSTNO" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1ICSTNO"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1ICSTNO"/>
+    </attribute>
+    <attribute id="J_1ILSTNO" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1ILSTNO"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1ILSTNO"/>
+    </attribute>
+    <attribute id="J_1IPANNO" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IPANNO"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IPANNO"/>
+    </attribute>
+    <attribute id="J_1IEXCIVE" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IEXCIVE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IEXCIVE"/>
+    </attribute>
+    <attribute id="J_1ISSIST" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1ISSIST"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1ISSIST"/>
+    </attribute>
+    <attribute id="J_1IVTYP" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IVTYP"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IVTYP"/>
+    </attribute>
+    <attribute id="J_1IVENCRE" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IVENCRE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IVENCRE"/>
+    </attribute>
+    <attribute id="J_1ISERN" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1ISERN"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1ISERN"/>
+    </attribute>
+    <attribute id="J_1IPANREF" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IPANREF"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IPANREF"/>
+    </attribute>
+    <attribute id="J_1IPANVALDT" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IPANVALDT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IPANVALDT"/>
+    </attribute>
+    <attribute id="J_1I_CUSTOMS" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1I_CUSTOMS"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1I_CUSTOMS"/>
+    </attribute>
+    <attribute id="J_1IDEDREF" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1IDEDREF"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1IDEDREF"/>
+    </attribute>
+    <attribute id="VEN_CLASS" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VEN_CLASS"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="VEN_CLASS"/>
+    </attribute>
+    <attribute id="CATEG" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEG"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="CATEG"/>
+    </attribute>
+    <attribute id="STATUS" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATUS"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="STATUS"/>
+    </attribute>
+    <attribute id="VFNUM" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VFNUM"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="VFNUM"/>
+    </attribute>
+    <attribute id="VFNID" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VFNID"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="VFNID"/>
+    </attribute>
+    <attribute id="PARTNER_NAME" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARTNER_NAME"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="PARTNER_NAME"/>
+    </attribute>
+    <attribute id="PARTNER_UTR" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARTNER_UTR"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="PARTNER_UTR"/>
+    </attribute>
+    <attribute id="CRN" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CRN"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="CRN"/>
+    </attribute>
+    <attribute id="ALLOWANCE_TYPE" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ALLOWANCE_TYPE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="ALLOWANCE_TYPE"/>
+    </attribute>
+    <attribute id="AU_CARRYING_ENT" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_CARRYING_ENT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_CARRYING_ENT"/>
+    </attribute>
+    <attribute id="AU_IND_UNDER_18" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_IND_UNDER_18"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_IND_UNDER_18"/>
+    </attribute>
+    <attribute id="AU_PAYMENT_NOT_EXCEED_75" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_PAYMENT_NOT_EXCEED_75"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_PAYMENT_NOT_EXCEED_75"/>
+    </attribute>
+    <attribute id="AU_WHOLLY_INP_TAXED" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_WHOLLY_INP_TAXED"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_WHOLLY_INP_TAXED"/>
+    </attribute>
+    <attribute id="AU_PARTNER_WITHOUT_GAIN" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_PARTNER_WITHOUT_GAIN"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_PARTNER_WITHOUT_GAIN"/>
+    </attribute>
+    <attribute id="AU_NOT_ENTITLED_ABN" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_NOT_ENTITLED_ABN"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_NOT_ENTITLED_ABN"/>
+    </attribute>
+    <attribute id="AU_PAYMENT_EXEMPT" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_PAYMENT_EXEMPT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_PAYMENT_EXEMPT"/>
+    </attribute>
+    <attribute id="AU_PRIVATE_HOBBY" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_PRIVATE_HOBBY"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_PRIVATE_HOBBY"/>
+    </attribute>
+    <attribute id="AU_DOMESTIC_NATURE" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AU_DOMESTIC_NATURE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AU_DOMESTIC_NATURE"/>
+    </attribute>
+    <attribute id="SC_CAPITAL" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SC_CAPITAL"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="SC_CAPITAL"/>
+    </attribute>
+    <attribute id="SC_CURRENCY" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SC_CURRENCY"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="SC_CURRENCY"/>
+    </attribute>
+    <attribute id="SPERR" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPERR"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="SPERR"/>
+    </attribute>
+    <attribute id="SPERM" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPERM"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="SPERM"/>
+    </attribute>
+    <attribute id="PARTNER" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARTNER"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="PARTNER"/>
+    </attribute>
+    <attribute id="BU_GROUP" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BU_GROUP"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="BU_GROUP"/>
+    </attribute>
+    <attribute id="BPKIND" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BPKIND"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="BPKIND"/>
+    </attribute>
+    <attribute id="AUGRP" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AUGRP"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="AUGRP"/>
+    </attribute>
+    <attribute id="NATPERS" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NATPERS"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="NATPERS"/>
+    </attribute>
+    <attribute id="LEGAL_ENTY" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LEGAL_ENTY"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LEGAL_ENTY"/>
+    </attribute>
+    <attribute id="LEGAL_ORG" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LEGAL_ORG"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LEGAL_ORG"/>
+    </attribute>
+    <attribute id="FOUND_DAT" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FOUND_DAT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="FOUND_DAT"/>
+    </attribute>
+    <attribute id="LIQUID_DAT" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIQUID_DAT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LIQUID_DAT"/>
+    </attribute>
+    <attribute id="LOCATION_1" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOCATION_1"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LOCATION_1"/>
+    </attribute>
+    <attribute id="LOCATION_2" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOCATION_2"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LOCATION_2"/>
+    </attribute>
+    <attribute id="LOCATION_3" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOCATION_3"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LOCATION_3"/>
+    </attribute>
+    <attribute id="BPEXT" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BPEXT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="BPEXT"/>
+    </attribute>
+    <attribute id="TXJCD" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXJCD"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="STREET" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Street"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="STREET"/>
+    </attribute>
+    <attribute id="HOUSE_NUM1" order="88" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House Number"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="HOUSE_NUM1"/>
+    </attribute>
+    <attribute id="CITY2" order="89" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="District"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="CITY2"/>
+    </attribute>
+    <attribute id="HOME_CITY" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City (different from postal city)"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="HOME_CITY"/>
+    </attribute>
+    <attribute id="POST_CODE1" order="91" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City postal code"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="POST_CODE1"/>
+    </attribute>
+    <attribute id="COUNTRY" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country Key"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="COUNTRY"/>
+    </attribute>
+    <attribute id="REGION" order="93" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="REGION"/>
+    </attribute>
+    <attribute id="TIME_ZONE" order="94" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Address time zone"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="TIME_ZONE"/>
+    </attribute>
+    <attribute id="BUILDING" order="95" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Building (Number or Code)"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="BUILDING"/>
+    </attribute>
+    <attribute id="ROOMNUMBER" order="96" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Room or Appartment Number"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="ROOMNUMBER"/>
+    </attribute>
+    <attribute id="FLOOR" order="97" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Floor in building"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="FLOOR"/>
+    </attribute>
+    <attribute id="STR_SUPPL1" order="98" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Street 2"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="STR_SUPPL1"/>
+    </attribute>
+    <attribute id="STR_SUPPL2" order="99" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Street 3"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="STR_SUPPL2"/>
+    </attribute>
+    <attribute id="HOUSE_NUM2" order="100" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House number supplement"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="HOUSE_NUM2"/>
+    </attribute>
+    <attribute id="STR_SUPPL3" order="101" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Street 4"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="STR_SUPPL3"/>
+    </attribute>
+    <attribute id="LOCATION" order="102" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Street 5"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LOCATION"/>
+    </attribute>
+    <attribute id="PO_BOX" order="103" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PO Box"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="PO_BOX"/>
+    </attribute>
+    <attribute id="POST_CODE2" order="104" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PO Box Postal Code"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="POST_CODE2"/>
+    </attribute>
+    <attribute id="PO_BOX_CTY" order="105" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PO box country"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="PO_BOX_CTY"/>
+    </attribute>
+    <attribute id="PO_BOX_REG" order="106" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region for PO Box (Country, State, Province, ...)"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="PO_BOX_REG"/>
+    </attribute>
+    <attribute id="POST_CODE3" order="107" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Postal Code (for Large Customers)"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="POST_CODE3"/>
+    </attribute>
+    <attribute id="DEFLT_COMM" order="108" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Communication Method (Key) (Business Address Services)"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="DEFLT_COMM"/>
+    </attribute>
+    <attribute id="SMTP_ADDR" order="109" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="E-Mail Address"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="SMTP_ADDR"/>
+    </attribute>
+  
+    <attribute id="LIFNR" order="110" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+  
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LIFNR"/>
+  
+    </attribute>
+    <attribute id="TITLE_ACA1" order="111" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITLE_ACA1"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="TITLE_ACA1"/>
+    </attribute>
+    <attribute id="NAME_FIRST" order="112" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME_FIRST"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="NAME_FIRST"/>
+    </attribute>
+    <attribute id="NAME_LAST" order="113" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME_LAST"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="NAME_LAST"/>
+    </attribute>
+    <attribute id="NAMEMIDDLE" order="114" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAMEMIDDLE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="NAMEMIDDLE"/>
+    </attribute>
+    <attribute id="BIRTHDT" order="115" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BIRTHDT"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="BIRTHDT"/>
+    </attribute>
+    <attribute id="BIRTHPL" order="116" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BIRTHPL"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="BIRTHPL"/>
+    </attribute>
+    <attribute id="LANGU_CORR" order="117" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LANGU_CORR"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="LANGU_CORR"/>
+    </attribute>
+    <attribute id="J_1KFTBUS" order="118" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1KFTBUS"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1KFTBUS"/>
+    </attribute>
+    <attribute id="J_1KFREPRE" order="119" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1KFREPRE"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1KFREPRE"/>
+    </attribute>
+    <attribute id="J_1KFTIND" order="120" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1KFTIND"/>
+      <keyMapping columnObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" columnName="J_1KFTIND"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="534" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4_LFA1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_BUT000" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_SHE_LFA1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4_ADRC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="477" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4_ADR6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="592" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_LFA1_BUT000" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_SHE_LFA1" modelObjectNameSpace="J_LFA1_BUT000" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_S4_BUT000" modelObjectNameSpace="J_LFA1_BUT000" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="920" y="30"/>
+      <rectangleSize width="156"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LFA1_S4_BUT000" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_S4_LFA1" modelObjectNameSpace="J_LFA1_S4_BUT000" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="257"/>
+    </shape>
+    <shape modelObjectName="J_LFA1_BUT000" modelObjectNameSpace="J_LFA1_S4_BUT000" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="156"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LFA1_BUT000_S4_ADRC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_LFA1_S4_BUT000" modelObjectNameSpace="J_LFA1_BUT000_S4_ADRC" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="257"/>
+    </shape>
+    <shape modelObjectName="P_S4_ADRC" modelObjectNameSpace="J_LFA1_BUT000_S4_ADRC" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="354" y="1426"/>
+      <rectangleSize width="167"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LFA1_BUT000_ADRC_S4_ADR6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="534" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_LFA1_BUT000_S4_ADRC" modelObjectNameSpace="J_LFA1_BUT000_ADRC_S4_ADR6" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="257"/>
+    </shape>
+    <shape modelObjectName="P_S4_ADR6" modelObjectNameSpace="J_LFA1_BUT000_ADRC_S4_ADR6" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="365" y="1447"/>
+      <rectangleSize width="164"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

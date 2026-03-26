@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.AROpenItem.09Postload::CV_P23_AR_BSET" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_P23_AR_BSET"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BSET">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BSET</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.TD.AROpenItem.09Postload::CV_P23_AR_BKPF_BSEG">
+    <resourceUri>EHUB.TD.AROpenItem.09Postload::CV_P23_AR_BKPF_BSEG</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSET">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3STE"/>
+    
+      <viewAttribute id="HKONT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BSET"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BKPF_BSEG">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.AROpenItem.09Postload::CV_P23_AR_BKPF_BSEG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_TAX" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3STE"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$BELNR$BELNR"/>
+      <viewAttribute hidden="true" id="JOIN$GJAHR$GJAHR"/>
+      <viewAttribute hidden="true" id="JOIN$BUZEI$BUZEI"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_BKPF_BSEG">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GJAHR$GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUZEI$BUZEI" source="BUZEI"/>
+    </input>
+    <input node="P_BSET">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GJAHR$GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUZEI$BUZEI" source="BUZEI"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+    <joinAttribute name="JOIN$BELNR$BELNR"/>
+    <joinAttribute name="JOIN$GJAHR$GJAHR"/>
+    <joinAttribute name="JOIN$BUZEI$BUZEI"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_TAX">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_TAX" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="J_TAX" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="BELNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="J_TAX" columnName="BELNR"/>
+    </attribute>
+    <attribute id="GJAHR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GJAHR"/>
+      <keyMapping columnObjectName="J_TAX" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="BUZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="J_TAX" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="KUNNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="J_TAX" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="XBLNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="J_TAX" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="HKONT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="General Ledger Account"/>
+      <keyMapping columnObjectName="J_TAX" columnName="HKONT"/>
+    </attribute>
+    <attribute id="MWSKZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSKZ"/>
+      <keyMapping columnObjectName="J_TAX" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="TXJCD" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXJCD"/>
+      <keyMapping columnObjectName="J_TAX" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="FWBAS" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FWBAS"/>
+      <keyMapping columnObjectName="J_TAX" columnName="FWBAS"/>
+    </attribute>
+    <attribute id="FWSTE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FWSTE"/>
+      <keyMapping columnObjectName="J_TAX" columnName="FWSTE"/>
+    </attribute>
+    <attribute id="HWBAS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HWBAS"/>
+      <keyMapping columnObjectName="J_TAX" columnName="HWBAS"/>
+    </attribute>
+    <attribute id="HWSTE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HWSTE"/>
+      <keyMapping columnObjectName="J_TAX" columnName="HWSTE"/>
+    </attribute>
+    <attribute id="H2BAS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H2BAS"/>
+      <keyMapping columnObjectName="J_TAX" columnName="H2BAS"/>
+    </attribute>
+    <attribute id="H3BAS" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H3BAS"/>
+      <keyMapping columnObjectName="J_TAX" columnName="H3BAS"/>
+    </attribute>
+    <attribute id="H2STE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H2STE"/>
+      <keyMapping columnObjectName="J_TAX" columnName="H2STE"/>
+    </attribute>
+    <attribute id="H3STE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H3STE"/>
+      <keyMapping columnObjectName="J_TAX" columnName="H3STE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_BSET" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="125" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BKPF_BSEG" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="318" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_TAX" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BKPF_BSEG" modelObjectNameSpace="J_TAX" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="152"/>
+    </shape>
+    <shape modelObjectName="P_BSET" modelObjectNameSpace="J_TAX" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="126"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

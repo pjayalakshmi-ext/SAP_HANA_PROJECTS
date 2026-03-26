@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialInspectionCharacteristic.01Extraction::CV_SHE_MATERIALINSPCHAR_QPMT" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_QPMT">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_QPMT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristicQPMT"/>
+      <viewAttribute id="MasterInspectionCharacteristicsQPMT"/>
+      <viewAttribute id="VERSIONQPMT"/>
+      <viewAttribute id="SPRACHE"/>
+      <viewAttribute id="GUELTIGAB"/>
+      <viewAttribute id="KURZTEXT"/>
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_QPMT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristicQPMT" source="ZAEHLER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristicsQPMT" source="MKMNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERSIONQPMT" source="VERSION"/>
+    </input>
+    <filter>&quot;MANDT&quot;='801' and &quot;SPRACHE&quot;='E'</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="PlantInspectionCharacteristicQPMT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant for the Master Inspection Characteristic"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PlantInspectionCharacteristicQPMT"/>
+    </attribute>
+    <attribute id="MasterInspectionCharacteristicsQPMT" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master Inspection Characteristics"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MasterInspectionCharacteristicsQPMT"/>
+    </attribute>
+    <attribute id="VERSIONQPMT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Version Number of the Inspection Method"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VERSIONQPMT"/>
+    </attribute>
+    <attribute id="LanguageKey" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SPRACHE"/>
+    </attribute>
+    <attribute id="ValidFromDateQPMT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valid-From Date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GUELTIGAB"/>
+    </attribute>
+    <attribute id="TextLine" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Short Text"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KURZTEXT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

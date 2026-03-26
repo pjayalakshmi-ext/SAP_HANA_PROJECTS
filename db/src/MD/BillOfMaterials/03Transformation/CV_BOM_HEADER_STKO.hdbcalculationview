@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.BillOfMaterials.03Transformation::CV_BOM_HEADER_STKO" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+<origin/>
+  <descriptions defaultDescription="CA_REL_CS_VALID"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="EHUB.MD.BillOfMaterials.01Extraction::CV_SHE_BOM_HEADER_STKO">
+      <resourceUri>EHUB.MD.BillOfMaterials.01Extraction::CV_SHE_BOM_HEADER_STKO</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_BOM_STATUS">
+      <resourceUri>EHUB.Synonyms::SY_LKP_BOM_STATUS</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_BOM_USAGE">
+      <resourceUri>EHUB.Synonyms::SY_LKP_BOM_USAGE</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_LABOR_DESIGN_OFFICE">
+      <resourceUri>EHUB.Synonyms::SY_LKP_LABOR_DESIGN_OFFICE</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_PLANT">
+      <resourceUri>EHUB.Synonyms::SY_LKP_PLANT</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER">
+      <resourceUri>EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BOM_HEDER">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.MD.BillOfMaterials.01Extraction::CV_SHE_BOM_HEADER_STKO"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_BOM_STATUS">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_BOM_STATUS"/>
+      <viewAttribute id="BOM_STATUS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_BOM_STATUS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_BOM_USAGE">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_BOM_USAGE"/>
+      <viewAttribute id="BOM_USAGE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_BOM_USAGE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_LABOR_DESIGN_OFFICE">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_LABOR_DESIGN_OFFICE"/>
+      <viewAttribute id="LABOR_DESIGN_OFFICE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_LABOR_DESIGN_OFFICE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_PLANT">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_PLANT"/>
+      <viewAttribute id="PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_MATERIAL_NUMBER">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_WERKS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="LEGACY_PLANT"/>
+      <viewAttribute id="PLANT"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$LEGACY_PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_WERKS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=&quot;LEGACY_PLANT&quot;
+then &quot;PLANT&quot;
+else &quot;WERKS&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_BOM_HEDER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$LEGACY_PLANT" source="WERKS"/>
+    </input>
+    <input node="P_LKP_PLANT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_PLANT" source="LEGACY_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT" source="PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$LEGACY_PLANT" source="LEGACY_PLANT"/>
+    </input>
+    <joinAttribute name="JOIN$WERKS$LEGACY_PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_STLST" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="LEGACY_BOM_STATUS"/>
+      <viewAttribute id="BOM_STATUS"/>
+      <viewAttribute hidden="true" id="JOIN$STLST$LEGACY_BOM_STATUS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_STLST" datatype="NVARCHAR" length="2" expressionLanguage="SQL">
+        <formula>case when &quot;STLST&quot;=&quot;LEGACY_BOM_STATUS&quot;
+then &quot;BOM_STATUS&quot;
+else &quot;STLST&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_WERKS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="CC_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLST$LEGACY_BOM_STATUS" source="STLST"/>
+    </input>
+    <input node="P_LKP_BOM_STATUS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_BOM_STATUS" source="LEGACY_BOM_STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_STATUS" source="BOM_STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLST$LEGACY_BOM_STATUS" source="LEGACY_BOM_STATUS"/>
+    </input>
+    <joinAttribute name="JOIN$STLST$LEGACY_BOM_STATUS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_STLAN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="LEGACY_BOM_USAGE"/>
+      <viewAttribute id="BOM_USAGE"/>
+      <viewAttribute hidden="true" id="JOIN$STLAN$LEGACY_BOM_USAGE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_STLAN" datatype="NVARCHAR" length="1" expressionLanguage="SQL">
+        <formula>case when &quot;STLAN&quot;=&quot;LEGACY_BOM_USAGE&quot;
+then &quot;BOM_USAGE&quot;
+else &quot;STLAN&quot;
+end </formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_STLST">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="CC_STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$LEGACY_BOM_USAGE" source="STLAN"/>
+    </input>
+    <input node="P_LKP_BOM_USAGE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_BOM_USAGE" source="LEGACY_BOM_USAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOM_USAGE" source="BOM_USAGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$LEGACY_BOM_USAGE" source="LEGACY_BOM_USAGE"/>
+    </input>
+    <joinAttribute name="JOIN$STLAN$LEGACY_BOM_USAGE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LABOR" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="LEGACY_LABOR_DESIGN_OFFICE"/>
+      <viewAttribute id="LABOR_DESIGN_OFFICE"/>
+      <viewAttribute hidden="true" id="JOIN$LABOR$LEGACY_LABOR_DESIGN_OFFICE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_LABOR" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+        <formula>case when &quot;LABOR&quot;=&quot;LEGACY_LABOR_DESIGN_OFFICE&quot;
+then &quot;LABOR_DESIGN_OFFICE&quot;
+else &quot;LABOR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_STLAN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="CC_STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LABOR$LEGACY_LABOR_DESIGN_OFFICE" source="LABOR"/>
+    </input>
+    <input node="P_LKP_LABOR_DESIGN_OFFICE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_LABOR_DESIGN_OFFICE" source="LEGACY_LABOR_DESIGN_OFFICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR_DESIGN_OFFICE" source="LABOR_DESIGN_OFFICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LABOR$LEGACY_LABOR_DESIGN_OFFICE" source="LEGACY_LABOR_DESIGN_OFFICE"/>
+    </input>
+    <joinAttribute name="JOIN$LABOR$LEGACY_LABOR_DESIGN_OFFICE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MATNR" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$LEGACY_MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MATNR" datatype="NVARCHAR" length="18" expressionLanguage="SQL">
+        <formula>case when &quot;MATNR&quot;=&quot;LEGACY_MATERIAL_NUMBER&quot;
+then &quot;MATERIAL_NUMBER&quot;
+else &quot;MATNR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_LABOR">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="CC_LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$LEGACY_MATERIAL_NUMBER" source="MATNR"/>
+    </input>
+    <input node="P_LKP_MATERIAL_NUMBER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_NUMBER" source="MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$LEGACY_MATERIAL_NUMBER"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="J_MATNR">
+    <descriptions/>
+    <attributes>
+      <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="CC_MATNR"/>
+      </attribute>
+      <attribute id="WERKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Plant"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="WERKS"/>
+      </attribute>
+      <attribute id="STLAN" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BOM Usage"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="STLAN"/>
+      </attribute>
+      <attribute id="STLAL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Alternative BOM"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="STLAL"/>
+      </attribute>
+      <attribute id="AENNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Change Number"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="AENNR"/>
+      </attribute>
+      <attribute id="BMENG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Base quantity"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="BMENG"/>
+      </attribute>
+      <attribute id="BMEIN" order="7" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Base unit of measure for BOM"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="BMEIN"/>
+      </attribute>
+      <attribute id="LABOR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Laboratory/design office"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="LABOR"/>
+      </attribute>
+      <attribute id="CADKZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CAD Indicator"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="CADKZ"/>
+      </attribute>
+      <attribute id="STLST" order="10" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BOM status"/>
+        <keyMapping columnObjectName="J_MATNR" columnName="STLST"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="660" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_BOM_HEDER" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="91" y="1016"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+    <shape expanded="true" modelObjectName="P_LKP_BOM_STATUS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_BOM_USAGE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="474" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_LABOR_DESIGN_OFFICE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="584" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_PLANT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_MATERIAL_NUMBER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="708" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_WERKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BOM_HEDER" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="171"/>
+    </shape>
+    <shape modelObjectName="P_LKP_PLANT" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="209"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_STLST" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_WERKS" modelObjectNameSpace="J_STLST" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+    <shape modelObjectName="P_LKP_BOM_STATUS" modelObjectNameSpace="J_STLST" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_STLAN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_STLST" modelObjectNameSpace="J_STLAN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+    <shape modelObjectName="P_LKP_BOM_USAGE" modelObjectNameSpace="J_STLAN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="180"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LABOR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="198" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_STLAN" modelObjectNameSpace="J_LABOR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="180"/>
+    </shape>
+    <shape modelObjectName="P_LKP_LABOR_DESIGN_OFFICE" modelObjectNameSpace="J_LABOR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="190"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MATNR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="660" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_LABOR" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="268"/>
+    </shape>
+    <shape modelObjectName="P_LKP_MATERIAL_NUMBER" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="244"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

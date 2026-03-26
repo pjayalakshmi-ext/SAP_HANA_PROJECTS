@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.SalesOrder.07Validation::CV_SO_HEADER_VBAK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.SalesOrder.06Completeness::CV_SO_HEADER_VBAK">
+    <resourceUri>EHUB.TD.SalesOrder.06Completeness::CV_SO_HEADER_VBAK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKO">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKO</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TVTW">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TVTW</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TSPA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TSPA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.SalesOrder.06Completeness::CV_SO_HEADER_VBAK"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="VKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKO"/>
+    <filter>&quot;MANDT&quot;='900' </filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="VTWEG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TVTW"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPART"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TSPA"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute hidden="true" id="JOIN$SalesOrganization$VKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="SalesOrganization_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SalesOrganization&quot;=&quot;VKORG&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentType" source="SalesDocumentType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPONumber" source="CustomerPONumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RequestedDeliveryDate" source="RequestedDeliveryDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPODate" source="CustomerPODate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BillingBlockInSDDocument" source="BillingBlockInSDDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderReason" source="OrderReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DocumentDate" source="DocumentDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup1" source="CustomerGroup1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup2" source="CustomerGroup2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup3" source="CustomerGroup3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup4" source="CustomerGroup4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup5" source="CustomerGroup5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SalesOrganization$VKORG" source="SalesOrganization"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SalesOrganization$VKORG" source="VKORG"/>
+    </input>
+    <joinAttribute name="JOIN$SalesOrganization$VKORG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+      <viewAttribute id="SalesOrganization_INVALID"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute hidden="true" id="JOIN$DistributionChannel$VTWEG"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="DistributionChannel_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;DistributionChannel&quot;=&quot;VTWEG&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentType" source="SalesDocumentType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPONumber" source="CustomerPONumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RequestedDeliveryDate" source="RequestedDeliveryDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPODate" source="CustomerPODate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BillingBlockInSDDocument" source="BillingBlockInSDDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderReason" source="OrderReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DocumentDate" source="DocumentDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup1" source="CustomerGroup1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup2" source="CustomerGroup2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup3" source="CustomerGroup3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup4" source="CustomerGroup4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup5" source="CustomerGroup5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization_INVALID" source="SalesOrganization_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DistributionChannel$VTWEG" source="DistributionChannel"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DistributionChannel$VTWEG" source="VTWEG"/>
+    </input>
+    <joinAttribute name="JOIN$DistributionChannel$VTWEG"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentType"/>
+      <viewAttribute id="SalesOrganization"/>
+      <viewAttribute id="DistributionChannel"/>
+      <viewAttribute id="Division"/>
+      <viewAttribute id="CustomerPONumber"/>
+      <viewAttribute id="RequestedDeliveryDate"/>
+      <viewAttribute id="CustomerPODate"/>
+      <viewAttribute id="BillingBlockInSDDocument"/>
+      <viewAttribute id="OrderReason"/>
+      <viewAttribute id="DocumentDate"/>
+      <viewAttribute id="CustomerGroup1"/>
+      <viewAttribute id="CustomerGroup2"/>
+      <viewAttribute id="CustomerGroup3"/>
+      <viewAttribute id="CustomerGroup4"/>
+      <viewAttribute id="CustomerGroup5"/>
+      <viewAttribute id="SalesOrganization_INVALID"/>
+      <viewAttribute id="DistributionChannel_INVALID"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute hidden="true" id="JOIN$Division$SPART"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="Division_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;Division&quot;=&quot;SPART&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="LegacySalesDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentType" source="SalesDocumentType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPONumber" source="CustomerPONumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RequestedDeliveryDate" source="RequestedDeliveryDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPODate" source="CustomerPODate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BillingBlockInSDDocument" source="BillingBlockInSDDocument"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderReason" source="OrderReason"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DocumentDate" source="DocumentDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup1" source="CustomerGroup1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup2" source="CustomerGroup2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup3" source="CustomerGroup3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup4" source="CustomerGroup4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup5" source="CustomerGroup5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization_INVALID" source="SalesOrganization_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel_INVALID" source="DistributionChannel_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Division$SPART" source="Division"/>
+    </input>
+    <input node="Projection_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Division$SPART" source="SPART"/>
+    </input>
+    <joinAttribute name="JOIN$Division$SPART"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_3">
+  <attributes>
+    <attribute id="LegacySalesDocument" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LegacySalesDocument"/>
+      <keyMapping columnObjectName="Join_3" columnName="LegacySalesDocument"/>
+    </attribute>
+    <attribute id="SalesDocumentType" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesDocumentType"/>
+      <keyMapping columnObjectName="Join_3" columnName="SalesDocumentType"/>
+    </attribute>
+    <attribute id="SalesOrganization" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesOrganization"/>
+      <keyMapping columnObjectName="Join_3" columnName="SalesOrganization"/>
+    </attribute>
+    <attribute id="DistributionChannel" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DistributionChannel"/>
+      <keyMapping columnObjectName="Join_3" columnName="DistributionChannel"/>
+    </attribute>
+    <attribute id="Division" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Division"/>
+      <keyMapping columnObjectName="Join_3" columnName="Division"/>
+    </attribute>
+    <attribute id="CustomerPONumber" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerPONumber"/>
+      <keyMapping columnObjectName="Join_3" columnName="CustomerPONumber"/>
+    </attribute>
+    <attribute id="RequestedDeliveryDate" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RequestedDeliveryDate"/>
+      <keyMapping columnObjectName="Join_3" columnName="RequestedDeliveryDate"/>
+    </attribute>
+    <attribute id="CustomerPODate" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerPODate"/>
+      <keyMapping columnObjectName="Join_3" columnName="CustomerPODate"/>
+    </attribute>
+    <attribute id="BillingBlockInSDDocument" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BillingBlockInSDDocument"/>
+      <keyMapping columnObjectName="Join_3" columnName="BillingBlockInSDDocument"/>
+    </attribute>
+    <attribute id="OrderReason" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OrderReason"/>
+      <keyMapping columnObjectName="Join_3" columnName="OrderReason"/>
+    </attribute>
+    <attribute id="DocumentDate" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DocumentDate"/>
+      <keyMapping columnObjectName="Join_3" columnName="DocumentDate"/>
+    </attribute>
+    <attribute id="CustomerGroup1" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup1"/>
+      <keyMapping columnObjectName="Join_3" columnName="CustomerGroup1"/>
+    </attribute>
+    <attribute id="CustomerGroup2" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup2"/>
+      <keyMapping columnObjectName="Join_3" columnName="CustomerGroup2"/>
+    </attribute>
+    <attribute id="CustomerGroup3" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup3"/>
+      <keyMapping columnObjectName="Join_3" columnName="CustomerGroup3"/>
+    </attribute>
+    <attribute id="CustomerGroup4" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup4"/>
+      <keyMapping columnObjectName="Join_3" columnName="CustomerGroup4"/>
+    </attribute>
+    <attribute id="CustomerGroup5" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CustomerGroup5"/>
+      <keyMapping columnObjectName="Join_3" columnName="CustomerGroup5"/>
+    </attribute>
+    <attribute id="SalesOrganization_INVALID" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLASSNAME_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="SalesOrganization_INVALID"/>
+    </attribute>
+    <attribute id="DistributionChannel_INVALID" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DistributionChannel_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="DistributionChannel_INVALID"/>
+    </attribute>
+    <attribute id="Division_INVALID" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Division_INVALID"/>
+      <keyMapping columnObjectName="Join_3" columnName="Division_INVALID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SalesOrganization_INVALID&quot;+&quot;DistributionChannel_INVALID&quot;+&quot;Division_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="279"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="216"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="230"/>
+    </shape>
+    <shape modelObjectName="Projection_4" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

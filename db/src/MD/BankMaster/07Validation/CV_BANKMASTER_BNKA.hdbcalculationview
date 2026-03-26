@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.BankMaster.07Validation::CV_BANKMASTER_BNKA" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.BankMaster.06Completeness::CV_BANKMASTER_BNKA">
+    <resourceUri>EHUB.MD.BankMaster.06Completeness::CV_BANKMASTER_BNKA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_BNKA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_BNKA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T005</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005S">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T005S</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BNKA_COMPLETE" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BGRUP"/>
+    
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.BankMaster.06Completeness::CV_BANKMASTER_BNKA"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_BNKA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_BNKA"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T005" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LAND1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T005S" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BLAND"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T005S"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BNKA" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="BANKL_LOADED"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$BANKS"/>
+      <viewAttribute hidden="true" id="JOIN$BANKL$BANKL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_BNKA_COMPLETE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_INCOMPLETE" source="TOTAL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+    </input>
+    <input node="P_S4H_BNKA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL_LOADED" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKL$BANKL" source="BANKL"/>
+    </input>
+    <joinAttribute name="JOIN$BANKS$BANKS"/>
+    <joinAttribute name="JOIN$BANKL$BANKL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SHE_BNKA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="BANKL_LOADED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_BNKA"/>
+    <filter>&quot;BANKL_LOADED&quot; IS NULL</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LAND1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="BANKL_LOADED"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute hidden="true" id="JOIN$BANKS$LAND1"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BANK_COUNTRY_KEY_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BANKS&quot;=&quot;LAND1&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_SHE_BNKA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_INCOMPLETE" source="TOTAL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL_LOADED" source="BANKL_LOADED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$LAND1" source="BANKS"/>
+    </input>
+    <input node="P_S4H_T005">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BANKS$LAND1" source="LAND1"/>
+    </input>
+    <joinAttribute name="JOIN$BANKS$LAND1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_REGION" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BANKS"/>
+      <viewAttribute id="BANKL"/>
+      <viewAttribute id="BANKA"/>
+      <viewAttribute id="PROVZ"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="BRNCH"/>
+      <viewAttribute id="SWIFT"/>
+      <viewAttribute id="XPGRO"/>
+      <viewAttribute id="BNKLZ"/>
+      <viewAttribute id="BGRUP"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="BANKL_LOADED"/>
+      <viewAttribute id="BANK_COUNTRY_KEY_INVALID"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="BLAND"/>
+      <viewAttribute hidden="true" id="JOIN$PROVZ$BLAND"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BANK_REGION_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PROVZ&quot;=&quot;BLAND&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_LAND1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKS" source="BANKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL" source="BANKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKA" source="BANKA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROVZ" source="PROVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRNCH" source="BRNCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SWIFT" source="SWIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XPGRO" source="XPGRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BNKLZ" source="BNKLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BGRUP" source="BGRUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_INCOMPLETE" source="TOTAL_INCOMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANKL_LOADED" source="BANKL_LOADED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BANK_COUNTRY_KEY_INVALID" source="BANK_COUNTRY_KEY_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PROVZ$BLAND" source="PROVZ"/>
+    </input>
+    <input node="P_S4H_T005S">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLAND" source="BLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PROVZ$BLAND" source="BLAND"/>
+    </input>
+    <joinAttribute name="JOIN$PROVZ$BLAND"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_REGION">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_REGION" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BANKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKS"/>
+      <keyMapping columnObjectName="J_REGION" columnName="BANKS"/>
+    </attribute>
+    <attribute id="BANKL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKL"/>
+      <keyMapping columnObjectName="J_REGION" columnName="BANKL"/>
+    </attribute>
+    <attribute id="BANKA" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANKA"/>
+      <keyMapping columnObjectName="J_REGION" columnName="BANKA"/>
+    </attribute>
+    <attribute id="PROVZ" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROVZ"/>
+      <keyMapping columnObjectName="J_REGION" columnName="PROVZ"/>
+    </attribute>
+    <attribute id="STRAS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STRAS"/>
+      <keyMapping columnObjectName="J_REGION" columnName="STRAS"/>
+    </attribute>
+    <attribute id="ORT01" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORT01"/>
+      <keyMapping columnObjectName="J_REGION" columnName="ORT01"/>
+    </attribute>
+    <attribute id="BRNCH" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRNCH"/>
+      <keyMapping columnObjectName="J_REGION" columnName="BRNCH"/>
+    </attribute>
+    <attribute id="SWIFT" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SWIFT"/>
+      <keyMapping columnObjectName="J_REGION" columnName="SWIFT"/>
+    </attribute>
+    <attribute id="XPGRO" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XPGRO"/>
+      <keyMapping columnObjectName="J_REGION" columnName="XPGRO"/>
+    </attribute>
+    <attribute id="BNKLZ" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BNKLZ"/>
+      <keyMapping columnObjectName="J_REGION" columnName="BNKLZ"/>
+    </attribute>
+    <attribute id="BGRUP" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BGRUP"/>
+      <keyMapping columnObjectName="J_REGION" columnName="BGRUP"/>
+    </attribute>
+    <attribute id="BANK_COUNTRY_KEY_INVALID" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANK_COUNTRY_KEY_INVALID"/>
+      <keyMapping columnObjectName="J_REGION" columnName="BANK_COUNTRY_KEY_INVALID"/>
+    </attribute>
+    <attribute id="BANK_REGION_INVALID" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BANK_REGION_INVALID"/>
+      <keyMapping columnObjectName="J_REGION" columnName="BANK_REGION_INVALID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="13" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE WHEN 
+&quot;BANK_COUNTRY_KEY_INVALID&quot;+&quot;BANK_REGION_INVALID&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="313" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BNKA_COMPLETE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="174" y="821"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4H_BNKA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384" y="821"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T005" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T005S" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="382" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_BNKA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BNKA_COMPLETE" modelObjectNameSpace="J_BNKA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198"/>
+    </shape>
+    <shape modelObjectName="P_S4H_BNKA" modelObjectNameSpace="J_BNKA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_SHE_BNKA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LAND1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_SHE_BNKA" modelObjectNameSpace="J_LAND1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="202"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T005" modelObjectNameSpace="J_LAND1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_REGION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="313" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_LAND1" modelObjectNameSpace="J_REGION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="252"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T005S" modelObjectNameSpace="J_REGION" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

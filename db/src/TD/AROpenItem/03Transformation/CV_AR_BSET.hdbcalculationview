@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.AROpenItem.03Transformation::CV_AR_BSET" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_AR_BSET"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.AROpenItem.01Extraction::CV_SHE_AR_BSET">
+    <resourceUri>EHUB.TD.AROpenItem.01Extraction::CV_SHE_AR_BSET</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_COMPANY_CODE">
+    <resourceUri>EHUB.Synonyms::SY_LKP_COMPANY_CODE</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_CUSTOMER">
+    <resourceUri>EHUB.Synonyms::SY_LKP_CUSTOMER</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSET">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.AROpenItem.01Extraction::CV_SHE_AR_BSET"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_COMPANY_CODE">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_COMPANY_CODE"/>
+      <viewAttribute id="COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_CUSTOMER">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CUSTOMER_NUMBER"/>
+      <viewAttribute id="CUSTOMER_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_CUSTOMER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COMPANY_CODE" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+      <viewAttribute id="COMPANY_CODE"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BUKRS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;COMPANY_CODE&quot;, &quot;BUKRS&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_BSET">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="BUKRS"/>
+    </input>
+    <input node="P_LKP_COMPANY_CODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_CODE" source="COMPANY_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$LEGACY_COMPANY_CODE" source="LEGACY_COMPANY_CODE"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$LEGACY_COMPANY_CODE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CUSTOMER" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+      <viewAttribute id="CC_BUKRS"/>
+      <viewAttribute id="CUSTOMER_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$LEGACY_CUSTOMER_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_KUNNR" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;CUSTOMER_NUMBER&quot;, &quot;KUNNR&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_COMPANY_CODE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_BUKRS" source="CC_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$LEGACY_CUSTOMER_NUMBER" source="KUNNR"/>
+    </input>
+    <input node="P_LKP_CUSTOMER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_NUMBER" source="CUSTOMER_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$LEGACY_CUSTOMER_NUMBER" source="LEGACY_CUSTOMER_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$KUNNR$LEGACY_CUSTOMER_NUMBER"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_CUSTOMER">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_BUKRS"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="CC_BUKRS"/>
+    </attribute>
+    <attribute id="BELNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="BELNR"/>
+    </attribute>
+    <attribute id="BUZEI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="KUNNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_KUNNR"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="CC_KUNNR"/>
+    </attribute>
+    <attribute id="XBLNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="HKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HKONT"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="HKONT"/>
+    </attribute>
+    <attribute id="GKONT2" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_GKONT"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="GKONT2"/>
+    </attribute>
+    <attribute id="MWSKZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSKZ"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="TXJCD" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXJCD"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="FWBAS" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FWBAS"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="FWBAS"/>
+    </attribute>
+    <attribute id="FWSTE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FWSTE"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="FWSTE"/>
+    </attribute>
+    <attribute id="HWBAS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HWBAS"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="HWBAS"/>
+    </attribute>
+    <attribute id="HWSTE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HWSTE"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="HWSTE"/>
+    </attribute>
+    <attribute id="H2BAS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H2BAS"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="H2BAS"/>
+    </attribute>
+    <attribute id="H2STE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H2STE"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="H2STE"/>
+    </attribute>
+    <attribute id="H3BAS" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H3BAS"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="H3BAS"/>
+    </attribute>
+    <attribute id="H3STE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H3STE"/>
+      <keyMapping columnObjectName="J_CUSTOMER" columnName="H3STE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328.6900820831794" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BSET" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="516.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_COMPANY_CODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="516.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_COMPANY_CODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666666" y="356.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BSET" modelObjectNameSpace="J_COMPANY_CODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_LKP_COMPANY_CODE" modelObjectNameSpace="J_COMPANY_CODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="229.44580078125"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_CUSTOMER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395.83468516943316" y="356.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CUSTOMER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328.6900820831794" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_COMPANY_CODE" modelObjectNameSpace="J_CUSTOMER" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_LKP_CUSTOMER" modelObjectNameSpace="J_CUSTOMER" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="253.27734375"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

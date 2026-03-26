@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.AROpenItem.07Validation::CV_AR_BSET" applyPrivilegeType="NONE" dataCategory="CUBE" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_AR_BSET"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.AROpenItem.06Completeness::CV_AR_BSET">
+    <resourceUri>EHUB.TD.AROpenItem.06Completeness::CV_AR_BSET</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_KNA1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_KNA1</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T007A">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T007A</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_SKB1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_SKB1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSET" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_DOCLN" datatype="NVARCHAR" length="6" expressionLanguage="SQL">
+        <formula>'000000'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.TD.AROpenItem.06Completeness::CV_AR_BSET"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T001">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_BUKRS" source="BUKRS"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_KNA1">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_KNA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_KUNNR" source="KUNNR"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T007A">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_MWSKZ"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T007A">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MWSKZ" source="MWSKZ"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_SKB1">
+    <viewAttributes>
+      <viewAttribute id="S4H_MANDT"/>
+      <viewAttribute id="S4H_BUKRS"/>
+      <viewAttribute id="S4H_SAKNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_SKB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_SAKNR" source="SAKNR"/>
+    </input></calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUKRS_VLD" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS" aggregationType="sum"/>
+      <viewAttribute id="FWSTE" aggregationType="sum"/>
+      <viewAttribute id="HWBAS" aggregationType="sum"/>
+      <viewAttribute id="HWSTE" aggregationType="sum"/>
+      <viewAttribute id="H2BAS" aggregationType="sum"/>
+      <viewAttribute id="H2STE" aggregationType="sum"/>
+      <viewAttribute id="H3BAS" aggregationType="sum"/>
+      <viewAttribute id="H3STE" aggregationType="sum"/>
+      <viewAttribute id="S4H_BUKRS"/>
+      <viewAttribute id="CC_DOCLN"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$S4H_MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$S4H_BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BUKRS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;=&quot;S4H_BUKRS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_BSET">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_DOCLN" source="CC_DOCLN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$S4H_BUKRS" source="BUKRS"/>
+    </input>
+    <input node="P_S4H_T001">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_BUKRS" source="S4H_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="S4H_MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$S4H_BUKRS" source="S4H_BUKRS"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$S4H_MANDT"/>
+    <joinAttribute name="JOIN$BUKRS$S4H_BUKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_KUNNR_VLD" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS" aggregationType="sum"/>
+      <viewAttribute id="FWSTE" aggregationType="sum"/>
+      <viewAttribute id="HWBAS" aggregationType="sum"/>
+      <viewAttribute id="HWSTE" aggregationType="sum"/>
+      <viewAttribute id="H2BAS" aggregationType="sum"/>
+      <viewAttribute id="H2STE" aggregationType="sum"/>
+      <viewAttribute id="H3BAS" aggregationType="sum"/>
+      <viewAttribute id="H3STE" aggregationType="sum"/>
+      <viewAttribute id="S4H_KUNNR"/>
+      <viewAttribute id="BUKRS_INVALID" aggregationType="sum"/>
+      <viewAttribute id="CC_DOCLN"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$S4H_MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$S4H_KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="KUNNR_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KUNNR&quot;=&quot;S4H_KUNNR&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_BUKRS_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_INVALID" source="BUKRS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_DOCLN" source="CC_DOCLN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$S4H_KUNNR" source="KUNNR"/>
+    </input>
+    <input node="P_S4H_KNA1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_KUNNR" source="S4H_KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="S4H_MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$S4H_KUNNR" source="S4H_KUNNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$S4H_MANDT"/>
+    <joinAttribute name="JOIN$KUNNR$S4H_KUNNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_HKONT_VLD" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS" aggregationType="sum"/>
+      <viewAttribute id="FWSTE" aggregationType="sum"/>
+      <viewAttribute id="HWBAS" aggregationType="sum"/>
+      <viewAttribute id="HWSTE" aggregationType="sum"/>
+      <viewAttribute id="H2BAS" aggregationType="sum"/>
+      <viewAttribute id="H2STE" aggregationType="sum"/>
+      <viewAttribute id="H3BAS" aggregationType="sum"/>
+      <viewAttribute id="H3STE" aggregationType="sum"/>
+      <viewAttribute id="KUNNR_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_SAKNR"/>
+      <viewAttribute id="BUKRS_INVALID" aggregationType="sum"/>
+      <viewAttribute id="CC_DOCLN"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$S4H_MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$S4H_BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$HKONT$S4H_SAKNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="HKONT_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;HKONT&quot;=&quot;S4H_SAKNR&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_KUNNR_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR_INVALID" source="KUNNR_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_INVALID" source="BUKRS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_DOCLN" source="CC_DOCLN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$S4H_BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$HKONT$S4H_SAKNR" source="HKONT"/>
+    </input>
+    <input node="P_S4H_SKB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_SAKNR" source="S4H_SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="S4H_MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$S4H_BUKRS" source="S4H_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$HKONT$S4H_SAKNR" source="S4H_SAKNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$S4H_MANDT"/>
+    <joinAttribute name="JOIN$BUKRS$S4H_BUKRS"/>
+    <joinAttribute name="JOIN$HKONT$S4H_SAKNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MWSKZ_VLD" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS" aggregationType="sum"/>
+      <viewAttribute id="FWSTE" aggregationType="sum"/>
+      <viewAttribute id="HWBAS" aggregationType="sum"/>
+      <viewAttribute id="HWSTE" aggregationType="sum"/>
+      <viewAttribute id="H2BAS" aggregationType="sum"/>
+      <viewAttribute id="H2STE" aggregationType="sum"/>
+      <viewAttribute id="H3BAS" aggregationType="sum"/>
+      <viewAttribute id="H3STE" aggregationType="sum"/>
+      <viewAttribute id="KUNNR_INVALID" aggregationType="sum"/>
+      <viewAttribute id="HKONT_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_MWSKZ"/>
+      <viewAttribute id="BUKRS_INVALID" aggregationType="sum"/>
+      <viewAttribute id="CC_DOCLN"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$S4H_MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$MWSKZ$S4H_MWSKZ"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MWSKZ_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MWSKZ&quot;=&quot;S4H_MWSKZ&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_HKONT_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR_INVALID" source="KUNNR_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT_INVALID" source="HKONT_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_INVALID" source="BUKRS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_DOCLN" source="CC_DOCLN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MWSKZ$S4H_MWSKZ" source="MWSKZ"/>
+    </input>
+    <input node="P_S4H_T007A">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_MWSKZ" source="S4H_MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$S4H_MANDT" source="S4H_MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MWSKZ$S4H_MWSKZ" source="S4H_MWSKZ"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$S4H_MANDT"/>
+    <joinAttribute name="JOIN$MWSKZ$S4H_MWSKZ"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_MWSKZ_VLD">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="XBLNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="CC_DOCLN" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_DOCLN"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="CC_DOCLN"/>
+    </attribute>
+    <attribute id="KUNNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BUZEI" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="HKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HKONT"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="HKONT"/>
+    </attribute>
+    <attribute id="GKONT2" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_GKONT"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="GKONT2"/>
+    </attribute>
+    <attribute id="MWSKZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSKZ"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="TXJCD" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXJCD"/>
+      <keyMapping columnObjectName="J_MWSKZ_VLD" columnName="TXJCD"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="FWBAS" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FWBAS"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="FWBAS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="FWSTE" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FWSTE"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="FWSTE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="HWBAS" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="HWBAS"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="HWBAS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="HWSTE" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="HWSTE"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="HWSTE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="H2BAS" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="H2BAS"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="H2BAS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="H2STE" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="H2STE"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="H2STE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="H3BAS" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="H3BAS"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="H3BAS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="H3STE" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="H3STE"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="H3STE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="KUNNR_INVALID" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KUNNR_INVALID"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="KUNNR_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BUKRS_INVALID" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BUKRS_INVALID"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="BUKRS_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="HKONT_INVALID" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="HKONT_INVALID"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="HKONT_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MWSKZ_INVALID" order="22" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MWSKZ_INVALID"/>
+      <measureMapping columnObjectName="J_MWSKZ_VLD" columnName="MWSKZ_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INVALID" order="23" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>CASE WHEN
+&quot;BUKRS_INVALID&quot;+&quot;KUNNR_INVALID&quot;+&quot;HKONT_INVALID&quot;+&quot;MWSKZ_INVALID&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+
+
+  <localDimensions/>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="534" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BSET" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T001" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_KNA1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T007A" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="592" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_SKB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="477" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BUKRS_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BSET" modelObjectNameSpace="J_BUKRS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T001" modelObjectNameSpace="J_BUKRS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_KUNNR_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_BUKRS_VLD" modelObjectNameSpace="J_KUNNR_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_KNA1" modelObjectNameSpace="J_KUNNR_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_HKONT_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_KUNNR_VLD" modelObjectNameSpace="J_HKONT_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_SKB1" modelObjectNameSpace="J_HKONT_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MWSKZ_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="534" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_HKONT_VLD" modelObjectNameSpace="J_MWSKZ_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T007A" modelObjectNameSpace="J_MWSKZ_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="154"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,521 @@
+{
+  "EHUB.Synonyms::SY_TA_BANK_BNKA_PLD": {
+    "target": {
+      "object": "TA_BANK_BNKA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_CSKS_PLD": {
+    "target": {
+      "object": "TA_CC_CSKS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_CEPC_PLD": {
+    "target": {
+      "object": "TA_PC_CEPC_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_CEPC_BUKRS_PLD": {
+    "target": {
+      "object": "TA_PC_CEPC_BUKRS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSIK_PLD": {
+    "target": {
+      "object": "TA_AP_BSIK_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSEC_PLD": {
+    "target": {
+      "object": "TA_AP_BSEC_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_BSET_PLD": {
+    "target": {
+      "object": "TA_AP_BSET_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_WITH_ITEM_PLD": {
+    "target": {
+      "object": "TA_AP_WITH_ITEM_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSID_PLD": {
+    "target": {
+      "object": "TA_AR_BSID_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSEC_PLD": {
+    "target": {
+      "object": "TA_AR_BSEC_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_BSET_PLD": {
+    "target": {
+      "object": "TA_AR_BSET_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_WITH_ITEM_PLD": {
+    "target": {
+      "object": "TA_AR_WITH_ITEM_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_GENERAL_PLD": {
+    "target": {
+      "object": "TA_GL_GENERAL_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_CO_AREA_PLD": {
+    "target": {
+      "object": "TA_GL_CO_AREA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_COMPANY_PLD": {
+    "target": {
+      "object": "TA_GL_COMPANY_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SKAT_TEXT_PLD": {
+    "target": {
+      "object": "TA_GL_SKAT_TEXT_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_KEYWORDS_PLD": {
+    "target": {
+      "object": "TA_GL_KEYWORDS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WBS_PROJECT_DEF_PLD": {
+    "target": {
+      "object": "TA_WBS_PROJECT_DEF_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WBS_ELEMENT_PLD": {
+    "target": {
+      "object": "TA_WBS_ELEMENT_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CUST_GEN_PLD": {
+    "target": {
+      "object": "TA_CUST_GEN_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CUST_ROLES_PLD": {
+    "target": {
+      "object": "TA_CUST_ROLES_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CUST_SALES_DATA_PLD": {
+    "target": {
+      "object": "TA_CUST_SALES_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CUST_COMPANY_PLD": {
+    "target": {
+      "object": "TA_CUST_COMPANY_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CUST_BANK_DATA_PLD": {
+    "target": {
+      "object": "TA_CUST_BANK_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+ /* "EHUB.Synonyms::SY_TA_VM_SUPPL_GEN_PLD": {
+  /*"EHUB.Synonyms::SY_TA_VM_SUPPL_GEN_PLD": {
+    "target": {
+      "object": "TA_VM_SUPPL_GEN_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },*/
+ /* "EHUB.Synonyms::SY_TA_VM_ROLES_PLD": {
+    "target": {
+      "object": "TA_VM_SUPPL_BP_ROLES_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },*/
+  "EHUB.Synonyms::SY_TA_VM_SUPPL_COMPANY_PLD": {
+    "target": {
+      "object": "TA_VM_SUPPL_COMPANY_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+/*  "EHUB.Synonyms::SY_TA_VM_SUPPL_PURCHASING_PLD": {
+  /*"EHUB.Synonyms::SY_TA_VM_SUPPL_PURCHASING_PLD": {
+    "target": {
+      "object": "TA_VM_SUPPL_PURCH_ORG_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },*/
+  "EHUB.Synonyms::SY_TA_VM_SUPPL_BANK_PLD": {
+    "target": {
+      "object": "TA_VM_SUPPL_BANK_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARA_PLD": {
+    "target": {
+      "object": "TA_MM_MARA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_WLK2_PLD": {
+    "target": {
+      "object": "TA_MM_WLK2_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARC_PLD": {
+    "target": {
+      "object": "TA_MM_MARC_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARD_PLD": {
+    "target": {
+      "object": "TA_MM_MARD_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_HEADER_PLD": {
+    "target": {
+      "object": "TA_MMCLASS_HEADER_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CHAR_AUSP_PLD": {
+    "target": {
+      "object": "TA_MMCLASS_CHAR_AUSP_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_CURR_AUSP_PLD": {
+    "target": {
+      "object": "TA_MMCLASS_CURR_AUSP_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_NUM_AUSP_PLD": {
+    "target": {
+      "object": "TA_MMCLASS_NUM_AUSP_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_PLD": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_BASICDATA_QPMK_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_PLD": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_PLD": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_SHORTTEXTS_QPMT_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_HEADER_VBAK_PLD": {
+    "target": {
+      "object": "TA_SO_HEADER_VBAK_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_ITEM_VBAP_PLD": {
+    "target": {
+      "object": "TA_SO_ITEM_VBAP_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_PARTNER_VBPA_PLD": {
+    "target": {
+      "object": "TA_SO_PARTNER_VBPA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SCHEDULELINEDATA_VBEP_PLD": {
+    "target": {
+      "object": "TA_SO_SCHEDULELINEDATA_VBEP_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_SUPPL_GEN_DATA_PLD": {
+    "target": {
+      "object": "TA_VM_SUPPL_GEN_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_SUPPL_PURCH_ORG_DATA_PLD": {
+    "target": {
+      "object": "TA_VM_SUPPL_PURCH_ORG_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_SUPP_BP_ROLES_PLD": {
+    "target": {
+      "object": "TA_VM_SUPPL_BP_ROLES_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_BANK_DETAILS_PLD": {
+    "target": {
+      "object": "TA_VM_BANK_DETAILS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_COMPANY_DATA_PLD": {
+    "target": {
+      "object": "TA_VM_COMPANY_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_MASTER_DETAILS_PLD": {
+    "target": {
+      "object": "TA_FA_MASTER_DETAILS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_POSTING_INFO_PLD": {
+    "target": {
+      "object": "TA_FA_POSTING_INFO_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_GEN_DATA_PLD": {
+    "target": {
+      "object": "TA_PIR_GEN_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_PURCH_ORG_DATA_PLD": {
+    "target": {
+      "object": "TA_PIR_PURCH_ORG_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_CONDITIONS_PLD": {
+    "target": {
+      "object": "TA_PIR_CONDITIONS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_HEADER_DATA_PLD": {
+    "target": {
+      "object": "TA_PO_HEADER_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_ITEM_DATA_PLD": {
+    "target": {
+      "object": "TA_PO_ITEM_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_ACCOUNT_ASSIGN_PLD": {
+    "target": {
+      "object": "TA_PO_ACCOUNT_ASSIGN_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_HEADER_DATA_PLD": {
+    "target": {
+      "object": "TA_PC_HEADER_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_ITEM_DATA_PLD": {
+    "target": {
+      "object": "TA_PC_ITEM_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_ACCOUNT_ASSIGN_PLD": {
+    "target": {
+      "object": "TA_PC_ACCOUNT_ASSIGN_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_HEADER_DATA_PLD": {
+    "target": {
+      "object": "TA_PSA_HEADER_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_ITEM_DATA_PLD": {
+    "target": {
+      "object": "TA_PSA_ITEM_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_ACCOUNT_ASSIGN_PLD": {
+    "target": {
+      "object": "TA_PSA_ACCOUNT_ASSIGN_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_TIME_DEPENDENT_DATA_PLD": {
+    "target": {
+      "object": "TA_FA_TIME_DEPENDENT_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_EQ_MASTER_DATA_PLD": {
+    "target": {
+      "object": "TA_EQ_MASTER_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GLABOI_GL_BALANCE_PLD": {
+    "target": {
+      "object": "TA_GLABOI_GL_BALANCE_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_WORK_CENTER_CAPACITY_PLD": {
+    "target": {
+      "object": "TA_WCR_WORK_CENTER_CAPACITY_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_WORK_CENTER_HEADER_PLD": {
+    "target": {
+      "object": "TA_WCR_WORK_CENTER_HEADER_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_WORK_CENTER_COST_CENTER_PLD": {
+    "target": {
+      "object": "TA_WCR_WORK_CENTER_COST_CENTER_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_MASTER_DATA_PLD": {
+    "target": {
+      "object": "TA_IO_MASTER_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_SETTLEMENT_RULE_PLD": {
+    "target": {
+      "object": "TA_IO_SETTLEMENT_RULE_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AT_ACTIVITY_MASTER_PLD": {
+    "target": {
+      "object": "TA_AT_ACTIVITY_MASTER_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_WB_WBS_ELEMENT_PLD": {
+    "target": {
+      "object": "TA_WB_WBS_ELEMENT_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_PROJECT_DEFINITION_PLD": {
+    "target": {
+      "object": "TA_WB_PROJECT_DEFINITION_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_SUPPLIER_ADDRESS_PLD": {
+    "target": {
+      "object": "TA_PC_SUPPLIER_ADDRESS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_DELIVERY_ADDRESS_PLD": {
+    "target": {
+      "object": "TA_PC_DELIVERY_ADDRESS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_HEADER_TEXTS_PLD": {
+    "target": {
+      "object": "TA_PC_HEADER_TEXTS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_ITEM_TEXTS_PLD": {
+    "target": {
+      "object": "TA_PC_ITEM_TEXTS_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FL_MASTER_DATA_PLD": {
+    "target": {
+      "object": "TA_FL_MASTER_DATA_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BOM_HEADER_PLD": {
+    "target": {
+      "object": "TA_BOM_HEADER_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BOM_ITEM_PLD": {
+    "target": {
+      "object": "TA_BOM_ITEM_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_ER_TCURR_PLD": {
+    "target": {
+      "object": "TA_ER_TCURR_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PV_MKAL_PLD": {
+    "target": {
+      "object": "TA_PV_MKAL_PLD",
+      "schema": "EHUB_PLD"
+    }
+},
+  "EHUB.Synonyms::SY_TA_MIB_MATERIAL_DOCUMENT_HEADER_PLD": {
+    "target": {
+      "object": "TA_MIB_MATERIAL_DOCUMENT_HEADER_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_MATERIAL_DOCUMENT_ITEM_PLD": {
+    "target": {
+      "object": "TA_MIB_MATERIAL_DOCUMENT_ITEM_PLD",
+      "schema": "EHUB_PLD"
+    }
+  },
+  
+  "EHUB.Synonyms::SY_TA_SKF_TKA03_PLD": {
+    "target": {
+      "object": "TA_SKF_TKA03_PLD",
+      "schema": "EHUB_PLD"
+    }
+  } 
+}

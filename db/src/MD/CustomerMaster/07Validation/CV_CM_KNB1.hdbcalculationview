@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.07Validation::CV_CM_KNB1" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_CM_KNB1"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_SKB1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_SKB1</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNB1">
+    <resourceUri>EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNB1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T001">
+    <viewAttributes>
+      <viewAttribute id="S4H_BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_BUKRS" source="BUKRS"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_SKB1">
+    <viewAttributes>
+      <viewAttribute id="S4H_SAKNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_SKB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_SAKNR" source="SAKNR"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNB1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="VRBKZ"/>
+      <viewAttribute id="VLIBB"/>
+      <viewAttribute id="VRSZL"/>
+      <viewAttribute id="VRSPR"/>
+      <viewAttribute id="VRSNR"/>
+      <viewAttribute id="VERDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ZSABE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.CustomerMaster.06Completeness::CV_CM_KNB1"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BUKRS_VLD" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="VRBKZ"/>
+      <viewAttribute id="VLIBB" aggregationType="sum"/>
+      <viewAttribute id="VRSZL" aggregationType="sum"/>
+      <viewAttribute id="VRSPR" aggregationType="sum"/>
+      <viewAttribute id="VRSNR"/>
+      <viewAttribute id="VERDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ZSABE"/>
+      <viewAttribute id="S4H_BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$S4H_BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BUKRS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;=&quot;S4H_BUKRS&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_KNB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRBKZ" source="VRBKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLIBB" source="VLIBB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSZL" source="VRSZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSPR" source="VRSPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSNR" source="VRSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERDT" source="VERDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSAB" source="BUSAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZAHLS" source="ZAHLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSABE" source="ZSABE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$S4H_BUKRS" source="BUKRS"/>
+    </input>
+    <input node="P_S4H_T001">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_BUKRS" source="S4H_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$S4H_BUKRS" source="S4H_BUKRS"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$S4H_BUKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_AKONT_VLD" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="VRBKZ"/>
+      <viewAttribute id="VLIBB" aggregationType="sum"/>
+      <viewAttribute id="VRSZL" aggregationType="sum"/>
+      <viewAttribute id="VRSPR" aggregationType="sum"/>
+      <viewAttribute id="VRSNR"/>
+      <viewAttribute id="VERDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ZSABE"/>
+      <viewAttribute id="BUKRS_INVALID" aggregationType="sum"/>
+      <viewAttribute id="S4H_SAKNR"/>
+      <viewAttribute hidden="true" id="JOIN$AKONT$S4H_SAKNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="AKONT_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;AKONT&quot;=&quot;S4H_SAKNR&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_BUKRS_VLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRBKZ" source="VRBKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLIBB" source="VLIBB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSZL" source="VRSZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSPR" source="VRSPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSNR" source="VRSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERDT" source="VERDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSAB" source="BUSAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZAHLS" source="ZAHLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSABE" source="ZSABE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_INVALID" source="BUKRS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$AKONT$S4H_SAKNR" source="AKONT"/>
+    </input>
+    <input node="P_S4H_SKB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="S4H_SAKNR" source="S4H_SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$AKONT$S4H_SAKNR" source="S4H_SAKNR"/>
+    </input>
+    <joinAttribute name="JOIN$AKONT$S4H_SAKNR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_AKONT_VLD">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BUKRS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="SPERR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPERR"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="SPERR"/>
+    </attribute>
+    <attribute id="AKONT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AKONT"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="AKONT"/>
+    </attribute>
+    <attribute id="VRBKZ" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRBKZ"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="VRBKZ"/>
+    </attribute>
+    <attribute id="VRSNR" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRSNR"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="VRSNR"/>
+    </attribute>
+    <attribute id="VERDT" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VERDT"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="VERDT"/>
+    </attribute>
+    <attribute id="ZTERM" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTERM"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="ZWELS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZWELS"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="ZWELS"/>
+    </attribute>
+    <attribute id="BUSAB" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUSAB"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="BUSAB"/>
+    </attribute>
+    <attribute id="ZAHLS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZAHLS"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="ZAHLS"/>
+    </attribute>
+    <attribute id="EIKTO" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EIKTO"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="EIKTO"/>
+    </attribute>
+    <attribute id="ZSABE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZSABE"/>
+      <keyMapping columnObjectName="J_AKONT_VLD" columnName="ZSABE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="VLIBB" order="7" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VLIBB"/>
+      <measureMapping columnObjectName="J_AKONT_VLD" columnName="VLIBB"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="VRSZL" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VRSZL"/>
+      <measureMapping columnObjectName="J_AKONT_VLD" columnName="VRSZL"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="VRSPR" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VRSPR"/>
+      <measureMapping columnObjectName="J_AKONT_VLD" columnName="VRSPR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BUKRS_INVALID" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BUKRS_INVALID"/>
+      <measureMapping columnObjectName="J_AKONT_VLD" columnName="BUKRS_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="AKONT_INVALID" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="AKONT_INVALID"/>
+      <measureMapping columnObjectName="J_AKONT_VLD" columnName="AKONT_INVALID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INVALID" order="20" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>CASE WHEN
+&quot;BUKRS_INVALID&quot;+&quot;AKONT_INVALID&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T001" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_SKB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_KNB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_BUKRS_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_KNB1" modelObjectNameSpace="J_BUKRS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T001" modelObjectNameSpace="J_BUKRS_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="J_AKONT_VLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_BUKRS_VLD" modelObjectNameSpace="J_AKONT_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_SKB1" modelObjectNameSpace="J_AKONT_VLD" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

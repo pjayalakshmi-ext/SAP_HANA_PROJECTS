@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.BillOfMaterials.07Validation::CV_BOM_HEADER_STKO" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.BillOfMaterials.06Completeness::CV_BOM_HEADER_STKO">
+    <resourceUri>EHUB.MD.BillOfMaterials.06Completeness::CV_BOM_HEADER_STKO</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.BillOfMaterials.06Completeness::CV_BOM_ITEM_STPO">
+    <resourceUri>EHUB.MD.BillOfMaterials.06Completeness::CV_BOM_ITEM_STPO</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T416">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T416</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T415S">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T415S</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T024L">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T024L</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_HEADER" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="WERKS_INCOMPLETE"/>
+      <viewAttribute id="STLAN_INCOMPLETE"/>
+      <viewAttribute id="STLAL_INCOMPLETE"/>
+      <viewAttribute id="BMENG_INCOMPLETE"/>
+      <viewAttribute id="STLST_INCOMPLETE"/>
+      <viewAttribute id="MATNR_INCOMPLETE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.BillOfMaterials.06Completeness::CV_BOM_HEADER_STKO"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_ITEM" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="AUSCH"/>
+      <viewAttribute id="AVOAU"/>
+      <viewAttribute id="DSPST"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERSKZ"/>
+      <viewAttribute id="FMENG"/>
+      <viewAttribute id="IDNRK"/>
+      <viewAttribute id="ITMID"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MENGE"/>
+      <viewAttribute id="NLFMV"/>
+      <viewAttribute id="NETAU"/>
+      <viewAttribute id="NLFZT"/>
+      <viewAttribute id="NLFZV"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="POSTP"/>
+      <viewAttribute id="POTX1"/>
+      <viewAttribute id="POTX2"/>
+      <viewAttribute id="PREIS"/>
+      <viewAttribute id="PRVBE"/>
+      <viewAttribute id="SAKTO"/>
+      <viewAttribute id="SANIN"/>
+      <viewAttribute id="SCHGT"/>
+      <viewAttribute id="SANKA"/>
+      <viewAttribute id="SORTF"/>
+      <viewAttribute id="STKKZ"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="MATNR_INCOMPLETE"/>
+      <viewAttribute id="ITMID_INCOMPLETE"/>
+      <viewAttribute id="POSNR_INCOMPLETE"/>
+      <viewAttribute id="POSTP_INCOMPLETE"/>
+      <viewAttribute id="MENGE_INCOMPLETE"/>
+      <viewAttribute id="WERKS_INCOMPLETE"/>
+      <viewAttribute id="STLAN_INCOMPLETE"/>
+      <viewAttribute id="STLAL_INCOMPLETE"/>
+      <viewAttribute id="TOTAL_INCOMPLETE"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.BillOfMaterials.06Completeness::CV_BOM_ITEM_STPO"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_MARA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T001W" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T416" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="STLAN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T416"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T415S" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="STLST"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T415S"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T024L" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LABOR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T024L"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_HEADER_ITEM" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$WERKS"/>
+      <viewAttribute hidden="true" id="JOIN$STLAN$STLAN"/>
+      <viewAttribute hidden="true" id="JOIN$STLAL$STLAL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_HEADER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAL$STLAL" source="STLAL"/>
+    </input>
+    <input node="P_ITEM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAL$STLAL" source="STLAL"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+    <joinAttribute name="JOIN$WERKS$WERKS"/>
+    <joinAttribute name="JOIN$STLAN$STLAN"/>
+    <joinAttribute name="JOIN$STLAL$STLAL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MATNR" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="MATNR_S4H"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MATNR_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MATNR&quot;=&quot;MATNR_S4H&quot;
+then 0
+else 1
+end
+
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_HEADER_ITEM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="P_S4H_MARA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_S4H" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_WERKS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="MATNR_INVALID"/>
+      <viewAttribute id="WERKS_S4H"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WERKS_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=&quot;WERKS_S4H&quot;
+then 0
+else 1
+end
+
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_MATNR">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_INVALID" source="MATNR_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+    </input>
+    <input node="P_S4H_T001W">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_S4H" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$WERKS$WERKS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_STLAN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="WERKS_INVALID"/>
+      <viewAttribute id="MATNR_INVALID"/>
+      <viewAttribute id="STLAN_S4H"/>
+      <viewAttribute hidden="true" id="JOIN$STLAN$STLAN"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="STLAN_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;STLAN&quot;=&quot;STLAN_S4H&quot;
+then 0
+else 1
+end
+
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_WERKS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_INVALID" source="WERKS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_INVALID" source="MATNR_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$STLAN" source="STLAN"/>
+    </input>
+    <input node="P_S4H_T416">
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN_S4H" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$STLAN" source="STLAN"/>
+    </input>
+    <joinAttribute name="JOIN$STLAN$STLAN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_STLST" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="STLAN_INVALID"/>
+      <viewAttribute id="WERKS_INVALID"/>
+      <viewAttribute id="MATNR_INVALID"/>
+      <viewAttribute id="STLST_S4H"/>
+      <viewAttribute hidden="true" id="JOIN$STLST$STLST"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="STLST_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;STLST&quot;=&quot;STLST_S4H&quot;
+then 0
+else 1
+end
+
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_STLAN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN_INVALID" source="STLAN_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_INVALID" source="WERKS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_INVALID" source="MATNR_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLST$STLST" source="STLST"/>
+    </input>
+    <input node="P_S4H_T415S">
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST_S4H" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLST$STLST" source="STLST"/>
+    </input>
+    <joinAttribute name="JOIN$STLST$STLST"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LABOR" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="STLAN_INVALID"/>
+      <viewAttribute id="WERKS_INVALID"/>
+      <viewAttribute id="MATNR_INVALID"/>
+      <viewAttribute id="STLST_INVALID"/>
+      <viewAttribute id="LABOR_S4H"/>
+      <viewAttribute hidden="true" id="JOIN$LABOR$LABOR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="LABOR_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;LABOR&quot;=&quot;LABOR_S4H&quot;
+then 0
+else 1
+end
+
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_STLST">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN_INVALID" source="STLAN_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_INVALID" source="WERKS_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_INVALID" source="MATNR_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST_INVALID" source="STLST_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LABOR$LABOR" source="LABOR"/>
+    </input>
+    <input node="P_S4H_T024L">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR_S4H" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LABOR$LABOR" source="LABOR"/>
+    </input>
+    <joinAttribute name="JOIN$LABOR$LABOR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_LABOR">
+  <attributes>
+    <attribute id="MATNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="MATNR"/>
+    </attribute>
+    <attribute id="WERKS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="WERKS"/>
+    </attribute>
+    <attribute id="STLAN" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STLAN"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="STLAN"/>
+    </attribute>
+    <attribute id="STLAL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STLAL"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="STLAL"/>
+    </attribute>
+    <attribute id="AENNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AENNR"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="AENNR"/>
+    </attribute>
+    <attribute id="BMENG" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BMENG"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="BMENG"/>
+    </attribute>
+    <attribute id="BMEIN" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BMEIN"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="BMEIN"/>
+    </attribute>
+    <attribute id="LABOR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LABOR"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="LABOR"/>
+    </attribute>
+    <attribute id="CADKZ" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CADKZ"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="CADKZ"/>
+    </attribute>
+    <attribute id="STLST" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STLST"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="STLST"/>
+    </attribute>
+    <attribute id="STLAN_INVALID" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STLAN_INVALID"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="STLAN_INVALID"/>
+    </attribute>
+    <attribute id="WERKS_INVALID" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS_INVALID"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="WERKS_INVALID"/>
+    </attribute>
+    <attribute id="MATNR_INVALID" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR_INVALID"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="MATNR_INVALID"/>
+    </attribute>
+    <attribute id="STLST_INVALID" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STLST_INVALID"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="STLST_INVALID"/>
+    </attribute>
+    <attribute id="LABOR_INVALID" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LABOR_INVALID"/>
+      <keyMapping columnObjectName="J_LABOR" columnName="LABOR_INVALID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;STLAN_INVALID&quot;+&quot;MATNR_INVALID&quot;+&quot;STLST_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="785" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_HEADER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="1176"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_ITEM" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="1176"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_MARA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="379" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T001W" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="472" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T416" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="578" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T415S" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="697" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T024L" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="826" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_HEADER_ITEM" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_HEADER" modelObjectNameSpace="J_HEADER_ITEM" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="198"/>
+    </shape>
+    <shape modelObjectName="P_ITEM" modelObjectNameSpace="J_HEADER_ITEM" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="198"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MATNR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_HEADER_ITEM" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="163"/>
+    </shape>
+    <shape modelObjectName="P_S4H_MARA" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="142"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_WERKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape modelObjectName="J_MATNR" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T001W" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_STLAN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="198" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_WERKS" modelObjectNameSpace="J_STLAN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T416" modelObjectNameSpace="J_STLAN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_STLST" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="225" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_STLAN" modelObjectNameSpace="J_STLST" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T415S" modelObjectNameSpace="J_STLST" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="144"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_LABOR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="785" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_STLST" modelObjectNameSpace="J_LABOR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T024L" modelObjectNameSpace="J_LABOR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="143"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

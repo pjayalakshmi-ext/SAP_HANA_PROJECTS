@@ -1,0 +1,6 @@
+mta_archives/
+node_modules/
+# auto generated wildcard
+db/.env
+# added by cds
+.cdsrc-private.json

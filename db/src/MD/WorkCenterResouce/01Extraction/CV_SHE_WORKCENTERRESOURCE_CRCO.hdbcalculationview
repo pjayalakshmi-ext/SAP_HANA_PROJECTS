@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.WorkCenterResouce.01Extraction::CV_SHE_WORKCENTERRESOURCE_CRCO" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_SHE_FIXEDASSET_ANLZ.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_CRCO">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_CRCO</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.WorkCenterResouce.01Extraction::CV_SHE_WORKCENTERRESOURCE_CRHD">
+    <resourceUri>EHUB.MD.WorkCenterResouce.01Extraction::CV_SHE_WORKCENTERRESOURCE_CRHD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="LASET"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="LANUM"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="AEDAT_KOST"/>
+      <viewAttribute id="AENAM_KOST"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="LSTAR_REF"/>
+      <viewAttribute id="FORML"/>
+      <viewAttribute id="PRZ"/>
+      <viewAttribute id="ACTXY"/>
+      <viewAttribute id="ACTXK"/>
+      <viewAttribute id="LEINH"/>
+      <viewAttribute id="BDE"/>
+      <viewAttribute id="SAKL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CURRENT_DATE" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>CURRENT_DATE</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_CRCO"/>
+    <filter>&quot;MANDT&quot;=801</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.WorkCenterResouce.01Extraction::CV_SHE_WORKCENTERRESOURCE_CRHD"/>
+    <filter>&quot;MANDT&quot;=801</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="LASET"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="LANUM"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="AEDAT_KOST"/>
+      <viewAttribute id="AENAM_KOST"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="LSTAR_REF"/>
+      <viewAttribute id="FORML"/>
+      <viewAttribute id="PRZ"/>
+      <viewAttribute id="ACTXY"/>
+      <viewAttribute id="ACTXK"/>
+      <viewAttribute id="LEINH"/>
+      <viewAttribute id="BDE"/>
+      <viewAttribute id="SAKL"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$OBJTY$OBJTY"/>
+      <viewAttribute hidden="true" id="JOIN$OBJID$OBJID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJID" source="OBJID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LASET" source="LASET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDDA" source="ENDDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LANUM" source="LANUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEGDA" source="BEGDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT_KOST" source="AEDAT_KOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENAM_KOST" source="AENAM_KOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LSTAR" source="LSTAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LSTAR_REF" source="LSTAR_REF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FORML" source="FORML"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRZ" source="PRZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTXY" source="ACTXY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTXK" source="ACTXK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEINH" source="LEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BDE" source="BDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKL" source="SAKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJTY$OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJID$OBJID" source="OBJID"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARBPL" source="ARBPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJTY$OBJTY" source="OBJTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJID$OBJID" source="OBJID"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$OBJTY$OBJTY"/>
+    <joinAttribute name="JOIN$OBJID$OBJID"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Join_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="OBJTY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object types of the CIM resource"/>
+      <keyMapping columnObjectName="Join_1" columnName="OBJTY"/>
+    </attribute>
+    <attribute id="OBJID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object ID of the resource"/>
+      <keyMapping columnObjectName="Join_1" columnName="OBJID"/>
+    </attribute>
+    <attribute id="LASET" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity type set"/>
+      <keyMapping columnObjectName="Join_1" columnName="LASET"/>
+    </attribute>
+    <attribute id="ENDDA" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="End Date"/>
+      <keyMapping columnObjectName="Join_1" columnName="ENDDA"/>
+    </attribute>
+    <attribute id="LANUM" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity type number within a set"/>
+      <keyMapping columnObjectName="Join_1" columnName="LANUM"/>
+    </attribute>
+    <attribute id="BEGDA" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Start Date"/>
+      <keyMapping columnObjectName="Join_1" columnName="BEGDA"/>
+    </attribute>
+    <attribute id="AEDAT_KOST" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Changed on"/>
+      <keyMapping columnObjectName="Join_1" columnName="AEDAT_KOST"/>
+    </attribute>
+    <attribute id="AENAM_KOST" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User Name"/>
+      <keyMapping columnObjectName="Join_1" columnName="AENAM_KOST"/>
+    </attribute>
+    <attribute id="KOKRS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Controlling Area"/>
+      <keyMapping columnObjectName="Join_1" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="KOSTL" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cost Center"/>
+      <keyMapping columnObjectName="Join_1" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="LSTAR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity Type"/>
+      <keyMapping columnObjectName="Join_1" columnName="LSTAR"/>
+    </attribute>
+    <attribute id="LSTAR_REF" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Join_1" columnName="LSTAR_REF"/>
+    </attribute>
+    <attribute id="FORML" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Formula key for costing"/>
+      <keyMapping columnObjectName="Join_1" columnName="FORML"/>
+    </attribute>
+    <attribute id="PRZ" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Process"/>
+      <keyMapping columnObjectName="Join_1" columnName="PRZ"/>
+    </attribute>
+    <attribute id="ACTXY" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity description type"/>
+      <keyMapping columnObjectName="Join_1" columnName="ACTXY"/>
+    </attribute>
+    <attribute id="ACTXK" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for alternative activity description"/>
+      <keyMapping columnObjectName="Join_1" columnName="ACTXK"/>
+    </attribute>
+    <attribute id="LEINH" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity Unit"/>
+      <keyMapping columnObjectName="Join_1" columnName="LEINH"/>
+    </attribute>
+    <attribute id="BDE" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Transfer activity types to incentive wages"/>
+      <keyMapping columnObjectName="Join_1" columnName="BDE"/>
+    </attribute>
+    <attribute id="SAKL" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Record type group"/>
+      <keyMapping columnObjectName="Join_1" columnName="SAKL"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="CURRENT_DATE"/>
+    </attribute>
+  
+    <attribute id="ARBPL" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARBPL"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="ARBPL"/>
+  
+    </attribute>
+    <attribute id="WERKS" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Join_1" columnName="WERKS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="16" y="16"/>
+      <rectangleSize width="174.41357421875"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="254.41357421875" y="160"/>
+      <rectangleSize width="136.0234375"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

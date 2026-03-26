@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.TD.SalesOrder.01Extraction::CV_SHE_SO_VBPA" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <descriptions defaultDescription="CA_REL_CSTEXT_VALID"/>
+  <metadata changedAt="2023-01-26 11:01:20.537"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="28"/>
+  <dataSources>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_VBPA">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_VBPA</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="PartnerFunction"/>
+      <viewAttribute id="CustomerNumber"/>
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_ZSLT_SHE_VBPA">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="POSNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PARVW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerNumber" source="KUNNR"/>
+      </input>
+    <filter>&quot;MANDT&quot; = '801'</filter>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Projection_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="LegacySalesDocument" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="LegacySalesDocument"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LegacySalesDocument"/>
+      </attribute>
+      <attribute id="SalesDocumentItem" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Sales Document Item"/>
+        <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentItem"/>
+      </attribute>
+      <attribute id="PartnerFunction" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Partner Function"/>
+        <keyMapping columnObjectName="Projection_1" columnName="PartnerFunction"/>
+      </attribute>
+      <attribute id="CustomerNumber" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Customer Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CustomerNumber"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="30" y="210"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+</layout>
+</Calculation:scenario>

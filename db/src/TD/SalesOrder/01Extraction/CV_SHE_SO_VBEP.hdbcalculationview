@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.TD.SalesOrder.01Extraction::CV_SHE_SO_VBEP" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <descriptions defaultDescription="CA_REL_CSTEXT_VALID"/>
+  <metadata changedAt="2023-01-26 11:01:20.537"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="28"/>
+  <dataSources>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_VBEP">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_VBEP</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="DeliveryScheduleLineNumber"/>
+      <viewAttribute id="OrderQuantityInSalesUnits"/>
+      <viewAttribute id="ScheduleLineDate"/>
+      <viewAttribute id="VBELN"/>
+      <viewAttribute id="POSNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_ZSLT_SHE_VBEP">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DeliveryScheduleLineNumber" source="ETENR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderQuantityInSalesUnits" source="WMENG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ScheduleLineDate" source="EDATU"/>
+      </input>
+    <filter>&quot;MANDT&quot; = '801'</filter>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Projection_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="DeliveryScheduleLineNumber" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Delivery Schedule Line Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="DeliveryScheduleLineNumber"/>
+      </attribute>
+      <attribute id="OrderQuantityInSalesUnits" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Order quantity in sales units"/>
+        <keyMapping columnObjectName="Projection_1" columnName="OrderQuantityInSalesUnits"/>
+      </attribute>
+      <attribute id="ScheduleLineDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Schedule line date"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ScheduleLineDate"/>
+      </attribute>
+      <attribute id="VBELN_VBEP" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Sales Document"/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBELN"/>
+      </attribute>
+      <attribute id="POSNR_VBEP" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Sales Document Item"/>
+        <keyMapping columnObjectName="Projection_1" columnName="POSNR"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="30" y="210"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+</layout>
+</Calculation:scenario>

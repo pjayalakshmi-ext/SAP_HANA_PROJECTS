@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNB1" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_SHE_CM_KNB1"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_KNB1">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_KNB1</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_CUST_GEN_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_CUST_GEN_PLD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNB1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="VRBKZ"/>
+      <viewAttribute id="VLIBB"/>
+      <viewAttribute id="VRSZL"/>
+      <viewAttribute id="VRSPR"/>
+      <viewAttribute id="VRSNR"/>
+      <viewAttribute id="VERDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ZSABE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_KNB1"/>
+    <filter>(&quot;LOEVM&quot;!='X' AND &quot;MANDT&quot;='801' and &quot;BUKRS&quot;='1000')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CUST_GEN_PLD">
+    <viewAttributes>
+      <viewAttribute id="KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_CUST_GEN_PLD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COMPANY_CODE" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="VRBKZ"/>
+      <viewAttribute id="VLIBB"/>
+      <viewAttribute id="VRSZL"/>
+      <viewAttribute id="VRSPR"/>
+      <viewAttribute id="VRSNR"/>
+      <viewAttribute id="VERDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="BUSAB"/>
+      <viewAttribute id="ZAHLS"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ZSABE"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$KUNNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_CUST_GEN_PLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR" source="KUNNR"/>
+    </input>
+    <input node="P_KNB1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRBKZ" source="VRBKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VLIBB" source="VLIBB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSZL" source="VRSZL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSPR" source="VRSPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRSNR" source="VRSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERDT" source="VERDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSAB" source="BUSAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZAHLS" source="ZAHLS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZSABE" source="ZSABE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR" source="KUNNR"/>
+    </input>
+    <joinAttribute name="JOIN$KUNNR$KUNNR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_COMPANY_CODE">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number*"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="BUKRS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="SPERR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Posting block for company code"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="SPERR"/>
+    </attribute>
+    <attribute id="AKONT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reconciliation Account in General Ledger"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="AKONT"/>
+    </attribute>
+    <attribute id="VRBKZ" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Export credit insurance institution number"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="VRBKZ"/>
+    </attribute>
+    <attribute id="VLIBB" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Amount Insured"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="VLIBB"/>
+    </attribute>
+    <attribute id="VRSZL" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Insurance lead months"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="VRSZL"/>
+    </attribute>
+    <attribute id="VRSPR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Deductible percentage rate"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="VRSPR"/>
+    </attribute>
+    <attribute id="VRSNR" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Insurance number"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="VRSNR"/>
+    </attribute>
+    <attribute id="VERDT" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Insurance validity date"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="VERDT"/>
+    </attribute>
+    <attribute id="ZTERM" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment Key"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="ZWELS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="List of the Payment Methods to be Considered"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="ZWELS"/>
+    </attribute>
+    <attribute id="BUSAB" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Accounting clerk"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="BUSAB"/>
+    </attribute>
+    <attribute id="ZAHLS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Block Key for Payment"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="ZAHLS"/>
+    </attribute>
+    <attribute id="EIKTO" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Our account number at customer"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="EIKTO"/>
+    </attribute>
+    <attribute id="ZSABE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User at customer"/>
+      <keyMapping columnObjectName="J_COMPANY_CODE" columnName="ZSABE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNB1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_CUST_GEN_PLD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_COMPANY_CODE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_CUST_GEN_PLD" modelObjectNameSpace="J_COMPANY_CODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_KNB1" modelObjectNameSpace="J_COMPANY_CODE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

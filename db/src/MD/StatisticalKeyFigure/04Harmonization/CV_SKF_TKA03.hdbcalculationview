@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.StatisticalKeyFigure.04Harmonization::CV_SKF_TKA03" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_SKF_TKA03"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.StatisticalKeyFigure.03Transformation::CV_SKF_TKA03">
+    <resourceUri>EHUB.MD.StatisticalKeyFigure.03Transformation::CV_SKF_TKA03</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_SKF_TKA03_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_SKF_TKA03_REL_INPUT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_SHE_TKA03">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.StatisticalKeyFigure.03Transformation::CV_SKF_TKA03"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="MANDT_INPUT"/>
+      <viewAttribute id="KOKRS_INPUT"/>
+      <viewAttribute id="STAGR_INPUT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_SKF_TKA03_REL_INPUT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT_INPUT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS_INPUT" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR_INPUT" source="STAGR"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_TKA03">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_SHE_TKA03" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_TKA03" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+      <viewAttribute id="STAGR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$STAGR$STAGR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_TKA03">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT_INPUT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS_INPUT" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STAGR$STAGR_INPUT" source="STAGR"/>
+    </input>
+    <input node="Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR_INPUT" source="STAGR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT_INPUT" source="MANDT_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS_INPUT" source="KOKRS_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STAGR$STAGR_INPUT" source="STAGR_INPUT"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT_INPUT"/>
+    <joinAttribute name="JOIN$KOKRS$KOKRS_INPUT"/>
+    <joinAttribute name="JOIN$STAGR$STAGR_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Without_Remediated" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+      <viewAttribute id="STAGR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_TKA03"/>
+    <filter>(isnull(&quot;STAGR_INPUT&quot;))</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="STAGR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="BEZEI"/>
+      <viewAttribute id="MSEHI"/>
+      <viewAttribute id="GRTYP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Without_Remediated" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+    </input>
+    <input node="Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGR" source="STAGR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSEHI" source="MSEHI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GRTYP" source="GRTYP"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Controlling Area"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="STAGR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical key figure"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="STAGR"/>
+    </attribute>
+    <attribute id="SPRAS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="BEZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Long Text"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BEZEI"/>
+    </attribute>
+    <attribute id="MSEHI" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit for statistical key figure"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MSEHI"/>
+    </attribute>
+    <attribute id="GRTYP" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Statistical Key Figure Category"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="GRTYP"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="225" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_SHE_TKA03" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="766"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_TKA03" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_TKA03" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_TKA03" modelObjectNameSpace="J_TKA03" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="Remediated_Data" modelObjectNameSpace="J_TKA03" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="164"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Without_Remediated" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="236" y="236"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

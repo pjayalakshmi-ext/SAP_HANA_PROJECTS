@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_INOB" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_INOB">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_INOB</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="CUOBJ_INOB"/>
+      <viewAttribute id="ClassType_INOB"/>
+      <viewAttribute id="OBJEK_INOB"/>
+      <viewAttribute id="CLINT_INOB"/>
+      <viewAttribute id="ProductNum"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_INOB">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ_INOB" source="CUOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType_INOB" source="KLART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJEK_INOB" source="OBJEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLINT_INOB" source="CLINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="MATNR"/>
+    </input>
+    <filter>&quot;MANDT&quot;='801' </filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="CUOBJ_INOB" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUOBJ_INOB"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CUOBJ_INOB"/>
+    </attribute>
+    <attribute id="ClassType_INOB" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassType_INOB"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassType_INOB"/>
+    </attribute>
+    <attribute id="OBJEK_INOB" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OBJEK_INOB"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OBJEK_INOB"/>
+    </attribute>
+    <attribute id="CLINT_INOB" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLINT_INOB"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CLINT_INOB"/>
+    </attribute>
+    <attribute id="ProductNum" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProductNum"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ProductNum"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.ExchangeRate.06Completeness::CV_ER_TCURR" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.ExchangeRate.04Harmonization::CV_ER_TCURR">
+    <resourceUri>EHUB.MD.ExchangeRate.04Harmonization::CV_ER_TCURR</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_HARMONIZE">
+    <viewAttributes>
+      <viewAttribute id="KURST"/>
+      <viewAttribute id="FCURR"/>
+      <viewAttribute id="TCURR"/>
+      <viewAttribute id="GDATU"/>
+      <viewAttribute id="UKURS"/>
+      <viewAttribute id="FFACT"/>
+      <viewAttribute id="TFACT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="KURST_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KURST&quot;=''  or &quot;KURST&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="UKURS_INCOMPLETE" datatype="INTEGER" length="" expressionLanguage="SQL">
+        <formula>case when &quot;UKURS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="FCURR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;FCURR&quot;=''  or &quot;FCURR&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="TCURR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;TCURR&quot;=''  or &quot;TCURR&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="GDATU_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;GDATU&quot;=''  or &quot;GDATU&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.ExchangeRate.04Harmonization::CV_ER_TCURR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_HARMONIZE">
+  <attributes>
+    <attribute id="KURST" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Exchange Rate Type"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="KURST"/>
+    </attribute>
+    <attribute id="FCURR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="From currency"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="FCURR"/>
+    </attribute>
+    <attribute id="TCURR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="To-currency"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="TCURR"/>
+    </attribute>
+    <attribute id="GDATU" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date As of Which the Exchange Rate Is Effective"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="GDATU"/>
+    </attribute>
+    <attribute id="UKURS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Exchange Rate"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="UKURS"/>
+    </attribute>
+    <attribute id="FFACT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Ratio for the &quot;From&quot; Currency Units"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="FFACT"/>
+    </attribute>
+    <attribute id="TFACT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Ratio for the &quot;To&quot; Currency Units"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="TFACT"/>
+    </attribute>
+    <attribute id="KURST_INCOMPLETE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KURST_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="KURST_INCOMPLETE"/>
+    </attribute>
+    <attribute id="UKURS_INCOMPLETE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UKURS_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="UKURS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="FCURR_INCOMPLETE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FCURR_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="FCURR_INCOMPLETE"/>
+    </attribute>
+    <attribute id="TCURR_INCOMPLETE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TCURR_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="TCURR_INCOMPLETE"/>
+    </attribute>
+    <attribute id="GDATU_INCOMPLETE" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GDATU_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_HARMONIZE" columnName="GDATU_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KURST_INCOMPLETE&quot;+&quot;UKURS_INCOMPLETE&quot;+&quot;FCURR_INCOMPLETE&quot;+&quot;TCURR_INCOMPLETE&quot;+&quot;GDATU_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_HARMONIZE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

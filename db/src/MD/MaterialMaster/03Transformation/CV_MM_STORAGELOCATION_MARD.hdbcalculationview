@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.03Transformation::CV_MM_STORAGELOCATION_MARD" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_STORAGELOCATION_MARD">
+    <resourceUri>EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_STORAGELOCATION_MARD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_STORAGE_LOCATION">
+    <resourceUri>EHUB.Synonyms::SY_LKP_STORAGE_LOCATION</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_BASICDATA_MARA">
+    <resourceUri>EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_BASICDATA_MARA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_PLANT">
+    <resourceUri>EHUB.Synonyms::SY_LKP_PLANT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER">
+    <resourceUri>EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_STORAGELOCATION">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_STORAGELOCATION_MARD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_STORAGE_LOCATION">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_STORAGE_LOCATION"/>
+      <viewAttribute id="STORAGE_LOCATION"/>
+      <viewAttribute id="PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_STORAGE_LOCATION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BASICDATA">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_BASICDATA_MARA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_PLANT">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_PLANT"/>
+      <viewAttribute id="PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_LKP_MATERIAL_NUMBER">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_STORAGE" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_STORAGELOCATION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="P_BASICDATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_WERKS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+      <viewAttribute id="LEGACY_PLANT"/>
+      <viewAttribute id="PLANT"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$LEGACY_PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_WERKS" datatype="NVARCHAR" length="24" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=&quot;LEGACY_PLANT&quot;
+then &quot;PLANT&quot;
+else &quot;WERKS&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_STORAGE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$LEGACY_PLANT" source="WERKS"/>
+    </input>
+    <input node="P_LKP_PLANT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_PLANT" source="LEGACY_PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT" source="PLANT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$LEGACY_PLANT" source="LEGACY_PLANT"/>
+    </input>
+    <joinAttribute name="JOIN$WERKS$LEGACY_PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_LGORT" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+      <viewAttribute id="LEGACY_STORAGE_LOCATION"/>
+      <viewAttribute id="STORAGE_LOCATION"/>
+      <viewAttribute hidden="true" id="JOIN$LGORT$LEGACY_STORAGE_LOCATION"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$PLANT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_LGORT" datatype="NVARCHAR" length="24" expressionLanguage="SQL">
+        <formula>case when &quot;LGORT&quot; =&quot;LEGACY_STORAGE_LOCATION&quot;
+then &quot;STORAGE_LOCATION&quot;
+else &quot;LGORT&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_WERKS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="CC_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGORT$LEGACY_STORAGE_LOCATION" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$PLANT" source="WERKS"/>
+    </input>
+    <input node="P_LKP_STORAGE_LOCATION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_STORAGE_LOCATION" source="LEGACY_STORAGE_LOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STORAGE_LOCATION" source="STORAGE_LOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LGORT$LEGACY_STORAGE_LOCATION" source="LEGACY_STORAGE_LOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$PLANT" source="PLANT"/>
+    </input>
+    <joinAttribute name="JOIN$LGORT$LEGACY_STORAGE_LOCATION"/>
+    <joinAttribute name="JOIN$WERKS$PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MATNR" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$LEGACY_MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MATNR" datatype="NVARCHAR" length="18" expressionLanguage="SQL">
+        <formula>case when &quot;MATNR&quot;=&quot;LEGACY_MATERIAL_NUMBER&quot;
+then &quot;MATERIAL_NUMBER&quot;
+else &quot;MATNR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_LGORT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="CC_LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPBE" source="LGPBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LWMKB" source="LWMKB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$LEGACY_MATERIAL_NUMBER" source="MATNR"/>
+    </input>
+    <input node="P_LKP_MATERIAL_NUMBER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_NUMBER" source="MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$LEGACY_MATERIAL_NUMBER"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_MATNR">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="CC_MATNR"/>
+    </attribute>
+    <attribute id="WERKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="WERKS"/>
+    </attribute>
+    <attribute id="LGORT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage Location"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="LGORT"/>
+    </attribute>
+    <attribute id="LGPBE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage Bin"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="LGPBE"/>
+    </attribute>
+    <attribute id="LWMKB" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Picking area for lean WM"/>
+      <keyMapping columnObjectName="J_MATNR" columnName="LWMKB"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="534" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_STORAGELOCATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_LKP_STORAGE_LOCATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="477" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_BASICDATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_PLANT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_LKP_MATERIAL_NUMBER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="592" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_STORAGE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_STORAGELOCATION" modelObjectNameSpace="J_STORAGE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_BASICDATA" modelObjectNameSpace="J_STORAGE" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_WERKS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_STORAGE" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_LKP_PLANT" modelObjectNameSpace="J_WERKS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="149"/>
+    </shape>
+  
+  
+    <shape expanded="true" modelObjectName="J_LGORT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_WERKS" modelObjectNameSpace="J_LGORT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_LKP_STORAGE_LOCATION" modelObjectNameSpace="J_LGORT" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="251"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MATNR" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="534" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_LGORT" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="251"/>
+    </shape>
+    <shape modelObjectName="P_LKP_MATERIAL_NUMBER" modelObjectNameSpace="J_MATNR" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="244"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

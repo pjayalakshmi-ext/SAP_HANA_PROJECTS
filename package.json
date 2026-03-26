@@ -1,0 +1,40 @@
+{
+  "name": "HANA_Native_Dev",
+  "version": "1.0.0",
+  "description": "A simple DB project",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^9",
+    "@sap/cds-hana": "^2"
+  },
+  "scripts": {
+    "start": "cds run",
+    "build": "cds build/all --clean"
+  },
+  "cds": {
+    "build": {
+      "target": ".",
+      "tasks": [
+        {
+          "src": "db",
+          "for": "hana",
+          "options": {
+            "model": [
+              "db"
+            ]
+          }
+        }
+      ]
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
+    }
+  }
+}

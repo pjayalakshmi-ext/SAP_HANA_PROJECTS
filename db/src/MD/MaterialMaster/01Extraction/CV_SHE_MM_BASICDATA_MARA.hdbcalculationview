@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_BASICDATA_MARA" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_MARA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_MARA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_MAKT">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_MAKT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_MBEW">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_MBEW</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MARA" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="Product"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_MARA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Product" source="MATNR"/></input>
+    <filter>&quot;MANDT&quot;='801' </filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MAKT" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_MAKT"/>
+    <filter>&quot;MANDT&quot;='801' and &quot;SPRAS&quot;='E'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="P_MBEW" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="BKLAS" aggregationType="max"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_MBEW"/>
+    <filter>&quot;MANDT&quot;='801'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MARA" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$Product$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_MARA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANP" source="ANP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BREIT" source="BREIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTME" source="BSTME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EAN11" source="EAN11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKWSL" source="EKWSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEI" source="ERGEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEW" source="ERGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOE" source="ERVOE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOL" source="ERVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIAR" source="ETIAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIFO" source="ETIFO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXTWG" source="EXTWG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWTO" source="GEWTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOEHE" source="HOEHE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUTYP" source="HUTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRKZ" source="IPRKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZGVH" source="KZGVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZKFG" source="KZKFG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAENG" source="LAENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="Product"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBRSH" source="MBRSH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEABM" source="MEABM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRPN" source="MFRPN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDHB" source="MHDHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDLP" source="MHDLP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDRZ" source="MHDRZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MPROF" source="MPROF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAE" source="MSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAV" source="MSTAV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDE" source="MSTDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDV" source="MSTDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS_MARA" source="MTPOS_MARA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUMTP" source="NUMTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT" source="PSTAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QMPUR" source="QMPUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUBE" source="RAUBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNRM" source="RBNRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDMHD" source="RDMHD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERLV" source="SERLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLED_BBD" source="SLED_BBD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOFF" source="STOFF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEMPB" source="TEMPB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRAGR" source="TRAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VHART" source="VHART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLTO" source="VOLTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WESCH" source="WESCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF" source="XCHPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGCHP" source="XGCHP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Product$MATNR" source="Product"/>
+    </input>
+    <input node="P_MAKT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Product$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$Product$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MBEW" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ANP"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="BREIT"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="BSTME"/>
+      <viewAttribute id="EAN11"/>
+      <viewAttribute id="EKWSL"/>
+      <viewAttribute id="ERGEI"/>
+      <viewAttribute id="ERGEW"/>
+      <viewAttribute id="ERVOE"/>
+      <viewAttribute id="ERVOL"/>
+      <viewAttribute id="ETIAR"/>
+      <viewAttribute id="ETIFO"/>
+      <viewAttribute id="EXTWG"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="GEWTO"/>
+      <viewAttribute id="GROES"/>
+      <viewAttribute id="HOEHE"/>
+      <viewAttribute id="HUTYP"/>
+      <viewAttribute id="IPRKZ"/>
+      <viewAttribute id="KZGVH"/>
+      <viewAttribute id="KZKFG"/>
+      <viewAttribute id="LAENG"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MBRSH"/>
+      <viewAttribute id="MEABM"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="MFRPN"/>
+      <viewAttribute id="MHDHB"/>
+      <viewAttribute id="MHDLP"/>
+      <viewAttribute id="MHDRZ"/>
+      <viewAttribute id="MPROF"/>
+      <viewAttribute id="MSTAE"/>
+      <viewAttribute id="MSTAV"/>
+      <viewAttribute id="MSTDE"/>
+      <viewAttribute id="MSTDV"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTPOS_MARA"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="NUMTP"/>
+      <viewAttribute id="PRDHA"/>
+      <viewAttribute id="PSTAT"/>
+      <viewAttribute id="QMPUR"/>
+      <viewAttribute id="RAUBE"/>
+      <viewAttribute id="RBNRM"/>
+      <viewAttribute id="RDMHD"/>
+      <viewAttribute id="SERLV"/>
+      <viewAttribute id="SLED_BBD"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="STOFF"/>
+      <viewAttribute id="TEMPB"/>
+      <viewAttribute id="TRAGR"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="VHART"/>
+      <viewAttribute id="VOLEH"/>
+      <viewAttribute id="VOLTO"/>
+      <viewAttribute id="VOLUM"/>
+      <viewAttribute id="WESCH"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute id="XGCHP"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="BKLAS"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MARA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANP" source="ANP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BREIT" source="BREIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTME" source="BSTME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EAN11" source="EAN11"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKWSL" source="EKWSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEI" source="ERGEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERGEW" source="ERGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOE" source="ERVOE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERVOL" source="ERVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIAR" source="ETIAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETIFO" source="ETIFO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXTWG" source="EXTWG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWTO" source="GEWTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GROES" source="GROES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOEHE" source="HOEHE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUTYP" source="HUTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRKZ" source="IPRKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZGVH" source="KZGVH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZKFG" source="KZKFG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAENG" source="LAENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBRSH" source="MBRSH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEABM" source="MEABM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRPN" source="MFRPN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDHB" source="MHDHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDLP" source="MHDLP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MHDRZ" source="MHDRZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MPROF" source="MPROF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAE" source="MSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTAV" source="MSTAV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDE" source="MSTDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MSTDV" source="MSTDV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTPOS_MARA" source="MTPOS_MARA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUMTP" source="NUMTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRDHA" source="PRDHA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTAT" source="PSTAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QMPUR" source="QMPUR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RAUBE" source="RAUBE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RBNRM" source="RBNRM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDMHD" source="RDMHD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERLV" source="SERLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SLED_BBD" source="SLED_BBD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STOFF" source="STOFF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEMPB" source="TEMPB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRAGR" source="TRAGR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VHART" source="VHART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLTO" source="VOLTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WESCH" source="WESCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF" source="XCHPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XGCHP" source="XGCHP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX" source="MAKTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="P_MBEW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BKLAS" source="BKLAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_MBEW">
+  <attributes>
+    <attribute id="ANP" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ANP Code"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="ANP"/>
+    </attribute>
+    <attribute id="BISMT" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Old material number"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="BISMT"/>
+    </attribute>
+    <attribute id="BREIT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Width"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="BREIT"/>
+    </attribute>
+    <attribute id="BRGEW" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gross Weight"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="BRGEW"/>
+    </attribute>
+    <attribute id="BSTME" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchase Order Unit of Measure"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="BSTME"/>
+    </attribute>
+    <attribute id="EAN11" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="International Article Number (EAN/UPC)"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="EAN11"/>
+    </attribute>
+    <attribute id="EKWSL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing Value Key"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="EKWSL"/>
+    </attribute>
+    <attribute id="ERGEI" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of weight (allowed packaging weight)"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="ERGEI"/>
+    </attribute>
+    <attribute id="ERGEW" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Allowed packaging weight"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="ERGEW"/>
+    </attribute>
+    <attribute id="ERVOE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Volume unit (allowed packaging volume)"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="ERVOE"/>
+    </attribute>
+    <attribute id="ERVOL" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Allowed packaging volume"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="ERVOL"/>
+    </attribute>
+    <attribute id="ETIAR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Label type"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="ETIAR"/>
+    </attribute>
+    <attribute id="ETIFO" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Label form"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="ETIFO"/>
+    </attribute>
+    <attribute id="EXTWG" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="External Material Group"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="EXTWG"/>
+    </attribute>
+    <attribute id="GEWEI" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Weight Unit"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="GEWEI"/>
+    </attribute>
+    <attribute id="GEWTO" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Excess Weight Tolerance for Handling unit"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="GEWTO"/>
+    </attribute>
+    <attribute id="GROES" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Size/dimensions"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="GROES"/>
+    </attribute>
+    <attribute id="HOEHE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Height"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="HOEHE"/>
+    </attribute>
+    <attribute id="HUTYP" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Handling Unit Type"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="HUTYP"/>
+    </attribute>
+    <attribute id="IPRKZ" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Period Indicator for Shelf Life Expiration Date"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="IPRKZ"/>
+    </attribute>
+    <attribute id="KZGVH" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Packaging Material is Closed Packaging"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="KZGVH"/>
+    </attribute>
+    <attribute id="KZKFG" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Configurable Material"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="KZKFG"/>
+    </attribute>
+    <attribute id="LAENG" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Length"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="LAENG"/>
+    </attribute>
+    <attribute id="MATKL" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Group"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MATKL"/>
+    </attribute>
+    <attribute id="MATNR" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MBRSH" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Industry sector"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MBRSH"/>
+    </attribute>
+    <attribute id="MEABM" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of Dimension for Length/Width/Height"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MEABM"/>
+    </attribute>
+    <attribute id="MEINS" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Base Unit of Measure"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MEINS"/>
+    </attribute>
+    <attribute id="MFRNR" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of a Manufacturer"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MFRNR"/>
+    </attribute>
+    <attribute id="MFRPN" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Manufacturer Part Number"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MFRPN"/>
+    </attribute>
+    <attribute id="MHDHB" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Total shelf life"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MHDHB"/>
+    </attribute>
+    <attribute id="MHDLP" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage percentage"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MHDLP"/>
+    </attribute>
+    <attribute id="MHDRZ" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum Remaining Shelf Life"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MHDRZ"/>
+    </attribute>
+    <attribute id="MPROF" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Manufacturer Part Profile"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MPROF"/>
+    </attribute>
+    <attribute id="MSTAE" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cross-Plant Material Status"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MSTAE"/>
+    </attribute>
+    <attribute id="MSTAV" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cross-distribution-chain material status"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MSTAV"/>
+    </attribute>
+    <attribute id="MSTDE" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date from which the cross-plant material status is valid"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MSTDE"/>
+    </attribute>
+    <attribute id="MSTDV" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date from which the X-distr.-chain material status is valid"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MSTDV"/>
+    </attribute>
+    <attribute id="MTART" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Type"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MTART"/>
+    </attribute>
+    <attribute id="MTPOS_MARA" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="General item category group"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MTPOS_MARA"/>
+    </attribute>
+    <attribute id="NTGEW" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Net Weight"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="NTGEW"/>
+    </attribute>
+    <attribute id="NUMTP" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Category of International Article Number (EAN)"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="NUMTP"/>
+    </attribute>
+    <attribute id="PRDHA" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Product hierarchy"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="PRDHA"/>
+    </attribute>
+    <attribute id="PSTAT" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Maintenance status"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="PSTAT"/>
+    </attribute>
+    <attribute id="QMPUR" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QM in Procurement is Active"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="QMPUR"/>
+    </attribute>
+    <attribute id="RAUBE" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage conditions"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="RAUBE"/>
+    </attribute>
+    <attribute id="RBNRM" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Catalog Profile"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="RBNRM"/>
+    </attribute>
+    <attribute id="RDMHD" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rounding rule for calculation of SLED"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="RDMHD"/>
+    </attribute>
+    <attribute id="SERLV" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Level of Explicitness for Serial Number"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="SERLV"/>
+    </attribute>
+    <attribute id="SLED_BBD" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Expiration Date"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="SLED_BBD"/>
+    </attribute>
+    <attribute id="SPART" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Division"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="SPART"/>
+    </attribute>
+    <attribute id="STOFF" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Hazardous material number"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="STOFF"/>
+    </attribute>
+    <attribute id="TEMPB" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Temperature conditions indicator"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="TEMPB"/>
+    </attribute>
+    <attribute id="TRAGR" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Transportation Group"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="TRAGR"/>
+    </attribute>
+    <attribute id="VABME" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Variable Purchase Order Unit Active"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="VABME"/>
+    </attribute>
+    <attribute id="VHART" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Packaging Material Type"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="VHART"/>
+    </attribute>
+    <attribute id="VOLEH" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Volume unit"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="VOLEH"/>
+    </attribute>
+    <attribute id="VOLTO" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Excess Volume Tolerance of the Handling Unit"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="VOLTO"/>
+    </attribute>
+    <attribute id="VOLUM" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Volume"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="VOLUM"/>
+    </attribute>
+    <attribute id="WESCH" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Quantity: Number of GR/GI slips to be printed"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="WESCH"/>
+    </attribute>
+    <attribute id="XCHPF" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Batch management requirement indicator"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="XCHPF"/>
+    </attribute>
+    <attribute id="XGCHP" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Approved batch record required"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="XGCHP"/>
+    </attribute>
+    <attribute id="SPRAS" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="MAKTX" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Description (Short Text)"/>
+      <keyMapping columnObjectName="J_MBEW" columnName="MAKTX"/>
+    </attribute>
+  
+    <attribute id="BKLAS" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valuation Class"/>
+  
+      <keyMapping columnObjectName="J_MBEW" columnName="BKLAS"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_MARA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_MAKT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_MBEW" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MARA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_MARA" modelObjectNameSpace="J_MARA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="P_MAKT" modelObjectNameSpace="J_MARA" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MBEW" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_MARA" modelObjectNameSpace="J_MBEW" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="163"/>
+    </shape>
+    <shape modelObjectName="P_MBEW" modelObjectNameSpace="J_MBEW" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

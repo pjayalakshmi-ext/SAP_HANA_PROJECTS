@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.SalesOrder.06Completeness::CV_SO_ITEM_VBAP" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.SalesOrder.04Harmonization::CV_SO_ITEM_VBAP">
+    <resourceUri>EHUB.TD.SalesOrder.04Harmonization::CV_SO_ITEM_VBAP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="MaterialNumber"/>
+      <viewAttribute id="BatchNumber"/>
+      <viewAttribute id="Plant"/>
+      <viewAttribute id="SalesDocumentItemCategory"/>
+      <viewAttribute id="ItemDescription"/>
+      <viewAttribute id="ProfitCenter"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="SalesDocumentItem_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SalesDocumentItem&quot;=''  or &quot;SalesDocumentItem&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LegacySalesDocument_INCOMPLETE" datatype="INTEGER" length="" expressionLanguage="SQL">
+        <formula>case when &quot;LegacySalesDocument&quot;=''  or &quot;LegacySalesDocument&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MaterialNumber_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MaterialNumber&quot;=''  or &quot;MaterialNumber&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute></calculatedViewAttributes>
+    <input node="EHUB.TD.SalesOrder.04Harmonization::CV_SO_ITEM_VBAP"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="LegacySalesDocument" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LegacySalesDocument"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LegacySalesDocument"/>
+    </attribute>
+    <attribute id="SalesDocumentItem" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesDocumentItem"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentItem"/>
+    </attribute>
+    <attribute id="MaterialNumber" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MaterialNumber"/>
+    </attribute>
+    <attribute id="BatchNumber" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Batch Number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BatchNumber"/>
+    </attribute>
+    <attribute id="Plant" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant (Own or External)"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Plant"/>
+    </attribute>
+    <attribute id="SalesDocumentItemCategory" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales document item category"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentItemCategory"/>
+    </attribute>
+    <attribute id="ItemDescription" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Short text for sales order item"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ItemDescription"/>
+    </attribute>
+    <attribute id="ProfitCenter" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Profit Center"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ProfitCenter"/>
+    </attribute>
+    <attribute id="SalesDocumentItem_INCOMPLETE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SalesDocumentItem_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentItem_INCOMPLETE"/>
+    </attribute>
+    <attribute id="LegacySalesDocument_INCOMPLETE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LegacySalesDocument_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LegacySalesDocument_INCOMPLETE"/>
+    </attribute>
+    <attribute id="MaterialNumber_INCOMPLETE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MaterialNumber_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MaterialNumber_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SalesDocumentItem_INCOMPLETE&quot;+&quot;LegacySalesDocument_INCOMPLETE&quot;+&quot;MaterialNumber_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

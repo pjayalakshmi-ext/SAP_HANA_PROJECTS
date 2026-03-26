@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.AROpenItem.06Completeness::CV_AR_BSID" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_AR_BSID"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.AROpenItem.04Harmonization::CV_AR_BSID">
+    <resourceUri>EHUB.TD.AROpenItem.04Harmonization::CV_AR_BSID</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSID">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="UMSKZ"/>
+      <viewAttribute id="ZUONR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="BUDAT"/>
+      <viewAttribute id="BLDAT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="BLART"/>
+      <viewAttribute id="BSCHL"/>
+      <viewAttribute id="DMBTR"/>
+      <viewAttribute id="WRBTR"/>
+      <viewAttribute id="DMBE2"/>
+      <viewAttribute id="MWSTS"/>
+      <viewAttribute id="WMWST"/>
+      <viewAttribute id="SGTXT"/>
+      <viewAttribute id="ZFBDT"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZLSCH"/>
+      <viewAttribute id="ZLSPR"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="BUPLA"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="CC_GKONT"/>
+    
+      <viewAttribute id="WWERT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="BUKRS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;='' or &quot;BUKRS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="XBLNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;XBLNR&quot;='' OR &quot;XBLNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="KUNNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;KUNNR&quot;='' OR &quot;KUNNR&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="BLART_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+    
+        <formula>CASE 
+WHEN &quot;BLART&quot;='' OR &quot;BLART&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+    
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="BLDAT_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>CASE 
+WHEN &quot;BLDAT&quot;='' OR &quot;BLDAT&quot; IS NULL
+THEN 1
+ELSE 0
+END</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="GKONT_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+    
+        <formula>case when &quot;CC_GKONT&quot;='' or &quot;CC_GKONT&quot; is null
+then 1
+else 0
+end</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.TD.AROpenItem.04Harmonization::CV_AR_BSID"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_BSID">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="P_BSID" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="P_BSID" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="KUNNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="P_BSID" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="UMSKZ" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="UMSKZ"/>
+      <keyMapping columnObjectName="P_BSID" columnName="UMSKZ"/>
+    </attribute>
+    <attribute id="ZUONR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZUONR"/>
+      <keyMapping columnObjectName="P_BSID" columnName="ZUONR"/>
+    </attribute>
+    <attribute id="GJAHR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GJAHR"/>
+      <keyMapping columnObjectName="P_BSID" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="BELNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="P_BSID" columnName="BELNR"/>
+    </attribute>
+    <attribute id="BUZEI" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="P_BSID" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="BUDAT" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUDAT"/>
+      <keyMapping columnObjectName="P_BSID" columnName="BUDAT"/>
+    </attribute>
+    <attribute id="BLDAT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BLDAT"/>
+      <keyMapping columnObjectName="P_BSID" columnName="BLDAT"/>
+    </attribute>
+    <attribute id="WWERT" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WWERT"/>
+      <keyMapping columnObjectName="P_BSID" columnName="WWERT"/>
+    </attribute>
+    <attribute id="WAERS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="P_BSID" columnName="WAERS"/>
+    </attribute>
+    <attribute id="XBLNR" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="P_BSID" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="BLART" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BLART"/>
+      <keyMapping columnObjectName="P_BSID" columnName="BLART"/>
+    </attribute>
+    <attribute id="BSCHL" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BSCHL"/>
+      <keyMapping columnObjectName="P_BSID" columnName="BSCHL"/>
+    </attribute>
+    <attribute id="SGTXT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SGTXT"/>
+      <keyMapping columnObjectName="P_BSID" columnName="SGTXT"/>
+    </attribute>
+    <attribute id="ZFBDT" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZFBDT"/>
+      <keyMapping columnObjectName="P_BSID" columnName="ZFBDT"/>
+    </attribute>
+    <attribute id="ZTERM" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTERM"/>
+      <keyMapping columnObjectName="P_BSID" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="ZLSCH" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZLSCH"/>
+      <keyMapping columnObjectName="P_BSID" columnName="ZLSCH"/>
+    </attribute>
+    <attribute id="ZLSPR" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZLSPR"/>
+      <keyMapping columnObjectName="P_BSID" columnName="ZLSPR"/>
+    </attribute>
+    <attribute id="MWSKZ" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSKZ"/>
+      <keyMapping columnObjectName="P_BSID" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="BUPLA" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUPLA"/>
+      <keyMapping columnObjectName="P_BSID" columnName="BUPLA"/>
+    </attribute>
+    <attribute id="PRCTR" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="P_BSID" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="FKBER" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKBER"/>
+      <keyMapping columnObjectName="P_BSID" columnName="FKBER"/>
+    </attribute>
+    <attribute id="KOSTL" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOSTL"/>
+      <keyMapping columnObjectName="P_BSID" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="CC_GKONT" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_GKONT"/>
+      <keyMapping columnObjectName="P_BSID" columnName="CC_GKONT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="DMBTR" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="DMBTR"/>
+      <measureMapping columnObjectName="P_BSID" columnName="DMBTR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WRBTR" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WRBTR"/>
+      <measureMapping columnObjectName="P_BSID" columnName="WRBTR"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="DMBE2" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="DMBE2"/>
+      <measureMapping columnObjectName="P_BSID" columnName="DMBE2"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="MWSTS" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MWSTS"/>
+      <measureMapping columnObjectName="P_BSID" columnName="MWSTS"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="WMWST" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WMWST"/>
+      <measureMapping columnObjectName="P_BSID" columnName="WMWST"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BUKRS_INCOMPLETE" order="32" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BUKRS_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSID" columnName="BUKRS_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="XBLNR_INCOMPLETE" order="33" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="XBLNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSID" columnName="XBLNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="KUNNR_INCOMPLETE" order="34" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="KUNNR_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSID" columnName="KUNNR_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BLART_INCOMPLETE" order="35" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BLART_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSID" columnName="BLART_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="BLDAT_INCOMPLETE" order="36" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="BLDAT_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSID" columnName="BLDAT_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  
+    <measure id="GKONT_INCOMPLETE" order="37" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GKONT_INCOMPLETE"/>
+      <measureMapping columnObjectName="P_BSID" columnName="GKONT_INCOMPLETE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="TOTAL_INCOMPLETE" order="38" aggregationType="sum" measureType="simple" datatype="INTEGER" expressionLanguage="SQL">
+      <formula>case when &quot;BUKRS_INCOMPLETE&quot;+&quot;XBLNR_INCOMPLETE&quot;+&quot;KUNNR_INCOMPLETE&quot;+&quot;BLART_INCOMPLETE&quot;+&quot;BLDAT_INCOMPLETE&quot;+&quot;GKONT_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end</formula>
+      
+      
+      
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_BSID" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="229"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

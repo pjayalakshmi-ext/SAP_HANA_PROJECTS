@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.CustomerMaster.03Transformation::CV_CM_KNA1" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS" mdsCubeConversionExecution="AT_LOADING_TIME">
+<descriptions defaultDescription="CV_CM_KNA1"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNA1">
+    <resourceUri>EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNA1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_KNA1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MCOD2"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="KATR1"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BU_GROUP" datatype="NVARCHAR" length="80" expressionLanguage="SQL">
+        <formula>'Z001'</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_KTOKD" datatype="NVARCHAR" length="80" expressionLanguage="SQL">
+        <formula>'ZCUS'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.CustomerMaster.01Extraction::CV_SHE_CM_KNA1"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_KNA1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="KUNNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="CC_BU_GROUP" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_BU_GROUP"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="CC_BU_GROUP"/>
+    </attribute>
+    <attribute id="CC_KTOKD" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_KTOKD"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="CC_KTOKD"/>
+    </attribute>
+    <attribute id="NAME1" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 1"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="NAME1"/>
+    </attribute>
+    <attribute id="NAME2" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 2"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="NAME2"/>
+    </attribute>
+    <attribute id="NAME3" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 3"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="NAME3"/>
+    </attribute>
+    <attribute id="NAME4" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name 4"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="NAME4"/>
+    </attribute>
+    <attribute id="KONZS" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Group key"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="KONZS"/>
+    </attribute>
+    <attribute id="ANRED" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Title"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="ANRED"/>
+    </attribute>
+    <attribute id="SORTL" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sort field"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="SORTL"/>
+    </attribute>
+    <attribute id="MCOD2" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Search Term for Matchcode Search"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="MCOD2"/>
+    </attribute>
+    <attribute id="STRAS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="House number and street"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="STRAS"/>
+    </attribute>
+    <attribute id="ORT01" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="ORT01"/>
+    </attribute>
+    <attribute id="PSTLZ" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Postal Code"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="REGIO" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="REGIO"/>
+    </attribute>
+    <attribute id="LAND1" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country Key"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="LAND1"/>
+    </attribute>
+    <attribute id="PFACH" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PO Box"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="PFACH"/>
+    </attribute>
+    <attribute id="PSTL2" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="P.O. Box Postal Code"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="PSTL2"/>
+    </attribute>
+    <attribute id="SPRAS" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="TELF1" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="First telephone number"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="TELF1"/>
+    </attribute>
+    <attribute id="TELFX" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fax Number"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="TELFX"/>
+    </attribute>
+    <attribute id="KATR1" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Attribute 1"/>
+      <keyMapping columnObjectName="P_KNA1" columnName="KATR1"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_KNA1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="216"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_AUSP" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_AUSP">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_AUSP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT_AUSP"/>
+      <viewAttribute id="OBJEK_AUSP"/>
+      <viewAttribute id="ATINN_AUSP"/>
+      <viewAttribute id="KLART_AUSP"/>
+      <viewAttribute id="CharacteristicValue"/>
+      <viewAttribute id="FromFloatingPoint"/>
+      <viewAttribute id="FromUom"/>
+      <viewAttribute id="ToFloatingPoint"/>
+      <viewAttribute id="ToUom"/>
+      <viewAttribute id="DependencyCode"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_AUSP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT_AUSP" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJEK_AUSP" source="OBJEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATINN_AUSP" source="ATINN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KLART_AUSP" source="KLART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicValue" source="ATWRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FromFloatingPoint" source="ATFLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FromUom" source="ATAWE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ToFloatingPoint" source="ATFLB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ToUom" source="ATAW1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DependencyCode" source="ATCOD"/>
+    </input>
+    <filter>&quot;MANDT_AUSP&quot;='801' and &quot;KLART_AUSP&quot;='001'</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT_AUSP" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT_AUSP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT_AUSP"/>
+    </attribute>
+    <attribute id="OBJEK_AUSP" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OBJEK_AUSP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OBJEK_AUSP"/>
+    </attribute>
+    <attribute id="ATINN_AUSP" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ATINN_AUSP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ATINN_AUSP"/>
+    </attribute>
+    <attribute id="KLART_AUSP" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KLART_AUSP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KLART_AUSP"/>
+    </attribute>
+    <attribute id="CharacteristicValue" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CharacteristicValue"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CharacteristicValue"/>
+    </attribute>
+    <attribute id="FromFloatingPoint" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FromFloatingPoint"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FromFloatingPoint"/>
+    </attribute>
+    <attribute id="FromUom" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FromUom"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FromUom"/>
+    </attribute>
+    <attribute id="ToFloatingPoint" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ToFloatingPoint"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ToFloatingPoint"/>
+    </attribute>
+    <attribute id="ToUom" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ToUom"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ToUom"/>
+    </attribute>
+    <attribute id="DependencyCode" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DependencyCode"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DependencyCode"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

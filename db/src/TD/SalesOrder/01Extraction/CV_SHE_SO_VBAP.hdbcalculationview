@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.TD.SalesOrder.01Extraction::CV_SHE_SO_VBAP" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <descriptions defaultDescription="CA_REL_CSTEXT_VALID"/>
+  <metadata changedAt="2023-01-26 11:01:20.537"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="28"/>
+  <dataSources>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_VBAP">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_VBAP</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="LegacySalesDocument"/>
+      <viewAttribute id="SalesDocumentItem"/>
+      <viewAttribute id="MaterialNumber"/>
+      <viewAttribute id="BatchNumber"/>
+      <viewAttribute id="Plant"/>
+      <viewAttribute id="SalesDocumentItemCategory"/>
+      <viewAttribute id="ItemDescription"/>
+      <viewAttribute id="ProfitCenter"/>
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_ZSLT_SHE_VBAP">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegacySalesDocument" source="VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="POSNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MaterialNumber" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BatchNumber" source="CHARG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Plant" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItemCategory" source="PSTYV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ItemDescription" source="ARKTX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ProfitCenter" source="PRCTR"/>
+      </input>
+    <filter>&quot;MANDT&quot; = '801'</filter>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="Projection_1">
+    <descriptions/>
+    <attributes>
+      <attribute id="LegacySalesDocument" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="LegacySalesDocument"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LegacySalesDocument"/>
+      </attribute>
+      <attribute id="SalesDocumentItem" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Sales Document Item"/>
+        <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentItem"/>
+      </attribute>
+      <attribute id="MaterialNumber" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="MaterialNumber"/>
+      </attribute>
+      <attribute id="BatchNumber" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Batch Number"/>
+        <keyMapping columnObjectName="Projection_1" columnName="BatchNumber"/>
+      </attribute>
+      <attribute id="Plant" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Plant (Own or External)"/>
+        <keyMapping columnObjectName="Projection_1" columnName="Plant"/>
+      </attribute>
+      <attribute id="SalesDocumentItemCategory" order="6" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Sales document item category"/>
+        <keyMapping columnObjectName="Projection_1" columnName="SalesDocumentItemCategory"/>
+      </attribute>
+      <attribute id="ItemDescription" order="7" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Short text for sales order item"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ItemDescription"/>
+      </attribute>
+      <attribute id="ProfitCenter" order="8" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Profit Center"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ProfitCenter"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="30" y="210"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+</layout>
+</Calculation:scenario>

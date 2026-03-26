@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_KSSK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_KSSK">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_KSSK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJEK"/>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="ClassificationStatus"/>
+      <viewAttribute id="StandardClass"/>
+      <viewAttribute id="ValidFromDate"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_KSSK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="KLART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="CLINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemNumber" source="ZAEHL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassificationStatus" source="STATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="StandardClass" source="STDCL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="DATUV"/>
+    </input>
+    <filter>&quot;MANDT&quot;='801' AND &quot;ClassType&quot;='001'</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="OBJEK" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OBJEK"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OBJEK"/>
+    </attribute>
+    <attribute id="ClassType" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassType"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassType"/>
+    </attribute>
+    <attribute id="ClassName" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassName"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassName"/>
+    </attribute>
+    <attribute id="ItemNumber" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ItemNumber"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ItemNumber"/>
+    </attribute>
+    <attribute id="ClassificationStatus" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassificationStatus"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassificationStatus"/>
+    </attribute>
+    <attribute id="StandardClass" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="StandardClass"/>
+      <keyMapping columnObjectName="Projection_1" columnName="StandardClass"/>
+    </attribute>
+    <attribute id="ValidFromDate" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ValidFromDate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ValidFromDate"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_KLAH" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_KLAH">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_KLAH</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT_KLAH"/>
+      <viewAttribute id="CLINT_KLAH"/>
+      <viewAttribute id="KLART_KLAH"/>
+      <viewAttribute id="CLASS_KLAH"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_KLAH">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT_KLAH" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLINT_KLAH" source="CLINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KLART_KLAH" source="KLART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLASS_KLAH" source="CLASS"/>
+    </input>
+    <filter>&quot;MANDT_KLAH&quot;='801' and &quot;KLART_KLAH&quot;='001'</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT_KLAH" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT_KLAH"/>
+    </attribute>
+    <attribute id="CLINT_KLAH" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Internal Class Number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CLINT_KLAH"/>
+    </attribute>
+    <attribute id="KLART_KLAH" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Class Type"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KLART_KLAH"/>
+    </attribute>
+    <attribute id="CLASS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Class number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CLASS_KLAH"/>
+    </attribute></attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

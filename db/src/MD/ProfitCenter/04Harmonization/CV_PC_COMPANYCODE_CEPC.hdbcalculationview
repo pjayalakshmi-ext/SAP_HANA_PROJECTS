@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.ProfitCenter.04Harmonization::CV_PC_COMPANYCODE_CEPC" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+<origin/>
+  <descriptions defaultDescription="CV_MD_FI_PC_TEXT_DMC_CEPCT_HAR"/>
+  <metadata changedAt="2023-01-26 15:09:20.889"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="35"/>
+  <dataSources>
+    <DataSource id="EHUB.MD.ProfitCenter.03Transformation::CV_PC_COMPANYCODE_CEPC">
+      <resourceUri>EHUB.MD.ProfitCenter.03Transformation::CV_PC_COMPANYCODE_CEPC</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_REL_INPUT">
+      <resourceUri>EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_REL_INPUT</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CEPC">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.MD.ProfitCenter.03Transformation::CV_PC_COMPANYCODE_CEPC"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_REL_INPUT"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_CEPC">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="P_CEPC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      </input>
+    </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="DATBI"/>
+        <viewAttribute id="PRCTR_INPUT"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+      <viewAttribute hidden="true" id="JOIN$PRCTR$PRCTR"/>
+      <viewAttribute hidden="true" id="JOIN$DATBI$DATBI"/>
+      <viewAttribute hidden="true" id="JOIN$DATAB$DATAB"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="U_CEPC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATAB$DATAB" source="DATAB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      </input>
+      <input node="P_Remediated_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_INPUT" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATAB$DATAB" source="DATAB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      </input>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+    <joinAttribute name="JOIN$PRCTR$PRCTR"/>
+    <joinAttribute name="JOIN$DATBI$DATBI"/>
+    <joinAttribute name="JOIN$DATAB$DATAB"/>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="DATBI"/>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="PRCTR_INPUT">
+        </viewAttribute>
+      
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="Join_2"/>
+    <filter>&quot;PRCTR_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="P_Without_Remediated_data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="P_Remediated_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      </input>
+    </calculationView>
+</calculationViews>
+  <logicalModel id="U_MAIN_DELTA">
+    <descriptions/>
+    <attributes>
+      <attribute id="DATBI" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="DATBI"/>
+        <keyMapping columnObjectName="U_MAIN_DELTA" columnName="DATBI"/>
+      </attribute>
+      <attribute id="PRCTR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="PRCTR"/>
+        <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PRCTR"/>
+      </attribute>
+      <attribute id="KOKRS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="KOKRS"/>
+        <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KOKRS"/>
+      </attribute>
+      <attribute id="DATAB" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="DATAB"/>
+        <keyMapping columnObjectName="U_MAIN_DELTA" columnName="DATAB"/>
+      </attribute>
+      <attribute id="BUKRS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CC_BUKRS"/>
+        <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BUKRS"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="225" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_CEPC" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="766"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="301" y="661"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="U_CEPC" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="661"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="183" y="501"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+    <shape modelObjectName="U_CEPC" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="65" y="393"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="236" y="236"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape></shapes>
+</layout>
+</Calculation:scenario>

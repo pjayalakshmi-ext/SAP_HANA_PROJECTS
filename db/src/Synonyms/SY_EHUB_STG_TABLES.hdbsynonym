@@ -1,0 +1,454 @@
+{
+  "EHUB.Synonyms::SY_TA_BM_SHE_BNKA_RLI": {
+    "target": {
+      "object": "TA_BM_SHE_BNKA_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_SHE_CSKS_RLI": {
+    "target": {
+      "object": "TA_CC_SHE_CSKS_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_SHE_BSEC_RLI": {
+    "target": {
+      "object": "TA_AR_SHE_BSEC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_SHE_BSET_RLI": {
+    "target": {
+      "object": "TA_AR_SHE_BSET_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_SHE_BSID_RLI": {
+    "target": {
+      "object": "TA_AR_SHE_BSID_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_SHE_WITH_ITEM_RLI": {
+    "target": {
+      "object": "TA_AR_SHE_WITH_ITEM_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_SHE_BSEC_RLI": {
+    "target": {
+      "object": "TA_AP_SHE_BSEC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_SHE_BSET_RLI": {
+    "target": {
+      "object": "TA_AP_SHE_BSET_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_SHE_BSIK_RLI": {
+    "target": {
+      "object": "TA_AP_SHE_BSIK_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_SHE_WITH_ITEM_RLI": {
+    "target": {
+      "object": "TA_AP_SHE_WITH_ITEM_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_SHE_KNA1_RLI": {
+    "target": {
+      "object": "TA_CM_SHE_KNA1_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_SHE_MARA_RLI": {
+    "target": {
+      "object": "TA_MM_SHE_MARA_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_SHE_MARC_RLI": {
+    "target": {
+      "object": "TA_MM_SHE_MARC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_SHE_MARD_RLI": {
+    "target": {
+      "object": "TA_MM_SHE_MARD_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_SHE_MVKE_RLI": {
+    "target": {
+      "object": "TA_MM_SHE_MVKE_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SHE_SKA1_RLI": {
+    "target": {
+      "object": "TA_GL_SHE_SKA1_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SHE_SKB1_RLI": {
+    "target": {
+      "object": "TA_GL_SHE_SKB1_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GL_SHE_SKAT_RLI": {
+    "target": {
+      "object": "TA_GL_SHE_SKAT_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_SHE_LFA1_RLI": {
+    "target": {
+      "object": "TA_VM_SHE_LFA1_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_SHE_LFM1_RLI": {
+    "target": {
+      "object": "TA_VM_SHE_LFM1_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_SHE_BP_ROLE_RLI": {
+    "target": {
+      "object": "TA_VM_SHE_BP_ROLE_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_SHE_ANLA_RLI": {
+    "target": {
+      "object": "TA_FA_SHE_ANLA_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_SHE_EINA_RLI": {
+    "target": {
+      "object": "TA_PIR_SHE_EINA_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_SHE_EINE_RLI": {
+    "target": {
+      "object": "TA_PIR_SHE_EINE_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_SHE_EKKO_RLI": {
+    "target": {
+      "object": "TA_PO_SHE_EKKO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_SHE_EKPO_RLI": {
+    "target": {
+      "object": "TA_PO_SHE_EKPO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PO_SHE_EKKN_RLI": {
+    "target": {
+      "object": "TA_PO_SHE_EKKN_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PIR_SHE_KONP_RLI": {
+    "target": {
+      "object": "TA_PIR_SHE_KONP_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_SHE_EKKO_RLI": {
+    "target": {
+      "object": "TA_PC_SHE_EKKO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_SHE_EKPO_RLI": {
+    "target": {
+      "object": "TA_PC_SHE_EKPO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_SHE_EKKN_RLI": {
+    "target": {
+      "object": "TA_PC_SHE_EKKN_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_SHE_ADRC_RLI": {
+    "target": {
+      "object": "TA_PC_SHE_ADRC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_SHE_ANLZ_RLI": {
+    "target": {
+      "object": "TA_FA_SHE_ANLZ_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_SHE_EKKO_RLI": {
+    "target": {
+      "object": "TA_PSA_SHE_EKKO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_SHE_EKPO_RLI": {
+    "target": {
+      "object": "TA_PSA_SHE_EKPO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PSA_SHE_EKKN_RLI": {
+    "target": {
+      "object": "TA_PSA_SHE_EKKN_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_SHE_LFB1_RLI": {
+    "target": {
+      "object": "TA_VM_SHE_LFB1_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_VM_SHE_LFBK_RLI": {
+    "target": {
+      "object": "TA_VM_SHE_LFBK_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_EQ_SHE_EQUI_RLI": {
+    "target": {
+      "object": "TA_EQ_SHE_EQUI_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GLABOI_SHE_BSIS_RLI": {
+    "target": {
+      "object": "TA_GLABOI_SHE_BSIS_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_SHE_CRHD_RLI": {
+    "target": {
+      "object": "TA_WCR_SHE_CRHD_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_SHE_KAKO_RLI": {
+    "target": {
+      "object": "TA_WCR_SHE_KAKO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WCR_SHE_CRCO_RLI": {
+    "target": {
+      "object": "TA_WCR_SHE_CRCO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_SHE_AUFK_RLI": {
+    "target": {
+      "object": "TA_IO_SHE_AUFK_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_IO_SHE_COBRB_RLI": {
+    "target": {
+      "object": "TA_IO_SHE_COBRB_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AT_SHE_CSLA_RLI": {
+    "target": {
+      "object": "TA_AT_SHE_CSLA_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_SHE_PROJ_RLI": {
+    "target": {
+      "object": "TA_WB_SHE_PROJ_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_WB_SHE_PRPS_RLI": {
+    "target": {
+      "object": "TA_WB_SHE_PRPS_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_SHE_STXL_RLI": {
+    "target": {
+      "object": "TA_PC_SHE_STXL_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_SHE_CSKT_RLI": {
+    "target": {
+      "object": "TA_CC_SHE_CSKT_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_CSKT_REL_INPUT": {
+    "target": {
+      "object": "TA_CC_CSKT_REL_INPUT",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_CSKT_INC": {
+    "target": {
+      "object": "TA_CC_CSKT_INC",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_SHE_KNB1_RLI": {
+    "target": {
+      "object": "TA_CM_SHE_KNB1_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_SHE_KNBK_RLI": {
+    "target": {
+      "object": "TA_CM_SHE_KNBK_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_SHE_MASTER_CEPC_RLI": {
+    "target": {
+      "object": "TA_PC_SHE_MASTER_CEPC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_SHE_COMPANY_CEPC_RLI": {
+    "target": {
+      "object": "TA_PC_SHE_COMPANY_CEPC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_SHE_QPMK_RLI": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_SHE_QPMK_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_SHE_QPMT_RLI": {
+    "target": {
+      "object": "TA_MATERIALINSPCHAR_SHE_QPMT_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_SHE_KLAH_RLI": {
+    "target": {
+      "object": "TA_MMCLASS_SHE_KLAH_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_SHE_INOB_RLI": {
+    "target": {
+      "object": "TA_MMCLASS_SHE_INOB_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_SHE_CABN_RLI": {
+    "target": {
+      "object": "TA_MMCLASS_SHE_CABN_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_SHE_AUSP_RLI": {
+    "target": {
+      "object": "TA_MMCLASS_SHE_AUSP_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MMCLASS_SHE_KSSK_RLI": {
+    "target": {
+      "object": "TA_MMCLASS_SHE_KSSK_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SHE_VBAK_RLI": {
+    "target": {
+      "object": "TA_SO_SHE_VBAK_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SHE_VBAP_RLI": {
+    "target": {
+      "object": "TA_SO_SHE_VBAP_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SHE_VBEP_RLI": {
+    "target": {
+      "object": "TA_SO_SHE_VBEP_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SO_SHE_VBPA_RLI": {
+    "target": {
+      "object": "TA_SO_SHE_VBPA_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CM_SHE_KNVV_RLI": {
+    "target": {
+      "object": "TA_CM_SHE_KNVV_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BOM_SHE_HEADER_STKO_RLI": {
+    "target": {
+      "object": "TA_BOM_SHE_HEADER_STKO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BOM_SHE_ITEM_STPO_RLI": {
+    "target": {
+      "object": "TA_BOM_SHE_ITEM_STPO_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_ER_SHE_TCURR_RLI": {
+    "target": {
+      "object": "TA_ER_SHE_TCURR_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PV_SHE_MKAL_RLI": {
+    "target": {
+      "object": "TA_PV_SHE_MKAL_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_SHE_MKPF_RLI": {
+    "target": {
+      "object": "TA_MIB_SHE_MKPF_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_SHE_MSEG_RLI": {
+    "target": {
+      "object": "TA_MIB_SHE_MSEG_RLI",
+       "schema": "EHUB_STG"
+    }
+  }, 
+  "EHUB.Synonyms::SY_TA_SKF_SHE_TKA03_RLI": {
+    "target": {
+      "object": "TA_SKF_SHE_TKA03_RLI",
+      "schema": "EHUB_STG"
+    }
+  }
+
+
+}

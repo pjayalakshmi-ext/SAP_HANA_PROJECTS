@@ -1,0 +1,230 @@
+{
+  "EHUB.Synonyms::SY_TA_P23_GLABOI_BKPF_BSEG_PST": {
+    "target": {
+      "object": "TA_P23_GLABOI_BKPF_BSEG_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_P23_VM_LFA1_PST": {
+    "target": {
+      "object": "TA_P23_VM_LFA1_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_P23_VM_LFB1_PST": {
+    "target": {
+      "object": "TA_P23_VM_LFB1_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_P23_VM_LFBK_PST": {
+    "target": {
+      "object": "TA_P23_VM_LFBK_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_P23_VM_LFM1_PST": {
+    "target": {
+      "object": "TA_P23_VM_LFM1_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_P23_GL_SKA1_PST": {
+    "target": {
+      "object": "TA_P23_GL_SKA1_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_P23_GL_SKB1_PST": {
+    "target": {
+      "object": "TA_P23_GL_SKB1_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_P23_GL_SKAT_PST": {
+    "target": {
+      "object": "TA_P23_GL_SKAT_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_CC_P23_CSKS_PST": {
+    "target": {
+      "object": "TA_CC_P23_CSKS_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BANKMASTER_P23_BNKA_PST": {
+    "target": {
+      "object": "TA_BANKMASTER_P23_BNKA_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_P23_MASTER_CEPC_PST": {
+    "target": {
+      "object": "TA_PC_P23_MASTER_CEPC_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_P23_COMPANY_CEPC_PST": {
+    "target": {
+      "object": "TA_PC_P23_COMPANY_CEPC_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FL_P23_IFLOT_ILOA_PST": {
+    "target": {
+      "object": "TA_FL_P23_IFLOT_ILOA_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_P23_VM_BUT100_PST": {
+    "target": {
+      "object": "TA_P23_VM_BUT100_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_P23_BKPF_BSEG_PST": {
+    "target": {
+      "object": "TA_AR_P23_BKPF_BSEG_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_P23_BSEC_PST": {
+    "target": {
+      "object": "TA_AR_P23_BSEC_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_P23_BSET_PST": {
+    "target": {
+      "object": "TA_AR_P23_BSET_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AR_P23_WITH_ITEM_PST": {
+    "target": {
+      "object": "TA_AR_P23_WITH_ITEM_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_P23_BKPF_BSEG_PST": {
+    "target": {
+      "object": "TA_AP_P23_BKPF_BSEG_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_P23_BSEC_PST": {
+    "target": {
+      "object": "TA_AP_P23_BSEC_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_P23_BSET_PST": {
+    "target": {
+      "object": "TA_AP_P23_BSET_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_AP_P23_WITH_ITEM_PST": {
+    "target": {
+      "object": "TA_AP_P23_WITH_ITEM_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARA_PST": {
+    "target": {
+      "object": "TA_MM_MARA_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARC_PST": {
+    "target": {
+      "object": "TA_MM_MARC_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_MARD_PST": {
+    "target": {
+      "object": "TA_MM_MARD_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MM_WLK2_PST": {
+    "target": {
+      "object": "TA_MM_WLK2_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BOM_HEADER_PST": {
+    "target": {
+      "object": "TA_BOM_HEADER_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BOM_ITEM_PST": {
+    "target": {
+      "object": "TA_BOM_ITEM_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_ER_TCURR_PST": {
+    "target": {
+      "object": "TA_ER_TCURR_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PV_MKAL_PST": {
+    "target": {
+      "object": "TA_PV_MKAL_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_MASTER_CEPC_CREF": {
+    "target": {
+      "object": "TA_PC_MASTER_CEPC_CREF",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_PC_COMPANY_CEPC_CREF": {
+    "target": {
+      "object": "TA_PC_COMPANY_CEPC_CREF",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_P23_MATDOC_MKPF_PST": {
+    "target": {
+      "object": "TA_MIB_P23_MATDOC_MKPF_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_MIB_P23_MATDOC_MSEG_PST": {
+    "target": {
+      "object": "TA_MIB_P23_MATDOC_MSEG_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_P23_ANLA_PST": {
+    "target": {
+      "object": "TA_FA_P23_ANLA_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_P23_ANLA_POST_INFO_PST": {
+    "target": {
+      "object": "TA_FA_P23_ANLA_POST_INFO_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_FA_P23_ANLZ_TIME_INDP_PST": {
+    "target": {
+      "object": "TA_FA_P23_ANLZ_TIME_INDP_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+"EHUB.Synonyms::SY_TA_SKF_P23_TKA03_PST": {
+    "target": {
+      "object": "TA_SKF_P23_TKA03_PST",
+      "schema": "EHUB_PST"
+    }
+  }
+}

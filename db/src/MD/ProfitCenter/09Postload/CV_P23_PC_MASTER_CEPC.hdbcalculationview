@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.ProfitCenter.09Postload::CV_P23_PC_MASTER_CEPC" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+<origin/>
+  <descriptions defaultDescription="CA_REL_CS_VALID"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPCT">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPCT</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CEPC" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="DATBI"/>
+        <viewAttribute id="DATAB"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="VERAK_USER"/>
+        <viewAttribute id="VERAK"/>
+        <viewAttribute id="ABTEI"/>
+        <viewAttribute id="KHINR"/>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="ANRED"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="NAME2"/>
+        <viewAttribute id="NAME3"/>
+        <viewAttribute id="NAME4"/>
+        <viewAttribute id="STRAS"/>
+        <viewAttribute id="PSTLZ"/>
+        <viewAttribute id="PSTL2"/>
+        <viewAttribute id="PFACH"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="ORT02"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="TXJCD"/>
+        <viewAttribute id="TELBX"/>
+        <viewAttribute id="TELF1"/>
+        <viewAttribute id="TELF2"/>
+        <viewAttribute id="TELFX"/>
+        <viewAttribute id="TELTX"/>
+        <viewAttribute id="TELX1"/>
+        <viewAttribute id="DRNAM"/>
+        <viewAttribute id="SEGMENT"/>
+        <viewAttribute id="PCA_TEMPLATE"/>
+        <viewAttribute id="LOCK_IND"/>
+      </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CURRENT_DATE" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>SUBSTR(REPLACE(NOW(),'-',''),1,8)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+      <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC"/>
+    <filter>&quot;MANDT&quot; ='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CEPCT" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPCT"/>
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CEPC" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="VERAK_USER"/>
+      <viewAttribute id="VERAK"/>
+      <viewAttribute id="ABTEI"/>
+      <viewAttribute id="KHINR"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="ANRED"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="NAME2"/>
+      <viewAttribute id="NAME3"/>
+      <viewAttribute id="NAME4"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="PSTL2"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="ORT02"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="TELBX"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TELF2"/>
+      <viewAttribute id="TELFX"/>
+      <viewAttribute id="TELTX"/>
+      <viewAttribute id="TELX1"/>
+      <viewAttribute id="DRNAM"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PCA_TEMPLATE"/>
+      <viewAttribute id="LOCK_IND"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTEXT"/>
+      <viewAttribute id="LTEXT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$PRCTR$PRCTR"/>
+      <viewAttribute hidden="true" id="JOIN$DATBI$DATBI"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK_USER" source="VERAK_USER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERAK" source="VERAK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTEI" source="ABTEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KHINR" source="KHINR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANRED" source="ANRED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME3" source="NAME3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME4" source="NAME4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTL2" source="PSTL2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT02" source="ORT02"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELBX" source="TELBX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF2" source="TELF2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELFX" source="TELFX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELTX" source="TELTX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELX1" source="TELX1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRNAM" source="DRNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEGMENT" source="SEGMENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCA_TEMPLATE" source="PCA_TEMPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOCK_IND" source="LOCK_IND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <input node="P_CEPCT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTEXT" source="LTEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$PRCTR$PRCTR"/>
+    <joinAttribute name="JOIN$DATBI$DATBI"/>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="J_CEPC">
+    <descriptions/>
+    <attributes>
+      <attribute id="MANDT" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Client"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="MANDT"/>
+      </attribute>
+      <attribute id="KOKRS" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Controlling Area"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="KOKRS"/>
+      </attribute>
+      <attribute id="PRCTR" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Profit Center"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="PRCTR"/>
+      </attribute>
+      <attribute id="DATAB" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valid-From Date"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="DATAB"/>
+      </attribute>
+      <attribute id="DATBI" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Valid To Date"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="DATBI"/>
+      </attribute>
+    
+      <attribute id="SPRAS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Language Key"/>
+    
+        <keyMapping columnObjectName="J_CEPC" columnName="SPRAS"/>
+    
+      </attribute>
+      <attribute id="KTEXT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="General Name"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="KTEXT"/>
+      </attribute>
+      <attribute id="LTEXT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Long Text"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="LTEXT"/>
+      </attribute>
+    
+      <attribute id="VERAK" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Person Responsible"/>
+    
+        <keyMapping columnObjectName="J_CEPC" columnName="VERAK"/>
+    
+      </attribute>
+      <attribute id="VERAK_USER" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="User Responsible"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="VERAK_USER"/>
+      </attribute>
+      <attribute id="KHINR" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Standard Hierarchy Area"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="KHINR"/>
+      </attribute>
+      <attribute id="ABTEI" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Department"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="ABTEI"/>
+      </attribute>
+      <attribute id="SEGMENT" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Segment for Segmental Reporting"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="SEGMENT"/>
+      </attribute>
+      <attribute id="PCA_TEMPLATE" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Template for Formula Planning in Profit Centers"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="PCA_TEMPLATE"/>
+      </attribute>
+      <attribute id="ANRED" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Title"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="ANRED"/>
+      </attribute>
+      <attribute id="NAME1" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 1"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="NAME1"/>
+      </attribute>
+      <attribute id="NAME2" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 2"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="NAME2"/>
+      </attribute>
+      <attribute id="NAME3" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 3"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="NAME3"/>
+      </attribute>
+      <attribute id="NAME4" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Name 4"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="NAME4"/>
+      </attribute>
+      <attribute id="STRAS" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="House number and street"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="STRAS"/>
+      </attribute>
+      <attribute id="ORT01" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="ORT01"/>
+      </attribute>
+      <attribute id="ORT02" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="District"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="ORT02"/>
+      </attribute>
+      <attribute id="LAND1" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Country Key"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="LAND1"/>
+      </attribute>
+      <attribute id="TELBX" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Telebox number"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="TELBX"/>
+      </attribute>
+      <attribute id="TELF1" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="First telephone number"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="TELF1"/>
+      </attribute>
+      <attribute id="TELF2" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Second telephone number"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="TELF2"/>
+      </attribute>
+      <attribute id="TELFX" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fax Number"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="TELFX"/>
+      </attribute>
+      <attribute id="TELTX" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Teletex number"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="TELTX"/>
+      </attribute>
+      <attribute id="TELX1" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Telex number"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="TELX1"/>
+      </attribute>
+      <attribute id="DRNAM" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Printer destination for CCtr report"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="DRNAM"/>
+      </attribute>
+      <attribute id="TXJCD" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax Jurisdiction"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="TXJCD"/>
+      </attribute>
+      <attribute id="PFACH" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PO Box"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="PFACH"/>
+      </attribute>
+      <attribute id="PSTLZ" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Postal Code"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="PSTLZ"/>
+      </attribute>
+      <attribute id="PSTL2" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="P.O. Box Postal Code"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="PSTL2"/>
+      </attribute>
+      <attribute id="REGIO" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Region (State, Province, County)"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="REGIO"/>
+      </attribute>
+      <attribute id="LOCK_IND" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Lock indicator"/>
+        <keyMapping columnObjectName="J_CEPC" columnName="LOCK_IND"/>
+      </attribute></attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="221" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_CEPC" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="376"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+  
+    <shape expanded="true" modelObjectName="P_CEPCT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_CEPC" modelObjectNameSpace="J_CEPC" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="P_CEPCT" modelObjectNameSpace="J_CEPC" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

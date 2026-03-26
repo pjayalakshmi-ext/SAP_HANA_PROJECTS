@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.AROpenItem.01Extraction::CV_SHE_AR_WITH_ITEM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_SHE_AR_WITH_ITEM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_WITH_ITEM">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_WITH_ITEM</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.TD.AROpenItem.01Extraction::CV_SHE_AR_BSID">
+    <resourceUri>EHUB.TD.AROpenItem.01Extraction::CV_SHE_AR_BSID</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_WITH_ITEM">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="WITHT"/>
+      <viewAttribute id="WT_WITHCD"/>
+      <viewAttribute id="WT_QSSHB"/>
+      <viewAttribute id="WT_QBUIHB"/>
+      <viewAttribute id="WT_WWRBTR"/>
+      <viewAttribute id="WT_QSSHH"/>
+      <viewAttribute id="WT_QBUIHH"/>
+      <viewAttribute id="WT_WDMBTR"/>
+      <viewAttribute id="WT_QSSH2"/>
+      <viewAttribute id="WT_QBUIH2"/>
+      <viewAttribute id="WT_WDMBT2"/>
+    
+      <viewAttribute id="WT_QSSH3"/>
+      <viewAttribute id="WT_QBUIH3"/>
+      <viewAttribute id="WT_WDMBT3"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_WITH_ITEM"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSID">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.AROpenItem.01Extraction::CV_SHE_AR_BSID"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_WITHELD_TAX" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="GJAHR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="WITHT"/>
+      <viewAttribute id="WT_WITHCD"/>
+      <viewAttribute id="WT_QSSHB"/>
+      <viewAttribute id="WT_QBUIHB"/>
+      <viewAttribute id="WT_WWRBTR"/>
+      <viewAttribute id="WT_QSSHH"/>
+      <viewAttribute id="WT_QBUIHH"/>
+      <viewAttribute id="WT_WDMBTR"/>
+      <viewAttribute id="WT_QSSH2"/>
+      <viewAttribute id="WT_QBUIH2"/>
+      <viewAttribute id="WT_WDMBT2"/>
+      <viewAttribute id="WT_QSSH3"/>
+      <viewAttribute id="WT_QBUIH3"/>
+      <viewAttribute id="WT_WDMBT3"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$BELNR$BELNR"/>
+      <viewAttribute hidden="true" id="JOIN$GJAHR$GJAHR"/>
+      <viewAttribute hidden="true" id="JOIN$BUZEI$BUZEI"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_BSID">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GJAHR$GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUZEI$BUZEI" source="BUZEI"/>
+    </input>
+    <input node="P_WITH_ITEM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WITHT" source="WITHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WITHCD" source="WT_WITHCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSHH" source="WT_QSSHH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSHB" source="WT_QSSHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBTR" source="WT_WDMBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WWRBTR" source="WT_WWRBTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIHH" source="WT_QBUIHH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIHB" source="WT_QBUIHB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSH2" source="WT_QSSH2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIH2" source="WT_QBUIH2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBT2" source="WT_WDMBT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QSSH3" source="WT_QSSH3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_QBUIH3" source="WT_QBUIH3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WT_WDMBT3" source="WT_WDMBT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GJAHR$GJAHR" source="GJAHR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUZEI$BUZEI" source="BUZEI"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+    <joinAttribute name="JOIN$BELNR$BELNR"/>
+    <joinAttribute name="JOIN$GJAHR$GJAHR"/>
+    <joinAttribute name="JOIN$BUZEI$BUZEI"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_WITHELD_TAX">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="BELNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Accounting Document Number"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="BELNR"/>
+    </attribute>
+    <attribute id="GJAHR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fiscal Year"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="GJAHR"/>
+    </attribute>
+    <attribute id="BUZEI" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Line Item Within Accounting Document"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="KUNNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customer Number"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="XBLNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Reference Document Number"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="WITHT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator for withholding tax type"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WITHT"/>
+    </attribute>
+    <attribute id="WT_WITHCD" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax code"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_WITHCD"/>
+    </attribute>
+    <attribute id="WT_QSSHB" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax base amount in document currency"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_QSSHB"/>
+    </attribute>
+    <attribute id="WT_QBUIHB" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Enter withholding tax amount in document currency manually"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_QBUIHB"/>
+    </attribute>
+    <attribute id="WT_WWRBTR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax amount already withheld in document currency"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_WWRBTR"/>
+    </attribute>
+    <attribute id="WT_QSSHH" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax base amount (local currency)"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_QSSHH"/>
+    </attribute>
+    <attribute id="WT_QBUIHH" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Enter withholding tax amount in local currency manually"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_QBUIHH"/>
+    </attribute>
+    <attribute id="WT_WDMBTR" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax amount (in local currency) already withheld"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_WDMBTR"/>
+    </attribute>
+    <attribute id="WT_QSSH2" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax base amount in 2nd local currency"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_QSSH2"/>
+    </attribute>
+    <attribute id="WT_QBUIH2" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Manually entered with/tax amount in 2nd local currency"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_QBUIH2"/>
+    </attribute>
+    <attribute id="WT_WDMBT2" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax amount already withheld in 2nd local curr."/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_WDMBT2"/>
+    </attribute>
+  
+    <attribute id="WT_QSSH3" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Withholding tax base amount in 3rd local currency"/>
+  
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_QSSH3"/>
+  
+    </attribute>
+    <attribute id="WT_QBUIH3" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="With/tax amount in 3rd local currency entered manually"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_QBUIH3"/>
+    </attribute>
+    <attribute id="WT_WDMBT3" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="With/tax amount already withheld in 3rd local currency"/>
+      <keyMapping columnObjectName="J_WITHELD_TAX" columnName="WT_WDMBT3"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="P_WITH_ITEM" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_BSID" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_WITHELD_TAX" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_BSID" modelObjectNameSpace="J_WITHELD_TAX" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="P_WITH_ITEM" modelObjectNameSpace="J_WITHELD_TAX" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="153"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

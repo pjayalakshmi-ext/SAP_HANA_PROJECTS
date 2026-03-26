@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.Vendor Master.04Harmonization::CV_VENDORMASTER_LFM1" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_VM_LFM1_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_VM_LFM1_REL_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.Vendor Master.03Transformation::CV_VENDORMASTER_LFM1">
+    <resourceUri>EHUB.MD.Vendor Master.03Transformation::CV_VENDORMASTER_LFM1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MINBW"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="KZABS"/>
+      <viewAttribute id="KALSK"/>
+      <viewAttribute id="KZAUT"/>
+      <viewAttribute id="EXPVZ"/>
+      <viewAttribute id="ZOLLA"/>
+      <viewAttribute id="MEPRF"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="XERSY"/>
+      <viewAttribute id="PLIFZ"/>
+      <viewAttribute id="MRPPP"/>
+      <viewAttribute id="LFRHY"/>
+      <viewAttribute id="LIBES"/>
+      <viewAttribute id="LIPRE"/>
+      <viewAttribute id="LISER"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="NRGEW"/>
+      <viewAttribute id="BOIND"/>
+      <viewAttribute id="BLIND"/>
+      <viewAttribute id="KZRET"/>
+      <viewAttribute id="SKRIT"/>
+      <viewAttribute id="BSTAE"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="MEGRU"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="BOPNR"/>
+      <viewAttribute id="XERSR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ABUEB"/>
+      <viewAttribute id="PAPRF"/>
+      <viewAttribute id="AGREL"/>
+      <viewAttribute id="XNBWY"/>
+      <viewAttribute id="VSBED"/>
+      <viewAttribute id="LEBRE"/>
+      <viewAttribute id="BOLRE"/>
+      <viewAttribute id="UMSAE"/>
+      <viewAttribute id="VENDOR_RMA_REQ"/>
+      <viewAttribute id="J_1NBOESL"/>
+      <viewAttribute id="AUBEL"/>
+      <viewAttribute id="VALID_PRO"/>
+      <viewAttribute id="HSCABS"/>
+      <viewAttribute id="HSCPE"/>
+      <viewAttribute id="HSCMIN"/>
+      <viewAttribute id="HSCMAX"/>
+      <viewAttribute id="UPPRS"/>
+      <viewAttribute id="ACTIVITY_PROFIL"/>
+      <viewAttribute id="TRANSPORT_CHAIN"/>
+      <viewAttribute id="STAGING_TIME"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_VM_LFM1_REL_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="XERSY"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="KZRET"/>
+      <viewAttribute id="XERSR"/>
+      <viewAttribute id="KZABS"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MINBW"/>
+      <viewAttribute id="KALSK"/>
+      <viewAttribute id="KZAUT"/>
+      <viewAttribute id="EXPVZ"/>
+      <viewAttribute id="ZOLLA"/>
+      <viewAttribute id="MEPRF"/>
+      <viewAttribute id="PLIFZ"/>
+      <viewAttribute id="MRPPP"/>
+      <viewAttribute id="LFRHY"/>
+      <viewAttribute id="LIBES"/>
+      <viewAttribute id="LIPRE"/>
+      <viewAttribute id="LISER"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="NRGEW"/>
+      <viewAttribute id="BOIND"/>
+      <viewAttribute id="BLIND"/>
+      <viewAttribute id="SKRIT"/>
+      <viewAttribute id="BSTAE"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="MEGRU"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="BOPNR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ABUEB"/>
+      <viewAttribute id="PAPRF"/>
+      <viewAttribute id="AGREL"/>
+      <viewAttribute id="XNBWY"/>
+      <viewAttribute id="VSBED"/>
+      <viewAttribute id="LEBRE"/>
+      <viewAttribute id="BOLRE"/>
+      <viewAttribute id="UMSAE"/>
+      <viewAttribute id="VENDOR_RMA_REQ"/>
+      <viewAttribute id="J_1NBOESL"/>
+      <viewAttribute id="AUBEL"/>
+      <viewAttribute id="VALID_PRO"/>
+      <viewAttribute id="HSCABS"/>
+      <viewAttribute id="HSCPE"/>
+      <viewAttribute id="HSCMIN"/>
+      <viewAttribute id="HSCMAX"/>
+      <viewAttribute id="UPPRS"/>
+      <viewAttribute id="ACTIVITY_PROFIL"/>
+      <viewAttribute id="TRANSPORT_CHAIN"/>
+      <viewAttribute id="STAGING_TIME"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.Vendor Master.03Transformation::CV_VENDORMASTER_LFM1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="XERSY"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="KZRET"/>
+      <viewAttribute id="XERSR"/>
+      <viewAttribute id="KZABS"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MINBW"/>
+      <viewAttribute id="KALSK"/>
+      <viewAttribute id="KZAUT"/>
+      <viewAttribute id="EXPVZ"/>
+      <viewAttribute id="ZOLLA"/>
+      <viewAttribute id="MEPRF"/>
+      <viewAttribute id="PLIFZ"/>
+      <viewAttribute id="MRPPP"/>
+      <viewAttribute id="LFRHY"/>
+      <viewAttribute id="LIBES"/>
+      <viewAttribute id="LIPRE"/>
+      <viewAttribute id="LISER"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="NRGEW"/>
+      <viewAttribute id="BOIND"/>
+      <viewAttribute id="BLIND"/>
+      <viewAttribute id="SKRIT"/>
+      <viewAttribute id="BSTAE"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="MEGRU"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="BOPNR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ABUEB"/>
+      <viewAttribute id="PAPRF"/>
+      <viewAttribute id="AGREL"/>
+      <viewAttribute id="XNBWY"/>
+      <viewAttribute id="VSBED"/>
+      <viewAttribute id="LEBRE"/>
+      <viewAttribute id="BOLRE"/>
+      <viewAttribute id="UMSAE"/>
+      <viewAttribute id="VENDOR_RMA_REQ"/>
+      <viewAttribute id="J_1NBOESL"/>
+      <viewAttribute id="AUBEL"/>
+      <viewAttribute id="VALID_PRO"/>
+      <viewAttribute id="HSCABS"/>
+      <viewAttribute id="HSCPE"/>
+      <viewAttribute id="HSCMIN"/>
+      <viewAttribute id="HSCMAX"/>
+      <viewAttribute id="UPPRS"/>
+      <viewAttribute id="ACTIVITY_PROFIL"/>
+      <viewAttribute id="TRANSPORT_CHAIN"/>
+      <viewAttribute id="STAGING_TIME"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSY" source="XERSY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZRET" source="KZRET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSR" source="XERSR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZABS" source="KZABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM" source="SPERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MINBW" source="MINBW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSK" source="KALSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZAUT" source="KZAUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXPVZ" source="EXPVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZOLLA" source="ZOLLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEPRF" source="MEPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIFZ" source="PLIFZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MRPPP" source="MRPPP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFRHY" source="LFRHY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIBES" source="LIBES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIPRE" source="LIPRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LISER" source="LISER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NRGEW" source="NRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOIND" source="BOIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLIND" source="BLIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKRIT" source="SKRIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTAE" source="BSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEGRU" source="MEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOPNR" source="BOPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABUEB" source="ABUEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPRF" source="PAPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGREL" source="AGREL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XNBWY" source="XNBWY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSBED" source="VSBED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEBRE" source="LEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOLRE" source="BOLRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMSAE" source="UMSAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDOR_RMA_REQ" source="VENDOR_RMA_REQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1NBOESL" source="J_1NBOESL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUBEL" source="AUBEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALID_PRO" source="VALID_PRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCABS" source="HSCABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCPE" source="HSCPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMIN" source="HSCMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMAX" source="HSCMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UPPRS" source="UPPRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTIVITY_PROFIL" source="ACTIVITY_PROFIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRANSPORT_CHAIN" source="TRANSPORT_CHAIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGING_TIME" source="STAGING_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="XERSY"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="KZRET"/>
+      <viewAttribute id="XERSR"/>
+      <viewAttribute id="KZABS"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MINBW"/>
+      <viewAttribute id="KALSK"/>
+      <viewAttribute id="KZAUT"/>
+      <viewAttribute id="EXPVZ"/>
+      <viewAttribute id="ZOLLA"/>
+      <viewAttribute id="MEPRF"/>
+      <viewAttribute id="PLIFZ"/>
+      <viewAttribute id="MRPPP"/>
+      <viewAttribute id="LFRHY"/>
+      <viewAttribute id="LIBES"/>
+      <viewAttribute id="LIPRE"/>
+      <viewAttribute id="LISER"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="NRGEW"/>
+      <viewAttribute id="BOIND"/>
+      <viewAttribute id="BLIND"/>
+      <viewAttribute id="SKRIT"/>
+      <viewAttribute id="BSTAE"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="MEGRU"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="BOPNR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ABUEB"/>
+      <viewAttribute id="PAPRF"/>
+      <viewAttribute id="AGREL"/>
+      <viewAttribute id="XNBWY"/>
+      <viewAttribute id="VSBED"/>
+      <viewAttribute id="LEBRE"/>
+      <viewAttribute id="BOLRE"/>
+      <viewAttribute id="UMSAE"/>
+      <viewAttribute id="VENDOR_RMA_REQ"/>
+      <viewAttribute id="J_1NBOESL"/>
+      <viewAttribute id="AUBEL"/>
+      <viewAttribute id="VALID_PRO"/>
+      <viewAttribute id="HSCABS"/>
+      <viewAttribute id="HSCPE"/>
+      <viewAttribute id="HSCMIN"/>
+      <viewAttribute id="HSCMAX"/>
+      <viewAttribute id="UPPRS"/>
+      <viewAttribute id="ACTIVITY_PROFIL"/>
+      <viewAttribute id="TRANSPORT_CHAIN"/>
+      <viewAttribute id="STAGING_TIME"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="LIFNR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR$LIFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSY" source="XERSY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZRET" source="KZRET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSR" source="XERSR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZABS" source="KZABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM" source="SPERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MINBW" source="MINBW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSK" source="KALSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZAUT" source="KZAUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXPVZ" source="EXPVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZOLLA" source="ZOLLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEPRF" source="MEPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIFZ" source="PLIFZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MRPPP" source="MRPPP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFRHY" source="LFRHY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIBES" source="LIBES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIPRE" source="LIPRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LISER" source="LISER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NRGEW" source="NRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOIND" source="BOIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLIND" source="BLIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKRIT" source="SKRIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTAE" source="BSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEGRU" source="MEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOPNR" source="BOPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABUEB" source="ABUEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPRF" source="PAPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGREL" source="AGREL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XNBWY" source="XNBWY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSBED" source="VSBED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEBRE" source="LEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOLRE" source="BOLRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMSAE" source="UMSAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDOR_RMA_REQ" source="VENDOR_RMA_REQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1NBOESL" source="J_1NBOESL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUBEL" source="AUBEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALID_PRO" source="VALID_PRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCABS" source="HSCABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCPE" source="HSCPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMIN" source="HSCMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMAX" source="HSCMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UPPRS" source="UPPRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTIVITY_PROFIL" source="ACTIVITY_PROFIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRANSPORT_CHAIN" source="TRANSPORT_CHAIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGING_TIME" source="STAGING_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$LIFNR" source="LIFNR"/>
+    </input>
+    <input node="P_Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_INPUT" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$LIFNR" source="LIFNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$LIFNR$LIFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="XERSY"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="KZRET"/>
+      <viewAttribute id="XERSR"/>
+      <viewAttribute id="KZABS"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MINBW"/>
+      <viewAttribute id="KALSK"/>
+      <viewAttribute id="KZAUT"/>
+      <viewAttribute id="EXPVZ"/>
+      <viewAttribute id="ZOLLA"/>
+      <viewAttribute id="MEPRF"/>
+      <viewAttribute id="PLIFZ"/>
+      <viewAttribute id="MRPPP"/>
+      <viewAttribute id="LFRHY"/>
+      <viewAttribute id="LIBES"/>
+      <viewAttribute id="LIPRE"/>
+      <viewAttribute id="LISER"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="NRGEW"/>
+      <viewAttribute id="BOIND"/>
+      <viewAttribute id="BLIND"/>
+      <viewAttribute id="SKRIT"/>
+      <viewAttribute id="BSTAE"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="MEGRU"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="BOPNR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ABUEB"/>
+      <viewAttribute id="PAPRF"/>
+      <viewAttribute id="AGREL"/>
+      <viewAttribute id="XNBWY"/>
+      <viewAttribute id="VSBED"/>
+      <viewAttribute id="LEBRE"/>
+      <viewAttribute id="BOLRE"/>
+      <viewAttribute id="UMSAE"/>
+      <viewAttribute id="VENDOR_RMA_REQ"/>
+      <viewAttribute id="J_1NBOESL"/>
+      <viewAttribute id="AUBEL"/>
+      <viewAttribute id="VALID_PRO"/>
+      <viewAttribute id="HSCABS"/>
+      <viewAttribute id="HSCPE"/>
+      <viewAttribute id="HSCMIN"/>
+      <viewAttribute id="HSCMAX"/>
+      <viewAttribute id="UPPRS"/>
+      <viewAttribute id="ACTIVITY_PROFIL"/>
+      <viewAttribute id="TRANSPORT_CHAIN"/>
+      <viewAttribute id="STAGING_TIME"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="LIFNR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+    <filter>&quot;LIFNR_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="XERSY"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="KZRET"/>
+      <viewAttribute id="XERSR"/>
+      <viewAttribute id="KZABS"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="SPERM"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MINBW"/>
+      <viewAttribute id="KALSK"/>
+      <viewAttribute id="KZAUT"/>
+      <viewAttribute id="EXPVZ"/>
+      <viewAttribute id="ZOLLA"/>
+      <viewAttribute id="MEPRF"/>
+      <viewAttribute id="PLIFZ"/>
+      <viewAttribute id="MRPPP"/>
+      <viewAttribute id="LFRHY"/>
+      <viewAttribute id="LIBES"/>
+      <viewAttribute id="LIPRE"/>
+      <viewAttribute id="LISER"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="NRGEW"/>
+      <viewAttribute id="BOIND"/>
+      <viewAttribute id="BLIND"/>
+      <viewAttribute id="SKRIT"/>
+      <viewAttribute id="BSTAE"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="MEGRU"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="BOPNR"/>
+      <viewAttribute id="EIKTO"/>
+      <viewAttribute id="ABUEB"/>
+      <viewAttribute id="PAPRF"/>
+      <viewAttribute id="AGREL"/>
+      <viewAttribute id="XNBWY"/>
+      <viewAttribute id="VSBED"/>
+      <viewAttribute id="LEBRE"/>
+      <viewAttribute id="BOLRE"/>
+      <viewAttribute id="UMSAE"/>
+      <viewAttribute id="VENDOR_RMA_REQ"/>
+      <viewAttribute id="J_1NBOESL"/>
+      <viewAttribute id="AUBEL"/>
+      <viewAttribute id="VALID_PRO"/>
+      <viewAttribute id="HSCABS"/>
+      <viewAttribute id="HSCPE"/>
+      <viewAttribute id="HSCMIN"/>
+      <viewAttribute id="HSCMAX"/>
+      <viewAttribute id="UPPRS"/>
+      <viewAttribute id="ACTIVITY_PROFIL"/>
+      <viewAttribute id="TRANSPORT_CHAIN"/>
+      <viewAttribute id="STAGING_TIME"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Without_Remediated_data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSY" source="XERSY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZRET" source="KZRET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSR" source="XERSR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZABS" source="KZABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM" source="SPERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MINBW" source="MINBW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSK" source="KALSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZAUT" source="KZAUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXPVZ" source="EXPVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZOLLA" source="ZOLLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEPRF" source="MEPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIFZ" source="PLIFZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MRPPP" source="MRPPP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFRHY" source="LFRHY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIBES" source="LIBES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIPRE" source="LIPRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LISER" source="LISER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NRGEW" source="NRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOIND" source="BOIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLIND" source="BLIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKRIT" source="SKRIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTAE" source="BSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEGRU" source="MEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOPNR" source="BOPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABUEB" source="ABUEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPRF" source="PAPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGREL" source="AGREL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XNBWY" source="XNBWY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSBED" source="VSBED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEBRE" source="LEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOLRE" source="BOLRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMSAE" source="UMSAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDOR_RMA_REQ" source="VENDOR_RMA_REQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1NBOESL" source="J_1NBOESL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUBEL" source="AUBEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALID_PRO" source="VALID_PRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCABS" source="HSCABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCPE" source="HSCPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMIN" source="HSCMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMAX" source="HSCMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UPPRS" source="UPPRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTIVITY_PROFIL" source="ACTIVITY_PROFIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRANSPORT_CHAIN" source="TRANSPORT_CHAIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGING_TIME" source="STAGING_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    </input>
+    <input node="P_Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSY" source="XERSY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZRET" source="KZRET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XERSR" source="XERSR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZABS" source="KZABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM" source="SPERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MINBW" source="MINBW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KALSK" source="KALSK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KZAUT" source="KZAUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXPVZ" source="EXPVZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZOLLA" source="ZOLLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEPRF" source="MEPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLIFZ" source="PLIFZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MRPPP" source="MRPPP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFRHY" source="LFRHY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIBES" source="LIBES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIPRE" source="LIPRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LISER" source="LISER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NRGEW" source="NRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOIND" source="BOIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLIND" source="BLIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKRIT" source="SKRIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTAE" source="BSTAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RDPRF" source="RDPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEGRU" source="MEGRU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOPNR" source="BOPNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EIKTO" source="EIKTO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABUEB" source="ABUEB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAPRF" source="PAPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGREL" source="AGREL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XNBWY" source="XNBWY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSBED" source="VSBED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEBRE" source="LEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BOLRE" source="BOLRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMSAE" source="UMSAE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDOR_RMA_REQ" source="VENDOR_RMA_REQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1NBOESL" source="J_1NBOESL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AUBEL" source="AUBEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VALID_PRO" source="VALID_PRO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCABS" source="HSCABS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCPE" source="HSCPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMIN" source="HSCMIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HSCMAX" source="HSCMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UPPRS" source="UPPRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTIVITY_PROFIL" source="ACTIVITY_PROFIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TRANSPORT_CHAIN" source="TRANSPORT_CHAIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAGING_TIME" source="STAGING_TIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="LIFNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Account Number"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="EKORG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing Organization"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="EKORG"/>
+    </attribute>
+    <attribute id="EKGRP" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing Group"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="EKGRP"/>
+    </attribute>
+    <attribute id="WAERS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchase order currency"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="WAERS"/>
+    </attribute>
+    <attribute id="ZTERM" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment Key"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="XERSY" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Evaluated Receipt Settlement (ERS)"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="XERSY"/>
+    </attribute>
+    <attribute id="INCO1" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms (Part 1)"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="INCO1"/>
+    </attribute>
+    <attribute id="INCO2" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms (Part 2)"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="INCO2"/>
+    </attribute>
+    <attribute id="WEBRE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: GR-Based Invoice Verification"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="WEBRE"/>
+    </attribute>
+    <attribute id="KZRET" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicates whether vendor is returns vendor"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KZRET"/>
+    </attribute>
+    <attribute id="XERSR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Automatic evaluated receipt settlement for return items"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="XERSR"/>
+    </attribute>
+    <attribute id="KZABS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Order Acknowledgment Requirement"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KZABS"/>
+    </attribute>
+    <attribute id="ERDAT" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date on Which Record Was Created"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ERDAT"/>
+    </attribute>
+    <attribute id="ERNAM" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name of Person who Created the Object"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ERNAM"/>
+    </attribute>
+    <attribute id="SPERM" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing block at purchasing organization level"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SPERM"/>
+    </attribute>
+    <attribute id="LOEVM" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delete flag for vendor at purchasing level"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LOEVM"/>
+    </attribute>
+    <attribute id="LFABC" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABC indicator"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LFABC"/>
+    </attribute>
+    <attribute id="VERKF" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Responsible Salesperson at Vendor&apos;s Office"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VERKF"/>
+    </attribute>
+    <attribute id="TELF1" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor&apos;s telephone number"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="TELF1"/>
+    </attribute>
+    <attribute id="MINBW" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum order value"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MINBW"/>
+    </attribute>
+    <attribute id="KALSK" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Group for Calculation Schema (Vendor)"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KALSK"/>
+    </attribute>
+    <attribute id="KZAUT" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Automatic Generation of Purchase Order Allowed"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KZAUT"/>
+    </attribute>
+    <attribute id="EXPVZ" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Mode of Transport for Foreign Trade"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="EXPVZ"/>
+    </attribute>
+    <attribute id="ZOLLA" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Customs Office: Office of Exit/Entry for Foreign Trade"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ZOLLA"/>
+    </attribute>
+    <attribute id="MEPRF" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Price Determination (Pricing) Date Control"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MEPRF"/>
+    </attribute>
+    <attribute id="PLIFZ" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planned Delivery Time in Days"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PLIFZ"/>
+    </attribute>
+    <attribute id="MRPPP" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planning calendar"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MRPPP"/>
+    </attribute>
+    <attribute id="LFRHY" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planning cycle"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LFRHY"/>
+    </attribute>
+    <attribute id="LIBES" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Order entry by vendor"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LIBES"/>
+    </attribute>
+    <attribute id="LIPRE" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Price marking, vendor"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LIPRE"/>
+    </attribute>
+    <attribute id="LISER" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rack-jobbing: vendor"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LISER"/>
+    </attribute>
+    <attribute id="PRFRE" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: &quot;relev. to price determination (vend. hierarchy)"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PRFRE"/>
+    </attribute>
+    <attribute id="NRGEW" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator whether discount in kind granted"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="NRGEW"/>
+    </attribute>
+    <attribute id="BOIND" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: index compilation for subseq. settlement active"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BOIND"/>
+    </attribute>
+    <attribute id="BLIND" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Doc. index compilation active for purchase orders"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BLIND"/>
+    </attribute>
+    <attribute id="SKRIT" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor sort criterion for materials"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SKRIT"/>
+    </attribute>
+    <attribute id="BSTAE" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Confirmation Control Key"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BSTAE"/>
+    </attribute>
+    <attribute id="RDPRF" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rounding Profile"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="RDPRF"/>
+    </attribute>
+    <attribute id="MEGRU" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of Measure Group"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MEGRU"/>
+    </attribute>
+    <attribute id="VENSL" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor service level"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VENSL"/>
+    </attribute>
+    <attribute id="BOPNR" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Restriction Profile for PO-Based Load Building"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BOPNR"/>
+    </attribute>
+    <attribute id="EIKTO" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Our account number with the vendor"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="EIKTO"/>
+    </attribute>
+    <attribute id="ABUEB" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Release Creation Profile"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ABUEB"/>
+    </attribute>
+    <attribute id="PAPRF" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Profile for transferring material data via IDoc PROACT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PAPRF"/>
+    </attribute>
+    <attribute id="AGREL" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Relevant for agency business"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="AGREL"/>
+    </attribute>
+    <attribute id="XNBWY" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Revaluation allowed"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="XNBWY"/>
+    </attribute>
+    <attribute id="VSBED" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Shipping Conditions"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VSBED"/>
+    </attribute>
+    <attribute id="LEBRE" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator for Service-Based Invoice Verification"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="LEBRE"/>
+    </attribute>
+    <attribute id="BOLRE" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: vendor subject to subseq. settlement accounting"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BOLRE"/>
+    </attribute>
+    <attribute id="UMSAE" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Comparison/agreement of business volumes necessary"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="UMSAE"/>
+    </attribute>
+    <attribute id="VENDOR_RMA_REQ" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor RMA Number Required"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VENDOR_RMA_REQ"/>
+    </attribute>
+    <attribute id="J_1NBOESL" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Exchange Key for NF Processing"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="J_1NBOESL"/>
+    </attribute>
+    <attribute id="AUBEL" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Automatic debit creation on goods issue"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="AUBEL"/>
+    </attribute>
+    <attribute id="VALID_PRO" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Settlement profile for automatic evaluated receipt settlemnt"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="VALID_PRO"/>
+    </attribute>
+    <attribute id="HSCABS" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Absolute handling surcharge"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HSCABS"/>
+    </attribute>
+    <attribute id="HSCPE" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Percentage handling surcharge"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HSCPE"/>
+    </attribute>
+    <attribute id="HSCMIN" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum handling surcharge"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HSCMIN"/>
+    </attribute>
+    <attribute id="HSCMAX" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Maximum handling surcharge"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HSCMAX"/>
+    </attribute>
+    <attribute id="UPPRS" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Pricing on Subitems (MPN/SUS)"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="UPPRS"/>
+    </attribute>
+    <attribute id="ACTIVITY_PROFIL" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity Profile for PO Controlling"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ACTIVITY_PROFIL"/>
+    </attribute>
+    <attribute id="TRANSPORT_CHAIN" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Transportation Chain"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="TRANSPORT_CHAIN"/>
+    </attribute>
+    <attribute id="STAGING_TIME" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Staging Time in Days"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="STAGING_TIME"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="CURRENT_DATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="332" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="364"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="332" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

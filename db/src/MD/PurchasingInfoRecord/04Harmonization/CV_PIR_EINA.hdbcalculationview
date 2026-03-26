@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.PurchasingInfoRecord.04Harmonization::CV_PIR_EINA" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_PIR_EINA.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.PurchasingInfoRecord.03Transformation::CV_PIR_EINA">
+    <resourceUri>EHUB.MD.PurchasingInfoRecord.03Transformation::CV_PIR_EINA</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_PIR_EINA_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_PIR_EINA_REL_INPUT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="TXZ01"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="UMREZ"/>
+      <viewAttribute id="UMREN"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MAHN1"/>
+      <viewAttribute id="MAHN2"/>
+      <viewAttribute id="MAHN3"/>
+      <viewAttribute id="URZNR"/>
+      <viewAttribute id="URZDT"/>
+      <viewAttribute id="URZLA"/>
+      <viewAttribute id="URZTP"/>
+      <viewAttribute id="URZZT"/>
+      <viewAttribute id="LMEIN"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="LTSNR"/>
+      <viewAttribute id="LTSSF"/>
+      <viewAttribute id="WGLIF"/>
+      <viewAttribute id="RUECK"/>
+      <viewAttribute id="LIFAB"/>
+      <viewAttribute id="LIFBI"/>
+      <viewAttribute id="KOLIF"/>
+      <viewAttribute id="ANZPU"/>
+      <viewAttribute id="PUNEI"/>
+      <viewAttribute id="RELIF"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.PurchasingInfoRecord.03Transformation::CV_PIR_EINA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="TXZ01"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="UMREZ"/>
+      <viewAttribute id="UMREN"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MAHN1"/>
+      <viewAttribute id="MAHN2"/>
+      <viewAttribute id="MAHN3"/>
+      <viewAttribute id="URZNR"/>
+      <viewAttribute id="URZDT"/>
+      <viewAttribute id="URZLA"/>
+      <viewAttribute id="URZTP"/>
+      <viewAttribute id="URZZT"/>
+      <viewAttribute id="LMEIN"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="LTSNR"/>
+      <viewAttribute id="LTSSF"/>
+      <viewAttribute id="WGLIF"/>
+      <viewAttribute id="RUECK"/>
+      <viewAttribute id="LIFAB"/>
+      <viewAttribute id="LIFBI"/>
+      <viewAttribute id="KOLIF"/>
+      <viewAttribute id="ANZPU"/>
+      <viewAttribute id="PUNEI"/>
+      <viewAttribute id="RELIF"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_PIR_EINA_REL_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="TXZ01"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="UMREZ"/>
+      <viewAttribute id="UMREN"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MAHN1"/>
+      <viewAttribute id="MAHN2"/>
+      <viewAttribute id="MAHN3"/>
+      <viewAttribute id="URZNR"/>
+      <viewAttribute id="URZDT"/>
+      <viewAttribute id="URZLA"/>
+      <viewAttribute id="URZTP"/>
+      <viewAttribute id="URZZT"/>
+      <viewAttribute id="LMEIN"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="LTSNR"/>
+      <viewAttribute id="LTSSF"/>
+      <viewAttribute id="WGLIF"/>
+      <viewAttribute id="RUECK"/>
+      <viewAttribute id="LIFAB"/>
+      <viewAttribute id="LIFBI"/>
+      <viewAttribute id="KOLIF"/>
+      <viewAttribute id="ANZPU"/>
+      <viewAttribute id="PUNEI"/>
+      <viewAttribute id="RELIF"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTL" source="SORTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREZ" source="UMREZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREN" source="UMREN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNLF" source="IDNLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN1" source="MAHN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN2" source="MAHN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN3" source="MAHN3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZNR" source="URZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZDT" source="URZDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZLA" source="URZLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZTP" source="URZTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZZT" source="URZZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LMEIN" source="LMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTSNR" source="LTSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTSSF" source="LTSSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGLIF" source="WGLIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUECK" source="RUECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFAB" source="LIFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFBI" source="LIFBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOLIF" source="KOLIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANZPU" source="ANZPU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PUNEI" source="PUNEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RELIF" source="RELIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="TXZ01"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="UMREZ"/>
+      <viewAttribute id="UMREN"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MAHN1"/>
+      <viewAttribute id="MAHN2"/>
+      <viewAttribute id="MAHN3"/>
+      <viewAttribute id="URZNR"/>
+      <viewAttribute id="URZDT"/>
+      <viewAttribute id="URZLA"/>
+      <viewAttribute id="URZTP"/>
+      <viewAttribute id="URZZT"/>
+      <viewAttribute id="LMEIN"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="LTSNR"/>
+      <viewAttribute id="LTSSF"/>
+      <viewAttribute id="WGLIF"/>
+      <viewAttribute id="RUECK"/>
+      <viewAttribute id="LIFAB"/>
+      <viewAttribute id="LIFBI"/>
+      <viewAttribute id="KOLIF"/>
+      <viewAttribute id="ANZPU"/>
+      <viewAttribute id="PUNEI"/>
+      <viewAttribute id="RELIF"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="INFNR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT"/>
+      <viewAttribute hidden="true" id="JOIN$INFNR$INFNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTL" source="SORTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREZ" source="UMREZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREN" source="UMREN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNLF" source="IDNLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN1" source="MAHN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN2" source="MAHN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN3" source="MAHN3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZNR" source="URZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZDT" source="URZDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZLA" source="URZLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZTP" source="URZTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZZT" source="URZZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LMEIN" source="LMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTSNR" source="LTSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTSSF" source="LTSSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGLIF" source="WGLIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUECK" source="RUECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFAB" source="LIFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFBI" source="LIFBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOLIF" source="KOLIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANZPU" source="ANZPU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PUNEI" source="PUNEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RELIF" source="RELIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INFNR$INFNR" source="INFNR"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR_INPUT" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INFNR$INFNR" source="INFNR"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT"/>
+    <joinAttribute name="JOIN$INFNR$INFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="TXZ01"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="UMREZ"/>
+      <viewAttribute id="UMREN"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MAHN1"/>
+      <viewAttribute id="MAHN2"/>
+      <viewAttribute id="MAHN3"/>
+      <viewAttribute id="URZNR"/>
+      <viewAttribute id="URZDT"/>
+      <viewAttribute id="URZLA"/>
+      <viewAttribute id="URZTP"/>
+      <viewAttribute id="URZZT"/>
+      <viewAttribute id="LMEIN"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="LTSNR"/>
+      <viewAttribute id="LTSSF"/>
+      <viewAttribute id="WGLIF"/>
+      <viewAttribute id="RUECK"/>
+      <viewAttribute id="LIFAB"/>
+      <viewAttribute id="LIFBI"/>
+      <viewAttribute id="KOLIF"/>
+      <viewAttribute id="ANZPU"/>
+      <viewAttribute id="PUNEI"/>
+      <viewAttribute id="RELIF"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="INFNR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1"/>
+    <filter>&quot;INFNR_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="TXZ01"/>
+      <viewAttribute id="SORTL"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="UMREZ"/>
+      <viewAttribute id="UMREN"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="VERKF"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="MAHN1"/>
+      <viewAttribute id="MAHN2"/>
+      <viewAttribute id="MAHN3"/>
+      <viewAttribute id="URZNR"/>
+      <viewAttribute id="URZDT"/>
+      <viewAttribute id="URZLA"/>
+      <viewAttribute id="URZTP"/>
+      <viewAttribute id="URZZT"/>
+      <viewAttribute id="LMEIN"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="VABME"/>
+      <viewAttribute id="LTSNR"/>
+      <viewAttribute id="LTSSF"/>
+      <viewAttribute id="WGLIF"/>
+      <viewAttribute id="RUECK"/>
+      <viewAttribute id="LIFAB"/>
+      <viewAttribute id="LIFBI"/>
+      <viewAttribute id="KOLIF"/>
+      <viewAttribute id="ANZPU"/>
+      <viewAttribute id="PUNEI"/>
+      <viewAttribute id="RELIF"/>
+      <viewAttribute id="MFRNR"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="INFNR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_3" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTL" source="SORTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREZ" source="UMREZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREN" source="UMREN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNLF" source="IDNLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN1" source="MAHN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN2" source="MAHN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN3" source="MAHN3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZNR" source="URZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZDT" source="URZDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZLA" source="URZLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZTP" source="URZTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZZT" source="URZZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LMEIN" source="LMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTSNR" source="LTSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTSSF" source="LTSSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGLIF" source="WGLIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUECK" source="RUECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFAB" source="LIFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFBI" source="LIFBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOLIF" source="KOLIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANZPU" source="ANZPU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PUNEI" source="PUNEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RELIF" source="RELIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR_INPUT" source="INFNR_INPUT"/>
+    </input>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INFNR" source="INFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEKZ" source="LOEKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXZ01" source="TXZ01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SORTL" source="SORTL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREZ" source="UMREZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UMREN" source="UMREN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNLF" source="IDNLF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VERKF" source="VERKF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN1" source="MAHN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN2" source="MAHN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAHN3" source="MAHN3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZNR" source="URZNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZDT" source="URZDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZLA" source="URZLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZTP" source="URZTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="URZZT" source="URZZT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LMEIN" source="LMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VABME" source="VABME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTSNR" source="LTSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LTSSF" source="LTSSF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGLIF" source="WGLIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RUECK" source="RUECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFAB" source="LIFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFBI" source="LIFBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOLIF" source="KOLIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANZPU" source="ANZPU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PUNEI" source="PUNEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RELIF" source="RELIF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFRNR" source="MFRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="INFNR_INPUT" null="true"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Union_2">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Union_2" columnName="MANDT"/>
+    </attribute>
+    <attribute id="INFNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Purchasing Info Record"/>
+      <keyMapping columnObjectName="Union_2" columnName="INFNR"/>
+    </attribute>
+    <attribute id="MATNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number"/>
+      <keyMapping columnObjectName="Union_2" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MATKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Group"/>
+      <keyMapping columnObjectName="Union_2" columnName="MATKL"/>
+    </attribute>
+    <attribute id="LIFNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Account Number"/>
+      <keyMapping columnObjectName="Union_2" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="LOEKZ" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing info: General data flagged for deletion"/>
+      <keyMapping columnObjectName="Union_2" columnName="LOEKZ"/>
+    </attribute>
+    <attribute id="ERDAT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date on Which Record Was Created"/>
+      <keyMapping columnObjectName="Union_2" columnName="ERDAT"/>
+    </attribute>
+    <attribute id="ERNAM" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name of Person who Created the Object"/>
+      <keyMapping columnObjectName="Union_2" columnName="ERNAM"/>
+    </attribute>
+    <attribute id="TXZ01" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Short Text for Purchasing Info Record"/>
+      <keyMapping columnObjectName="Union_2" columnName="TXZ01"/>
+    </attribute>
+    <attribute id="SORTL" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sort Term for Non-Stock Info Records"/>
+      <keyMapping columnObjectName="Union_2" columnName="SORTL"/>
+    </attribute>
+    <attribute id="MEINS" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchase Order Unit of Measure"/>
+      <keyMapping columnObjectName="Union_2" columnName="MEINS"/>
+    </attribute>
+    <attribute id="UMREZ" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Numerator for Conversion of Order Unit to Base Unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="UMREZ"/>
+    </attribute>
+    <attribute id="UMREN" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Denominator for Conversion of Order Unit to Base Unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="UMREN"/>
+    </attribute>
+    <attribute id="IDNLF" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number Used by Vendor"/>
+      <keyMapping columnObjectName="Union_2" columnName="IDNLF"/>
+    </attribute>
+    <attribute id="VERKF" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Salesperson Responsible in the Event of Queries"/>
+      <keyMapping columnObjectName="Union_2" columnName="VERKF"/>
+    </attribute>
+    <attribute id="TELF1" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor&apos;s Telephone Number"/>
+      <keyMapping columnObjectName="Union_2" columnName="TELF1"/>
+    </attribute>
+    <attribute id="MAHN1" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Days for First Reminder/Expediter"/>
+      <keyMapping columnObjectName="Union_2" columnName="MAHN1"/>
+    </attribute>
+    <attribute id="MAHN2" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Days for Second Reminder/Expediter"/>
+      <keyMapping columnObjectName="Union_2" columnName="MAHN2"/>
+    </attribute>
+    <attribute id="MAHN3" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Days for Third Reminder/Expediter"/>
+      <keyMapping columnObjectName="Union_2" columnName="MAHN3"/>
+    </attribute>
+    <attribute id="URZNR" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Certificate Number"/>
+      <keyMapping columnObjectName="Union_2" columnName="URZNR"/>
+    </attribute>
+    <attribute id="URZDT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Certificate of Origin Valid Until"/>
+      <keyMapping columnObjectName="Union_2" columnName="URZDT"/>
+    </attribute>
+    <attribute id="URZLA" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Country of Issue of Certificate of Origin"/>
+      <keyMapping columnObjectName="Union_2" columnName="URZLA"/>
+    </attribute>
+    <attribute id="URZTP" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Certificate Category"/>
+      <keyMapping columnObjectName="Union_2" columnName="URZTP"/>
+    </attribute>
+    <attribute id="URZZT" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number"/>
+      <keyMapping columnObjectName="Union_2" columnName="URZZT"/>
+    </attribute>
+    <attribute id="LMEIN" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Base Unit of Measure"/>
+      <keyMapping columnObjectName="Union_2" columnName="LMEIN"/>
+    </attribute>
+    <attribute id="REGIO" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Region (State, Province, County)"/>
+      <keyMapping columnObjectName="Union_2" columnName="REGIO"/>
+    </attribute>
+    <attribute id="VABME" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Variable Purchase Order Unit Active"/>
+      <keyMapping columnObjectName="Union_2" columnName="VABME"/>
+    </attribute>
+    <attribute id="LTSNR" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Subrange"/>
+      <keyMapping columnObjectName="Union_2" columnName="LTSNR"/>
+    </attribute>
+    <attribute id="LTSSF" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sort Sequence Number"/>
+      <keyMapping columnObjectName="Union_2" columnName="LTSSF"/>
+    </attribute>
+    <attribute id="WGLIF" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Material Group"/>
+      <keyMapping columnObjectName="Union_2" columnName="WGLIF"/>
+    </attribute>
+    <attribute id="RUECK" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Return Agreement"/>
+      <keyMapping columnObjectName="Union_2" columnName="RUECK"/>
+    </attribute>
+    <attribute id="LIFAB" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Available (Deliverable) From"/>
+      <keyMapping columnObjectName="Union_2" columnName="LIFAB"/>
+    </attribute>
+    <attribute id="LIFBI" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Available (Deliverable) Until"/>
+      <keyMapping columnObjectName="Union_2" columnName="LIFBI"/>
+    </attribute>
+    <attribute id="KOLIF" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Prior Vendor"/>
+      <keyMapping columnObjectName="Union_2" columnName="KOLIF"/>
+    </attribute>
+    <attribute id="ANZPU" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Points"/>
+      <keyMapping columnObjectName="Union_2" columnName="ANZPU"/>
+    </attribute>
+    <attribute id="PUNEI" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Points unit"/>
+      <keyMapping columnObjectName="Union_2" columnName="PUNEI"/>
+    </attribute>
+    <attribute id="RELIF" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Regular Vendor"/>
+      <keyMapping columnObjectName="Union_2" columnName="RELIF"/>
+    </attribute>
+    <attribute id="MFRNR" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Manufacturer"/>
+      <keyMapping columnObjectName="Union_2" columnName="MFRNR"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Union_2" columnName="CURRENT_DATE"/>
+    </attribute>
+    <attribute id="INFNR_INPUT" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INFNR_1"/>
+      <keyMapping columnObjectName="Union_2" columnName="INFNR_INPUT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="225" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="766"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="111"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="183" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="236" y="236"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMasterClassification.03Transformation::CV_MATERIALCLASSIFICATION_CHAR_AUSP" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_KSSK">
+    <resourceUri>EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_KSSK</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_KLAH">
+    <resourceUri>EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_KLAH</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_AUSP">
+    <resourceUri>EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_AUSP</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_CABN">
+    <resourceUri>EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_CABN</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER">
+    <resourceUri>EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_KSSK">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJEK"/>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ItemNumber"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_KSSK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_KLAH">
+    <viewAttributes>
+      <viewAttribute id="MANDT_KLAH"/>
+      <viewAttribute id="CLINT_KLAH"/>
+      <viewAttribute id="KLART_KLAH"/>
+      <viewAttribute id="CLASS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_KLAH"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_AUSP">
+    <viewAttributes>
+      <viewAttribute id="MANDT_AUSP"/>
+      <viewAttribute id="OBJEK_AUSP"/>
+      <viewAttribute id="ATINN_AUSP"/>
+      <viewAttribute id="KLART_AUSP"/>
+      <viewAttribute id="CharacteristicValue"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_AUSP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_CABN">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="ATINN"/>
+      <viewAttribute id="CharacteristicName"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialMasterClassification.01Extraction::CV_SHE_MATERIALCLASSIFICATION_CABN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_MATERIAL_NUMBER"/>
+    <filter>&quot;LEGACY_MATERIAL_NUMBER&quot;='000000000000000224'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute hidden="true" id="JOIN$ClassName$CLINT_KLAH"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_KSSK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="OBJEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemNumber" source="ItemNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassName$CLINT_KLAH" source="ClassName"/>
+    </input>
+    <input node="Projection_KLAH">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="CLASS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ClassName$CLINT_KLAH" source="CLINT_KLAH"/>
+    </input>
+    <joinAttribute name="JOIN$ClassName$CLINT_KLAH"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="ATINN_AUSP"/>
+      <viewAttribute id="CharacteristicValue"/>
+      <viewAttribute hidden="true" id="JOIN$OBJEK_AUSP$ProductNum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_AUSP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATINN_AUSP" source="ATINN_AUSP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicValue" source="CharacteristicValue"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJEK_AUSP$ProductNum" source="OBJEK_AUSP"/>
+    </input>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemNumber" source="ItemNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$OBJEK_AUSP$ProductNum" source="ProductNum"/>
+    </input>
+    <joinAttribute name="JOIN$OBJEK_AUSP$ProductNum"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_4" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="CharacteristicName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="CharacteristicValue"/>
+      <viewAttribute hidden="true" id="JOIN$ATINN_AUSP$ATINN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemNumber" source="ItemNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicValue" source="CharacteristicValue"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ATINN_AUSP$ATINN" source="ATINN_AUSP"/>
+    </input>
+    <input node="Projection_CABN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicName" source="CharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ATINN_AUSP$ATINN" source="ATINN"/>
+    </input>
+    <joinAttribute name="JOIN$ATINN_AUSP$ATINN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_5" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ClassType"/>
+      <viewAttribute id="ClassName"/>
+      <viewAttribute id="ProductNum"/>
+      <viewAttribute id="CharacteristicName"/>
+      <viewAttribute id="ItemNumber"/>
+      <viewAttribute id="CharacteristicValue"/>
+      <viewAttribute id="LEGACY_MATERIAL_NUMBER"/>
+      <viewAttribute id="MATERIAL_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$ProductNum$LEGACY_MATERIAL_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_Product" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>case when &quot;ProductNum&quot;=&quot;LEGACY_MATERIAL_NUMBER&quot;
+Then &quot;MATERIAL_NUMBER&quot;
+else &quot;ProductNum&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassType" source="ClassType"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassName" source="ClassName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductNum" source="ProductNum"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicName" source="CharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemNumber" source="ItemNumber"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CharacteristicValue" source="CharacteristicValue"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ProductNum$LEGACY_MATERIAL_NUMBER" source="ProductNum"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_NUMBER" source="MATERIAL_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ProductNum$LEGACY_MATERIAL_NUMBER" source="LEGACY_MATERIAL_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$ProductNum$LEGACY_MATERIAL_NUMBER"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_5">
+  <attributes>
+    <attribute id="ClassType" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassType"/>
+      <keyMapping columnObjectName="Join_5" columnName="ClassType"/>
+    </attribute>
+    <attribute id="ClassName" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassName"/>
+      <keyMapping columnObjectName="Join_5" columnName="ClassName"/>
+    </attribute>
+    <attribute id="ProductNum" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProductNum"/>
+      <keyMapping columnObjectName="Join_5" columnName="CC_Product"/>
+    </attribute>
+    <attribute id="CharacteristicName" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Characteristic Name"/>
+      <keyMapping columnObjectName="Join_5" columnName="CharacteristicName"/>
+    </attribute>
+    <attribute id="ItemNumber" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ItemNumber"/>
+      <keyMapping columnObjectName="Join_5" columnName="ItemNumber"/>
+    </attribute>
+    <attribute id="CharacteristicValue" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CharacteristicValue"/>
+      <keyMapping columnObjectName="Join_5" columnName="CharacteristicValue"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="534.5823433691181" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_KSSK" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91.99999999999993" y="856.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_KLAH" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="856.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_AUSP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="380.70227186916225" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_CABN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="477.76671071096587" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666666" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_KSSK" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="181"/>
+    </shape>
+    <shape modelObjectName="Projection_KLAH" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="162"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145.33333333333337" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_AUSP" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="16" y="16"/>
+      <rectangleSize width="180"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="260" y="32"/>
+      <rectangleSize width="147"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="172" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="175"/>
+    </shape>
+    <shape modelObjectName="Projection_CABN" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="182"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="592.7406712788052" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="534.5823433691181" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_4" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="182.5830078125"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="244.7265625"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,860 @@
+{
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_KNA1": {
+    "target": {
+      "object": "KNA1",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T005": {
+    "target": {
+      "object": "T005",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T003": {
+    "target": {
+      "object": "T003",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T002": {
+    "target": {
+      "object": "T002",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T001": {
+    "target": {
+      "object": "T001",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TB001": {
+    "target": {
+      "object": "TB001",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TB003": {
+    "target": {
+      "object": "TB003",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T005S": {
+    "target": {
+      "object": "T005S",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_SKB1": {
+    "target": {
+      "object": "SKB1",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01": {
+    "target": {
+      "object": "TKA01",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA05": {
+    "target": {
+      "object": "TKA05",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TCURC": {
+    "target": {
+      "object": "TCURC",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_CSKS": {
+    "target": {
+      "object": "CSKS",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_CSKT": {
+    "target": {
+      "object": "CSKT",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_BNKA": {
+    "target": {
+      "object": "BNKA",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC": {
+    "target": {
+      "object": "CEPC",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPCT": {
+    "target": {
+      "object": "CEPCT",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC_BUKRS": {
+    "target": {
+      "object": "CEPC_BUKRS",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MARA": {
+    "target": {
+      "object": "MARA",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T134": {
+    "target": {
+      "object": "T134",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T023": {
+    "target": {
+      "object": "T023",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T001W": {
+    "target": {
+      "object": "T001W",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TVTW": {
+    "target": {
+      "object": "TVTW",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T007A": {
+    "target": {
+      "object": "T007A",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T059P": {
+    "target": {
+      "object": "T059P",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T001L": {
+    "target": {
+      "object": "T001L",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_KSSK": {
+    "target": {
+      "object": "KSSK",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_KLAH": {
+    "target": {
+      "object": "KLAH",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_INOB": {
+    "target": {
+      "object": "INOB",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_CABN": {
+    "target": {
+      "object": "CABN",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_AUSP": {
+    "target": {
+      "object": "AUSP",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_QPMK": {
+    "target": {
+      "object": "QPMK",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_LAND1_LKP": {
+    "target": {
+      "object": "T005",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_VENDOR_ACCT_GRP_LKP": {
+    "target": {
+      "object": "T077K",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_CUSTOMER_LKP": {
+    "target": {
+      "object": "KNA1",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_CURRENCY_LKP": {
+    "target": {
+      "object": "TCURC",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_PURCH_ORG_LKP": {
+    "target": {
+      "object": "T024E",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_BP_ROLE_LKP": {
+    "target": {
+      "object": "TB003",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_CHART_OF_ACCOUNT_MASTER": {
+    "target": {
+      "object": "T004",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T004": {
+    "target": {
+      "object": "T004",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T077K": {
+    "target": {
+      "object": "T077K",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T024E": {
+    "target": {
+      "object": "T024E",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_LFA1": {
+    "target": {
+      "object": "LFA1",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T006": {
+    "target": {
+      "object": "T006",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T137": {
+    "target": {
+      "object": "T137",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TSPA": {
+    "target": {
+      "object": "TSPA",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKO": {
+    "target": {
+      "object": "TVKO",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TINC": {
+    "target": {
+      "object": "TINC",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T685": {
+    "target": {
+      "object": "T685",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T024": {
+    "target": {
+      "object": "T024",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_SKA1": {
+    "target": {
+      "object": "SKA1",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TTXJ": {
+    "target": {
+      "object": "TTXJ",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T008": {
+    "target": {
+      "object": "T008",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T035": {
+    "target": {
+      "object": "T035",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TZUN": {
+    "target": {
+      "object": "TZUN",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TGSB": {
+    "target": {
+      "object": "TGSB",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T499S": {
+    "target": {
+      "object": "T499S",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T370B": {
+    "target": {
+      "object": "T370B",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T370T": {
+    "target": {
+      "object": "T370T",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T370K": {
+    "target": {
+      "object": "T370K",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_ONR00": {
+    "target": {
+      "object": "ONR00",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TPAR": {
+    "target": {
+      "object": "TPAR",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC30": {
+    "target": {
+      "object": "TC30",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC20": {
+    "target": {
+      "object": "TC20",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC23": {
+    "target": {
+      "object": "TC23",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC24": {
+    "target": {
+      "object": "TC24",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC21": {
+    "target": {
+      "object": "TC21",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC31": {
+    "target": {
+      "object": "TC31",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T435": {
+    "target": {
+      "object": "T435",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T430": {
+    "target": {
+      "object": "T430",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC25": {
+    "target": {
+      "object": "TC25",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TFACD": {
+    "target": {
+      "object": "TFACD",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC26": {
+    "target": {
+      "object": "TC26",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC39A": {
+    "target": {
+      "object": "TC39A",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC27": {
+    "target": {
+      "object": "TC27",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TC36": {
+    "target": {
+      "object": "TC36",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T003O": {
+    "target": {
+      "object": "T003O",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TCJ04": {
+    "target": {
+      "object": "TCJ04",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TCJ05": {
+    "target": {
+      "object": "TCJ05",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TCJ1": {
+    "target": {
+      "object": "TCJ1",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TCN07": {
+    "target": {
+      "object": "TCN07",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TCN00": {
+    "target": {
+      "object": "TCN00",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TAPRF": {
+    "target": {
+      "object": "TAPRF",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T087I": {
+    "target": {
+      "object": "T087I",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T087K": {
+    "target": {
+      "object": "T087K",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TFKB": {
+    "target": {
+      "object": "TFKB",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TKKAA": {
+    "target": {
+      "object": "TKKAA",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T683": {
+    "target": {
+      "object": "T683",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TPI01": {
+    "target": {
+      "object": "TPI01",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_BKPF": {
+    "target": {
+      "object": "BKPF",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_BSEG": {
+    "target": {
+      "object": "BSEG",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T370C": {
+    "target": {
+      "object": "T370C",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T357": {
+    "target": {
+      "object": "T357",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKBZ": {
+    "target": {
+      "object": "TVKBZ",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TVKOV": {
+    "target": {
+      "object": "TVKOV",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TVTA": {
+    "target": {
+      "object": "TVTA",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TVBVK": {
+    "target": {
+      "object": "TVBVK",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T370S": {
+    "target": {
+      "object": "T370S",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T370F": {
+    "target": {
+      "object": "T370F",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T399I": {
+    "target": {
+      "object": "T399I",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T024I": {
+    "target": {
+      "object": "T024I",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T352B": {
+    "target": {
+      "object": "T352B",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT100": {
+    "target": {
+      "object": "BUT100",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_LFB1": {
+    "target": {
+      "object": "LFB1",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_LFBK": {
+    "target": {
+      "object": "LFBK",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_LFM1": {
+    "target": {
+      "object": "LFM1",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_BUT000": {
+    "target": {
+      "object": "BUT000",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_ADR6": {
+    "target": {
+      "object": "ADR6",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_ADRC": {
+    "target": {
+      "object": "ADRC",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_SKAT": {
+    "target": {
+      "object": "SKAT",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_IFLOT": {
+    "target": {
+      "object": "IFLOT",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_ILOA": {
+    "target": {
+      "object": "ILOA",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_IFLOS": {
+    "target": {
+      "object": "IFLOS",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_CRHD": {
+    "target": {
+      "object": "CRHD",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_IFLOTX": {
+    "target": {
+      "object": "IFLOTX",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_BGMKOBJ": {
+    "target": {
+      "object": "BGMKOBJ",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_BSEC": {
+    "target": {
+      "object": "BSEC",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_BSET": {
+    "target": {
+      "object": "BSET",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_WITH_ITEM": {
+    "target": {
+      "object": "WITH_ITEM",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_KNBK": {
+    "target": {
+      "object": "KNBK",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TIBAN": {
+    "target": {
+      "object": "TIBAN",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MAKT": {
+    "target": {
+      "object": "MAKT",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MARC": {
+    "target": {
+      "object": "MARC",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MVKE": {
+    "target": {
+      "object": "MVKE",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MARD": {
+    "target": {
+      "object": "MARD",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T416": {
+    "target": {
+      "object": "T416",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T415S": {
+    "target": {
+      "object": "T415S",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T024L": {
+    "target": {
+      "object": "T024L",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_STKO": {
+    "target": {
+      "object": "STKO",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T418": {
+    "target": {
+      "object": "T418",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_PVBE": {
+    "target": {
+      "object": "PVBE",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_STPO": {
+    "target": {
+      "object": "STPO",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MAST": {
+    "target": {
+      "object": "MAST",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TCURR": {
+    "target": {
+      "object": "TCURR",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MKAL": {
+    "target": {
+      "object": "MKAL",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TCA01": {
+    "target": {
+      "object": "TCA01",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_T149D": {
+    "target": {
+      "object": "T149D",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MCHA": {
+    "target": {
+      "object": "MCHA",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_MATDOC": {
+    "target": {
+      "object": "MATDOC",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_ANLA": {
+    "target": {
+      "object": "ANLA",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_ANLZ": {
+    "target": {
+      "object": "ANLZ",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA03": {
+    "target": {
+      "object": "TKA03",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_P23_BTP_TKT03": {
+    "target": {
+      "object": "TKT03",
+      "schema": "ZSLT_P23_BTP"
+    }
+  }
+}

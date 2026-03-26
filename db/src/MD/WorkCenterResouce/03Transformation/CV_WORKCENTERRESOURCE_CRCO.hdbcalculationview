@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.WorkCenterResouce.03Transformation::CV_WORKCENTERRESOURCE_CRCO" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_WORKCENTERRESOURCE_CRCO.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.WorkCenterResouce.01Extraction::CV_SHE_WORKCENTERRESOURCE_CRCO">
+    <resourceUri>EHUB.MD.WorkCenterResouce.01Extraction::CV_SHE_WORKCENTERRESOURCE_CRCO</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="OBJTY"/>
+      <viewAttribute id="OBJID"/>
+      <viewAttribute id="LASET"/>
+      <viewAttribute id="ENDDA"/>
+      <viewAttribute id="LANUM"/>
+      <viewAttribute id="BEGDA"/>
+      <viewAttribute id="AEDAT_KOST"/>
+      <viewAttribute id="AENAM_KOST"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="LSTAR_REF"/>
+      <viewAttribute id="FORML"/>
+      <viewAttribute id="PRZ"/>
+      <viewAttribute id="ACTXY"/>
+      <viewAttribute id="ACTXK"/>
+      <viewAttribute id="LEINH"/>
+      <viewAttribute id="BDE"/>
+      <viewAttribute id="SAKL"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    
+      <viewAttribute id="ARBPL"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.WorkCenterResouce.01Extraction::CV_SHE_WORKCENTERRESOURCE_CRCO"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="OBJTY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object types of the CIM resource"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OBJTY"/>
+    </attribute>
+    <attribute id="OBJID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Object ID of the resource"/>
+      <keyMapping columnObjectName="Projection_1" columnName="OBJID"/>
+    </attribute>
+    <attribute id="LASET" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity type set"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LASET"/>
+    </attribute>
+    <attribute id="ENDDA" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="End Date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ENDDA"/>
+    </attribute>
+    <attribute id="LANUM" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity type number within a set"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LANUM"/>
+    </attribute>
+    <attribute id="BEGDA" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Start Date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BEGDA"/>
+    </attribute>
+    <attribute id="AEDAT_KOST" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Changed on"/>
+      <keyMapping columnObjectName="Projection_1" columnName="AEDAT_KOST"/>
+    </attribute>
+    <attribute id="AENAM_KOST" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="User Name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="AENAM_KOST"/>
+    </attribute>
+    <attribute id="KOKRS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Controlling Area"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="KOSTL" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cost Center"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="LSTAR" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity Type"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LSTAR"/>
+    </attribute>
+    <attribute id="LSTAR_REF" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Field is referenced"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LSTAR_REF"/>
+    </attribute>
+    <attribute id="FORML" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Formula key for costing"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FORML"/>
+    </attribute>
+    <attribute id="PRZ" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Process"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRZ"/>
+    </attribute>
+    <attribute id="ACTXY" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity description type"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ACTXY"/>
+    </attribute>
+    <attribute id="ACTXK" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Key for alternative activity description"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ACTXK"/>
+    </attribute>
+    <attribute id="LEINH" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity Unit"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LEINH"/>
+    </attribute>
+    <attribute id="BDE" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Transfer activity types to incentive wages"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BDE"/>
+    </attribute>
+    <attribute id="SAKL" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Record type group"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SAKL"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENT_DATE"/>
+    </attribute>
+  
+    <attribute id="ARBPL" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARBPL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ARBPL"/>
+    </attribute>
+    <attribute id="WERKS" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WERKS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.MaterialInventoryBalance.01Extraction::CV_SHE_FIXEDASSET_ANLZ" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_SHE_FIXEDASSET_ANLZ.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_ANLZ">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_ANLZ</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="ADATU"/>
+      <viewAttribute id="KOSTL"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="GSBER"/>
+      <viewAttribute id="LSTAR"/>
+      <viewAttribute id="MSFAK"/>
+      <viewAttribute id="XSTIL"/>
+      <viewAttribute id="STORT"/>
+      <viewAttribute id="CAUFN"/>
+      <viewAttribute id="PLAN1"/>
+      <viewAttribute id="PLAN2"/>
+      <viewAttribute id="RAUMN"/>
+      <viewAttribute id="IAUFN"/>
+      <viewAttribute id="IPROJ"/>
+      <viewAttribute id="TPLKZ"/>
+      <viewAttribute id="TPLNR"/>
+      <viewAttribute id="ANUPD"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="IPSNR"/>
+      <viewAttribute id="KFZKZ"/>
+      <viewAttribute id="PERNR"/>
+      <viewAttribute id="KOSTLV"/>
+      <viewAttribute id="FISTL"/>
+      <viewAttribute id="GEBER"/>
+      <viewAttribute id="FKBER"/>
+      <viewAttribute id="GRANT_NBR"/>
+      <viewAttribute id="GEBER2"/>
+      <viewAttribute id="FKBER2"/>
+      <viewAttribute id="GRANT_NBR2"/>
+      <viewAttribute id="FISTL2"/>
+      <viewAttribute id="IMKEY"/>
+      <viewAttribute id="PS_PSP_PNR2"/>
+      <viewAttribute id="BUDGET_PD"/>
+      <viewAttribute id="BUDGET_PD2"/>
+      <viewAttribute id="SEGMENT"/>
+      <viewAttribute id="PRCTR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CURRENT_DATE" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>CURRENT_DATE</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_ANLZ"/>
+    <filter>&quot;MANDT&quot;=801</filter>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="ANLN1" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Main Asset Number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ANLN1"/>
+    </attribute>
+    <attribute id="ANLN2" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Asset Subnumber"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ANLN2"/>
+    </attribute>
+    <attribute id="BDATU" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date validity ends"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BDATU"/>
+    </attribute>
+    <attribute id="ADATU" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date for beginning of validity"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ADATU"/>
+    </attribute>
+    <attribute id="KOSTL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cost Center"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOSTL"/>
+    </attribute>
+    <attribute id="WERKS" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WERKS"/>
+    </attribute>
+    <attribute id="GSBER" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business Area"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GSBER"/>
+    </attribute>
+    <attribute id="LSTAR" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Activity Type"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LSTAR"/>
+    </attribute>
+    <attribute id="MSFAK" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Multiple-shift factor for multiple shift operation"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MSFAK"/>
+    </attribute>
+    <attribute id="XSTIL" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Asset shutdown"/>
+      <keyMapping columnObjectName="Projection_1" columnName="XSTIL"/>
+    </attribute>
+    <attribute id="STORT" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Asset location"/>
+      <keyMapping columnObjectName="Projection_1" columnName="STORT"/>
+    </attribute>
+    <attribute id="CAUFN" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Internal order"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CAUFN"/>
+    </attribute>
+    <attribute id="PLAN1" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="no longer used"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PLAN1"/>
+    </attribute>
+    <attribute id="PLAN2" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="No longer used"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PLAN2"/>
+    </attribute>
+    <attribute id="RAUMN" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Room"/>
+      <keyMapping columnObjectName="Projection_1" columnName="RAUMN"/>
+    </attribute>
+    <attribute id="IAUFN" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Maintenance order"/>
+      <keyMapping columnObjectName="Projection_1" columnName="IAUFN"/>
+    </attribute>
+    <attribute id="IPROJ" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Old: Project number : No longer used --&gt; PS_POSNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="IPROJ"/>
+    </attribute>
+    <attribute id="TPLKZ" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unused field length 3"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TPLKZ"/>
+    </attribute>
+    <attribute id="TPLNR" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Functional Location"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TPLNR"/>
+    </attribute>
+    <attribute id="ANUPD" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: Type of change to table"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ANUPD"/>
+    </attribute>
+    <attribute id="TXJCD" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tax Jurisdiction"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="IPSNR" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WBS element - maintenance project"/>
+      <keyMapping columnObjectName="Projection_1" columnName="IPSNR"/>
+    </attribute>
+    <attribute id="KFZKZ" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="License plate no. of vehichle"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KFZKZ"/>
+    </attribute>
+    <attribute id="PERNR" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Personnel Number"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PERNR"/>
+    </attribute>
+    <attribute id="KOSTLV" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cost center responsible for asset"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KOSTLV"/>
+    </attribute>
+    <attribute id="FISTL" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Funds Center"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FISTL"/>
+    </attribute>
+    <attribute id="GEBER" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fund"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GEBER"/>
+    </attribute>
+    <attribute id="FKBER" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Functional Area"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FKBER"/>
+    </attribute>
+    <attribute id="GRANT_NBR" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Grant"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GRANT_NBR"/>
+    </attribute>
+    <attribute id="GEBER2" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fund for APC Account Assignments"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GEBER2"/>
+    </attribute>
+    <attribute id="FKBER2" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Functional Area for APC Account Assignments"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FKBER2"/>
+    </attribute>
+    <attribute id="GRANT_NBR2" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Grant for APC Account Assignments"/>
+      <keyMapping columnObjectName="Projection_1" columnName="GRANT_NBR2"/>
+    </attribute>
+    <attribute id="FISTL2" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Funds Center for APC Account Assignments"/>
+      <keyMapping columnObjectName="Projection_1" columnName="FISTL2"/>
+    </attribute>
+    <attribute id="IMKEY" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Internal Key for Real Estate Object"/>
+      <keyMapping columnObjectName="Projection_1" columnName="IMKEY"/>
+    </attribute>
+    <attribute id="PS_PSP_PNR2" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WBS Element (Costs)"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PS_PSP_PNR2"/>
+    </attribute>
+    <attribute id="BUDGET_PD" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FM: Budget Period"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUDGET_PD"/>
+    </attribute>
+    <attribute id="BUDGET_PD2" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Budget Period for APC Account Assignments"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BUDGET_PD2"/>
+    </attribute>
+    <attribute id="SEGMENT" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Segment for Segmental Reporting"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SEGMENT"/>
+    </attribute>
+    <attribute id="PRCTR" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Profit Center"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CURRENT_DATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

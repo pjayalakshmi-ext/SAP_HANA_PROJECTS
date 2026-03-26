@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.06Completeness::CV_MM_STORAGELOCATION_MARD" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialMaster.04Harmonization::CV_MM_STORAGELOCATION_MARD">
+    <resourceUri>EHUB.MD.MaterialMaster.04Harmonization::CV_MM_STORAGELOCATION_MARD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_STORAGELOCATION">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGPBE"/>
+      <viewAttribute id="LWMKB"/>
+      <viewAttribute id="MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="WERKS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS&quot;=''  or &quot;WERKS&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LGORT_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;LGORT&quot;=''  or &quot;LGORT&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MATNR_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MATNR&quot;=''  or &quot;MATNR&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.MaterialMaster.04Harmonization::CV_MM_STORAGELOCATION_MARD"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_STORAGELOCATION">
+  <attributes>
+    <attribute id="WERKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="P_STORAGELOCATION" columnName="WERKS"/>
+    </attribute>
+    <attribute id="LGORT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGORT"/>
+      <keyMapping columnObjectName="P_STORAGELOCATION" columnName="LGORT"/>
+    </attribute>
+    <attribute id="LGPBE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGPBE"/>
+      <keyMapping columnObjectName="P_STORAGELOCATION" columnName="LGPBE"/>
+    </attribute>
+    <attribute id="LWMKB" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LWMKB"/>
+      <keyMapping columnObjectName="P_STORAGELOCATION" columnName="LWMKB"/>
+    </attribute>
+    <attribute id="WERKS_INCOMPLETE" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_STORAGELOCATION" columnName="WERKS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="LGORT_INCOMPLETE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGORT_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_STORAGELOCATION" columnName="LGORT_INCOMPLETE"/>
+    </attribute>
+    <attribute id="MATNR_INCOMPLETE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR_INCOMPLETE"/>
+      <keyMapping columnObjectName="P_STORAGELOCATION" columnName="MATNR_INCOMPLETE"/>
+    </attribute>
+  
+    <attribute id="MATNR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Number"/>
+  
+      <keyMapping columnObjectName="P_STORAGELOCATION" columnName="MATNR"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;WERKS_INCOMPLETE&quot;+&quot;LGORT_INCOMPLETE&quot;+&quot;MATNR_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end 
+
+</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_STORAGELOCATION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="199"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

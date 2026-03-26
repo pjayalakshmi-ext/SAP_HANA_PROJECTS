@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialMaster.01Extraction::CV_SHE_MM_SALESDATA_MVKE" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BANK_MASTER"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_MVKE">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_MVKE</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MVKE" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="SCHME"/>
+      <viewAttribute id="VMSTA"/>
+      <viewAttribute id="VMSTD"/>
+      <viewAttribute id="DWERK"/>
+      <viewAttribute id="SKTOF"/>
+      <viewAttribute id="AUMNG"/>
+      <viewAttribute id="LFMNG"/>
+      <viewAttribute id="SCMNG"/>
+      <viewAttribute id="RDPRF"/>
+      <viewAttribute id="VERSG"/>
+      <viewAttribute id="MTPOS"/>
+      <viewAttribute id="PRODH"/>
+      <viewAttribute id="PMATN"/>
+      <viewAttribute id="KONDM"/>
+      <viewAttribute id="KTGRM"/>
+      <viewAttribute id="PROVG"/>
+      <viewAttribute id="VKORG"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_MVKE"/>
+    <filter>&quot;MANDT&quot;='801' </filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="P_MVKE">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="MATNR"/>
+    </attribute>
+    <attribute id="VRKME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales unit"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="VRKME"/>
+    </attribute>
+    <attribute id="VTWEG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Distribution Channel"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="SCHME" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Unit of measure of delivery unit"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="SCHME"/>
+    </attribute>
+    <attribute id="VMSTA" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Distribution-chain-specific material status"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="VMSTA"/>
+    </attribute>
+    <attribute id="VMSTD" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date from which distr.-chain-spec. material status is valid"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="VMSTD"/>
+    </attribute>
+    <attribute id="DWERK" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delivering Plant (Own or External)"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="DWERK"/>
+    </attribute>
+    <attribute id="SKTOF" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cash discount indicator"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="SKTOF"/>
+    </attribute>
+    <attribute id="AUMNG" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum order quantity in base unit of measure"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="AUMNG"/>
+    </attribute>
+    <attribute id="LFMNG" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Minimum delivery quantity in delivery note processing"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="LFMNG"/>
+    </attribute>
+    <attribute id="SCMNG" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delivery unit"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="SCMNG"/>
+    </attribute>
+    <attribute id="RDPRF" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rounding Profile"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="RDPRF"/>
+    </attribute>
+    <attribute id="VERSG" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material statistics group"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="VERSG"/>
+    </attribute>
+    <attribute id="MTPOS" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Item category group from material master"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="MTPOS"/>
+    </attribute>
+    <attribute id="PRODH" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Product hierarchy"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="PRODH"/>
+    </attribute>
+    <attribute id="PMATN" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Pricing Reference Material"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="PMATN"/>
+    </attribute>
+    <attribute id="KONDM" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Pricing Group"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="KONDM"/>
+    </attribute>
+    <attribute id="KTGRM" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Account assignment group for this material"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="KTGRM"/>
+    </attribute>
+    <attribute id="PROVG" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Commission group"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="PROVG"/>
+    </attribute>
+    <attribute id="VKORG" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Sales Organization"/>
+      <keyMapping columnObjectName="P_MVKE" columnName="VKORG"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_MVKE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.ProfitCenter.09Postload::CV_P23_PC_COMPANYCODE_CEPC" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <descriptions defaultDescription="CA_REL_CSTEXT_VALID"/>
+  <metadata changedAt="2023-01-26 11:01:20.537"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="28"/>
+  <dataSources>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC_BUKRS">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC_BUKRS</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CEPC_BUKRS" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="BUKRS"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC_BUKRS"/>
+    <filter> &quot;MANDT&quot; = '900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CEPC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="DATAB"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CURRENT_DATE" datatype="NVARCHAR" length="8" expressionLanguage="SQL">
+        <formula>SUBSTR(REPLACE(NOW(),'-',''),1,8)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC"/>
+    <filter>&quot;MANDT&quot;='900' </filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CEPC_BUKRS" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+      <viewAttribute hidden="true" id="JOIN$PRCTR$PRCTR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_CEPC_BUKRS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+    </input>
+    <input node="P_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+    <joinAttribute name="JOIN$PRCTR$PRCTR"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="J_CEPC_BUKRS">
+    <descriptions/>
+    <attributes>
+      <attribute id="KOKRS" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="KOKRS"/>
+        <keyMapping columnObjectName="J_CEPC_BUKRS" columnName="KOKRS"/>
+      </attribute>
+      <attribute id="PRCTR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="PRCTR"/>
+        <keyMapping columnObjectName="J_CEPC_BUKRS" columnName="PRCTR"/>
+      </attribute>
+      <attribute id="DATAB" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="DATAB"/>
+        <keyMapping columnObjectName="J_CEPC_BUKRS" columnName="DATAB"/>
+      </attribute>
+      <attribute id="DATBI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="DATBI"/>
+        <keyMapping columnObjectName="J_CEPC_BUKRS" columnName="DATBI"/>
+      </attribute>
+      <attribute id="BUKRS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BUKRS"/>
+        <keyMapping columnObjectName="J_CEPC_BUKRS" columnName="BUKRS"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="221" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_CEPC_BUKRS" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="376"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+    
+    <shape expanded="true" modelObjectName="P_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CEPC_BUKRS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape modelObjectName="P_CEPC_BUKRS" modelObjectNameSpace="J_CEPC_BUKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_CEPC" modelObjectNameSpace="J_CEPC_BUKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

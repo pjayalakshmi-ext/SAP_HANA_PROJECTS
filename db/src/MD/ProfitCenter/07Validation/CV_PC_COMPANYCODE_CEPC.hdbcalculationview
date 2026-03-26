@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.ProfitCenter.07Validation::CV_PC_COMPANYCODE_CEPC" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.ProfitCenter.06Completeness::CV_PC_COMPANYCODE_CEPC">
+    <resourceUri>EHUB.MD.ProfitCenter.06Completeness::CV_PC_COMPANYCODE_CEPC</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:AggregationView" id="A_CEPC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="TOTAL_INCOMPLETE"/>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="EHUB.MD.ProfitCenter.06Completeness::CV_PC_COMPANYCODE_CEPC"/>
+    <filter>&quot;TOTAL_INCOMPLETE&quot;=0</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_CEPC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="KOKRS"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_TKA01" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T001" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+    
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001"/>
+  
+    <filter>&quot;MANDT&quot;='900'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_CEPC" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="PRCTR_LOADED"/>
+      <viewAttribute hidden="true" id="JOIN$PRCTR$PRCTR"/>
+      <viewAttribute hidden="true" id="JOIN$DATBI$DATBI"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="A_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <input node="P_S4H_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR_LOADED" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRCTR$PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATBI$DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <joinAttribute name="JOIN$PRCTR$PRCTR"/>
+    <joinAttribute name="JOIN$DATBI$DATBI"/>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CEPC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="PRCTR_LOADED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_CEPC"/>
+    <filter>&quot;PRCTR_LOADED&quot; IS NULL</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_KOKRS" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="KOKRS_TKA01"/>
+      <viewAttribute hidden="true" id="JOIN$KOKRS$KOKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PC_CONTROLLING_AREA_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;KOKRS&quot;=&quot;KOKRS_TKA01&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_CEPC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <input node="P_S4H_TKA01">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS_TKA01" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KOKRS$KOKRS" source="KOKRS"/>
+    </input>
+    <joinAttribute name="JOIN$KOKRS$KOKRS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_COMPANY" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="KOKRS"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="PC_CONTROLLING_AREA_INVALID"/>
+      <viewAttribute id="BUKRS_T001"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PC_COMPANY_CODE_INVALID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;BUKRS&quot;=&quot;BUKRS_T001&quot;
+then 0
+else 1
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="J_KOKRS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PC_CONTROLLING_AREA_INVALID" source="PC_CONTROLLING_AREA_INVALID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+    </input>
+    <input node="P_S4H_T001">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_T001" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_COMPANY">
+  <attributes>
+    <attribute id="KOKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KOKRS"/>
+      <keyMapping columnObjectName="J_COMPANY" columnName="KOKRS"/>
+    </attribute>
+    <attribute id="PRCTR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="J_COMPANY" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="DATBI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATBI"/>
+      <keyMapping columnObjectName="J_COMPANY" columnName="DATBI"/>
+    </attribute>
+    <attribute id="DATAB" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAB"/>
+      <keyMapping columnObjectName="J_COMPANY" columnName="DATAB"/>
+    </attribute>
+    <attribute id="BUKRS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="J_COMPANY" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="PC_CONTROLLING_AREA_INVALID" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONTROLLING_AREA_INVALID"/>
+      <keyMapping columnObjectName="J_COMPANY" columnName="PC_CONTROLLING_AREA_INVALID"/>
+    </attribute>
+    <attribute id="PC_COMPANY_CODE_INVALID" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPANY_CODE_INVALID"/>
+      <keyMapping columnObjectName="J_COMPANY" columnName="PC_COMPANY_CODE_INVALID"/>
+    </attribute></attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INVALID" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PC_CONTROLLING_AREA_INVALID&quot;+&quot;PC_COMPANY_CODE_INVALID&quot;&gt;=1
+then 1
+else 0
+end </formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="370" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="A_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="981"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_S4H_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="547" y="981"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_TKA01" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="547" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_S4H_T001" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="273" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="337" y="661"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="A_CEPC" modelObjectNameSpace="J_CEPC" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_CEPC" modelObjectNameSpace="J_CEPC" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_CEPC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="337" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_KOKRS" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="483" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_CEPC" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_S4H_TKA01" modelObjectNameSpace="J_KOKRS" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_COMPANY" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="370" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="J_KOKRS" modelObjectNameSpace="J_COMPANY" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="171"/>
+    </shape>
+    <shape modelObjectName="P_S4H_T001" modelObjectNameSpace="J_COMPANY" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="142"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

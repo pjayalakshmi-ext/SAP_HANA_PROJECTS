@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.BillOfMaterials.09Postload::CV_P23_BOM_HEADER_STKO" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <descriptions defaultDescription="CA_REL_CSTEXT_VALID"/>
+  <metadata changedAt="2023-01-26 11:01:20.537"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="28"/>
+  <dataSources>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_MAST">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_MAST</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_STKO">
+      <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_STKO</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_MAST" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_MAST"/>
+    <filter> &quot;MANDT&quot; = '900'  and &quot;STLAN&quot;='1'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_STKO" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_STKO"/>
+    <filter>&quot;MANDT&quot;='900' </filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_Header" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute hidden="true" id="JOIN$STLNR$STLNR"/>
+      <viewAttribute hidden="true" id="JOIN$STLAL$STLAL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_MAST">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLNR$STLNR" source="STLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAL$STLAL" source="STLAL"/>
+    </input>
+    <input node="P_STKO">
+      <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLNR$STLNR" source="STLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAL$STLAL" source="STLAL"/>
+    </input>
+    <joinAttribute name="JOIN$STLNR$STLNR"/>
+    <joinAttribute name="JOIN$STLAL$STLAL"/>
+  </calculationView>
+</calculationViews>
+  <logicalModel id="J_Header">
+    <descriptions/>
+    <attributes>
+      <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="J_Header" columnName="MATNR"/>
+      </attribute>
+      <attribute id="WERKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Plant"/>
+        <keyMapping columnObjectName="J_Header" columnName="WERKS"/>
+      </attribute>
+      <attribute id="STLAN" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BOM Usage"/>
+        <keyMapping columnObjectName="J_Header" columnName="STLAN"/>
+      </attribute>
+      <attribute id="STLAL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Alternative BOM"/>
+        <keyMapping columnObjectName="J_Header" columnName="STLAL"/>
+      </attribute>
+      <attribute id="STLST" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BOM status"/>
+        <keyMapping columnObjectName="J_Header" columnName="STLST"/>
+      </attribute>
+      <attribute id="AENNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Change Number"/>
+        <keyMapping columnObjectName="J_Header" columnName="AENNR"/>
+      </attribute>
+      <attribute id="BMENG" order="7" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Base quantity"/>
+        <keyMapping columnObjectName="J_Header" columnName="BMENG"/>
+      </attribute>
+      <attribute id="BMEIN" order="8" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Base unit of measure for BOM"/>
+        <keyMapping columnObjectName="J_Header" columnName="BMEIN"/>
+      </attribute>
+      <attribute id="LABOR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Laboratory/design office"/>
+        <keyMapping columnObjectName="J_Header" columnName="LABOR"/>
+      </attribute>
+      <attribute id="CADKZ" order="10" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CAD Indicator"/>
+        <keyMapping columnObjectName="J_Header" columnName="CADKZ"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="221" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_MAST" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="376"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+    
+    <shape expanded="true" modelObjectName="P_STKO" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_Header" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_MAST" modelObjectNameSpace="J_Header" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="126"/>
+    </shape>
+    <shape modelObjectName="P_STKO" modelObjectNameSpace="J_Header" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="126"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

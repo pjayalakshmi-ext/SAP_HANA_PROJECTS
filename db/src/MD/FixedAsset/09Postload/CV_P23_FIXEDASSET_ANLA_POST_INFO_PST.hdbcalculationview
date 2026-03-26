@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.FixedAsset.09Postload::CV_P23_FIXEDASSET_ANLA_POST_INFO_PST" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_P23_FIXEDASSET_ANLZ_POST_INFO_PST"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_FA_POSTING_INFO_PLD">
+    <resourceUri>EHUB.Synonyms::SY_TA_FA_POSTING_INFO_PLD</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_ANLA">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_ANLA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="CAP_KEY"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_FA_POSTING_INFO_PLD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="AKTIV"/>
+      <viewAttribute id="DEAKT"/>
+      <viewAttribute id="GPLAB"/>
+      <viewAttribute id="BSTDT"/>
+    
+      <viewAttribute id="AIBN1"/>
+      <viewAttribute id="ERNAM"/>
+      <viewAttribute id="MANDT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_ANLA"/>
+  
+    <filter>&quot;MANDT&quot;=900 AND &quot;ERNAM&quot; = 'IN278412'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="ANLN1"/>
+      <viewAttribute id="ANLN2"/>
+      <viewAttribute id="AKTIV"/>
+      <viewAttribute id="DEAKT"/>
+      <viewAttribute id="GPLAB"/>
+      <viewAttribute id="BSTDT"/>
+      <viewAttribute id="CAP_KEY"/>
+      <viewAttribute id="AIBN1"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS"/>
+      <viewAttribute hidden="true" id="JOIN$ANLN2$ANLN2"/>
+      <viewAttribute hidden="true" id="JOIN$AIBN1$ANLN1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN1" source="ANLN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKTIV" source="AKTIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEAKT" source="DEAKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GPLAB" source="GPLAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSTDT" source="BSTDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AIBN1" source="AIBN1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ANLN2$ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$AIBN1$ANLN1" source="AIBN1"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_KEY" source="CAP_KEY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ANLN2$ANLN2" source="ANLN2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$AIBN1$ANLN1" source="ANLN1"/>
+    </input>
+    <joinAttribute name="JOIN$BUKRS$BUKRS"/>
+    <joinAttribute name="JOIN$ANLN2$ANLN2"/>
+    <joinAttribute name="JOIN$AIBN1$ANLN1"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="BUKRS" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Code"/>
+      <keyMapping columnObjectName="Join_1" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="ANLN1" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Main Asset Number"/>
+      <keyMapping columnObjectName="Join_1" columnName="ANLN1"/>
+    </attribute>
+    <attribute id="ANLN2" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Asset Subnumber"/>
+      <keyMapping columnObjectName="Join_1" columnName="ANLN2"/>
+    </attribute>
+    <attribute id="AKTIV" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Asset Capitalization Date"/>
+      <keyMapping columnObjectName="Join_1" columnName="AKTIV"/>
+    </attribute>
+    <attribute id="DEAKT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Deactivation Date"/>
+      <keyMapping columnObjectName="Join_1" columnName="DEAKT"/>
+    </attribute>
+    <attribute id="GPLAB" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planned Retirement Date"/>
+      <keyMapping columnObjectName="Join_1" columnName="GPLAB"/>
+    </attribute>
+    <attribute id="BSTDT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Asset Purchase Order Date"/>
+      <keyMapping columnObjectName="Join_1" columnName="BSTDT"/>
+    </attribute>
+    <attribute id="CAP_KEY" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Results Analysis Key"/>
+      <keyMapping columnObjectName="Join_1" columnName="CAP_KEY"/>
+    </attribute>
+  
+    <attribute id="AIBN1" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Original Asset That Was Transferred"/>
+      <keyMapping columnObjectName="Join_1" columnName="AIBN1"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="false" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="221" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

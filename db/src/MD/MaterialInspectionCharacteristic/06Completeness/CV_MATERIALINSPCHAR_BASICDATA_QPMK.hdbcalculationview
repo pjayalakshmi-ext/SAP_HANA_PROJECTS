@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialInspectionCharacteristic.06Completeness::CV_MATERIALINSPCHAR_BASICDATA_QPMK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialInspectionCharacteristic.04Harmonization::CV_MATERIALINSPCHAR_BASICDATA_QPMK">
+    <resourceUri>EHUB.MD.MaterialInspectionCharacteristic.04Harmonization::CV_MATERIALINSPCHAR_BASICDATA_QPMK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PlantInspectionCharacteristic&quot;=''  or &quot;PlantInspectionCharacteristic&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MasterInspectionCharacteristics&quot;=''  or &quot;MasterInspectionCharacteristics&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="VALIDFROMDATE_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;ValidFromDate&quot;=''  or &quot;ValidFromDate&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STATUS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;Status&quot;=''  or &quot;Status&quot; is null
+then 1
+else 0
+end</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="SEARCHFIELD_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;SearchField&quot;=''  or &quot;SearchField&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.MaterialInspectionCharacteristic.04Harmonization::CV_MATERIALINSPCHAR_BASICDATA_QPMK"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="PlantInspectionCharacteristic" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant for the Master Inspection Characteristic"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PlantInspectionCharacteristic"/>
+    </attribute>
+    <attribute id="MasterInspectionCharacteristics" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master Inspection Characteristics"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MasterInspectionCharacteristics"/>
+    </attribute>
+    <attribute id="ValidFromDate" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ValidFromDate"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ValidFromDate"/>
+    </attribute>
+    <attribute id="ClassCharacteristicName" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassCharacteristicName"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ClassCharacteristicName"/>
+    </attribute>
+    <attribute id="Status" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Status"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Status"/>
+    </attribute>
+    <attribute id="SearchField" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SearchField"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SearchField"/>
+    </attribute>
+    <attribute id="InternalCharacteristicDescription" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InternalCharacteristicDescription"/>
+      <keyMapping columnObjectName="Projection_1" columnName="InternalCharacteristicDescription"/>
+    </attribute>
+    <attribute id="DecimalPlaces" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DecimalPlaces"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DecimalPlaces"/>
+    </attribute>
+    <attribute id="WeightingOfCharacteristic" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WeightingOfCharacteristic"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WeightingOfCharacteristic"/>
+    </attribute>
+    <attribute id="InfoField1" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField1"/>
+      <keyMapping columnObjectName="Projection_1" columnName="InfoField1"/>
+    </attribute>
+    <attribute id="InfoField2" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField2"/>
+      <keyMapping columnObjectName="Projection_1" columnName="InfoField2"/>
+    </attribute>
+    <attribute id="InfoField3" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField3"/>
+      <keyMapping columnObjectName="Projection_1" columnName="InfoField3"/>
+    </attribute>
+    <attribute id="PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE"/>
+    </attribute>
+    <attribute id="MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="VALIDFROMDATE_INCOMPLETE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALIDFROMDATE_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VALIDFROMDATE_INCOMPLETE"/>
+    </attribute>
+    <attribute id="STATUS_INCOMPLETE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATUS_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="STATUS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="SEARCHFIELD_INCOMPLETE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEARCHFIELD_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SEARCHFIELD_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE&quot;+&quot;MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE&quot;+&quot;VALIDFROMDATE_INCOMPLETE&quot;+&quot;STATUS_INCOMPLETE&quot;+&quot;SEARCHFIELD_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end 
+
+</formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

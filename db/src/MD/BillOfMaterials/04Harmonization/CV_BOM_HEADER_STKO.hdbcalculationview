@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="3.0" id="EHUB.MD.BillOfMaterials.04Harmonization::CV_BOM_HEADER_STKO" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+<origin/>
+  <descriptions defaultDescription="CV_MD_FI_PC_GENERAL_DMC_CEPC_HA"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="42"/>
+  <dataSources>
+    <DataSource id="EHUB.MD.BillOfMaterials.03Transformation::CV_BOM_HEADER_STKO">
+      <resourceUri>EHUB.MD.BillOfMaterials.03Transformation::CV_BOM_HEADER_STKO</resourceUri>
+    </DataSource>
+    <DataSource id="EHUB.Synonyms::SY_TA_BOM_HEADER_STKO_REL_INPUT">
+      <resourceUri>EHUB.Synonyms::SY_TA_BOM_HEADER_STKO_REL_INPUT</resourceUri>
+    </DataSource>
+  </dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BOM_HEADER">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.MD.BillOfMaterials.03Transformation::CV_BOM_HEADER_STKO"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="EHUB.Synonyms::SY_TA_BOM_HEADER_STKO_REL_INPUT"/>
+    </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_BOM_HEADER">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="P_BOM_HEADER">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+      </input>
+    </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_BOM_HEADER" cardinality="C1_1" joinType="leftOuter">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="MATNR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+      <viewAttribute hidden="true" id="JOIN$WERKS$WERKS"/>
+      <viewAttribute hidden="true" id="JOIN$STLAN$STLAN"/>
+      <viewAttribute hidden="true" id="JOIN$STLAL$STLAL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="U_BOM_HEADER">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$STLAN" source="STLAN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAL$STLAL" source="STLAL"/>
+      </input>
+      <input node="P_Remediated_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_INPUT" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$WERKS$WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAN$STLAN" source="STLAN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$STLAL$STLAL" source="STLAL"/>
+      </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+    <joinAttribute name="JOIN$WERKS$WERKS"/>
+    <joinAttribute name="JOIN$STLAN$STLAN"/>
+    <joinAttribute name="JOIN$STLAL$STLAL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+      <viewAttribute id="MATNR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input node="J_BOM_HEADER"/>
+    <filter>&quot;MATNR_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_2">
+    <descriptions/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="STLAN"/>
+      <viewAttribute id="STLAL"/>
+      <viewAttribute id="AENNR"/>
+      <viewAttribute id="BMENG"/>
+      <viewAttribute id="BMEIN"/>
+      <viewAttribute id="LABOR"/>
+      <viewAttribute id="CADKZ"/>
+      <viewAttribute id="STLST"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+      <input emptyUnionBehavior="NO_ROW" node="P_Without_Remediated_data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      </input>
+      <input emptyUnionBehavior="NO_ROW" node="P_Remediated_Data">
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLAN" source="STLAN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLAL" source="STLAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AENNR" source="AENNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMENG" source="BMENG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BMEIN" source="BMEIN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LABOR" source="LABOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CADKZ" source="CADKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STLST" source="STLST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      </input>
+    </calculationView>
+</calculationViews>
+  <logicalModel id="Union_2">
+    <descriptions/>
+    <attributes>
+      <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Material Number"/>
+        <keyMapping columnObjectName="Union_2" columnName="MATNR"/>
+      </attribute>
+      <attribute id="WERKS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Plant"/>
+        <keyMapping columnObjectName="Union_2" columnName="WERKS"/>
+      </attribute>
+      <attribute id="STLAN" order="3" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BOM Usage"/>
+        <keyMapping columnObjectName="Union_2" columnName="STLAN"/>
+      </attribute>
+      <attribute id="STLAL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Alternative BOM"/>
+        <keyMapping columnObjectName="Union_2" columnName="STLAL"/>
+      </attribute>
+      <attribute id="AENNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Change Number"/>
+        <keyMapping columnObjectName="Union_2" columnName="AENNR"/>
+      </attribute>
+      <attribute id="BMENG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Base quantity"/>
+        <keyMapping columnObjectName="Union_2" columnName="BMENG"/>
+      </attribute>
+      <attribute id="BMEIN" order="7" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Base unit of measure for BOM"/>
+        <keyMapping columnObjectName="Union_2" columnName="BMEIN"/>
+      </attribute>
+      <attribute id="LABOR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="Laboratory/design office"/>
+        <keyMapping columnObjectName="Union_2" columnName="LABOR"/>
+      </attribute>
+      <attribute id="CADKZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="CAD Indicator"/>
+        <keyMapping columnObjectName="Union_2" columnName="CADKZ"/>
+      </attribute>
+      <attribute id="STLST" order="10" displayAttribute="false" attributeHierarchyActive="false">
+        <descriptions defaultDescription="BOM status"/>
+        <keyMapping columnObjectName="Union_2" columnName="STLST"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+<layout>
+  <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="225" y="112"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_BOM_HEADER" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="766"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="301" y="661"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="U_BOM_HEADER" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="92" y="661"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="J_BOM_HEADER" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="183" y="501"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+    <shape modelObjectName="U_BOM_HEADER" modelObjectNameSpace="J_BOM_HEADER" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_BOM_HEADER" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+      <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="183" y="376"/>
+        <rectangleSize height="0" width="160"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Union_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="236" y="236"/>
+        <rectangleSize height="-1" width="160"/>
+      </shape>
+    </shapes>
+</layout>
+</Calculation:scenario>

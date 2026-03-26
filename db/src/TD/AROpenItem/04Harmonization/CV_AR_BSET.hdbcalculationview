@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.TD.AROpenItem.04Harmonization::CV_AR_BSET" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_AR_BSET"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.TD.AROpenItem.03Transformation::CV_AR_BSET">
+    <resourceUri>EHUB.TD.AROpenItem.03Transformation::CV_AR_BSET</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_TA_AR_BSET_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_AR_BSET_REL_INPUT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_BSET">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.TD.AROpenItem.03Transformation::CV_AR_BSET"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="MANDT_INPUT"/>
+      <viewAttribute id="BUKRS_INPUT"/>
+      <viewAttribute id="BELNR_INPUT"/>
+      <viewAttribute id="BUZEI_INPUT"/>
+      <viewAttribute id="KUNNR_INPUT"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_AR_BSET_REL_INPUT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT_INPUT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_INPUT" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR_INPUT" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI_INPUT" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR_INPUT" source="KUNNR"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_BSET">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_BSET">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+      <viewAttribute id="KUNNR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$MANDT$MANDT_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$BUKRS$BUKRS_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$BELNR$BELNR_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$BUZEI$BUZEI_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$KUNNR$KUNNR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="U_BSET">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT_INPUT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS_INPUT" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR_INPUT" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUZEI$BUZEI_INPUT" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR_INPUT" source="KUNNR"/>
+    </input>
+    <input node="Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR_INPUT" source="KUNNR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MANDT$MANDT_INPUT" source="MANDT_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUKRS$BUKRS_INPUT" source="BUKRS_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BELNR$BELNR_INPUT" source="BELNR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$BUZEI$BUZEI_INPUT" source="BUZEI_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KUNNR$KUNNR_INPUT" source="KUNNR_INPUT"/>
+    </input>
+    <joinAttribute name="JOIN$MANDT$MANDT_INPUT"/>
+    <joinAttribute name="JOIN$BUKRS$BUKRS_INPUT"/>
+    <joinAttribute name="JOIN$BELNR$BELNR_INPUT"/>
+    <joinAttribute name="JOIN$BUZEI$BUZEI_INPUT"/>
+    <joinAttribute name="JOIN$KUNNR$KUNNR_INPUT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Without_Remediated" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+      <viewAttribute id="KUNNR_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+  
+    <filter>(isnull(&quot;KUNNR_INPUT&quot;))</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="BELNR"/>
+      <viewAttribute id="BUZEI"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="XBLNR"/>
+      <viewAttribute id="HKONT"/>
+      <viewAttribute id="GKONT2"/>
+      <viewAttribute id="MWSKZ"/>
+      <viewAttribute id="TXJCD"/>
+      <viewAttribute id="FWBAS"/>
+      <viewAttribute id="FWSTE"/>
+      <viewAttribute id="HWBAS"/>
+      <viewAttribute id="HWSTE"/>
+      <viewAttribute id="H2BAS"/>
+      <viewAttribute id="H2STE"/>
+      <viewAttribute id="H3BAS"/>
+      <viewAttribute id="H3STE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Without_Remediated" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+    </input>
+    <input node="Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUZEI" source="BUZEI_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR_INPUT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HKONT" source="HKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GKONT2" source="GKONT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWBAS" source="FWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FWSTE" source="FWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWBAS" source="HWBAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HWSTE" source="HWSTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2BAS" source="H2BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H2STE" source="H2STE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3BAS" source="H3BAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="H3STE" source="H3STE"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MANDT"/>
+    </attribute>
+    <attribute id="BUKRS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BUKRS"/>
+    </attribute>
+    <attribute id="BELNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BELNR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BELNR"/>
+    </attribute>
+    <attribute id="BUZEI" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUZEI"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="BUZEI"/>
+    </attribute>
+    <attribute id="KUNNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="XBLNR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XBLNR"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="XBLNR"/>
+    </attribute>
+    <attribute id="HKONT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HKONT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HKONT"/>
+    </attribute>
+    <attribute id="GKONT2" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_GKONT"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="GKONT2"/>
+    </attribute>
+    <attribute id="MWSKZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSKZ"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MWSKZ"/>
+    </attribute>
+    <attribute id="TXJCD" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TXJCD"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="TXJCD"/>
+    </attribute>
+    <attribute id="FWBAS" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FWBAS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="FWBAS"/>
+    </attribute>
+    <attribute id="FWSTE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FWSTE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="FWSTE"/>
+    </attribute>
+    <attribute id="HWBAS" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HWBAS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HWBAS"/>
+    </attribute>
+    <attribute id="HWSTE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HWSTE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="HWSTE"/>
+    </attribute>
+    <attribute id="H2BAS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H2BAS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="H2BAS"/>
+    </attribute>
+    <attribute id="H2STE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H2STE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="H2STE"/>
+    </attribute>
+    <attribute id="H3BAS" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H3BAS"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="H3BAS"/>
+    </attribute>
+    <attribute id="H3STE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="H3STE"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="H3STE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="225" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="U_BSET" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="621"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="482"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="U_BSET" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="126"/>
+    </shape>
+    <shape modelObjectName="Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Without_Remediated" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145" y="377"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="224" y="236"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_BSET" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="736"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="330" y="616"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

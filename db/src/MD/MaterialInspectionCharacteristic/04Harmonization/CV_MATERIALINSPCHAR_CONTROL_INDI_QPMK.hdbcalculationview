@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialInspectionCharacteristic.04Harmonization::CV_MATERIALINSPCHAR_CONTROL_INDI_QPMK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_REL_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialInspectionCharacteristic.03Transformation::CV_MATERIALINSPCHAR_CONTROL_INDI_QPMK">
+    <resourceUri>EHUB.MD.MaterialInspectionCharacteristic.03Transformation::CV_MATERIALINSPCHAR_CONTROL_INDI_QPMK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_CONTROL_INDI_QPMK_REL_INPUT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PLANTINSPECTIONCHARACTERISTIC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MASTERINSPECTIONCHARACTERISTICS"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialInspectionCharacteristic.03Transformation::CV_MATERIALINSPCHAR_CONTROL_INDI_QPMK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/></input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="PlantInspectionCharacteristic_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$PlantInspectionCharacteristic$PlantInspectionCharacteristic"/>
+      <viewAttribute hidden="true" id="JOIN$MasterInspectionCharacteristics$MasterInspectionCharacteristics"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PlantInspectionCharacteristic$PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MasterInspectionCharacteristics$MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+    </input>
+    <input node="P_Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic_INPUT" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PlantInspectionCharacteristic$PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MasterInspectionCharacteristics$MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+    </input>
+    <joinAttribute name="JOIN$PlantInspectionCharacteristic$PlantInspectionCharacteristic"/>
+    <joinAttribute name="JOIN$MasterInspectionCharacteristics$MasterInspectionCharacteristics"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="PlantInspectionCharacteristic_INPUT"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+    <filter>&quot;PlantInspectionCharacteristic_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Without_Remediated_data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/></input>
+    <input node="P_Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/></input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="PlantInspectionCharacteristic" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant for the Master Inspection Characteristic"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PlantInspectionCharacteristic"/>
+    </attribute>
+    <attribute id="MasterInspectionCharacteristics" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master Inspection Characteristics"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MasterInspectionCharacteristics"/>
+    </attribute></attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="332" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="322" y="41"/>
+      <rectangleSize width="182"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="81" y="364"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="332" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

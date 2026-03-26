@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialInspectionCharacteristic.04Harmonization::CV_MATERIALINSPCHAR_BASICDATA_QPMK" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_REL_INPUT">
+    <resourceUri>EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_REL_INPUT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.MD.MaterialInspectionCharacteristic.03Transformation::CV_MATERIALINSPCHAR_BASICDATA_QPMK">
+    <resourceUri>EHUB.MD.MaterialInspectionCharacteristic.03Transformation::CV_MATERIALINSPCHAR_BASICDATA_QPMK</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Remediated_Data">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_TA_MATERIALINSPCHAR_BASICDATA_QPMK_REL_INPUT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PLANTINSPECTIONCHARACTERISTIC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MASTERINSPECTIONCHARACTERISTICS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="VALIDFROMDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassCharacteristicName" source="CLASSCHARACTERISTICNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SearchField" source="SEARCHFIELD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InternalCharacteristicDescription" source="INTERNALCHARACTERISTICDESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DecimalPlaces" source="DECIMALPLACES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WeightingOfCharacteristic" source="WEIGHTINGOFCHARACTERISTIC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField1" source="INFOFIELD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField2" source="INFOFIELD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField3" source="INFOFIELD3"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.MaterialInspectionCharacteristic.03Transformation::CV_MATERIALINSPCHAR_BASICDATA_QPMK"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassCharacteristicName" source="ClassCharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status" source="Status"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SearchField" source="SearchField"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InternalCharacteristicDescription" source="InternalCharacteristicDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DecimalPlaces" source="DecimalPlaces"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WeightingOfCharacteristic" source="WeightingOfCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField1" source="InfoField1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField2" source="InfoField2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField3" source="InfoField3"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_MAIN" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+      <viewAttribute id="PlantInspectionCharacteristic_INPUT"/>
+      <viewAttribute hidden="true" id="JOIN$PlantInspectionCharacteristic$PlantInspectionCharacteristic"/>
+      <viewAttribute hidden="true" id="JOIN$MasterInspectionCharacteristics$MasterInspectionCharacteristics"/>
+      <viewAttribute hidden="true" id="JOIN$ValidFromDate$ValidFromDate"/>
+      <viewAttribute hidden="true" id="JOIN$Status$Status"/>
+      <viewAttribute hidden="true" id="JOIN$SearchField$SearchField"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassCharacteristicName" source="ClassCharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status" source="Status"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SearchField" source="SearchField"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InternalCharacteristicDescription" source="InternalCharacteristicDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DecimalPlaces" source="DecimalPlaces"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WeightingOfCharacteristic" source="WeightingOfCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField1" source="InfoField1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField2" source="InfoField2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField3" source="InfoField3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PlantInspectionCharacteristic$PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MasterInspectionCharacteristics$MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ValidFromDate$ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Status$Status" source="Status"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SearchField$SearchField" source="SearchField"/>
+    </input>
+    <input node="P_Remediated_Data">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic_INPUT" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PlantInspectionCharacteristic$PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MasterInspectionCharacteristics$MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ValidFromDate$ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Status$Status" source="Status"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SearchField$SearchField" source="SearchField"/>
+    </input>
+    <joinAttribute name="JOIN$PlantInspectionCharacteristic$PlantInspectionCharacteristic"/>
+    <joinAttribute name="JOIN$MasterInspectionCharacteristics$MasterInspectionCharacteristics"/>
+    <joinAttribute name="JOIN$ValidFromDate$ValidFromDate"/>
+    <joinAttribute name="JOIN$Status$Status"/>
+    <joinAttribute name="JOIN$SearchField$SearchField"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Without_Remediated_data" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+      <viewAttribute id="PlantInspectionCharacteristic_INPUT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="J_MAIN"/>
+    <filter>&quot;PlantInspectionCharacteristic_INPUT&quot; is null</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="U_MAIN_DELTA">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="ValidFromDate"/>
+      <viewAttribute id="ClassCharacteristicName"/>
+      <viewAttribute id="Status"/>
+      <viewAttribute id="SearchField"/>
+      <viewAttribute id="InternalCharacteristicDescription"/>
+      <viewAttribute id="DecimalPlaces"/>
+      <viewAttribute id="WeightingOfCharacteristic"/>
+      <viewAttribute id="InfoField1"/>
+      <viewAttribute id="InfoField2"/>
+      <viewAttribute id="InfoField3"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="P_Without_Remediated_data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassCharacteristicName" source="ClassCharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status" source="Status"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SearchField" source="SearchField"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InternalCharacteristicDescription" source="InternalCharacteristicDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DecimalPlaces" source="DecimalPlaces"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WeightingOfCharacteristic" source="WeightingOfCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField1" source="InfoField1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField2" source="InfoField2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField3" source="InfoField3"/>
+    </input>
+    <input node="P_Remediated_Data" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PlantInspectionCharacteristic" source="PlantInspectionCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MasterInspectionCharacteristics" source="MasterInspectionCharacteristics"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ValidFromDate" source="ValidFromDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClassCharacteristicName" source="ClassCharacteristicName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status" source="Status"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SearchField" source="SearchField"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InternalCharacteristicDescription" source="InternalCharacteristicDescription"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DecimalPlaces" source="DecimalPlaces"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WeightingOfCharacteristic" source="WeightingOfCharacteristic"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField1" source="InfoField1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField2" source="InfoField2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="InfoField3" source="InfoField3"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="U_MAIN_DELTA">
+  <attributes>
+    <attribute id="PlantInspectionCharacteristic" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant for the Master Inspection Characteristic"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="PlantInspectionCharacteristic"/>
+    </attribute>
+    <attribute id="MasterInspectionCharacteristics" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master Inspection Characteristics"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="MasterInspectionCharacteristics"/>
+    </attribute>
+    <attribute id="ValidFromDate" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ValidFromDate"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ValidFromDate"/>
+    </attribute>
+    <attribute id="ClassCharacteristicName" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClassCharacteristicName"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="ClassCharacteristicName"/>
+    </attribute>
+    <attribute id="Status" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Status"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="Status"/>
+    </attribute>
+    <attribute id="SearchField" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SearchField"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="SearchField"/>
+    </attribute>
+    <attribute id="InternalCharacteristicDescription" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InternalCharacteristicDescription"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="InternalCharacteristicDescription"/>
+    </attribute>
+    <attribute id="DecimalPlaces" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DecimalPlaces"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="DecimalPlaces"/>
+    </attribute>
+    <attribute id="WeightingOfCharacteristic" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WeightingOfCharacteristic"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="WeightingOfCharacteristic"/>
+    </attribute>
+    <attribute id="InfoField1" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField1"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="InfoField1"/>
+    </attribute>
+    <attribute id="InfoField2" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField2"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="InfoField2"/>
+    </attribute>
+    <attribute id="InfoField3" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="InfoField3"/>
+      <keyMapping columnObjectName="U_MAIN_DELTA" columnName="InfoField3"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="332" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Remediated_Data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="361" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="132" y="676"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_MAIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Union_1" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="125"/>
+    </shape>
+    <shape modelObjectName="P_Remediated_Data" modelObjectNameSpace="J_MAIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="322" y="41"/>
+      <rectangleSize width="182"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Without_Remediated_data" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="81" y="364"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="U_MAIN_DELTA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="332" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

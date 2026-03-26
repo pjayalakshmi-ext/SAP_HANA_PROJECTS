@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.GL Master.03Transformation::CV_GLMASTER_SKAT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" application="BAS" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_GLMASTER_SKAT.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.GL Master.01Extraction::CV_SHE_GLMASTER_SKAT">
+    <resourceUri>EHUB.MD.GL Master.01Extraction::CV_SHE_GLMASTER_SKAT</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_LKP_CHART_OF_ACCOUNTS">
+    <resourceUri>EHUB.Synonyms::SY_LKP_CHART_OF_ACCOUNTS</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER">
+    <resourceUri>EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="TXT20"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="CURRENT_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.MD.GL Master.01Extraction::CV_SHE_GLMASTER_SKAT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CHART_OF_ACCOUNTS"/>
+      <viewAttribute id="CHART_OF_ACCOUNTS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_LKP_CHART_OF_ACCOUNTS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="LEGACY_CHART_OF_ACCOUNTS"/>
+      <viewAttribute id="LEGACY_GL_ACCOUNT_NUMBER"/>
+      <viewAttribute id="GL_ACCOUNT_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_GL_ACCOUNT_NUMBER"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="TXT20"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="CHART_OF_ACCOUNTS"/>
+      <viewAttribute hidden="true" id="JOIN$KTOPL$LEGACY_CHART_OF_ACCOUNTS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_S4_CHART_OF_ACCOUNTS" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>case when &quot;KTOPL&quot; != &quot;CHART_OF_ACCOUNTS&quot; and &quot;CHART_OF_ACCOUNTS&quot; is not null
+then &quot;CHART_OF_ACCOUNTS&quot;
+else &quot;KTOPL&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOPL" source="KTOPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT20" source="TXT20"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT50" source="TXT50"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KTOPL$LEGACY_CHART_OF_ACCOUNTS" source="KTOPL"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHART_OF_ACCOUNTS" source="CHART_OF_ACCOUNTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KTOPL$LEGACY_CHART_OF_ACCOUNTS" source="LEGACY_CHART_OF_ACCOUNTS"/>
+    </input>
+    <joinAttribute name="JOIN$KTOPL$LEGACY_CHART_OF_ACCOUNTS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="KTOPL"/>
+      <viewAttribute id="SAKNR"/>
+      <viewAttribute id="TXT20"/>
+      <viewAttribute id="TXT50"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="CURRENT_DATE"/>
+      <viewAttribute id="GL_ACCOUNT_NUMBER"/>
+      <viewAttribute hidden="true" id="JOIN$KTOPL$LEGACY_CHART_OF_ACCOUNTS"/>
+      <viewAttribute hidden="true" id="JOIN$SAKNR$LEGACY_GL_ACCOUNT_NUMBER"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_S4_GL_ACCOUNT_NUMBER" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>case when &quot;SAKNR&quot; != &quot;GL_ACCOUNT_NUMBER&quot; and &quot;GL_ACCOUNT_NUMBER&quot; is not null
+then &quot;GL_ACCOUNT_NUMBER&quot;
+else &quot;SAKNR&quot;
+end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOPL" source="CC_S4_CHART_OF_ACCOUNTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAKNR" source="SAKNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT20" source="TXT20"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TXT50" source="TXT50"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENT_DATE" source="CURRENT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KTOPL$LEGACY_CHART_OF_ACCOUNTS" source="KTOPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SAKNR$LEGACY_GL_ACCOUNT_NUMBER" source="SAKNR"/>
+    </input>
+    <input node="Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="GL_ACCOUNT_NUMBER" source="GL_ACCOUNT_NUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KTOPL$LEGACY_CHART_OF_ACCOUNTS" source="LEGACY_CHART_OF_ACCOUNTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$SAKNR$LEGACY_GL_ACCOUNT_NUMBER" source="LEGACY_GL_ACCOUNT_NUMBER"/>
+    </input>
+    <joinAttribute name="JOIN$KTOPL$LEGACY_CHART_OF_ACCOUNTS"/>
+    <joinAttribute name="JOIN$SAKNR$LEGACY_GL_ACCOUNT_NUMBER"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_2">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Client"/>
+      <keyMapping columnObjectName="Join_2" columnName="MANDT"/>
+    </attribute>
+    <attribute id="SPRAS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="Join_2" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="KTOPL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Chart of Accounts"/>
+      <keyMapping columnObjectName="Join_2" columnName="KTOPL"/>
+    </attribute>
+    <attribute id="SAKNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="G/L Account Number"/>
+      <keyMapping columnObjectName="Join_2" columnName="GL_ACCOUNT_NUMBER"/>
+    </attribute>
+    <attribute id="TXT20" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="G/L account short text"/>
+      <keyMapping columnObjectName="Join_2" columnName="TXT20"/>
+    </attribute>
+    <attribute id="TXT50" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="G/L Account Long Text"/>
+      <keyMapping columnObjectName="Join_2" columnName="TXT50"/>
+    </attribute>
+    <attribute id="MCOD1" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Search Term for Matchcode Search"/>
+      <keyMapping columnObjectName="Join_2" columnName="MCOD1"/>
+    </attribute>
+    <attribute id="CURRENT_DATE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENT_DATE"/>
+      <keyMapping columnObjectName="Join_2" columnName="CURRENT_DATE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="263"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="254"/>
+    </shape>
+    <shape modelObjectName="Projection_3" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="265"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

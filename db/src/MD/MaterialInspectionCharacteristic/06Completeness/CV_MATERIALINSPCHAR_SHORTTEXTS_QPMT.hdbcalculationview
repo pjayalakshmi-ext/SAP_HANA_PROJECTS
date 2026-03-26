@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EHUB.MD.MaterialInspectionCharacteristic.06Completeness::CV_MATERIALINSPCHAR_SHORTTEXTS_QPMT" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_HAR"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.MD.MaterialInspectionCharacteristic.04Harmonization::CV_MATERIALINSPCHAR_SHORTTEXTS_QPMT">
+    <resourceUri>EHUB.MD.MaterialInspectionCharacteristic.04Harmonization::CV_MATERIALINSPCHAR_SHORTTEXTS_QPMT</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="PlantInspectionCharacteristic"/>
+      <viewAttribute id="MasterInspectionCharacteristics"/>
+      <viewAttribute id="LanguageKey"/>
+      <viewAttribute id="ValidFromDateQPMT"/>
+      <viewAttribute id="TextLine"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PlantInspectionCharacteristic&quot;=''  or &quot;PlantInspectionCharacteristic&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;MasterInspectionCharacteristics&quot;=''  or &quot;MasterInspectionCharacteristics&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="VALIDFROMDATE_INCOMPLETE" datatype="INTEGER" length="" expressionLanguage="SQL">
+        <formula>case when &quot;ValidFromDateQPMT&quot;=''  or &quot;ValidFromDateQPMT&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LANGUAGEKEY_INCOMPLETE" datatype="INTEGER" length="" expressionLanguage="SQL">
+        <formula>case when &quot;LanguageKey&quot;=''  or &quot;LanguageKey&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="TEXTLINE_INCOMPLETE" datatype="INTEGER" length="" expressionLanguage="SQL">
+        <formula>case when &quot;TextLine&quot;=''  or &quot;TextLine&quot; is null
+then 1
+else 0
+end
+
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.MD.MaterialInspectionCharacteristic.04Harmonization::CV_MATERIALINSPCHAR_SHORTTEXTS_QPMT"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="PlantInspectionCharacteristic" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant for the Master Inspection Characteristic"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PlantInspectionCharacteristic"/>
+    </attribute>
+    <attribute id="MasterInspectionCharacteristics" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Master Inspection Characteristics"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MasterInspectionCharacteristics"/>
+    </attribute>
+    <attribute id="LanguageKey" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Language Key"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LanguageKey"/>
+    </attribute>
+    <attribute id="ValidFromDateQPMT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Valid-From Date"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ValidFromDateQPMT"/>
+    </attribute>
+    <attribute id="TextLine" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Short Text"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TextLine"/>
+    </attribute>
+    <attribute id="PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE"/>
+    </attribute>
+    <attribute id="MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE"/>
+    </attribute>
+    <attribute id="VALIDFROMDATE_INCOMPLETE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VALIDFROMDATE_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="VALIDFROMDATE_INCOMPLETE"/>
+    </attribute>
+    <attribute id="LANGUAGEKEY_INCOMPLETE" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LANGUAGEKEY_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="LANGUAGEKEY_INCOMPLETE"/>
+    </attribute>
+    <attribute id="TEXTLINE_INCOMPLETE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TEXTLINE_INCOMPLETE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="TEXTLINE_INCOMPLETE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="TOTAL_INCOMPLETE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
+        <formula>case when &quot;PLANTINSPECTIONCHARACTERISTIC_INCOMPLETE&quot;+&quot;MASTERINSPECTIONCHARACTERISTICS_INCOMPLETE&quot;+&quot;VALIDFROMDATE_INCOMPLETE&quot;+&quot;LANGUAGEKEY_INCOMPLETE&quot;+&quot;TEXTLINE_INCOMPLETE&quot;&gt;=1
+then 1
+else 0
+end 
+
+</formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>
