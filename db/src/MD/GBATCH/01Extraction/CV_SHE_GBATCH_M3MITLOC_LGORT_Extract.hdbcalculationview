@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_GBATCH_M3MITLOC_LGORT_Extract" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CV_SHE_GBATCH_M3MITLOC_Extract">
+    <resourceUri>CV_SHE_GBATCH_M3MITLOC_Extract</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_LGORT_Xref">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_LGORT_Xref</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_MITLOC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHSL"/>
+      <viewAttribute id="MLSTQT"/>
+    
+      <viewAttribute id="CC_MLWHLO"/>
+      <viewAttribute id="CC_MLWHSL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MLITNO" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;MLITNO&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="CV_SHE_GBATCH_M3MITLOC_Extract"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_LGORT">
+    <viewAttributes>
+      <viewAttribute id="Depot"/>
+      <viewAttribute id="Emplacement"/>
+      <viewAttribute id="Rule_:_To_migrate_?"/>
+      <viewAttribute id="Storage_location_Code"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_LGORT_Xref">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Rule_:_To_migrate_?" source="Rule : To migrate ?"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Storage_location_Code" source="Storage location Code"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="CC_MLITNO"/>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHSL"/>
+      <viewAttribute id="MLSTQT"/>
+      <viewAttribute id="Rule_:_To_migrate_?"/>
+      <viewAttribute id="Storage_location_Code"/>
+      <viewAttribute id="CC_MLWHLO"/>
+      <viewAttribute id="CC_MLWHSL"/>
+      <viewAttribute hidden="true" id="JOIN$CC_MLWHLO$Depot"/>
+      <viewAttribute hidden="true" id="JOIN$CC_MLWHSL$Emplacement"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Proj_MITLOC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLITNO" source="CC_MLITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLITNO" source="MLITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHSL" source="MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLSTQT" source="MLSTQT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLWHLO" source="CC_MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLWHSL" source="CC_MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_MLWHLO$Depot" source="CC_MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_MLWHSL$Emplacement" source="CC_MLWHSL"/>
+    </input>
+    <input node="Projection_LGORT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Rule_:_To_migrate_?" source="Rule_:_To_migrate_?"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Storage_location_Code" source="Storage_location_Code"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_MLWHLO$Depot" source="Depot"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_MLWHSL$Emplacement" source="Emplacement"/>
+    </input>
+    <joinAttribute name="JOIN$CC_MLWHLO$Depot"/>
+    <joinAttribute name="JOIN$CC_MLWHSL$Emplacement"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1" filterExpressionLanguage="SQL">
+  <attributes>
+    <attribute id="CC_MLITNO" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLITNO"/>
+      <keyMapping columnObjectName="Join_1" columnName="CC_MLITNO"/>
+    </attribute>
+    <attribute id="MLITNO" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLITNO"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLITNO"/>
+    </attribute>
+    <attribute id="MLWHSL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHSL"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLWHSL"/>
+    </attribute>
+    <attribute id="MLSTQT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLSTQT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLSTQT"/>
+    </attribute>
+    <attribute id="Rule_:_To_migrate_?" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rule_:_To_migrate_?"/>
+      <keyMapping columnObjectName="Join_1" columnName="Rule_:_To_migrate_?"/>
+    </attribute>
+    <attribute id="Storage_location_Code" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage_location_Code"/>
+      <keyMapping columnObjectName="Join_1" columnName="Storage_location_Code"/>
+    </attribute>
+    <attribute id="CC_MLWHLO" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLWHLO"/>
+      <keyMapping columnObjectName="Join_1" columnName="CC_MLWHLO"/>
+    </attribute>
+    <attribute id="CC_MLWHSL" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLWHSL"/>
+      <keyMapping columnObjectName="Join_1" columnName="CC_MLWHSL"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+
+  <filter>&quot;Rule_:_To_migrate_?&quot;='Yes'</filter>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="285" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_MITLOC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="356"/>
+      <rectangleSize height="30" width="240"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_LGORT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="365" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="285" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Proj_MITLOC" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="175"/>
+    </shape>
+    <shape modelObjectName="Projection_LGORT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="898" y="41"/>
+      <rectangleSize width="220"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

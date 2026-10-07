@@ -1,0 +1,8 @@
+{
+  "SY_TA_STK_MITLOC_INV": {
+    "target": {
+      "object": "SY_TA_STK_MITLOC_INV",
+      "schema": "EHUB_ALG"
+    }
+  }
+}

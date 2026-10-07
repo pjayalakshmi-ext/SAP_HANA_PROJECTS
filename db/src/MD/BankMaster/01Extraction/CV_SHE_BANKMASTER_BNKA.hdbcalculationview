@@ -31,7 +31,7 @@
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="EHUB.Synonyms::SY_ZSLT_SHE_BNKA"/>
-    <filter>&quot;MANDT&quot;='801'</filter>
+    <filter>&quot;MANDT&quot;='100'</filter>
   </calculationView>
 </calculationViews>
 

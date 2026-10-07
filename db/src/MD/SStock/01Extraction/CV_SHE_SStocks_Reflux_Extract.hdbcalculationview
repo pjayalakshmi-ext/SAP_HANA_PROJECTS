@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_SStocks_Reflux_Extract" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_REfHLGEINP">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_REfHLGEINP</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_Reflux">
+    <viewAttributes>
+      <viewAttribute id="GECACT"/>
+      <viewAttribute id="GENGEI"/>
+      <viewAttribute id="GENIGE"/>
+      <viewAttribute id="GECDPO"/>
+      <viewAttribute id="GENSUP"/>
+      <viewAttribute id="GENCOL"/>
+      <viewAttribute id="GECART"/>
+      <viewAttribute id="GECVLA"/>
+      <viewAttribute id="GECPRP"/>
+      <viewAttribute id="GECQAL"/>
+      <viewAttribute id="GECTST"/>
+      <viewAttribute id="GEQGEI"/>
+      <viewAttribute id="GEPNGE"/>
+      <viewAttribute id="GEPBGE"/>
+      <viewAttribute id="GEPRGE"/>
+      <viewAttribute id="GEMTGE"/>
+      <viewAttribute id="GECDES"/>
+      <viewAttribute id="GECFDS"/>
+      <viewAttribute id="GERRSO"/>
+      <viewAttribute id="GECDOR"/>
+      <viewAttribute id="GERODP"/>
+      <viewAttribute id="GETDJG"/>
+      <viewAttribute id="GECFOU"/>
+      <viewAttribute id="GECDPR"/>
+      <viewAttribute id="GENANN"/>
+      <viewAttribute id="GENREC"/>
+      <viewAttribute id="GELOTF"/>
+      <viewAttribute id="GELOT2"/>
+      <viewAttribute id="GELOT3"/>
+      <viewAttribute id="GESFAB"/>
+      <viewAttribute id="GEAFAB"/>
+      <viewAttribute id="GEMFAB"/>
+      <viewAttribute id="GEJFAB"/>
+      <viewAttribute id="GEHFAB"/>
+      <viewAttribute id="GESREG"/>
+      <viewAttribute id="GEAREG"/>
+      <viewAttribute id="GEMREG"/>
+      <viewAttribute id="GEJREG"/>
+      <viewAttribute id="GEHERE"/>
+      <viewAttribute id="GESDLU"/>
+      <viewAttribute id="GEADLU"/>
+      <viewAttribute id="GEMDLU"/>
+      <viewAttribute id="GEJDLU"/>
+      <viewAttribute id="GESDLV"/>
+      <viewAttribute id="GEADLV"/>
+      <viewAttribute id="GEMDLV"/>
+      <viewAttribute id="GEJDLV"/>
+      <viewAttribute id="GESDLC"/>
+      <viewAttribute id="GEADLC"/>
+      <viewAttribute id="GEMDLC"/>
+      <viewAttribute id="GEJDLC"/>
+      <viewAttribute id="GESDOR"/>
+      <viewAttribute id="GEADOR"/>
+      <viewAttribute id="GEMDOR"/>
+      <viewAttribute id="GEJDOR"/>
+      <viewAttribute id="GETGDI"/>
+      <viewAttribute id="GETGBL"/>
+      <viewAttribute id="GECMBG"/>
+      <viewAttribute id="GETBDO"/>
+      <viewAttribute id="GESDOU"/>
+      <viewAttribute id="GEADOU"/>
+      <viewAttribute id="GEMDOU"/>
+      <viewAttribute id="GEJDOU"/>
+      <viewAttribute id="GEHDOU"/>
+      <viewAttribute id="GETBST"/>
+      <viewAttribute id="GESSTA"/>
+      <viewAttribute id="GEASTA"/>
+      <viewAttribute id="GEMSTA"/>
+      <viewAttribute id="GEJSTA"/>
+      <viewAttribute id="GEHSTA"/>
+      <viewAttribute id="GETBCT"/>
+      <viewAttribute id="GETBRC"/>
+      <viewAttribute id="GETBEM"/>
+      <viewAttribute id="GETGIN"/>
+      <viewAttribute id="GECDP1"/>
+      <viewAttribute id="GENANR"/>
+      <viewAttribute id="GENUMR"/>
+      <viewAttribute id="GENLIR"/>
+      <viewAttribute id="GENAPL"/>
+      <viewAttribute id="GENPRL"/>
+      <viewAttribute id="GENOBJ"/>
+      <viewAttribute id="GENCOM"/>
+      <viewAttribute id="GESCRE"/>
+      <viewAttribute id="GEACRE"/>
+      <viewAttribute id="GEMCRE"/>
+      <viewAttribute id="GEJCRE"/>
+      <viewAttribute id="GEHCRE"/>
+      <viewAttribute id="GECPCR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_REfHLGEINP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MARA_Xref" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MTART"/>
+    
+      <viewAttribute id="XCHPF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref"/>
+    <filter>&quot;XCHPF&quot;='X'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="GECACT"/>
+      <viewAttribute id="GENGEI"/>
+      <viewAttribute id="GENIGE"/>
+      <viewAttribute id="GECDPO"/>
+      <viewAttribute id="GENSUP"/>
+      <viewAttribute id="GENCOL"/>
+      <viewAttribute id="GECART"/>
+      <viewAttribute id="GECVLA"/>
+      <viewAttribute id="GECPRP"/>
+      <viewAttribute id="GECQAL"/>
+      <viewAttribute id="GECTST"/>
+      <viewAttribute id="GEQGEI"/>
+      <viewAttribute id="GEPNGE"/>
+      <viewAttribute id="GEPBGE"/>
+      <viewAttribute id="GEPRGE"/>
+      <viewAttribute id="GEMTGE"/>
+      <viewAttribute id="GECDES"/>
+      <viewAttribute id="GECFDS"/>
+      <viewAttribute id="GERRSO"/>
+      <viewAttribute id="GECDOR"/>
+      <viewAttribute id="GERODP"/>
+      <viewAttribute id="GETDJG"/>
+      <viewAttribute id="GECFOU"/>
+      <viewAttribute id="GECDPR"/>
+      <viewAttribute id="GENANN"/>
+      <viewAttribute id="GENREC"/>
+      <viewAttribute id="GELOTF"/>
+      <viewAttribute id="GELOT2"/>
+      <viewAttribute id="GELOT3"/>
+      <viewAttribute id="GESFAB"/>
+      <viewAttribute id="GEAFAB"/>
+      <viewAttribute id="GEMFAB"/>
+      <viewAttribute id="GEJFAB"/>
+      <viewAttribute id="GEHFAB"/>
+      <viewAttribute id="GESREG"/>
+      <viewAttribute id="GEAREG"/>
+      <viewAttribute id="GEMREG"/>
+      <viewAttribute id="GEJREG"/>
+      <viewAttribute id="GEHERE"/>
+      <viewAttribute id="GESDLU"/>
+      <viewAttribute id="GEADLU"/>
+      <viewAttribute id="GEMDLU"/>
+      <viewAttribute id="GEJDLU"/>
+      <viewAttribute id="GESDLV"/>
+      <viewAttribute id="GEADLV"/>
+      <viewAttribute id="GEMDLV"/>
+      <viewAttribute id="GEJDLV"/>
+      <viewAttribute id="GESDLC"/>
+      <viewAttribute id="GEADLC"/>
+      <viewAttribute id="GEMDLC"/>
+      <viewAttribute id="GEJDLC"/>
+      <viewAttribute id="GESDOR"/>
+      <viewAttribute id="GEADOR"/>
+      <viewAttribute id="GEMDOR"/>
+      <viewAttribute id="GEJDOR"/>
+      <viewAttribute id="GETGDI"/>
+      <viewAttribute id="GETGBL"/>
+      <viewAttribute id="GECMBG"/>
+      <viewAttribute id="GETBDO"/>
+      <viewAttribute id="GESDOU"/>
+      <viewAttribute id="GEADOU"/>
+      <viewAttribute id="GEMDOU"/>
+      <viewAttribute id="GEJDOU"/>
+      <viewAttribute id="GEHDOU"/>
+      <viewAttribute id="GETBST"/>
+      <viewAttribute id="GESSTA"/>
+      <viewAttribute id="GEASTA"/>
+      <viewAttribute id="GEMSTA"/>
+      <viewAttribute id="GEJSTA"/>
+      <viewAttribute id="GEHSTA"/>
+      <viewAttribute id="GETBCT"/>
+      <viewAttribute id="GETBRC"/>
+      <viewAttribute id="GETBEM"/>
+      <viewAttribute id="GETGIN"/>
+      <viewAttribute id="GECDP1"/>
+      <viewAttribute id="GENANR"/>
+      <viewAttribute id="GENUMR"/>
+      <viewAttribute id="GENLIR"/>
+      <viewAttribute id="GENAPL"/>
+      <viewAttribute id="GENPRL"/>
+      <viewAttribute id="GENOBJ"/>
+      <viewAttribute id="GENCOM"/>
+      <viewAttribute id="GESCRE"/>
+      <viewAttribute id="GEACRE"/>
+      <viewAttribute id="GEMCRE"/>
+      <viewAttribute id="GEJCRE"/>
+      <viewAttribute id="GEHCRE"/>
+      <viewAttribute id="GECPCR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="XCHPF"/>
+      <viewAttribute hidden="true" id="JOIN$GECART$BISMT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Proj_Reflux">
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECACT" source="GECACT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENGEI" source="GENGEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENIGE" source="GENIGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECDPO" source="GECDPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENSUP" source="GENSUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENCOL" source="GENCOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECART" source="GECART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECVLA" source="GECVLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECPRP" source="GECPRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECQAL" source="GECQAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECTST" source="GECTST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEQGEI" source="GEQGEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEPNGE" source="GEPNGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEPBGE" source="GEPBGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEPRGE" source="GEPRGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMTGE" source="GEMTGE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECDES" source="GECDES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECFDS" source="GECFDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GERRSO" source="GERRSO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECDOR" source="GECDOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GERODP" source="GERODP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETDJG" source="GETDJG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECFOU" source="GECFOU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECDPR" source="GECDPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENANN" source="GENANN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENREC" source="GENREC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GELOTF" source="GELOTF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GELOT2" source="GELOT2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GELOT3" source="GELOT3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESFAB" source="GESFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEAFAB" source="GEAFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMFAB" source="GEMFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJFAB" source="GEJFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEHFAB" source="GEHFAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESREG" source="GESREG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEAREG" source="GEAREG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMREG" source="GEMREG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJREG" source="GEJREG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEHERE" source="GEHERE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESDLU" source="GESDLU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEADLU" source="GEADLU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMDLU" source="GEMDLU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJDLU" source="GEJDLU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESDLV" source="GESDLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEADLV" source="GEADLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMDLV" source="GEMDLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJDLV" source="GEJDLV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESDLC" source="GESDLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEADLC" source="GEADLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMDLC" source="GEMDLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJDLC" source="GEJDLC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESDOR" source="GESDOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEADOR" source="GEADOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMDOR" source="GEMDOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJDOR" source="GEJDOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETGDI" source="GETGDI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETGBL" source="GETGBL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECMBG" source="GECMBG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETBDO" source="GETBDO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESDOU" source="GESDOU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEADOU" source="GEADOU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMDOU" source="GEMDOU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJDOU" source="GEJDOU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEHDOU" source="GEHDOU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETBST" source="GETBST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESSTA" source="GESSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEASTA" source="GEASTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMSTA" source="GEMSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJSTA" source="GEJSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEHSTA" source="GEHSTA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETBCT" source="GETBCT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETBRC" source="GETBRC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETBEM" source="GETBEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GETGIN" source="GETGIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECDP1" source="GECDP1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENANR" source="GENANR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENUMR" source="GENUMR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENLIR" source="GENLIR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENAPL" source="GENAPL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENPRL" source="GENPRL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENOBJ" source="GENOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENCOM" source="GENCOM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GESCRE" source="GESCRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEACRE" source="GEACRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEMCRE" source="GEMCRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEJCRE" source="GEJCRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEHCRE" source="GEHCRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GECPCR" source="GECPCR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GECART$BISMT" source="GECART"/>
+    </input>
+    <input node="MARA_Xref">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="XCHPF" source="XCHPF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GECART$BISMT" source="BISMT"/>
+    </input>
+    <joinAttribute name="JOIN$GECART$BISMT"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1" filterExpressionLanguage="SQL">
+  <attributes>
+    <attribute id="GECACT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECACT"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECACT"/>
+    </attribute>
+    <attribute id="GENGEI" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENGEI"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENGEI"/>
+    </attribute>
+    <attribute id="GENIGE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENIGE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENIGE"/>
+    </attribute>
+    <attribute id="GECDPO" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECDPO"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECDPO"/>
+    </attribute>
+    <attribute id="GENSUP" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENSUP"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENSUP"/>
+    </attribute>
+    <attribute id="GENCOL" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENCOL"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENCOL"/>
+    </attribute>
+    <attribute id="GECART" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECART"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECART"/>
+    </attribute>
+    <attribute id="GECVLA" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECVLA"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECVLA"/>
+    </attribute>
+    <attribute id="GECPRP" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECPRP"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECPRP"/>
+    </attribute>
+    <attribute id="GECQAL" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECQAL"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECQAL"/>
+    </attribute>
+    <attribute id="GECTST" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECTST"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECTST"/>
+    </attribute>
+    <attribute id="GEQGEI" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEQGEI"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEQGEI"/>
+    </attribute>
+    <attribute id="GEPNGE" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEPNGE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEPNGE"/>
+    </attribute>
+    <attribute id="GEPBGE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEPBGE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEPBGE"/>
+    </attribute>
+    <attribute id="GEPRGE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEPRGE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEPRGE"/>
+    </attribute>
+    <attribute id="GEMTGE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMTGE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMTGE"/>
+    </attribute>
+    <attribute id="GECDES" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECDES"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECDES"/>
+    </attribute>
+    <attribute id="GECFDS" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECFDS"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECFDS"/>
+    </attribute>
+    <attribute id="GERRSO" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GERRSO"/>
+      <keyMapping columnObjectName="Join_1" columnName="GERRSO"/>
+    </attribute>
+    <attribute id="GECDOR" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECDOR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECDOR"/>
+    </attribute>
+    <attribute id="GERODP" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GERODP"/>
+      <keyMapping columnObjectName="Join_1" columnName="GERODP"/>
+    </attribute>
+    <attribute id="GETDJG" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETDJG"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETDJG"/>
+    </attribute>
+    <attribute id="GECFOU" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECFOU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECFOU"/>
+    </attribute>
+    <attribute id="GECDPR" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECDPR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECDPR"/>
+    </attribute>
+    <attribute id="GENANN" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENANN"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENANN"/>
+    </attribute>
+    <attribute id="GENREC" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENREC"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENREC"/>
+    </attribute>
+    <attribute id="GELOTF" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GELOTF"/>
+      <keyMapping columnObjectName="Join_1" columnName="GELOTF"/>
+    </attribute>
+    <attribute id="GELOT2" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GELOT2"/>
+      <keyMapping columnObjectName="Join_1" columnName="GELOT2"/>
+    </attribute>
+    <attribute id="GELOT3" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GELOT3"/>
+      <keyMapping columnObjectName="Join_1" columnName="GELOT3"/>
+    </attribute>
+    <attribute id="GESFAB" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESFAB"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESFAB"/>
+    </attribute>
+    <attribute id="GEAFAB" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEAFAB"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEAFAB"/>
+    </attribute>
+    <attribute id="GEMFAB" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMFAB"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMFAB"/>
+    </attribute>
+    <attribute id="GEJFAB" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJFAB"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJFAB"/>
+    </attribute>
+    <attribute id="GEHFAB" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEHFAB"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEHFAB"/>
+    </attribute>
+    <attribute id="GESREG" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESREG"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESREG"/>
+    </attribute>
+    <attribute id="GEAREG" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEAREG"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEAREG"/>
+    </attribute>
+    <attribute id="GEMREG" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMREG"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMREG"/>
+    </attribute>
+    <attribute id="GEJREG" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJREG"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJREG"/>
+    </attribute>
+    <attribute id="GEHERE" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEHERE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEHERE"/>
+    </attribute>
+    <attribute id="GESDLU" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESDLU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESDLU"/>
+    </attribute>
+    <attribute id="GEADLU" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEADLU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEADLU"/>
+    </attribute>
+    <attribute id="GEMDLU" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMDLU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMDLU"/>
+    </attribute>
+    <attribute id="GEJDLU" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJDLU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJDLU"/>
+    </attribute>
+    <attribute id="GESDLV" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESDLV"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESDLV"/>
+    </attribute>
+    <attribute id="GEADLV" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEADLV"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEADLV"/>
+    </attribute>
+    <attribute id="GEMDLV" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMDLV"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMDLV"/>
+    </attribute>
+    <attribute id="GEJDLV" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJDLV"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJDLV"/>
+    </attribute>
+    <attribute id="GESDLC" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESDLC"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESDLC"/>
+    </attribute>
+    <attribute id="GEADLC" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEADLC"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEADLC"/>
+    </attribute>
+    <attribute id="GEMDLC" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMDLC"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMDLC"/>
+    </attribute>
+    <attribute id="GEJDLC" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJDLC"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJDLC"/>
+    </attribute>
+    <attribute id="GESDOR" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESDOR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESDOR"/>
+    </attribute>
+    <attribute id="GEADOR" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEADOR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEADOR"/>
+    </attribute>
+    <attribute id="GEMDOR" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMDOR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMDOR"/>
+    </attribute>
+    <attribute id="GEJDOR" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJDOR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJDOR"/>
+    </attribute>
+    <attribute id="GETGDI" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETGDI"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETGDI"/>
+    </attribute>
+    <attribute id="GETGBL" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETGBL"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETGBL"/>
+    </attribute>
+    <attribute id="GECMBG" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECMBG"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECMBG"/>
+    </attribute>
+    <attribute id="GETBDO" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETBDO"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETBDO"/>
+    </attribute>
+    <attribute id="GESDOU" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESDOU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESDOU"/>
+    </attribute>
+    <attribute id="GEADOU" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEADOU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEADOU"/>
+    </attribute>
+    <attribute id="GEMDOU" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMDOU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMDOU"/>
+    </attribute>
+    <attribute id="GEJDOU" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJDOU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJDOU"/>
+    </attribute>
+    <attribute id="GEHDOU" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEHDOU"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEHDOU"/>
+    </attribute>
+    <attribute id="GETBST" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETBST"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETBST"/>
+    </attribute>
+    <attribute id="GESSTA" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESSTA"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESSTA"/>
+    </attribute>
+    <attribute id="GEASTA" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEASTA"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEASTA"/>
+    </attribute>
+    <attribute id="GEMSTA" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMSTA"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMSTA"/>
+    </attribute>
+    <attribute id="GEJSTA" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJSTA"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJSTA"/>
+    </attribute>
+    <attribute id="GEHSTA" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEHSTA"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEHSTA"/>
+    </attribute>
+    <attribute id="GETBCT" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETBCT"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETBCT"/>
+    </attribute>
+    <attribute id="GETBRC" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETBRC"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETBRC"/>
+    </attribute>
+    <attribute id="GETBEM" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETBEM"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETBEM"/>
+    </attribute>
+    <attribute id="GETGIN" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GETGIN"/>
+      <keyMapping columnObjectName="Join_1" columnName="GETGIN"/>
+    </attribute>
+    <attribute id="GECDP1" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECDP1"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECDP1"/>
+    </attribute>
+    <attribute id="GENANR" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENANR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENANR"/>
+    </attribute>
+    <attribute id="GENUMR" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENUMR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENUMR"/>
+    </attribute>
+    <attribute id="GENLIR" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENLIR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENLIR"/>
+    </attribute>
+    <attribute id="GENAPL" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENAPL"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENAPL"/>
+    </attribute>
+    <attribute id="GENPRL" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENPRL"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENPRL"/>
+    </attribute>
+    <attribute id="GENOBJ" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENOBJ"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENOBJ"/>
+    </attribute>
+    <attribute id="GENCOM" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENCOM"/>
+      <keyMapping columnObjectName="Join_1" columnName="GENCOM"/>
+    </attribute>
+    <attribute id="GESCRE" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESCRE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GESCRE"/>
+    </attribute>
+    <attribute id="GEACRE" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEACRE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEACRE"/>
+    </attribute>
+    <attribute id="GEMCRE" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMCRE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEMCRE"/>
+    </attribute>
+    <attribute id="GEJCRE" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJCRE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEJCRE"/>
+    </attribute>
+    <attribute id="GEHCRE" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEHCRE"/>
+      <keyMapping columnObjectName="Join_1" columnName="GEHCRE"/>
+    </attribute>
+    <attribute id="GECPCR" order="88" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECPCR"/>
+      <keyMapping columnObjectName="Join_1" columnName="GECPCR"/>
+    </attribute>
+    <attribute id="MATNR" order="89" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="MATNR"/>
+    </attribute>
+    <attribute id="BISMT" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BISMT"/>
+      <keyMapping columnObjectName="Join_1" columnName="BISMT"/>
+    </attribute>
+    <attribute id="MATKL" order="91" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="Join_1" columnName="MATKL"/>
+    </attribute>
+    <attribute id="MTART" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTART"/>
+      <keyMapping columnObjectName="Join_1" columnName="MTART"/>
+    </attribute>
+    <attribute id="XCHPF" order="93" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="XCHPF"/>
+      <keyMapping columnObjectName="Join_1" columnName="XCHPF"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+
+  <filter>&quot;MATNR&quot;='2AC10090001'</filter>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="289" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_Reflux" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="85" y="359"/>
+      <rectangleSize height="30" width="245"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="MARA_Xref" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="386" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="289" y="227"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Proj_Reflux" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="155"/>
+    </shape>
+    <shape modelObjectName="MARA_Xref" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="144"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

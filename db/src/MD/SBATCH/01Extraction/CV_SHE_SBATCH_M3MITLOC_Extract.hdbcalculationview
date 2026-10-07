@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_SBATCH_M3MITLOC_Extract" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_MITLOC" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MLWHLO"/>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHSL"/>
+    
+      <viewAttribute id="MLSTQT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MLWHLO" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;MLWHLO&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_MLWHSL" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;MLWHSL&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_MLITNO" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;MLITNO&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC"/>
+    <filter>&quot;MLSTQT&quot;&gt;=0</filter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Proj_MITLOC">
+  <attributes>
+    <attribute id="MLITNO" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLITNO"/>
+      <keyMapping columnObjectName="Proj_MITLOC" columnName="MLITNO"/>
+    </attribute>
+    <attribute id="MLWHSL" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHSL"/>
+      <keyMapping columnObjectName="Proj_MITLOC" columnName="MLWHSL"/>
+    </attribute>
+    <attribute id="MLSTQT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLSTQT"/>
+      <keyMapping columnObjectName="Proj_MITLOC" columnName="MLSTQT"/>
+    </attribute>
+    <attribute id="CC_MLWHLO" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLWHLO"/>
+      <keyMapping columnObjectName="Proj_MITLOC" columnName="CC_MLWHLO"/>
+    </attribute>
+    <attribute id="CC_MLWHSL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLWHSL"/>
+      <keyMapping columnObjectName="Proj_MITLOC" columnName="CC_MLWHSL"/>
+    </attribute></attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="136" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_MITLOC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="236"/>
+      <rectangleSize height="30" width="240"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

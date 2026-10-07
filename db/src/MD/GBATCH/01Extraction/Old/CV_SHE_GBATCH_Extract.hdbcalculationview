@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_GBATCH_Extract" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MARA_Xref">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="MATKL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BISMT" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;BISMT&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MITLOC">
+    <viewAttributes>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHLO"/>
+      <viewAttribute id="MLWHSL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MLITNO" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>substr(&quot;MLITNO&quot;,2)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHLO"/>
+      <viewAttribute id="MLWHSL"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute hidden="true" id="JOIN$CC_BISMT$MLITNO"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MARA_Xref">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_BISMT$MLITNO" source="CC_BISMT"/>
+    </input>
+    <input node="MITLOC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLITNO" source="MLITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHLO" source="MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHSL" source="MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_BISMT$MLITNO" source="MLITNO"/>
+    </input>
+    <joinAttribute name="JOIN$CC_BISMT$MLITNO"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="MLITNO" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLITNO"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLITNO"/>
+    </attribute>
+    <attribute id="MLWHLO" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHLO"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLWHLO"/>
+    </attribute>
+    <attribute id="MLWHSL" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHSL"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLWHSL"/>
+    </attribute>
+    <attribute id="MATNR" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MATKL" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="Join_1" columnName="MATKL"/>
+    </attribute>
+    <attribute id="BISMT" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BISMT"/>
+      <keyMapping columnObjectName="Join_1" columnName="BISMT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="PROD_DATE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'20260101'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="EXPIRYDATE" order="2" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="VERAB" order="3" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'20260101'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="RESTRICTED" order="4" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="QNDAT" order="5" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="BWTAR" order="6" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="LIFNR" order="7" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="LICHA" order="8" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="LWEDT" order="9" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="HERKL" order="10" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="HERKR" order="11" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT1" order="12" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="ZUSTD" order="13" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'0'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT2" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT3" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT4" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT5" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT6" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="CLASS" order="19" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="40">
+        <formula>null</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="KLART" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="3">
+        <formula>'023'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="MTVER" order="21" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="CHARG" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="3">
+        <formula>'Q1ID'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="SGT_SCAT" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'Q1ID'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="WERKS" order="24" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'ITWA'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221.11302679000914" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MARA_Xref" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000001" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MITLOC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="209" y="222"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="MARA_Xref" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="161.61767578125"/>
+    </shape>
+    <shape modelObjectName="MITLOC" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="169.5615234375"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

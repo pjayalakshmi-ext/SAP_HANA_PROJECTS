@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_PO_M3MPHEAD" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_M3MPHEAD">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_M3MPHEAD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_MPHEAD">
+    <viewAttributes>
+      <viewAttribute id="IAPUNO"/>
+      <viewAttribute id="IACONO"/>
+      <viewAttribute id="IASUNO"/>
+      <viewAttribute id="IACUCD"/>
+      <viewAttribute id="IATEDL"/>
+      <viewAttribute id="IABUYE"/>
+      <viewAttribute id="IADIVI"/>
+      <viewAttribute id="IAFACI"/>
+      <viewAttribute id="IAWHLO"/>
+      <viewAttribute id="IAORTY"/>
+      <viewAttribute id="IAPOTC"/>
+      <viewAttribute id="IAPUSL"/>
+      <viewAttribute id="IASLDT"/>
+      <viewAttribute id="IAPUST"/>
+      <viewAttribute id="IASCDT"/>
+      <viewAttribute id="IACMCO"/>
+      <viewAttribute id="IAPUDT"/>
+      <viewAttribute id="IALNCD"/>
+      <viewAttribute id="IATEPY"/>
+      <viewAttribute id="IAPYME"/>
+      <viewAttribute id="IAMODL"/>
+      <viewAttribute id="IATEAF"/>
+      <viewAttribute id="IATEPA"/>
+      <viewAttribute id="IARFID"/>
+      <viewAttribute id="IAYRE1"/>
+      <viewAttribute id="IADWDT"/>
+      <viewAttribute id="IAHDDT"/>
+      <viewAttribute id="IAPRSU"/>
+      <viewAttribute id="IAOURR"/>
+      <viewAttribute id="IAOURT"/>
+      <viewAttribute id="IAAGNT"/>
+      <viewAttribute id="IANTAM"/>
+      <viewAttribute id="IABRAM"/>
+      <viewAttribute id="IAOTBA"/>
+      <viewAttribute id="IAPURC"/>
+      <viewAttribute id="IAAURE"/>
+      <viewAttribute id="IALEDT"/>
+      <viewAttribute id="IAFUSC"/>
+      <viewAttribute id="IAEXAT"/>
+      <viewAttribute id="IAPTAC"/>
+      <viewAttribute id="IARTAC"/>
+      <viewAttribute id="IAEXAV"/>
+      <viewAttribute id="IANOPP"/>
+      <viewAttribute id="IANOLN"/>
+      <viewAttribute id="IAMTWP"/>
+      <viewAttribute id="IAMTDP"/>
+      <viewAttribute id="IACOAM"/>
+      <viewAttribute id="IAODAM"/>
+      <viewAttribute id="IAOTPC"/>
+      <viewAttribute id="IAPRLA"/>
+      <viewAttribute id="IAVOL3"/>
+      <viewAttribute id="IAGRWE"/>
+      <viewAttribute id="IATOQT"/>
+      <viewAttribute id="IATFNO"/>
+      <viewAttribute id="IALRED"/>
+      <viewAttribute id="IAATDT"/>
+      <viewAttribute id="IAPOPO"/>
+      <viewAttribute id="IATEL1"/>
+      <viewAttribute id="IADUDT"/>
+      <viewAttribute id="IACUTE"/>
+      <viewAttribute id="IAAGRA"/>
+      <viewAttribute id="IAPYAD"/>
+      <viewAttribute id="IASHVI"/>
+      <viewAttribute id="IAFIDS"/>
+      <viewAttribute id="IARCDT"/>
+      <viewAttribute id="IALIDT"/>
+      <viewAttribute id="IAEXEP"/>
+      <viewAttribute id="IAINEP"/>
+      <viewAttribute id="IATLEX"/>
+      <viewAttribute id="IATLIN"/>
+      <viewAttribute id="IATEOR"/>
+      <viewAttribute id="IATXID"/>
+      <viewAttribute id="IAPRTX"/>
+      <viewAttribute id="IAPOTX"/>
+      <viewAttribute id="IADTID"/>
+      <viewAttribute id="IAPROJ"/>
+      <viewAttribute id="IAELNO"/>
+      <viewAttribute id="IAECLC"/>
+      <viewAttribute id="IACPRI"/>
+      <viewAttribute id="IAHAFE"/>
+      <viewAttribute id="IATIHM"/>
+      <viewAttribute id="IAMEDC"/>
+      <viewAttribute id="IARGDT"/>
+      <viewAttribute id="IARGTM"/>
+      <viewAttribute id="IALMDT"/>
+      <viewAttribute id="IACHNO"/>
+      <viewAttribute id="IACHID"/>
+      <viewAttribute id="IALMTS"/>
+      <viewAttribute id="IAPRVW"/>
+      <viewAttribute id="IARASN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_M3MPHEAD"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Proj_MPHEAD">
+  <attributes>
+    <attribute id="IACONO" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IACONO"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IACONO"/>
+    </attribute>
+    <attribute id="IASUNO" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IASUNO"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IASUNO"/>
+    </attribute>
+    <attribute id="IACUCD" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IACUCD"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IACUCD"/>
+    </attribute>
+    <attribute id="IATEDL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IATEDL"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IATEDL"/>
+    </attribute>
+    <attribute id="IABUYE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IABUYE"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IABUYE"/>
+    </attribute>
+    <attribute id="IAPUNO" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IAPUNO"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IAPUNO"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="289" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_MPHEAD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="255" y="319"/>
+      <rectangleSize height="30" width="245"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

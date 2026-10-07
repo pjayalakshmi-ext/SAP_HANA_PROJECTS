@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_SStock_BATCH_ATWRT_S4Extract" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_S4INOB">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_S4INOB</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_S4CABN">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_S4CABN</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_S4AUSP">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_S4AUSP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_INOB" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CUOBJ"/>
+      <viewAttribute id="OBJEK"/>
+      <viewAttribute id="OBTAB"/>
+      <viewAttribute id="KLART"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_S4INOB"/>
+    <filter>&quot;OBTAB&quot;='MCH1' and &quot;KLART&quot;='023'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_CABN" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="ATINN"/>
+      <viewAttribute id="ATNAM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_S4CABN"/>
+    <filter>&quot;ATNAM&quot; = 'Z_HU_IDENTIF'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_AUSP">
+    <viewAttributes>
+      <viewAttribute id="OBJEK"/>
+      <viewAttribute id="ATINN"/>
+      <viewAttribute id="ATWRT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_S4AUSP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_AUSP_CABN" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="OBJEK"/>
+      <viewAttribute id="ATWRT"/>
+      <viewAttribute id="ATINN"/>
+      <viewAttribute id="ATNAM"/>
+      <viewAttribute hidden="true" id="JOIN$ATINN$ATINN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Proj_AUSP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJEK" source="OBJEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ATINN$ATINN" source="ATINN"/>
+    </input>
+    <input node="Proj_CABN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATNAM" source="ATNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ATINN$ATINN" source="ATINN"/>
+    </input>
+    <joinAttribute name="JOIN$ATINN$ATINN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="J_INOB_AUSP" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="CUOBJ"/>
+      <viewAttribute id="OBJEK"/>
+      <viewAttribute id="ATWRT"/>
+      <viewAttribute id="ATINN"/>
+      <viewAttribute id="ATNAM"/>
+      <viewAttribute hidden="true" id="JOIN$CUOBJ$OBJEK"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Proj_INOB">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OBJEK" source="OBJEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CUOBJ$OBJEK" source="CUOBJ"/>
+    </input>
+    <input node="Join_AUSP_CABN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATWRT" source="ATWRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATINN" source="ATINN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ATNAM" source="ATNAM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CUOBJ$OBJEK" source="OBJEK"/>
+    </input>
+    <joinAttribute name="JOIN$CUOBJ$OBJEK"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="J_INOB_AUSP" filterExpressionLanguage="SQL">
+  <attributes>
+    <attribute id="CUOBJ" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUOBJ"/>
+      <keyMapping columnObjectName="J_INOB_AUSP" columnName="CUOBJ"/>
+    </attribute>
+    <attribute id="OBJEK" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OBJEK"/>
+      <keyMapping columnObjectName="J_INOB_AUSP" columnName="OBJEK"/>
+    </attribute>
+    <attribute id="ATWRT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ATWRT"/>
+      <keyMapping columnObjectName="J_INOB_AUSP" columnName="ATWRT"/>
+    </attribute>
+    <attribute id="ATINN" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ATINN"/>
+      <keyMapping columnObjectName="J_INOB_AUSP" columnName="ATINN"/>
+    </attribute>
+    <attribute id="ATNAM" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ATNAM"/>
+      <keyMapping columnObjectName="J_INOB_AUSP" columnName="ATNAM"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="MATNR" order="6" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>RTRIM(SUBSTRING(&quot;OBJEK&quot;,1,40))</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="CHARG" order="7" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>SUBSTRING(&quot;OBJEK&quot;,41)</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="CV" order="8" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>&quot;ATWRT&quot;</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+
+  <filter>--&quot;CHARG&quot; in ('1108','1109','1110','1111','1112','1121','1122','1123')
+&quot;CHARG&quot; in ('2041','2056','2064','2083')</filter>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="358" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_INOB" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="392" y="356"/>
+      <rectangleSize height="30" width="245"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Proj_CABN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_AUSP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_AUSP_CABN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Proj_AUSP" modelObjectNameSpace="Join_AUSP_CABN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="Proj_CABN" modelObjectNameSpace="Join_AUSP_CABN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="J_INOB_AUSP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="358" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Proj_INOB" modelObjectNameSpace="J_INOB_AUSP" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="16" y="32"/>
+      <rectangleSize width="143"/>
+    </shape>
+    <shape modelObjectName="Join_AUSP_CABN" modelObjectNameSpace="J_INOB_AUSP" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="223" y="16"/>
+      <rectangleSize width="170"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

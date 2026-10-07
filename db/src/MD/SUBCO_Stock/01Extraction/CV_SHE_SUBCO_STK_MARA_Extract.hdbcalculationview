@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_SUBCO_STK_MARA_Extract" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_SHE_Stocks_MITMAS_Reflex_Extract.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITWHL">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITWHL</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="M3MITLOC">
+    <viewAttributes>
+      <viewAttribute id="MLWHLO"/>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHSL"/>
+      <viewAttribute id="MLBANO"/>
+      <viewAttribute id="MLSTQT"/></viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MLITNO" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;MLITNO&quot;)</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="CC_MLWHLO" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+    
+        <formula>trim(&quot;MLWHLO&quot;)</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_MARA">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="MATKL"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_BISMT" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;BISMT&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref"/></calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_MITWHL">
+    <viewAttributes>
+      <viewAttribute id="MWWHLO"/>
+      <viewAttribute id="MWSUNO"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MLWHLO" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;MWWHLO&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITWHL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MLWHLO"/>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHSL"/>
+      <viewAttribute id="MLBANO"/>
+      <viewAttribute id="MLSTQT"/>
+      <viewAttribute id="CC_MLITNO"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="CC_BISMT"/>
+      <viewAttribute hidden="true" id="JOIN$CC_MLITNO$CC_BISMT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CC_MLWHLO" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;MLWHLO&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CC_MLWHSL" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>trim(&quot;MLWHSL&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="M3MITLOC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHLO" source="MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLITNO" source="MLITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHSL" source="MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLBANO" source="MLBANO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLSTQT" source="MLSTQT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLITNO" source="CC_MLITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_MLITNO$CC_BISMT" source="CC_MLITNO"/>
+    </input>
+    <input node="Proj_MARA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_BISMT" source="CC_BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_MLITNO$CC_BISMT" source="CC_BISMT"/>
+    </input>
+    <joinAttribute name="JOIN$CC_MLITNO$CC_BISMT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_4" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MLWHLO"/>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHSL"/>
+      <viewAttribute id="MLBANO"/>
+      <viewAttribute id="MLSTQT"/>
+      <viewAttribute id="CC_MLITNO"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="CC_BISMT"/>
+      <viewAttribute id="CC_MLWHLO"/>
+      <viewAttribute id="CC_MLWHSL"/>
+      <viewAttribute id="MWWHLO"/>
+      <viewAttribute id="MWSUNO"/>
+      <viewAttribute hidden="true" id="JOIN$CC_MLWHLO$CC_MLWHLO"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHLO" source="MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLITNO" source="MLITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHSL" source="MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLBANO" source="MLBANO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLSTQT" source="MLSTQT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLITNO" source="CC_MLITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_BISMT" source="CC_BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLWHLO" source="CC_MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLWHSL" source="CC_MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_MLWHLO$CC_MLWHLO" source="CC_MLWHLO"/>
+    </input>
+    <input node="Proj_MITWHL">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWWHLO" source="MWWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MWSUNO" source="MWSUNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CC_MLWHLO$CC_MLWHLO" source="CC_MLWHLO"/>
+    </input>
+    <joinAttribute name="JOIN$CC_MLWHLO$CC_MLWHLO"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_4">
+  <attributes>
+    <attribute id="MLWHLO" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHLO"/>
+      <keyMapping columnObjectName="Join_4" columnName="MLWHLO"/>
+    </attribute>
+    <attribute id="MLITNO" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLITNO"/>
+      <keyMapping columnObjectName="Join_4" columnName="MLITNO"/>
+    </attribute>
+    <attribute id="MLWHSL" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHSL"/>
+      <keyMapping columnObjectName="Join_4" columnName="MLWHSL"/>
+    </attribute>
+    <attribute id="MLBANO" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLBANO"/>
+      <keyMapping columnObjectName="Join_4" columnName="MLBANO"/>
+    </attribute>
+    <attribute id="MLSTQT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLSTQT"/>
+      <keyMapping columnObjectName="Join_4" columnName="MLSTQT"/>
+    </attribute>
+    <attribute id="CC_MLITNO" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLITNO"/>
+      <keyMapping columnObjectName="Join_4" columnName="CC_MLITNO"/>
+    </attribute>
+    <attribute id="MATNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="Join_4" columnName="MATNR"/>
+    </attribute>
+    <attribute id="BISMT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BISMT"/>
+      <keyMapping columnObjectName="Join_4" columnName="BISMT"/>
+    </attribute>
+    <attribute id="MATKL" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="Join_4" columnName="MATKL"/>
+    </attribute>
+    <attribute id="CC_BISMT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_BISMT"/>
+      <keyMapping columnObjectName="Join_4" columnName="CC_BISMT"/>
+    </attribute>
+    <attribute id="CC_MLWHLO" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLWHLO"/>
+      <keyMapping columnObjectName="Join_4" columnName="CC_MLWHLO"/>
+    </attribute>
+    <attribute id="CC_MLWHSL" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLWHSL"/>
+      <keyMapping columnObjectName="Join_4" columnName="CC_MLWHSL"/>
+    </attribute>
+    <attribute id="MWWHLO" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWWHLO"/>
+      <keyMapping columnObjectName="Join_4" columnName="MWWHLO"/>
+    </attribute>
+    <attribute id="MWSUNO" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MWSUNO"/>
+      <keyMapping columnObjectName="Join_4" columnName="MWSUNO"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="399" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="M3MITLOC" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="516"/>
+      <rectangleSize height="30" width="245"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Proj_MARA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="386" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_MITWHL" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="461" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="161" y="356"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="M3MITLOC" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="169"/>
+    </shape>
+    <shape modelObjectName="Proj_MARA" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="161"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="399" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="175"/>
+    </shape>
+    <shape modelObjectName="Proj_MITWHL" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="158"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

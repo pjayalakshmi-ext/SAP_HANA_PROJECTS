@@ -1,0 +1,124 @@
+{
+ 
+/* Bank Master*/
+  "EHUB.Synonyms::SY_1LT/DSDS2003392": {
+    "target": {
+      "object": "/1LT/DSDS2003392",
+      "schema": "DMC_STG"
+    }
+  },
+
+  /* Stocks_MARA*/
+  "EHUB.Synonyms::SY_1LT/DSDS2003807": {
+    "target": {
+      "object": "/1LT/DSDS2003807",
+      "schema": "DMC_STG"
+    }
+  },
+  /* Stocks_MARD*/
+  "EHUB.Synonyms::SY_1LT/DSDS2003808": {
+    "target": {
+      "object": "/1LT/DSDS2003808",
+      "schema": "DMC_STG"
+    }
+  },
+   /* Batches_*/
+  "EHUB.Synonyms::SY_1LT/DSDS2003819": {
+    "target": {
+      "object": "/1LT/DSDS2003819",
+      "schema": "DMC_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSDS2003820": {
+    "target": {
+      "object": "/1LT/DSDS2003820",
+      "schema": "DMC_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSDS2003821": {
+    "target": {
+      "object": "/1LT/DSDS2003821",
+      "schema": "DMC_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_1LT/DSDS2003822": {
+    "target": {
+      "object": "/1LT/DSDS2003822",
+      "schema": "DMC_STG"
+    }
+  },
+     "EHUB.Synonyms::SY_1LT/DSDS2003823": {
+    "target": {
+      "object": "/1LT/DSDS2003823",
+      "schema": "DMC_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_1LT/DSDS2003897": {
+    "target": {
+      "object": "/1LT/DSDS2003897",
+      "schema": "DMC_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_1LT/DSDS2003898": {
+    "target": {
+      "object": "/1LT/DSDS2003898",
+      "schema": "DMC_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_1LT/DSDS2003797": {
+    "target": {
+      "object": "/1LT/DSDS2003797",
+      "schema": "DMC_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSDS2003798": {
+    "target": {
+      "object": "/1LT/DSDS2003798",
+      "schema": "DMC_STG"
+    }
+  },
+    "EHUB.Synonyms::SY_1LT/DSDS2003799": {
+    "target": {
+      "object": "/1LT/DSDS2003799",
+      "schema": "DMC_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSDS2003801": {
+    "target": {
+      "object": "/1LT/DSDS2003801",
+      "schema": "DMC_STG"
+    }
+  },
+/************************External PO*************************/
+
+  "EHUB.Synonyms::SY_1LT/DSDS2003928": {
+    "target": {
+      "object": "/1LT/DSDS2003928",
+      "schema": "DMC_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSDS2003931": {
+    "target": {
+      "object": "/1LT/DSDS2003931",
+      "schema": "DMC_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_1LT/DSDS2003932": {
+    "target": {
+      "object": "/1LT/DSDS2003932",
+      "schema": "DMC_STG"
+    }
+  },
+    "EHUB.Synonyms::SY_1LT/DSDS2003937": {
+    "target": {
+      "object": "/1LT/DSDS2003937",
+      "schema": "DMC_STG"
+    }
+  },
+    "EHUB.Synonyms::SY_1LT/DSDS2003938": {
+    "target": {
+      "object": "/1LT/DSDS2003938",
+      "schema": "DMC_STG"
+    }
+  }
+}

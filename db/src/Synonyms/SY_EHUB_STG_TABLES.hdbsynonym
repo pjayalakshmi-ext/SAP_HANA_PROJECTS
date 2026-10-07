@@ -448,7 +448,237 @@
       "object": "TA_SKF_SHE_TKA03_RLI",
       "schema": "EHUB_STG"
     }
-  }
+  },
+  "EHUB.Synonyms::SY_TA_STK_SHE_MITLOC_RLI": {
+    "target": {
+      "object": "TA_STK_SHE_MITLOC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_BATCH_MITLOC_RLI": {
+    "target": {
+      "object": "TA_BATCH_MITLOC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_STK_SHE_M3_MITLOC_RLI": {
+    "target": {
+      "object": "TA_STK_SHE_M3_MITLOC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BTCH_SHE_M3MITLOC_RLI": {
+    "target": {
+      "object": "TA_BTCH_SHE_M3MITLOC_RLI",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_Basic": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_Basic",
+      "schema": "EHUB_STG"
+    }
+  },
+"EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_CHAR": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_CHAR",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_Plant": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_Plant",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_NUM": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_NUM",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_Basic": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_Basic",
+      "schema": "EHUB_STG"
+    }
+  },
+"EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_CHAR": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_CHAR",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_PLANT": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_PLANT",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_BATCHNUM_CREATE": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_BATCHNUM_CREATE",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_NUM": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_NUM",
+      "schema": "EHUB_STG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_GBATCH_ACCESS_M3MITLOC_BASIC": {
+    "target": {
+      "object": "TA_GBATCH_ACCESS_M3MITLOC_BASIC",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_GBATCH_ACCESS_M3MITLOC_PLANT": {
+    "target": {
+      "object": "TA_GBATCH_ACCESS_M3MITLOC_PLANT",
+      "schema": "EHUB_STG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_GBATCH_ACCESS_M3MITLOC_TRANSFORM": {
+    "target": {
+      "object": "TA_GBATCH_ACCESS_M3MITLOC_TRANSFORM",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_GBATCH_PACK_M3MITLOC_BASIC": {
+    "target": {
+      "object": "TA_GBATCH_PACK_M3MITLOC_BASIC",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_GBATCH_PACK_M3MITLOC_PLANT": {
+    "target": {
+      "object": "TA_GBATCH_PACK_M3MITLOC_PLANT",
+      "schema": "EHUB_STG"
+    }
+  },
+ 
+ 
+  "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_BATCHNO": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_BATCHNO",
+      "schema": "EHUB_STG"
+    }
+  },
 
+  "EHUB.Synonyms::SY_TA_SHE_SBATCH_REFLUX_CHARG": {
+    "target": {
+      "object": "TA_SHE_SBATCH_REFLUX_CHARG",
+      "schema": "EHUB_STG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SHE_SSTOCK_TECHITEMNUM": {
+    "target": {
+      "object": "TA_SHE_SSTOCK_TECHITEMNUM",
+      "schema": "EHUB_STG"
+    }
+  },
+ 
+  "EHUB.Synonyms::SY_TA_SHE_STK_GSTOCK_BATCHNO": {
+    "target": {
+      "object": "TA_SHE_STK_GSTOCK_BATCHNO",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SHE_GSTOCKS_GBATCH": {
+    "target": {
+      "object": "TA_SHE_GSTOCKS_GBATCH",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SHE_GSTOCKS_HEADER": {
+    "target": {
+      "object": "TA_SHE_GSTOCKS_HEADER",
+      "schema": "EHUB_STG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SHE_GSTOCKS_ITEM": {
+    "target": {
+      "object": "TA_SHE_GSTOCKS_ITEM",
+      "schema": "EHUB_STG"
+    }
+  },
+  /********SSTOCKS******/
+   "EHUB.Synonyms::SY_TA_SHE_SSTOCK_HEADER": {
+    "target": {
+      "object": "TA_SHE_SSTOCK_HEADER",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SHE_SSTOCK_ITEM": {
+    "target": {
+      "object": "TA_SHE_SSTOCK_ITEM",
+      "schema": "EHUB_STG"
+    }
+  },
+    /********SUBCO_BatcheS******/
+ 
+    "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_BATCHNUM": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_BATCHNUM",
+      "schema": "EHUB_STG"
+    }
+  },
+
+    "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_BASIC": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_BASIC",
+      "schema": "EHUB_STG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_PLANT": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_PLANT",
+      "schema": "EHUB_STG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_CHAR": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_CHAR",
+      "schema": "EHUB_STG"
+    }
+  },
+/*********EXQC_BATCHES*************/
+
+  "EHUB.Synonyms::SY_TA_SHE_EXQC_BASIC": {
+    "target": {
+      "object": "TA_SHE_EXQC_BASIC",
+      "schema": "EHUB_STG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SHE_EXQC_CHAR": {
+    "target": {
+      "object": "TA_SHE_EXQC_CHAR",
+      "schema": "EHUB_STG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SHE_EXQC_NUM": {
+    "target": {
+      "object": "TA_SHE_EXQC_NUM",
+      "schema": "EHUB_STG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SHE_EXQC_PLANT": {
+    "target": {
+      "object": "TA_SHE_EXQC_PLANT",
+      "schema": "EHUB_STG"
+    }
+    },
+"EHUB.Synonyms::SY_TA_SHE_EXQC_TRANSFORM_BATCHNUM": {
+    "target": {
+      "object": "TA_SHE_EXQC_TRANSFORM_BATCHNUM",
+      "schema": "EHUB_STG"
+    }
+    }
+
+
+  /********SUBCO_Stocks******/
+
+  
 
 }

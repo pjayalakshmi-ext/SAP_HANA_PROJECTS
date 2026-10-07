@@ -574,5 +574,160 @@
       "object": "ADRC",
       "schema": "ZSLT_SHE"
     }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_MITLOC": {
+    "target": {
+      "object": "MITLOC",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_MITMAS": {
+    "target": {
+      "object": "MITMAS",
+      "schema": "ZSLT_SHE"
+    }
+  },
+    "EHUB.Synonyms::SY_ZSLT_SHE_M3MITBAL": {
+    "target": {
+      "object": "MITBAL",
+      "schema": "ZSLT_SHE"
+    }
+  },
+     "EHUB.Synonyms::SY_ZSLT_SHE_Materials_sample_PLM": {
+    "target": {
+      "object": "Materials_sample_PLM",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_M3MITLOC": {
+    "target": {
+      "object": "M3MITLOC",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_M3_MITMAS": {
+    "target": {
+      "object": "M3_MITMAS",
+      "schema": "ZSLT_SHE"
+    }
+  },
+     "EHUB.Synonyms::SY_ZSLT_SHE_M3_MITLOC": {
+    "target": {
+      "object": "M3_MITLOC",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITLOC": {
+    "target": {
+      "object": "STG_M3MITLOC",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_STGM3MITWHL": {
+    "target": {
+      "object": "STG_M3MITWHL",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_REfHLGEINP": {
+    "target": {
+      "object": "STG_Ref_HLGEINP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+ "EHUB.Synonyms::SY_ZSLT_SHE_HLGEINP": {
+    "target": {
+      "object": "HLGEINP_Reflux",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_STGHLGEINP": {
+    "target": {
+      "object": "STG_Ref_HLGEINP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_HLGEINP_Prod": {
+    "target": {
+      "object": "HLGEINP_Reflux_Prod",
+      "schema": "ZSLT_SHE"
+    }
+  },
+ "EHUB.Synonyms::SY_ZSLT_SHE_MARA_Xref": {
+    "target": {
+      "object": "STGS4MARA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_S4MCHA": {
+    "target": {
+      "object": "S4MCHA",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_S4INOB": {
+    "target": {
+      "object": "S4INOB",
+      "schema": "ZSLT_SHE"
+    }
+  },
+    "EHUB.Synonyms::SY_ZSLT_SHE_S4CABN": {
+    "target": {
+      "object": "S4CABN",
+      "schema": "ZSLT_SHE"
+    }
+  },
+    "EHUB.Synonyms::SY_ZSLT_SHE_S4AUSP": {
+    "target": {
+      "object": "S4AUSP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+    "EHUB.Synonyms::SY_ZSLT_SHE_LGORT_Xref": {
+    "target": {
+      "object": "LGORT_Xref",
+      "schema": "ZSLT_SHE"
+    }
+  },
+
+
+  /***EXTERNAL QC*************/
+"EHUB.Synonyms::SY_ZSLT_SHE_Ext_QC_Temp": {
+    "target": {
+      "object": "Ext_QC_Temp",
+      "schema": "ZSLT_SHE"
+    }
+  },
+  "EHUB.Synonyms::SY_ZSLT_SHE_ExtQC_Temp": {
+    "target": {
+      "object": "ExtQC_Temp",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_EXQC_STKS_TEMP": {
+    "target": {
+      "object": "EXQC_STKS_TEMP",
+      "schema": "ZSLT_SHE"
+    }
+  },
+
+/* Purchase Orders*/
+ "EHUB.Synonyms::SY_ZSLT_SHE_M3MPHEAD": {
+    "target": {
+      "object": "M3MPHEAD",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_M3MPLINE": {
+    "target": {
+      "object": "M3MPLINE",
+      "schema": "ZSLT_SHE"
+    }
+  },
+   "EHUB.Synonyms::SY_ZSLT_SHE_M3MPPOAD": {
+    "target": {
+      "object": "M3MPPOAD",
+      "schema": "ZSLT_SHE"
+    }
   }
-}
+  }

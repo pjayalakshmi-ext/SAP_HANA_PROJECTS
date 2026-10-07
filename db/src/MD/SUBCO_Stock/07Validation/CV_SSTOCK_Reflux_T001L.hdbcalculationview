@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SSTOCK_Reflux_T001L" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_BNKA_TRANSFORMATION"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CV_SHE_Stocks_Trans_MITMAS">
+    <resourceUri>CV_SHE_Stocks_Trans_MITMAS</resourceUri>
+  </DataSource>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001L">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_P23_BTP_T001L</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_Stocks_Valid">
+    <viewAttributes>
+      <viewAttribute id="MLCONO"/>
+      <viewAttribute id="MLFACI"/>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHLO"/>
+      <viewAttribute id="MLWHLT"/>
+      <viewAttribute id="MLWHSL"/>
+      <viewAttribute id="MLBANO"/>
+      <viewAttribute id="MLBREF"/>
+      <viewAttribute id="MLBRE2"/>
+      <viewAttribute id="MLCAMU"/>
+      <viewAttribute id="MLREPN"/>
+      <viewAttribute id="MLSLTP"/>
+      <viewAttribute id="MLSTQT"/>
+      <viewAttribute id="MLALQT"/>
+      <viewAttribute id="MLPLQT"/>
+      <viewAttribute id="MLSTAS"/>
+      <viewAttribute id="MLIDDT"/>
+      <viewAttribute id="MLALOC"/>
+      <viewAttribute id="Material_Type"/>
+      <viewAttribute id="Material_Code"/>
+      <viewAttribute id="MMITNO"/>
+      <viewAttribute id="MMCONO"/>
+      <viewAttribute id="MMUNMS"/>
+      <viewAttribute id="MMSTAT"/>
+      <viewAttribute id="MBLNR"/>
+      <viewAttribute id="POSNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="CV_SHE_Stocks_Trans_MITMAS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_T001L">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="LGOBE"/>
+      <viewAttribute id="SPART"/>
+      <viewAttribute id="XLONG"/>
+      <viewAttribute id="XBUFX"/>
+      <viewAttribute id="DISKZ"/>
+      <viewAttribute id="XBLGO"/>
+      <viewAttribute id="XRESS"/>
+      <viewAttribute id="XHUPF"/>
+      <viewAttribute id="PARLG"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="VSTEL"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KUNNR"/>
+      <viewAttribute id="MESBS"/>
+      <viewAttribute id="MESST"/>
+      <viewAttribute id="CONFIGDEPRECATIONCODE"/>
+      <viewAttribute id="OIH_LICNO"/>
+      <viewAttribute id="OIG_ITRFL"/>
+      <viewAttribute id="OIB_TNKASSIGN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001L"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="leftOuter" ignoreMultipleOutputsForFilter="false">
+    <viewAttributes>
+      <viewAttribute id="MLCONO"/>
+      <viewAttribute id="MLFACI"/>
+      <viewAttribute id="MLITNO"/>
+      <viewAttribute id="MLWHLO"/>
+      <viewAttribute id="MLWHLT"/>
+      <viewAttribute id="MLWHSL"/>
+      <viewAttribute id="MLBANO"/>
+      <viewAttribute id="MLBREF"/>
+      <viewAttribute id="MLBRE2"/>
+      <viewAttribute id="MLCAMU"/>
+      <viewAttribute id="MLREPN"/>
+      <viewAttribute id="MLSLTP"/>
+      <viewAttribute id="MLSTQT"/>
+      <viewAttribute id="MLALQT"/>
+      <viewAttribute id="MLPLQT"/>
+      <viewAttribute id="MLSTAS"/>
+      <viewAttribute id="MLIDDT"/>
+      <viewAttribute id="MLALOC"/>
+      <viewAttribute id="Material_Type"/>
+      <viewAttribute id="Material_Code"/>
+      <viewAttribute id="MMITNO"/>
+      <viewAttribute id="MMCONO"/>
+      <viewAttribute id="MMUNMS"/>
+      <viewAttribute id="MMSTAT"/>
+      <viewAttribute id="MBLNR"/>
+      <viewAttribute id="POSNR"/>
+    
+      <viewAttribute id="LGORT"/>
+      <viewAttribute hidden="true" id="JOIN$MLWHSL$LGORT"/>
+      <viewAttribute hidden="true" id="JOIN$MLWHLO$WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MITMAS_MMITNO_ISNULL" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>case when &quot;MMITNO&quot;='' or MMITNO is null then 1 else 0 end</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="P_Stocks_Valid">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLCONO" source="MLCONO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLFACI" source="MLFACI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLITNO" source="MLITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHLO" source="MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHLT" source="MLWHLT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLWHSL" source="MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLBANO" source="MLBANO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLBREF" source="MLBREF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLBRE2" source="MLBRE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLCAMU" source="MLCAMU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLREPN" source="MLREPN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLSLTP" source="MLSLTP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLSTQT" source="MLSTQT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLALQT" source="MLALQT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLPLQT" source="MLPLQT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLSTAS" source="MLSTAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLIDDT" source="MLIDDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MLALOC" source="MLALOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Material_Type" source="Material_Type"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Material_Code" source="Material_Code"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MMITNO" source="MMITNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MMCONO" source="MMCONO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MMUNMS" source="MMUNMS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MMSTAT" source="MMSTAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MBLNR" source="MBLNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MLWHSL$LGORT" source="MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MLWHLO$WERKS" source="MLWHLO"/>
+    </input>
+    <input node="P_T001L">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MLWHSL$LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MLWHLO$WERKS" source="WERKS"/>
+    </input>
+    <joinAttribute name="JOIN$MLWHSL$LGORT"/>
+    <joinAttribute name="JOIN$MLWHLO$WERKS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="MITMAS_MMITNO_ISNULL" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MITMAS_MMITNO_ISNULL"/>
+      <keyMapping columnObjectName="Join_1" columnName="MITMAS_MMITNO_ISNULL"/>
+    </attribute>
+  
+    <attribute id="MLCONO" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLCONO"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="MLCONO"/>
+  
+    </attribute>
+    <attribute id="MLFACI" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLFACI"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLFACI"/>
+    </attribute>
+    <attribute id="MLITNO" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLITNO"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLITNO"/>
+    </attribute>
+    <attribute id="MLWHLO" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHLO"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLWHLO"/>
+    </attribute>
+    <attribute id="MLWHLT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHLT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLWHLT"/>
+    </attribute>
+    <attribute id="MLWHSL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLWHSL"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLWHSL"/>
+    </attribute>
+    <attribute id="MLBANO" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLBANO"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLBANO"/>
+    </attribute>
+    <attribute id="MLBREF" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLBREF"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLBREF"/>
+    </attribute>
+    <attribute id="MLBRE2" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLBRE2"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLBRE2"/>
+    </attribute>
+    <attribute id="MLCAMU" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLCAMU"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLCAMU"/>
+    </attribute>
+    <attribute id="MLREPN" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLREPN"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLREPN"/>
+    </attribute>
+    <attribute id="MLSLTP" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLSLTP"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLSLTP"/>
+    </attribute>
+    <attribute id="MLSTQT" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLSTQT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLSTQT"/>
+    </attribute>
+    <attribute id="MLALQT" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLALQT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLALQT"/>
+    </attribute>
+    <attribute id="MLPLQT" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLPLQT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLPLQT"/>
+    </attribute>
+    <attribute id="MLSTAS" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLSTAS"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLSTAS"/>
+    </attribute>
+    <attribute id="MLIDDT" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLIDDT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLIDDT"/>
+    </attribute>
+    <attribute id="MLALOC" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MLALOC"/>
+      <keyMapping columnObjectName="Join_1" columnName="MLALOC"/>
+    </attribute>
+    <attribute id="Material_Type" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material_Type"/>
+      <keyMapping columnObjectName="Join_1" columnName="Material_Type"/>
+    </attribute>
+    <attribute id="Material_Code" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material_Code"/>
+      <keyMapping columnObjectName="Join_1" columnName="Material_Code"/>
+    </attribute>
+    <attribute id="MMITNO" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MMITNO"/>
+      <keyMapping columnObjectName="Join_1" columnName="MMITNO"/>
+    </attribute>
+    <attribute id="MMCONO" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MMCONO"/>
+      <keyMapping columnObjectName="Join_1" columnName="MMCONO"/>
+    </attribute>
+    <attribute id="MMUNMS" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MMUNMS"/>
+      <keyMapping columnObjectName="Join_1" columnName="MMUNMS"/>
+    </attribute>
+    <attribute id="MMSTAT" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MMSTAT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MMSTAT"/>
+    </attribute>
+    <attribute id="MBLNR" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MBLNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="MBLNR"/>
+    </attribute>
+    <attribute id="POSNR" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="POSNR"/>
+    </attribute>
+  
+    <attribute id="LGORT" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGORT"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="LGORT"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="258" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_Stocks_Valid" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="P_T001L" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="349" y="516"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="246" y="241"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_Stocks_Valid" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="154"/>
+    </shape>
+    <shape modelObjectName="P_T001L" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="100"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

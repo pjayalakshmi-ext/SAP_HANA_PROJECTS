@@ -1,0 +1,8 @@
+{
+  "EHUB.MD.BankMaster.08Preload::/1LT/DSDS2003392": {
+    "target": {
+      "object": "/1LT/DSDS2003392",
+      "schema": "DMC_STG"
+    }
+  }
+}

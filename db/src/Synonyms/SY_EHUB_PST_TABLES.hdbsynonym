@@ -221,9 +221,36 @@
       "schema": "EHUB_PST"
     }
   },
+
+  
 "EHUB.Synonyms::SY_TA_SKF_P23_TKA03_PST": {
     "target": {
       "object": "TA_SKF_P23_TKA03_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+
+  "EHUB.Synonyms::SY_TA_SHE_BATCH_MCHA_PST": {
+    "target": {
+      "object": "TA_SHE_BATCH_MCHA_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SHE_SBATCH_AUSP_PST": {
+    "target": {
+      "object": "TA_SHE_SBATCH_AUSP_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SHE_GBATCH_PACK_MCHA_PST": {
+    "target": {
+      "object": "TA_SHE_GBATCH_PACK_MCHA_PST",
+      "schema": "EHUB_PST"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_SHE_GBATCH_ACCESS_MCHA_PST": {
+    "target": {
+      "object": "TA_SHE_GBATCH_ACCESS_MCHA_PST",
       "schema": "EHUB_PST"
     }
   }

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_ExQCSTOCK_Extract" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_EXQC_STKS_TEMP">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_EXQC_STKS_TEMP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_EXQC_STK_Temp">
+    <viewAttributes>
+      <viewAttribute id="Product_Number"/>
+      <viewAttribute id="SAP_Product_Number"/>
+      <viewAttribute id="HU_Identifier_value"/>
+      <viewAttribute id="Segment"/>
+      <viewAttribute id="Date_of_Manufacture"/>
+      <viewAttribute id="Vendor"/>
+      <viewAttribute id="Supplier_Batch_number"/>
+      <viewAttribute id="Nuance_value"/>
+      <viewAttribute id="Net_Length"/>
+      <viewAttribute id="Physical_length"/>
+      <viewAttribute id="Ratio_Value"/>
+      <viewAttribute id="Storage_location_(External_QC___FF_)"/>
+      <viewAttribute id="ISO_Unit_of_measure"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_EXQC_STKS_TEMP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Product_Number" source="Product Number"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SAP_Product_Number" source="SAP Product Number"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HU_Identifier_value" source="HU Identifier value"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Date_of_Manufacture" source="Date of Manufacture"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Supplier_Batch_number" source="Supplier Batch number"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Nuance_value" source="Nuance value"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Net_Length" source="Net Length"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Physical_length" source="Physical length"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Ratio_Value" source="Ratio Value"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Storage_location_(External_QC___FF_)" source="Storage location (External QC / FF )"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISO_Unit_of_measure" source="ISO Unit of measure"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_EXQC_STK_Temp">
+  <attributes>
+    <attribute id="Product_Number" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Product_Number"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Product_Number"/>
+    </attribute>
+    <attribute id="SAP_Product_Number" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SAP_Product_Number"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="SAP_Product_Number"/>
+    </attribute>
+    <attribute id="HU_Identifier_value" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HU_Identifier_value"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="HU_Identifier_value"/>
+    </attribute>
+    <attribute id="Segment" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Segment"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Segment"/>
+    </attribute>
+    <attribute id="Date_of_Manufacture" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date_of_Manufacture"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Date_of_Manufacture"/>
+    </attribute>
+    <attribute id="Vendor" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Vendor"/>
+    </attribute>
+    <attribute id="Supplier_Batch_number" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Supplier_Batch_number"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Supplier_Batch_number"/>
+    </attribute>
+    <attribute id="Nuance_value" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Nuance_value"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Nuance_value"/>
+    </attribute>
+    <attribute id="Net_Length" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Net_Length"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Net_Length"/>
+    </attribute>
+    <attribute id="Physical_length" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Physical_length"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Physical_length"/>
+    </attribute>
+    <attribute id="Ratio_Value" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Ratio_Value"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Ratio_Value"/>
+    </attribute>
+    <attribute id="Storage_location_(External_QC___FF_)" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage_location_(External_QC___FF_)"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="Storage_location_(External_QC___FF_)"/>
+    </attribute>
+    <attribute id="ISO_Unit_of_measure" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ISO_Unit_of_measure"/>
+      <keyMapping columnObjectName="Projection_EXQC_STK_Temp" columnName="ISO_Unit_of_measure"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="136" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_EXQC_STK_Temp" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-145" y="231"/>
+      <rectangleSize height="30" width="240"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

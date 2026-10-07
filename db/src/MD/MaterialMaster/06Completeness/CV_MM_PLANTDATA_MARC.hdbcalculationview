@@ -123,7 +123,7 @@
     </viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="WERKS_INCOMPLETE" datatype="INTEGER" expressionLanguage="SQL">
-        <formula>case when &quot;WERKS&quot;=''  or &quot;WERKS&quot; is null
+        <formula>case when &quot;&quot;=''  or &quot;WERKS&quot; is null
 then 1
 else 0
 end</formula>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_GBATCH_LGORT_Xref" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_LGORT_Xref">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_LGORT_Xref</resourceUri>
+  </DataSource>
+  <DataSource id="CV_SHE_GBATCH_MITLOC_MARA_Extract">
+    <resourceUri>CV_SHE_GBATCH_MITLOC_MARA_Extract</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_LGORT">
+    <viewAttributes>
+      <viewAttribute id="Depot"/>
+      <viewAttribute id="Nom_du_depot"/>
+      <viewAttribute id="Emplacement"/>
+      <viewAttribute id="Description_emplacement"/>
+      <viewAttribute id="Comment"/>
+      <viewAttribute id="Rule_:_To_migrate_?"/>
+      <viewAttribute id="Storage_location_Code"/>
+      <viewAttribute id="Storage_location_Description"/>
+      <viewAttribute id="Segment"/>
+      <viewAttribute id="Status_du_stock"/>
+      <viewAttribute id="Type_de_stock"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_LGORT_Xref">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Nom_du_depot" source="Nom du depot"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Description_emplacement" source="Description emplacement"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Rule_:_To_migrate_?" source="Rule : To migrate ?"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Storage_location_Code" source="Storage location Code"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Storage_location_Description" source="Storage location Description"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Status_du_stock" source="Status du stock"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Type_de_stock" source="Type de stock"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="CC_MLWHLO"/>
+      <viewAttribute id="CC_MLWHSL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="CV_SHE_GBATCH_MITLOC_MARA_Extract"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="Depot"/>
+      <viewAttribute id="Emplacement"/>
+      <viewAttribute id="Rule_:_To_migrate_?"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BISMT"/>
+      <viewAttribute id="CC_MLWHLO"/>
+      <viewAttribute id="CC_MLWHSL"/>
+      <viewAttribute hidden="true" id="JOIN$Depot$CC_MLWHLO"/>
+      <viewAttribute hidden="true" id="JOIN$Emplacement$CC_MLWHSL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_LGORT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Depot" source="Depot"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Emplacement" source="Emplacement"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Rule_:_To_migrate_?" source="Rule_:_To_migrate_?"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Depot$CC_MLWHLO" source="Depot"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Emplacement$CC_MLWHSL" source="Emplacement"/>
+    </input>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BISMT" source="BISMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLWHLO" source="CC_MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CC_MLWHSL" source="CC_MLWHSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Depot$CC_MLWHLO" source="CC_MLWHLO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$Emplacement$CC_MLWHSL" source="CC_MLWHSL"/>
+    </input>
+    <joinAttribute name="JOIN$Depot$CC_MLWHLO"/>
+    <joinAttribute name="JOIN$Emplacement$CC_MLWHSL"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1" filterExpressionLanguage="SQL">
+  <attributes>
+    <attribute id="Depot" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Depot"/>
+      <keyMapping columnObjectName="Join_1" columnName="Depot"/>
+    </attribute>
+    <attribute id="Emplacement" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Emplacement"/>
+      <keyMapping columnObjectName="Join_1" columnName="Emplacement"/>
+    </attribute>
+    <attribute id="Rule_:_To_migrate_?" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rule_:_To_migrate_?"/>
+      <keyMapping columnObjectName="Join_1" columnName="Rule_:_To_migrate_?"/>
+    </attribute>
+    <attribute id="MATNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MATKL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="Join_1" columnName="MATKL"/>
+    </attribute>
+    <attribute id="BISMT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BISMT"/>
+      <keyMapping columnObjectName="Join_1" columnName="BISMT"/>
+    </attribute>
+    <attribute id="CC_MLWHLO" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLWHLO"/>
+      <keyMapping columnObjectName="Join_1" columnName="CC_MLWHLO"/>
+    </attribute>
+    <attribute id="CC_MLWHSL" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CC_MLWHSL"/>
+      <keyMapping columnObjectName="Join_1" columnName="CC_MLWHSL"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+
+  <filter>&quot;Rule_:_To_migrate_?&quot;='Yes'</filter>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="158.16632966077165" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_LGORT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-7.14597115176781" y="491.9999976158142"/>
+      <rectangleSize height="30" width="240"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="158.16632966077168" y="237"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_LGORT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="249.6982421875"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="1220" y="30"/>
+      <rectangleSize width="175.4697265625"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="327" y="504"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -42,7 +42,6 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_CEPC"/>
-  
     <filter>&quot;MANDT&quot;='900'</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_TKA01" filterExpressionLanguage="SQL">
@@ -53,7 +52,6 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_TKA01"/>
-  
     <filter>&quot;MANDT&quot;='900'</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="P_S4H_T001" filterExpressionLanguage="SQL">
@@ -64,7 +62,6 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="EHUB.Synonyms::SY_ZSLT_P23_BTP_T001"/>
-  
     <filter>&quot;MANDT&quot;='900'</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="J_CEPC" cardinality="C1_1" joinType="leftOuter">

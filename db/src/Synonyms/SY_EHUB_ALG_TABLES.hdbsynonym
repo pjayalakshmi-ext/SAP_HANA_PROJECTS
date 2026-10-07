@@ -411,7 +411,7 @@
       "schema": "EHUB_ALG"
     }
   },
-/********** Cost Center *****************/
+   /********** Cost Center *****************/
   "EHUB.Synonyms::SY_TA_CC_CSKS_REL_INPUT": {
     "target": {
       "object": "TA_CC_CSKS_REL_INPUT",
@@ -2187,5 +2187,280 @@
       "object": "TA_SKF_TKA03_VLD",
       "schema": "EHUB_ALG"
     }
+  },
+"EHUB.Synonyms::SY_TA_STK_MITLOC_INV": {
+    "target": {
+      "object": "TA_STK_MITLOC_INV",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_STK_MITLOC_VLD": {
+    "target": {
+      "object": "TA_STK_MITLOC_VLD",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+  "EHUB.Synonyms::SY_TA_STK_MITLOC_CMT": {
+    "target": {
+      "object": "TA_STK_MITLOC_CMT",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_STK_MITLOC_INC": {
+    "target": {
+      "object": "TA_STK_MITLOC_INC",
+      "schema": "EHUB_ALG"
+    }
+  },
+  /*Batches*/
+  "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_BASIC_Valid": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_BASIC_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+ "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_CHAR_Valid": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_CHAR_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+ "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_NUM_Valid": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_NUM_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+ "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_PLANT_Valid": {
+    "target": {
+      "object": "TA_BATCH_M3MITLOC_PLANT_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+
+  
+/*Specific Batches*/
+  "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_BASIC_Valid": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_BASIC_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_CHAR_Valid": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_CHAR_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_NUM_Valid": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_NUM_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_PLANT_Valid": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_PLANT_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+"EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_BASIC_InValid": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_BASIC_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_CHAR_InValid": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_CHAR_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_NUM_InValid": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_NUM_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_PLANT_InValid": {
+    "target": {
+      "object": "TA_SBATCH_M3MITLOC_PLANT_InValid",
+      "schema": "EHUB_ALG"
+    }
+
+  },
+   /*Generic Batches*/
+  "EHUB.Synonyms::SY_TA_GBATCH_PACK_M3MITLOC_BASIC_Valid": {
+    "target": {
+      "object": "TA_GBATCH_PACK_M3MITLOC_BASIC_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_GBATCH_PACK_M3MITLOC_PLANT_Valid": {
+    "target": {
+      "object": "TA_GBATCH_PACK_M3MITLOC_PLANT_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+
+ "EHUB.Synonyms::SY_TA_GBATCH_PACK_M3MITLOC_BASIC_InValid": {
+    "target": {
+      "object": "TA_GBATCH_PACK_M3MITLOC_BASIC_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_GBATCH_PACK_M3MITLOC_PLANT_InValid": {
+    "target": {
+      "object": "TA_GBATCH_PACK_M3MITLOC_PLANT_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+  "EHUB.Synonyms::SY_TA_GBATCH_ACCESS_M3MITLOC_BASIC_Valid": {
+    "target": {
+      "object": "TA_GBATCH_ACCESS_M3MITLOC_BASIC_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_GBATCH_ACCESS_M3MITLOC_PLANT_Valid": {
+    "target": {
+      "object": "TA_GBATCH_ACCESS_M3MITLOC_PLANT_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+    "EHUB.Synonyms::SY_TA_GBATCH_ACCESS_M3MITLOC_BASIC_InValid": {
+    "target": {
+      "object": "TA_GBATCH_ACCESS_M3MITLOC_BASIC_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_GBATCH_ACCESS_M3MITLOC_PLANT_InValid": {
+    "target": {
+      "object": "TA_GBATCH_ACCESS_M3MITLOC_PLANT_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+
+  /***Stocks -- RM and SF Fabrics ****/
+ "EHUB.Synonyms::SY_TA_SSTOCK_Reflux_HEADER_Valid": {
+    "target": {
+      "object": "TA_SSTOCK_Reflux_HEADER_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SSTOCK_Reflux_ITEM_Valid": {
+    "target": {
+      "object": "TA_SSTOCK_Reflux_ITEM_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+ "EHUB.Synonyms::SY_TA_SSTOCK_Reflux_HEADER_InValid": {
+    "target": {
+      "object": "TA_SSTOCK_Reflux_HEADER_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SSTOCK_Reflux_ITEM_InValid": {
+    "target": {
+      "object": "TA_SSTOCK_Reflux_ITEM_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+
+  /********* SUBCO****************/
+   "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_BASIC_Valid": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_BASIC_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_PLANT_Valid": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_PLANT_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_CHAR_Valid": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_CHAR_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_BASIC_InValid": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_BASIC_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_PLANT_InValid": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_PLANT_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_SUBCO_M3MITLOC_CHAR_InValid": {
+    "target": {
+      "object": "TA_SHE_SUBCO_M3MITLOC_CHAR_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+  /**********External QC***************/
+
+  
+   "EHUB.Synonyms::SY_TA_SHE_EXQC_BASIC_VALID": {
+    "target": {
+      "object": "TA_SHE_EXQC_BASIC_VALID",
+      "schema": "EHUB_ALG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_EXQC_CHAR_VALID": {
+    "target": {
+      "object": "TA_SHE_EXQC_CHAR_VALID",
+      "schema": "EHUB_ALG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_EXQC_NUM_VALID": {
+    "target": {
+      "object": "TA_SHE_EXQC_NUM_VALID",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SHE_EXQC_PLANT_VALID": {
+    "target": {
+      "object": "TA_SHE_EXQC_PLANT_VALID",
+      "schema": "EHUB_ALG"
+    }
+  },
+    
+  "EHUB.Synonyms::SY_TA_SHE_EXQC_BASIC_INVALID": {
+    "target": {
+      "object": "TA_SHE_EXQC_BASIC_INVALID",
+      "schema": "EHUB_ALG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_EXQC_CHAR_INVALID": {
+    "target": {
+      "object": "TA_SHE_EXQC_CHAR_INVALID",
+      "schema": "EHUB_ALG"
+    }
+  },
+      "EHUB.Synonyms::SY_TA_SHE_EXQC_NUM_INVALID": {
+    "target": {
+      "object": "TA_SHE_EXQC_NUM_INVALID",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SHE_EXQC_PLANT_INVALID": {
+    "target": {
+      "object": "TA_SHE_EXQC_PLANT_INVALID",
+      "schema": "EHUB_ALG"
+    }
   }
+
 }

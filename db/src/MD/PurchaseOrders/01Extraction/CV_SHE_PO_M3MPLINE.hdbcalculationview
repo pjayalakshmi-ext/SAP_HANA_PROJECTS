@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_PO_M3MPLINE" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_M3MPLINE">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_M3MPLINE</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_MPLINE">
+    <viewAttributes>
+      <viewAttribute id="IBPUNO"/>
+      <viewAttribute id="IBITNO"/>
+      <viewAttribute id="IBWHLO"/>
+      <viewAttribute id="IBSITE"/>
+      <viewAttribute id="IBPUUN"/>
+      <viewAttribute id="IBTEDL"/>
+      <viewAttribute id="IBSUNO"/>
+      <viewAttribute id="IBOURR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_M3MPLINE"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Proj_MPLINE">
+  <attributes>
+    <attribute id="IBPUNO" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBPUNO"/>
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBPUNO"/>
+    </attribute>
+    <attribute id="IBITNO" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBITNO"/>
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBITNO"/>
+    </attribute>
+    <attribute id="IBWHLO" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBWHLO"/>
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBWHLO"/>
+    </attribute>
+    <attribute id="IBSITE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBSITE"/>
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBSITE"/>
+    </attribute>
+    <attribute id="IBPUUN" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBPUUN"/>
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBPUUN"/>
+    </attribute>
+    <attribute id="IBTEDL" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBTEDL"/>
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBTEDL"/>
+    </attribute>
+    <attribute id="IBSUNO" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBSUNO"/>
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBSUNO"/>
+    </attribute>
+    <attribute id="IBOURR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBOURR"/>
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBOURR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="138" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_MPLINE" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="57" y="238"/>
+      <rectangleSize height="30" width="245"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

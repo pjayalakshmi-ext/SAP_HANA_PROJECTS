@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_PO_M3MPPOAD " applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_M3MPPOAD">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_M3MPPOAD</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_MPPOAD">
+    <viewAttributes>
+      <viewAttribute id="ADCONO"/>
+      <viewAttribute id="ADFACI"/>
+      <viewAttribute id="ADWHLO"/>
+      <viewAttribute id="ADPUNO"/>
+      <viewAttribute id="ADPNLI"/>
+      <viewAttribute id="ADPOAD"/>
+      <viewAttribute id="ADADID"/>
+      <viewAttribute id="ADADK2"/>
+      <viewAttribute id="ADADK3"/>
+      <viewAttribute id="ADCONM"/>
+      <viewAttribute id="ADPRIA"/>
+      <viewAttribute id="ADADR1"/>
+      <viewAttribute id="ADADR2"/>
+      <viewAttribute id="ADADR3"/>
+      <viewAttribute id="ADADR4"/>
+      <viewAttribute id="ADTOWN"/>
+      <viewAttribute id="ADECAR"/>
+      <viewAttribute id="ADCSCD"/>
+      <viewAttribute id="ADPONO"/>
+      <viewAttribute id="ADTXID"/>
+      <viewAttribute id="ADRGDT"/>
+      <viewAttribute id="ADRGTM"/>
+      <viewAttribute id="ADLMDT"/>
+      <viewAttribute id="ADCHNO"/>
+      <viewAttribute id="ADCHID"/>
+      <viewAttribute id="ADFRCO"/>
+      <viewAttribute id="ADSPLE"/>
+      <viewAttribute id="ADRASN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_M3MPPOAD"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Proj_MPPOAD">
+  <attributes>
+    <attribute id="ADPUNO" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADPUNO"/>
+      <keyMapping columnObjectName="Proj_MPPOAD" columnName="ADPUNO"/>
+    </attribute>
+    <attribute id="ADTOWN" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADTOWN"/>
+      <keyMapping columnObjectName="Proj_MPPOAD" columnName="ADTOWN"/>
+    </attribute>
+    <attribute id="ADPONO" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADPONO"/>
+      <keyMapping columnObjectName="Proj_MPPOAD" columnName="ADPONO"/>
+    </attribute>
+    <attribute id="ADADR1" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADADR1"/>
+      <keyMapping columnObjectName="Proj_MPPOAD" columnName="ADADR1"/>
+    </attribute>
+    <attribute id="ADADR2" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADADR2"/>
+      <keyMapping columnObjectName="Proj_MPPOAD" columnName="ADADR2"/>
+    </attribute>
+    <attribute id="ADCSCD" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADCSCD"/>
+      <keyMapping columnObjectName="Proj_MPPOAD" columnName="ADCSCD"/>
+    </attribute>
+    <attribute id="ADECAR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADECAR"/>
+      <keyMapping columnObjectName="Proj_MPPOAD" columnName="ADECAR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="138.82292803429502" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Proj_MPPOAD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91.99999999999997" y="236.9999988079071"/>
+      <rectangleSize height="30" width="245"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

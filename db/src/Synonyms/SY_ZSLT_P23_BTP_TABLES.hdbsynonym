@@ -155,6 +155,13 @@
       "schema": "ZSLT_P23_BTP"
     }
   },
+  /*********Dior xref tables*************/
+    "EHUB.Synonyms::SY_ZSLT_P23_BTP_S4T001L": {
+    "target": {
+      "object": "S4T001L",
+      "schema": "ZSLT_P23_BTP"
+    }
+  },
   "EHUB.Synonyms::SY_ZSLT_P23_BTP_KSSK": {
     "target": {
       "object": "KSSK",

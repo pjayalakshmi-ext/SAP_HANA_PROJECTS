@@ -517,5 +517,11 @@
       "object": "TA_SKF_TKA03_PLD",
       "schema": "EHUB_PLD"
     }
-  } 
-}
+  },
+  "EHUB.Synonyms::SY_TA_STK_MITLOC_PLD": {
+    "target": {
+      "object": "TA_STK_MITLOC_PLD",
+      "schema": "EHUB_PLD"
+    }
+  }
+ }

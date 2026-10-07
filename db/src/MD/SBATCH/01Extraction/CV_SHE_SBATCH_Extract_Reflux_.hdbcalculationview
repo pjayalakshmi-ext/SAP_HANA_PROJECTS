@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SHE_SBATCH_Extract_Reflux_" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_Stocks"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EHUB.Synonyms::SY_ZSLT_SHE_STGHLGEINP">
+    <resourceUri>EHUB.Synonyms::SY_ZSLT_SHE_STGHLGEINP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="GENSUP"/>
+      <viewAttribute id="GESCRE"/>
+      <viewAttribute id="GEACRE"/>
+      <viewAttribute id="GEMCRE"/>
+      <viewAttribute id="GEJCRE"/>
+      <viewAttribute id="GECFOU"/>
+      <viewAttribute id="GELOT2"/>
+      <viewAttribute id="GELOTF"/>
+      <viewAttribute id="GECART"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="EHUB.Synonyms::SY_ZSLT_SHE_STGHLGEINP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:RankView" id="Rank_1">
+    <viewAttributes>
+      <viewAttribute id="GENSUP"/>
+      <viewAttribute id="GESCRE"/>
+      <viewAttribute id="GEACRE"/>
+      <viewAttribute id="GEMCRE"/>
+      <viewAttribute id="GEJCRE"/>
+      <viewAttribute id="GECFOU"/>
+      <viewAttribute id="GELOT2"/>
+      <viewAttribute id="GELOTF"/>
+      <viewAttribute id="GECART"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1"/>
+    <rankingFilter type="RANK" offsetReference="FRONT" dynamicPartitionAttributes="false">
+      <partitionViewAttributeName id="GENSUP"/>
+      <order byViewAttributeName="GECART" direction="ASC"/>
+      <rankThreshold/>
+      <rankViewAttributeName>Rank_Column</rankViewAttributeName>
+    </rankingFilter>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Rank_1">
+  <attributes>
+    <attribute id="Rank_Column" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rank_Column"/>
+      <keyMapping columnObjectName="Rank_1" columnName="Rank_Column"/>
+    </attribute>
+    <attribute id="GENSUP" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENSUP"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GENSUP"/>
+    </attribute>
+    <attribute id="GESCRE" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GESCRE"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GESCRE"/>
+    </attribute>
+    <attribute id="GEACRE" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEACRE"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GEACRE"/>
+    </attribute>
+    <attribute id="GEMCRE" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEMCRE"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GEMCRE"/>
+    </attribute>
+    <attribute id="GEJCRE" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEJCRE"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GEJCRE"/>
+    </attribute>
+    <attribute id="GECFOU" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECFOU"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GECFOU"/>
+    </attribute>
+    <attribute id="GELOT2" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GELOT2"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GELOT2"/>
+    </attribute>
+    <attribute id="GELOTF" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GELOTF"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GELOTF"/>
+    </attribute>
+    <attribute id="GECART" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECART"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GECART"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="PROD_DATE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>--GEJCRE &amp; GEMCRE &amp; GESCRE &amp; GEACRE
+&quot;GEJCRE&quot;||&quot;GEMCRE&quot;||&quot;GESCRE&quot;||&quot;GEACRE&quot;</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="EXPIRYDATE" order="2" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="VERAB" order="3" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="RESTRICTED" order="4" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="QNDAT" order="5" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="BWTAR" order="6" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="LIFNR" order="7" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="LICHA" order="8" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="LWEDT" order="9" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="HERKL" order="10" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="HERKR" order="11" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="ZUSTD" order="12" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'0'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT1" order="13" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT2" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT3" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT4" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT5" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="FVDT6" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'00000000'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="CLASS" order="19" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="40">
+        <formula>null</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="KLART" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="3">
+        <formula>'023'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="MTVER" order="21" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>NULL</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="WERKS" order="23" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'ITWA'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+    <calculatedAttribute id="SGT_SCAT" order="24" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
+        <formula>'Q1ID'</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="342"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Rank_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>
