@@ -1,0 +1,11 @@
+
+# auto generated wildcard
+HANA_Native_Dev/db/.env
+# auto generated wildcard
+DASHBOARDAPP/db/.env
+# auto generated wildcard
+EHUB_ML/db/.env
+# auto generated wildcard
+EHUB_PROFILING/db/.env
+# auto generated wildcard
+Reconciliation_App/db/.env
