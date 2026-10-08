@@ -1,0 +1,20 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "db": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.eu10-004.hana.ondemand.com",
+          "org": "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc",
+          "space": "dev",
+          "instance": "HANA_Native_Dev-hdidb-jaya",
+          "key": "HANA_Native_Dev-hdidb-jaya-key"
+        },
+        "kind": "hana-cloud",
+        "vcap": {
+          "name": "db"
+        }
+      }
+    }
+  }
+}

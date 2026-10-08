@@ -1,0 +1,1740 @@
+#2026 09 04 10:16:49.706#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#http-nio-0.0.0.0-8080-exec-8#
+[XS2StartProcessListener] Operation ID: bde3121f-a849-11f1-9933-eeee0a8e96af#
+#2026 09 04 10:16:49.727#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#http-nio-0.0.0.0-8080-exec-8#
+[XS2StartProcessListener] Process environment: {
+  "SKIP_SSL_VALIDATION" : "false",
+  "FLOWABLE_JOB_EXECUTOR_MAX_THREADS" : "128",
+  "VERSION" : "2.53.0",
+  "BASIC_AUTH_ENABLED" : "true",
+  "FLOWABLE_JOB_EXECUTOR_QUEUE_CAPACITY" : "4",
+  "FLOWABLE_JOB_EXECUTOR_CORE_THREADS" : "64"
+}#
+#2026 09 04 10:16:49.727#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#http-nio-0.0.0.0-8080-exec-8#
+[XS2StartProcessListener] Current user: pjayalakshmi_ext@christiandior.com#
+#2026 09 04 10:16:49.727#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#http-nio-0.0.0.0-8080-exec-8#
+[XS2StartProcessListener] Client space: dev#
+#2026 09 04 10:16:49.727#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#http-nio-0.0.0.0-8080-exec-8#
+[XS2StartProcessListener] Client organization: CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc#
+#2026 09 04 10:16:49.727#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#http-nio-0.0.0.0-8080-exec-8#
+[XS2StartProcessListener] Process variables: {
+  "keepFiles" : false,
+  "skipAppDigestCalculation" : false,
+  "abortOnError" : false,
+  "mtaId" : "eHub",
+  "noFailOnMissingPermissions" : false,
+  "isSecurityEnabled" : false,
+  "apiRequestPath" : "https://deploy-service.cf.eu10-004.hana.ondemand.com/api/v1/spaces/af14dcdc-b22d-47c5-81e8-2f324d434b58/operations",
+  "deleteServiceBrokers" : false,
+  "appArchiveId" : "a434ff40-c5c6-463c-a613-efa6ffab1b38,e72423c8-cfc5-419d-91f5-026537f55ee0",
+  "isDisposableUserProvidedServiceEnabled" : false,
+  "deleteServiceKeys" : false,
+  "noRestartSubscribedApps" : false,
+  "noStart" : false,
+  "deleteServices" : false
+}#
+#2026 09 04 10:16:49.811#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+[ValidateDeployParametersStep] Executing task "validateParametersTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:49.811#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+[ValidateDeployParametersStep] Validating parameters...#
+#2026 09 04 10:16:49.813#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+[ValidateDeployParametersStep] Size of mtars is 70,657,739 and size of extension descriptors is 0#
+#2026 09 04 10:16:49.813#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+[ValidateDeployParametersStep] Archive was split to: 2 parts. Total size in bytes: 70,657,739. Uploading started...#
+#2026 09 04 10:16:49.842#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#pool-10-thread-1#
+[ValidateDeployParametersStep] Opening a new input stream for file with ID: e72423c8-cfc5-419d-91f5-026537f55ee0 and name: eHub_0.0.1.mtar.part.0#
+#2026 09 04 10:16:50.597#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#pool-10-thread-1#
+[ValidateDeployParametersStep] Opening a new input stream for file with ID: a434ff40-c5c6-463c-a613-efa6ffab1b38 and name: eHub_0.0.1.mtar.part.1#
+#2026 09 04 10:16:50.924#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+[ValidateDeployParametersStep] Archive with ID: 0da04804-43eb-4a23-b1dc-116a6daa904c and name: eHub_0.0.1.mtar was stored#
+#2026 09 04 10:16:50.924#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+[ValidateDeployParametersStep] Deploying in org "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc" and space "dev"#
+#2026 09 04 10:16:50.930#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+[ValidateDeployParametersStep] Parameters validated#
+#2026 09 04 10:16:50.930#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+Step "Validate Parameters" finished#
+#2026 09 04 10:16:50.958#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+[DeleteRemainingFileParts] Executing task "deleteRemainingFileParts" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:51.020#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12057#
+Step "Delete Remaining File Parts" finished#
+#2026 09 04 10:16:51.046#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+[XS2ProcessMtaArchiveStep] Executing task "processArchiveTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:51.047#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+[XS2ProcessMtaArchiveStep] Processing MTA archive...#
+#2026 09 04 10:16:51.047#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+[XS2ProcessMtaArchiveStep] MTA Archive ID: 0da04804-43eb-4a23-b1dc-116a6daa904c#
+#2026 09 04 10:16:51.816#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+[XS2ProcessMtaArchiveStep] MTA Descriptor length: 666#
+#2026 09 04 10:16:51.816#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+[XS2ProcessMtaArchiveStep] MTA Archive Modules: [db]#
+#2026 09 04 10:16:51.816#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+[XS2ProcessMtaArchiveStep] MTA Archive Requires: []#
+#2026 09 04 10:16:51.816#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+[XS2ProcessMtaArchiveStep] MTA Archive Resources: []#
+#2026 09 04 10:16:51.824#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+[XS2ProcessMtaArchiveStep] MTA archive processed#
+#2026 09 04 10:16:51.824#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12106#
+Step "Process Archive" finished#
+#2026 09 04 10:16:51.851#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12107#
+[ProcessMtaExtensionDescriptorsStep] Executing task "processExtensionDescriptorsTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:51.852#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12107#
+[ProcessMtaExtensionDescriptorsStep] Processing MTA extension descriptors...#
+#2026 09 04 10:16:51.852#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12107#
+[ProcessMtaExtensionDescriptorsStep] Provided extension descriptors: [ ]#
+#2026 09 04 10:16:51.852#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12107#
+[ProcessMtaExtensionDescriptorsStep] No extension descriptors in use#
+#2026 09 04 10:16:51.852#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12107#
+[ProcessMtaExtensionDescriptorsStep] MTA extension descriptors processed#
+#2026 09 04 10:16:51.852#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12107#
+Step "Process Extension Descriptors" finished#
+#2026 09 04 10:16:51.876#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12108#
+[XS2DetectMtaSchemaVersionStep] Executing task "detectSchemaVersionTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:51.877#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12108#
+[XS2DetectMtaSchemaVersionStep] Detecting MTA major schema version...#
+#2026 09 04 10:16:51.878#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12108#
+[XS2DetectMtaSchemaVersionStep] Detected MTA schema version: "3"#
+#2026 09 04 10:16:51.882#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12108#
+Step "Detect Schema Version" finished#
+#2026 09 04 10:16:51.905#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12109#
+[MergeDescriptorsStep] Executing task "mergeDescriptorsTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:51.906#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12109#
+[MergeDescriptorsStep] Validating and merging descriptors...#
+#2026 09 04 10:16:51.907#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12109#
+[MergeDescriptorsStep] Merged deployment descriptor: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.1.0",
+  "id" : "eHub",
+  "version" : "0.0.1",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "db",
+    "type" : "com.sap.xs.hdi",
+    "path" : "db",
+    "properties" : {
+      "EXIT" : 1
+    },
+    "parameters" : {
+      "memory" : "256M",
+      "buildpack" : "nodejs_buildpack",
+      "no-route" : true,
+      "dependency-type" : "hard",
+      "tasks" : [ {
+        "name" : "deploy",
+        "memory" : "256M",
+        "command" : "npm start"
+      } ],
+      "no-start" : true
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "hdi_db",
+      "properties" : {
+        "TARGET_CONTAINER" : "~{hdi-container-name}"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    }, {
+      "majorSchemaVersion" : 3,
+      "name" : "cross-container-service-1",
+      "group" : "SERVICE_REPLACEMENTS",
+      "properties" : {
+        "key" : "********",
+        "service" : "~{the-service-name}"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "db",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "hdi_db",
+    "type" : "com.sap.xs.hdi-container",
+    "properties" : {
+      "hdi-container-name" : "${service-name}"
+    },
+    "parameters" : {
+      "service-plan" : "hdi-shared",
+      "type" : "managed-service",
+      "config" : {
+        "schema" : "eHub"
+      },
+      "service" : "hana"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ],
+    "processedAfter" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "cross-container-service-1",
+    "type" : "org.cloudfoundry.existing-service",
+    "properties" : {
+      "the-service-name" : "${service-name}"
+    },
+    "parameters" : {
+      "type" : "existing-service",
+      "service-name" : "CUPSSERVICE"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ],
+    "processedAfter" : [ ]
+  } ],
+  "parameters" : { },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+#2026 09 04 10:16:51.908#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12109#
+[MergeDescriptorsStep] Descriptors validated and merged#
+#2026 09 04 10:16:51.908#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12109#
+Step "Merge Descriptors" finished#
+#2026 09 04 10:16:51.935#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12110#
+[CollectCloudLoggingServiceParametersStep] Executing task "sid-9C5714DF-CEC8-4019-8873-CBBA99AC459A" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:51.937#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12110#
+Step "Collect Cloud Logging Service Parameters" finished#
+#2026 09 04 10:16:51.964#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Executing task "detectDeployedMtaTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:51.965#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Detecting deployed MTA...#
+#2026 09 04 10:16:52.027#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Detecting MTA by id eHub and namespace null#
+#2026 09 04 10:16:52.027#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Getting applications by metadata label selector "mta_id=2d3a9cc1eeb31399cafcbd1cd06b4722,!mta_namespace"...#
+#2026 09 04 10:16:52.103#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Getting service instances by metadata label selector "mta_id=2d3a9cc1eeb31399cafcbd1cd06b4722,!mta_namespace"...#
+#2026 09 04 10:16:52.229#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Deployed MTA: {
+  "metadata" : {
+    "id" : "eHub",
+    "version" : "0.0.1"
+  },
+  "applications" : [ {
+    "name" : "db",
+    "metadata" : {
+      "guid" : "05051359-c265-4d7e-b733-004c272b769e",
+      "createdAt" : [ 2026, 5, 10, 10, 48, 22 ],
+      "updatedAt" : [ 2026, 5, 10, 10, 49, 52 ]
+    },
+    "v3Metadata" : {
+      "annotations" : {
+        "mta_id" : "eHub",
+        "mta_version" : "0.0.1",
+        "mta_module" : "{\"name\":\"db\"}",
+        "mta_module_provided_dependencies" : "[]",
+        "mta_bound_services" : "[\"hdi_db\"]"
+      },
+      "labels" : {
+        "mta_id" : "2d3a9cc1eeb31399cafcbd1cd06b4722"
+      }
+    },
+    "state" : "STOPPED",
+    "lifecycle" : {
+      "type" : "BUILDPACK",
+      "data" : {
+        "buildpacks" : [ "nodejs_buildpack" ],
+        "stack" : "cflinuxfs4"
+      }
+    },
+    "space" : {
+      "name" : "dev",
+      "metadata" : {
+        "guid" : "af14dcdc-b22d-47c5-81e8-2f324d434b58",
+        "createdAt" : [ 2026, 1, 8, 9, 52, 13 ],
+        "updatedAt" : [ 2026, 1, 8, 9, 52, 13 ]
+      },
+      "organization" : {
+        "name" : "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc",
+        "metadata" : {
+          "guid" : "ea309a35-077c-4d44-9358-b8ae810a838a",
+          "createdAt" : [ 2026, 1, 8, 9, 52, 5 ],
+          "updatedAt" : [ 2026, 1, 8, 12, 42, 50 ]
+        }
+      }
+    },
+    "moduleName" : "db",
+    "boundMtaServices" : [ "hdi_db" ],
+    "providedDependencyNames" : [ ],
+    "productizationState" : "LIVE"
+  } ],
+  "services" : [ {
+    "name" : "hdi_db",
+    "metadata" : {
+      "guid" : "ed57154a-90dd-416d-83e6-27a81b1f8029",
+      "createdAt" : [ 2026, 5, 10, 10, 48, 10 ],
+      "updatedAt" : [ 2026, 5, 10, 10, 48, 10 ]
+    },
+    "v3Metadata" : {
+      "annotations" : {
+        "mta_id" : "eHub",
+        "mta_version" : "0.0.1",
+        "mta_resource" : "{\"name\":\"hdi_db\"}"
+      },
+      "labels" : {
+        "mta_id" : "2d3a9cc1eeb31399cafcbd1cd06b4722"
+      }
+    },
+    "label" : "hana",
+    "plan" : "hdi-shared",
+    "credentials" : "********",
+    "tags" : [ ],
+    "type" : "managed",
+    "lastOperation" : {
+      "type" : "CREATE",
+      "state" : "SUCCEEDED"
+    },
+    "resourceName" : "hdi_db"
+  } ]
+}#
+#2026 09 04 10:16:52.229#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Detected deployed MTA with ID "eHub" and version "0.0.1"#
+#2026 09 04 10:16:52.234#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Detecting backup mta by id "eHub" and namespace "null"#
+#2026 09 04 10:16:52.234#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Getting applications by metadata label selector "mta_id=2d3a9cc1eeb31399cafcbd1cd06b4722,mta_namespace=b698114a0995e936895b9598a6c19a2c"...#
+#2026 09 04 10:16:52.274#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Getting service instances by metadata label selector "mta_id=2d3a9cc1eeb31399cafcbd1cd06b4722,mta_namespace=b698114a0995e936895b9598a6c19a2c"...#
+#2026 09 04 10:16:52.327#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+[DetectDeployedMtaStep] Deployed MTA service keys: [ ]#
+#2026 09 04 10:16:52.327#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12111#
+Step "Detect Deployed MTA" finished#
+#2026 09 04 10:16:52.365#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Executing task "collectSystemParametersTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:52.365#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Collecting system parameters...#
+#2026 09 04 10:16:52.366#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Getting default domain...#
+#2026 09 04 10:16:52.414#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Default domain: cfapps.eu10-004.hana.ondemand.com#
+#2026 09 04 10:16:52.414#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Checking for overwriting read-only parameters for mta with id: "eHub"#
+#2026 09 04 10:16:52.415#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] No read-only parameters are overwritten#
+#2026 09 04 10:16:52.425#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Descriptor with system parameters: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.1.0",
+  "id" : "eHub",
+  "version" : "0.0.1",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "db",
+    "type" : "com.sap.xs.hdi",
+    "path" : "db",
+    "properties" : {
+      "EXIT" : 1
+    },
+    "parameters" : {
+      "default-url" : "${protocol}://${default-uri}",
+      "default-app-name" : "db",
+      "generated-password" : "********",
+      "default-live-url" : "${protocol}://${default-live-uri}",
+      "default-uri" : "${host}.${domain}",
+      "memory" : "256M",
+      "default-instances" : 1,
+      "no-route" : true,
+      "default-live-host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+      "instances" : "${default-instances}",
+      "buildpack" : "nodejs_buildpack",
+      "default-host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+      "app-name" : "${default-app-name}",
+      "default-live-uri" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.${domain}",
+      "protocol" : "https",
+      "default-live-app-name" : "db",
+      "default-live-domain" : "cfapps.eu10-004.hana.ondemand.com",
+      "dependency-type" : "hard",
+      "domain" : "${default-domain}",
+      "host" : "${default-host}",
+      "generated-user" : "********",
+      "tasks" : [ {
+        "name" : "deploy",
+        "memory" : "256M",
+        "command" : "npm start"
+      } ],
+      "no-start" : true
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "hdi_db",
+      "properties" : {
+        "TARGET_CONTAINER" : "~{hdi-container-name}"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    }, {
+      "majorSchemaVersion" : 3,
+      "name" : "cross-container-service-1",
+      "group" : "SERVICE_REPLACEMENTS",
+      "properties" : {
+        "key" : "********",
+        "service" : "~{the-service-name}"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "db",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "hdi_db",
+    "type" : "com.sap.xs.hdi-container",
+    "properties" : {
+      "hdi-container-name" : "${service-name}"
+    },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "${default-service-name}",
+      "service-plan" : "hdi-shared",
+      "service" : "hana",
+      "generated-user" : "********",
+      "default-xsappname" : "hdi_db",
+      "type" : "managed-service",
+      "config" : {
+        "schema" : "eHub"
+      },
+      "default-service-name" : "hdi_db",
+      "default-container-name" : "CHRISTIAN_DIOR_COUTURE_10_1_LIVE_MANUF_SSPMQKFC_DEV_HDI_DB"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ],
+    "processedAfter" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "cross-container-service-1",
+    "type" : "org.cloudfoundry.existing-service",
+    "properties" : {
+      "the-service-name" : "${service-name}"
+    },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "CUPSSERVICE",
+      "generated-user" : "********",
+      "default-xsappname" : "cross-container-service-1",
+      "type" : "existing-service",
+      "default-service-name" : "cross-container-service-1",
+      "default-container-name" : "CHRISTIAN_DIOR_COUTURE_10_1_LIVE_MANUF_SSPMQKFC_DEV_CROS509980E1"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ],
+    "processedAfter" : [ ]
+  } ],
+  "parameters" : {
+    "mta-id" : "eHub",
+    "authorization-url" : "********",
+    "org-guid" : "ea309a35-077c-4d44-9358-b8ae810a838a",
+    "org" : "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc",
+    "deploy-target" : "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc dev",
+    "space" : "dev",
+    "xs-api-url" : "https://api.cf.eu10-004.hana.ondemand.com",
+    "deploy-url" : "deploy-service.cfapps.eu10-004.hana.ondemand.com",
+    "xs-type" : "CF",
+    "default-domain" : "cfapps.eu10-004.hana.ondemand.com",
+    "mta-version" : "0.0.1",
+    "xs-auth-url" : "********",
+    "space-guid" : "af14dcdc-b22d-47c5-81e8-2f324d434b58",
+    "user" : "********",
+    "controller-url" : "https://api.cf.eu10-004.hana.ondemand.com",
+    "timestamp" : "20260904101649"
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+#2026 09 04 10:16:52.427#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Version rule: SAME_HIGHER#
+#2026 09 04 10:16:52.427#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Detected new MTA version: "0.0.1"#
+#2026 09 04 10:16:52.430#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] Deployed MTA version: "0.0.1"#
+#2026 09 04 10:16:52.434#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] MTA accepted for deployment#
+#2026 09 04 10:16:52.434#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+[XS2CollectSystemParametersStep] System parameters collected#
+#2026 09 04 10:16:52.434#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12112#
+Step "Collect System Parameters" finished#
+#2026 09 04 10:16:52.462#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12113#
+[ProcessDescriptorStep] Executing task "processDescriptorTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:52.463#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12113#
+[ProcessDescriptorStep] Resolving properties and parameters in merged descriptor...#
+#2026 09 04 10:16:52.465#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12113#
+[ProcessDescriptorStep] Subscriptions: [ ]#
+#2026 09 04 10:16:52.465#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12113#
+[ProcessDescriptorStep] MTA modules: [db]#
+#2026 09 04 10:16:52.466#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12113#
+[ProcessDescriptorStep] Resolved deployment descriptor: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.1.0",
+  "id" : "eHub",
+  "version" : "0.0.1",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "db",
+    "type" : "com.sap.xs.hdi",
+    "path" : "db",
+    "properties" : {
+      "EXIT" : 1
+    },
+    "parameters" : {
+      "default-url" : "https://christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+      "default-app-name" : "db",
+      "generated-password" : "********",
+      "default-live-url" : "https://christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+      "default-uri" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+      "memory" : "256M",
+      "default-instances" : 1,
+      "no-route" : true,
+      "default-live-host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+      "instances" : 1,
+      "buildpack" : "nodejs_buildpack",
+      "default-host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+      "app-name" : "db",
+      "default-live-uri" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+      "protocol" : "https",
+      "default-live-app-name" : "db",
+      "default-live-domain" : "cfapps.eu10-004.hana.ondemand.com",
+      "dependency-type" : "hard",
+      "domain" : "cfapps.eu10-004.hana.ondemand.com",
+      "host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+      "generated-user" : "********",
+      "tasks" : [ {
+        "command" : "npm start",
+        "memory" : "256M",
+        "name" : "deploy"
+      } ],
+      "no-start" : true
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "hdi_db",
+      "properties" : {
+        "TARGET_CONTAINER" : "hdi_db"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    }, {
+      "majorSchemaVersion" : 3,
+      "name" : "cross-container-service-1",
+      "group" : "SERVICE_REPLACEMENTS",
+      "properties" : {
+        "key" : "********",
+        "service" : "CUPSSERVICE"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "db",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "hdi_db",
+    "type" : "com.sap.xs.hdi-container",
+    "properties" : {
+      "hdi-container-name" : "hdi_db"
+    },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "hdi_db",
+      "service-plan" : "hdi-shared",
+      "service" : "hana",
+      "generated-user" : "********",
+      "default-xsappname" : "hdi_db",
+      "type" : "managed-service",
+      "config" : {
+        "schema" : "eHub"
+      },
+      "default-service-name" : "hdi_db",
+      "default-container-name" : "CHRISTIAN_DIOR_COUTURE_10_1_LIVE_MANUF_SSPMQKFC_DEV_HDI_DB"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ],
+    "processedAfter" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "cross-container-service-1",
+    "type" : "org.cloudfoundry.existing-service",
+    "properties" : {
+      "the-service-name" : "CUPSSERVICE"
+    },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "CUPSSERVICE",
+      "generated-user" : "********",
+      "default-xsappname" : "cross-container-service-1",
+      "type" : "existing-service",
+      "default-service-name" : "cross-container-service-1",
+      "default-container-name" : "CHRISTIAN_DIOR_COUTURE_10_1_LIVE_MANUF_SSPMQKFC_DEV_CROS509980E1"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ],
+    "processedAfter" : [ ]
+  } ],
+  "parameters" : {
+    "mta-id" : "eHub",
+    "authorization-url" : "********",
+    "org-guid" : "ea309a35-077c-4d44-9358-b8ae810a838a",
+    "org" : "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc",
+    "deploy-target" : "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc dev",
+    "region-primary-domain" : "eu10.hana.ondemand.com",
+    "space" : "dev",
+    "region-domain" : "eu10-004.hana.ondemand.com",
+    "xs-api-url" : "https://api.cf.eu10-004.hana.ondemand.com",
+    "deploy-url" : "deploy-service.cfapps.eu10-004.hana.ondemand.com",
+    "xs-type" : "CF",
+    "default-domain" : "cfapps.eu10-004.hana.ondemand.com",
+    "mta-version" : "0.0.1",
+    "xs-auth-url" : "********",
+    "space-guid" : "af14dcdc-b22d-47c5-81e8-2f324d434b58",
+    "user" : "********",
+    "controller-url" : "https://api.cf.eu10-004.hana.ondemand.com",
+    "timestamp" : "20260904101649"
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+#2026 09 04 10:16:52.466#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12113#
+[ProcessDescriptorStep] Merged descriptor properties and parameters resolved#
+#2026 09 04 10:16:52.466#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12113#
+Step "Process Descriptor Step" finished#
+#2026 09 04 10:16:52.491#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Executing task "buildDeployModelTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:52.494#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Service keys defined for content deployment grouped by service name: { }#
+#2026 09 04 10:16:52.494#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Building cloud deployment model...#
+#2026 09 04 10:16:52.496#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] MTA archive modules: [db]#
+#2026 09 04 10:16:52.496#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Deployed modules: [db]#
+#2026 09 04 10:16:52.496#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] MTA modules: [db]#
+#2026 09 04 10:16:52.497#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Service keys to create: {
+  "cross-container-service-1" : [ ],
+  "hdi_db" : [ ]
+}#
+#2026 09 04 10:16:52.497#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Modules to deploy: [{
+  "majorSchemaVersion" : 3,
+  "name" : "db",
+  "type" : "com.sap.xs.hdi",
+  "path" : "db",
+  "properties" : {
+    "EXIT" : 1
+  },
+  "parameters" : {
+    "default-url" : "https://christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+    "default-app-name" : "db",
+    "generated-password" : "********",
+    "default-live-url" : "https://christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+    "default-uri" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+    "memory" : "256M",
+    "default-instances" : 1,
+    "no-route" : true,
+    "default-live-host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+    "instances" : 1,
+    "buildpack" : "nodejs_buildpack",
+    "default-host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+    "app-name" : "db",
+    "default-live-uri" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+    "protocol" : "https",
+    "default-live-app-name" : "db",
+    "default-live-domain" : "cfapps.eu10-004.hana.ondemand.com",
+    "dependency-type" : "hard",
+    "domain" : "cfapps.eu10-004.hana.ondemand.com",
+    "host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+    "generated-user" : "********",
+    "tasks" : [ {
+      "command" : "npm start",
+      "memory" : "256M",
+      "name" : "deploy"
+    } ],
+    "no-start" : true
+  },
+  "requiredDependencies" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "hdi_db",
+    "properties" : {
+      "TARGET_CONTAINER" : "hdi_db"
+    },
+    "parameters" : { },
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    }
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "cross-container-service-1",
+    "group" : "SERVICE_REPLACEMENTS",
+    "properties" : {
+      "key" : "********",
+      "service" : "CUPSSERVICE"
+    },
+    "parameters" : { },
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    }
+  } ],
+  "providedDependencies" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "db",
+    "isPublic" : false,
+    "properties" : { },
+    "parameters" : { },
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    }
+  } ],
+  "propertiesMetadata" : {
+    "metadata" : { }
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  },
+  "hooks" : [ ]
+}]#
+#2026 09 04 10:16:52.498#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Custom domains: []#
+#2026 09 04 10:16:52.500#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Getting service instance "CUPSSERVICE"...#
+#2026 09 04 10:16:52.558#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Calculating resource batches...#
+#2026 09 04 10:16:52.559#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Calculating resource batches completed.#
+#2026 09 04 10:16:52.559#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+[XS2BuildCloudDeployModelStep] Cloud deployment model built#
+#2026 09 04 10:16:52.559#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12114#
+Step "Build Deploy Model" finished#
+#2026 09 04 10:16:52.588#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Executing task "buildUndeployModelTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:52.589#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Building cloud undeployment model...#
+#2026 09 04 10:16:52.591#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Detecting service keys to delete.#
+#2026 09 04 10:16:52.591#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] No deployed service keys detected!#
+#2026 09 04 10:16:52.591#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Detected service keys to delete "[]"#
+#2026 09 04 10:16:52.595#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] MTA modules: [db]#
+#2026 09 04 10:16:52.595#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Modules to undeploy: [ ]#
+#2026 09 04 10:16:52.595#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Modules that won't be changed: [ ]#
+#2026 09 04 10:16:52.595#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Subscriptions to delete: [ ]#
+#2026 09 04 10:16:52.597#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Cloud services to delete: []#
+#2026 09 04 10:16:52.597#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Cloud applications to undeploy: [ ]#
+#2026 09 04 10:16:52.599#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+[BuildCloudUndeployModelStep] Cloud undeployment model built#
+#2026 09 04 10:16:52.599#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12115#
+Step "Build Undeploy Model" finished#
+#2026 09 04 10:16:52.626#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12116#
+[AddDomainsStep] Executing task "addDomainsTask" of process "bde33955-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:52.628#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12116#
+[AddDomainsStep] Custom domains: []#
+#2026 09 04 10:16:52.628#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12116#
+Step "Add Domains" finished#
+#2026 09 04 10:16:52.760#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12118#
+[ExtractBatchedServicesWithResolvedDynamicParametersStep] Executing task "prepareModulesDeploymentTask" of process "bfa7302e-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:52.760#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12118#
+[ExtractBatchedServicesWithResolvedDynamicParametersStep] Extracting services and resolving dynamic parameters from batch#
+#2026 09 04 10:16:52.761#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12118#
+[ExtractBatchedServicesWithResolvedDynamicParametersStep] Services to create: [ {
+  "isOptional" : false,
+  "isManaged" : true,
+  "name" : "hdi_db",
+  "v3Metadata" : {
+    "annotations" : {
+      "mta_id" : "eHub",
+      "mta_version" : "0.0.1",
+      "mta_resource" : "{\"name\":\"hdi_db\"}"
+    },
+    "labels" : {
+      "mta_id" : "2d3a9cc1eeb31399cafcbd1cd06b4722"
+    }
+  },
+  "label" : "hana",
+  "plan" : "hdi-shared",
+  "credentials" : "********",
+  "tags" : [ ],
+  "type" : "managed",
+  "resourceName" : "hdi_db",
+  "shouldSkipParametersUpdate" : false,
+  "shouldSkipPlanUpdate" : false,
+  "shouldSkipTagsUpdate" : false,
+  "shouldSkipSyslogUrlUpdate" : false
+} ]#
+#2026 09 04 10:16:52.762#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12118#
+Step "Extract Services with Resolved Dynamic parameters from batch" finished#
+#2026 09 04 10:16:52.861#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12120#
+[CheckServiceOperationStateStep] Executing task "CheckServiceOperationStateTask" of process "bfbed71a-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:52.862#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12120#
+[CheckServiceOperationStateStep] Getting service instance "hdi_db"...#
+#2026 09 04 10:16:52.976#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12120#
+Step "Check for service operations in Progress" finished#
+#2026 09 04 10:16:53.004#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12121#
+[DetermineServiceCreateUpdateServiceActionsStep] Executing task "DetermineServiceCreateUpdateActionsTask" of process "bfbed71a-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:53.005#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12121#
+[DetermineServiceCreateUpdateServiceActionsStep] Processing service "hdi_db"...#
+#2026 09 04 10:16:53.009#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12121#
+[DetermineServiceCreateUpdateServiceActionsStep] Getting service instance "hdi_db"...#
+#2026 09 04 10:16:53.107#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12121#
+[DetermineServiceCreateUpdateServiceActionsStep] Existing service: {
+  "name" : "hdi_db",
+  "metadata" : {
+    "guid" : "ed57154a-90dd-416d-83e6-27a81b1f8029",
+    "createdAt" : [ 2026, 5, 10, 10, 48, 10 ],
+    "updatedAt" : [ 2026, 5, 10, 10, 48, 10 ]
+  },
+  "v3Metadata" : {
+    "annotations" : {
+      "mta_id" : "eHub",
+      "mta_version" : "0.0.1",
+      "mta_resource" : "{\"name\":\"hdi_db\"}"
+    },
+    "labels" : {
+      "mta_id" : "2d3a9cc1eeb31399cafcbd1cd06b4722"
+    }
+  },
+  "label" : "hana",
+  "plan" : "hdi-shared",
+  "credentials" : "********",
+  "tags" : [ ],
+  "type" : "managed",
+  "lastOperation" : {
+    "type" : "CREATE",
+    "state" : "SUCCEEDED"
+  }
+}#
+#2026 09 04 10:16:53.107#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12121#
+[DetermineServiceCreateUpdateServiceActionsStep] Service parameters will be updated#
+#2026 09 04 10:16:53.107#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12121#
+[DetermineServiceCreateUpdateServiceActionsStep] New parameters: {
+  "schema" : "eHub"
+}#
+#2026 09 04 10:16:53.107#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12121#
+Step "Determine update actions" finished#
+#2026 09 04 10:16:53.141#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12122#
+[CheckForServiceBindingOrKeyOperationStep] Executing task "CheckForServiceBindingOrKeyCreation" of process "bfbed71a-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:53.142#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12122#
+Step "Check for service binding or key creation" finished#
+#2026 09 04 10:16:53.170#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12123#
+[UpdateServiceParametersStep] Executing task "UpdateServiceParametersTask" of process "bfbed71a-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:16:53.172#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12123#
+[UpdateServiceParametersStep] Updating service "hdi_db"...#
+#2026 09 04 10:16:53.175#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12123#
+[UpdateServiceParametersStep] Updating service parameters for service "hdi_db"...#
+#2026 09 04 10:16:53.266#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12123#
+[UpdateServiceParametersStep] Service "hdi_db" updated#
+#2026 09 04 10:16:53.266#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12123#
+[UpdateServiceParametersStep] Triggered service operations: {
+  "hdi_db" : "UPDATE"
+}#
+#2026 09 04 10:16:53.267#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12123#
+Step "Update parameters" finished#
+#2026 09 04 10:17:06.809#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8742#
+[UpdateServiceParametersStep] Executing task "UpdateServiceParametersTask" of process "bfbed71a-a849-11f1-9933-eeee0a8e96af"...#
+#2026 09 04 10:17:06.810#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8742#
+[UpdateServiceParametersStep] Polling service operations...#
+#2026 09 04 10:17:06.887#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8742#
+[UpdateServiceParametersStep] Getting service instance "hdi_db"...#
+#2026 09 04 10:17:07.020#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8742#
+[UpdateServiceParametersStep] Last operation for service "hdi_db": {
+  "type" : "UPDATE",
+  "state" : "SUCCEEDED"
+}#
+#2026 09 04 10:17:07.020#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8742#
+[UpdateServiceParametersStep] Service "hdi_db" updated#
+#2026 09 04 10:17:07.021#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8742#
+[UpdateServiceParametersStep] 1 of 1 done#
+#2026 09 04 10:17:07.029#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8742#
+[UpdateServiceParametersStep] Remaining services to poll: [ ]#
+#2026 09 04 10:17:07.030#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8742#
+Step "Update parameters" finished#
+#2026 09 04 10:17:07.321#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8773#
+[PrepareModulesDeploymentStep] Executing task "prepareModulesDeploymentTask" of process "c859e7a9-a849-11f1-9dd2-eeee0a911f1e"...#
+#2026 09 04 10:17:07.322#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8773#
+[PrepareModulesDeploymentStep] Preparing modules deployment...#
+#2026 09 04 10:17:07.332#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8773#
+Step "Prepare Modules Deployment" finished#
+#2026 09 04 10:17:07.489#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8777#
+[ProcessDescriptorStep] Executing task "reprocessDescriptorTask" of process "c8718e1e-a849-11f1-9dd2-eeee0a911f1e"...#
+#2026 09 04 10:17:07.490#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8777#
+[ProcessDescriptorStep] Resolving properties and parameters in merged descriptor...#
+#2026 09 04 10:17:07.496#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8777#
+[ProcessDescriptorStep] Subscriptions: [ ]#
+#2026 09 04 10:17:07.503#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8777#
+[ProcessDescriptorStep] MTA modules: [db]#
+#2026 09 04 10:17:07.508#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8777#
+[ProcessDescriptorStep] Resolved deployment descriptor: {
+  "majorSchemaVersion" : 3,
+  "schemaVersion" : "3.1.0",
+  "id" : "eHub",
+  "version" : "0.0.1",
+  "modules" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "db",
+    "type" : "com.sap.xs.hdi",
+    "path" : "db",
+    "properties" : {
+      "EXIT" : 1
+    },
+    "parameters" : {
+      "default-url" : "https://christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+      "default-app-name" : "db",
+      "generated-password" : "********",
+      "default-live-url" : "https://christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+      "default-uri" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+      "memory" : "256M",
+      "default-instances" : 1,
+      "no-route" : true,
+      "default-live-host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+      "instances" : 1,
+      "buildpack" : "nodejs_buildpack",
+      "default-host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+      "app-name" : "db",
+      "default-live-uri" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db.cfapps.eu10-004.hana.ondemand.com",
+      "protocol" : "https",
+      "default-live-app-name" : "db",
+      "default-live-domain" : "cfapps.eu10-004.hana.ondemand.com",
+      "dependency-type" : "hard",
+      "domain" : "cfapps.eu10-004.hana.ondemand.com",
+      "host" : "christian-dior-couture-10-1-live-manuf-sspmqkfc-dev-db",
+      "generated-user" : "********",
+      "tasks" : [ {
+        "command" : "npm start",
+        "memory" : "256M",
+        "name" : "deploy"
+      } ],
+      "no-start" : true
+    },
+    "requiredDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "hdi_db",
+      "properties" : {
+        "TARGET_CONTAINER" : "hdi_db"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    }, {
+      "majorSchemaVersion" : 3,
+      "name" : "cross-container-service-1",
+      "group" : "SERVICE_REPLACEMENTS",
+      "properties" : {
+        "key" : "********",
+        "service" : "CUPSSERVICE"
+      },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "providedDependencies" : [ {
+      "majorSchemaVersion" : 3,
+      "name" : "db",
+      "isPublic" : false,
+      "properties" : { },
+      "parameters" : { },
+      "propertiesMetadata" : {
+        "metadata" : { }
+      },
+      "parametersMetadata" : {
+        "metadata" : { }
+      }
+    } ],
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "hooks" : [ ]
+  } ],
+  "resources" : [ {
+    "majorSchemaVersion" : 3,
+    "name" : "hdi_db",
+    "type" : "com.sap.xs.hdi-container",
+    "properties" : {
+      "hdi-container-name" : "hdi_db"
+    },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "hdi_db",
+      "service-plan" : "hdi-shared",
+      "service" : "hana",
+      "generated-user" : "********",
+      "default-xsappname" : "hdi_db",
+      "type" : "managed-service",
+      "config" : {
+        "schema" : "eHub"
+      },
+      "default-service-name" : "hdi_db",
+      "default-container-name" : "CHRISTIAN_DIOR_COUTURE_10_1_LIVE_MANUF_SSPMQKFC_DEV_HDI_DB"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ],
+    "processedAfter" : [ ]
+  }, {
+    "majorSchemaVersion" : 3,
+    "name" : "cross-container-service-1",
+    "type" : "org.cloudfoundry.existing-service",
+    "properties" : {
+      "the-service-name" : "CUPSSERVICE"
+    },
+    "parameters" : {
+      "generated-password" : "********",
+      "service-name" : "CUPSSERVICE",
+      "generated-user" : "********",
+      "default-xsappname" : "cross-container-service-1",
+      "type" : "existing-service",
+      "default-service-name" : "cross-container-service-1",
+      "default-container-name" : "CHRISTIAN_DIOR_COUTURE_10_1_LIVE_MANUF_SSPMQKFC_DEV_CROS509980E1"
+    },
+    "isActive" : true,
+    "isOptional" : false,
+    "propertiesMetadata" : {
+      "metadata" : { }
+    },
+    "parametersMetadata" : {
+      "metadata" : { }
+    },
+    "requiredDependencies" : [ ],
+    "processedAfter" : [ ]
+  } ],
+  "parameters" : {
+    "mta-id" : "eHub",
+    "authorization-url" : "********",
+    "org-guid" : "ea309a35-077c-4d44-9358-b8ae810a838a",
+    "org" : "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc",
+    "deploy-target" : "CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc dev",
+    "region-primary-domain" : "eu10.hana.ondemand.com",
+    "space" : "dev",
+    "region-domain" : "eu10-004.hana.ondemand.com",
+    "xs-api-url" : "https://api.cf.eu10-004.hana.ondemand.com",
+    "deploy-url" : "deploy-service.cfapps.eu10-004.hana.ondemand.com",
+    "xs-type" : "CF",
+    "default-domain" : "cfapps.eu10-004.hana.ondemand.com",
+    "mta-version" : "0.0.1",
+    "xs-auth-url" : "********",
+    "space-guid" : "af14dcdc-b22d-47c5-81e8-2f324d434b58",
+    "user" : "********",
+    "controller-url" : "https://api.cf.eu10-004.hana.ondemand.com",
+    "timestamp" : "20260904101649"
+  },
+  "parametersMetadata" : {
+    "metadata" : { }
+  }
+}#
+#2026 09 04 10:17:07.508#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8777#
+[ProcessDescriptorStep] Merged descriptor properties and parameters resolved#
+#2026 09 04 10:17:07.508#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8777#
+Step "Re-Process Descriptor Step" finished#
+#2026 09 04 10:17:07.548#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8779#
+[BuildApplicationDeployModelStep] Executing task "buildApplicationDeployModelTask" of process "c8718e1e-a849-11f1-9dd2-eeee0a911f1e"...#
+#2026 09 04 10:17:07.552#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8779#
+[BuildApplicationDeployModelStep] Building cloud deployment model for application "db"...#
+#2026 09 04 10:17:07.558#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8779#
+[BuildApplicationDeployModelStep] No health-check-type is specified. Setting default type: port#
+#2026 09 04 10:17:07.559#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8779#
+[BuildApplicationDeployModelStep] Building configuration entries for org CHRISTIAN_DIOR COUTURE_10-1-live-manuf-sspmqkfc, space dev, spaceId af14dcdc-b22d-47c5-81e8-2f324d434b58 and namespace null!#
+#2026 09 04 10:17:07.561#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8779#
+[BuildApplicationDeployModelStep] Configuration entries to publish: [ ]#
+#2026 09 04 10:17:07.561#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8779#
+[BuildApplicationDeployModelStep] Cloud deployment model for application built#
+#2026 09 04 10:17:07.561#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8779#
+Step "Build Application Deploy Model" finished#
+#2026 09 04 10:17:07.624#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Executing task "createAppTask" of process "c8718e1e-a849-11f1-9dd2-eeee0a911f1e"...#
+#2026 09 04 10:17:07.626#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Getting application "db"...#
+#2026 09 04 10:17:07.658#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Updating application "db"...#
+#2026 09 04 10:17:07.666#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Getting process for application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:07.701#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Getting routes for application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:07.745#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Getting features for application "05051359-c265-4d7e-b733-004c272b769e"#
+#2026 09 04 10:17:07.768#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Updating staging of application "db" to: {
+  "buildpacks" : [ "nodejs_buildpack" ],
+  "healthCheckType" : "port",
+  "appFeatures" : { }
+}#
+#2026 09 04 10:17:07.968#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Application "db" updated#
+#2026 09 04 10:17:07.969#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Getting environment of application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:08.049#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+[CreateOrUpdateAppStep] Application "db" updated#
+#2026 09 04 10:17:08.049#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8780#
+Step "Create App" finished#
+#2026 09 04 10:17:08.177#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8786#
+[CheckServiceBindingOperationStep] Executing task "checkForServiceBindingOperationInProgress" of process "c8de812e-a849-11f1-9dd2-eeee0a911f1e"...#
+#2026 09 04 10:17:08.177#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8786#
+[CheckServiceBindingOperationStep] Checking for service binding operation in progress between app "db" and service instance "hdi_db"#
+#2026 09 04 10:17:08.178#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8786#
+[CheckServiceBindingOperationStep] Getting application guid "db"...#
+#2026 09 04 10:17:08.203#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8786#
+[CheckServiceBindingOperationStep] Getting GUID of required service instance "hdi_db"...#
+#2026 09 04 10:17:08.233#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8786#
+[CheckServiceBindingOperationStep] Getting binding of service instance "ed57154a-90dd-416d-83e6-27a81b1f8029" with application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:08.264#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8786#
+[CheckServiceBindingOperationStep] Service binding operation "095ada01-07e0-46be-8232-cb6a6d2d2918" with type "create" is in state "succeeded"#
+#2026 09 04 10:17:08.264#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8786#
+Step "Check For Service Binding Operation In Progress" finished#
+#2026 09 04 10:17:08.296#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Executing task "determineApplicationServiceBindingActionsTask" of process "c8de812e-a849-11f1-9dd2-eeee0a911f1e"...#
+#2026 09 04 10:17:08.298#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Determine bind/unbind operations of application "db" to service instance "hdi_db"#
+#2026 09 04 10:17:08.298#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Getting application "db"...#
+#2026 09 04 10:17:08.334#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Binding parameters for application "db": { }#
+#2026 09 04 10:17:08.375#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Check should rebind application "db" and service instance "hdi_db"#
+#2026 09 04 10:17:08.375#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Getting GUID of required service instance "hdi_db"...#
+#2026 09 04 10:17:08.406#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Getting binding of service instance "ed57154a-90dd-416d-83e6-27a81b1f8029" with application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:08.469#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Getting parameters of service binding "095ada01-07e0-46be-8232-cb6a6d2d2918"...#
+#2026 09 04 10:17:08.693#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Service instance "hdi_db" will not be rebound to application "db" because the binding parameters are not modified#
+#2026 09 04 10:17:08.699#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+[DetermineApplicationServiceBindingActionsStep] Calculated binding operations between application "db" and service instance "hdi_db": unbind - false bind - false#
+#2026 09 04 10:17:08.699#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8787#
+Step "Determine Application Service Binding Actions" finished#
+#2026 09 04 10:17:09.850#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10896#
+[CheckServiceBindingOperationStep] Executing task "checkForServiceBindingOperationInProgress" of process "c9dfc40e-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:09.851#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10896#
+[CheckServiceBindingOperationStep] Checking for service binding operation in progress between app "db" and service instance "CUPSSERVICE"#
+#2026 09 04 10:17:09.926#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10896#
+[CheckServiceBindingOperationStep] Getting application guid "db"...#
+#2026 09 04 10:17:09.970#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10896#
+[CheckServiceBindingOperationStep] Getting GUID of required service instance "CUPSSERVICE"...#
+#2026 09 04 10:17:10.056#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10896#
+[CheckServiceBindingOperationStep] Getting binding of service instance "3b7c4144-69a1-4402-8d95-0a1e63dea399" with application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:10.084#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10896#
+[CheckServiceBindingOperationStep] Service binding operation "f0740bfa-91c0-4894-9e9f-4c114650a693" with type "create" is in state "succeeded"#
+#2026 09 04 10:17:10.084#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10896#
+Step "Check For Service Binding Operation In Progress" finished#
+#2026 09 04 10:17:10.123#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Executing task "determineApplicationServiceBindingActionsTask" of process "c9dfc40e-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:10.125#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Determine bind/unbind operations of application "db" to service instance "CUPSSERVICE"#
+#2026 09 04 10:17:10.125#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Getting application "db"...#
+#2026 09 04 10:17:10.155#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Binding parameters for application "db": { }#
+#2026 09 04 10:17:10.206#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Check should rebind application "db" and service instance "CUPSSERVICE"#
+#2026 09 04 10:17:10.206#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Getting GUID of required service instance "CUPSSERVICE"...#
+#2026 09 04 10:17:10.229#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Getting binding of service instance "3b7c4144-69a1-4402-8d95-0a1e63dea399" with application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:10.284#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Getting parameters of service binding "f0740bfa-91c0-4894-9e9f-4c114650a693"...#
+#2026 09 04 10:17:10.309#Z#WARN#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Cannot retrieve parameters of binding between application "db" and service instance "CUPSSERVICE"#
+#2026 09 04 10:17:10.310#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+[DetermineApplicationServiceBindingActionsStep] Calculated binding operations between application "db" and service instance "CUPSSERVICE": unbind - true bind - true#
+#2026 09 04 10:17:10.310#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10900#
+Step "Determine Application Service Binding Actions" finished#
+#2026 09 04 10:17:10.492#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10901#
+[UnbindServiceFromApplicationStep] Executing task "unbindServiceFromApplicationTask" of process "c9dfc40e-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:10.514#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10901#
+[UnbindServiceFromApplicationStep] Unbinding service instance "CUPSSERVICE" from application "db"...#
+#2026 09 04 10:17:10.537#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10901#
+[UnbindServiceFromApplicationStep] Unbinding application "db" from service instance "CUPSSERVICE"...#
+#2026 09 04 10:17:10.721#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10901#
+[UnbindServiceFromApplicationStep] Unbinding service instance "CUPSSERVICE" from application "db" finished#
+#2026 09 04 10:17:10.721#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10901#
+Step "Unbind Service from Application" finished#
+#2026 09 04 10:17:10.805#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10902#
+[BindServiceToApplicationStep] Executing task "bindServiceToApplicationTask" of process "c9dfc40e-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:10.815#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10902#
+[BindServiceToApplicationStep] Binding service instance "CUPSSERVICE" to application "db"...#
+#2026 09 04 10:17:10.833#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10902#
+[BindServiceToApplicationStep] Binding service instance "CUPSSERVICE" to application "db" with parameters: { }#
+#2026 09 04 10:17:10.975#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10902#
+[BindServiceToApplicationStep] Binding service instance "CUPSSERVICE" to application "db" finished#
+#2026 09 04 10:17:10.975#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10902#
+Step "Bind Service to Application" finished#
+#2026 09 04 10:17:11.184#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10904#
+[DetermineVcapServicesPropertiesChangedStep] Executing task "determineVcapServicesPropertiesChangedTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:11.204#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10904#
+[DetermineVcapServicesPropertiesChangedStep] VCAP_SERVICES properties for application "db" changed: true#
+#2026 09 04 10:17:11.204#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10904#
+Step "Determine vcap services properties changed" finished#
+#2026 09 04 10:17:11.334#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10905#
+[UploadAppStep] Executing task "uploadAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:11.335#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10905#
+[UploadAppStep] Application upload timeout is default one: 3,600 seconds#
+#2026 09 04 10:17:11.335#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10905#
+[UploadAppStep] Uploading application "db"...#
+#2026 09 04 10:17:11.346#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10905#
+[UploadAppStep] Getting application "db"...#
+#2026 09 04 10:17:11.384#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10905#
+[UploadAppStep] Getting environment of application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:11.409#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10905#
+[UploadAppStep] Calculating application digest: "db"#
+#2026 09 04 10:17:12.198#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10905#
+Step "Upload App" finished#
+#2026 09 04 10:17:17.312#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8776#
+[UploadAppStep] Executing task "uploadAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:17.313#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8776#
+[UploadAppStep] Application upload timeout is default one: 3,600 seconds#
+#2026 09 04 10:17:17.382#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#pool-14-thread-4#
+[UploadAppStep] Upload of application: db started on instance: 3#
+#2026 09 04 10:17:17.382#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#pool-14-thread-4#
+[UploadAppStep] Uploading file "db/data.zip" for application "db"#
+#2026 09 04 10:17:18.094#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#pool-14-thread-4#
+[UploadAppStep] Time elapsed for app binary download: 711 in millis#
+#2026 09 04 10:17:18.094#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#pool-14-thread-4#
+[UploadAppStep] Size of app db is 71,387,038 bytes#
+#2026 09 04 10:17:18.094#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#pool-14-thread-4#
+[UploadAppStep] Asynchronously uploading binaries for application "db"...#
+#2026 09 04 10:17:18.769#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#pool-14-thread-4#
+[UploadAppStep] Started async upload of application "db"#
+#2026 09 04 10:17:18.775#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8776#
+[UploadAppStep] Time elapsed for upload: 1,462 in millis#
+#2026 09 04 10:17:18.776#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8776#
+[UploadAppStep] Getting application "db"...#
+#2026 09 04 10:17:18.798#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#App upload monitor: b3766be6-483c-4433-ad7f-5523142e23f4#
+[UploadAppStep] Upload status: PROCESSING_UPLOAD#
+#2026 09 04 10:17:18.805#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8776#
+[UploadAppStep] Getting environment of application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:18.834#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8776#
+[UploadAppStep] Updating environment of application "db"#
+#2026 09 04 10:17:18.923#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8776#
+Step "Upload App" finished#
+#2026 09 04 10:17:27.435#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8897#
+[UploadAppStep] Executing task "uploadAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:27.436#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8897#
+[UploadAppStep] Application upload timeout is default one: 3,600 seconds#
+#2026 09 04 10:17:27.436#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8897#
+[UploadAppStep] Checking upload status of application "db"...#
+#2026 09 04 10:17:27.505#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8897#
+[UploadAppStep] Getting package "b3766be6-483c-4433-ad7f-5523142e23f4"...#
+#2026 09 04 10:17:27.542#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-8897#
+Step "Upload App" finished#
+#2026 09 04 10:17:37.848#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9989#
+[UploadAppStep] Executing task "uploadAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:37.849#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9989#
+[UploadAppStep] Application upload timeout is default one: 3,600 seconds#
+#2026 09 04 10:17:37.849#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9989#
+[UploadAppStep] Checking upload status of application "db"...#
+#2026 09 04 10:17:37.942#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9989#
+[UploadAppStep] Getting package "b3766be6-483c-4433-ad7f-5523142e23f4"...#
+#2026 09 04 10:17:37.975#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9989#
+[UploadAppStep] Application "db" uploaded#
+#2026 09 04 10:17:37.977#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9989#
+Step "Upload App" finished#
+#2026 09 04 10:17:38.014#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9992#
+[ScaleAppStep] Executing task "scaleAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:38.017#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9992#
+[ScaleAppStep] Scaling application "db"...#
+#2026 09 04 10:17:38.017#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9992#
+[ScaleAppStep] Getting application guid "db"...#
+#2026 09 04 10:17:38.057#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9992#
+[ScaleAppStep] Getting process for application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:38.091#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9992#
+[ScaleAppStep] Application "db" scaled#
+#2026 09 04 10:17:38.091#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9992#
+Step "Scale App" finished#
+#2026 09 04 10:17:38.119#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9993#
+[DetermineDesiredStateAchievingActionsStep] Executing task "determineDesiredStateAchievingActionsTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:38.121#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9993#
+[DetermineDesiredStateAchievingActionsStep] Getting application "db"...#
+#2026 09 04 10:17:38.152#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9993#
+[DetermineDesiredStateAchievingActionsStep] Getting instances for application "db"...#
+#2026 09 04 10:17:38.153#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9993#
+[DetermineDesiredStateAchievingActionsStep] Getting environment of application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:17:38.202#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9993#
+[DetermineDesiredStateAchievingActionsStep] Current state of application db: STOPPED#
+#2026 09 04 10:17:38.202#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9993#
+[DetermineDesiredStateAchievingActionsStep] Desired state of application db: STOPPED#
+#2026 09 04 10:17:38.203#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9993#
+[DetermineDesiredStateAchievingActionsStep] Actions that should be executed on application db: [STAGE]#
+#2026 09 04 10:17:38.203#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9993#
+Step "Determine Desired State Achieving Actions" finished#
+#2026 09 04 10:17:38.238#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9994#
+[StageAppStep] Executing task "stageAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:38.239#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9994#
+[StageAppStep] Application stage timeout is default one: 3,600 seconds#
+#2026 09 04 10:17:38.241#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9994#
+[StageAppStep] Staging application "db"...#
+#2026 09 04 10:17:38.246#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9994#
+[StageAppStep] Creating build for package "b3766be6-483c-4433-ad7f-5523142e23f4"...#
+#2026 09 04 10:17:38.618#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9994#
+Step "Stage App" finished#
+#2026 09 04 10:17:47.971#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9999#
+[StageAppStep] Executing task "stageAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:47.973#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9999#
+[StageAppStep] Application stage timeout is default one: 3,600 seconds#
+#2026 09 04 10:17:47.974#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9999#
+[StageAppStep] Checking status of application "db"...#
+#2026 09 04 10:17:47.974#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9999#
+[StageAppStep] Getting build "d8d44f5c-74d6-43fe-9766-d13d5dab4679"...#
+#2026 09 04 10:17:48.009#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9999#
+[StageAppStep] Staging status of application "db": PENDING#
+#2026 09 04 10:17:48.011#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9999#
+[StageAppStep] Getting application guid "db"...#
+#2026 09 04 10:17:48.103#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9999#
+Step "Stage App" finished#
+#2026 09 04 10:17:58.224#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9021#
+[StageAppStep] Executing task "stageAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:17:58.226#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9021#
+[StageAppStep] Application stage timeout is default one: 3,600 seconds#
+#2026 09 04 10:17:58.312#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9021#
+[StageAppStep] Checking status of application "db"...#
+#2026 09 04 10:17:58.312#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9021#
+[StageAppStep] Getting build "d8d44f5c-74d6-43fe-9766-d13d5dab4679"...#
+#2026 09 04 10:17:58.389#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9021#
+[StageAppStep] Staging status of application "db": PENDING#
+#2026 09 04 10:17:58.391#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9021#
+[StageAppStep] Getting application guid "db"...#
+#2026 09 04 10:17:58.489#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9021#
+Step "Stage App" finished#
+#2026 09 04 10:18:08.565#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10028#
+[StageAppStep] Executing task "stageAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:18:08.567#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10028#
+[StageAppStep] Application stage timeout is default one: 3,600 seconds#
+#2026 09 04 10:18:08.569#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10028#
+[StageAppStep] Checking status of application "db"...#
+#2026 09 04 10:18:08.569#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10028#
+[StageAppStep] Getting build "d8d44f5c-74d6-43fe-9766-d13d5dab4679"...#
+#2026 09 04 10:18:08.606#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10028#
+[StageAppStep] Staging status of application "db": PENDING#
+#2026 09 04 10:18:08.607#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10028#
+[StageAppStep] Getting application guid "db"...#
+#2026 09 04 10:18:08.714#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10028#
+Step "Stage App" finished#
+#2026 09 04 10:18:18.758#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12379#
+[StageAppStep] Executing task "stageAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:18:18.759#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12379#
+[StageAppStep] Application stage timeout is default one: 3,600 seconds#
+#2026 09 04 10:18:18.760#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12379#
+[StageAppStep] Checking status of application "db"...#
+#2026 09 04 10:18:18.760#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12379#
+[StageAppStep] Getting build "d8d44f5c-74d6-43fe-9766-d13d5dab4679"...#
+#2026 09 04 10:18:18.798#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12379#
+[StageAppStep] Staging status of application "db": PENDING#
+#2026 09 04 10:18:18.801#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12379#
+[StageAppStep] Getting application guid "db"...#
+#2026 09 04 10:18:18.861#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12379#
+Step "Stage App" finished#
+#2026 09 04 10:18:28.954#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Executing task "stageAppTask" of process "caa13f90-a849-11f1-b4df-eeee0a837478"...#
+#2026 09 04 10:18:28.955#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Application stage timeout is default one: 3,600 seconds#
+#2026 09 04 10:18:28.956#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Checking status of application "db"...#
+#2026 09 04 10:18:28.956#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Getting build "d8d44f5c-74d6-43fe-9766-d13d5dab4679"...#
+#2026 09 04 10:18:28.992#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Staging status of application "db": STAGED#
+#2026 09 04 10:18:28.993#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Getting application guid "db"...#
+#2026 09 04 10:18:29.057#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Getting build "d8d44f5c-74d6-43fe-9766-d13d5dab4679"...#
+#2026 09 04 10:18:29.091#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Binding droplet "b7661d92-334f-4312-8c43-c95c75177b1b" to application "05051359-c265-4d7e-b733-004c272b769e"...#
+#2026 09 04 10:18:29.159#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+[StageAppStep] Application "db" staged#
+#2026 09 04 10:18:29.167#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10043#
+Step "Stage App" finished#
+#2026 09 04 10:18:29.250#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10055#
+[PrepareToExecuteTasksStep] Executing task "prepareToExecuteTasksTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:18:29.252#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10055#
+Step "Prepare To Execute Tasks" finished#
+#2026 09 04 10:18:29.284#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10056#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:18:29.285#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10056#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:18:29.287#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10056#
+[ExecuteTaskStep] Executing task "deploy" on application "db"...#
+#2026 09 04 10:18:29.293#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10056#
+[ExecuteTaskStep] Running task on application "db": {
+  "name" : "deploy",
+  "command" : "npm start",
+  "limits" : {
+    "memory" : 256
+  }
+}#
+#2026 09 04 10:18:29.595#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10056#
+Step "Execute Task" finished#
+#2026 09 04 10:18:39.192#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9114#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:18:39.194#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9114#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:18:39.196#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9114#
+[ExecuteTaskStep] Getting task "ad7972d0-ab14-4913-bb63-0d477d3b7902"...#
+#2026 09 04 10:18:39.233#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9114#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:18:39.234#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9114#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:18:39.377#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9114#
+Step "Execute Task" finished#
+#2026 09 04 10:18:49.604#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9145#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:18:49.605#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9145#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:18:49.608#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9145#
+[ExecuteTaskStep] Getting task "ad7972d0-ab14-4913-bb63-0d477d3b7902"...#
+#2026 09 04 10:18:49.637#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9145#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:18:49.639#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9145#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:18:49.803#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9145#
+Step "Execute Task" finished#
+#2026 09 04 10:18:59.824#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9187#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:18:59.825#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9187#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:18:59.894#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9187#
+[ExecuteTaskStep] Getting task "ad7972d0-ab14-4913-bb63-0d477d3b7902"...#
+#2026 09 04 10:18:59.946#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9187#
+[ExecuteTaskStep] Task execution status: failed#
+#2026 09 04 10:18:59.947#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9187#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:19:00.105#Z#ERROR#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9187#
+[ExecuteTaskStep] Execution of task "deploy" on application "db" failed.#
+#2026 09 04 10:19:00.114#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9187#
+[ExecuteTaskStep] Download the MTA operation logs for more details.#
+#2026 09 04 10:19:00.122#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9187#
+Step "Execute Task" finished#
+#2026 09 04 10:19:01.214#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10064#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:19:01.218#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10064#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:19:01.274#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10064#
+[ExecuteTaskStep] Executing task "deploy" on application "db"...#
+#2026 09 04 10:19:01.280#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10064#
+[ExecuteTaskStep] Running task on application "db": {
+  "name" : "deploy",
+  "command" : "npm start",
+  "limits" : {
+    "memory" : 256
+  }
+}#
+#2026 09 04 10:19:01.574#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10064#
+Step "Execute Task" finished#
+#2026 09 04 10:19:09.925#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10080#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:19:09.926#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10080#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:19:09.928#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10080#
+[ExecuteTaskStep] Getting task "ad369396-13fa-4cd6-bc21-8d46c2c50ba0"...#
+#2026 09 04 10:19:09.960#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10080#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:19:09.962#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10080#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:19:10.132#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10080#
+Step "Execute Task" finished#
+#2026 09 04 10:19:20.500#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10114#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:19:20.501#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10114#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:19:20.503#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10114#
+[ExecuteTaskStep] Getting task "ad369396-13fa-4cd6-bc21-8d46c2c50ba0"...#
+#2026 09 04 10:19:20.564#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10114#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:19:20.565#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10114#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:19:20.747#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10114#
+Step "Execute Task" finished#
+#2026 09 04 10:19:30.838#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9097#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:19:30.840#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9097#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:19:30.842#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9097#
+[ExecuteTaskStep] Getting task "ad369396-13fa-4cd6-bc21-8d46c2c50ba0"...#
+#2026 09 04 10:19:30.879#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9097#
+[ExecuteTaskStep] Task execution status: failed#
+#2026 09 04 10:19:30.880#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9097#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:19:31.064#Z#ERROR#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9097#
+[ExecuteTaskStep] Execution of task "deploy" on application "db" failed.#
+#2026 09 04 10:19:31.070#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9097#
+[ExecuteTaskStep] Download the MTA operation logs for more details.#
+#2026 09 04 10:19:31.075#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9097#
+Step "Execute Task" finished#
+#2026 09 04 10:19:32.144#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10128#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:19:32.145#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10128#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:19:32.147#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10128#
+[ExecuteTaskStep] Executing task "deploy" on application "db"...#
+#2026 09 04 10:19:32.152#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10128#
+[ExecuteTaskStep] Running task on application "db": {
+  "name" : "deploy",
+  "command" : "npm start",
+  "limits" : {
+    "memory" : 256
+  }
+}#
+#2026 09 04 10:19:32.434#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10128#
+Step "Execute Task" finished#
+#2026 09 04 10:19:41.206#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12648#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:19:41.211#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12648#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:19:41.218#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12648#
+[ExecuteTaskStep] Getting task "48709f35-5343-4b78-b37f-9a95b465522e"...#
+#2026 09 04 10:19:41.263#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12648#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:19:41.265#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12648#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:19:41.518#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-12648#
+Step "Execute Task" finished#
+#2026 09 04 10:19:52.211#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9352#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:19:52.214#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9352#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:19:52.373#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9352#
+[ExecuteTaskStep] Getting task "48709f35-5343-4b78-b37f-9a95b465522e"...#
+#2026 09 04 10:19:52.432#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9352#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:19:52.434#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9352#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:19:52.621#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9352#
+Step "Execute Task" finished#
+#2026 09 04 10:20:09.192#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9415#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:20:09.236#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9415#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:20:09.323#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9415#
+[ExecuteTaskStep] Getting task "48709f35-5343-4b78-b37f-9a95b465522e"...#
+#2026 09 04 10:20:09.488#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9415#
+[ExecuteTaskStep] Task execution status: failed#
+#2026 09 04 10:20:09.490#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9415#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:20:10.044#Z#ERROR#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9415#
+[ExecuteTaskStep] Execution of task "deploy" on application "db" failed.#
+#2026 09 04 10:20:10.245#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9415#
+[ExecuteTaskStep] Download the MTA operation logs for more details.#
+#2026 09 04 10:20:10.370#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9415#
+Step "Execute Task" finished#
+#2026 09 04 10:20:26.106#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10190#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:20:26.196#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10190#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:20:26.470#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10190#
+[ExecuteTaskStep] Executing task "deploy" on application "db"...#
+#2026 09 04 10:20:27.167#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10190#
+[ExecuteTaskStep] Running task on application "db": {
+  "name" : "deploy",
+  "command" : "npm start",
+  "limits" : {
+    "memory" : 256
+  }
+}#
+#2026 09 04 10:20:28.634#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-10190#
+Step "Execute Task" finished#
+#2026 09 04 10:20:34.680#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9244#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:20:34.689#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9244#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:20:34.706#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9244#
+[ExecuteTaskStep] Getting task "00c588bb-a945-4e8f-819f-b3d93f43b897"...#
+#2026 09 04 10:20:34.761#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9244#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:20:34.763#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9244#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:20:34.943#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9244#
+Step "Execute Task" finished#
+#2026 09 04 10:20:40.320#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9257#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:20:40.322#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9257#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:20:40.394#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9257#
+[ExecuteTaskStep] Getting task "00c588bb-a945-4e8f-819f-b3d93f43b897"...#
+#2026 09 04 10:20:40.465#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9257#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:20:40.466#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9257#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:20:40.544#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9257#
+Step "Execute Task" finished#
+#2026 09 04 10:20:45.983#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-11467#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:20:45.985#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-11467#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:20:45.989#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-11467#
+[ExecuteTaskStep] Getting task "00c588bb-a945-4e8f-819f-b3d93f43b897"...#
+#2026 09 04 10:20:46.024#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-11467#
+[ExecuteTaskStep] Task execution status: running#
+#2026 09 04 10:20:46.025#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-11467#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:20:46.202#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-11467#
+Step "Execute Task" finished#
+#2026 09 04 10:20:51.871#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9673#
+[ExecuteTaskStep] Executing task "executeTaskTask" of process "f932546e-a849-11f1-b785-eeee0a981bad"...#
+#2026 09 04 10:20:51.876#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9673#
+[ExecuteTaskStep] Application task execution timeout is default one: 43,200 seconds#
+#2026 09 04 10:20:51.985#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9673#
+[ExecuteTaskStep] Getting task "00c588bb-a945-4e8f-819f-b3d93f43b897"...#
+#2026 09 04 10:20:52.057#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9673#
+[ExecuteTaskStep] Task execution status: failed#
+#2026 09 04 10:20:52.058#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9673#
+[ExecuteTaskStep] Getting application guid "db"...#
+#2026 09 04 10:20:52.366#Z#ERROR#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9673#
+[ExecuteTaskStep] Execution of task "deploy" on application "db" failed.#
+#2026 09 04 10:20:52.377#Z#INFO#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9673#
+[ExecuteTaskStep] Download the MTA operation logs for more details.#
+#2026 09 04 10:20:52.386#Z#DEBUG#bde3121f-a849-11f1-9933-eeee0a8e96af.OPERATION#flowable-async-job-executor-thread-9673#
+Step "Execute Task" finished#
