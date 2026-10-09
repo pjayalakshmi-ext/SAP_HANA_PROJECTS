@@ -473,6 +473,13 @@
       "schema": "EHUB_STG"
     }
   },
+
+    "EHUB.Synonyms::SY_TA_SHE_SBATCH_BATCHNO_CREATE": {
+    "target": {
+      "object": "TA_SHE_SBATCH_BATCHNO_CREATE",
+      "schema": "EHUB_STG"
+    }
+  },
   "EHUB.Synonyms::SY_TA_BATCH_M3MITLOC_Basic": {
     "target": {
       "object": "TA_BATCH_M3MITLOC_Basic",
@@ -672,6 +679,13 @@
 "EHUB.Synonyms::SY_TA_SHE_EXQC_TRANSFORM_BATCHNUM": {
     "target": {
       "object": "TA_SHE_EXQC_TRANSFORM_BATCHNUM",
+      "schema": "EHUB_STG"
+    }
+    },
+
+    "EHUB.Synonyms::SY_TA_SHE_EXQC_STK_TRANSFORM": {
+    "target": {
+      "object": "TA_SHE_EXQC_STK_TRANSFORM",
       "schema": "EHUB_STG"
     }
     }

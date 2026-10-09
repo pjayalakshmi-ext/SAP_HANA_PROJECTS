@@ -68,7 +68,7 @@
       <rectangleSize width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="Proj_MITLOC" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="236"/>
+      <upperLeftCorner x="52" y="239"/>
       <rectangleSize height="30" width="240"/>
     </shape></shapes>
 </layout>

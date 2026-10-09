@@ -10,7 +10,7 @@
 </dataSources>
 <snapshotProcedures/>
 <calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+  <calculationView xsi:type="Calculation:ProjectionView" id="Proj_HLGEINP">
     <viewAttributes>
       <viewAttribute id="GENSUP"/>
       <viewAttribute id="GESCRE"/>
@@ -21,6 +21,9 @@
       <viewAttribute id="GELOT2"/>
       <viewAttribute id="GELOTF"/>
       <viewAttribute id="GECART"/>
+    
+      <viewAttribute id="GEQGEI"/>
+      <viewAttribute id="GECDPO"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="EHUB.Synonyms::SY_ZSLT_SHE_STGHLGEINP"/>
@@ -36,9 +39,12 @@
       <viewAttribute id="GELOT2"/>
       <viewAttribute id="GELOTF"/>
       <viewAttribute id="GECART"/>
+    
+      <viewAttribute id="GEQGEI"/>
+      <viewAttribute id="GECDPO"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="Projection_1"/>
+    <input node="Proj_HLGEINP"/>
     <rankingFilter type="RANK" offsetReference="FRONT" dynamicPartitionAttributes="false">
       <partitionViewAttributeName id="GENSUP"/>
       <order byViewAttributeName="GECART" direction="ASC"/>
@@ -50,52 +56,65 @@
 
 <logicalModel id="Rank_1">
   <attributes>
-    <attribute id="Rank_Column" order="22" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Rank_Column"/>
-      <keyMapping columnObjectName="Rank_1" columnName="Rank_Column"/>
-    </attribute>
-    <attribute id="GENSUP" order="25" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GENSUP" order="24" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GENSUP"/>
       <keyMapping columnObjectName="Rank_1" columnName="GENSUP"/>
     </attribute>
-    <attribute id="GESCRE" order="26" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GESCRE" order="25" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GESCRE"/>
       <keyMapping columnObjectName="Rank_1" columnName="GESCRE"/>
     </attribute>
-    <attribute id="GEACRE" order="27" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GEACRE" order="26" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GEACRE"/>
       <keyMapping columnObjectName="Rank_1" columnName="GEACRE"/>
     </attribute>
-    <attribute id="GEMCRE" order="28" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GEMCRE" order="27" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GEMCRE"/>
       <keyMapping columnObjectName="Rank_1" columnName="GEMCRE"/>
     </attribute>
-    <attribute id="GEJCRE" order="29" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GEJCRE" order="28" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GEJCRE"/>
       <keyMapping columnObjectName="Rank_1" columnName="GEJCRE"/>
     </attribute>
-    <attribute id="GECFOU" order="30" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GECFOU" order="29" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GECFOU"/>
       <keyMapping columnObjectName="Rank_1" columnName="GECFOU"/>
     </attribute>
-    <attribute id="GELOT2" order="31" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GELOT2" order="30" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GELOT2"/>
       <keyMapping columnObjectName="Rank_1" columnName="GELOT2"/>
     </attribute>
-    <attribute id="GELOTF" order="32" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GELOTF" order="31" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GELOTF"/>
       <keyMapping columnObjectName="Rank_1" columnName="GELOTF"/>
     </attribute>
-    <attribute id="GECART" order="33" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GECART" order="32" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GECART"/>
       <keyMapping columnObjectName="Rank_1" columnName="GECART"/>
+    </attribute>
+    <attribute id="Rank_Column" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Rank_Column"/>
+      <keyMapping columnObjectName="Rank_1" columnName="Rank_Column"/>
+    </attribute>
+  
+    <attribute id="GEQGEI" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEQGEI"/>
+  
+      <keyMapping columnObjectName="Rank_1" columnName="GEQGEI"/>
+  
+    </attribute>
+    <attribute id="GECDPO" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GECDPO"/>
+      <keyMapping columnObjectName="Rank_1" columnName="GECDPO"/>
     </attribute>
   </attributes>
   <calculatedAttributes>
     <calculatedAttribute id="PROD_DATE" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
       <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
-        <formula>--GEJCRE &amp; GEMCRE &amp; GESCRE &amp; GEACRE
-&quot;GEJCRE&quot;||&quot;GEMCRE&quot;||&quot;GESCRE&quot;||&quot;GEACRE&quot;</formula>
+        <formula>&quot;GESCRE&quot; ||
+LPAD(&quot;GEACRE&quot;, 2, '0') ||
+LPAD(&quot;GEMCRE&quot;, 2, '0') ||
+LPAD(&quot;GEJCRE&quot;, 2, '0')</formula>
       </keyCalculation>
     </calculatedAttribute>
     <calculatedAttribute id="EXPIRYDATE" order="2" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
@@ -105,7 +124,10 @@
     </calculatedAttribute>
     <calculatedAttribute id="VERAB" order="3" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
       <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
-        <formula>'00000000'</formula>
+        <formula>&quot;GESCRE&quot; ||
+LPAD(&quot;GEACRE&quot;, 2, '0') ||
+LPAD(&quot;GEMCRE&quot;, 2, '0') ||
+LPAD(&quot;GEJCRE&quot;, 2, '0')</formula>
       </keyCalculation>
     </calculatedAttribute>
     <calculatedAttribute id="RESTRICTED" order="4" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
@@ -198,12 +220,12 @@
         <formula>NULL</formula>
       </keyCalculation>
     </calculatedAttribute>
-    <calculatedAttribute id="WERKS" order="23" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+    <calculatedAttribute id="WERKS" order="22" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
       <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
         <formula>'ITWA'</formula>
       </keyCalculation>
     </calculatedAttribute>
-    <calculatedAttribute id="SGT_SCAT" order="24" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+    <calculatedAttribute id="SGT_SCAT" order="23" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
       <keyCalculation datatype="NVARCHAR" expressionLanguage="SQL" length="13">
         <formula>'Q1ID'</formula>
       </keyCalculation>
@@ -220,14 +242,14 @@
       <rectangleSize width="160"/>
     </shape>
   
-    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+    <shape expanded="true" modelObjectName="Proj_HLGEINP" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="92" y="342"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-  
     <shape expanded="true" modelObjectName="Rank_1" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="92" y="217"/>
       <rectangleSize height="30" width="160"/>
-    </shape></shapes>
+    </shape>
+  </shapes>
 </layout>
 </Calculation:scenario>

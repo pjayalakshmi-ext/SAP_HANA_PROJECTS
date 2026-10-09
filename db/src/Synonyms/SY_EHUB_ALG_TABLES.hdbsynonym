@@ -2248,6 +2248,18 @@
       "schema": "EHUB_ALG"
     }
   },
+    "EHUB.Synonyms::SY_TA_SHE_SBATCH_M3MITLOC_BASIC_Valid": {
+    "target": {
+      "object": "TA_SHE_SBATCH_M3MITLOC_Basic_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+    "EHUB.Synonyms::SY_TA_SHE_SBATCH_M3MITLOC_BASIC_InValid": {
+    "target": {
+      "object": "TA_SHE_SBATCH_M3MITLOC_Basic_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
     "EHUB.Synonyms::SY_TA_SBATCH_M3MITLOC_CHAR_Valid": {
     "target": {
       "object": "TA_SBATCH_M3MITLOC_CHAR_Valid",
@@ -2360,13 +2372,13 @@
   },
  "EHUB.Synonyms::SY_TA_SSTOCK_Reflux_HEADER_InValid": {
     "target": {
-      "object": "TA_SSTOCK_Reflux_HEADER_Valid",
+      "object": "TA_SSTOCK_Reflux_HEADER_InValid",
       "schema": "EHUB_ALG"
     }
   },
    "EHUB.Synonyms::SY_TA_SSTOCK_Reflux_ITEM_InValid": {
     "target": {
-      "object": "TA_SSTOCK_Reflux_ITEM_Valid",
+      "object": "TA_SSTOCK_Reflux_ITEM_InValid",
       "schema": "EHUB_ALG"
     }
   },
@@ -2409,6 +2421,37 @@
       "schema": "EHUB_ALG"
     }
   },
+
+/**************GSTOCKS***************/
+   "EHUB.Synonyms::SY_TA_SHE_GSTOCKS_HEADER_Valid": {
+    "target": {
+      "object": "TA_SHE_GSTOCKS_HEADER_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+   "EHUB.Synonyms::SY_TA_SHE_GSTOCKS_HEADER_InValid": {
+    "target": {
+      "object": "TA_SHE_GSTOCKS_HEADER_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+   "EHUB.Synonyms::SY_TA_SHE_GSTOCKS_ITEM_Valid": {
+    "target": {
+      "object": "TA_SHE_GSTOCKS_ITEM_Valid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+   "EHUB.Synonyms::SY_TA_SHE_GSTOCKS_ITEM_InValid": {
+    "target": {
+      "object": "TA_SHE_GSTOCKS_ITEM_InValid",
+      "schema": "EHUB_ALG"
+    }
+  },
+
+
+
 
   /**********External QC***************/
 
