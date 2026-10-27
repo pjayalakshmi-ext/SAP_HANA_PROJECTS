@@ -14,6 +14,16 @@ modules:
     properties:
       key: ServiceName_1
       service: ~{the-service-name}
+  - name: cross-container-service-2
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: ServiceName_2
+      service: ~{the-service-name}
+  - name: cross-container-service-3
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: ServiceName_3
+      service: ~{the-service-name}
 resources:
 - name: hdi_db
   type: com.sap.xs.hdi-container
@@ -26,5 +36,17 @@ resources:
   type: org.cloudfoundry.existing-service
   parameters:
     service-name: CUPSSERVICE
+  properties:
+    the-service-name: ${service-name}
+- name: cross-container-service-2
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: SAP_HANA_PROJECTS-hdidb-Bhushan
+  properties:
+    the-service-name: ${service-name}
+- name: cross-container-service-3
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: SAP_HANA_PROJECTS-hdidb-Bhushan
   properties:
     the-service-name: ${service-name}

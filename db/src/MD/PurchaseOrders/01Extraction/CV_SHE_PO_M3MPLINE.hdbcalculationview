@@ -20,6 +20,10 @@
       <viewAttribute id="IBTEDL"/>
       <viewAttribute id="IBSUNO"/>
       <viewAttribute id="IBOURR"/>
+    
+      <viewAttribute id="IBPNLI"/>
+    
+      <viewAttribute id="IBPUSL"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="EHUB.Synonyms::SY_ZSLT_SHE_M3MPLINE"/>
@@ -60,6 +64,20 @@
       <descriptions defaultDescription="IBOURR"/>
       <keyMapping columnObjectName="Proj_MPLINE" columnName="IBOURR"/>
     </attribute>
+  
+    <attribute id="IBPNLI" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBPNLI"/>
+  
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBPNLI"/>
+  
+    </attribute>
+  
+    <attribute id="IBPUSL" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IBPUSL"/>
+  
+      <keyMapping columnObjectName="Proj_MPLINE" columnName="IBPUSL"/>
+  
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
@@ -73,8 +91,8 @@
       <rectangleSize width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="Proj_MPLINE" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="57" y="238"/>
-      <rectangleSize height="30" width="245"/>
+      <upperLeftCorner x="-182" y="390"/>
+      <rectangleSize height="30" width="497"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>

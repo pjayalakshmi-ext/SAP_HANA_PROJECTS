@@ -134,6 +134,32 @@
       <descriptions defaultDescription="IAPUNO"/>
       <keyMapping columnObjectName="Proj_MPHEAD" columnName="IAPUNO"/>
     </attribute>
+  
+    <attribute id="IAPUSL" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IAPUSL"/>
+  
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IAPUSL"/>
+  
+    </attribute>
+  
+    <attribute id="IAFUSC" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IAFUSC"/>
+  
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IAFUSC"/>
+  
+    </attribute>
+    <attribute id="IAPUST" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IAPUST"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IAPUST"/>
+    </attribute>
+    <attribute id="IARGDT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IARGDT"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IARGDT"/>
+    </attribute>
+    <attribute id="IATEPY" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IATEPY"/>
+      <keyMapping columnObjectName="Proj_MPHEAD" columnName="IATEPY"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
@@ -147,8 +173,8 @@
       <rectangleSize width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="Proj_MPHEAD" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="255" y="319"/>
-      <rectangleSize height="30" width="245"/>
+      <upperLeftCorner x="-20" y="297"/>
+      <rectangleSize height="30" width="447"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>

@@ -727,7 +727,7 @@
    "EHUB.Synonyms::SY_ZSLT_SHE_M3MPPOAD": {
     "target": {
       "object": "M3MPPOAD",
-      "schema": "ZS
+      "schema": "ZSLT_SHE"
     }
   }
   }
